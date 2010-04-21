@@ -26,7 +26,7 @@ ANT_HOME=/opt/ant
 #libDir="-Dlib.dir=$BUILDLIB_DIR"
 
 # standard values for Eclipse 3.5 Classic SDK + Delta Pack 3.5
-buildOpts="-Declipse.running=true -DpdeBuildPluginVersion=3.5.2.R35x_20100114 -DequinoxLauncherPluginVersion=1.0.200.v20090520"
+buildOpts="-Declipse.running=true -DpdeBuildPluginVersion=3.5.2.R35x_20100114 -DequinoxLauncherPluginVersion=1.0.201.R35x_v20090715"
 
 # usually there is no need to change the following lines
 buildDir=-DbuildDirectory=${SMILA_HOME}/eclipse.build
