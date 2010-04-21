@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: LDAP Security Plug-in (Incubation)
+Bundle-SymbolicName: org.eclipse.smila.security.ldap
+Bundle-Version: 0.7.0
+Bundle-Vendor: empolis GmbH
+Import-Package: com.novell.ldap;version="2.3.30",
+ org.apache.commons.io,
+ org.apache.commons.logging,
+ org.eclipse.smila.security;version="0.7.0",
+ org.eclipse.smila.utils.config;version="0.7.0",
+ org.osgi.framework;version="1.4.0",
+ org.osgi.service.component;version="1.0.0"
+Bundle-ClassPath: .
+Service-Component: OSGI-INF/ldapsecurityresolver.xml
+Export-Package: org.eclipse.smila.security.ldap;version="0.7.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

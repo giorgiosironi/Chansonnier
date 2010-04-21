@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Lucene Core (Incubation)
+Bundle-SymbolicName: org.apache.lucene
+Bundle-Version: 2.3.2
+Bundle-ClassPath: lib/lucene-core-2.3.2.jar
+Bundle-Vendor: Empolis GmbH and brox IT-Solutions GmbH
+Export-Package: org.apache.lucene;version="2.3.2",
+ org.apache.lucene.analysis;version="2.3.2",
+ org.apache.lucene.analysis.standard;version="2.3.2",
+ org.apache.lucene.document;version="2.3.2",
+ org.apache.lucene.index;version="2.3.2",
+ org.apache.lucene.queryParser;version="2.3.2",
+ org.apache.lucene.search;version="2.3.2",
+ org.apache.lucene.search.function;version="2.3.2",
+ org.apache.lucene.search.payloads;version="2.3.2",
+ org.apache.lucene.search.spans;version="2.3.2",
+ org.apache.lucene.store;version="2.3.2",
+ org.apache.lucene.util;version="2.3.2"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

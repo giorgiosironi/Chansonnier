@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  /***********************************************************************************************************************
+  * Copyright (c) 2008 empolis GmbH and brox IT Solutions GmbH. All rights reserved. This program and the accompanying
+  * materials are made available under the terms of the Eclipse Public License v1.0 which accompanies this distribution,
+  * and is available at http://www.eclipse.org/legal/epl-v10.html
+  *
+  * Contributors: Michael Breidenband (brox IT Solutions GmbH) - initial creator
+  **********************************************************************************************************************/
+-->
+<xs:schema elementFormDefault="qualified"
+  attributeFormDefault="unqualified"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:redefine schemaLocation="../../org.eclipse.smila.connectivity.framework.schema/schemas/RootDataSourceConnectionConfigSchema.xsd">
+    <xs:complexType name="Process">
+      <xs:annotation>
+        <xs:documentation>
+          Process Specification
+        </xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+        <xs:extension base="Process">
+          <xs:sequence>
+            <xs:element name="Selections">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Grouping"
+                    minOccurs="0">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element
+                          name="Stepping" type="xs:positiveInteger" />
+                        <xs:element name="SQL"
+                          type="xs:string" />
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="SQL"
+                    type="xs:string" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="Database">
+              <xs:annotation>
+                <xs:documentation>
+                  Database connection information
+                </xs:documentation>
+              </xs:annotation>
+              <xs:complexType>
+                <xs:attribute name="Connection"
+                  use="required">
+                  <xs:simpleType>
+                    <xs:restriction
+                      base="xs:string">
+                      <xs:pattern
+                        value="jdbc:oracle:thin:@[\w\.\-]+:\d+:\w+" />
+                      <xs:pattern
+                        value="jdbc:microsoft:sqlserver://[\w\.\-]+:\d+(;(DatabaseName|HostProcess|NetAddress|Password|PortNumber|ProgramName|SelectMethod|SendStringParametersAsUnicode|ServerName|User)=[\w\i]+)*" />
+                      <xs:pattern
+                        value="jdbc:sqlserver://[\w\.\-]+:\d+(;(DatabaseName|HostProcess|NetAddress|Password|PortNumber|ProgramName|SelectMethod|SendStringParametersAsUnicode|ServerName|User)=[\w\i]+)*" />
+                      <xs:pattern
+                        value="jdbc:odbc:[\w\.\-]+" />
+                      <xs:pattern
+                        value="jdbc:derby:[\w\.\-\\:/]+" />
+                      <!-- please modify the connection string restriction in case of custom jdbc drivers -->
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:attribute>
+                <xs:attribute name="User"
+                  type="xs:string" use="required" />
+                <xs:attribute name="Password"
+                  type="xs:string" use="required" />
+                <xs:attribute name="FetchSize"
+                  type="xs:int" use="required" />
+                <xs:attribute name="JdbcDriver"
+                  type="xs:string" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="Attribute">
+      <xs:complexContent>
+        <xs:extension base="Attribute">
+          <xs:sequence>
+            <xs:element name="ColumnName" type="xs:string" />
+            <xs:element name="SqlType">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:enumeration value="string" />
+                  <xs:enumeration value="long" />
+                  <xs:enumeration value="date" />
+                  <xs:enumeration value="double" />
+                  <xs:enumeration value="blob" />
+                  <xs:enumeration value="clob" />
+                  <xs:enumeration value="boolean" />
+                  <xs:enumeration value="byte[]" />
+                  <xs:enumeration value="timestamp" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+          </xs:sequence>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:redefine>
+</xs:schema>

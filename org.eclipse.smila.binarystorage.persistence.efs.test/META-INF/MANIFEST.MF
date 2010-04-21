@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: BinaryStorage EFS Persistence Test Plug-in (Incubation)
+Bundle-SymbolicName: org.eclipse.smila.binarystorage.persistence.efs.test
+Bundle-Version: 0.7.0
+Import-Package: junit.framework;version="[3.8.0,4.0.0)",
+ org.apache.commons.logging;version="1.1.1",
+ org.eclipse.smila.binarystorage;version="0.7.0",
+ org.eclipse.smila.binarystorage.config;version="0.7.0",
+ org.eclipse.smila.binarystorage.persistence;version="0.7.0",
+ org.eclipse.smila.test,
+ org.eclipse.smila.utils.workspace;version="0.7.0"
+Bundle-Vendor: empolis GmbH and brox IT Solutions GmbH
+Export-Package: org.eclipse.smila.binarystorage.persistence.efs.test;version="0.7.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

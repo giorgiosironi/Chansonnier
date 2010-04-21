@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Zip CompoundHandler Plug-in
+Bundle-SymbolicName: org.eclipse.smila.connectivity.framework.compound.zip
+Bundle-Version: 0.7.0
+Bundle-Vendor: empolis GmbH
+Import-Package: org.apache.commons.io;version="1.4.0",
+ org.apache.commons.logging;version="1.0.4",
+ org.eclipse.smila.connectivity.framework;version="0.7.0",
+ org.eclipse.smila.connectivity.framework.compound;version="0.7.0",
+ org.eclipse.smila.connectivity.framework.schema;version="0.7.0",
+ org.eclipse.smila.connectivity.framework.schema.config;version="0.7.0",
+ org.eclipse.smila.connectivity.framework.util;version="0.7.0",
+ org.eclipse.smila.datamodel.id;version="0.7.0",
+ org.eclipse.smila.datamodel.record;version="0.7.0",
+ org.eclipse.smila.datamodel.tools;version="0.7.0",
+ org.eclipse.smila.utils.file;version="0.7.0",
+ org.eclipse.smila.utils.workspace;version="0.7.0"
+Service-Component: OSGI-INF/zip_compoundhandler.xml,
+ OSGI-INF/zip_compoundcrawler.xml
+Export-Package: org.eclipse.smila.connectivity.framework.compound.zip;version="0.7.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

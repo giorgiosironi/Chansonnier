@@ -1,0 +1,27 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: XML JobFile Agent Plug-in
+Bundle-SymbolicName: org.eclipse.smila.connectivity.framework.agent.jobfile;singleton:=true
+Bundle-Version: 0.7.0
+Bundle-Vendor: empolis GmbH
+Import-Package: org.apache.commons.httpclient;version="3.1.0",
+ org.apache.commons.httpclient.methods;version="3.1.0",
+ org.apache.commons.io;version="1.4.0",
+ org.apache.commons.logging;version="1.1.0",
+ org.eclipse.smila.connectivity.framework;version="0.7.0",
+ org.eclipse.smila.connectivity.framework.schema;version="0.7.0",
+ org.eclipse.smila.connectivity.framework.schema.config;version="0.7.0",
+ org.eclipse.smila.connectivity.framework.schema.config.interfaces;version="0.7.0",
+ org.eclipse.smila.connectivity.framework.schema.tools;version="0.7.0",
+ org.eclipse.smila.connectivity.framework.util;version="0.7.0",
+ org.eclipse.smila.datamodel.id;version="0.7.0",
+ org.eclipse.smila.datamodel.id.stax;version="0.7.0",
+ org.eclipse.smila.datamodel.record;version="0.7.0",
+ org.eclipse.smila.datamodel.record.stax;version="0.7.0",
+ org.osgi.framework;version="1.4.0",
+ org.osgi.service.component;version="1.0.0"
+Service-Component: OSGI-INF/jobfileagent.xml
+Export-Package: org.eclipse.smila.connectivity.framework.agent.jobfile;version="0.7.0",
+ org.eclipse.smila.connectivity.framework.agent.jobfile.messages;version="0.7.0"
+Bundle-Activator: org.eclipse.smila.connectivity.framework.agent.jobfile.Activator
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

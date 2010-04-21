@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SMILA Product Bundle (Incubation)
+Bundle-SymbolicName: org.eclipse.smila.product;singleton:=true
+Bundle-Version: 0.7.0
+Bundle-Vendor: empolis GmbH and brox IT Solutions GmbH
+Require-Bundle: org.eclipse.core.runtime
+Import-Package: org.osgi.framework;version="1.4.0"
+Export-Package: org.eclipse.smila.product;version="0.7.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

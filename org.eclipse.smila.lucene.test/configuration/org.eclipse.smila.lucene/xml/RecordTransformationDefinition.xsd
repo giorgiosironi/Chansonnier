@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v2004 rel. 4 U (http://www.xmlspy.com) by Georg Schmidt (BROX IT-Solutions GmbH) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ps="http://www.brox.de/ParameterSet" xmlns="http://www.anyfinder.de/RecordTransformation/Definition" targetNamespace="http://www.anyfinder.de/RecordTransformation/Definition" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.brox.de/ParameterSet" schemaLocation="configuration/org.eclipse.smila.lucene/xml/ParameterSet.xsd"/>
+	<xs:element name="RecordTransformationDefinition">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="Mapping">
+					<xs:attribute name="Name" type="xs:normalizedString" use="required"/>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="Mapping">
+		<xs:sequence>
+			<xs:element name="FieldMappings">
+				<xs:annotation>
+					<xs:documentation>Mapping between source and index fields</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="FieldMapping" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="KeyMappings">
+				<xs:annotation>
+					<xs:documentation>Mapping between source and key fields</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="FieldMapping" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="FieldMapping">
+		<xs:annotation>
+			<xs:documentation>Mapping between source and target fields</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>TransformationDefinition</xs:documentation>
+				</xs:annotation>
+				<xs:element name="Strategy" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="ps:ParameterSet"/>
+						</xs:sequence>
+						<xs:attribute name="Name" type="xs:string" use="required"/>
+						<xs:attribute name="StateID" type="xs:string" use="optional"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="ReturnType">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="String"/>
+							<xs:enumeration value="Text"/>
+							<xs:enumeration value="Integer"/>
+							<xs:enumeration value="Long"/>
+							<xs:enumeration value="Double"/>
+							<xs:enumeration value="Float"/>
+							<xs:enumeration value="Date"/>
+							<xs:enumeration value="DateTime"/>
+							<xs:enumeration value="Binary"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="FieldNo" type="xs:nonNegativeInteger" use="required"/>
+			<xs:attribute name="Name" type="xs:string" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

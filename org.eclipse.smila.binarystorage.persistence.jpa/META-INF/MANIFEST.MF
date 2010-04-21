@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: BinaryStorage Persistence Jpa Plug-in
+Bundle-SymbolicName: org.eclipse.smila.binarystorage.persistence.jpa
+Bundle-Version: 0.7.0
+Bundle-Vendor: empolis GmbH
+Import-Package: javax.persistence;version="1.99.0",
+ org.apache.commons.io;version="1.4.0",
+ org.apache.commons.logging;version="1.0.4",
+ org.apache.derby.jdbc;version="10.5.1.1",
+ org.eclipse.smila.binarystorage;version="0.7.0",
+ org.eclipse.smila.binarystorage.config;version="0.7.0",
+ org.eclipse.smila.binarystorage.persistence;version="0.7.0",
+ org.eclipse.smila.utils.config;version="0.7.0",
+ org.eclipse.smila.utils.workspace;version="0.7.0"
+JPA-PersistenceUnits: SmilaBinaryObject
+Eclipse-RegisterBuddy: org.eclipse.smila.binarystorage.impl
+Export-Package: org.eclipse.smila.binarystorage.persistence.jpa;version="0.7.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

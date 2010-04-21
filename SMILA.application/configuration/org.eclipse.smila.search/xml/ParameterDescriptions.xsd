@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/***********************************************************************************************************************
+ * Copyright (c) 2008 empolis GmbH and brox IT Solutions GmbH. All rights reserved. This program and the accompanying
+ * materials are made available under the terms of the Eclipse Public License v1.0 which accompanies this distribution,
+ * and is available at http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors: Georg Schmidt (brox IT Solutions GmbH) - initial creator
+ **********************************************************************************************************************/
+-->
+<xs:schema targetNamespace="http://www.anyfinder.de/ParameterDescriptions" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.anyfinder.de/ParameterDescriptions" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:element name="ParameterDescriptions">
+    <xs:annotation>
+      <xs:documentation>Comment describing your root element</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="ParameterDescription" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Attribute" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:attribute name="Name" type="xs:normalizedString" use="required"/>
+                  <xs:attribute name="Visible" type="xs:boolean" use="required"/>
+                  <xs:attribute name="DefaultValue" type="xs:normalizedString" use="optional"/>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="ProcessRequiredFields" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Name" type="xs:normalizedString" maxOccurs="unbounded">
+                      <xs:keyref name="AttributeName-Ref" refer="AttributeName">
+                        <xs:selector xpath="."/>
+                        <xs:field xpath="."/>
+                      </xs:keyref>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+                <xs:unique name="Names">
+                  <xs:selector xpath="Name"/>
+                  <xs:field xpath="."/>
+                </xs:unique>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="Name" use="required">
+              <xs:simpleType>
+                <xs:restriction base="xs:normalizedString">
+                  <xs:enumeration value="TextField"/>
+                  <xs:enumeration value="NumberField"/>
+                  <xs:enumeration value="DateField"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+          </xs:complexType>
+          <xs:key name="AttributeName">
+            <xs:selector xpath="Attribute"/>
+            <xs:field xpath="@Name"/>
+          </xs:key>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+    <xs:unique name="ParameterDescription">
+      <xs:selector xpath="ParameterDescription"/>
+      <xs:field xpath="@Name"/>
+    </xs:unique>
+  </xs:element>
+</xs:schema>

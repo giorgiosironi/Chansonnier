@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/***********************************************************************************************************************
+ * Copyright (c) 2008 empolis GmbH and brox IT Solutions GmbH. All rights reserved. This program and the accompanying
+ * materials are made available under the terms of the Eclipse Public License v1.0 which accompanies this distribution,
+ * and is available at http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors: Alexander Eliseyev (brox IT Solutions GmbH) - initial design
+ *               Igor Novakovic (Empolis GmbH)
+ **********************************************************************************************************************/
+-->
+<xs:schema
+  targetNamespace="http://www.eclipse.org/smila/binarystorage"
+  elementFormDefault="qualified"
+  attributeFormDefault="unqualified"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns="http://www.eclipse.org/smila/binarystorage"
+>
+
+  <xs:element name="BinaryStorageConfiguration">
+    <xs:complexType>
+    	<xs:attribute name="name" type="xs:string" use="required" />
+    	<xs:attribute name="provider" type="xs:string" use="required" />
+    	<xs:attribute name="mountPoint" type="xs:string" use="required" />
+    	<xs:attribute name="implementationClass" type="xs:string" use="required" />
+    	<xs:attribute name="tempFileName" type="xs:string" use="optional" />
+    	<xs:attribute name="tempPath" type="xs:string" use="optional" />
+    	<xs:attribute name="user" type="xs:string" use="optional" />
+    	<xs:attribute name="path" type="xs:string" use="optional" />
+    	<xs:attribute name="pathDepth" type="xs:int" use="optional" />
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

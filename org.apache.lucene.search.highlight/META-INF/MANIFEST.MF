@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Apache Lucene Highlighter Plug-in (Incubation)
+Bundle-SymbolicName: org.apache.lucene.search.highlight
+Bundle-Version: 2.3.2
+Bundle-Vendor: Empolis GmbH and brox IT-Solutions GmbH
+Bundle-ClassPath: lucene-highlighter-2.3.2.jar
+Export-Package: org.apache.lucene.search.highlight;version="2.3.2"
+Import-Package: org.apache.lucene.analysis;version="2.3.2",
+ org.apache.lucene.index;version="2.3.2",
+ org.apache.lucene.search;version="2.3.2",
+ org.apache.lucene.util;version="2.3.2"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/***********************************************************************************************************************
+ * Copyright (c) 2008 empolis GmbH and brox IT Solutions GmbH. All rights reserved. This program and the accompanying
+ * materials are made available under the terms of the Eclipse Public License v1.0 which accompanies this distribution,
+ * and is available at http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors: Ivan Churkin (brox IT Solutions GmbH) - initial creator
+ **********************************************************************************************************************/
+-->
+<xs:schema elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:jxb="http://java.sun.com/xml/ns/jaxb" 
+  xmlns:ext="http://xml.w-wins.com/xjc-plugins/interfaces"
+  jxb:extensionBindingPrefixes="ext"
+>
+  <!-- simple types -->  
+  <xs:simpleType name="MimeTypeAttributeType">
+    <xs:annotation>
+      <xs:appinfo>
+        <jxb:class ref="org.eclipse.smila.connectivity.framework.schema.config.MimeTypeAttributeType"/>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="FileExtension"/>
+      <xs:enumeration value="Content"/>
+      <xs:enumeration value="MimeType"/>
+    </xs:restriction>
+  </xs:simpleType>
+      
+  <xs:simpleType name="ElementAttributeType">
+    <xs:annotation>
+      <xs:appinfo>
+        <jxb:class ref="org.eclipse.smila.connectivity.framework.schema.config.ElementAttributeType"/>
+      </xs:appinfo>
+    </xs:annotation>  
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Path"/>
+      <xs:enumeration value="Size"/>
+      <xs:enumeration value="LastModifiedDate"/>
+      <xs:enumeration value="Content"/>
+      <xs:enumeration value="Name"/>
+      <xs:enumeration value="FileExtension"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:simpleType name="DeltaIndexingType">
+    <xs:annotation>
+      <xs:appinfo>
+        <jxb:class ref="org.eclipse.smila.connectivity.framework.schema.config.DeltaIndexingType"/>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="full"/>
+      <xs:pattern value="additive"/>
+      <xs:pattern value="initial"/>
+      <xs:pattern value="disabled"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+  
+
+  <!-- complex types -->  
+ 
+  <xs:complexType name="Attribute">
+    <xs:annotation>
+      <xs:appinfo>
+        <ext:interface>org.eclipse.smila.connectivity.framework.schema.config.interfaces.IAttribute</ext:interface>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:attribute name="KeyAttribute" type="xs:boolean" use="optional" default="false"/>
+    <xs:attribute name="HashAttribute" type="xs:boolean" use="optional" default="false"/>
+    <xs:attribute name="Name" type="xs:string" use="required"/>
+    <xs:attribute name="Type" type="xs:string" use="required"/>
+    <xs:attribute name="MimeTypeAttribute" use="optional" type="MimeTypeAttributeType"/>
+    <xs:attribute name="Attachment" type="xs:boolean" use="optional" default="false"/>    
+  </xs:complexType>
+  
+  <xs:complexType name="Process">
+    <xs:annotation>
+      <xs:documentation>Process Specification</xs:documentation>
+      <xs:appinfo>
+        <ext:interface>org.eclipse.smila.connectivity.framework.schema.config.interfaces.IProcess</ext:interface>
+      </xs:appinfo>
+    </xs:annotation>
+  </xs:complexType>
+  
+  
+  <xs:complexType name="CompoundHandling">
+    <xs:annotation>
+      <xs:documentation>CompoundHandling Specification</xs:documentation>
+      <xs:appinfo>
+      	<jxb:class ref="org.eclipse.smila.connectivity.framework.schema.config.CompoundHandling"/>
+      </xs:appinfo>
+    </xs:annotation>
+      <xs:sequence>
+      	<!-- it is required to configure at least one of the attributes MimeTypeAttribute or ExtensionAttribute or both //-->
+      	<xs:choice>
+        	<xs:sequence>
+		        <xs:element name="MimeTypeAttribute" type="xs:string" minOccurs="1" maxOccurs="1"/>
+		        <xs:element name="ExtensionAttribute" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			</xs:sequence>
+	        <xs:element name="ExtensionAttribute" type="xs:string" minOccurs="1" maxOccurs="1"/>		        
+        </xs:choice>        
+        <xs:element name="ContentAttachment" type="xs:string" minOccurs="1" maxOccurs="1"/>
+		<xs:element name="CompoundAttributes">
+          <xs:complexType>
+            <xs:sequence maxOccurs="unbounded">
+              <xs:element name="CompoundAttribute" >              
+	              <xs:complexType>	              
+		              <xs:choice>
+				        <xs:element name="ElementAttribute" type="ElementAttributeType"/>
+					  </xs:choice>
+					  <xs:attribute name="Name" type="xs:string" use="required"/>
+					  <xs:attribute name="Type" type="xs:string" use="required"/>
+    			      <xs:attribute name="Attachment" type="xs:boolean" use="optional" default="false"/>    					  
+				  </xs:complexType>
+			  </xs:element>				
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+  </xs:complexType>
+  
+  
+  <xs:element name="DataSourceConnectionConfig">
+    <xs:annotation>
+      <xs:appinfo>
+        <jxb:class ref="org.eclipse.smila.connectivity.framework.schema.config.DataSourceConnectionConfig"/>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="DataSourceID" type="xs:string"/>
+        <xs:element name="SchemaID" type="xs:string"/>
+        <xs:element name="DataConnectionID" >
+          <xs:complexType>
+            <xs:choice>
+              <xs:element name="Agent" type="xs:string"/>
+              <xs:element name="Crawler" type="xs:string"/>
+            </xs:choice>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="RecordBuffer" minOccurs="0" maxOccurs="1" >
+        	<xs:complexType>	              
+			  <xs:attribute name="Size" type="xs:nonNegativeInteger" use="optional" default="1"/>
+		      <xs:attribute name="FlushInterval" type="xs:nonNegativeInteger" use="optional" default="1000"/>    					  
+			</xs:complexType>
+		</xs:element>		  
+        <xs:element name="DeltaIndexing" type="DeltaIndexingType"/>
+        <xs:element name="CompoundHandling" type="CompoundHandling" minOccurs="0" maxOccurs="1"/>
+        <xs:element name="Attributes">
+          <xs:complexType>
+            <xs:sequence maxOccurs="unbounded">
+              <xs:element name="Attribute" type="Attribute"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Process" type="Process"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+</xs:schema>

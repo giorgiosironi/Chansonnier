@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.eclipse.org/smila/ontology"
+	xmlns:tns="http://www.eclipse.org/smila/ontology" elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+	<element name="SesameConfiguration">
+		<complexType>
+			<sequence>
+				<element ref="tns:RepositoryConfig" minOccurs="1" maxOccurs="unbounded" />
+			</sequence>
+			<attribute name="default" type="string" use="required" />
+		</complexType>
+	</element>
+
+	<element name="RepositoryConfig">
+		<complexType>
+
+			<choice minOccurs="1" maxOccurs="1">
+				<sequence minOccurs="1" maxOccurs="1">
+					<choice minOccurs="1" maxOccurs="1">
+						<element ref="tns:MemoryStore" minOccurs="1" maxOccurs="1" />
+						<element ref="tns:NativeStore" minOccurs="1" maxOccurs="1" />
+						<element ref="tns:RdbmsStore" minOccurs="1" maxOccurs="1" />
+					</choice>
+					<element ref="tns:Stackable" minOccurs="0" maxOccurs="unbounded" />
+				</sequence>
+				<element ref="tns:HttpStore" minOccurs="1" maxOccurs="1" />
+			</choice>
+			<attribute name="name" type="string" use="required" />
+		</complexType>
+	</element>
+
+	<element name="MemoryStore">
+		<complexType>
+			<attribute name="persist" type="boolean" default="false" use="optional" />
+			<attribute name="syncDelay" type="int" default="0" use="optional" />
+		</complexType>
+	</element>
+
+	<element name="NativeStore">
+		<complexType>
+			<attribute name="indexes" type="string" use="optional" />
+			<attribute name="forceSync" type="boolean" default="false" use="optional" />
+		</complexType>
+	</element>
+
+	<element name="RdbmsStore">
+		<complexType>
+			<group ref="tns:UrlConnection" />
+			<attribute name="driver" type="string" use="required" />
+			<attribute name="maxTripleTables" type="int" default="1" use="optional" />
+			<attribute name="indexed" type="boolean" default="true" use="optional" />
+			<attribute name="sequenced" type="boolean" default="true" use="optional" />
+		</complexType>
+	</element>
+
+	<element name="HttpStore">
+		<complexType>
+			<group ref="tns:UrlConnection" />
+			<attribute name="repositoryId" type="string" use="required" />
+		</complexType>
+	</element>
+
+	<element name="Stackable">
+		<complexType>
+			<attribute name="classname" type="string" use="required" />
+		</complexType>
+	</element>
+
+	<group name="UrlConnection">
+		<sequence>
+			<element name="Url" type="anyURI" minOccurs="1" maxOccurs="1" />
+			<sequence minOccurs="0" maxOccurs="1">
+				<element name="User" type="string" minOccurs="1" maxOccurs="1" />
+				<element name="Password" type="string" minOccurs="1" maxOccurs="1" />
+			</sequence>
+		</sequence>
+	</group>
+
+</schema>

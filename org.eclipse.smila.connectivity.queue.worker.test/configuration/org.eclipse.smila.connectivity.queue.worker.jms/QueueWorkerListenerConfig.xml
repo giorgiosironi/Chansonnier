@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/***********************************************************************************************************************
+ * Copyright (c) 2008 empolis GmbH and brox IT Solutions GmbH. All rights reserved. This program and the accompanying
+ * materials are made available under the terms of the Eclipse Public License v1.0 which accompanies this distribution,
+ * and is available at http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors: Ivan Churkin (brox IT Solutions GmbH) - initial creator
+ **********************************************************************************************************************/
+-->
+<QueueWorkerListenerConfig xmlns="http://www.eclipse.org/smila/queue">
+
+  <Rule Name="First ADD Rule">
+    <Source BrokerId="broker1" Queue="queue1"/>
+    <Condition>doSomething='yes'</Condition>
+    <Task>
+      <Process Workflow="EchoPipeline"/>
+      <Send BrokerId="broker1" Queue="queue1" RecordFilter="no-filter">
+        <SetProperty Name="doSomething">no</SetProperty>
+      </Send>
+    </Task>
+  </Rule>
+  
+  <Rule Name="Second ADD Rule" WaitMessageTimeout="5">
+    <Source BrokerId="broker1" Queue="queue1"/>
+    <Condition>doSomething='no'</Condition>
+    <Task>
+      <Process Workflow="EchoPipeline"/>
+    </Task>
+  </Rule>
+  
+  <Rule Name="Third ADD Rule">
+    <Source BrokerId="broker1" Queue="queue1"/>
+    <Condition>DataSourceID='source2'</Condition>
+    <Task>
+      <Process Workflow="SimplePipeline"/>
+    </Task>
+  </Rule>
+  
+  <Rule Name="4th ADD Rule">
+    <Source BrokerId="broker1" Queue="queue1"/>
+    <Condition>Operation='ADD' and DataSourceID='source3'</Condition>
+    <Task>
+      <Send BrokerId="broker1" Queue="queue1">
+        <SetProperty Name="Operation">QQ</SetProperty>
+      </Send>
+    </Task>
+  </Rule>
+  
+  <Rule Name="5th ADD Rule">
+    <Source BrokerId="broker1" Queue="queue1"/>
+    <Condition>Operation='QQ' and DataSourceID='source3'</Condition>
+    <Task>
+      <Process Workflow="SimplePipeline"/>
+    </Task>
+  </Rule>
+  
+  <!-- Rules Will Cause Exceptions and record goes to DLQ-->
+  
+  <Rule Name="DLQ ADD - no_broker" WaitMessageTimeout="5">
+    <Source BrokerId="broker1" Queue="queue1"/>
+    <Condition>DataSourceID='error_no_broker'</Condition>
+    <Task>
+      <Send BrokerId="no_broker" Queue="queue"/>
+    </Task>
+  </Rule>
+    
+  <Rule Name="DLQ ADD - ErrorNOPipeline" WaitMessageTimeout="5">
+    <Source BrokerId="broker1" Queue="queue1"/>
+    <Condition>DataSourceID='error_ErrorNOPipeline'</Condition>
+    <Task>
+      <Process Workflow="ErrorNOPipeline"/>
+    </Task>
+  </Rule>
+  
+  <Rule Name="DLQ ADD - ErrorPipeletPipeline" WaitMessageTimeout="5">
+    <Source BrokerId="broker1" Queue="queue1"/>
+    <Condition>DataSourceID='error_ErrorPipeletPipeline'</Condition>
+    <Task>
+      <Process Workflow="ErrorPipeletPipeline"/>
+    </Task>
+  </Rule>
+
+</QueueWorkerListenerConfig>

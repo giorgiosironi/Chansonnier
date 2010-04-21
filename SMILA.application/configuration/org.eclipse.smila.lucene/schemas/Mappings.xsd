@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/***********************************************************************************************************************
+ * Copyright (c) 2008 empolis GmbH and brox IT Solutions GmbH. All rights reserved. This program and the accompanying
+ * materials are made available under the terms of the Eclipse Public License v1.0 which accompanies this distribution,
+ * and is available at http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors: Stucky (empolis GmbH) - initial API and implementation
+ **********************************************************************************************************************/
+-->
+<xs:schema
+  targetNamespace="http://www.eclipse.org/smila/lucene"
+  elementFormDefault="qualified"
+  attributeFormDefault="unqualified"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns="http://www.eclipse.org/smila/lucene"
+>
+  
+  <xs:element name="Mappings">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Mapping" type="Mapping" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:complexType name="Mapping">
+    <xs:sequence>
+      <xs:element name="Attributes" type="Attributes"/>
+      <xs:element name="Attachments" type="Attachments"/>
+    </xs:sequence>
+    <xs:attribute name="indexName" type="xs:string" use="required"/>
+  </xs:complexType>
+  
+  <xs:complexType name="Attributes">
+    <xs:sequence>
+      <xs:element name="Attribute" type="Attribute" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="Attachments">
+    <xs:sequence>
+      <xs:element name="Attachment" type="Attachment" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="Metadata" abstract="true">
+    <xs:attribute name="name" type="xs:string" use="required"/>
+    <xs:attribute name="fieldNo" type="xs:int"  use="required"/>
+  </xs:complexType>
+  
+  <xs:complexType name="Attribute">
+    <xs:complexContent>
+      <xs:extension base="Metadata"/>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <xs:complexType name="Attachment">
+    <xs:complexContent>
+      <xs:extension base="Metadata"/>
+    </xs:complexContent>
+  </xs:complexType>
+  
+</xs:schema>

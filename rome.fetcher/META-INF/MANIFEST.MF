@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: ROME Fetcher Plug-in
+Bundle-SymbolicName: rome.fetcher
+Bundle-Version: 1.0.0
+Bundle-ClassPath: rome-fetcher-1.0.jar,
+ resources/
+Bundle-Vendor: Empolis GmbH and brox IT-Solutions GmbH
+Export-Package: com.sun.syndication.fetcher;version="1.0.0",
+ com.sun.syndication.fetcher.impl;version="1.0.0",
+ com.sun.syndication.fetcher.samples;version="1.0.0"
+Import-Package: com.sun.syndication.feed.impl,
+ com.sun.syndication.feed.synd,
+ com.sun.syndication.io
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Security Processing Plug-in (Incubation)
+Bundle-SymbolicName: org.eclipse.smila.security.processing
+Bundle-Version: 0.7.0
+Bundle-Vendor: empolis GmbH
+Import-Package: org.apache.commons.io;version="1.4.0",
+ org.apache.commons.logging;version="1.1.0",
+ org.eclipse.smila.blackboard;version="0.7.0",
+ org.eclipse.smila.blackboard.path;version="0.7.0",
+ org.eclipse.smila.datamodel.id;version="0.7.0",
+ org.eclipse.smila.datamodel.record;version="0.7.0",
+ org.eclipse.smila.datamodel.tools.record.filter;version="0.7.0",
+ org.eclipse.smila.processing;version="0.7.0",
+ org.eclipse.smila.processing.configuration;version="0.7.0",
+ org.eclipse.smila.processing.parameters;version="0.7.0",
+ org.eclipse.smila.security;version="0.7.0",
+ org.eclipse.smila.utils.config;version="0.7.0",
+ org.osgi.service.component;version="1.0.0"
+Service-Component: OSGI-INF/sample_security_converter.xml
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

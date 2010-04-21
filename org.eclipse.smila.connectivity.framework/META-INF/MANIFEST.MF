@@ -1,0 +1,27 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Connectivity Framework Plug-in (Incubation)
+Bundle-SymbolicName: org.eclipse.smila.connectivity.framework;singleton:=true
+Bundle-Version: 0.7.0
+Import-Package: org.apache.commons.beanutils;version="1.7.0",
+ org.apache.commons.logging;version="1.1.1",
+ org.eclipse.smila.connectivity;version="0.7.0",
+ org.eclipse.smila.connectivity.framework.schema;version="0.7.0",
+ org.eclipse.smila.connectivity.framework.schema.config;version="0.7.0",
+ org.eclipse.smila.datamodel.id;version="0.7.0",
+ org.eclipse.smila.datamodel.record;version="0.7.0",
+ org.eclipse.smila.datamodel.tools;version="0.7.0",
+ org.eclipse.smila.management;version="0.7.0",
+ org.eclipse.smila.management.error;version="0.7.0",
+ org.eclipse.smila.management.performance;version="0.7.0",
+ org.eclipse.smila.utils.config;version="0.7.0",
+ org.eclipse.smila.utils.digest;version="0.7.0",
+ org.eclipse.smila.utils.log;version="0.7.0",
+ org.osgi.framework;version="1.3.0",
+ org.osgi.service.component;version="1.0.0"
+Bundle-Vendor: empolis GmbH and brox IT Solutions GmbH
+Export-Package: org.eclipse.smila.connectivity.framework;version="0.7.0",
+ org.eclipse.smila.connectivity.framework.compound;version="0.7.0",
+ org.eclipse.smila.connectivity.framework.performancecounters;version="0.7.0",
+ org.eclipse.smila.connectivity.framework.util;version="0.7.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

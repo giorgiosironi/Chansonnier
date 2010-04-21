@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<!--
+/***********************************************************************************************************************
+ * Copyright (c) 2008 empolis GmbH and brox IT Solutions GmbH. All rights reserved. This program and the accompanying
+ * materials are made available under the terms of the Eclipse Public License v1.0 which accompanies this distribution,
+ * and is available at http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors: Daniel Stucky (empolis GmbH) - initial creator
+ **********************************************************************************************************************/
+-->
+<plugin>
+   <extension-point id="org.eclipse.smila.search.plugin" name="EIF Plugin" schema="schema/org.eclipse.smila.search.plugin.exsd"/>
+   <extension-point id="org.eclipse.smila.search.templates.nodetransformer" name="EIF Node Transformer" schema="schema/org.eclipse.smila.search.templates.nodetransformer.exsd"/>
+   <extension
+         id="ddaccess"
+         name="ddaccess"
+         point="org.eclipse.smila.search.datadictionary.access">
+      <DataDictionaryAccess
+            Clazz="org.eclipse.smila.search.lucene.DataDictionaryAccess">
+      </DataDictionaryAccess>
+   </extension>
+   <extension
+         id="isaccess"
+         name="isaccess"
+         point="org.eclipse.smila.search.utils.indexstructure.access">
+      <IndexStructureAccess
+            Clazz="org.eclipse.smila.search.lucene.IndexStructureAccess">
+      </IndexStructureAccess>
+   </extension>
+   <extension
+         point="org.eclipse.smila.search.utils.search.access">
+      <SearchAccess
+            Clazz="org.eclipse.smila.search.lucene.SearchAccess">
+      </SearchAccess>
+   </extension>
+   <extension
+         point="org.eclipse.smila.search.plugin">
+      <Plugin
+            Clazz="org.eclipse.smila.search.lucene.Plugin">
+      </Plugin>
+   </extension>
+   <extension
+         point="org.eclipse.smila.search.utils.advsearch.access">
+      <AdvSearch
+            Clazz="org.eclipse.smila.search.lucene.AdvSearchAccess">
+      </AdvSearch>
+   </extension>
+   <extension
+         point="org.eclipse.smila.search.templates.nodetransformer">
+      <NodeTransformer
+            ClassName="org.eclipse.smila.search.lucene.templates.transformer.CaseInsensitiveNodeTransformer"
+            Description="This node transformer transforms a given AnyFinder Search node to a corresponding AdvSearch node structure. Terms will be searched in both upper and lower case (&quot;Computer&quot; will be searched for as &quot;Computer&quot; and &quot;computer&quot;, &quot;gehen&quot; will be searched for as &quot;gehen&quot; and &quot;Gehen&quot;."
+            Name="urn:CaseInsensitiveNodeTransformer">
+      </NodeTransformer>
+   </extension>
+   <extension
+         point="org.eclipse.smila.search.templates.nodetransformer">
+      <NodeTransformer
+            ClassName="org.eclipse.smila.search.lucene.templates.transformer.DateNodeTransformer"
+            Description="This node transformer transforms a given AnyFinder Search node to date range node. One edge of the query is the current date."
+            Name="urn:DateNodeTransformer">
+      </NodeTransformer>
+   </extension>
+   <extension
+         point="org.eclipse.smila.search.templates.nodetransformer">
+      <NodeTransformer
+            ClassName="org.eclipse.smila.search.lucene.templates.transformer.SynonymNodeTransformer"
+            Description="Special node trasformer with synonym grammar support. {(-)phrase(#--&gt;#abbildung)} {(-)phrase(#--&gt;#abbildung)} ..."
+            Name="urn:SynonymNodeTransformer">
+      </NodeTransformer>
+   </extension>
+   <extension
+         point="org.eclipse.smila.search.templates.nodetransformer">
+      <NodeTransformer
+            ClassName="org.eclipse.smila.search.lucene.templates.transformer.SimpleNodeTransformer"
+            Description="The simple node transformer transforms a given AnyFinder Search node to a corresponding AdvSearch node structure."
+            Name="urn:SimpleNodeTransformer">
+      </NodeTransformer>
+   </extension>
+   <extension
+         point="org.eclipse.smila.search.templates.nodetransformer">
+      <NodeTransformer
+            ClassName="org.eclipse.smila.search.lucene.templates.transformer.ExtendedNodeTransformer"
+            Description="The extended node transformer transforms a given AnyFinder Search node to a corresponding AdvSearch node structure using simple grammars."
+            Name="urn:ExtendedNodeTransformer">
+      </NodeTransformer>
+   </extension>
+
+</plugin>

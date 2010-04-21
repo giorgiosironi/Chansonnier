@@ -1,0 +1,1 @@
+run.bat reorganizeIndex test_index

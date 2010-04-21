@@ -1,0 +1,30 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: utils Test Plug-in (Incubation)
+Bundle-SymbolicName: org.eclipse.smila.utils.test;singleton:=true
+Bundle-Version: 0.7.0
+Bundle-Vendor: empolis GmbH and brox IT Solutions GmbH
+Import-Package: junit.framework;version="[3.8.0,4.0.0)",
+ org.apache.commons.beanutils;version="1.7.0",
+ org.apache.commons.io;version="1.4.0",
+ org.apache.commons.logging;version="1.1.1",
+ org.eclipse.core.runtime,
+ org.eclipse.smila.test;version="0.7.0",
+ org.eclipse.smila.utils;version="0.7.0",
+ org.eclipse.smila.utils.collections;version="0.7.0",
+ org.eclipse.smila.utils.compression;version="0.7.0",
+ org.eclipse.smila.utils.config;version="0.7.0",
+ org.eclipse.smila.utils.conversion;version="0.7.0",
+ org.eclipse.smila.utils.digest;version="0.7.0",
+ org.eclipse.smila.utils.extensions;version="0.7.0",
+ org.eclipse.smila.utils.file;version="0.7.0",
+ org.eclipse.smila.utils.jaxb;version="0.7.0",
+ org.eclipse.smila.utils.log;version="0.7.0",
+ org.eclipse.smila.utils.scriptexecution;version="0.7.0",
+ org.eclipse.smila.utils.service;version="0.7.0",
+ org.eclipse.smila.utils.workspace;version="0.7.0",
+ org.eclipse.smila.utils.xml;version="0.7.0",
+ org.eclipse.smila.utils.xml.stax;version="0.7.0",
+ org.osgi.framework;version="1.4.0"
+Export-Package: org.eclipse.smila.utils.test.interfaces;version="0.7.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

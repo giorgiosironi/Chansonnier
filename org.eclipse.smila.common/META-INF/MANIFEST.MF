@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SMILA Common Plug-in
+Bundle-SymbolicName: org.eclipse.smila.common
+Bundle-Version: 0.7.0
+Bundle-Vendor: empolis GmbH
+Export-Package: org.eclipse.smila.common.mimetype;version="0.7.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

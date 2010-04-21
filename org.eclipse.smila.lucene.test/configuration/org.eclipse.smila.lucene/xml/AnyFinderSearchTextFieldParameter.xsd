@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XML Spy v4.4 U (http://www.xmlspy.com) by August Georg Schmidt (BROX IT-Solutions GmbH) -->
+<xs:schema targetNamespace="http://www.anyfinder.de/Search/TextField" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.anyfinder.de/Search/TextField" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="Parameter">
+		<xs:annotation>
+			<xs:documentation>Search Technology dependant parameter settings.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="Operator" use="optional">
+				<xs:simpleType>
+					<xs:restriction base="xs:normalizedString">
+						<xs:enumeration value="AND"/>
+						<xs:enumeration value="OR"/>
+						<xs:enumeration value="PHRASE"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="CodecClass" type="xs:string" use="optional" fixed="org.eclipse.smila.search.lucene.tools.search.lucene.DTextFieldParameterCodec"/>
+			<xs:attribute name="Tolerance" use="optional">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="tolerant"/>
+						<xs:enumeration value="exact"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

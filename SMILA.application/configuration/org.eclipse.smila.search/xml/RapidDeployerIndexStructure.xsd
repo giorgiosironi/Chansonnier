@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/***********************************************************************************************************************
+ * Copyright (c) 2008 empolis GmbH and brox IT Solutions GmbH. All rights reserved. This program and the accompanying
+ * materials are made available under the terms of the Eclipse Public License v1.0 which accompanies this distribution,
+ * and is available at http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors: Georg Schmidt (brox IT Solutions GmbH) - initial creator
+ **********************************************************************************************************************/
+-->
+<xs:schema targetNamespace="http://www.anyfinder.de/RapidDeployer/IndexStructure" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.anyfinder.de/RapidDeployer/IndexStructure" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:element name="IndexStructures">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="IndexStructure" minOccurs="0" maxOccurs="unbounded">
+          <xs:annotation>
+            <xs:documentation>Normalized index structure for rapid deployer</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IndexField" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:attribute name="Name" type="xs:normalizedString" use="required"/>
+                  <xs:attribute name="FieldNo" type="xs:nonNegativeInteger" use="required"/>
+                  <xs:attribute name="Type" use="required">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:enumeration value="Text"/>
+                        <xs:enumeration value="Date"/>
+                        <xs:enumeration value="Number"/>
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="Name" type="xs:string" use="required"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

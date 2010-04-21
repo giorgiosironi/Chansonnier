@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://www.anyfinder.de/HighlightingTransformerRegistry" xmlns="http://www.anyfinder.de/HighlightingTransformerRegistry" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:pd="http://www.brox.de/ParameterDefinition" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.brox.de/ParameterDefinition" schemaLocation="../xml/ParameterDefinition.xsd"/>
+	<xs:element name="HighlightingTransformerRegistry">
+		<xs:annotation>
+			<xs:documentation>Comment describing your root element</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="HighlightingTransformer" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ClassName" type="xs:normalizedString"/>
+							<xs:element name="Description" type="xs:string"/>
+							<xs:element ref="pd:ParameterDefinition"/>
+						</xs:sequence>
+						<xs:attribute name="Name" type="xs:normalizedString" use="required"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

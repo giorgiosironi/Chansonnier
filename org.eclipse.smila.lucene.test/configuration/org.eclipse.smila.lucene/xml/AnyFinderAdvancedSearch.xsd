@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:nfp="http://www.anyfinder.de/Search/NumberField" xmlns:dfp="http://www.anyfinder.de/Search/DateField" xmlns:tfp="http://www.anyfinder.de/Search/TextField" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.anyfinder.de/AdvancedSearch" xmlns:po="http://www.anyfinder.de/Search/ParameterObjects" targetNamespace="http://www.anyfinder.de/AdvancedSearch" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.anyfinder.de/Search/TextField" schemaLocation="configuration/org.eclipse.smila.lucene/xml/AnyFinderSearchTextFieldParameter.xsd"/>
+	<xs:import namespace="http://www.anyfinder.de/Search/DateField" schemaLocation="configuration/org.eclipse.smila.lucene/xml/AnyFinderSearchDateFieldParameter.xsd"/>
+	<xs:import namespace="http://www.anyfinder.de/Search/NumberField" schemaLocation="configuration/org.eclipse.smila.lucene/xml/AnyFinderSearchNumberFieldParameter.xsd"/>
+	<xs:import namespace="http://www.anyfinder.de/Search/ParameterObjects" schemaLocation="configuration/org.eclipse.smila.lucene/xml/SearchParameterObjects.xsd"/>
+	<xs:element name="AnyFinderAdvancedSearch">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="QueryExpression" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="Term"/>
+						</xs:sequence>
+						<xs:attribute name="MaxHits" type="xs:nonNegativeInteger" use="required"/>
+						<xs:attribute name="IndexName" type="xs:normalizedString" use="required"/>
+						<xs:attribute name="MinSimilarity" type="xs:nonNegativeInteger" use="optional" default="0"/>
+						<xs:attribute name="ShowHitDistribution" type="xs:boolean" use="optional" default="false"/>
+						<xs:attribute name="StartHits" type="xs:nonNegativeInteger" use="optional"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="Version" use="optional">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Version 2.0.0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Term">
+		<xs:complexType>
+			<xs:choice>
+				<xs:element name="Field" type="Field"/>
+				<xs:element name="OP_1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="Term"/>
+						</xs:sequence>
+						<xs:attribute name="Operation" use="required">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="NOT"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="OP_N">
+					<xs:complexType>
+						<xs:sequence minOccurs="2" maxOccurs="unbounded">
+							<xs:element ref="Term"/>
+						</xs:sequence>
+						<xs:attribute name="Operation" use="required">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="AND"/>
+									<xs:enumeration value="OR"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="WMEAN">
+					<xs:complexType>
+						<xs:sequence minOccurs="2" maxOccurs="unbounded">
+							<xs:element name="Constraint" default="optional">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:enumeration value="optional"/>
+										<xs:enumeration value="required"/>
+										<xs:enumeration value="prohibited"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="Boost" default="1.0">
+								<xs:simpleType>
+									<xs:restriction base="xs:float">
+										<xs:minInclusive value="0.0"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element ref="Term"/>
+						</xs:sequence>
+						<xs:attribute name="Operation" use="optional" default="MEAN">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="MEAN"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="Field" abstract="true">
+		<xs:annotation>
+			<xs:documentation>Abstract representation of Text/Whats Related/Numeric Field in search query</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="FieldNo" type="xs:nonNegativeInteger" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="TemplateField" abstract="true">
+		<xs:complexContent>
+			<xs:extension base="Field">
+				<xs:sequence>
+					<xs:element ref="po:NodeTransformer" minOccurs="0"/>
+				</xs:sequence>
+				<xs:attribute name="SourceFieldNo" type="xs:nonNegativeInteger" use="required"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="TextTemplateField">
+		<xs:complexContent>
+			<xs:extension base="TemplateField">
+				<xs:sequence>
+					<xs:element ref="tfp:Parameter" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="NumberTemplateField">
+		<xs:complexContent>
+			<xs:extension base="TemplateField">
+				<xs:sequence>
+					<xs:element ref="nfp:Parameter" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="DateTemplateField">
+		<xs:complexContent>
+			<xs:extension base="TemplateField">
+				<xs:sequence>
+					<xs:element ref="dfp:Parameter" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="TextField">
+		<xs:annotation>
+			<xs:documentation>Text field in query</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="Field">
+				<xs:sequence>
+					<xs:element name="Text" type="xs:string">
+						<xs:annotation>
+							<xs:documentation>Text</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="Fuzzy" type="xs:boolean" use="optional" default="false"/>
+				<xs:attribute name="Slop" type="xs:nonNegativeInteger" use="optional" default="0"/>
+				<xs:attribute name="ParseWildcards" type="xs:boolean" use="optional" default="true"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="NumField">
+		<xs:annotation>
+			<xs:documentation>Numeric field in query</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="Field">
+				<xs:sequence>
+					<xs:element name="Min" type="xs:long" default="-9223372036854775808" nillable="true"/>
+					<xs:element name="Max" type="xs:long" default="9223372036854775807" nillable="true"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="DateField">
+		<xs:annotation>
+			<xs:documentation>Date field in query</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="Field">
+				<xs:sequence>
+					<xs:element name="Min" type="xs:date" nillable="true"/>
+					<xs:element name="Max" type="xs:date" nillable="true"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

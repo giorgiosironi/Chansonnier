@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  /***********************************************************************************************************************
+  * Copyright (c) 2008 empolis GmbH and brox IT Solutions GmbH. All rights reserved. This program and the accompanying
+  * materials are made available under the terms of the Eclipse Public License v1.0 which accompanies this distribution,
+  * and is available at http://www.eclipse.org/legal/epl-v10.html
+  *
+  * Contributors: Michael Breidenband (brox IT Solutions GmbH) - initial creator
+  **********************************************************************************************************************/
+-->
+<DataSourceConnectionConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <DataSourceID>db</DataSourceID>
+  <SchemaID>org.eclipse.smila.connectivity.framework.crawler.jdbc</SchemaID>
+  <DataConnectionID>
+    <Crawler>JdbcCrawler</Crawler>
+  </DataConnectionID>
+  <DeltaIndexing>full</DeltaIndexing>
+  <Attributes>
+    <Attribute Name="Filename" Type="String">
+      <ColumnName>ID</ColumnName>
+      <SqlType>string</SqlType>
+    </Attribute>
+    <Attribute Name="Path" HashAttribute="true" KeyAttribute="true"
+      Type="String">
+      <ColumnName>ID</ColumnName>
+      <SqlType>string</SqlType>
+    </Attribute>
+    <Attribute Name="Content" Type="String">
+      <ColumnName>Description</ColumnName>
+      <SqlType>string</SqlType>
+    </Attribute>
+  </Attributes>
+  <Process>
+    <Selections>
+      <Grouping>
+        <Stepping>13</Stepping>
+        <SQL>SELECT ID FROM UsedCarsDescriptions ORDER BY ID ASC</SQL>
+      </Grouping>
+      <SQL>SELECT ID, Description FROM UsedCarsDescriptions where ID BETWEEN %01min AND %01max</SQL>
+    </Selections>
+    <Database Connection="jdbc:odbc:UsedCars" User=""
+      FetchSize="1000" Password=""
+      JdbcDriver="sun.jdbc.odbc.JdbcOdbcDriver" />
+  </Process>
+</DataSourceConnectionConfig>

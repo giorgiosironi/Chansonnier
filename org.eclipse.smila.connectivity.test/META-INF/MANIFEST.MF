@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Connectivity Test Plug-in (Incubation)
+Bundle-SymbolicName: org.eclipse.smila.connectivity.test
+Bundle-Version: 0.7.0
+Bundle-Vendor: empolis GmbH and brox IT Solutions GmbH
+Import-Package: junit.framework;version="[3.8.0,4.0.0)",
+ org.eclipse.smila.blackboard;version="0.7.0",
+ org.eclipse.smila.connectivity;version="0.7.0",
+ org.eclipse.smila.connectivity.deltaindexing;version="0.7.0",
+ org.eclipse.smila.connectivity.impl;version="0.7.0",
+ org.eclipse.smila.datamodel.id;version="0.7.0",
+ org.eclipse.smila.datamodel.record;version="0.7.0",
+ org.eclipse.smila.datamodel.tools;version="0.7.0",
+ org.eclipse.smila.test;version="0.7.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

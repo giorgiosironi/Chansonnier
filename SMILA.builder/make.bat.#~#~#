@@ -1,0 +1,51 @@
+@echo off
+REM ***********************************************************************************************************************
+REM  * Copyright (c) 2008 empolis GmbH and brox IT Solutions GmbH. All rights reserved. This program and the accompanying
+REM  * materials are made available under the terms of the Eclipse Public License v1.0 which accompanies this distribution,
+REM  * and is available at http://www.eclipse.org/legal/epl-v10.html
+REM  *
+REM  * Contributors: brox IT Solutions GmbH)- initial creator
+REM  **********************************************************************************************************************/
+:#
+:# executes a normative (same as bamboo) build of the whole project and all active tests 
+:# see: http://wiki.eclipse.org/SMILA/Development_Guidelines/Howto_build_a_SMILA-Distribution
+setlocal
+
+:# set this to the location of your working copy of the SMILA source code
+set SMILA_HOME=D:\Works\workspace\EclipseSMILA
+
+:# set this to the location of a Eclipse Classic 3.5 SDK + matching delta pack
+set ECLIPSE_HOME=D:\works\eclipse-3.5
+
+:# make sure that the arch setting matches the used JDK
+set ARCH=-Dos=win32 -Dws=win32 -Darch=x86
+set JAVA_HOME=D:\Works\Java\jdk1.6.0_14
+
+set ANT_HOME=D:\Works\Java\apache-ant-1.7.0
+set ANT_OPTS=-Xmx512m
+set BUILDLIB_DIR=D:\Works\3rd_party_sw\SMILA\build\lib
+:# comment out the following line, if your lib directory is in trunk
+set libDir=-Dlib.dir=%BUILDLIB_DIR%
+
+:# standard values for Eclipse 3.5 Classic SDK + Delta Pack 3.5
+set buildOpts=-Declipse.running=true -DpdeBuildPluginVersion=3.5.0.v20090527-1800 -DequinoxLauncherPluginVersion=1.0.200.v20090520
+
+:# usually there is no need to change the following lines
+set buildDir=-DbuildDirectory=%SMILA_HOME%\eclipse.build
+set builder=-Dbuilder=%SMILA_HOME%\SMILA.builder 
+set eclipseHome=-Declipse.home="%ECLIPSE_HOME%"
+set testJava=-Dtest.java.home="%JAVA_HOME%"
+set configHome=-Dorg.eclipse.smila.utils.config.root=..\SMILA.application\configuration
+
+:# create a log file named according to this pattern: log.<this shell sctipt name, i.e. make>
+set logfile=log.%~n0
+
+PATH=%JAVA_HOME%\bin;%ANT_HOME%\bin;%PATH%
+
+:# note: gdate and tee are GnuWin32 utils that need to be in the path
+:# gdate | tee %logfile% 
+:# call ant -f make.xml %buildDir% %eclipseHome% %builder% %ARCH% %testJava% %buildOpts% %configHome% %libDir% %* | tee -a %logfile% 
+
+call ant -f make.xml %buildDir% %eclipseHome% %builder% %ARCH% %testJava% %buildOpts% %configHome% %libDir%  %* > %logfile%
+
+endlocal

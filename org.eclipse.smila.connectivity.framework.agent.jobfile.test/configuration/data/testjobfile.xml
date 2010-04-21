@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JobFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../org.eclipse.smila.connectivity.framework.agent.jobfile/schemas/jobfile.xsd">
+    <Add>
+        <Record version="1.0">
+          <Id version="1.0" xmlns="http://www.eclipse.org/smila/id">
+            <Source>testjobfile</Source>
+            <Key name="Path">configuration/data/AIIM Kurzmeldungen March 6 2000.txt</Key>
+          </Id>
+          <A n="MimeType">
+            <L>
+              <V>text/plain</V>
+            </L>
+          </A>
+          <A n="Size">
+            <L>
+              <V t="int">16384</V>
+            </L>
+          </A>
+          <A n="Extension">
+            <L>
+              <V>txt</V>
+            </L>
+          </A>
+          <A n="LastModifiedDate">
+            <L>
+              <V t="datetime">2008-08-15 15:57:16.000</V>
+            </L>
+          </A>
+          <A n="Filename">
+            <L>
+              <V>AIIM Kurzmeldungen March 6 2000.txt</V>
+            </L>
+          </A>
+		  <A n="Path">
+            <L>
+              <V>configuration/data/AIIM Kurzmeldungen March 6 2000.txt</V>
+            </L>
+          </A>   
+          <Attachment>Content####configuration/data/AIIM Kurzmeldungen March 6 2000.txt</Attachment>
+        </Record>       
+        
+        <Record version="1.0">
+          <A n="MimeType">
+            <L>
+              <V>text/xml</V>
+            </L>
+          </A>
+          <A n="Size">
+            <L>
+              <V t="int">8192</V>
+            </L>
+          </A>
+          <A n="Extension">
+            <L>
+              <V>xml</V>
+            </L>
+          </A>
+          <A n="LastModifiedDate">
+            <L>
+              <V t="datetime">2008-08-15 15:57:16.000</V>
+            </L>
+          </A>
+          <A n="Filename">
+            <L>
+              <V>eca011_20051023_0315_002.xml</V>
+            </L>
+          </A>
+	  	  <A n="Path">
+            <L>
+              <V>C:\somepath\Overseas pharmaceutical companies in Ireland.htm</V>
+            </L>
+          </A>           
+          <Attachment>Content####configuration/data/eca011_20051023_0315_002.xml</Attachment>
+        </Record>  
+        
+		<Record version="1.0">
+          <A n="MimeType">
+            <L>
+              <V>text/html</V>
+            </L>
+          </A>
+          <A n="Size">
+            <L>
+              <V t="int">94203</V>
+            </L>
+          </A>
+          <A n="Extension">
+            <L>
+              <V>htm</V>
+            </L>
+          </A>
+          <A n="LastModifiedDate">
+            <L>
+              <V t="datetime">2008-08-15 15:57:16.000</V>
+            </L>
+          </A>
+          <A n="Filename">
+            <L>
+              <V>Overseas pharmaceutical companies in Ireland.htm</V>
+            </L>
+          </A>
+		  <A n="Url">
+            <L>
+              <V>http://somewhere.net/Overseas pharmaceutical companies in Ireland.htm</V>
+            </L>
+          </A>          
+          <Attachment>Content####configuration/data/Overseas pharmaceutical companies in Ireland.htm</Attachment>
+        </Record>   
+    </Add>
+
+    <Delete>
+      <Id version="1.0" xmlns="http://www.eclipse.org/smila/id">
+        <Source>testjobfile</Source>
+        <Key name="Path">c:\data\XML\0815.xml</Key>
+      </Id>
+      <Id version="1.0" xmlns="http://www.eclipse.org/smila/id">
+        <Source>testjobfile</Source>
+        <Key name="Path">c:\data\XML\4711.xml</Key>
+      </Id>
+    </Delete>
+</JobFile>

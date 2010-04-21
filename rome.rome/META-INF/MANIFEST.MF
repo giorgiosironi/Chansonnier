@@ -1,0 +1,23 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: ROME Plug-in
+Bundle-SymbolicName: rome.rome
+Bundle-Version: 1.0.0
+Bundle-ClassPath: rome-1.0.jar
+Bundle-Vendor: Empolis GmbH and brox IT-Solutions GmbH
+Export-Package: com.sun.syndication.feed;version="1.0.0",
+ com.sun.syndication.feed.atom;version="1.0.0",
+ com.sun.syndication.feed.impl;version="1.0.0",
+ com.sun.syndication.feed.module;version="1.0.0",
+ com.sun.syndication.feed.module.impl;version="1.0.0",
+ com.sun.syndication.feed.rss;version="1.0.0",
+ com.sun.syndication.feed.synd;version="1.0.0",
+ com.sun.syndication.feed.synd.impl;version="1.0.0",
+ com.sun.syndication.io;version="1.0.0",
+ com.sun.syndication.io.impl;version="1.0.0"
+Import-Package: org.xml.sax,
+ org.w3c.dom,
+ org.jdom;resolution:=optional,
+ org.jdom.input;resolution:=optional,
+ org.jdom.output;resolution:=optional
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

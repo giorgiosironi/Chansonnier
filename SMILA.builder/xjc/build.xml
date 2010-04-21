@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<!--
+/***********************************************************************************************************************
+ * Copyright (c) 2008 empolis GmbH and brox IT Solutions GmbH. All rights reserved. This program and the accompanying
+ * materials are made available under the terms of the Eclipse Public License v1.0 which accompanies this distribution,
+ * and is available at http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors: Ivan Churkin (brox IT Solutions GmbH) - initial creator
+ *               Juergen Schumacher (empolis GmbH) - adapt to new location in SMILA.builder
+ **********************************************************************************************************************/
+-->
+<project name="base-build" basedir=".">
+
+  <!--
+    define it locally
+  <property name="schema.name" value="..."/>
+
+  -->
+  
+  <property name="schema.folder" location="schemas" />
+  <property name="result.folder" location="code/gen" />
+  
+  <property name="schema.file" value="${schema.name}.xsd" />
+  <property name="schema.binding" value="${schema.name}.jxb" />
+
+  <property name="lib.dir" value="../lib" />
+  
+  <property name="jaxb.home" value="${lib.dir}/xjc" />
+  
+  <path id="xjc.classpath">
+    <fileset dir="${jaxb.home}" includes="*.jar" />
+  </path>
+  <taskdef name="xjc" classname="com.sun.tools.xjc.XJCTask">
+    <classpath refid="xjc.classpath" />
+  </taskdef>
+  <taskdef resource="net/sf/antcontrib/antcontrib.properties">
+    <classpath>
+      <fileset dir="${lib.dir}/ant-contrib/" includes="*.jar" />
+    </classpath>
+  </taskdef>
+  
+  <target name="compile-schema-and-decorate">
+    <M_clean/>
+    <M_compile_schema file="${schema.file}" binding="${schema.binding}"/>
+    <M_decorate/>
+  </target>
+  
+  <!--  Macroses  -->
+  <macrodef name="M_clean" description="clean folder from java files">
+    <attribute name="folder" default="${result.folder}"/>
+    <sequential>
+      <delete>
+        <fileset dir="@{folder}" includes="**/*.java"/>
+      </delete>
+      <mkdir dir="@{folder}" />
+    </sequential>
+  </macrodef>
+  
+  <macrodef name="M_compile_schema" description="compile XSD schema to JAXB classes">
+    <attribute name="file" />
+    <attribute name="binding" />
+    <attribute name="folder" default="${schema.folder}"/>
+    <attribute name="destination" default="${result.folder}"/>
+    <sequential>
+      <echo>Compiling schema "@{file}" with binding "@{binding}"</echo>
+      <xjc destdir="@{destination}" extension="true" removeOldOutput="yes">
+        <schema  dir="@{folder}" includes="@{file}"/>
+        <binding dir="@{folder}" includes="@{binding}"/>
+        <produces dir="@{destination}" includes="**/*.java"/>
+        <arg line="-no-header -Xinterfaces"/>
+      </xjc>
+    </sequential>
+  </macrodef>
+    
+  <macrodef name="M_decorate" description="decorate java files in folder">
+    <attribute name="folder" default="${result.folder}"/>
+    <sequential>
+      <foreach target="_.decorate-file" param="file">
+        <path>
+          <fileset dir="@{folder}">
+            <include name="**/*.java"/>
+          </fileset>
+        </path>
+      </foreach>
+    </sequential>
+  </macrodef>
+  
+  <target name="_.decorate-file">
+    <concat destfile="${file}.1" append="false">
+      <fileset file="copyright.txt" />
+      <fileset file="../SMILA.builder/xjc/decorator-top.txt" />
+      <fileset file="${file}"/>
+      <fileset file="../SMILA.builder/xjc/decorator-bottom.txt" />
+    </concat>
+    <move file="${file}.1" tofile="${file}" verbose="false"/>
+  </target>
+  
+</project>

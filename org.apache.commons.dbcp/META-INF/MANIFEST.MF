@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.apache.commons.dbcp Plug-in (Incubation)
+Bundle-SymbolicName: org.apache.commons.dbcp
+Bundle-Version: 1.2.2
+Bundle-ClassPath: commons-dbcp-1.2.2.jar
+Bundle-Vendor: Empolis GmbH and brox IT-Solutions GmbH
+Export-Package: org.apache.commons.dbcp;version="1.2.2",
+ org.apache.commons.dbcp.cpdsadapter;version="1.2.2",
+ org.apache.commons.dbcp.datasources;version="1.2.2",
+ org.apache.commons.jocl;version="1.2.2"
+Import-Package: org.apache.commons.pool;version="1.3.0",
+ org.apache.commons.pool.impl;version="1.3.0"
+Eclipse-BuddyPolicy: registered
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

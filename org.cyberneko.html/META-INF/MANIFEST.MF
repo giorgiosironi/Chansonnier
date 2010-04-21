@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Html Plug-in (Incubation)
+Bundle-SymbolicName: org.cyberneko.html
+Bundle-Version: 1.9.9
+Bundle-ClassPath: nekohtml-1.9.9.jar
+Bundle-Vendor: Empolis GmbH and brox IT-Solutions GmbH
+Import-Package: org.apache.xerces.impl;version="2.9.0",
+ org.apache.xerces.util;version="2.9.0",
+ org.apache.xerces.xni;version="2.9.0",
+ org.apache.xerces.xni.grammars;version="2.9.0",
+ org.apache.xerces.xni.parser;version="2.9.0"
+Export-Package: org.cyberneko.html;version="1.9.9",
+ org.cyberneko.html.filters;version="1.9.9",
+ org.cyberneko.html.parsers;version="1.9.9",
+ org.cyberneko.html.xercesbridge;version="1.9.9"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

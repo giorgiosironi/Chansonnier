@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/***********************************************************************************************************************
+ * Copyright (c) 2008 empolis GmbH and brox IT Solutions GmbH. All rights reserved. This program and the accompanying
+ * materials are made available under the terms of the Eclipse Public License v1.0 which accompanies this distribution,
+ * and is available at http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors: Daniel Stucky (empolis GmbH) - initial creator
+ **********************************************************************************************************************/
+-->
+<DataSourceConnectionConfig
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../org.eclipse.smila.connectivity.framework.crawler.filesystem/schemas/FileSystemDataSourceConnectionConfigSchema.xsd"
+>
+  <DataSourceID>xmldump</DataSourceID>
+  <SchemaID>org.eclipse.smila.connectivity.framework.crawler.filesystem</SchemaID>
+  <DataConnectionID>
+    <Crawler>FileSystemCrawler</Crawler>
+  </DataConnectionID>
+  <DeltaIndexing>full</DeltaIndexing>  
+  <Attributes>
+    <Attribute Type="Date" Name="LastModifiedDate" HashAttribute="true">
+      <FileAttributes>LastModifiedDate</FileAttributes>
+    </Attribute>
+    <!-- do not send the content, just the path to the file //-->
+    <Attribute Type="String" Name="Path" KeyAttribute="true">
+      <FileAttributes>Path</FileAttributes>
+    </Attribute>
+    <Attribute Type="String" Name="Extension">
+      <FileAttributes>FileExtension</FileAttributes>
+    </Attribute>
+  </Attributes>
+  <Process>
+    <BaseDir>.</BaseDir>
+    <Filter Recursive="true" CaseSensitive="false">
+      <Include Name="samplexmldump.xml"/>
+    </Filter>
+  </Process>
+</DataSourceConnectionConfig>

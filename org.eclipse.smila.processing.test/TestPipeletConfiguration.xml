@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+  * Copyright (c) 2008 empolis GmbH and brox IT Solutions GmbH. 
+  * All rights reserved. This program and the accompanying materials
+  * are made available under the terms of the Eclipse Public License v1.0
+  * which accompanies this distribution, and is available at
+  * http://www.eclipse.org/legal/epl-v10.html
+  *
+  * Contributors:
+  *    Ivan Churkin (brox IT Solutions GmbH) - initial design
+-->
+<PipeletConfiguration xmlns="http://www.eclipse.org/smila/processor">
+  <Property name="FirstIsString">
+    <Value>FirstValue</Value>
+  </Property>
+  <Property name="SecondIsDate" type="java.util.Date">
+    <Value>2008-06-11 16:08:00</Value>
+  </Property>
+  <Property name="ThirdIsArray" type="java.util.Date">
+    <Value>2008-06-11 16:08</Value>
+    <Value>2008-06-11</Value>
+    <Value>2008-06-11 12:30</Value>
+  </Property>
+  <!--
+  <Property name="SecondIsDate" type="java.util.Date">
+    <Value>qqqqqqqqqqqqq</Value>
+  </Property>
+  -->
+</PipeletConfiguration>

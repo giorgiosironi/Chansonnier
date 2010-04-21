@@ -1,0 +1,39 @@
+#novaWrapper {
+	WIDTH: 980px
+}
+#footer {
+	WIDTH: 980px
+}
+#search {
+	RIGHT: -1px; PADDING-TOP: 13px
+}
+#searchBox {
+	RIGHT: 7px; PADDING-TOP: 0px; TOP: 0px
+}
+#searchButton {
+	WIDTH: 4em
+}
+#sites UL {
+	PADDING-LEFT: 15px
+}
+#leftnav LI {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px
+}
+#leftnav LI A {
+	PADDING-LEFT: 5px
+}
+.homeitem3col LI {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 5px; MARGIN-BOTTOM: 5px; PADDING-BOTTOM: 5px; VERTICAL-ALIGN: bottom; PADDING-TOP: 0px
+}
+.homeitem LI {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 5px; MARGIN-BOTTOM: 5px; PADDING-BOTTOM: 5px; VERTICAL-ALIGN: bottom; PADDING-TOP: 0px
+}
+.homeitem3col UL {
+	MARGIN-TOP: 10px; PADDING-BOTTOM: 5px
+}
+.homeitem UL {
+	MARGIN-TOP: 10px; PADDING-BOTTOM: 5px
+}
+#buttonHolder {
+	MARGIN-LEFT: 0px! important
+}

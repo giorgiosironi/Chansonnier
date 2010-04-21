@@ -1,0 +1,22 @@
+﻿img {
+	behavior: url('../../images/Smila/iepngfix.htc');
+}
+
+#footer {
+}
+
+#clearFooter {
+	clear:both;
+	height:14px; /* provides space for the #footer */
+}
+#footer {
+	height: 47px;
+	margin: -20px auto; /* -2em sucks it back in & auto centers it */
+}
+
+#menu ul {
+	margin-left:10px;
+	height:24px;
+}
+
+

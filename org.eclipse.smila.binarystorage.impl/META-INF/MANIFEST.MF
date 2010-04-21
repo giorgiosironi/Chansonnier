@@ -1,0 +1,23 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Binary Storage OSGi Service (Incubation)
+Bundle-SymbolicName: org.eclipse.smila.binarystorage.impl
+Bundle-Version: 0.7.0
+Bundle-Vendor: Empolis GmbH and brox IT-Solutions GmbH
+Service-Component: OSGI-INF/BinaryStorageService.xml
+Import-Package: org.apache.commons.io;version="1.4.0",
+ org.apache.commons.io.input;version="1.4.0",
+ org.apache.commons.lang;version="2.3.0",
+ org.apache.commons.logging;version="1.1.1",
+ org.eclipse.smila.binarystorage;version="0.7.0",
+ org.eclipse.smila.utils.config;version="0.7.0",
+ org.eclipse.smila.utils.jaxb;version="0.7.0",
+ org.eclipse.smila.utils.workspace;version="0.7.0",
+ org.eclipse.smila.utils.xml;version="0.7.0",
+ org.osgi.framework;version="1.4.0",
+ org.osgi.service.component;version="1.0.0"
+Export-Package: org.eclipse.smila.binarystorage.config;version="0.7.0",
+ org.eclipse.smila.binarystorage.internal;version="0.7.0",
+ org.eclipse.smila.binarystorage.persistence;version="0.7.0"
+Eclipse-BuddyPolicy: registered
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

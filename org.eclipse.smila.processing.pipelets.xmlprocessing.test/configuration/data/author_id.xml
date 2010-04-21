@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE author [
+	<!ELEMENT name (#PCDATA)>
+	<!ELEMENT nic (#PCDATA)>
+	<!ELEMENT email (#PCDATA)>	
+	<!ATTLIST name
+   	id     ID    #REQUIRED
+   	>
+   	<!ATTLIST email
+   	id     CDATA #REQUIRED
+   	>	  
+]>
+<author>	
+	<name id="1">Thiemo Fetzer</name>
+	<nic>tf</nic> 
+	<email id="1">redaktion@devmag.net</email>
+</author>

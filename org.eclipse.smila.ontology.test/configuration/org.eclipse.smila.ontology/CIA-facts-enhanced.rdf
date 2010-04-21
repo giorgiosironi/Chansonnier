@@ -1,0 +1,778 @@
+<!-- edited with XML Spy v3.0 NT (http://www.xmlspy.com) by Borys Omelayenko (Vrije Universiteit) -->
+<!-- CIA facts  -->
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:ciafb="http://www.cia.gov/cia/publications/factbook#">
+	<rdf:Description rdf:about="http://www.odci.gov/cia/publications/factbook/geos/af.html">
+		<rdf:type rdf:resource="#Country"/>
+		<ciafb:Name>Afghanistan</ciafb:Name>
+		<ciafb:Flag rdf:resource="http://www.odci.gov/cia/publications/factbook/flags/af-lgflag.jpg"/>
+		<ciafb:Map rdf:resource="http://www.odci.gov/cia/publications/factbook/maps/af-map.jpg"/>
+		<ciafb:Location>Southern Asia, north and west of Pakistan, east of Iran</ciafb:Location>
+		<ciafb:Latitude>33.00</ciafb:Latitude>
+		<ciafb:Longitude>65.00</ciafb:Longitude>
+		<ciafb:Map_references>Asia</ciafb:Map_references>
+		<ciafb:Area>647500</ciafb:Area>
+		<ciafb:Area_comparative>slightly smaller than Texas</ciafb:Area_comparative>
+		<ciafb:Land_boundaries>5529</ciafb:Land_boundaries>
+		<ciafb:Bordering_country rdf:resource="http://www.odci.gov/cia/publications/factbook/geos/ch.html"/>
+		<ciafb:Bordering_country rdf:resource="http://www.odci.gov/cia/publications/factbook/geos/ir.html"/>
+		<ciafb:Bordering_country rdf:resource="http://www.odci.gov/cia/publications/factbook/geos/pk.html"/>
+		<ciafb:Bordering_country rdf:resource="http://www.odci.gov/cia/publications/factbook/geos/ti.html"/>
+		<ciafb:Bordering_country rdf:resource="http://www.odci.gov/cia/publications/factbook/geos/tx.html"/>
+		<ciafb:Bordering_country rdf:resource="http://www.odci.gov/cia/publications/factbook/geos/uz.html"/>
+		<ciafb:Coastline>0</ciafb:Coastline>
+		<ciafb:Maritime_claims>none (landlocked)</ciafb:Maritime_claims>
+		<ciafb:Climate>arid to semiarid; cold winters and hot summers</ciafb:Climate>
+		<ciafb:Terrain>mostly rugged mountains; plains in north and southwest</ciafb:Terrain>
+		<ciafb:Elevation_extremes>lowest point: Amu Darya 258 m  highest point: Nowshak 7485 m</ciafb:Elevation_extremes>
+		<ciafb:Lowest_point>258</ciafb:Lowest_point>
+		<ciafb:Highest_point>7485</ciafb:Highest_point>
+		<ciafb:Natural_resources>natural gas</ciafb:Natural_resources>
+		<ciafb:Natural_resources>petroleum</ciafb:Natural_resources>
+		<ciafb:Natural_resources>coal</ciafb:Natural_resources>
+		<ciafb:Natural_resources>copper</ciafb:Natural_resources>
+		<ciafb:Natural_resources>talc</ciafb:Natural_resources>
+		<ciafb:Natural_resources>barites</ciafb:Natural_resources>
+		<ciafb:Natural_resources>sulfur</ciafb:Natural_resources>
+		<ciafb:Natural_resources>lead</ciafb:Natural_resources>
+		<ciafb:Natural_resources>zinc</ciafb:Natural_resources>
+		<ciafb:Natural_resources>iron ore</ciafb:Natural_resources>
+		<ciafb:Natural_resources>salt</ciafb:Natural_resources>
+		<ciafb:Natural_resources>precious and semiprecious stones</ciafb:Natural_resources>
+		<ciafb:Land_use>arable land: 12%  permanent crops : 0%  permanent pastures: 46%  forests and woodland: 3%  other: 39% (1993 est.)</ciafb:Land_use>
+		<ciafb:Irrigated_land>30000</ciafb:Irrigated_land>
+		<ciafb:Natural_hazards>damaging earthquakes occur in Hindu Kush mountains; flooding</ciafb:Natural_hazards>
+		<ciafb:Environment_current_issues>soil degradation; overgrazing; deforestation (much of the remaining forests are being cut down for fuel and building materials); desertification</ciafb:Environment_current_issues>
+		<ciafb:Environment_international_agreements>party to : Desertification, Endangered Species, Environmental Modification, Marine Dumping, Nuclear Test Ban signed, but not ratified: Biodiversity, Climate Change, Hazardous Wastes, Law of the Sea, Marine Life Conservation</ciafb:Environment_international_agreements>
+		<ciafb:Geography_note>landlocked</ciafb:Geography_note>
+		<ciafb:Population>23738085</ciafb:Population>
+		<ciafb:Age_structure>0-14 years: 43% (male 5201585; female 5003503) 15-64 years: 54% (male 6680687; female 6208463) 65 years and over : 3% (male 341301; female 302546) (July 1997 est.)</ciafb:Age_structure>
+		<ciafb:Population_growth_rate>4.48</ciafb:Population_growth_rate>
+		<ciafb:Birth_rate>42.72</ciafb:Birth_rate>
+		<ciafb:Death_rate>17.78</ciafb:Death_rate>
+		<ciafb:Net_migration_rate>19.9</ciafb:Net_migration_rate>
+		<ciafb:Sex_ratio>at birth: 1.05 male(s)/female  under 15 years : 1.04 male(s)/female  15-64 years: 1.08 male(s)/female  65 years and over: 1.13 male(s)/female  total population: 1.06 male(s)/female (1997 est.)</ciafb:Sex_ratio>
+		<ciafb:Infant_mortality_rate>146.7</ciafb:Infant_mortality_rate>
+		<ciafb:Life_expectancy_at_birth>46.34</ciafb:Life_expectancy_at_birth>
+		<ciafb:Total_fertility_rate>6.07</ciafb:Total_fertility_rate>
+		<ciafb:Nationality>noun: Afghan(s)  adjective: Afghan</ciafb:Nationality>
+		<ciafb:Ethnic_groups>Pashtun 38%, Tajik 25%, Uzbek 6%, Hazara 19%, minor ethnic groups (Aimaks, Turkmen, Baloch, and others)</ciafb:Ethnic_groups>
+		<ciafb:Religions>Sunni Muslim 84%, Shi'a Muslim 15%, other 1%</ciafb:Religions>
+		<ciafb:Languages>Pashtu 35%, Afghan Persian (Dari) 50%, Turkic languages (primarily Uzbek and Turkmen) 11%, 30 minor languages (primarily Balochi and Pashai) 4%, much bilingualism</ciafb:Languages>
+		<ciafb:Literacy>definition: age 15 and over can read and write  total population: 31.5%  male : 47.2%  female: 15% (1995 est.)</ciafb:Literacy>
+		<ciafb:Country_name>conventional long form: Islamic State of Afghanistan  conventional short form: Afghanistan  local long form : Dowlat-e Eslami-ye Afghanestan  local short form: Afghanestan  former: Republic of Afghanistan</ciafb:Country_name>
+		<ciafb:Data_code>AF</ciafb:Data_code>
+		<ciafb:Government_type>transitional government</ciafb:Government_type>
+		<ciafb:National_capital>Kabul</ciafb:National_capital>
+		<ciafb:Administrative_divisions>30 provinces (velayat, singular - velayat); Badakhshan, Badghis, Baghlan, Balkh, Bamian, Farah, Faryab, Ghazni, Ghowr, Helmand, Herat, Jowzjan, Kabol, Kandahar, Kapisa, Konar, Kondoz, Laghman, Lowgar, Nangarhar, Nimruz, Oruzgan, Paktia, Paktika, Parvan, Samangan, Sar-e Pol, Takhar, Vardak, Zabol note : there may be two new provinces of Nurestan (Nuristan) and Khowst</ciafb:Administrative_divisions>
+		<ciafb:Independence>19 August 1919 (from UK control over Afghan foreign affairs)</ciafb:Independence>
+		<ciafb:National_holiday>Victory of the Muslim Nation, 28 April; Remembrance Day for Martyrs and Disabled, 4 May; Independence Day, 19 August</ciafb:National_holiday>
+		<ciafb:Constitution>none</ciafb:Constitution>
+		<ciafb:Legal_system>a new legal system has not been adopted but all factions tacitly agree they will follow Islamic law (Shari'a)</ciafb:Legal_system>
+		<ciafb:Suffrage>undetermined; previously males 15-50 years of age</ciafb:Suffrage>
+		<ciafb:Executive_branch>on 27 September 1996, the ruling members of the Afghan Government were displaced by members of the Islamic Taliban movement; the Islamic State of Afghanistan has no functioning government at this time, and the country remains divided among fighting factions  note: the Taliban have declared themselves the legitimate government of Afghanistan; the UN has deferred a decision on credentials and the Organization of the Islamic Conference has left the Afghan seat vacant until the question of legitimacy can be resolved through negotiations among the warring factions; the country is essentially divided along ethnic lines; the Taliban controls the capital of Kabul and approximately two-thirds of the country including the predominately ethnic Pashtun areas in southern Afghanistan; opposing factions have their stonghold in the ethnically diverse north - General DOSTAM's National Islamic Movement controls several northcentral provinces and Commander MASOOD controls the ethnic Tajik majority areas of the northeast</ciafb:Executive_branch>
+		<ciafb:Legislative_branch>non-functioning as of June 1993</ciafb:Legislative_branch>
+		<ciafb:Judicial_branch>non-functioning as of March 1995, although there are local Shari'a (Islamic law) courts throughout the country</ciafb:Judicial_branch>
+		<ciafb:Political_parties_and_leaders>Taliban (Religious Students Movement), Mohammad OMAR; Supreme Defense Council of Afghanistan [comprised of Jumbesh-i-Melli Islami (National Islamic Movement), Abdul Rashid DOSTAM; Jamiat-i-Islami (Islamic Society), Burhanuddin RABBANI and Ahmad Shah MASOOD; and Hizbi Wahdat-Khalili faction (Islamic Unity Party), Abdul Karim KHALILI]; other smaller parties are Hizbi Islami-Gulbuddin (Islamic Party), Gulbuddin HIKMATYAR faction; Hizbi Islami-Khalis (Islamic Party), Yunis KHALIS faction; Ittihad-i-Islami Barai Azadi Afghanistan (Islamic Union for the Liberation of Afghanistan), Abdul Rasul SAYYAF; Harakat-Inqilab-i-Islami (Islamic Revolutionary Movement), Mohammad Nabi MOHAMMADI; Jabha-i-Najat-i-Milli Afghanistan (Afghanistan National Liberation Front), Sibghatullah MOJADDEDI; Mahaz-i-Milli-Islami (National Islamic Front), Sayed Ahamad GAILANI; Hizbi Wahdat-Akbari faction (Islamic Unity Party), Mohammad Akbar AKBARI; Harakat-i-Islami (Islamic Movement), Mohammed Asif MOHSENI</ciafb:Political_parties_and_leaders>
+		<ciafb:Political_pressure_groups_and_leaders>tribal elders represent traditional Pashtun leadership; Afghan refugees in Pakistan, Australia, US, and elsewhere have organized politically; Peshawar, Pakistan-based groups such as the Coordination Council for National Unity and Understanding in Afghanistan (CUNUA), Ishaq GAILANI; Writers Union of Free Afghanistan (WUFA), A. Rasul AMIN; Mellat (Social Democratic Party), leader NA</ciafb:Political_pressure_groups_and_leaders>
+		<ciafb:International_organization_participation>AsDB, CP, ECO, ESCAP, FAO, G-77, IAEA, IBRD, ICAO, ICRM, IDA, IDB, IFAD, IFC, IFRCS, ILO, IMF, Intelsat, IOC, IOM (observer), ITU, NAM, OIC, UN, UNCTAD, UNESCO, UNIDO, UPU, WFTU, WHO, WMO, WToO</ciafb:International_organization_participation>
+		<ciafb:Diplomatic_representation_in_the_US>chief of mission : Ambassador (vacant); Charge d'Affaires Yar Mohammed MOHABBAT  chancery: 2341 Wyoming Avenue NW, Washington, DC 20008  telephone: [1] (202) 234-3770, 3771  FAX: [1] (202) 328-3516  consulate(s) general : New York  consulate(s): Washington, DC</ciafb:Diplomatic_representation_in_the_US>
+		<ciafb:Diplomatic_representation_from_the_US>the US embassy in Kabul has been closed since January 1989 due to security concerns</ciafb:Diplomatic_representation_from_the_US>
+		<ciafb:Flag_description>three equal horizontal bands of green (top), white, and black with a gold emblem centered on the three bands; the emblem features a temple-like structure with Islamic inscriptions above and below, encircled by a wreath on the left and right and by a bolder Islamic inscription above, all of which are encircled by two crossed scimitars</ciafb:Flag_description>
+		<ciafb:Economy_overview>Afghanistan is an extremely poor, landlocked country, highly dependent on farming and livestock raising (sheep and goats). Economic considerations  have played second fiddle to political and military upheavals during more than 17 years of war, including the nearly 10-year Soviet military occupation (which ended 15 February 1989). During the war one-third of the population fled the country, with Pakistan and Iran sheltering a combined peak of more than 6 million refugees. Now, only 750000 registered Afghan refugees remain in Pakistan and about 1.2 million in Iran. Another 1 million have probably moved into and around urban areas within Afghanistan. Gross domestic product has fallen substantially over the past 17 years because of the loss of labor and capital and the disruption of trade and transport. Millions of people continue to suffer from insufficient food, clothing, housing, and medical care. Inflation remains a serious problem throughout the country, with one estimate putting the rate at 240% in Kabul in 1996. Numerical data are likely to be either unavailable or unreliable.</ciafb:Economy_overview>
+		<ciafb:GDP>purchasing power parity - $18.1 billion (1996 est.)</ciafb:GDP>
+		<ciafb:GDP_real_growth_rate>NA%</ciafb:GDP_real_growth_rate>
+		<ciafb:GDP_per_capita>purchasing power parity - $800 (1996 est.)</ciafb:GDP_per_capita>
+		<ciafb:GDP_composition_by_sector>agriculture: 56%  industry: 15%  services: 29%</ciafb:GDP_composition_by_sector>
+		<ciafb:Inflation_rate_consumer_price_index>240% (1996 est.)</ciafb:Inflation_rate_consumer_price_index>
+		<ciafb:Labor_force>total: 7.1 million  by occupation: agriculture and animal husbandry 67.8%, industry 10.2%, construction 6.3%, commerce 5.0%, services and other 10.7% (1980 est.)</ciafb:Labor_force>
+		<ciafb:Unemployment_rate>8% (1995 est.)</ciafb:Unemployment_rate>
+		<ciafb:Budget>revenues: $NA expenditures: $NA, including capital expenditures of $NA</ciafb:Budget>
+		<ciafb:Industries>small-scale production of textiles, soap, furniture, shoes, fertilizer, and cement; handwoven carpets; natural gas, oil, coal, copper</ciafb:Industries>
+		<ciafb:Electricity_capacity>371000 kW (1993)</ciafb:Electricity_capacity>
+		<ciafb:Electricity_production>670 million kWh (1994)</ciafb:Electricity_production>
+		<ciafb:Electricity_consumption_per_capita>35 kWh (1995 est.)</ciafb:Electricity_consumption_per_capita>
+		<ciafb:Agriculture_products>wheat, fruits, nuts, karakul pelts; wool, mutton</ciafb:Agriculture_products>
+		<ciafb:Exports>total value: $80 million (1996 est.)  commodities: fruits and nuts, handwoven carpets, wool, cotton, hides and pelts, precious and semi-precious gems partners : FSU, Pakistan, Iran, Germany, India, UK, Belgium, Luxembourg, Czechoslovakia</ciafb:Exports>
+		<ciafb:Imports>total value : $150 million (1996 est.) commodities: food and petroleum products; most consumer goods partners: FSU, Pakistan, Iran, Japan, Singapore, India, South Korea, Germany</ciafb:Imports>
+		<ciafb:Debt_external>$2.3 billion (March 1991 est.)</ciafb:Debt_external>
+		<ciafb:Economic_aid>recipient: ODA; about $56 million in UN aid plus additional bilateral aid and aid in kind (1996)  note: US provided $450 million in bilateral assistance (1985-93); US continues to contribute to multilateral assistance through the UN programs of food aid, immunization, land mine removal, and a wide range of aid to refugees and displaced persons</ciafb:Economic_aid>
+		<ciafb:Currency>1 afghani (AF) = 100 puls</ciafb:Currency>
+		<ciafb:Exchange_rates>afghanis (Af) per US$1 - 17000 (December 1996), 7000 (January 1995), 1900 (January 1994), 1019 (March 1993), 850 (1991); note - these rates reflect the free market exchange rates rather than the official exchange rate, which is a fixed rate of 50.600 afghanis to the dollar</ciafb:Exchange_rates>
+		<ciafb:Fiscal_year>21 March - 20 March</ciafb:Fiscal_year>
+		<ciafb:Telephones>31200 (1983 est.)</ciafb:Telephones>
+		<ciafb:Telephone_system>domestic : very limited telephone and telegraph service international: satellite earth stations - 1 Intelsat (Indian Ocean) linked only to Iran and 1 Intersputnik (Atlantic Ocean Region)</ciafb:Telephone_system>
+		<ciafb:Radio_broadcast_stations>AM 6, FM 0, shortwave 2</ciafb:Radio_broadcast_stations>
+		<ciafb:Radios>1.8 million (1996 est.); note - about 60% of families own a radio</ciafb:Radios>
+		<ciafb:Television_broadcast_stations>NA  note: one television station run by Jumbesh faction provides intermittent service</ciafb:Television_broadcast_stations>
+		<ciafb:Televisions>100000 (1993 est.)</ciafb:Televisions>
+		<ciafb:Railways>total: 24.6 km  broad gauge: 9.6 km 1.524-m gauge from Gushgy (Turkmenistan) to Towraghondi; 15 km 1524-m gauge from Termiz (Uzbekistan) to Kheyrabad transshipment point on south bank of Amu Darya</ciafb:Railways>
+		<ciafb:Highways>total: 21000 km  paved: 2793 km  unpaved: 18207 km (1995 est.)</ciafb:Highways>
+		<ciafb:Waterways>1200 km; chiefly Amu Darya, which handles vessels up to about 500 DWT</ciafb:Waterways>
+		<ciafb:Pipelines>petroleum products - Uzbekistan to Bagram and Turkmenistan to Shindand; natural gas 180 km</ciafb:Pipelines>
+		<ciafb:Ports_and_harbors>Kheyrabad, Shir Khan</ciafb:Ports_and_harbors>
+		<ciafb:Airports>33 (1996 est.)</ciafb:Airports>
+		<ciafb:Airports_with_paved_runways>total: 16  over 3047 m: 3  2438 to 3047 m: 4  1524 to 2437 m : 2  under 914 m: 7 (1996 est.)</ciafb:Airports_with_paved_runways>
+		<ciafb:Airports_with_unpaved_runways>total: 17  2438 to 3047 m: 3  1524 to 2437 m: 12  914 to 1523 m: 2 (1996 est.)</ciafb:Airports_with_unpaved_runways>
+		<ciafb:Heliports>3 (1996 est.)</ciafb:Heliports>
+		<ciafb:Military_branches>NA; note - the military does not exist on a national basis; some elements of the former Army, Air and Air Defense Forces, National Guard, Border Guard Forces, National Police Force (Sarandoi), and tribal militias still exist but are factionalized among the various groups</ciafb:Military_branches>
+		<ciafb:Military_manpower_military_age>22 years of age</ciafb:Military_manpower_military_age>
+		<ciafb:Military_manpower_availability>males age 15-49 : 5813298 (1997 est.)</ciafb:Military_manpower_availability>
+		<ciafb:Military_manpower_fit_for_military_service>males : 3118004 (1997 est.)</ciafb:Military_manpower_fit_for_military_service>
+		<ciafb:Military_manpower_reaching_military_age_annually>males: 231250 (1997 est.)</ciafb:Military_manpower_reaching_military_age_annually>
+		<ciafb:Military_expenditures_dollar_figure>$NA</ciafb:Military_expenditures_dollar_figure>
+		<ciafb:Military_expenditures_percent_of_GDP>NA%</ciafb:Military_expenditures_percent_of_GDP>
+		<ciafb:Disputes_international>some support from RABBANI and MASOOD to anti-government Islamic fighters in Tajikistan's civil war; support to Islamic militants worldwide by some factions; question over which group should hold Afghanistan's seat at the UN</ciafb:Disputes_international>
+		<ciafb:Illicit_drugs>world's second-largest illicit opium producer after Burma (1230 metric tons in 1996 - down 2% from 1995) and a major source of hashish</ciafb:Illicit_drugs>
+	</rdf:Description>
+	<rdf:Description rdf:about="http://www.odci.gov/cia/publications/factbook/geos/al.html">
+		<rdf:type rdf:resource="#Country"/>
+		<ciafb:Name>Albania</ciafb:Name>
+		<ciafb:Flag rdf:resource="http://www.odci.gov/cia/publications/factbook/flags/al-lgflag.jpg"/>
+		<ciafb:Map rdf:resource="http://www.odci.gov/cia/publications/factbook/maps/al-map.jpg"/>
+		<ciafb:Location>Southeastern Europe, bordering the Adriatic Sea and Ionian Sea, between Greece and Serbia and Montenegro</ciafb:Location>
+		<ciafb:Latitude>41.00</ciafb:Latitude>
+		<ciafb:Longitude>20.00</ciafb:Longitude>
+		<ciafb:Map_references>Europe</ciafb:Map_references>
+		<ciafb:Area>28750</ciafb:Area>
+		<ciafb:Area_comparative>slightly smaller than Maryland</ciafb:Area_comparative>
+		<ciafb:Land_boundaries>720</ciafb:Land_boundaries>
+		<ciafb:Bordering_country rdf:resource="http://www.odci.gov/cia/publications/factbook/geos/gr.html"/>
+		<ciafb:Bordering_country rdf:resource="http://www.odci.gov/cia/publications/factbook/geos/mk.html"/>
+		<ciafb:Bordering_country>Serbia and Montenegro</ciafb:Bordering_country>
+		<ciafb:Coastline>362</ciafb:Coastline>
+		<ciafb:Maritime_claims>continental shelf: 200-m depth or to the depth of exploitation territorial sea : 12 nm</ciafb:Maritime_claims>
+		<ciafb:Climate>mild temperate; cool, cloudy, wet winters; hot, clear, dry summers; interior is cooler and wetter</ciafb:Climate>
+		<ciafb:Terrain>mostly mountains and hills; small plains along coast</ciafb:Terrain>
+		<ciafb:Elevation_extremes>lowest point: Adriatic Sea 0 m  highest point : Maja e Korabit 2753 m</ciafb:Elevation_extremes>
+		<ciafb:Lowest_point>0</ciafb:Lowest_point>
+		<ciafb:Highest_point>2753</ciafb:Highest_point>
+		<ciafb:Natural_resources>petroleum</ciafb:Natural_resources>
+		<ciafb:Natural_resources>natural gas</ciafb:Natural_resources>
+		<ciafb:Natural_resources>coal</ciafb:Natural_resources>
+		<ciafb:Natural_resources>chromium</ciafb:Natural_resources>
+		<ciafb:Natural_resources>copper</ciafb:Natural_resources>
+		<ciafb:Natural_resources>timber</ciafb:Natural_resources>
+		<ciafb:Natural_resources>nickel</ciafb:Natural_resources>
+		<ciafb:Land_use>arable land: 21%  permanent crops: 5%  permanent pastures: 15%  forests and woodland: 38%  other: 21% (1993 est.)</ciafb:Land_use>
+		<ciafb:Irrigated_land>3410</ciafb:Irrigated_land>
+		<ciafb:Natural_hazards>destructive earthquakes; tsunamis occur along southwestern coast</ciafb:Natural_hazards>
+		<ciafb:Environment_current_issues>deforestation; soil erosion; water pollution from industrial and domestic effluents</ciafb:Environment_current_issues>
+		<ciafb:Environment_international_agreements>party to: Biodiversity, Climate Change, Wetlands signed, but not ratified : none of the selected agreements</ciafb:Environment_international_agreements>
+		<ciafb:Geography_note>strategic location along Strait of Otranto (links Adriatic Sea to Ionian Sea and Mediterranean Sea)</ciafb:Geography_note>
+		<ciafb:Population>3299757</ciafb:Population>
+		<ciafb:Age_structure>0-14 years: 34% (male 575087; female 534618) 15-64 years: 60% (male 927791; female 1068922)  65 years and over: 6% (male 80135; female 113204) (July 1997 est.)</ciafb:Age_structure>
+		<ciafb:Population_growth_rate>0.9</ciafb:Population_growth_rate>
+		<ciafb:Birth_rate>21.96</ciafb:Birth_rate>
+		<ciafb:Death_rate>7.54</ciafb:Death_rate>
+		<ciafb:Net_migration_rate>-5.46</ciafb:Net_migration_rate>
+		<ciafb:Sex_ratio>at birth: 1.08 male(s)/female  under 15 years: 1.08 male(s)/female  15-64 years: 0.87 male(s)/female  65 years and over : 0.71 male(s)/female  total population: 0.92 male(s)/female (1997 est.)</ciafb:Sex_ratio>
+		<ciafb:Infant_mortality_rate>47.1</ciafb:Infant_mortality_rate>
+		<ciafb:Life_expectancy_at_birth>68.28</ciafb:Life_expectancy_at_birth>
+		<ciafb:Total_fertility_rate>2.64</ciafb:Total_fertility_rate>
+		<ciafb:Nationality>noun: Albanian(s)  adjective: Albanian</ciafb:Nationality>
+		<ciafb:Ethnic_groups>Albanian 95%, Greeks 3%, other 2% (Vlachs, Gypsies, Serbs, and Bulgarians) (1989 est.)  note: in 1989, other estimates of the Greek population ranged from 1% (official Albanian statistics) to 12% (from a Greek organization)</ciafb:Ethnic_groups>
+		<ciafb:Religions>Muslim 70%, Albanian Orthodox 20%, Roman Catholic 10%  note: all mosques and churches were closed in 1967 and religious observances prohibited; in November 1990, Albania began allowing private religious practice</ciafb:Religions>
+		<ciafb:Languages>Albanian (Tosk is the official dialect), Greek</ciafb:Languages>
+		<ciafb:Literacy>definition: age 9 and over can read and write  total population: 72%  male: 80%  female: 63% (1955 est.)</ciafb:Literacy>
+		<ciafb:Country_name>conventional long form: Republic of Albania  conventional short form: Albania  local long form: Republika e Shqiperise  local short form: Shqiperia  former: People's Socialist Republic of Albania</ciafb:Country_name>
+		<ciafb:Data_code>AL</ciafb:Data_code>
+		<ciafb:Government_type>emerging democracy</ciafb:Government_type>
+		<ciafb:National_capital>Tirane</ciafb:National_capital>
+		<ciafb:Administrative_divisions>26 districts (rrethe, singular - rreth); Berat, Dibre, Durres, Elbasan, Fier, Gjirokaster, Gramsh, Kolonje, Korce, Kruje, Kukes, Lezhe, Librazhd,  Lushnje, Mat, Mirdite, Permet, Pogradec, Puke, Sarande, Shkoder, Skrapar, Tepelene, Tirane, Tropoje, Vlore note: some new administrative units may have been created</ciafb:Administrative_divisions>
+		<ciafb:Independence>28 November 1912 (from Ottoman Empire)</ciafb:Independence>
+		<ciafb:National_holiday>Independence Day, 28 November (1912)</ciafb:National_holiday>
+		<ciafb:Constitution>an interim basic law was approved by the People's Assembly on 29 April 1991; a draft constitution was rejected by popular referendum in the fall of 1994 and a new draft is pending</ciafb:Constitution>
+		<ciafb:Legal_system>has not accepted compulsory ICJ jurisdiction</ciafb:Legal_system>
+		<ciafb:Suffrage>18 years of age; universal and compulsory</ciafb:Suffrage>
+		<ciafb:Executive_branch>chief of state : President of the Republic Sali BERISHA (since 9 April 1992)  head of government: Prime Minister of the interim National Reconciliation Government Bashkim FINO (since 12 March 1997)  cabinet: Council of Ministers appointed by the president elections: president elected by the People's Assembly for a five-year term; election last held NA 1992 (next to be held NA March 1997); prime minister appointed  by the president election results : Sali BERISHA elected president; percent of People's Assembly vote - NA</ciafb:Executive_branch>
+		<ciafb:Legislative_branch>unicameral People's Assembly or Kuvendi Popullor (140 seats; most members are elected by direct popular vote and some by proportional vote for four-year terms) elections: last held 26 May 1996 (next tentatively scheduled for 29 June 1997)   election results: percent of vote by party - NA; seats by party - DP 122, PS 10, RP 3, UHP 3, Balli Kombetar 2</ciafb:Legislative_branch>
+		<ciafb:Judicial_branch>Supreme Court, chairman of the Supreme Court is elected by the People's Assembly</ciafb:Judicial_branch>
+		<ciafb:Political_parties_and_leaders>Albanian Socialist Party or PS (formerly the Albania Workers Party) [Fatos NANO, chairman]; Democratic Party or PD [Tritan SHEHU]; Albanian Republican  Party or PR [Sabri GODO]; Social Democratic Party or SDP [Skender GJINUSHI]; Democratic Alliance Party or DAP [Neritan CEKA, chairman]; Unity for Human Rights Party or PBDNJ [Vasil MELO, chairman]; Movement for Democracy Party or LDP [ruled by committee of Genc RULI, Alfred SERREQI, Dashimir SHEHI, Maksim KONOMI]; Balli Kombetar [Hysen SELFO]</ciafb:Political_parties_and_leaders>
+		<ciafb:International_organization_participation>BSEC, CCC, CE, CEI, EBRD, ECE, EU (applicant), FAO, IAEA, IBRD, ICAO, ICRM, IDA, IDB, IFAD, IFC, IFRCS, ILO, IMF, IMO, Intelsat (nonsignatory user), Interpol, IOC, IOM, ISO, ITU, NACC, OIC, OSCE, PFP, UN, UNCTAD, UNESCO, UNIDO, UNOMIG, UPU, WFTU, WHO, WIPO, WMO, WToO, WTrO (applicant)</ciafb:International_organization_participation>
+		<ciafb:Diplomatic_representation_in_the_US>chief of mission : Ambassador Lublin DILJA  chancery: Suite 1000, 1511 K Street NW, Washington, DC 20005  telephone: [1] (202) 223-4942, 8187  FAX: [1] (202) 628-7342</ciafb:Diplomatic_representation_in_the_US>
+		<ciafb:Diplomatic_representation_from_the_US>chief of mission : Ambassador Marisa R. LINO (15 July 1996)  embassy: Rruga E. Labinoti 103, Tirane  mailing address: PSC 59, Box 100 (A), APO AE 09624  telephone: [355] (42) 328-75, 335-20  FAX: [355] (42) 322-22</ciafb:Diplomatic_representation_from_the_US>
+		<ciafb:Flag_description>red with a black two-headed eagle in the center</ciafb:Flag_description>
+		<ciafb:Economy_overview>An extremely poor country by European standards, Albania is making the difficult transition to a more open-market economy. The economy rebounded in 1993-95 after a severe depression accompanying the collapse of the previous centrally planned system in 1990 and 1991. However, a weakening of government resolve to maintain stabilization policies in the election year of 1996 contributed to renewal of inflationary pressures, spurred by the budget deficit which exceeded 12%. The collapse of financial pyramid schemes in early 1997 - which had attracted deposits from a substantial portion of Albania's adult population - triggered unrest in much of the south in early 1997. The economy continues to be buoyed by remittances of some 20% of the labor force which works abroad, mostly in Greece and Italy. These remittances supplement GDP and help offset the large foreign trade deficit. Most agricultural land was privatized in 1992, substantially improving peasant incomes. Overall economic performance is likely to be substantially worse in 1997; inflation will easily top 50% and GDP may drop by 5% or more.</ciafb:Economy_overview>
+		<ciafb:GDP>purchasing power parity - $4.4 billion (1996 est.)</ciafb:GDP>
+		<ciafb:GDP_real_growth_rate>5% (1996 est.)</ciafb:GDP_real_growth_rate>
+		<ciafb:GDP_per_capita>purchasing power parity - $1290 (1996 est.)</ciafb:GDP_per_capita>
+		<ciafb:GDP_composition_by_sector>agriculture: 56%  industry: 21%  services: 23% (1995)</ciafb:GDP_composition_by_sector>
+		<ciafb:Inflation_rate_consumer_price_index>17.4% (1996)</ciafb:Inflation_rate_consumer_price_index>
+		<ciafb:Labor_force>total: 1.692 million (1994 est.) (including 352000 emigrant workers and 261000 domestically unemployed) by occupation : agriculture (nearly all private) 49.5%, private sector 22.2%, state (nonfarm) sector 28.3% (including state-owned industry 7.8%); note - includes only those domestically employed</ciafb:Labor_force>
+		<ciafb:Unemployment_rate>13% (1996 est.)</ciafb:Unemployment_rate>
+		<ciafb:Budget>revenues: $624 million  expenditures : $996 million, including capital expenditures of $NA</ciafb:Budget>
+		<ciafb:Industries>food processing, textiles and clothing; lumber, oil, cement, chemicals, mining, basic metals, hydropower</ciafb:Industries>
+		<ciafb:Industrial_production_growth_rate>6% (1995 est.)</ciafb:Industrial_production_growth_rate>
+		<ciafb:Electricity_capacity>1.533 million kW (1995)</ciafb:Electricity_capacity>
+		<ciafb:Electricity_production>3.86 billion kWh (1994)</ciafb:Electricity_production>
+		<ciafb:Electricity_consumption_per_capita>1221 kWh (1995 est.)</ciafb:Electricity_consumption_per_capita>
+		<ciafb:Agriculture_products>wide range of temperate-zone crops and livestock</ciafb:Agriculture_products>
+		<ciafb:Exports>total value: $205 million (f.o.b., 1995) commodities : asphalt, metals and metallic ores, electricity, crude oil, vegetables, fruits, tobacco partners: Italy, US, Greece, The Former Yugoslav Republic of Macedonia</ciafb:Exports>
+		<ciafb:Imports>total value: $680 million (f.o.b., 1995) commodities : machinery, consumer goods, grains partners: Italy, Greece, Bulgaria, Turkey, The Former Yugoslav Republic of Macedonia</ciafb:Imports>
+		<ciafb:Debt_external>$500 million (1994 est.)</ciafb:Debt_external>
+		<ciafb:Economic_aid>recipient : ODA, $NA</ciafb:Economic_aid>
+		<ciafb:Currency>1 lek (L) = 100 qintars</ciafb:Currency>
+		<ciafb:Exchange_rates>leke (L) per US$1 - 150.00 (May 1997), 104.50 (1996), 92.70 (1995), 94.62 (1994), 102.06 (1993), 75.03 (1992)</ciafb:Exchange_rates>
+		<ciafb:Fiscal_year>calendar year</ciafb:Fiscal_year>
+		<ciafb:Telephones>55000</ciafb:Telephones>
+		<ciafb:Telephone_system>domestic: obsolete wire system; no longer provides a telephone for every village; in 1992, following the fall of the communist government, peasants cut the wire to about 1000 villages and used it to build fences international : inadequate; international traffic carried by microwave radio relay from the Tirane exchange to Italy and Greece</ciafb:Telephone_system>
+		<ciafb:Radio_broadcast_stations>AM 17, FM 1, shortwave 0</ciafb:Radio_broadcast_stations>
+		<ciafb:Radios>577000 (1991 est.)</ciafb:Radios>
+		<ciafb:Television_broadcast_stations>9</ciafb:Television_broadcast_stations>
+		<ciafb:Televisions>300000 (1993 est.)</ciafb:Televisions>
+		<ciafb:Railways>total : 670 km  standard gauge: 670 km 1.435-m gauge (1995)</ciafb:Railways>
+		<ciafb:Highways>total: 15500 km  paved: 4650 km  unpaved: 10850 km (1995 est.)</ciafb:Highways>
+		<ciafb:Waterways>43 km plus Albanian sections of Lake Scutari, Lake Ohrid, and Lake Prespa (1990)</ciafb:Waterways>
+		<ciafb:Pipelines>crude oil 145 km; petroleum products 55 km; natural gas 64 km (1991)</ciafb:Pipelines>
+		<ciafb:Ports_and_harbors>Durres, Sarande, Shengjin, Vlore</ciafb:Ports_and_harbors>
+		<ciafb:Merchant_marine>total: 8 cargo ships (1000 GRT or over) totaling 39201 GRT/57938 DWT (1996 est.)</ciafb:Merchant_marine>
+		<ciafb:Airports>11 (1994 est.)</ciafb:Airports>
+		<ciafb:Airports_with_paved_runways>total: 5  2438 to 3047 m: 3  914 to 1523 m: 2 (1994 est.)</ciafb:Airports_with_paved_runways>
+		<ciafb:Airports_with_unpaved_runways>total: 6  over 3047 m: 2  2438 to 3047 m : 1  1524 to 2437 m: 1  914 to 1523 m: 2 (1994 est.)</ciafb:Airports_with_unpaved_runways>
+		<ciafb:Military_branches>Army, Navy, Air and Air Defense Forces, Interior Ministry Troops, Border Guards</ciafb:Military_branches>
+		<ciafb:Military_manpower_military_age>19 years of age</ciafb:Military_manpower_military_age>
+		<ciafb:Military_manpower_availability>males age 15-49: 738082 (1997 est.)</ciafb:Military_manpower_availability>
+		<ciafb:Military_manpower_fit_for_military_service>males: 600403 (1997 est.)</ciafb:Military_manpower_fit_for_military_service>
+		<ciafb:Military_manpower_reaching_military_age_annually>males: 31823 (1997 est.)</ciafb:Military_manpower_reaching_military_age_annually>
+		<ciafb:Military_expenditures_dollar_figure>$42 million (1996)</ciafb:Military_expenditures_dollar_figure>
+		<ciafb:Military_expenditures_percent_of_GDP>1.5% to 2.0% (1996)</ciafb:Military_expenditures_percent_of_GDP>
+		<ciafb:Disputes_international>the Albanian Government supports protection of the rights of ethnic Albanians outside of its borders; Albanian majority in Kosovo seeks independence from Serbian Republic; Albanians in Macedonia claim discrimination in education, access to public-sector jobs and representation in government</ciafb:Disputes_international>
+		<ciafb:Illicit_drugs>increasingly active transshipment point for Southwest Asian opiates, hashish, and cannabis transiting the Balkan route and cocaine from South  America destined for Western Europe; limited opium and cannabis production; ethnic Albanian narcotrafficking organizations active in Central and Eastern Europe</ciafb:Illicit_drugs>
+	</rdf:Description>
+	<rdf:Description rdf:about="http://www.odci.gov/cia/publications/factbook/geos/ag.html">
+		<rdf:type rdf:resource="#Country"/>
+		<ciafb:Name>Algeria</ciafb:Name>
+		<ciafb:Flag rdf:resource="http://www.odci.gov/cia/publications/factbook/flags/ag-lgflag.jpg"/>
+		<ciafb:Map rdf:resource="http://www.odci.gov/cia/publications/factbook/maps/ag-map.jpg"/>
+		<ciafb:Location>Northern Africa, bordering the Mediterranean Sea, between Morocco and Tunisia</ciafb:Location>
+		<ciafb:Latitude>28.00</ciafb:Latitude>
+		<ciafb:Longitude>3.00</ciafb:Longitude>
+		<ciafb:Map_references>Africa</ciafb:Map_references>
+		<ciafb:Area>2381740</ciafb:Area>
+		<ciafb:Area_comparative>slightly less than 3.5 times the size of Texas</ciafb:Area_comparative>
+		<ciafb:Land_boundaries>6343</ciafb:Land_boundaries>
+		<ciafb:Bordering_country rdf:resource="http://www.odci.gov/cia/publications/factbook/geos/ly.html"/>
+		<ciafb:Bordering_country rdf:resource="http://www.odci.gov/cia/publications/factbook/geos/ml.html"/>
+		<ciafb:Bordering_country rdf:resource="http://www.odci.gov/cia/publications/factbook/geos/mr.html"/>
+		<ciafb:Bordering_country rdf:resource="http://www.odci.gov/cia/publications/factbook/geos/mo.html"/>
+		<ciafb:Bordering_country rdf:resource="http://www.odci.gov/cia/publications/factbook/geos/ng.html"/>
+		<ciafb:Bordering_country rdf:resource="http://www.odci.gov/cia/publications/factbook/geos/ts.html"/>
+		<ciafb:Bordering_country>Western Sahara</ciafb:Bordering_country>
+		<ciafb:Coastline>998</ciafb:Coastline>
+		<ciafb:Maritime_claims>exclusive fishing zone: 32-52 nm territorial sea: 12 nm</ciafb:Maritime_claims>
+		<ciafb:Climate>arid to semiarid; mild, wet winters with hot, dry summers along coast; drier with cold winters and hot summers on high plateau; sirocco is a hot, dust/sand-laden wind especially common in summer</ciafb:Climate>
+		<ciafb:Terrain>mostly high plateau and desert; some mountains; narrow, discontinuous coastal plain</ciafb:Terrain>
+		<ciafb:Elevation_extremes>lowest point : Chott Melrhir -40 m  highest point: Tahat 3003 m</ciafb:Elevation_extremes>
+		<ciafb:Lowest_point>-40</ciafb:Lowest_point>
+		<ciafb:Highest_point>3003</ciafb:Highest_point>
+		<ciafb:Natural_resources>petroleum</ciafb:Natural_resources>
+		<ciafb:Natural_resources>natural gas</ciafb:Natural_resources>
+		<ciafb:Natural_resources>iron ore</ciafb:Natural_resources>
+		<ciafb:Natural_resources>phosphates</ciafb:Natural_resources>
+		<ciafb:Natural_resources>uranium</ciafb:Natural_resources>
+		<ciafb:Natural_resources>lead</ciafb:Natural_resources>
+		<ciafb:Natural_resources>zinc</ciafb:Natural_resources>
+		<ciafb:Land_use>arable land: 3%  permanent crops: 0%  permanent pastures: 13%  forests and woodland: 2%  other : 82% (1993 est.)</ciafb:Land_use>
+		<ciafb:Irrigated_land>5550</ciafb:Irrigated_land>
+		<ciafb:Natural_hazards>mountainous areas subject to severe earthquakes; mud slides</ciafb:Natural_hazards>
+		<ciafb:Environment_current_issues>soil erosion from overgrazing and other poor farming practices; desertification; dumping of raw sewage, petroleum refining wastes, and other industrial effluents is leading to the pollution of rivers and coastal waters; Mediterranean Sea, in particular, becoming polluted from oil wastes, soil erosion, and fertilizer runoff; inadequate supplies of potable water</ciafb:Environment_current_issues>
+		<ciafb:Environment_international_agreements>party to : Biodiversity, Climate Change, Desertification, Endangered Species, Environmental Modification, Law of the Sea, Ozone Layer Protection, Ship Pollution, Wetlands   signed, but not ratified: Nuclear Test Ban</ciafb:Environment_international_agreements>
+		<ciafb:Geography_note>second-largest country in Africa (after Sudan)</ciafb:Geography_note>
+		<ciafb:Population>29830370</ciafb:Population>
+		<ciafb:Age_structure>0-14 years : 39% (male 5923391; female 5712088) 15-64 years: 57% (male 8619009; female 8450774) 65 years and over: 4% (male 525556; female 599552) (July 1997 est.)</ciafb:Age_structure>
+		<ciafb:Population_growth_rate>2.18</ciafb:Population_growth_rate>
+		<ciafb:Birth_rate>28.01</ciafb:Birth_rate>
+		<ciafb:Death_rate>5.76</ciafb:Death_rate>
+		<ciafb:Net_migration_rate>-0.49</ciafb:Net_migration_rate>
+		<ciafb:Sex_ratio>at birth: 1.04 male(s)/female  under 15 years: 1.04 male(s)/female  15-64 years: 1.02 male(s)/female  65 years and over: 0.88 male(s)/female  total population: 1.02 male(s)/female (1997 est.)</ciafb:Sex_ratio>
+		<ciafb:Infant_mortality_rate>47.1</ciafb:Infant_mortality_rate>
+		<ciafb:Life_expectancy_at_birth>68.62</ciafb:Life_expectancy_at_birth>
+		<ciafb:Total_fertility_rate>3.48</ciafb:Total_fertility_rate>
+		<ciafb:Nationality>noun : Algerian(s)  adjective: Algerian</ciafb:Nationality>
+		<ciafb:Ethnic_groups>Arab-Berber 99%, European less than 1%</ciafb:Ethnic_groups>
+		<ciafb:Religions>Sunni Muslim (state religion) 99%, Christian and Jewish 1%</ciafb:Religions>
+		<ciafb:Languages>Arabic (official), French, Berber dialects</ciafb:Languages>
+		<ciafb:Literacy>definition: age 15 and over can read and write  total population: 61.6%  male: 73.9%  female : 49% (1995 est.)</ciafb:Literacy>
+		<ciafb:Country_name>conventional long form: Democratic and Popular Republic of Algeria  conventional short form: Algeria  local long form: Al Jumhuriyah al Jaza'iriyah ad Dimuqratiyah ash Shabiyah  local short form: Al Jaza'ir</ciafb:Country_name>
+		<ciafb:Data_code>AG</ciafb:Data_code>
+		<ciafb:Government_type>republic</ciafb:Government_type>
+		<ciafb:National_capital>Algiers</ciafb:National_capital>
+		<ciafb:Administrative_divisions>48 provinces (wilayas, singular - wilaya); Adrar, Ain Defla, Ain Temouchent, Alger, Annaba, Batna, Bechar, Bejaia, Biskra, Blida, Bordj Bou Arreridj, Bouira, Boumerdes, Chlef, Constantine, Djelfa, El Bayadh, El Oued, El Tarf, Ghardaia, Guelma, Illizi, Jijel, Khenchela, Laghouat, Mascara, Medea, Mila, Mostaganem, M'Sila, Naama, Oran, Ouargla, Oum el Bouaghi, Relizane, Saida, Setif, Sidi Bel Abbes, Skikda, Souk Ahras, Tamanghasset, Tebessa, Tiaret, Tindouf, Tipaza, Tissemsilt, Tizi Ouzou, Tlemcen</ciafb:Administrative_divisions>
+		<ciafb:Independence>5 July 1962 (from France)</ciafb:Independence>
+		<ciafb:National_holiday>Anniversary of the Revolution, 1 November (1954)</ciafb:National_holiday>
+		<ciafb:Constitution>19 November 1976, effective 22 November 1976; revised 3 November 1988, 23 February 1989, and 28 November 1996; note - referendum approving the revisions of 28 November 1996 was signed into law 7 December 1996</ciafb:Constitution>
+		<ciafb:Legal_system>socialist, based on French and Islamic law; judicial review of legislative acts in ad hoc Constitutional Council composed of various public officials, including several Supreme Court justices; has not accepted compulsory ICJ jurisdiction</ciafb:Legal_system>
+		<ciafb:Suffrage>18 years of age; universal</ciafb:Suffrage>
+		<ciafb:Executive_branch>chief of state: President Liamine ZEROUAL (appointed president 31 January 1994, elected president 16 November 1995)  head of government : Prime Minister Ahmed OUYAHIA (since 31 December 1995)  cabinet: Council of Ministers appointed by the prime minister elections: president elected by popular vote for a five-year term; election last held 16 November 1995 (next to be held NA 2000); prime minister appointed by the president election results : Liamine ZEROUAL elected president; percent of vote - Liamine ZEROUAL 61.3%</ciafb:Executive_branch>
+		<ciafb:Legislative_branch>bicameral Parliament consists of the National People's Assembly or Al-Majlis Ech-Chaabi Al-Watani (380 seats; members elected by popular vote to serve four-year terms; suspended since 1992) and the Council of Nations (144 seats; one-third of the members appointed by the president, two-thirds elected by indirect vote; members serve six-year terms; created as a result of the constitutional revision of November 1996) elections : National People's Assembly - first-round held 26 December 1991; second round canceled by the military after President BENDJEDID resigned 11 January 1992, effectively suspending the assembly (next election scheduled for 5 June 1997)  election results: percent of vote by party - NA; seats by party - the fundamentalist FIS won 188 of the 231 seats contested in the first round of the 1991 elections</ciafb:Legislative_branch>
+		<ciafb:Judicial_branch>Supreme Court (Cour Supreme)</ciafb:Judicial_branch>
+		<ciafb:Political_parties_and_leaders>Islamic Salvation Front (FIS, outlawed April 1992), Ali BELHADJ, Dr. Abassi MADANI, Rabeh KEBIR (self-exile in Germany); National Liberation Front (FLN), Boualem BENHAMOUDA, secretary general; Socialist Forces Front (FFS),  Hocine Ait AHMED, secretary general (self-exile in Switzerland); Movement of a Peaceful Society (Hamas), Mahfoud NAHNAH, chairman; Rally for Culture and Democracy (RCD), Said SAADI, secretary general; Algerian Renewal Party (PRA), Noureddine BOUKROUH, chairman; Nahda Movement (Al Nahda), Abdallah DJABALLAH, president; Democratic National Rally (RND), Abdelkader BENSALAH,  chairman; Movement for Democracy in Algeria (MDA), Ahmed Ben BELLA note : the government established a multiparty system in September 1989 and, as of 31 December 1990, over 50 legal parties existed; a new party law was enacted in March 1997</ciafb:Political_parties_and_leaders>
+		<ciafb:International_organization_participation>ABEDA, AfDB, AFESD, AL, AMF, AMU, CCC, ECA, FAO, G-15, G-19, G-24, G-77, IAEA, IBRD, ICAO, ICFTU, ICRM, IDA, IDB, IFAD, IFC, IFRCS, IHO (pending member), ILO, IMF, IMO, Inmarsat, Intelsat, Interpol, IOC, ISO, ITU, NAM, OAPEC, OAS (observer), OAU, OIC, OPEC, OSCE (partner), UN, UNAVEM III, UNCTAD, UNESCO, UNHCR, UNIDO, UNMIH, UPU, WCL, WHO, WIPO, WMO, WToO, WTrO (applicant)</ciafb:International_organization_participation>
+		<ciafb:Diplomatic_representation_in_the_US>chief of mission: Ambassador Ramtane LAMAMRA  chancery: 2118 Kalorama Road NW, Washington, DC 20008  telephone: [1] (202) 265-2800  FAX : [1] (202) 667-2174</ciafb:Diplomatic_representation_in_the_US>
+		<ciafb:Diplomatic_representation_from_the_US>chief of mission: Ambassador Ronald E. NEUMANN  embassy : 4 Chemin Cheikh Bachir El-Ibrahimi, Algiers  mailing address: B. P. Box 549, Alger-Gare, 16000 Algiers  telephone: [213] (2) 69-11-86, 69-12-55  FAX: [213] (2) 69-39-79</ciafb:Diplomatic_representation_from_the_US>
+		<ciafb:Flag_description>two equal vertical bands of green (hoist side) and white with a red, five-pointed star within a red crescent; the crescent, star, and color green are traditional symbols of Islam (the state religion)</ciafb:Flag_description>
+		<ciafb:Economy_overview>The hydrocarbons sector is the backbone of the economy, accounting for roughly 57% of government revenues, 25% of GDP, and almost all export earnings; Algeria has the fifth-largest reserves of natural gas in the world and is the second largest gas exporter; and it ranks fourteenth for oil reserves. Algiers' efforts to reform one of the most centrally planned economies in the Arab world began after the 1986 collapse of world oil prices plunged the country into a severe recession. In 1989, the government launched a comprehensive, IMF-supported program to achieve economic stabilization and to introduce market mechanisms into the economy. Despite substantial progress toward economic adjustment, in 1992 the reform drive stalled as Algiers became embroiled in political turmoil. In September 1993, a new government was formed, and one priority was the resumption and acceleration of the structural adjustment process. Buffeted by the slump in world oil prices and burdened with a heavy foreign debt, Algiers concluded a one-year standby arrangement with the IMF in April 1994. Following a Paris Club debt rescheduling in 1995, a robust harvest, and elevated oil prices, the economy experienced a strong recovery and key economic improvements. Recent and planned investments in developing hydrocarbon resources are likely to increase growth and export earnings.</ciafb:Economy_overview>
+		<ciafb:GDP>purchasing power parity - $115.9 billion (1996 est.)</ciafb:GDP>
+		<ciafb:GDP_real_growth_rate>4% (1996 est.)</ciafb:GDP_real_growth_rate>
+		<ciafb:GDP_per_capita>purchasing power parity - $4000 (1996 est.)</ciafb:GDP_per_capita>
+		<ciafb:GDP_composition_by_sector>agriculture: 12%  industry: 50%  services: 38% (1995 est.)</ciafb:GDP_composition_by_sector>
+		<ciafb:Inflation_rate_consumer_price_index>19.8% (1996 est.)</ciafb:Inflation_rate_consumer_price_index>
+		<ciafb:Labor_force>total: 7.8 million (1996 est.)  by occupation: government 29.5%, agriculture 22%, construction and public works 16.2%, industry 13.6%, commerce and services 13.5%, transportation and communication 5.2% (1989)</ciafb:Labor_force>
+		<ciafb:Unemployment_rate>28% (1996 est.)</ciafb:Unemployment_rate>
+		<ciafb:Budget>revenues : $14.3 billion  expenditures: $17.9 billion, including capital expenditures of $NA (1995 est.)</ciafb:Budget>
+		<ciafb:Industries>petroleum, light industries, natural gas, mining, electrical, petrochemical, food processing</ciafb:Industries>
+		<ciafb:Industrial_production_growth_rate>NA%</ciafb:Industrial_production_growth_rate>
+		<ciafb:Electricity_capacity>6.01 million kW (1994)</ciafb:Electricity_capacity>
+		<ciafb:Electricity_production>18.7 billion kWh (1994)</ciafb:Electricity_production>
+		<ciafb:Electricity_consumption_per_capita>583 kWh (1995 est.)</ciafb:Electricity_consumption_per_capita>
+		<ciafb:Agriculture_products>wheat, barley, oats, grapes, olives, citrus, fruits; sheep, cattle</ciafb:Agriculture_products>
+		<ciafb:Exports>total value: $11 billion (f.o.b., 1996 est.) commodities: petroleum and natural gas 97%  partners: Italy 18.8%, US 14.8%, France 11.8%, Spain 8%, Germany 7.9% (1995 est.)</ciafb:Exports>
+		<ciafb:Imports>total value : $10.5 billion (f.o.b., 1996 est.) commodities: capital goods, food and beverages, consumer goods partners: France 29%, Spain 10.5%, Italy 8.2%, US 8%, Germany 5.6% (1995 est.)</ciafb:Imports>
+		<ciafb:Debt_external>$32 billion (1996 est.)</ciafb:Debt_external>
+		<ciafb:Economic_aid>recipient: ODA, $420 million (1996)</ciafb:Economic_aid>
+		<ciafb:Currency>1 Algerian dinar (DA) = 100 centimes</ciafb:Currency>
+		<ciafb:Exchange_rates>Algerian dinars (DA) per US$1 - 57.136 (January 1997), 54.749 (1996), 47.663 (1995), 35.059 (1994), 23.345 (1993), 21.836 (1992)</ciafb:Exchange_rates>
+		<ciafb:Fiscal_year>calendar year</ciafb:Fiscal_year>
+		<ciafb:Telephones>862000 (1991 est.)</ciafb:Telephones>
+		<ciafb:Telephone_system>domestic: excellent service in north but sparse in south; domestic satellite system with 12 earth stations (20 additional domestic earth stations are planned)   international: 5 submarine cables; microwave radio relay to Italy, France, Spain, Morocco, and Tunisia; coaxial cable to Morocco and Tunisia; participant in Medarabtel; satellite earth stations - 2 Intelsat (1 Atlantic Ocean and 1 Indian Ocean), 1 Intersputnik, and 1 Arabsat</ciafb:Telephone_system>
+		<ciafb:Radio_broadcast_stations>AM 26, FM 0, shortwave 0</ciafb:Radio_broadcast_stations>
+		<ciafb:Radios>6 million (1991 est.)</ciafb:Radios>
+		<ciafb:Television_broadcast_stations>18</ciafb:Television_broadcast_stations>
+		<ciafb:Televisions>2 million (1993 est.)</ciafb:Televisions>
+		<ciafb:Railways>total : 4772 km  standard gauge: 3616 km 1.435-m gauge (301 km electrified; 215 km double track) narrow gauge: 1156 km 1.055-m gauge</ciafb:Railways>
+		<ciafb:Highways>total: 102424 km  paved : 70570 km (including 6080 km of expressways) unpaved: 31854 km (1995 est.)</ciafb:Highways>
+		<ciafb:Pipelines>crude oil 6612 km; petroleum products 298 km; natural gas 2948 km</ciafb:Pipelines>
+		<ciafb:Ports_and_harbors>Algiers, Annaba, Arzew, Bejaia, Beni Saf, Dellys, Djendjene, Ghazaouet, Jijel, Mostaganem, Oran, Skikda, Tenes</ciafb:Ports_and_harbors>
+		<ciafb:Merchant_marine>total : 78 ships (1000 GRT or over) totaling 925261 GRT/1094281 DWT ships by type: bulk 9, cargo 27, chemical tanker 7, liquefied gas tanker 11, oil tanker 5, roll-on/roll-off cargo 13, short-sea passenger 5, specialized tanker 1 (1996 est.)</ciafb:Merchant_marine>
+		<ciafb:Airports>119 (1996 est.)</ciafb:Airports>
+		<ciafb:Airports_with_paved_runways>total: 66  over 3047 m: 8  2438 to 3047 m : 24  1524 to 2437 m: 13  914 to 1523 m: 4  under 914 m: 17 (1996 est.)</ciafb:Airports_with_paved_runways>
+		<ciafb:Airports_with_unpaved_runways>total: 53  2438 to 3047 m : 3  1524 to 2437 m: 19  914 to 1523 m: 31 (1996 est.)</ciafb:Airports_with_unpaved_runways>
+		<ciafb:Heliports>1 (1996 est.)</ciafb:Heliports>
+		<ciafb:Military_branches>National Popular Army, Navy, Air Force, Territorial Air Defense, National Gendarmerie</ciafb:Military_branches>
+		<ciafb:Military_manpower_military_age>19 years of age</ciafb:Military_manpower_military_age>
+		<ciafb:Military_manpower_availability>males age 15-49: 7666961 (1997 est.)</ciafb:Military_manpower_availability>
+		<ciafb:Military_manpower_fit_for_military_service>males: 4700502 (1997 est.)</ciafb:Military_manpower_fit_for_military_service>
+		<ciafb:Military_manpower_reaching_military_age_annually>males: 337630 (1997 est.)</ciafb:Military_manpower_reaching_military_age_annually>
+		<ciafb:Military_expenditures_dollar_figure>$1.3 billion (1994)</ciafb:Military_expenditures_dollar_figure>
+		<ciafb:Military_expenditures_percent_of_GDP>2.7% (1994)</ciafb:Military_expenditures_percent_of_GDP>
+		<ciafb:Disputes_international>part of southeastern region claimed by Libya; land boundary dispute with Tunisia settled in 1993</ciafb:Disputes_international>
+	</rdf:Description>
+	<rdf:Description rdf:about="http://www.odci.gov/cia/publications/factbook/geos/aq.html">
+		<rdf:type rdf:resource="#Country"/>
+		<ciafb:Name>American Samoa</ciafb:Name>
+		<ciafb:Flag rdf:resource="http://www.odci.gov/cia/publications/factbook/flags/aq-lgflag.jpg"/>
+		<ciafb:Map rdf:resource="http://www.odci.gov/cia/publications/factbook/maps/aq-map.jpg"/>
+		<ciafb:Location>Oceania, group of islands in the South Pacific Ocean, about one-half of the way from Hawaii to New Zealand</ciafb:Location>
+		<ciafb:Latitude>-14.20</ciafb:Latitude>
+		<ciafb:Longitude>-170.00</ciafb:Longitude>
+		<ciafb:Map_references>Oceania</ciafb:Map_references>
+		<ciafb:Area>199</ciafb:Area>
+		<ciafb:Area_comparative>slightly larger than Washington, DC</ciafb:Area_comparative>
+		<ciafb:Land_boundaries></ciafb:Land_boundaries>
+		<ciafb:Coastline>116</ciafb:Coastline>
+		<ciafb:Maritime_claims>exclusive economic zone: 200 nm territorial sea: 12 nm</ciafb:Maritime_claims>
+		<ciafb:Climate>tropical marine, moderated by southeast trade winds; annual rainfall averages 124 inches; rainy season from November to April, dry season from May to October; little seasonal temperature variation</ciafb:Climate>
+		<ciafb:Terrain>five volcanic islands with rugged peaks and limited coastal plains, two coral atolls (Rose Island, Swains Island)</ciafb:Terrain>
+		<ciafb:Elevation_extremes>lowest point: Pacific Ocean 0 m  highest point: Lata 966 m</ciafb:Elevation_extremes>
+		<ciafb:Lowest_point>0</ciafb:Lowest_point>
+		<ciafb:Highest_point>966</ciafb:Highest_point>
+		<ciafb:Natural_resources>pumice</ciafb:Natural_resources>
+		<ciafb:Natural_resources>pumicite</ciafb:Natural_resources>
+		<ciafb:Land_use>arable land: 5%  permanent crops: 10%  permanent pastures: 0%  forests and woodland : 70%  other: 15% (1993 est.)</ciafb:Land_use>
+		<ciafb:Irrigated_land></ciafb:Irrigated_land>
+		<ciafb:Natural_hazards>typhoons common from December to March</ciafb:Natural_hazards>
+		<ciafb:Environment_current_issues>limited natural fresh water resources; the water division of the government has spent substantial funds in the past few years to improve water catchments and pipelines</ciafb:Environment_current_issues>
+		<ciafb:Environment_international_agreements>party to: NA  signed, but not ratified: NA</ciafb:Environment_international_agreements>
+		<ciafb:Geography_note>Pago Pago has one of the best natural deepwater harbors in the South Pacific Ocean, sheltered by shape from rough seas and protected by peripheral mountains from high winds; strategic location in the South Pacific Ocean</ciafb:Geography_note>
+		<ciafb:Population>61819</ciafb:Population>
+		<ciafb:Age_structure>0-14 years: NA  15-64 years: NA  65 years and over: NA</ciafb:Age_structure>
+		<ciafb:Population_growth_rate>3.72</ciafb:Population_growth_rate>
+		<ciafb:Birth_rate>35.23</ciafb:Birth_rate>
+		<ciafb:Death_rate>4.01</ciafb:Death_rate>
+		<ciafb:Net_migration_rate>6</ciafb:Net_migration_rate>
+		<ciafb:Sex_ratio>at birth: NA male(s)/female under 15 years: NA male(s)/female  15-64 years: NA male(s)/female 65 years and over: NA male(s)/female total population : NA male(s)/female</ciafb:Sex_ratio>
+		<ciafb:Infant_mortality_rate>18.78</ciafb:Infant_mortality_rate>
+		<ciafb:Life_expectancy_at_birth>72.91</ciafb:Life_expectancy_at_birth>
+		<ciafb:Total_fertility_rate>4.16</ciafb:Total_fertility_rate>
+		<ciafb:Nationality>noun: American Samoan(s)  adjective: American Samoan</ciafb:Nationality>
+		<ciafb:Ethnic_groups>Samoan (Polynesian) 89%, Caucasian 2%, Tongan 4%, other 5%</ciafb:Ethnic_groups>
+		<ciafb:Religions>Christian Congregationalist 50%, Roman Catholic 20%, Protestant denominations and other 30%</ciafb:Religions>
+		<ciafb:Languages>Samoan (closely related to Hawaiian and other Polynesian languages), English  note: most people are bilingual</ciafb:Languages>
+		<ciafb:Literacy>definition : age 15 and over can read and write  total population: 97%  male: 98%  female: 97% (1980 est.)</ciafb:Literacy>
+		<ciafb:Country_name>conventional long form: Territory of American Samoa  conventional short form: American Samoa  abbreviation: AS</ciafb:Country_name>
+		<ciafb:Data_code>AQ</ciafb:Data_code>
+		<ciafb:Dependency_status>unincorporated and unorganized territory of the US; administered by the US Department of Interior, Office of Territorial and International Affairs</ciafb:Dependency_status>
+		<ciafb:Government_type>NA</ciafb:Government_type>
+		<ciafb:National_capital>Pago Pago</ciafb:National_capital>
+		<ciafb:Administrative_divisions>none (territory of the US)</ciafb:Administrative_divisions>
+		<ciafb:Independence>none (territory of the US)</ciafb:Independence>
+		<ciafb:National_holiday>Territorial Flag Day, 17 April (1900)</ciafb:National_holiday>
+		<ciafb:Constitution>ratified 1966, in effect 1967</ciafb:Constitution>
+		<ciafb:Legal_system>NA</ciafb:Legal_system>
+		<ciafb:Suffrage>18 years of age; universal</ciafb:Suffrage>
+		<ciafb:Executive_branch>chief of state : President of the US William Jefferson CLINTON (since 20 January 1993) and Vice President Albert GORE, Jr. (since 20 January 1993)  head of government: Governor Tauese P. SUNIA (since 3 January 1997) and Lieutenant Governor Togiola Tulafono (since 3 January 1997)  cabinet: NA  elections: governor and lieutenant governor elected on the same ticket by popular vote for four-year terms; election last held 3 November 1996 (next to be held 7 November 2000) election results: Tauese P. SUNIA elected governor of American Samoa; percent of vote - Tauese P. SUNIA (Democrat) 51%, Peter REID (Independent) 49%</ciafb:Executive_branch>
+		<ciafb:Legislative_branch>bicameral Fono or Legislative Assembly consists of the House of Representatives (21 seats - 20 of which are elected by popular vote and 1 is an appointed, nonvoting delegate from Swains Island; members serve two-year terms) and the Senate (18 seats; members are elected from local chiefs who serve four-year terms) elections: House of Representatives - last held 5 November 1996 (next to be held NA November 1998); Senate - last held 3 November 1996 (next to be held 7  November 2000) election results : House of Representatives - percent of vote by party - NA; seats by party - NA; Senate - percent of vote by party - NA; seats by party - NA note: American Samoa elects one delegate to the US House of Representatives; elections last held 5 November 1996 (next to be held NA November 1998); results - Eni R. F. H. FALEOMAVAEGA reelected as delegate</ciafb:Legislative_branch>
+		<ciafb:Judicial_branch>High Court, chief justice and associate justices are appointed by the US Secretary of the Interior</ciafb:Judicial_branch>
+		<ciafb:Political_parties_and_leaders>NA</ciafb:Political_parties_and_leaders>
+		<ciafb:International_organization_participation>ESCAP (associate), Interpol (subbureau), IOC, SPC</ciafb:International_organization_participation>
+		<ciafb:Diplomatic_representation_in_the_US>none (territory of the US)</ciafb:Diplomatic_representation_in_the_US>
+		<ciafb:Diplomatic_representation_from_the_US>none (territory of the US)</ciafb:Diplomatic_representation_from_the_US>
+		<ciafb:Flag_description>blue with a white triangle edged in red that is based on the outer side and extends to the hoist side; a brown and white American bald eagle flying toward the hoist side is carrying two traditional Samoan symbols of authority, a staff and a war club</ciafb:Flag_description>
+		<ciafb:Economy_overview>Economic activity is strongly linked to the US, with which American Samoa conducts the great bulk of its foreign trade. Tuna fishing and tuna processing plants are the backbone of the private sector, with canned tuna the primary export. The tuna canneries and the government are by far the two largest employers. Other economic activities include a slowly developing tourist industry. Transfers from the US Government add substantially to American Samoa's economic well-being. According to one observer, attempts by the government to develop a larger and broader economy are restrained by Samoa's remote location, its limited transportation, and its devastating hurricanes.</ciafb:Economy_overview>
+		<ciafb:GDP>purchasing power parity - $128 million (1991 est.)</ciafb:GDP>
+		<ciafb:GDP_real_growth_rate>NA%</ciafb:GDP_real_growth_rate>
+		<ciafb:GDP_per_capita>purchasing power parity - $2600 (1991 est.)</ciafb:GDP_per_capita>
+		<ciafb:GDP_composition_by_sector>agriculture : NA%  industry: NA%  services: NA%</ciafb:GDP_composition_by_sector>
+		<ciafb:Inflation_rate_consumer_price_index>NA %</ciafb:Inflation_rate_consumer_price_index>
+		<ciafb:Labor_force>total: 14400 (1990)  by occupation: government 33%, tuna canneries 34%, other 33% (1990)</ciafb:Labor_force>
+		<ciafb:Unemployment_rate>12% (1991)</ciafb:Unemployment_rate>
+		<ciafb:Budget>revenues: $97 million ($43 million in local revenue and $54 million in grant revenue)   expenditures: $NA, including capital expenditures of $NA (FY90/91)</ciafb:Budget>
+		<ciafb:Industries>tuna canneries (largely dependent on foreign fishing vessels), handicrafts</ciafb:Industries>
+		<ciafb:Industrial_production_growth_rate>NA%</ciafb:Industrial_production_growth_rate>
+		<ciafb:Electricity_capacity>33000 kW (1993)</ciafb:Electricity_capacity>
+		<ciafb:Electricity_production>100 million kWh (1994)</ciafb:Electricity_production>
+		<ciafb:Electricity_consumption_per_capita>1743 kWh (1995 est.)</ciafb:Electricity_consumption_per_capita>
+		<ciafb:Agriculture_products>bananas, coconuts, vegetables, taro, breadfruit, yams, copra, pineapples, papayas; dairy farming</ciafb:Agriculture_products>
+		<ciafb:Exports>total value: $306 million (f.o.b., 1989) commodities: canned tuna 93% partners : US 99.6%</ciafb:Exports>
+		<ciafb:Imports>total value: $360.3 million (c.i.f., 1989)  commodities: materials for canneries 56%, food 8%, petroleum products 7%, machinery and parts 6% partners : US 62%, Japan 9%, NZ 7%, Australia 11%, Fiji 4%, other 7%</ciafb:Imports>
+		<ciafb:Debt_external>$NA</ciafb:Debt_external>
+		<ciafb:Economic_aid>recipient: ODA, $NA note : important financial support from the US</ciafb:Economic_aid>
+		<ciafb:Currency>1 US dollar (US$) = 100 cents</ciafb:Currency>
+		<ciafb:Exchange_rates>US currency is used</ciafb:Exchange_rates>
+		<ciafb:Fiscal_year>1 October - 30 September</ciafb:Fiscal_year>
+		<ciafb:Telephones>9000 (1994 est.)</ciafb:Telephones>
+		<ciafb:Telephone_system>domestic: good telex, telegraph, facsimile and cellular phone services; domestic satellite system with 1 Comsat earth station  international: satellite earth station - 1 Intelsat (Pacific Ocean)</ciafb:Telephone_system>
+		<ciafb:Radio_broadcast_stations>AM 1, FM 1, shortwave 0</ciafb:Radio_broadcast_stations>
+		<ciafb:Radios>NA</ciafb:Radios>
+		<ciafb:Television_broadcast_stations>1</ciafb:Television_broadcast_stations>
+		<ciafb:Televisions>8000 (1993 est.)</ciafb:Televisions>
+		<ciafb:Railways>0 km</ciafb:Railways>
+		<ciafb:Highways>total : 350 km  paved: 150 km  unpaved: 200 km</ciafb:Highways>
+		<ciafb:Ports_and_harbors>Aunu'u (new construction), Auasi, Faleosao, Ofu, Pago Pago, Ta'u</ciafb:Ports_and_harbors>
+		<ciafb:Merchant_marine>none</ciafb:Merchant_marine>
+		<ciafb:Airports>3 (1996 est.)</ciafb:Airports>
+		<ciafb:Airports_with_paved_runways>total: 3  2438 to 3047 m: 1  under 914 m: 2 (1996 est.) </ciafb:Airports_with_paved_runways>
+		<ciafb:Military_note>defense is the responsibility of the US</ciafb:Military_note>
+		<ciafb:Disputes_international>none</ciafb:Disputes_international>
+	</rdf:Description>
+	<rdf:Description rdf:about="http://www.odci.gov/cia/publications/factbook/geos/an.html">
+		<rdf:type rdf:resource="#Country"/>
+		<ciafb:Name>Andorra</ciafb:Name>
+		<ciafb:Flag rdf:resource="http://www.odci.gov/cia/publications/factbook/flags/an-lgflag.jpg"/>
+		<ciafb:Map rdf:resource="http://www.odci.gov/cia/publications/factbook/maps/an-map.jpg"/>
+		<ciafb:Location>Southwestern Europe, between France and Spain</ciafb:Location>
+		<ciafb:Latitude>42.30</ciafb:Latitude>
+		<ciafb:Longitude>1.30</ciafb:Longitude>
+		<ciafb:Map_references>Europe</ciafb:Map_references>
+		<ciafb:Area>450</ciafb:Area>
+		<ciafb:Area_comparative>2.5 times the size of Washington, DC</ciafb:Area_comparative>
+		<ciafb:Land_boundaries>125</ciafb:Land_boundaries>
+		<ciafb:Bordering_country rdf:resource="http://www.odci.gov/cia/publications/factbook/geos/fr.html"/>
+		<ciafb:Bordering_country rdf:resource="http://www.odci.gov/cia/publications/factbook/geos/sp.html"/>
+		<ciafb:Coastline>0</ciafb:Coastline>
+		<ciafb:Maritime_claims>none (landlocked)</ciafb:Maritime_claims>
+		<ciafb:Climate>temperate; snowy, cold winters and warm, dry summers</ciafb:Climate>
+		<ciafb:Terrain>rugged mountains dissected by narrow valleys</ciafb:Terrain>
+		<ciafb:Elevation_extremes>lowest point: Riu Valira 840 m  highest point : Coma Pedrosa 2946 m</ciafb:Elevation_extremes>
+		<ciafb:Lowest_point>840</ciafb:Lowest_point>
+		<ciafb:Highest_point>2946</ciafb:Highest_point>
+		<ciafb:Natural_resources>hydropower</ciafb:Natural_resources>
+		<ciafb:Natural_resources>mineral water</ciafb:Natural_resources>
+		<ciafb:Natural_resources>timber</ciafb:Natural_resources>
+		<ciafb:Natural_resources>iron ore</ciafb:Natural_resources>
+		<ciafb:Natural_resources>lead</ciafb:Natural_resources>
+		<ciafb:Land_use>arable land: 2%  permanent crops: 0%  permanent pastures: 56%  forests and woodland: 22%  other: 20% (1993 est.)</ciafb:Land_use>
+		<ciafb:Irrigated_land></ciafb:Irrigated_land>
+		<ciafb:Natural_hazards>snowslides, avalanches</ciafb:Natural_hazards>
+		<ciafb:Environment_current_issues>deforestation; overgrazing of mountain meadows contributes to soil erosion</ciafb:Environment_current_issues>
+		<ciafb:Environment_international_agreements>party to: none of the selected agreements signed, but not ratified: none of the selected agreements</ciafb:Environment_international_agreements>
+		<ciafb:Geography_note>landlocked</ciafb:Geography_note>
+		<ciafb:Population>64000</ciafb:Population>
+		<ciafb:Age_structure>0-14 years: 14% (male 4788; female 4452) 15-64 years : 74% (male 25291; female 21807) 65 years and over: 12% (male 3903; female 3759) (July 1997 est.)</ciafb:Age_structure>
+		<ciafb:Population_growth_rate>0.72</ciafb:Population_growth_rate>
+		<ciafb:Birth_rate>10.67</ciafb:Birth_rate>
+		<ciafb:Death_rate>5.2</ciafb:Death_rate>
+		<ciafb:Net_migration_rate>1.77</ciafb:Net_migration_rate>
+		<ciafb:Sex_ratio>at birth: 1.06 male(s)/female  under 15 years: 1.08 male(s)/female  15-64 years : 1.16 male(s)/female  65 years and over: 1.04 male(s)/female  total population: 1.13 male(s)/female (1997 est.)</ciafb:Sex_ratio>
+		<ciafb:Infant_mortality_rate>4.1</ciafb:Infant_mortality_rate>
+		<ciafb:Life_expectancy_at_birth>83.45</ciafb:Life_expectancy_at_birth>
+		<ciafb:Total_fertility_rate>1.21</ciafb:Total_fertility_rate>
+		<ciafb:Nationality>noun: Andorran(s)  adjective: Andorran</ciafb:Nationality>
+		<ciafb:Ethnic_groups>Spanish 61%, Andorran 30%, French 6%, other 3%</ciafb:Ethnic_groups>
+		<ciafb:Religions>Roman Catholic (predominant)</ciafb:Religions>
+		<ciafb:Languages>Catalan (official), French, Castilian</ciafb:Languages>
+		<ciafb:Literacy>NA</ciafb:Literacy>
+		<ciafb:Country_name>conventional long form: Principality of Andorra  conventional short form: Andorra  local long form: Principat d'Andorra  local short form : Andorra</ciafb:Country_name>
+		<ciafb:Data_code>AN</ciafb:Data_code>
+		<ciafb:Government_type>parliamentary democracy (since March 1993) that retains as its heads of state a coprincipality; the two princes are the president of France and  Spanish bishop of Seo de Urgel, who are represented locally by officials called veguers</ciafb:Government_type>
+		<ciafb:National_capital>Andorra la Vella</ciafb:National_capital>
+		<ciafb:Administrative_divisions>7 parishes (parroquies, singular - parroquia); Andorra, Canillo, Encamp, La Massana, Les Escaldes, Ordino, Sant Julia de Loria</ciafb:Administrative_divisions>
+		<ciafb:Independence>1278</ciafb:Independence>
+		<ciafb:National_holiday>Mare de Deu de Meritxell, 8 September</ciafb:National_holiday>
+		<ciafb:Constitution>Andorra's first written constitution was drafted in 1991; adopted 14 March 1993</ciafb:Constitution>
+		<ciafb:Legal_system>based on French and Spanish civil codes; no judicial review of legislative acts; has not accepted compulsory ICJ jurisdiction</ciafb:Legal_system>
+		<ciafb:Suffrage>18 years of age; universal</ciafb:Suffrage>
+		<ciafb:Executive_branch>chief of state: French Coprince Jacques CHIRAC (since 17 May 1995) and Spanish Episcopal Coprince Monseigneur Juan MARTI Alanis (since 31 January 1971); note - each coprince is represented by a veguer (current names NA) head of government: Executive Council President Marc FORNE Molne (since 21 December 1994)   cabinet: Executive Council designated by the executive council president elections: executive council president elected by the General Council and formally appointed by the coprinces; election last held 16 February 1997 (next to be held NA 2001)  election results: Marc FORNE Molne elected executive council president; percent of General Council vote - NA</ciafb:Executive_branch>
+		<ciafb:Legislative_branch>unicameral General Council of the Valleys or Consell General de las Valls (28 seats; members are elected by direct popular vote, 14 from a single  national constituency and 14 to represent each of the 7 parishes; members serve four-year terms) elections: last held 16 February 1997 (next to be held February 2001) election results: percent of vote by party - UL 57%, AND 21%, IDN 7%, ND 7%, other 8%; seats by party - UL 16, AND 6, ND 2, IDN 2, UPO 2</ciafb:Legislative_branch>
+		<ciafb:Judicial_branch>Supreme Court of Andorra at Perpignan (France) two civil judges appointed by the veguers, one appeals judge appointed by the coprinces alternately;  Ecclesiastical Court of the Bishop of Seo de Urgel (Spain); Tribunal of the Courts or Tribunal des Cortes presided over by the two civil judges, one appeals judge, the veguers, and two members of the General Council</ciafb:Judicial_branch>
+		<ciafb:Political_parties_and_leaders>National Democratic Group or AND [Oscar RIBAS Reig and Jordi FARRAS]; Liberal Union or UL [Francesc CERQUEDA]; New Democracy or ND [Jaume BARTOMEU]; Andorran National Coalition or CNA [Antoni CERQUEDA]; National Democratic Initiative or IDN [Vincenc MATEU]; Liberal Party of Andorra (Partit Liberal d'Andorra) or PLA [Marc FORNE]; Unio Parroquial d'Ordino or UDO note : there are two other small parties</ciafb:Political_parties_and_leaders>
+		<ciafb:International_organization_participation>CE, ECE, ICRM, IFRCS, Interpol, IOC, ITU, UN, UNESCO, WIPO, WToO</ciafb:International_organization_participation>
+		<ciafb:Diplomatic_representation_in_the_US>chief of mission : Ambassador Juli MINOVES-TRIQUELL (also Permanent Representative to the UN) chancery: 2 United Nations Plaza, 25th Floor, New York, NY 10017  telephone: [1] (212) 750-8064  FAX: [1] (212) 750-6630</ciafb:Diplomatic_representation_in_the_US>
+		<ciafb:Diplomatic_representation_from_the_US>the US does not have an embassy in Andorra; US interests in Andorra are represented by the Consulate General's office in Barcelona (Spain); mailing address: Paseo Reina Elisenda, 23, 08034 Barcelona, Spain; telephone: (343) 280-2227; FAX: (343) 205-7705; note - Consul General Maurice S. PARKER makes periodic visits to Andorra</ciafb:Diplomatic_representation_from_the_US>
+		<ciafb:Flag_description>three equal vertical bands of blue (hoist side), yellow, and red with the national coat of arms centered in the yellow band; the coat of arms features a quartered shield; similar to the flags of Chad and Romania that do not have a national coat of arms in the center</ciafb:Flag_description>
+		<ciafb:Economy_overview>Tourism, the mainstay of Andorra's tiny, well-to-do economy, accounts for roughly 80% of GDP. An estimated 10 million tourists visit annually, attracted by Andorra's duty-free status and by its summer and winter resorts. Andorra's comparative advantage has recently eroded as the economies of neighboring France and Spain have been opened up, providing broader availability of goods and lower tariffs. The banking sector, with its -tax haven- status, also contributes substantially to the economy. Agricultural production is limited by a scarcity of arable land, and most food has to be imported. The principal livestock activity is sheep raising. Manufacturing consists mainly of cigarettes, cigars, and furniture. Andorra is a member of the EU Customs Union and is treated as an EU member for trade in manufactured goods (no tariffs) and as a non-EU member for agricultural products.</ciafb:Economy_overview>
+		<ciafb:GDP>purchasing power parity - $1.2 billion (1995 est.)</ciafb:GDP>
+		<ciafb:GDP_real_growth_rate>NA%</ciafb:GDP_real_growth_rate>
+		<ciafb:GDP_per_capita>purchasing power parity - $18000 (1995 est.)</ciafb:GDP_per_capita>
+		<ciafb:GDP_composition_by_sector>agriculture: NA%  industry: NA%  services: NA%</ciafb:GDP_composition_by_sector>
+		<ciafb:Inflation_rate_consumer_price_index>NA%</ciafb:Inflation_rate_consumer_price_index>
+		<ciafb:Labor_force>NA</ciafb:Labor_force>
+		<ciafb:Unemployment_rate>0%</ciafb:Unemployment_rate>
+		<ciafb:Budget>revenues : $138 million  expenditures: $177 million, including capital expenditures of $NA (1993)</ciafb:Budget>
+		<ciafb:Industries>tourism (particularly skiing), sheep, timber, tobacco, banking</ciafb:Industries>
+		<ciafb:Industrial_production_growth_rate>NA%</ciafb:Industrial_production_growth_rate>
+		<ciafb:Electricity_capacity>35000 kW (1992)</ciafb:Electricity_capacity>
+		<ciafb:Electricity_production>140 million kWh (1992)</ciafb:Electricity_production>
+		<ciafb:Electricity_consumption_per_capita>NA kWh; note - Andorra exports most of its electricity to France and Spain</ciafb:Electricity_consumption_per_capita>
+		<ciafb:Agriculture_products>small quantities of tobacco, rye, wheat, barley, oats, vegetables; sheep raising</ciafb:Agriculture_products>
+		<ciafb:Exports>total value : $47 million (f.o.b., 1995) commodities: electricity, tobacco products, furniture partners : France 49%, Spain 47%</ciafb:Exports>
+		<ciafb:Imports>total value: $1 billion (1995) commodities: consumer goods, food  partners: France, Spain, US 4.2%</ciafb:Imports>
+		<ciafb:Debt_external>$NA</ciafb:Debt_external>
+		<ciafb:Economic_aid>none</ciafb:Economic_aid>
+		<ciafb:Currency>1 French franc (F) = 100 centimes; 1 peseta (Pta) = 100 centimos; the French and Spanish currencies are used</ciafb:Currency>
+		<ciafb:Exchange_rates>French francs (F) per US$1 - 5.4169 (January 1997), 5.1155 (1996), 4.9915 (1995), 5.5520 (1994), 5.6632 (1993), 5.2938 (1992); Spanish pesetas (Ptas)  per US$1 - 134.77 (January 1997), 126.66 (1996), 124.69 (1995), 133.96 (1994), 127.26 (1993), 102.38 (1992)</ciafb:Exchange_rates>
+		<ciafb:Fiscal_year>calendar year</ciafb:Fiscal_year>
+		<ciafb:Telephones>21258 (1983 est.)</ciafb:Telephones>
+		<ciafb:Telephone_system>domestic : modern system with microwave radio relay connections between exchanges  international: landline circuits to France and Spain</ciafb:Telephone_system>
+		<ciafb:Radio_broadcast_stations>AM 1, FM 0, shortwave 0</ciafb:Radio_broadcast_stations>
+		<ciafb:Radios>10000 (1993 est.)</ciafb:Radios>
+		<ciafb:Television_broadcast_stations>0</ciafb:Television_broadcast_stations>
+		<ciafb:Televisions>7000 (1991 est.)</ciafb:Televisions>
+		<ciafb:Railways>0 km</ciafb:Railways>
+		<ciafb:Highways>total: 269 km  paved: 198 km  unpaved : 71 km (1991 est.)</ciafb:Highways>
+		<ciafb:Ports_and_harbors>none</ciafb:Ports_and_harbors>
+		<ciafb:Airports>none</ciafb:Airports>
+		<ciafb:Military_note>defense is the responsibility of France and Spain</ciafb:Military_note>
+		<ciafb:Disputes_international>none</ciafb:Disputes_international>
+	</rdf:Description>
+	<rdf:Description rdf:about="http://www.odci.gov/cia/publications/factbook/geos/ao.html">
+		<rdf:type rdf:resource="#Country"/>
+		<ciafb:Name>Angola</ciafb:Name>
+		<ciafb:Flag rdf:resource="http://www.odci.gov/cia/publications/factbook/flags/ao-lgflag.jpg"/>
+		<ciafb:Map rdf:resource="http://www.odci.gov/cia/publications/factbook/maps/ao-map.jpg"/>
+		<ciafb:Transnational_Issues>Transnational Issues.</ciafb:Transnational_Issues>
+		<ciafb:Current_issues>Civil war has been the norm since independence from Portugal on 11 November 1975. A cease-fire lasted from 31 May 1991 until October 1992 when the insurgent National Union for the Total Independence of Angola (UNITA) refused to accept its defeat in internationally monitored elections and fighting resumed throughout much of the countryside. The two sides signed another peace accord on 20 November 1994 and the cease-fire is generally holding, but military tensions persist and banditry is increasing. In order to bring armed insurgents under government control the peace accord of 20 November 1994 provided for the integration of former UNITA insurgents into the Angolan armed forces. Military integration began in June 1996 and a Government of National Unity and Reconciliation was installed in April 1997. Efforts which began in May 1997 to extend government into UNITA-occupied areas are proceeding slowly. The original 7200-man UN peacekeeping force began a phased drawdown in late 1996. All UN peacekeepers are scheduled to depart by September 1997 but a small UN military observer force will probably remain in Angola through 1998.</ciafb:Current_issues>
+		<ciafb:Location>Southern Africa, bordering the South Atlantic Ocean, between Namibia and Democratic Republic of the Congo</ciafb:Location>
+		<ciafb:Latitude>-12.30</ciafb:Latitude>
+		<ciafb:Longitude>18.30</ciafb:Longitude>
+		<ciafb:Map_references>Africa</ciafb:Map_references>
+		<ciafb:Area>1246700</ciafb:Area>
+		<ciafb:Area_comparative>slightly less than twice the size of Texas</ciafb:Area_comparative>
+		<ciafb:Land_boundaries>5198</ciafb:Land_boundaries>
+		<ciafb:Bordering_country rdf:resource="http://www.odci.gov/cia/publications/factbook/geos/cg.html"/>
+		<ciafb:Bordering_country rdf:resource="http://www.odci.gov/cia/publications/factbook/geos/cf.html"/>
+		<ciafb:Bordering_country rdf:resource="http://www.odci.gov/cia/publications/factbook/geos/wa.html"/>
+		<ciafb:Bordering_country rdf:resource="http://www.odci.gov/cia/publications/factbook/geos/za.html"/>
+		<ciafb:Coastline>1600</ciafb:Coastline>
+		<ciafb:Maritime_claims>exclusive fishing zone: 200 nm territorial sea: 20 nm</ciafb:Maritime_claims>
+		<ciafb:Climate>semiarid in south and along coast to Luanda; north has cool, dry season (May to October) and hot, rainy season (November to April)</ciafb:Climate>
+		<ciafb:Terrain>narrow coastal plain rises abruptly to vast interior plateau</ciafb:Terrain>
+		<ciafb:Elevation_extremes>lowest point: Atlantic Ocean 0 m  highest point: Morro de Moco 2620 m</ciafb:Elevation_extremes>
+		<ciafb:Lowest_point>0</ciafb:Lowest_point>
+		<ciafb:Highest_point>2620</ciafb:Highest_point>
+		<ciafb:Natural_resources>petroleum</ciafb:Natural_resources>
+		<ciafb:Natural_resources>diamonds</ciafb:Natural_resources>
+		<ciafb:Natural_resources>iron ore</ciafb:Natural_resources>
+		<ciafb:Natural_resources>phosphates</ciafb:Natural_resources>
+		<ciafb:Natural_resources>copper</ciafb:Natural_resources>
+		<ciafb:Natural_resources>feldspar</ciafb:Natural_resources>
+		<ciafb:Natural_resources>gold</ciafb:Natural_resources>
+		<ciafb:Natural_resources>bauxite</ciafb:Natural_resources>
+		<ciafb:Natural_resources>uranium</ciafb:Natural_resources>
+		<ciafb:Land_use>arable land: 2%  permanent crops: 0%  permanent pastures: 23%  forests and woodland: 43%  other : 32% (1993 est.)</ciafb:Land_use>
+		<ciafb:Irrigated_land>750</ciafb:Irrigated_land>
+		<ciafb:Natural_hazards>locally heavy rainfall causes periodic flooding on the plateau</ciafb:Natural_hazards>
+		<ciafb:Environment_current_issues>the overuse of pastures and subsequent soil erosion attributable to population pressures; desertification; deforestation of tropical rain forest, in response to both international demand for tropical timber and to domestic use as fuel, resulting in loss of biodiversity; soil erosion contributing to water pollution and siltation of rivers and dams; inadequate supplies of potable water</ciafb:Environment_current_issues>
+		<ciafb:Environment_international_agreements>party to: Law of the Sea signed, but not ratified: Biodiversity, Climate Change, Desertification</ciafb:Environment_international_agreements>
+		<ciafb:Geography_note>Cabinda is separated from rest of country by Congo (Kinshasa)</ciafb:Geography_note>
+		<ciafb:Population>10548847</ciafb:Population>
+		<ciafb:Age_structure>0-14 years: 45% (male 2393009; female 2327186)  15-64 years: 52% (male 2793038; female 2753624) 65 years and over: 3% (male 131720; female 150270) (July 1997 est.)</ciafb:Age_structure>
+		<ciafb:Population_growth_rate>3.06</ciafb:Population_growth_rate>
+		<ciafb:Birth_rate>44.11</ciafb:Birth_rate>
+		<ciafb:Death_rate>17.24</ciafb:Death_rate>
+		<ciafb:Net_migration_rate>3.69</ciafb:Net_migration_rate>
+		<ciafb:Sex_ratio>at birth : 1.05 male(s)/female  under 15 years: 1.03 male(s)/female  15-64 years: 1.01 male(s)/female  65 years and over: 0.88 male(s)/female  total population : 1.02 male(s)/female (1997 est.)</ciafb:Sex_ratio>
+		<ciafb:Infant_mortality_rate>135.7</ciafb:Infant_mortality_rate>
+		<ciafb:Life_expectancy_at_birth>47.32</ciafb:Life_expectancy_at_birth>
+		<ciafb:Total_fertility_rate>6.27</ciafb:Total_fertility_rate>
+		<ciafb:Nationality>noun: Angolan(s)  adjective: Angolan</ciafb:Nationality>
+		<ciafb:Ethnic_groups>Ovimbundu 37%, Kimbundu 25%, Bakongo 13%, mestico (mixed European and Native African) 2%, European 1%, other 22%</ciafb:Ethnic_groups>
+		<ciafb:Religions>indigenous beliefs 47%, Roman Catholic 38%, Protestant 15% (est.)</ciafb:Religions>
+		<ciafb:Languages>Portuguese (official), Bantu and other African languages</ciafb:Languages>
+		<ciafb:Literacy>definition: age 15 and over can read and write  total population: 42%  male : 56%  female: 28% (1990 est.)</ciafb:Literacy>
+		<ciafb:Country_name>conventional long form : Republic of Angola  conventional short form: Angola  local long form: Republica de Angola  local short form: Angola  former: People's Republic of Angola</ciafb:Country_name>
+		<ciafb:Data_code>AO</ciafb:Data_code>
+		<ciafb:Government_type>transitional government, nominally a multiparty democracy with a strong presidential system</ciafb:Government_type>
+		<ciafb:National_capital>Luanda</ciafb:National_capital>
+		<ciafb:Administrative_divisions>18 provinces (provincias, singular - provincia); Bengo, Benguela, Bie, Cabinda, Cuando Cubango, Cuanza Norte, Cuanza Sul, Cunene, Huambo, Huila, Luanda, Lunda Norte, Lunda Sul, Malanje, Moxico, Namibe, Uige, Zaire</ciafb:Administrative_divisions>
+		<ciafb:Independence>11 November 1975 (from Portugal)</ciafb:Independence>
+		<ciafb:National_holiday>Independence Day, 11 November (1975)</ciafb:National_holiday>
+		<ciafb:Constitution>11 November 1975; revised 7 January 1978, 11 August 1980, 6 March 1991, and 26 August 1992</ciafb:Constitution>
+		<ciafb:Legal_system>based on Portuguese civil law system and customary law; recently modified to accommodate political pluralism and increased use of free markets</ciafb:Legal_system>
+		<ciafb:Suffrage>18 years of age; universal</ciafb:Suffrage>
+		<ciafb:Executive_branch>chief of state: President Jose Eduardo DOS SANTOS (since 21 September 1979)  head of government: Prime Minister Fernando Jose de Franca Vieira Dias VAN DUNEM (since 8 June 1996)  cabinet: Council of Ministers appointed by the president elections: President DOS SANTOS originally elected without opposition under a one-party system and stood for reelection in Angola's first multiparty elections in 28-29 September 1992, the last elections to be held, (next to be held NA); prime minister appointed by the president and answerable to the Assembly election results: DOS SANTOS received 49.6% of the total vote, making a run-off election necessary between him and second-place Jonas SAVIMBI; the run-off was not  held and SAVIMBI's National Union for the Total Independence of Angola (UNITA) disputed the results of the first election; the civil war was resumed</ciafb:Executive_branch>
+		<ciafb:Legislative_branch>unicameral National Assembly or Assembleia Nacional (223 seats; members elected by proportional vote to serve four-year terms)  elections: last held 29-30 September 1992 (next to be held NA) election results : percent of vote by party - MPLA 54%, UNITA 34%, others 12%; seats by party - NA</ciafb:Legislative_branch>
+		<ciafb:Judicial_branch>Supreme Court or Tribunal da Relacao, judges of the Supreme Court are appointed by the president</ciafb:Judicial_branch>
+		<ciafb:Political_parties_and_leaders>Popular Movement for the Liberation of Angola or MPLA [Jose Eduardo DOS SANTOS], is the ruling party and has been in power since 1975; National Union for the Total Independence of Angola or UNITA [Jonas SAVIMBI], is the largest opposition party and engaged in years of armed resistance to the government   note: about a dozen minor parties participated in the 1992 elections but won few seats and have little influence in the National Assembly</ciafb:Political_parties_and_leaders>
+		<ciafb:Political_pressure_groups_and_leaders>Front for the Liberation of the Enclave of Cabinda or FLEC note: FLEC is waging a small-scale, highly factionalized, armed struggle for the independence of Cabinda Province</ciafb:Political_pressure_groups_and_leaders>
+		<ciafb:International_organization_participation>ACP, AfDB, CCC, CEEAC (observer), ECA, FAO, G-77, IBRD, ICAO, ICRM, IDA, IFAD, IFC, IFRCS, ILO, IMF, IMO, Intelsat, Interpol, IOC, IOM, ITU, NAM,  OAS (observer), OAU, SADC, UN, UNCTAD, UNESCO, UNIDO, UPU, WCL, WFTU, WHO, WIPO, WMO, WToO, WTrO</ciafb:International_organization_participation>
+		<ciafb:Diplomatic_representation_in_the_US>chief of mission: Ambassador Antonio dos Santos FRANCA -N'dalu-  chancery: 1050 Connecticut Avenue, NW, Suite 760, Washington, DC 20036  telephone: [1] (202) 785-1156  FAX : [1] (202) 785-1258</ciafb:Diplomatic_representation_in_the_US>
+		<ciafb:Diplomatic_representation_from_the_US>chief of mission: Ambassador Donald K. STEINBERG  embassy: No. 32 Rua Houari Boumedienne, Miramar, Luanda  mailing address: C.P. 6484, Luanda; American Embassy, Department of State, Washington, DC 20521-2550 (pouch)  telephone : [244] (2) 345-481, 346-418  FAX: [244] (2) 346-924</ciafb:Diplomatic_representation_from_the_US>
+		<ciafb:Flag_description>two equal horizontal bands of red (top) and black with a centered yellow emblem consisting of a five-pointed star within half a cogwheel crossed by  a machete (in the style of a hammer and sickle)</ciafb:Flag_description>
+		<ciafb:Economy_overview>Angola is an economy in disarray. Despite its abundant natural resources, output per capita is among the world's lowest. Subsistence agriculture provides the main livelihood for 80%-90% of the population but accounts for about 12% of GDP. Oil production and the supporting activities are vital to the economy, contributing about 50% to GDP. Notwithstanding the signing of a peace accord in November 1994, sporadic violence continues, millions of land mines remain, and many farmers are reluctant to return to their fields. As a result, much of the country's food must still be imported. To take advantage of its rich resources - notably gold, diamonds, extensive forests, Atlantic fisheries, arable land, and large oil deposits - Angola will need to observe the cease-fire, implement the peace agreement, and reform government policies. Despite the high inflation and political difficulties, total output grew an estimated 9% in 1996, largely due to increased oil production.</ciafb:Economy_overview>
+		<ciafb:GDP>purchasing power parity - $8.3 billion (1996 est.)</ciafb:GDP>
+		<ciafb:GDP_real_growth_rate>9% (1996 est.)</ciafb:GDP_real_growth_rate>
+		<ciafb:GDP_per_capita>purchasing power parity - $800 (1996 est.)</ciafb:GDP_per_capita>
+		<ciafb:GDP_composition_by_sector>agriculture: 12%  industry: 56%  services: 32% (1994 est.)</ciafb:GDP_composition_by_sector>
+		<ciafb:Inflation_rate_consumer_price_index>1700% (1996 est.)</ciafb:Inflation_rate_consumer_price_index>
+		<ciafb:Labor_force>total: 2.783 million economically active by occupation: agriculture 85%, industry 15% (1985 est.)</ciafb:Labor_force>
+		<ciafb:Unemployment_rate>extensive unemployment and underemployment affecting more than half the population (1994 est.)</ciafb:Unemployment_rate>
+		<ciafb:Budget>revenues: $928 million  expenditures: $2.5 billion, including capital expenditures of $963 million (1992 est.)</ciafb:Budget>
+		<ciafb:Industries>petroleum; diamonds, iron ore, phosphates, feldspar, bauxite, uranium, and gold; cement; basic metal products; fish processing; food processing;  brewing; tobacco products; sugar; textiles;</ciafb:Industries>
+		<ciafb:Industrial_production_growth_rate>NA%</ciafb:Industrial_production_growth_rate>
+		<ciafb:Electricity_capacity>620000 kW (1994)</ciafb:Electricity_capacity>
+		<ciafb:Electricity_production>1.82 billion kWh (1994)</ciafb:Electricity_production>
+		<ciafb:Electricity_consumption_per_capita>171 kWh (1995 est.)</ciafb:Electricity_consumption_per_capita>
+		<ciafb:Agriculture_products>bananas, sugarcane, coffee, sisal, corn, cotton, manioc (tapioca), tobacco, vegetables, plantains; livestock; forest products; fish</ciafb:Agriculture_products>
+		<ciafb:Exports>total value: $4 billion (f.o.b., 1996 est.) commodities: crude oil 90%, diamonds, refined petroleum products, gas, coffee, sisal, fish and fish products, timber, cotton  partners: US 70%, EU</ciafb:Exports>
+		<ciafb:Imports>total value : $1.7 billion (f.o.b., 1995 est.) commodities: capital equipment (machinery and electrical equipment), vehicles and spare parts; medicines, food, textiles and clothing; substantial military  supplies partners : Portugal, Brazil, US, France, Spain</ciafb:Imports>
+		<ciafb:Debt_external>$12.5 billion (1996 est.)</ciafb:Debt_external>
+		<ciafb:Economic_aid>recipient: ODA, $451 million (1994)</ciafb:Economic_aid>
+		<ciafb:Currency>1 new kwanza (NKz) = 100 lwei</ciafb:Currency>
+		<ciafb:Exchange_rates>new kwanza (NKz) per US$1 - 201994 (November 1996), 900000 (25 April 1995), 600000 (10 January 1995), 90000 (1 June 1994), 7000 (16 December 1993), 3.884 (July 1993), 550 (April 1992)  note: black market rates - new Kwanza (NKz) per US$1 - 1900000 (6 April 1995), 180000 (1 June 1994), 50000 (16 December 1993)</ciafb:Exchange_rates>
+		<ciafb:Fiscal_year>calendar year</ciafb:Fiscal_year>
+		<ciafb:Telephones>78000 (1991 est.)</ciafb:Telephones>
+		<ciafb:Telephone_system>telephone service limited mostly to government and business use; HF radiotelephone used extensively for military links  domestic: limited system of wire, microwave radio relay, and tropospheric scatter  international: satellite earth stations - 2 Intelsat (Atlantic Ocean)</ciafb:Telephone_system>
+		<ciafb:Radio_broadcast_stations>AM 17, FM 13, shortwave 0</ciafb:Radio_broadcast_stations>
+		<ciafb:Radios>NA</ciafb:Radios>
+		<ciafb:Television_broadcast_stations>6</ciafb:Television_broadcast_stations>
+		<ciafb:Televisions>50000 (1993 est.)</ciafb:Televisions>
+		<ciafb:Railways>total : 2952 km limited trackage in use because of land mines still in place from the civil war) (1997 est.) narrow gauge: 2798 km 1.067-m gauge; 154 km 0.600-m gauge</ciafb:Railways>
+		<ciafb:Highways>total: 72626 km  paved: 18157 km  unpaved: 54469 km (1995 est.)</ciafb:Highways>
+		<ciafb:Waterways>1295 km navigable</ciafb:Waterways>
+		<ciafb:Pipelines>crude oil 179 km</ciafb:Pipelines>
+		<ciafb:Ports_and_harbors>Ambriz, Cabinda, Lobito, Luanda, Malogo, Namibe, Porto Amboim, Soyo</ciafb:Ports_and_harbors>
+		<ciafb:Merchant_marine>total : 11 ships (1000 GRT or over) totaling 55255 GRT/86886 DWT ships by type: cargo 10, oil tanker 1 (1996 est.)</ciafb:Merchant_marine>
+		<ciafb:Airports>144 (1996 est.)</ciafb:Airports>
+		<ciafb:Airports_with_paved_runways>total : 67  over 3047 m: 3  2438 to 3047 m : 9  1524 to 2437 m: 11  914 to 1523 m: 4  under 914 m: 40 (1996 est.)</ciafb:Airports_with_paved_runways>
+		<ciafb:Airports_with_unpaved_runways>total : 77  over 3047 m: 1  2438 to 3047 m: 4  1524 to 2437 m: 24  914 to 1523 m: 48 (1996 est.)</ciafb:Airports_with_unpaved_runways>
+		<ciafb:Military_branches>Army, Navy, Air and Air Defense Forces, National Police Force</ciafb:Military_branches>
+		<ciafb:Military_manpower_military_age>18 years of age</ciafb:Military_manpower_military_age>
+		<ciafb:Military_manpower_availability>males age 15-49: 2412445 (1997 est.)</ciafb:Military_manpower_availability>
+		<ciafb:Military_manpower_fit_for_military_service>males: 1213988 (1997 est.)</ciafb:Military_manpower_fit_for_military_service>
+		<ciafb:Military_manpower_reaching_military_age_annually>males : 102712 (1997 est.)</ciafb:Military_manpower_reaching_military_age_annually>
+		<ciafb:Military_expenditures_dollar_figure>$1.1 billion (1993)</ciafb:Military_expenditures_dollar_figure>
+		<ciafb:Military_expenditures_percent_of_GDP>31% (1993)</ciafb:Military_expenditures_percent_of_GDP>
+		<ciafb:Disputes_international>none</ciafb:Disputes_international>
+		<ciafb:Illicit_drugs>increasingly used as a transshipment point for cocaine and heroin destined for Western Europe and other African states</ciafb:Illicit_drugs>
+	</rdf:Description>
+	<rdf:Description rdf:about="http://www.odci.gov/cia/publications/factbook/geos/av.html">
+		<rdf:type rdf:resource="#Country"/>
+		<ciafb:Name>Anguilla</ciafb:Name>
+		<ciafb:Flag rdf:resource="http://www.odci.gov/cia/publications/factbook/flags/av-lgflag.jpg"/>
+		<ciafb:Map rdf:resource="http://www.odci.gov/cia/publications/factbook/maps/av-map.jpg"/>
+		<ciafb:Location>Caribbean, island in the Caribbean Sea, east of Puerto Rico</ciafb:Location>
+		<ciafb:Latitude>18.15</ciafb:Latitude>
+		<ciafb:Longitude>-63.10</ciafb:Longitude>
+		<ciafb:Map_references>Central America and the Caribbean</ciafb:Map_references>
+		<ciafb:Area>91</ciafb:Area>
+		<ciafb:Area_comparative>about half the size of Washington, DC</ciafb:Area_comparative>
+		<ciafb:Land_boundaries></ciafb:Land_boundaries>
+		<ciafb:Coastline>61</ciafb:Coastline>
+		<ciafb:Maritime_claims>exclusive fishing zone: 200 nm  territorial sea: 3 nm</ciafb:Maritime_claims>
+		<ciafb:Climate>tropical; moderated by northeast trade winds</ciafb:Climate>
+		<ciafb:Terrain>flat and low-lying island of coral and limestone</ciafb:Terrain>
+		<ciafb:Elevation_extremes>lowest point : Caribbean Sea 0 m  highest point: Crocus Hill 65 m</ciafb:Elevation_extremes>
+		<ciafb:Lowest_point>0</ciafb:Lowest_point>
+		<ciafb:Highest_point>65</ciafb:Highest_point>
+		<ciafb:Natural_resources>salt</ciafb:Natural_resources>
+		<ciafb:Natural_resources>fish</ciafb:Natural_resources>
+		<ciafb:Natural_resources>lobster</ciafb:Natural_resources>
+		<ciafb:Land_use>arable land: NA% permanent crops: NA%  permanent pastures: NA% forests and woodland: NA% other : 100% (mostly rock with sparse scrub oak, few trees, some commercial salt ponds)</ciafb:Land_use>
+		<ciafb:Irrigated_land></ciafb:Irrigated_land>
+		<ciafb:Natural_hazards>frequent hurricanes and other tropical storms (July to October)</ciafb:Natural_hazards>
+		<ciafb:Environment_current_issues>supplies of potable water sometimes cannot meet increasing demand largely because of poor distribution system</ciafb:Environment_current_issues>
+		<ciafb:Environment_international_agreements>party to: NA  signed, but not ratified: NA</ciafb:Environment_international_agreements>
+		<ciafb:Population>10785</ciafb:Population>
+		<ciafb:Age_structure>0-14 years: 28% (male 1527; female 1483) 15-64 years : 65% (male 3563; female 3407) 65 years and over: 7% (male 351; female 454) (July 1997 est.)</ciafb:Age_structure>
+		<ciafb:Population_growth_rate>3.36</ciafb:Population_growth_rate>
+		<ciafb:Birth_rate>17.43</ciafb:Birth_rate>
+		<ciafb:Death_rate>5.47</ciafb:Death_rate>
+		<ciafb:Net_migration_rate>21.6</ciafb:Net_migration_rate>
+		<ciafb:Sex_ratio>at birth : 1.04 male(s)/female  under 15 years: 1.03 male(s)/female  15-64 years : 1.05 male(s)/female  65 years and over: 0.77 male(s)/female  total population: 1.02 male(s)/female (1997 est.)</ciafb:Sex_ratio>
+		<ciafb:Infant_mortality_rate>21.6</ciafb:Infant_mortality_rate>
+		<ciafb:Life_expectancy_at_birth>77.02</ciafb:Life_expectancy_at_birth>
+		<ciafb:Total_fertility_rate>2.01</ciafb:Total_fertility_rate>
+		<ciafb:Nationality>noun: Anguillan(s)  adjective: Anguillan</ciafb:Nationality>
+		<ciafb:Ethnic_groups>black</ciafb:Ethnic_groups>
+		<ciafb:Religions>Anglican 40%, Methodist 33%, Seventh-Day Adventist 7%, Baptist 5%, Roman Catholic 3%, other 12%</ciafb:Religions>
+		<ciafb:Languages>English (official)</ciafb:Languages>
+		<ciafb:Literacy>definition: age 12 and over can read and write  total population : 95%  male: 95%  female: 95% (1984 est.)</ciafb:Literacy>
+		<ciafb:Country_name>conventional long form: none  conventional short form : Anguilla</ciafb:Country_name>
+		<ciafb:Data_code>AV</ciafb:Data_code>
+		<ciafb:Dependency_status>dependent territory of the UK</ciafb:Dependency_status>
+		<ciafb:Government_type>NA</ciafb:Government_type>
+		<ciafb:National_capital>The Valley</ciafb:National_capital>
+		<ciafb:Administrative_divisions>none (dependent territory of the UK)</ciafb:Administrative_divisions>
+		<ciafb:Independence>none (dependent territory of the UK)</ciafb:Independence>
+		<ciafb:National_holiday>Anguilla Day, 30 May</ciafb:National_holiday>
+		<ciafb:Constitution>Anguilla Constitutional Order 1 April 1982; amended 1990</ciafb:Constitution>
+		<ciafb:Legal_system>based on English common law</ciafb:Legal_system>
+		<ciafb:Suffrage>18 years of age; universal</ciafb:Suffrage>
+		<ciafb:Executive_branch>chief of state: Queen ELIZABETH II of the UK (since 6 February 1952); represented by Governor Alan HOOLE (since 1 November 1995)  head of government: Chief Minister Hubert HUGHES (since 16 March 1994)  cabinet: Executive Council appointed by the governor from among the elected members of the House of Assembly elections: none; the queen is a hereditary monarch; governor appointed by the queen; chief minister appointed by the governor from among the members of the House of Assembly</ciafb:Executive_branch>
+		<ciafb:Legislative_branch>unicameral House of Assembly (11 seats total, 7 elected by direct popular vote; members serve five-year terms)  elections: last held 16 March 1994 (next to be held March 1999) election results: percent of vote by party - NA; seats by party - ANA 2, AUP 2, ADP 2, independent 1</ciafb:Legislative_branch>
+		<ciafb:Judicial_branch>High Court, judge provided by Eastern Caribbean Supreme Court</ciafb:Judicial_branch>
+		<ciafb:Political_parties_and_leaders>Anguilla National Alliance or ANA [Osbourne FLEMING]; Anguilla United Party or AUP [Hubert HUGHES]; Anguilla Democratic Party or ADP [Victor BANKS]</ciafb:Political_parties_and_leaders>
+		<ciafb:International_organization_participation>Caricom (observer), CDB, Interpol (subbureau), OECS (associate), ECLAC (associate)</ciafb:International_organization_participation>
+		<ciafb:Diplomatic_representation_in_the_US>none (dependent territory of the UK)</ciafb:Diplomatic_representation_in_the_US>
+		<ciafb:Diplomatic_representation_from_the_US>none (dependent territory of the UK)</ciafb:Diplomatic_representation_from_the_US>
+		<ciafb:Flag_description>blue with the flag of the UK in the upper hoist-side quadrant and the Anguillan coat of arms centered in the outer half of the flag; the coat of arms depicts three orange dolphins in an interlocking circular design on a white background with blue wavy water below</ciafb:Flag_description>
+		<ciafb:Economy_overview>Anguilla has few natural resources, and the economy depends heavily on high-class tourism, offshore banking, lobster fishing, and remittances from emigrants. Output growth had averaged about 7% in recent years, mainly as a result of a boom in tourism thanks to economic expansion in North America and the UK. The economy, and especially the tourism sector, suffered a setback in late 1995 due to the effects of Hurricane Luis in September. Agricultural output had only just begun to recover from a drought in 1994 when Luis hit. Anguillan officials have put substantial effort into developing the offshore financing sector. A comprehensive package of financial services legislation was enacted in late 1994. In the medium term, prospects for the economy will depend on the tourism sector and, therefore, on continuing income growth in the industrialized nations.</ciafb:Economy_overview>
+		<ciafb:GDP>purchasing power parity - $52 million (1995 est.)</ciafb:GDP>
+		<ciafb:GDP_real_growth_rate>-4.3% (1995 est.)</ciafb:GDP_real_growth_rate>
+		<ciafb:GDP_per_capita>purchasing power parity - $7400 (1995 est.)</ciafb:GDP_per_capita>
+		<ciafb:GDP_composition_by_sector>agriculture : NA%  industry: NA%  services: NA%</ciafb:GDP_composition_by_sector>
+		<ciafb:Inflation_rate_consumer_price_index>1.6% (1995 est.)</ciafb:Inflation_rate_consumer_price_index>
+		<ciafb:Labor_force>total: 4400 (1992)  by occupation: commerce 36%, services 29%, construction 18%, transportation and utilities 10%, manufacturing 3%, agriculture/fishing/forestry/mining 4%</ciafb:Labor_force>
+		<ciafb:Unemployment_rate>7% (1992 est.)</ciafb:Unemployment_rate>
+		<ciafb:Budget>revenues: $13.5 million (1993) expenditures: $17.6 million, including capital expenditures of $740000 (1995 est.)</ciafb:Budget>
+		<ciafb:Industries>tourism, boat building, offshore financial services</ciafb:Industries>
+		<ciafb:Industrial_production_growth_rate>NA%</ciafb:Industrial_production_growth_rate>
+		<ciafb:Electricity_capacity>NA kW</ciafb:Electricity_capacity>
+		<ciafb:Electricity_production>NA kWh</ciafb:Electricity_production>
+		<ciafb:Electricity_consumption_per_capita>NA kWh</ciafb:Electricity_consumption_per_capita>
+		<ciafb:Agriculture_products>pigeon peas, corn, sweet potatoes; sheep, goats, pigs, cattle, poultry; fishing (including lobster)</ciafb:Agriculture_products>
+		<ciafb:Exports>total value : $1.3 million (f.o.b., 1995) commodities: lobster and salt partners : NA</ciafb:Exports>
+		<ciafb:Imports>total value: $39.8 million (f.o.b., 1995) commodities: NA  partners: NA</ciafb:Imports>
+		<ciafb:Debt_external>$8.5 million (1995 est.)</ciafb:Debt_external>
+		<ciafb:Economic_aid>$NA</ciafb:Economic_aid>
+		<ciafb:Currency>1 EC dollar (EC$) = 100 cents</ciafb:Currency>
+		<ciafb:Exchange_rates>East Caribbean dollars (EC$) per US$1 - 2.70 (February 1997; fixed rate since 1976)</ciafb:Exchange_rates>
+		<ciafb:Fiscal_year>1 April - 31 March</ciafb:Fiscal_year>
+		<ciafb:Telephones>890</ciafb:Telephones>
+		<ciafb:Telephone_system>domestic: modern internal telephone system international: microwave radio relay to island of Saint Martin (Guadeloupe and Netherlands Antilles)</ciafb:Telephone_system>
+		<ciafb:Radio_broadcast_stations>AM 3, FM 1, shortwave 0</ciafb:Radio_broadcast_stations>
+		<ciafb:Radios>2000 (1992 est.)</ciafb:Radios>
+		<ciafb:Television_broadcast_stations>1</ciafb:Television_broadcast_stations>
+		<ciafb:Televisions>NA</ciafb:Televisions>
+		<ciafb:Railways>0 km</ciafb:Railways>
+		<ciafb:Highways>total: 105 km  paved: 65 km  unpaved : 40 km (1992 est.)</ciafb:Highways>
+		<ciafb:Ports_and_harbors>Blowing Point, Road Bay</ciafb:Ports_and_harbors>
+		<ciafb:Merchant_marine>none</ciafb:Merchant_marine>
+		<ciafb:Airports>2 (1996 est.)</ciafb:Airports>
+		<ciafb:Airports_with_paved_runways>total: 2  914 to 1523 m : 1  under 914 m: 1 (1996 est.)</ciafb:Airports_with_paved_runways>
+		<ciafb:Military_note>defense is the responsibility of the UK</ciafb:Military_note>
+		<ciafb:Disputes_international>none</ciafb:Disputes_international>
+	</rdf:Description>
+</rdf:RDF>

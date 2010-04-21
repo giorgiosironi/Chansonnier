@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/***********************************************************************************************************************
+ * Copyright (c) 2008 empolis GmbH and brox IT Solutions GmbH. All rights reserved. This program and the accompanying
+ * materials are made available under the terms of the Eclipse Public License v1.0 which accompanies this distribution,
+ * and is available at http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors: Ivan Churkin (brox IT Solutions GmbH) - initial creator
+ **********************************************************************************************************************/
+-->
+<QueueWorkerRouterConfig xmlns="http://www.eclipse.org/smila/queue">
+
+  <Rule Name="Default ADD Rule">
+    <Condition>Operation='ADD' and DataSourceID='source'</Condition>
+    <Task>
+      <Send BrokerId="broker1" Queue="queue1" PersistentDelivery="false" WithAttachments="true">
+        <SetProperty Name="doSomething">yes</SetProperty>
+      </Send>
+    </Task>
+  </Rule>
+  
+  <Rule Name="ADD Rule 2">
+    <Condition>Operation='ADD' and DataSourceID='source2'</Condition>
+    <Task>
+      <Send BrokerId="broker1" Queue="queue1"/>
+    </Task>
+  </Rule>
+  
+  <Rule Name="ADD Rule 3">
+    <Condition>Operation='ADD' and DataSourceID='source3'</Condition>
+    <Task>
+      <Send BrokerId="broker1" Queue="queue1"/>
+    </Task>
+  </Rule>
+
+  <Rule Name="DLQ ADD Rule">
+    <Condition>Operation='ADD' and DataSourceID LIKE 'error_%'</Condition>
+    <Task>
+      <Send BrokerId="broker1" Queue="queue1" RecordFilter="nothing"/>
+    </Task>
+  </Rule>
+  
+</QueueWorkerRouterConfig>

@@ -1,0 +1,293 @@
+﻿body {
+	background:#EFEFEF url('../../images/Smila/bg.png') repeat-x scroll;
+	font-family:Arial,sans-serif;
+	text-align:center;	
+}
+
+a {
+	color:#7036be;
+	font-weight:bold;	
+	text-decoration:none;
+}
+
+a:hover {
+	text-decoration:underline;	
+}
+
+#novaContent {
+	background:#FFF;
+}
+
+.clearer {
+	clear:both;	
+	visibility:hidden;
+}
+
+#bd {
+	background:#fff;
+	margin-top:0px;
+	padding-top:-10px;
+	padding-left:18px;
+	padding-right:20px;
+	text-align:left;	
+	
+}
+
+
+.none {
+	background:transparent !important;
+	border:0px !important;
+}
+
+.details {
+	margin:5px 0;
+	line-height:13px;
+}
+.details ul {
+	margin-left:15px;
+}
+
+.details ul li {
+	font-size:11px;
+}
+
+.link {
+}
+
+#clearHeader {
+	background:transparent;
+	clear:both;
+}
+#clearFooter {
+/*	background:#E0E5E9; */	
+	background:transparent;	
+}
+
+#content {
+	background:#E0E5E9;
+}
+
+#widecontainer {
+	background:#FFF;
+}
+
+
+#leftcol {
+	width:185px;
+	float:left;
+	clear:both;
+	margin-right:20px;
+	background:transparent;
+}
+
+
+#midcolumn {
+	width:735px;
+	float:left;
+	margin-right:20px;
+	background:transparent;	
+}
+
+#rightcolumn {
+	width:240px;
+	float:left;
+	padding-right:15px;
+	background:transparent;	
+}
+
+#novaContent.faux { 
+	background:#FFF url('../../images/Smila/faux.jpg') repeat-y;	
+	padding-top:20px;
+	padding-bottom:20px;
+}
+
+#midcolumn h1, #fullcolumn h1 {
+	font-size:18px;
+	padding-bottom:10px;
+}
+
+#midcolumn h2, #fullcolumn h2 {
+	font-size:14px;
+	margin-bottom:5px;	
+	border-bottom:1px solid #d4d4dd;
+}
+
+#midcolumn h3, #fullcolumn h3 {
+	font-size:16px;
+	margin-bottom:5px;
+	border-bottom:1px dotted #d4d4dd;
+	padding-top:10px;
+}
+
+#midcolumn h1 a, #midcolumn h2 a, #midcolumn h3 a {
+	color:#000;	font-weight:normal;
+}
+
+#midcolumn p, #fullcolumn p {
+	font-size:12px;
+	padding-bottom:10px;
+	line-height:15px;	
+}
+
+#midcolumn table, #fullcolumn table {
+	font-size:12px;
+	line-height:15px;
+	padding-bottom:10px;
+}
+
+#midcolumn td, #fullcolumn td {
+	padding:3px;
+}
+
+.homeitem3col, .homeitem {
+	font-size:12px;
+	margin-bottom:10px;
+}
+
+
+#leftnav {
+	margin-left:10px;
+	margin-right:10px;	
+}
+
+#leftnav li{
+	margin-left:10px;	
+	list-style-position:inside;
+	list-style-image:url('../../images/Smila/leftNav.gif');
+}
+
+#leftnav li a {
+	font-size: 12px;
+	color: #595B54;
+}
+
+#leftnav li.about {
+ 	list-style-image:none;  
+ 	margin-left:0;     
+ 	padding-bottom:10px;        
+	font-size:12px;	
+}
+
+#leftnav li.about a{
+	color:#333333;
+	font-size:12px;	
+}
+	
+#leftnav li.separator {
+	margin-top:5px;
+	padding-top:5px;
+	margin-left:0;
+	padding:5px 0;
+	list-style-image:none;	
+	border-top:1px dotted #d4d4dd;
+}
+
+#leftnav li.separator a {
+	font-size:12px;
+	color:#333333;
+}
+
+#leftnav li.activeindex a {
+	font-size:12px;
+	color: #7036BE;
+}
+
+/*
+#midcolumn ul, .midcolumn ol {
+	margin-left:20px;	
+	padding-bottom:10px;
+}
+
+
+#midcolumn li, #fullcolumn li {
+	font-size:12px;
+	margin-left:10px;
+	list-style-position:outside;	
+	list-style-image:url('../../images/Smila/homeitemBulletIE.gif');	
+	padding:0em 10px 5px 0;
+	border-bottom:1px dotted #E9E9EE;
+}
+
+#midcolumn blockquote {
+	font-size: 12px;
+	line-height: 18px;
+}
+
+#midcolumn ol li, #fullcolumn ol li {
+	list-style-image:none;	
+}
+*/
+
+#statistics ul {
+	margin-left:20px;	
+	padding-bottom:10px;
+}
+
+
+#statistics li {
+	font-size: 12px;
+	margin-left: 10px;
+	list-style-position: outside;
+	list-style-image: url('../../images/Smila/bullet.gif');
+	padding: 5px 10px 5px 0;
+	border-bottom: 1px dotted #E9E9EE;
+}
+
+#statistics ul li ul {
+	padding-bottom:0px;
+}
+#statistics ul li ul li{
+	padding-top:5px;
+	list-style-image:none;	
+	border-bottom:none;
+}
+
+#result ul {
+	margin-left:20px;	
+	padding-bottom:10px;
+}
+
+
+#result li {
+	font-size:12px;
+	margin-left:10px;
+	list-style-position:outside;	
+	list-style-image:url('../../images/Smila/bullet.gif');	
+	padding:0em 10px 5px 0;
+	border-bottom:1px dotted #E9E9EE;
+}
+
+#result blockquote {
+	font-size: 12px;
+	line-height: 18px;
+}
+
+#result ul li ul li{
+	list-style-image:none;
+	border-bottom:none;
+}
+
+
+
+ol li{
+	margin-left:15px;
+	list-style-type:decimal;	
+}
+
+#fullcolumn {
+	width:980px;
+	padding-top:20px;
+}
+
+#fullcolumn * {
+	line-height:15px;		
+}
+
+#fullcolumn p, #fullcolumn ul, #fullcolumn ol {
+	margin-left:10px;
+
+} 
+
+#fullcolumn #midcolumn {
+	width:680px;
+}

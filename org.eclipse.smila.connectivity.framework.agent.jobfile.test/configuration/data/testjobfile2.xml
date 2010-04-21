@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JobFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../org.eclipse.smila.connectivity.framework.agent.jobfile/schemas/jobfile.xsd">
+    <Add>
+        <Record version="1.0">
+          <Id version="1.0" xmlns="http://www.eclipse.org/smila/id">
+            <Source>testjobfile</Source>
+            <Key name="Url">job_with_cdata</Key>
+          </Id>
+          <A n="MimeType">
+            <L>
+              <V>text/html</V>
+            </L>
+          </A>
+          <A n="LastModifiedDate">
+            <L>
+              <V t="datetime">2008-08-15 15:57:16.000</V>
+            </L>
+          </A>
+          <A n="Content">
+            <L>
+              <V>
+              <![CDATA[
+              	<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				<HTML>
+				 <HEAD>
+				  <TITLE> A simple test document </TITLE>
+				  <META NAME="Generator" CONTENT="EditPlus">
+				  <META NAME="Author" CONTENT="">
+				  <META NAME="Keywords" CONTENT="">
+				  <META NAME="Description" CONTENT="">
+				 </HEAD>
+				 <BODY>
+				  This is a simple test document. It contains a <a href="http://www.eclipse.org">link</a> but nothing special.
+				 </BODY>
+				</HTML>
+              ]]>              
+              </V>
+            </L>
+          </A>          
+        </Record>
+        
+        <Record version="1.0">
+          <Id version="1.0" xmlns="http://www.eclipse.org/smila/id">
+            <Source>testjobfile</Source>
+            <Key name="Url">job_with_encoding</Key>
+          </Id>
+          <A n="MimeType">
+            <L>
+              <V>text/html</V>
+            </L>
+          </A>
+          <A n="LastModifiedDate">
+            <L>
+              <V t="datetime">2008-08-15 15:57:16.000</V>
+            </L>
+          </A>
+          <A n="Content">
+            <L>
+              <V>
+              	&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0 Transitional//EN&quot;&gt;
+				&lt;HTML&gt;
+				 &lt;HEAD&gt;
+				  &lt;TITLE&gt; A simple test document &lt;/TITLE&gt;
+				  &lt;META NAME=&quot;Generator&quot; CONTENT=&quot;EditPlus&quot;&gt;
+				  &lt;META NAME=&quot;Author&quot; CONTENT=&quot;&quot;&gt;
+				  &lt;META NAME=&quot;Keywords&quot; CONTENT=&quot;&quot;&gt;
+				  &lt;META NAME=&quot;Description&quot; CONTENT=&quot;&quot;&gt;
+				 &lt;/HEAD&gt;
+				 &lt;BODY&gt;
+				  This is a simple test document. It contains a &lt;a href=&quot;http://www.eclipse.org&quot;&gt;link&lt;/a&gt; but nothing special.
+				 &lt;/BODY&gt;
+				&lt;/HTML&gt;
+              </V>
+            </L>
+          </A>          
+        </Record>    
+    </Add>
+
+</JobFile>

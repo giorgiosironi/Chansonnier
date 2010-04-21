@@ -1,0 +1,603 @@
+Von: Sven Koerber Good News [sven@goodnews.de]
+Gesendet: Freitag, 10. August 2001 01:35
+An: info@goodnews.de
+Betreff: DMS EXPO solutions@cscploenzke Presseinformationen 2001-08-10
+
+Wichtigkeit: Niedrig
+
+Nachfolgend die Presseinformationen der Veranstalter und Aussteller der DMS EXPO und der
+solutions@cscploenzke:
+
+
+10.08.2001 - VOI Verband für Organisations- und Informationssysteme e.V.
+VOI veranstaltet auf der DMS EXPO Workshops zu aktuellen Themen
+Der Verband Organisations- und Informationssysteme e.V. (VOI) veranstaltet im Rahmen der DMS
+EXPO vom 26. bis 28. September in Essen an allen Tagen mehrere Workshops zu aktuellen
+Trendthemen. Eine Workshopreihe behandelt die Auswirkungen der veränderten Abgabenordnung durch
+den Bundesfinanzminister (BMF). Hierdurch werden steuerpflichtige Unternehmen ab 1.1.2002 zur
+digitalen Archivierung ihrer Belege verpflichtet. Dazu kommt die Forderung des Gesetzgebers, die
+Belege für die Dauer von 10 Jahren maschinell lesbar und digital auswertbar zu halten. Weitere
+Workshops geben Einblicke zu neuen IT-Lösungen. Experten beantworten Fragen zum Einsatz
+digitaler Signaturen und dem Zusammenspiel unterschiedlicher Informationssysteme.
+
+Link: http://www.press.de/doc/?59579
+E-Mail-Abruf: MailTo:59579@responder.press.de
+
+
+06.08.2001 - Kleindienst Solutions GmbH & Co. KG
+Grundbuchämter machen sich fit für das digitale Zeitalter
+
+Auch in der öffentlichen Verwaltung ist das digitale Zeitalter angebrochen: Das
+Justizministerium realisiert die ersten elektronischen Grundbü-cher in Baden-Württemberg. Ab dem
+Jahr 2002 soll auf neun Millionen Seiten in einem elektronischen Archiv zentral zugegriffen
+werden können. Die Überführung des riesigen Papierarchives in eine Datenbank hat höchsten
+Sicherheitsanforderun-gen zu genügen.
+
+Link: http://www.press.de/doc/?59578
+E-Mail-Abruf: MailTo:59578@responder.press.de
+
+
+12.07.2001 - Kleindienst Solutions GmbH & Co. KG
+Kleindienst Gruppe präsentiert Innovationen und Integrationen aus der Praxis
+
+Auf der DMS EXPO Europe 2001 präsentiert die Kleindienst Gruppe in Halle 3, Stand 3213, ein
+breites Spektrum von ganzheitlichen Anwendungen und Innovationen, die den Informationsfluss und
+die Prozesse in Unternehmen optimieren. Messe High-Lights „der Dokumenten-Manager“ aus Augsburg
+sind praxisorientierte neue Lösungen im Bereich der Scantechnologie und der elektronischen
+Unterschrift, Posteingangslösungen für hohe Volumina mit automatischer Extraktion von
+Informationen aus Dokumenten, Lösungen zur intelligenten Verteilung von Informationen und
+Vorgangsbearbeitung sowie die Anbindung an angrenzende Software wie ERP-Systeme – auch auf Basis
+von XML. Passend zum Motto der Messe „Wissen im Web“ werden zahlreiche Neuerungen und eine
+Branchenlösung für die web-basierte ASP-Lösung DOKU@WEB demonstriert.
+
+Link: http://www.press.de/doc/?59577
+E-Mail-Abruf: MailTo:59577@responder.press.de
+
+
+09.08.2001 - A.I.S. GmbH
+A.I.S. Angewandte Informations-Systeme GmbH gibt Antworten auf die wichtigsten Fragen
+
+Verschiedene Gesetzesnovellen des Bundesfinanzministeriums sorgen zur Zeit für Verunsicherung
+bei den Unternehmen: Die Änderungen der Abgabenordnung §§ 146, 147, des UstG § 14 Abs. 4 und der
+GDPdU 1 sollen Unternehmen ab Januar 2002 verpflichten, u.a. alle „originär digitalen Unterlagen
+“ auch digital zu archivieren. Ferner sind die Daten der Finanzbuchhaltung, Anlagenbuchhaltung
+und Lohnbuchhaltung für den Datenzugriff durch den Steuerprüfer elektronisch zur Verfügung zu
+halten. Das Bochumer Softwareunternehmen A.I.S. Angewandte Informations-Systeme GmbH hat diese
+Thematik aufgegriffen und gibt interessierten Unternehmen unter www.digital-archivieren.de
+Antworten auf die sich aus der neuen Gesetzeslage ergebenden wichtigsten Fragen. Gleichzeitig
+erfahren Interessenten, wie sie mit den Produkten der A.I.S. ihre Dokumente heute und zukünftig
+revisionssicher digital archivieren können. Verweise zu den aktuellen Gesetzestexten sowie
+Verbandsinformationen (VOI, BITKOM) sind ebenfalls auf der Webseite zu finden.
+
+Link: http://www.press.de/doc/?59562
+E-Mail-Abruf: MailTo:59562@responder.press.de
+
+
+09.08.2001 - OfficeWare Information Systems GmbH
+DMS-Software bringt Ordnung ins Büro
+
+Ingolstadt, 01.08.2001 – Die OfficeWare Information Systems GmbH, Ingolstadt, hat auf Basis
+ihrer Organisations- und Dokumentenmanagement-Software (DMS) OfficeWare zwei neue
+Branchenlösungen entwickelt: OfficeWare ING und OfficeWare ARCH. Beide Softwarelösungen wurden
+speziell auf die Bedürfnisse von Ingenieuren und Architekten zugeschnitten und sind ab sofort
+verfügbar. Sie ermöglichen Anwendern die komfortable und effiziente Organisation ihrer
+Planungsbüros mit einer einzigen Software, von der Plan- und Dokumentenverwaltung über den
+Versand bis zur Zeit- und Kostenkontrolle. Gerade Produktivkräfte sollen mit der neuen Lösung
+von aufwendiger Verwaltungsarbeit entlastet werden.
+
+Link: http://www.press.de/doc/?59550
+E-Mail-Abruf: MailTo:59550@responder.press.de
+
+
+09.08.2001 - myview technologies GmbH & Co. KG
+Crossmedia-Publishing auch für Procurementsysteme und Internetmarktplätze
+
+Paderborn/ Essen, 22. August 2001 - Das Paderborner Software-Unternehmen zeigt es auf der
+diesjährigen DMS EXPO: Crossmedia-Publishing umfasst mehr als Online-, CD-ROM- und
+Papierkataloge. Auch die automatisierte Bereitstellung von Produktinformationen für
+Procurement-systeme und Internetmarktplätze sollte eine medienneutrale Datenbanklö-sung
+unterstützen.
+
+Link: http://www.press.de/doc/?59548
+E-Mail-Abruf: MailTo:59548@responder.press.de
+
+
+09.08.2001 - myview technologies GmbH & Co. KG
+Die Basis für den optimalen Publikationsprozess sind medienunabhängig strukturierte und
+verwaltete Informationen
+
+Paderborn/Essen, 1. August 2001. Das Paderborner Softwareunternehmen myview technologies stellt
+dieses Jahr auf der Essener Fachmesse DMS Expo aus. Vom 26. bis 28. September präsentieren die
+eBusiness-Experten ihre skalierbare Katalogmanagement-Lösung myview product suite. Im Fo-kus
+liegt dabei die weitgehend automatisierte Erstellung von Online- und CD-ROM- und Print-Katalogen
+auf Basis einer medienneutralen Datenbank.
+
+Link: http://www.press.de/doc/?59547
+E-Mail-Abruf: MailTo:59547@responder.press.de
+
+
+09.08.2001 - GID GmbH
+GID setzt auf I-Management
+
+GID präsentiert sich in diesem Jahr in der Halle 1 auf vergrößerter Standfläche ( Nr. 1330 ).
+Der DMS EXPO Auftritt steht ganz im Zeichen der strategischen Neupositionierung des
+Unternehmens. Unter dem Überbegriff I-Management ( Information-Management ) werden Lösungen für
+das Managen aller kundenspezifischen Informationsprozeße angeboten. Vom Eingang der
+Informationen, Verarbeitung bis hin zur Speicherung bzw. Ausgabe und Archivierung -
+kurz-mittel-und langfristig- . Dabei setzt GID auf ein Nebeneinander von Tradition und
+Fortschritt. Je nach Kundenwunsch wird das Beste aus beiden Welten als Lösung integriert und
+dafür Service geleistet.
+
+Link: http://www.press.de/doc/?59546
+E-Mail-Abruf: MailTo:59546@responder.press.de
+
+
+07.08.2001 - MATERNA GmbH Information & Communications
+Positives erstes Halbjahr bei MATERNA
+
+Das Software-Unternehmen MATERNA GmbH konnte im ersten Halbjahr 2001 einen Gruppenumsatz von
+89,9 Millionen Euro (175,8 Millionen Mark) erzielen. Der Wert liegt damit um 16 Prozent über der
+Vorjahreszahl und bildet eine gute Grundlage für das dritte und vierte Quartal. Traditionell
+erweist sich das vierte Quartal als das umsatzstärkste.
+
+Link: http://www.press.de/doc/?59543
+E-Mail-Abruf: MailTo:59543@responder.press.de
+
+
+ 08.08.2001 - GDI mbH
+Archivierungslust statt Pflichtenfrust
+
+Die Würfel sind gefallen,das Bundesfinanzministerium (BMFi) hat entschieden: Mit Inkrafttreten
+des neuen Steuergesetzes ab 1. Januar 2002 werden alle Unternehmen zur digitalen
+Datenarchivierung verpflichtet. Manchen Firmenoberen mag da ob des vermeintlich immensen
+Organisationsaufwands und unkalkulierbarer Kosten der Angstschweiß ausbrechen. Doch jede
+Medaille hat zwei Seiten. Und so kann der Beschluss des BMFi für viele auch der notwendige
+Anstoß sein, von den Vorteilen eines modernen professionellen Datenarchivierungs-Systems zu
+profitieren.
+
+Link: http://www.press.de/doc/?59537
+E-Mail-Abruf: MailTo:59537@responder.press.de
+
+
+08.08.2001 - GDI mbH
+Innovative Produkte verdienen außergewöhnliche Ideen
+
+Die Gesellschaft für Digitale Informationstechnik (GDI) präsentiert sich auf der DMS EXPO 2001
+in Essen als neuer OEM-Partner der Firma Plasmon. Mit dem Abschluss des OEM-Vertrags wird das
+Mainhausener Unternehmen die neue Jukebox G-Serie von Plasmon in hoher Qualität liefern - das
+heißt mit kurzen Lieferzeiten und zu wettbewerbsfähigen Preisen. Noch entscheidender: Der
+OEM-Status gestattet es der GDI, Herstellerverantwortung zu übernehmen - ein entscheidender
+Faktor im Erfolgsrezept des Unternehmens.
+
+Link: http://www.press.de/doc/?59533
+E-Mail-Abruf: MailTo:59533@responder.press.de
+
+
+26.07.2001 - HAVI GmbH & Co. KG
+HAVI bietet „Advanced Solutions for professional Enterprises”
+
+Unter dem Motto “Advanced Solutions for professional Enterprises” zeigt die HAVI
+Computer-Service GmbH & Co. KG, Hamburg, auf der diesjährigen DMS Expo Europe in Essen (26. –
+28. September 2001) ihr innovatives Lösungsportfolio für DMS und DRT
+(Dokumenten-Management-Systeme und Document Related Technologies). Highlights der
+DMS-Präsentation sind die beiden Lösungen “Dynamic Request Broker” und „HAVI Archiv“, mit denen
+HAVI vor allem mittelständische Unternehmen adressiert.
+
+Link: http://www.press.de/doc/?59531
+E-Mail-Abruf: MailTo:59531@responder.press.de
+
+
+10.07.2001 - Authentidate International AG
+AuthentiDate revolutioniert Electronic Bill Presentment
+
+Ab sofort reicht auch bei der elektronischen Rechnungsstellung ein Blick in den Briefkasten –
+denn sie kommt als E-Mail, durch neuartige Technologie vor Manipulation gesichert. Ein Mausklick
+genügt. Beim bisherigen Electronic Bill Presentment mußte der Empfänger seine Mitteilungen
+selbst umständlich von Webseiten im Internet abholen. Deshalb konnte sich diese Art der
+Rechnungsstellung nicht durchsetzen, trotz hohem Interesse der Unternehmen, die damit ihre
+enormen Kosten von ca. 10 bis 15 Mark pro Rechnung auf Papier drastisch reduzieren können.
+
+Link: http://www.press.de/doc/?59516
+E-Mail-Abruf: MailTo:59516@responder.press.de
+
+
+
+07.08.2001 - Mikromatic GmbH
+Individuelle Komplettlösungen für Datenerfassung und Dokumentenmanagement von Mikromatic
+
+Auf der DMS EXPO Europe, vom 26. bis 28. September 2001 in Essen, präsentiert sich die
+Mikromatic GmbH als Solutionprovider und Handelspartner namhafter Hersteller im Bereich
+Dokumentenmanagement (DMS) und „print-on-demand“. Neben entsprechenden Dienstleistungen hat sich
+das Waldbronner Unternehmen auf Systemintegration und Softwareentwicklungen für Gesamtlösungen
+spezialisiert.
+
+Link: http://www.press.de/doc/?59495
+E-Mail-Abruf: MailTo:59495@responder.press.de
+
+
+01.08.2001 - Mikromatic GmbH
+Zugriff auf Patientenakten per Unterschrift über Internet
+
+Im Jahre 2000 verfügte die Fürst-Stirum-Klinik in Bruchsal über einen Bestand von rund 350.000
+Patientenakten mit durchschnittlich je 300 Seiten an Arztberichten, Formularen und sonstigen
+Krankenhausunterlagen. Für das Krankenblattarchiv stehen lediglich 140 qm zur Verfügung, die
+zwischenzeitlich komplett mit Patientenakten angefüllt sind. Des akuten Platzmangels wegen wurde
+ein Großteil der Akten in ein externes Hochregallager bei Mikromatic in Waldbronn, rund 50 km
+von der Klinik entfernt gelegen, ausgelagert.
+
+Link: http://www.press.de/doc/?59494
+E-Mail-Abruf: MailTo:59494@responder.press.de
+
+
+07.08.2001 - A.I.S. GmbH
+DMS und Archivsystem windream erhält Anbindung an Klassifizierungssoftware PLAINclassify und
+PLAINcluster
+
+Die A.I.S. GmbH erweitert ihr Dokumenten-Management- (DMS) und Archivsystem windream um die
+Klassifizierungsmodule PLAINclassify und PLAINcluster der AIXPLAIN AG. Mit dieser Anbindung wird
+eine manuelle Zuordnung von Dokumenten zu entsprechenden Themen (Klassen) durch ein
+automatisches Klassifizierungsverfahren ersetzt. Eine strukturierte Archivierung wird somit
+möglich. Nach erfolgter Klassifizierung werden die Dokumente vollautomatisch in den verfügbaren
+Themenverzeichnissen abgelegt. Dies ermöglicht dem Anwender, die Dokumentenverteilung zu
+automatisieren und zum Beispiel E-Mails automatisch an entsprechende Sachbearbeiter
+weiterzuleiten. Die Zuordnung von Dokumenten in bestimmte Klassen ist darüber hinaus bei der
+Dokumentenrecherche hilfreich. So lässt sich beispielsweise die Volltextsuche auf Dokumente
+eingrenzen, die einem bestimmten Thema zugeordnet sind.
+
+Link: http://www.press.de/doc/?59459
+E-Mail-Abruf: MailTo:59459@responder.press.de
+
+
+06.08.2001 - asOne AG
+Rechtssicherheit für digitale Informationen
+
+Wie unkompliziert das sichere Speichern digitaler Informationen unter Windows mit einer
+einfachen Funktionserweiterung sein kann, zeigt die asOne AG auf der DMS Expo 2001 (26. bis 28.
+September 2001): Mit dem asOne ContentStore kann man über den Befehl „Speichern unter...“
+beliebige Dateien sofort rechtssicher abspeichern. Die Lösung erfüllt die hohen Anforderungen an
+die Revisionssicherheit für digitale Informationen und schützt vor Verlust und Manipulation.
+
+Link: http://www.press.de/doc/?59429
+E-Mail-Abruf: MailTo:59429@responder.press.de
+
+
+02.08.2001 - FileNET GmbH
+FileNET: PANAGON-Produkte entsprechen neuen steuerrechtlichen Anforderungen
+
+FileNET bietet mit den Produkten der PANAGON-Linie eine Archivierungslösung für große
+Dokumentenbestände, die auch die Anforderungen der neuen steuerrechtlichen Vorschriften
+erfüllen. So sind die Produkte der PANAGON-Linie kürzlich von der renomierten
+Wirtschaftsprüfungsgesellschaft Ernst & Young für die gesetzeskonforme computergestützte
+Buchführung zertifiziert worden. In diesem Zusammenhang bescheinigen die Wirtschaftsprüfer
+ausdrücklich, „daß die von Ernst & Young geprüfte und zertifizierte Software der Produktfamilie
+PANAGON bereits heute den ab dem 1. Januar 2002 bestehenden Ansprüchen gerecht wird“.
+
+Link: http://www.press.de/doc/?59418
+E-Mail-Abruf: MailTo:59418@responder.press.de
+
+
+04.08.2001 - CorVu Deutschland GmbH
+CorVu mit Business Performance Management Lösung erstmals auf der DMS EXPO
+
+Die CorVu Deutschland GmbH präsentiert auf der DMS EXPO / solutions@cscploenzke in Essen vom
+26.-28. September Lösungen für Enterprise Performance Management. Die Produktsuite des
+Softwareherstellers erlaubt es Unternehmen, ihre Ziele mittels eines Kennzahlensystems auf Basis
+der Balanced Scorecard-Methodik (BSC) in die Tat umzusetzen. Dabei präsentiert CorVu mit
+RapidSCORECARD eine elegante Einstiegsversion in die Managementstrategie BSC.
+
+Link: http://www.press.de/doc/?59417
+E-Mail-Abruf: MailTo:59417@responder.press.de
+
+
+01.08.2001 - BOV Aktiengesellschaft
+BOV entwickelt elektronisches Beschwerde-Management
+
+Der E-Service-Spezialist BOV stellt auf der DMS Expo, vom 26. bis 28. September 2001 in Essen,
+erstmalig ein Framework für Beschwerde-Management vor. Die Grundstruktur des Designs basiert auf
+moderner Java-Technologie. Somit kann die objektorientierte Entwicklung unabhängig vom genutzten
+Betriebssystem eingesetzt werden. Zudem können Kunden individuelle Anpassungen einfließen
+lassen. So hat BOV hat das Framework schon erfolgreich bei der größten deutschen Krankenkasse
+eingesetzt.
+
+Link: http://www.press.de/doc/?59322
+E-Mail-Abruf: MailTo:59322@responder.press.de
+
+
+01.08.2001 - Gruppe 21 Informations- GmbH und Co. KG
+Deutschlands Unternehmer müssen handeln - Änderung der Abgabenordnung macht Investitionen
+notwendig
+
+Die Novellierung der Abgabenordnung lässt die Wogen in Deutschlands Unternehmen hoch schlagen.
+Seit dem 16. Juli 2001 ist Fakt: Das Rundschreiben des Bundesministeriums für Finanzen (BMF)
+"Grundsätze zum Datenzugriff und zur Prüfbarkeit digitaler Unterlagen (GDPdU)"
+(http://www.bundesfinanzministerium.de Pfad: Fachabteilungen/Infos - Besitz- und
+Verkehrssteuern - Abgabenordnung zum Download) ist rechtsverbindlich. Danach wird den
+Finanzbehörden das Recht eingeräumt, die mit Hilfe "eines Datenverarbeitungssystems erstellte
+Buchführung des Steuerpflichtigen durch Datenzugriff zu prüfen." Die Folge: jedes
+steuerpflichtige Unternehmen hat ab 1.1.2002 die Daten der Finanz-, Anlagen- und Lohnbuchhaltung
+für den Datenzugriff zur Verfügung zu halten. Entscheidende Kriterien sind: Die Speicherung der
+Daten hat auf einem Datenträger zu erfolgen, der Änderungen nicht mehr zulässt. Die Daten müssen
+maschinell auswertbar sein und ihre Lesbarkeit muss für die Dauer von mindestens 10 Jahren
+gewährleistet werden.
+
+Link: http://www.press.de/doc/?59314
+E-Mail-Abruf: MailTo:59314@responder.press.de
+
+
+01.08.2001 - CorVu Deutschland GmbH
+Software ermöglicht Übersicht über Unternehmenslage auf einen Blick
+
+EDS und die CorVu Corporation (OTC BB: CRVU), ein Anbieter von Lösungen für das Business
+Performance Management, gaben heute ihre Zusammenarbeit bekannt. Demnach wird EDS einfach zu
+überschauende Scorecards und andere visuell orientierte Systeme von CorVu anbieten, mit denen
+Unternehmen die Performance ihrer laufenden Geschäftsprozesse effektiver überwachen können.
+
+Link: http://www.press.de/doc/?59304
+E-Mail-Abruf: MailTo:59304@responder.press.de
+
+
+
+31.07.2001 - Smart Storage
+Speicherlösungen von OTG für jeden Anwendungsfall
+
+OTG Software, Köln, stellt bei ihrem ersten (ehemals Smart Storage) Messeauftritt auf der DMS
+Expo 2001 in Essen (26. bis 28. September 2001) drei leistungsstarke Speicherlösungen für alle
+Anforderungen an die elektronische Archivierung und HSM-Speicherlösungen vor. „DiskXtender 2000“
+ist eine intelligente Lösung für das Online Data Management und eignet sich für den
+Enterprise-weiten Einsatz. Mit „EmailXtender“ können ein- und ausgehende E-Mail-Informationen
+gespeichert und bei Bedarf nach bestimmten Suchkriterien einfach aufgerufen werden. Die
+„ArchiveXtender“-Lösung steuert die Archivierung auf Secondary-Storage-Medien sowie den
+schnellen und komfortablen Zugriff auf die gespeicherten Dokumente über einen separaten
+Laufwerksbuchstaben.
+
+Link: http://www.press.de/doc/?59496
+E-Mail-Abruf: MailTo:59496@responder.press.de
+
+
+
+30.07.2001 - FileNET GmbH
+FileNET kündigt neue Version des Panagon Document Warehouse für R/3 an
+
+FileNET, führender Anbieter von eProcess Management Software, hat die neue Version 5.0 des
+Panagon Document Warehouse für R/3 angekündigt. Die Lösung beinhaltet FileNET
+eContent-Management und eProcess-Anwendungen, die speziell für den Einsatz in SAP R/3- und
+mySAP-Umgebungen entwickelt wurden.
+
+Link: http://www.press.de/doc/?59497
+E-Mail-Abruf: MailTo:59497@responder.press.de
+
+
+30.07.2001 - Schema GmbH
+SchemaText DocuManager erleichtert Erstellung und Pflege von umfangreichen Dokumentationen
+
+Die SCHEMA GmbH kündigte heute mit dem SchemaText DocuManager ein neues Produkt an. Dabei
+handelt es sich um ein vorkonfiguriertes Content-Management-System für komplexe Dokumentationen.
+Das Standard-Softwarepaket kann in wenigen Tagen implementiert und daher in kürzester Zeit
+produktiv werden. Zielgruppen sind Unternehmen aus den Bereichen Maschinen-, Anlagen- und
+Apparatebau, Softwarehersteller sowie Dokumentationsabteilungen und -dienstleister. Der
+SchemaText DocuManager ist ab Herbst 2001 als Einzelplatz- oder als Multi-User-System verfügbar
+und wird auch auf der DMS EXPO (Halle 1, Stand 1390) präsentiert.
+
+Link: http://www.press.de/doc/?59243
+E-Mail-Abruf: MailTo:59243@responder.press.de
+
+
+27.07.2001 - SER Systems AG
+SER ebnet mit der neuen, integrierten Software-Suite SERware den Weg für unternehmensweite
+Wissenslogistik
+
+SER präsentiert auf der diesjährigen DMS EXPO vom 26. bis 28. September 2001 mit SERware
+erstmals ihre neue integrierte, knowledge-enabled Software-Suite zur unternehmensweiten
+Wissenslogistik. SERware ist die einzige verfügbare Softwarelösung, die ganzheitlich das gesamte
+Spektrum von der Dokumentenarchivierung und dem Dokumenten Management über Prozess Management
+und Data Warehousing bis hin zum Knowledge Management umfasst.
+
+Link: http://www.press.de/doc/?59230
+E-Mail-Abruf: MailTo:59230@responder.press.de
+
+
+27.07.2001 - VOI Verband für Organisations- und Informationssysteme e.V.
+VOI bietet Einstieg in das Thema elektronische Signatur
+
+Der VOI Verband Organisations- und Informationssysteme e.V. bietet ab sofort eine neue Broschüre
+an, die helfen soll, einen ersten Einstieg in das Thema der elektronischen Signatur zu finden.
+Das rund 40 Seiten starke Heft informiert praxisorientiert über Bedeutung, Anwendung und
+rechtliche Aspekte. Für 5,00 EUR können Interessierte die Broschüre unter voi@voi.de bestellen.
+
+Link: http://www.press.de/doc/?59228
+E-Mail-Abruf: MailTo:59228@responder.press.de
+
+
+19.07.2001 - PROCAD GmbH & Co. KG
+Automatisches Urladen für Dokumente und CAD-Unterlagen
+
+Bei der erstmaligen Inbetriebnahme von EDM/PDM-Systemen und DMS-Lösungen besteht fast immer die
+Anforderung, vorhandene CAD-Datenbestände oder existierende Dokumentensammlungen in PRO*FILE zu
+übernehmen. Zusätzlich besteht dieser Wunsch in laufenden Installationen, wenn im Rahmen
+gemeinsamer Projekte größere Mengen von Dokumenten von externen Partnern übernommen werden
+sollen.
+
+Link: http://www.press.de/doc/?59215
+E-Mail-Abruf: MailTo:59215@responder.press.de
+
+
+26.07.2001 - PROCAD GmbH & Co. KG
+PROCAD präsentiert Knowledge Management Lösungen für die Industrie auf der DMS EXPO in Essen
+
+Auf der DMS Expo Europe / solutions@cscploenzke, die vom 26.09. –28.09.2001 in Essen
+stattfindet, ist die PROCAD GmbH & Co. KG mit Produktdaten- und Dokumentenmanagement-Systemen
+sowie Knowledge- Management-Lösungen für Industrie und Versorgungsbetriebe vertreten. (Halle 3 /
+Stand 2450)
+
+Link: http://www.press.de/doc/?59214
+E-Mail-Abruf: MailTo:59214@responder.press.de
+
+
+23.07.2001 - ReadSoft GmbH
+Monitoring für Datenerfassungssoftware Eyes & Hands
+
+Rechtzeitig zur DMS Expo 2001 ist das Monitor Option Pack von ReadSoft für Eyes & Hands INVOICES
+verfügbar. Das Zusatzpaket ist ab sofort nicht nur für Eyes & Hands FORMS erhältlich, sondern
+kann in gleichem Umfang auch für INVOICES eingesetzt werden. Die Softwarefamilie Eyes & Hands
+interpretiert automatisch unterschiedliche Belege und leitet die Daten zur Weiterverarbeitung.
+FORMS wurde zur Erfassung von jeglicher Art von Formularen entwickelt, während INVOICES auf die
+selbständige Interpretation von Rechnungen spezialisiert ist. Durch den Einsatz des Option Packs
+ist eine ständige Überwachung des Eyes-&-Hands-Systems sowie der einzelnen Arbeitsprozesse
+möglich. So lassen sich Unregelmäßigkeiten schnell erkennen und beheben. Zudem können die
+Einstellungen von FORMS und INVOICES mit Hilfe der Informationen an die jeweiligen
+Arbeitsprozesse angepasst und optimiert werden. Das Modul trägt so zur Effizienz der
+Eyes-&-Hands-Lösung bei. Weiter gibt Monitor Aufschluss über notwendige Erweiterungen oder
+mögliche Einsparpotentiale im Eyes-&-Hands-Netzwerk.
+
+Link: http://www.press.de/doc/?59504
+E-Mail-Abruf: MailTo:59504@responder.press.de
+
+
+23.07.2001 - IQDoQ GmbH
+Auf Wiederlesen! IQDoQ mit elektronischem Pressearchiv auf der DMS
+
+Eine elektronische Pressedatenbank auf der Basis der DMS-Lösung Hyperdoc stellt die IQDoQ GmbH,
+Bad Vilbel, auf der diesjährigen DMS Expo (26. bis 28. September 2001) vor. Das
+Dokumenten-Management-System (DMS) ermöglicht die Erfassung von Presseartikeln sowie deren
+Bearbeitung und automatische Nachkorrektur. Integriert ist eine leistungsfähige OCR-Erkennung
+(OCR = Optical Character Recognition). Die gescannten Images der einzelnen Presseartikel werden
+in Hyperdoc archiviert. Ein paralleler Zugriff von mehreren hundert Usern auf das System ist
+problemlos möglich. Als Beispiel für ein solches Archiv wird auf der DMS-EXPO die
+Pressedatenbank des Westdeutschen Rundfunks (WDR) gezeigt, in der mehr als eine Million
+Presseartikel gespeichert sind.
+
+Link: http://www.press.de/doc/?59503
+E-Mail-Abruf: MailTo:59503@responder.press.de
+
+
+23.07.2001 - A.I.S. GmbH
+A.I.S. präsentiert digitales Archivieren mit windream: Archivierung und Dokumentenmanagement in
+einem Produkt zu einem Preis
+
+Unter dem Motto „Digitales Archivieren mit windream“ präsentiert die A.I.S. Angewandte
+Informations-Systeme GmbH, Bochum auf der DMS EXPO in Essen ein in bezug auf Sicherheit und
+Flexibilität bisher einmaliges Produktkonzept für die Archivierung von Dokumenten. Neben der
+Vorstellung von windream, das bereits in der Basisversion die volle Funktionalität eines Archiv-
+und Dokumenten-Management-Systems in einem Produkt bietet, werden verschiedene Komponenten und
+Produktneuheiten für individuelle Kundenanforderungen und Sicherheitsbedürfnisse gezeigt.
+
+Link: http://www.press.de/doc/?59122
+E-Mail-Abruf: MailTo:59122@responder.press.de
+
+
+19.07.2001 - VOI Verband für Organisations- und Informationssysteme e.V.
+Änderung der Abgabenordnung (AO) erfordert richtiges Handeln - VOI Mitglieder bieten Fachwissen
+
+Das Rundschreiben des Bundesministeriums für Finanzen (BMF) "Grundsätze zum Datenzugriff und zur
+Prüfbarkeit digitaler Unterlagen (GDPdU)" (http://www.bundesfinanzministerium.de Pfad:
+Fachabteilungen/Infos - Besitz- und Verkehrssteuern - Abgabenordnung zum Download) sorgt für
+Aufwind der IT-Branche. Danach wird den Finanzbehörden das Recht eingeräumt, mit Hilfe "eines
+Datenverarbeitungssystems erstellt Buchführung des Steuerpflichtigen durch Datenzugriff zu
+prüfen." Da das Rundschreiben seit heute vom BMF veröffentlicht wurde, ist diese Fassung jetzt
+rechtsverbindlich. Welche Auswirkungen hat das in der Praxis?
+
+Link: http://www.press.de/doc/?58965
+E-Mail-Abruf: MailTo:58965@responder.press.de
+
+
+
+18.07.2001 - CARDIFF Software
+Cardiff auf der DMS EXPO in Essen, Halle 3, Stand 3510
+
+Die Cardiff Software GmbH – ein führender Anbieter von XML-basierten Automationslösungen für das
+eBusiness - präsentiert auf der bevorstehenden DMS EXPO die innovative
+eFormular-Management-Lösung LiquidOffice™. LiquidOffice wurde mit Adobe Systems gemeinsam
+entwickelt und ist eine komplette, Internet-basierte Lösung, die das Formularwesen und die
+dazugehörigen Geschäftsprozesse automatisiert.
+
+Link: http://www.press.de/doc/?59043
+E-Mail-Abruf: MailTo:59043@responder.press.de
+
+
+17.07.2001 - Schema GmbH
+Content-Management-System “ready to use” hat Premiere
+
+Die SCHEMA GmbH – Anbieter des Redaktions- und Content-Management-Systems SchemaText –
+präsentiert auf der diesjährigen DMS EXPO XML-basierte Software-Lösungen als integralen
+Bestandteil einer unternehmensübergreifenden IT-Infrastruktur. Der SchemaText DocuManager wird
+dabei als Produktneuheit erstmalig vorgestellt. Diese Redaktions- und Content-Management-Lösung
+ist ein vorkonfiguriertes Softwarepaket, dass in wenigen Tagen implementiert werden kann.
+Außerdem präsentiert SCHEMA spezielle Partner-Lösungen aus dem Bereich Dokumentation zusammen
+mit docConsult GmbH, doctima GmbH und der reinisch GmbH & Co KG.
+
+Link: http://www.press.de/doc/?58995
+E-Mail-Abruf: MailTo:58995@responder.press.de
+
+
+16.07.2001 - Tower Technology GmbH
+Auch Geschäftsprozesse sind Content
+
+Tower Technology, Anbieter im Schnittpunkt von Middleware und Content Management zeigt auf der
+DMS Expo 2001, wie neue und vorhandene Komponenten in die individuellen Netzstrategien
+integriert werden. Hebt man den Medienbruch im Imaging auf, dann stehen neben den Altarchiven
+die Dokumentenmanagementsysteme zur Verfügung, die über Workflow den Dokumentenfluss von den
+Repositories zu den Anwendern koordinieren. Jetzt geht es darum, diese Systeme hinter den
+vielseitigen Browseroberflächen eines Dokumentenportals flexibel zu vernetzen.
+
+Link: http://www.press.de/doc/?58961
+E-Mail-Abruf: MailTo:58961@responder.press.de
+
+
+15.07.2001 - GDI mbH
+BMF plant die Grundsätze zum Datenzugriff und Prüfbarkeit digitaler Unterlagen (GDPdU) ab 2002
+zu verschärfen
+
+Das BMF plant die Grundsätze zum Datenzugriff und Prüfbarkeit digitaler Unterlagen (GDPdU) ab
+2002 zu verschärfen und alle Unternehmen damit zur digitalen Archivierung zu verpflichten. Die
+GDI Gesellschaft für Digitale Informationstechnik steht durch ihre Produkte und ihrem Know How
+mit Rat und Tat zur Seite, wenn es um die Umsetzung dieser Forderungen geht. Was leisten die
+Produkte der GDI und wie halten sie den Anforderungen des BMF stand?
+
+Link: http://www.press.de/doc/?58955
+E-Mail-Abruf: MailTo:58955@responder.press.de
+
+
+31.05.2001 - solutions@cscploenzke
+CSC Ploenzke mit neuem Messekonzept auf der DMS EXPO 2001
+
+Unter dem Motto „Create Solutions for Collaboration“ präsentiert die CSC Ploenzke AG auf der
+solutions@cscploenzke branchen- und themenübergreifende Szenarien und Lösungen im Umfeld des
+Collaborative Commerce. Die solutions@cscploenzke ist in die Messeplattform DMS EXPO 2001
+integriert und findet vom 26. bis 28. September 2001 auf dem Messegelände Essen, Halle 3 statt.
+
+Link: http://www.press.de/doc/?58203
+E-Mail-Abruf: MailTo:58203@responder.press.de
+
+
+
+Weitere Ticker werden folgen.
+
+
+
+
+
+Mit freundlichen Gruessen/ best regards
+
+René Sven Koerber
+Geschaeftsfuehrer/GeneralManager
+
+Good News! Marketing & PR Consulting GmbH
+http://www.goodnews.de
+
+Kolberger Str. 36, D-23617 Stockelsdorf
+phone:  +49 451 - 88199-0, Fax -29
+direct: +49 451 - 88199-11
+mobile: +49 172 - 4223386
+_______________________________________
+Informationstechnologien -> verstehen
+Markt und Medien -> analysieren
+Zielgenau - kommunizieren
+________________________________________
+
+Der Inhalt dieser eMail ist vertraulich und ausschliesslich fuer den
+bezeichneten Adressaten bestimmt. Wenn Sie nicht der vorgesehene
+Adressat dieser eMail oder dessen Vertreter sein sollten, so beachten
+Sie bitte, dass jede Form der Kenntnisnahme, Veroeffentlichung,
+Vervielfaeltigung oder Weitergabe des Inhalts dieser eMail unzulaessig ist.
+Wir bitten Sie hoeflich, sich in diesem Fall mit dem Absender der eMail
+in Verbindung zu setzen.

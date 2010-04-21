@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/***********************************************************************************************************************
+ * Copyright (c) 2008 empolis GmbH and brox IT Solutions GmbH. All rights reserved. This program and the accompanying
+ * materials are made available under the terms of the Eclipse Public License v1.0 which accompanies this distribution,
+ * and is available at http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors: Ivan Churkin (brox IT Solutions GmbH) - initial creator
+ **********************************************************************************************************************/
+-->
+<xs:schema elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://www.eclipse.org/smila/queue"
+  xmlns="http://www.eclipse.org/smila/queue"
+>
+
+  <xs:complexType name="PropertyType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="Name" type="xs:string" use="required"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  
+  <xs:complexType name="BrokerConnectionType">
+    <xs:sequence>
+      <xs:element name="URL" type="xs:string"/>
+      <xs:element name="User" type="xs:string"/>
+      <xs:element name="Password" type="xs:string"/>
+      <xs:element name="ConnectionFactory" type="xs:string"/>
+      <xs:element name="ConnectionProperty" minOccurs="0" maxOccurs="unbounded" type="PropertyType"/>
+    </xs:sequence>
+    <xs:attribute name="Id" type="xs:string"/>
+  </xs:complexType>
+  
+  <xs:complexType name="QueueConnectionType">
+    <xs:attribute name="BrokerId" type="xs:string"/>
+    <xs:attribute name="Queue" type="xs:string"/>
+  </xs:complexType>
+  
+  <xs:complexType name="ProcessType">
+    <xs:attribute name="Workflow" type="xs:string" use="required"/>
+  </xs:complexType>
+  
+  <xs:complexType name="SendType">
+    <xs:complexContent>
+      <xs:extension base="QueueConnectionType">
+        <xs:sequence>
+          <xs:element name="SetProperty"  minOccurs="0" maxOccurs="unbounded" type="PropertyType"/>
+        </xs:sequence>
+        <xs:attribute name="RecordFilter" type="xs:string" use="optional"/>
+        <xs:attribute name="PersistentDelivery" type="xs:boolean" use="optional" default="true"/>
+        <xs:attribute name="WithAttachments" type="xs:boolean" use="optional" default="false"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <xs:complexType name="TaskListType" abstract="true">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:choice>
+        <xs:element name="Process" type="ProcessType"/>
+        <xs:element name="Send" type="SendType"/>
+      </xs:choice>
+    </xs:sequence>
+    <xs:attribute name="BlackboardSync" type="xs:boolean" use="optional" default="true"/>
+  </xs:complexType>
+  
+  <xs:complexType name="RouterTaskListType">
+    <xs:complexContent>
+      <xs:extension base="TaskListType"/>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <xs:complexType name="ListenerTaskListType">
+    <xs:complexContent>
+      <xs:extension base="TaskListType">
+        <xs:attribute name="InitiallySet" type="xs:boolean" use="optional" default="false"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <xs:complexType name="RecordRecyclerTaskListType">
+    <xs:complexContent>
+      <xs:extension base="TaskListType"/>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  
+  <xs:complexType name="BaseRuleType" abstract="true">
+    <xs:attribute name="Name" type="xs:string" use="required"/>
+  </xs:complexType>
+  
+  <xs:complexType name="RouterRuleType">
+    <xs:complexContent>
+      <xs:extension base="BaseRuleType">
+        <xs:sequence>
+          <xs:element name="Condition" type="xs:string"/>
+          <xs:element name="Task" type="RouterTaskListType"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <xs:complexType name="ListenerRuleType">
+    <xs:complexContent>
+      <xs:extension base="BaseRuleType">
+        <xs:sequence>
+          <xs:element name="Source" type="QueueConnectionType"/>
+          <xs:element name="Condition" type="xs:string"/>
+          <xs:element name="Task" type="ListenerTaskListType"/>
+        </xs:sequence>
+        <xs:attribute name="Threads" type="xs:int" use="optional" default="1"/>
+        <!-- timeout in seconds -->
+        <xs:attribute name="WaitMessageTimeout" type="xs:int" use="optional" default="1"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+
+  <xs:complexType name="RecordRecyclerRuleType">
+    <xs:complexContent>
+      <xs:extension base="BaseRuleType">
+        <xs:sequence>
+          <xs:element name="Condition" type="xs:string"/>
+          <xs:element name="Task" type="RecordRecyclerTaskListType"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  
+    
+  <!-- CONNECTIONS ROOT -->
+  <xs:complexType name="ConnectionsConfigType">
+    <xs:sequence>
+      <xs:element name="ConnectionConfig" type="BrokerConnectionType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QueueWorkerConnectionsConfig" type="ConnectionsConfigType"/>
+  
+  
+  <!-- ROUTER ROOT -->
+  <xs:complexType name="RouterConfigType">
+    <xs:sequence>
+      <xs:element name="Rule" type="RouterRuleType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QueueWorkerRouterConfig" type="RouterConfigType"/>
+  
+  <!-- LISTENER ROOT -->
+  <xs:complexType name="ListenerConfigType">
+    <xs:sequence>
+      <xs:element name="Rule" type="ListenerRuleType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QueueWorkerListenerConfig" type="ListenerConfigType"/>
+  
+  <!-- RecordRecycler ROOT -->
+  <xs:complexType  name="RecordRecyclerConfigType">
+    <xs:sequence>
+      <xs:element name="Rule" type="RecordRecyclerRuleType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QueueWorkerRecordRecyclerJob" type="RecordRecyclerConfigType"/>
+  
+</xs:schema>

@@ -1,0 +1,44 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SMILA Search Plug-in (Incubation)
+Bundle-SymbolicName: org.eclipse.smila.search;singleton:=true
+Bundle-Version: 0.7.0
+Bundle-Vendor: empolis GmbH and brox IT-Solutions GmbH
+Import-Package: javax.servlet;version="2.5.0",
+ javax.servlet.http;version="2.5.0",
+ org.apache.catalina;version="6.0.16",
+ org.apache.commons.collections.comparators;version="3.2.0",
+ org.apache.commons.io;version="1.4.0",
+ org.apache.commons.lang.builder;version="2.4.0",
+ org.apache.commons.logging;version="1.1.1",
+ org.apache.xerces.impl.dv.util,
+ org.eclipse.core.runtime,
+ org.eclipse.smila.blackboard;version="0.7.0",
+ org.eclipse.smila.datamodel.id;version="0.7.0",
+ org.eclipse.smila.datamodel.record;version="0.7.0",
+ org.eclipse.smila.search.datadictionary;version="0.7.0",
+ org.eclipse.smila.search.datadictionary.messages.datadictionary;version="0.7.0",
+ org.eclipse.smila.search.datadictionary.messages.ddconfig;version="0.7.0",
+ org.eclipse.smila.search.utils.advsearch;version="0.7.0",
+ org.eclipse.smila.search.utils.indexstructure;version="0.7.0",
+ org.eclipse.smila.search.utils.param;version="0.7.0",
+ org.eclipse.smila.search.utils.param.def;version="0.7.0",
+ org.eclipse.smila.search.utils.param.set;version="0.7.0",
+ org.eclipse.smila.search.utils.search;version="0.7.0",
+ org.eclipse.smila.search.utils.search.parameterobjects;version="0.7.0",
+ org.eclipse.smila.search.utils.searchresult;version="0.7.0",
+ org.eclipse.smila.utils.config;version="0.7.0",
+ org.eclipse.smila.utils.file;version="0.7.0",
+ org.eclipse.smila.utils.xml;version="0.7.0",
+ org.osgi.framework;version="1.4.0"
+Bundle-ClassPath: .
+Eclipse-RegisterBuddy: org.apache.tomcat, org.eclipse.smila.tomcat
+Bundle-Activator: org.eclipse.smila.search.EIFActivator
+Export-Package: org.eclipse.smila.search;version="0.7.0",
+ org.eclipse.smila.search.index;version="0.7.0",
+ org.eclipse.smila.search.plugin;version="0.7.0",
+ org.eclipse.smila.search.templates;version="0.7.0",
+ org.eclipse.smila.search.templates.messages.fieldtemplates;version="0.7.0",
+ org.eclipse.smila.search.templates.messages.searchtemplates;version="0.7.0"
+Service-Component: OSGI-INF/coreschemaresolver.xml
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

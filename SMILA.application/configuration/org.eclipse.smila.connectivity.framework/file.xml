@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/***********************************************************************************************************************
+ * Copyright (c) 2008 empolis GmbH and brox IT Solutions GmbH. All rights reserved. This program and the accompanying
+ * materials are made available under the terms of the Eclipse Public License v1.0 which accompanies this distribution,
+ * and is available at http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors: Ivan Churkin (brox IT Solutions GmbH) - initial creator
+ **********************************************************************************************************************/
+-->
+<DataSourceConnectionConfig
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../org.eclipse.smila.connectivity.framework.crawler.filesystem/schemas/FileSystemDataSourceConnectionConfigSchema.xsd"
+>
+  <DataSourceID>file</DataSourceID>
+  <SchemaID>org.eclipse.smila.connectivity.framework.crawler.filesystem</SchemaID>
+  <DataConnectionID>
+    <Crawler>FileSystemCrawler</Crawler>
+  </DataConnectionID>
+  <RecordBuffer Size="40" FlushInterval="3000" />  
+  <DeltaIndexing>full</DeltaIndexing>
+  <CompoundHandling>
+  	<MimeTypeAttribute>MimeType</MimeTypeAttribute>
+  	<ExtensionAttribute>Extension</ExtensionAttribute>
+  	<ContentAttachment>Content</ContentAttachment>
+  	<CompoundAttributes>
+  		<CompoundAttribute Type="Date" Name="LastModifiedDate">
+  			<ElementAttribute>LastModifiedDate</ElementAttribute>
+  		</CompoundAttribute>
+  		<CompoundAttribute Type="String" Name="Path">
+  			<ElementAttribute>Path</ElementAttribute>
+  		</CompoundAttribute>
+  		<CompoundAttribute Type="String" Name="Content" Attachment="true">
+  			<ElementAttribute>Content</ElementAttribute>
+  		</CompoundAttribute>
+  		<CompoundAttribute Type="String" Name="Size">
+  			<ElementAttribute>Size</ElementAttribute>
+  		</CompoundAttribute>  		
+  		<CompoundAttribute Type="String" Name="Extension">
+  			<ElementAttribute>FileExtension</ElementAttribute>
+  		</CompoundAttribute>
+  		<CompoundAttribute Type="String" Name="Filename">
+  			<ElementAttribute>Name</ElementAttribute>
+  		</CompoundAttribute>  		
+  	</CompoundAttributes>
+  </CompoundHandling>  
+  <Attributes>
+    <Attribute Type="Date" Name="LastModifiedDate" HashAttribute="true">
+      <FileAttributes>LastModifiedDate</FileAttributes>
+    </Attribute>
+    <Attribute Type="String" Name="Filename">
+      <FileAttributes>Name</FileAttributes>
+    </Attribute>
+    <Attribute Type="String" Name="Path" KeyAttribute="true">
+      <FileAttributes>Path</FileAttributes>
+    </Attribute>
+    <Attribute Type="String" Name="Content" Attachment="true">
+      <FileAttributes>Content</FileAttributes>
+    </Attribute>
+    <Attribute Type="String" Name="Extension">
+      <FileAttributes>FileExtension</FileAttributes>
+    </Attribute>
+    <Attribute Type="String" Name="Size">
+      <FileAttributes>Size</FileAttributes>
+    </Attribute>    
+  </Attributes>
+  <Process>
+    <BaseDir>c:\data</BaseDir>
+    <Filter Recursive="true" CaseSensitive="false">
+      <Include Name="*.txt"/>
+      <Include Name="*.htm"/>
+      <Include Name="*.html"/>
+      <Include Name="*.xml"/>
+	  <Include Name="*.zip"/>      
+	<!--      
+      <Include Name="*.pdf"/>
+      <Include Name="*.doc"/>
+      <Include Name="*.xls"/>
+      <Include Name="*.ppt"/>
+      <Include Name="*.rtf"/>
+      //-->               
+    </Filter>
+  </Process>
+</DataSourceConnectionConfig>

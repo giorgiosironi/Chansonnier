@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Xmlunit Plug-in (Incubation)
+Bundle-SymbolicName: org.custommonkey.xmlunit
+Bundle-Version: 1.2.0
+Bundle-ClassPath: xmlunit-1.2.jar
+Bundle-Vendor: Empolis GmbH and brox IT-Solutions GmbH
+Export-Package: org.custommonkey.xmlunit;version="1.2.0",
+ org.custommonkey.xmlunit.examples;version="1.2.0",
+ org.custommonkey.xmlunit.exceptions;version="1.2.0",
+ org.custommonkey.xmlunit.jaxp13;version="1.2.0",
+ org.custommonkey.xmlunit.util;version="1.2.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<!-- rename example -->
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0"
+               pass-through="text">
+
+  <stx:template match="root"><stxRoot><stx:process-children/></stxRoot></stx:template>
+
+  <stx:template match="child"><stxChild><stx:process-children/></stxChild></stx:template>
+</stx:transform>

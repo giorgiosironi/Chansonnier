@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/***********************************************************************************************************************
+ * Copyright (c) 2008 empolis GmbH and brox IT Solutions GmbH. All rights reserved. This program and the accompanying
+ * materials are made available under the terms of the Eclipse Public License v1.0 which accompanies this distribution,
+ * and is available at http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors: Daniel Stucky (empolis GmbH) - initial creator
+ **********************************************************************************************************************/
+-->
+<component name="AgentControllerDS" immediate="true">
+    <implementation class="org.eclipse.smila.connectivity.framework.impl.AgentControllerImpl" />
+    <service>
+         <provide interface="org.eclipse.smila.connectivity.framework.AgentController"/>
+    </service>
+    
+     <reference 
+        name="agentFactories"        	       
+        interface="org.osgi.service.component.ComponentFactory" 
+        bind="addComponentFactory"
+        unbind="removeComponentFactory"
+    	cardinality="0..n"
+        policy="dynamic"
+        target="(component.factory=AgentFactory)"        
+    />
+
+    <reference 
+        name="connectivityManager"
+        interface="org.eclipse.smila.connectivity.ConnectivityManager" 
+        bind="setConnectivityManager"
+        unbind="unsetConnectivityManager"
+		cardinality="1..1"
+		policy="static" 
+    />
+
+    <reference
+      name="diManager"
+      interface="org.eclipse.smila.connectivity.deltaindexing.DeltaIndexingManager"
+      bind="setDeltaIndexingManager"
+      unbind="unsetDeltaIndexingManager"      
+      cardinality="0..1"      
+      policy="dynamic"
+    />      
+    
+	<reference 
+        name="compoundManager"
+        interface="org.eclipse.smila.connectivity.framework.compound.CompoundManager" 
+        bind="setCompoundManager"
+        unbind="unsetCompoundManager"
+		cardinality="1..1"
+		policy="dynamic" 
+    />    
+</component>

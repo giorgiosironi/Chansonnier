@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/***********************************************************************************************************************
+ * Copyright (c) 2008 empolis GmbH and brox IT Solutions GmbH. All rights reserved. This program and the accompanying
+ * materials are made available under the terms of the Eclipse Public License v1.0 which accompanies this distribution,
+ * and is available at http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors: Daniel Stucky (brox IT Solutions GmbH) - initial creator
+ **********************************************************************************************************************/
+-->
+<component name="AgentControllerManagementAgent" immediate="true">
+  <implementation class="org.eclipse.smila.connectivity.framework.impl.AgentControllerAgentImpl" />
+  <service>
+    <provide interface="org.eclipse.smila.connectivity.framework.AgentControllerAgent"/>
+  </service>
+  <reference 
+    name="agentcontroller" 
+    interface="org.eclipse.smila.connectivity.framework.AgentController"
+    bind="setService"
+    unbind="unsetService" 
+    policy="static"
+  />
+</component>

@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Main-Class: org.eclipse.smila.management.jmx.client.Main
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: org.eclipse.smila.management.jmx.client
+Bundle-Version: 0.7.0
+Bundle-Name: JMX Management Client bundle
+Bundle-Vendor: Empolis GmbH and brox IT-Solutions GmbH
+Import-Package: org.apache.commons.beanutils;version="1.7.0",
+ org.apache.commons.logging;version="1.1.1",
+ org.apache.naming.java;version="6.0.18";resolution:=optional,
+ org.eclipse.osgi.framework.console;version="1.0.0",
+ org.eclipse.smila.utils.config;version="0.7.0",
+ org.eclipse.smila.utils.jaxb;version="0.7.0",
+ org.eclipse.smila.utils.xml;version="0.7.0"
+Export-Package: org.eclipse.smila.management.jmx.client;version="0.7.0",
+ org.eclipse.smila.management.jmx.client.cmd;version="0.7.0",
+ org.eclipse.smila.management.jmx.client.cmd.op;version="0.7.0",
+ org.eclipse.smila.management.jmx.client.cmd.task;version="0.7.0",
+ org.eclipse.smila.management.jmx.client.cmd.task.impl;version="0.7.0",
+ org.eclipse.smila.management.jmx.client.config;version="0.7.0",
+ org.eclipse.smila.management.jmx.client.converters;version="0.7.0",
+ org.eclipse.smila.management.jmx.client.exceptions;version="0.7.0",
+ org.eclipse.smila.management.jmx.client.helpers;version="0.7.0",
+ org.eclipse.smila.management.jmx.client.osgi;version="0.7.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Service-Component: OSGI-INF/component.xml

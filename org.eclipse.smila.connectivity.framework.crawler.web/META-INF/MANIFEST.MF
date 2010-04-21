@@ -1,0 +1,46 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Web Crawler Plug-in (Incubation)
+Bundle-SymbolicName: org.eclipse.smila.connectivity.framework.crawler.web;singleton:=true
+Bundle-Version: 0.7.0
+Bundle-Vendor: empolis GmbH and brox IT Solutions GmbH
+Export-Package: org.eclipse.smila.connectivity.framework.crawler.web;version="0.7.0",
+ org.eclipse.smila.connectivity.framework.crawler.web.configuration,
+ org.eclipse.smila.connectivity.framework.crawler.web.messages;version="0.7.0",
+ org.eclipse.smila.connectivity.framework.crawler.web.metadata;version="0.7.0",
+ org.eclipse.smila.connectivity.framework.crawler.web.metadata;version="0.7.0",
+ org.eclipse.smila.connectivity.framework.crawler.web.parse;version="0.7.0",
+ org.eclipse.smila.connectivity.framework.crawler.web.parse.html;version="0.7.0",
+ org.eclipse.smila.connectivity.framework.crawler.web.parse.js;version="0.7.0"
+Import-Package: org.apache.commons.beanutils;version="1.7.0",
+ org.apache.commons.codec.digest;version="1.3.0",
+ org.apache.commons.httpclient;version="3.1.0",
+ org.apache.commons.httpclient.auth;version="3.1.0",
+ org.apache.commons.httpclient.cookie;version="3.1.0",
+ org.apache.commons.httpclient.methods;version="3.1.0",
+ org.apache.commons.httpclient.params;version="3.1.0",
+ org.apache.commons.httpclient.protocol;version="3.1.0",
+ org.apache.commons.httpclient.util;version="3.1.0",
+ org.apache.commons.io;version="1.4.0",
+ org.apache.commons.lang;version="2.4.0",
+ org.apache.commons.logging;version="1.1.1",
+ org.eclipse.smila.connectivity.framework;version="0.7.0",
+ org.eclipse.smila.connectivity.framework.performancecounters;version="0.7.0",
+ org.eclipse.smila.connectivity.framework.schema;version="0.7.0",
+ org.eclipse.smila.connectivity.framework.schema.config;version="0.7.0",
+ org.eclipse.smila.connectivity.framework.schema.config.interfaces;version="0.7.0",
+ org.eclipse.smila.connectivity.framework.schema.tools;version="0.7.0",
+ org.eclipse.smila.connectivity.framework.util;version="0.7.0",
+ org.eclipse.smila.datamodel.id;version="0.7.0",
+ org.eclipse.smila.datamodel.record;version="0.7.0",
+ org.eclipse.smila.datamodel.tools;version="0.7.0",
+ org.eclipse.smila.management;version="0.7.0",
+ org.eclipse.smila.management.performance;version="0.7.0",
+ org.eclipse.smila.utils.digest;version="0.7.0",
+ org.eclipse.smila.utils.workspace;version="0.7.0"
+Bundle-ClassPath: .,
+ lib/tagsoup-1.2.jar
+Service-Component: OSGI-INF/webcrawler.xml, OSGI-INF/parserManager.xml, OSGI-INF/htmlParser.xml, OSGI-INF/javascriptParser.xml
+Require-Bundle: org.apache.xerces;bundle-version="2.9.0.v200909240008",
+ org.apache.oro;bundle-version="2.0.8.v200803061811"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

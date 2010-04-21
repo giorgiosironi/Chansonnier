@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Queue worker Plug-in (Incubation)
+Bundle-SymbolicName: org.eclipse.smila.connectivity.queue.worker
+Bundle-Version: 0.7.0
+Bundle-Vendor: empolis GmbH and brox IT Solutions GmbH
+Export-Package: org.eclipse.smila.connectivity.queue.worker;version="0.7.0",
+ org.eclipse.smila.connectivity.queue.worker.config;version="0.7.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: org.eclipse.smila.datamodel.id;version="0.7.0",
+ org.eclipse.smila.datamodel.record;version="0.7.0",
+ org.eclipse.smila.management.performance;version="0.7.0"

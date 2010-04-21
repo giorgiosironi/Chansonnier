@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/***********************************************************************************************************************
+ * Copyright (c) 2008 empolis GmbH and brox IT Solutions GmbH. All rights reserved. This program and the accompanying
+ * materials are made available under the terms of the Eclipse Public License v1.0 which accompanies this distribution,
+ * and is available at http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors: Georg Schmidt (brox IT Solutions GmbH) - initial creator
+ **********************************************************************************************************************/
+-->
+<DataDictionaryTreeViewConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="DataDictionaryTreeViewConfig.xsd">
+  <Node Path="//Index" AllowDragAndDrop="true" ImageIndex="0">
+    <Text XPath="@Name" />
+    <DragAndDrop Name="Name" XPath="@Name" />
+    <DragAndDrop Name="NodeType" XPath="string(&quot;Index&quot;)" />
+  </Node>
+  <Node Path="//Index/Connection" AllowDragAndDrop="false" ImageIndex="0">
+    <Text XPath="" />
+    <ToolTip Name="MaxConnections" XPath="@MaxConnections" Position="1" />
+  </Node>
+  <Node Path="//Index/Result" AllowDragAndDrop="false" ImageIndex="0">
+    <Text XPath="" />
+  </Node>
+  <Node Path="//Index/IndexStructure" AllowDragAndDrop="false" ImageIndex="0">
+    <Text XPath="" />
+  </Node>
+  <Node Path="//Index/IndexStructure/Analyzer" AllowDragAndDrop="false" ImageIndex="0">
+    <Text XPath="" />
+    <ToolTip Name="Analyzer" XPath="@ClassName" Position="0" />
+  </Node>
+  <Node Path="//Index/IndexStructure/Analyzer/ParameterSet" AllowDragAndDrop="false" ImageIndex="0">
+    <Text XPath="" />
+  </Node>
+  <Node Path="//Index/IndexStructure/Analyzer/ParameterSet/Parameter" Type="*" AllowDragAndDrop="false" ImageIndex="0">
+    <Text XPath="@Name" />
+  </Node>
+  <Node Path="//Index/IndexStructure/Analyzer/ParameterSet/Parameter/Value" AllowDragAndDrop="false" ImageIndex="0">
+    <Text XPath="text()" />
+  </Node>
+  <Node Path="//Index/IndexStructure/IndexField/Analyzer" AllowDragAndDrop="false" ImageIndex="0">
+    <Text XPath="" />
+    <ToolTip Name="Analyzer" XPath="@ClassName" Position="0" />
+  </Node>
+  <Node Path="//Index/IndexStructure/IndexField/Analyzer/ParameterSet" AllowDragAndDrop="false" ImageIndex="0">
+    <Text XPath="" />
+  </Node>
+  <Node Path="//Index/IndexStructure/IndexField/Analyzer/ParameterSet/Parameter" Type="*" AllowDragAndDrop="false" ImageIndex="0">
+    <Text XPath="@Name" />
+  </Node>
+  <Node Path="//Index/IndexStructure/IndexField/Analyzer/ParameterSet/Parameter/Value" AllowDragAndDrop="false" ImageIndex="0">
+    <Text XPath="text()" />
+  </Node>
+  <Node Path="//Index/IndexStructure/IndexField" AllowDragAndDrop="true" ImageIndex="6">
+    <Text XPath="@Name" />
+    <ToolTip Name="FieldNo" XPath="@FieldNo" Position="0" />
+    <ToolTip Name="Name" XPath="@Name" Position="1" />
+    <ToolTip Name="Type" XPath="@Type" Position="2" />
+    <ToolTip Name="Tokenize" XPath="@Tokenize" Position="3" />
+    <ToolTip Name="IndexValue" XPath="@IndexValue" Position="4" />
+    <ToolTip Name="StoreText" XPath="@StoreText" Position="5" />
+    <DragAndDrop Name="Name" XPath="@Name" />
+    <DragAndDrop Name="FieldNo" XPath="@FieldNo" />
+    <DragAndDrop Name="Type" XPath="@Type" />
+    <DragAndDrop Name="FieldType" XPath="@Type" />
+    <DragAndDrop Name="NodeType" XPath="string(&quot;Field&quot;)" />
+  </Node>
+  <Node Path="//Index/Result/Field" AllowDragAndDrop="false" ImageIndex="0">
+    <Text XPath="@Name" />
+    <ToolTip Name="FieldNo" XPath="@FieldNo" Position="0" />
+    <ToolTip Name="Name" XPath="@Name" Position="1" />
+  </Node>
+  <Node Path="//Index/Configuration" AllowDragAndDrop="false" ImageIndex="0" Display="false">
+    <Text XPath="" />
+  </Node>
+  <Node Path="//Index/MetaData" AllowDragAndDrop="false" ImageIndex="0" Display="false">
+    <Text XPath="" />
+  </Node>
+</DataDictionaryTreeViewConfig>

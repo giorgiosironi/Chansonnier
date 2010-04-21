@@ -1,0 +1,28 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SMILA Search API (Incubation)
+Bundle-SymbolicName: org.eclipse.smila.search.api
+Bundle-Version: 0.7.0
+Bundle-Vendor: Empolis GmbH and brox IT-Solutions GmbH
+Import-Package: org.apache.commons.collections.iterators;version="3.2.0",
+ org.apache.commons.io;version="1.4.0",
+ org.apache.commons.logging;version="1.1.1",
+ org.eclipse.smila.blackboard;version="0.7.0",
+ org.eclipse.smila.blackboard.path;version="0.7.0",
+ org.eclipse.smila.datamodel.id;version="0.7.0",
+ org.eclipse.smila.datamodel.record;version="0.7.0",
+ org.eclipse.smila.datamodel.record.dom;version="0.7.0",
+ org.eclipse.smila.datamodel.tools;version="0.7.0",
+ org.eclipse.smila.datamodel.tools.record.filter;version="0.7.0",
+ org.eclipse.smila.processing;version="0.7.0",
+ org.eclipse.smila.processing.parameters;version="0.7.0",
+ org.eclipse.smila.utils.config;version="0.7.0",
+ org.eclipse.smila.utils.digest;version="0.7.0",
+ org.eclipse.smila.utils.workspace;version="0.7.0",
+ org.eclipse.smila.utils.xml;version="0.7.0",
+ org.osgi.service.component;version="1.0.0"
+Export-Package: org.eclipse.smila.search.api;version="0.7.0",
+ org.eclipse.smila.search.api.helper;version="0.7.0",
+ org.eclipse.smila.search.api.internal;version="0.7.0"
+Service-Component: OSGI-INF/searchservice.xml
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Lucene Test Plug-in (Incubation)
+Bundle-SymbolicName: org.apache.lucene.test
+Bundle-Version: 1.0.0
+Require-Bundle: org.apache.lucene;bundle-version="2.3.2",
+ org.apache.lucene.analysis;bundle-version="2.3.2",
+ org.junit,
+ org.apache.lucene.search.highlight;bundle-version="2.3.2"
+Import-Package: org.apache.commons.logging;version="1.1.1"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-Vendor: Empolis GmbH and brox IT-Solutions GmbH

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/***********************************************************************************************************************
+ * Copyright (c) 2008 empolis GmbH and brox IT Solutions GmbH. All rights reserved. This program and the accompanying
+ * materials are made available under the terms of the Eclipse Public License v1.0 which accompanies this distribution,
+ * and is available at http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors: Daniel Stucky (empolis GmbH) - initial creator
+ **********************************************************************************************************************/
+-->
+<DataSourceConnectionConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <DataSourceID>FileSystem_ZipTest</DataSourceID>
+  <SchemaID>org.eclipse.smila.connectivity.framework.crawler.filesystem</SchemaID>
+  <DataConnectionID>
+    <Crawler>FileSystem_ZipTest</Crawler>
+  </DataConnectionID>
+  <DeltaIndexing>full</DeltaIndexing>
+  <CompoundHandling>
+  	<MimeTypeAttribute>MimeType</MimeTypeAttribute>
+  	<ExtensionAttribute>Extension</ExtensionAttribute>
+  	<ContentAttachment>Content</ContentAttachment>
+  	<CompoundAttributes>
+  		<CompoundAttribute Type="Date" Name="LastModifiedDate">
+  			<ElementAttribute>LastModifiedDate</ElementAttribute>
+  		</CompoundAttribute>
+  		<CompoundAttribute Type="String" Name="Path">
+  			<ElementAttribute>Path</ElementAttribute>
+  		</CompoundAttribute>
+  		<CompoundAttribute Type="String" Name="Content" Attachment="true">
+  			<ElementAttribute>Content</ElementAttribute>
+  		</CompoundAttribute>
+  		<CompoundAttribute Type="String" Name="Size">
+  			<ElementAttribute>Size</ElementAttribute>
+  		</CompoundAttribute>  		
+  		<CompoundAttribute Type="String" Name="Extension">
+  			<ElementAttribute>FileExtension</ElementAttribute>
+  		</CompoundAttribute>
+  		<CompoundAttribute Type="String" Name="Filename">
+  			<ElementAttribute>Name</ElementAttribute>
+  		</CompoundAttribute>  		
+  	</CompoundAttributes>
+  </CompoundHandling>
+  <Attributes>
+    <Attribute Type="Date" Name="Date" HashAttribute="true">
+      <FileAttributes>LastModifiedDate</FileAttributes>
+    </Attribute>
+    <Attribute Type="String" Name="Filename">
+      <FileAttributes>Name</FileAttributes>
+    </Attribute>
+    <Attribute Type="String" Name="Path" KeyAttribute="true">
+      <FileAttributes>Path</FileAttributes>
+    </Attribute>
+    <Attribute Type="String" Name="Content" Attachment="true">
+      <FileAttributes>Content</FileAttributes>
+    </Attribute>
+    <Attribute Type="String" Name="Extension">
+      <FileAttributes>FileExtension</FileAttributes>
+    </Attribute>
+  </Attributes>
+  <Process>
+    <BaseDir>c:\test</BaseDir>
+    <Filter Recursive="true" CaseSensitive="false">
+      <Include Name="*.zip"/>
+      <Include Name="*.html"/>
+	  <Include Name="*.htm"/>      
+    </Filter>
+  </Process>
+</DataSourceConnectionConfig>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+ * Copyright (c) 2008 empolis GmbH and brox IT Solutions GmbH. 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Juergen Schumacher (empolis GmbH) - initial design
+-->
+<component name="ODEWorkflowProcessor" immediate="true">
+    <implementation class="org.eclipse.smila.processing.bpel.ODEWorkflowProcessor" />
+    <service>
+         <provide interface="org.eclipse.smila.processing.bpel.ODEWorkflowProcessor"/>
+         <provide interface="org.eclipse.smila.processing.WorkflowProcessor"/>
+    </service>
+    <reference 
+        name="processingService"
+        interface="org.eclipse.smila.processing.ProcessingService"
+        cardinality="0..n" 
+        bind="setProcessingService"
+        unbind="unsetProcessingService"
+        policy="dynamic" />
+    <reference 
+        name="searchProcessingService"
+        interface="org.eclipse.smila.processing.SearchProcessingService"
+        cardinality="0..n" 
+        bind="setSearchProcessingService"
+        unbind="unsetSearchProcessingService"
+        policy="dynamic" />
+</component>

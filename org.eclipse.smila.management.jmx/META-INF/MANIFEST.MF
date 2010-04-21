@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Jmx Plug-in (Incubation)
+Bundle-SymbolicName: org.eclipse.smila.management.jmx
+Bundle-Version: 0.7.0
+Bundle-Activator: org.eclipse.smila.management.jmx.Activator
+Bundle-Vendor: empolis GmbH and brox IT Solutions GmbH
+Bundle-ActivationPolicy: lazy
+Import-Package: org.apache.commons.beanutils;version="1.7.0",
+ org.apache.commons.logging;version="1.1.1",
+ org.osgi.framework;version="1.3.0"
+Require-Bundle: org.eclipse.smila.management;bundle-version="0.7.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

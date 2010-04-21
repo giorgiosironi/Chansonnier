@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SMILA Webservice Publisher
+Bundle-SymbolicName: org.eclipse.smila.webservice
+Bundle-Version: 0.7.0
+Bundle-Activator: org.eclipse.smila.webservice.Activator
+Bundle-Vendor: Empolis GmbH and brox IT-Solutions GmbH
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: org.apache.commons.logging;version="1.1.1",
+ org.eclipse.smila.utils.config;version="0.7.0",
+ org.osgi.framework;version="1.5.0",
+ org.osgi.util.tracker;version="1.4.2"
+Export-Package: org.eclipse.smila.webservice;version="0.7.0"

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/***********************************************************************************************************************
+ * Copyright (c) 2008 empolis GmbH and brox IT Solutions GmbH. All rights reserved. This program and the accompanying
+ * materials are made available under the terms of the Eclipse Public License v1.0 which accompanies this distribution,
+ * and is available at http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors: Ivan Churkin (brox IT Solutions GmbH) - initial creator
+ **********************************************************************************************************************/
+-->
+<xs:schema elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:redefine schemaLocation="../../org.eclipse.smila.connectivity.framework.schema/schemas/RootDataSourceConnectionConfigSchema.xsd">
+    <xs:complexType name="Process">
+      <xs:annotation>
+        <xs:documentation>Process Specification</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+        <xs:extension base="Process">
+          <xs:sequence maxOccurs="unbounded">
+            <xs:element name="BaseDir" type="xs:string"/>
+            <xs:element name="Filter">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Include" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                      <xs:attribute name="Name" type="xs:string" use="required"/>
+                      <xs:attribute name="DateFrom" type="xs:dateTime" use="optional"/>
+                      <xs:attribute name="DateTo" type="xs:dateTime" use="optional"/>
+                      <!--<xs:attribute name="Period" type="xs:normalizedString" use="optional"/>-->
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="Exclude" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                      <xs:attribute name="Name" type="xs:string" use="required"/>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+                <xs:attribute name="CaseSensitive" type="xs:boolean" use="optional" default="false"/>
+                <xs:attribute name="Recursive" type="xs:boolean" use="optional" default="true"/>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="Attribute">
+      <xs:complexContent>
+        <xs:extension base="Attribute">
+          <xs:choice>
+            <xs:element name="FileAttributes" type="FileAttributesType" />
+          </xs:choice>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:redefine>
+  
+  
+  <!-- simple types -->
+  <xs:simpleType name="FileAttributesType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Name"/>
+      <xs:enumeration value="Path"/>
+      <xs:enumeration value="Size"/>
+      <xs:enumeration value="LastModifiedDate"/>
+      <xs:enumeration value="Content"/>
+      <xs:enumeration value="FileExtension"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+</xs:schema>

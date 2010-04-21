@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- 
+  * Copyright (c) 2008 empolis GmbH and brox IT Solutions GmbH. 
+	* All rights reserved. This program and the accompanying materials
+	* are made available under the terms of the Eclipse Public License v1.0
+	* which accompanies this distribution, and is available at
+	* http://www.eclipse.org/legal/epl-v10.html
+	*
+	* Contributors:
+	*    Juergen Schumacher (empolis GmbH) - initial design
+-->
+<process name="EchoPipeline" targetNamespace="http://www.eclipse.org/smila/processor"
+	xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:proc="http://www.eclipse.org/smila/processor" >
+
+	<import location="processor.wsdl" namespace="http://www.eclipse.org/smila/processor"
+		importType="http://schemas.xmlsoap.org/wsdl/" />
+
+	<partnerLinks>
+		<partnerLink name="Pipeline" partnerLinkType="proc:ProcessorPartnerLinkType" myRole="service" />
+	</partnerLinks>
+
+	<variables>
+		<variable name="request" messageType="proc:ProcessorMessage" />
+		<variable name="result" messageType="proc:ProcessorMessage" />
+	</variables>
+
+	<sequence>
+		<receive name="start" partnerLink="Pipeline" portType="proc:ProcessorPortType" operation="process" variable="request"
+			createInstance="yes" />
+
+		<assign name="assign">
+			<copy>
+				<from>$request</from>
+				<to>$result</to>
+			</copy>
+		</assign>
+
+		<reply name="end" partnerLink="Pipeline" portType="proc:ProcessorPortType" operation="process" variable="result" />
+		<exit />
+	</sequence>
+</process>

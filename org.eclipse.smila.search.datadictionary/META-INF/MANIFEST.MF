@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: EIF Datadictionary (Incubation)
+Bundle-SymbolicName: org.eclipse.smila.search.datadictionary;singleton:=true
+Bundle-Version: 0.7.0
+Bundle-Vendor: empolis GmbH and brox IT Solutions GmbH
+Export-Package: org.eclipse.smila.search.datadictionary;version="0.7.0",
+ org.eclipse.smila.search.datadictionary.messages.datadictionary;version="0.7.0",
+ org.eclipse.smila.search.datadictionary.messages.ddconfig;version="0.7.0"
+Import-Package: org.apache.commons.io;version="1.4.0",
+ org.apache.commons.logging;version="1.1.1",
+ org.eclipse.core.runtime,
+ org.eclipse.smila.search.utils.indexstructure;version="0.7.0",
+ org.eclipse.smila.search.utils.param;version="0.7.0",
+ org.eclipse.smila.search.utils.param.set;version="0.7.0",
+ org.eclipse.smila.search.utils.search;version="0.7.0",
+ org.eclipse.smila.search.utils.search.parameterobjects;version="0.7.0",
+ org.eclipse.smila.utils.config;version="0.7.0",
+ org.eclipse.smila.utils.file;version="0.7.0",
+ org.eclipse.smila.utils.workspace;version="0.7.0",
+ org.eclipse.smila.utils.xml;version="0.7.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

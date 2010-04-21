@@ -1,0 +1,27 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Lucene Analysis Plug-in (Incubation)
+Bundle-SymbolicName: org.apache.lucene.analysis
+Bundle-Version: 2.3.2
+Bundle-ClassPath: lib/lucene-analyzers-2.3.2.jar,
+ lib/lucene-snowball-2.3.jar
+Bundle-Vendor: Empolis GmbH and brox IT-Solutions GmbH
+Export-Package: net.sf.snowball;version="2.3.2",
+ net.sf.snowball.ext;version="2.3.2",
+ org.apache.lucene.analysis.br;version="2.3.2",
+ org.apache.lucene.analysis.cjk;version="2.3.2",
+ org.apache.lucene.analysis.cn;version="2.3.2",
+ org.apache.lucene.analysis.cz;version="2.3.2",
+ org.apache.lucene.analysis.de;version="2.3.2",
+ org.apache.lucene.analysis.el;version="2.3.2",
+ org.apache.lucene.analysis.fr;version="2.3.2",
+ org.apache.lucene.analysis.ngram;version="2.3.2",
+ org.apache.lucene.analysis.nl;version="2.3.2",
+ org.apache.lucene.analysis.payloads;version="2.3.2",
+ org.apache.lucene.analysis.ru;version="2.3.2",
+ org.apache.lucene.analysis.sinks;version="2.3.2",
+ org.apache.lucene.analysis.snowball;version="2.3.2",
+ org.apache.lucene.analysis.th;version="2.3.2"
+Import-Package: org.apache.lucene.analysis;version="2.3.2",
+ org.apache.lucene.analysis.standard;version="2.3.2"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

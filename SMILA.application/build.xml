@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+/***********************************************************************************************************************
+ * Copyright (c) 2008 empolis GmbH and brox IT Solutions GmbH. All rights reserved. This program and the accompanying
+ * materials are made available under the terms of the Eclipse Public License v1.0 which accompanies this distribution,
+ * and is available at http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors: Ivan Churkin (brox IT Solutions GmbH) - initial creator
+ **********************************************************************************************************************/
+-->
+<project name="applicationInit" default="all" basedir=".">
+  
+  <target name="copy-schemas">
+    <copy todir="./configuration" overwrite="true">
+      <fileset dir=".." casesensitive="false">
+        <include name="*/schemas/*.xsd" />
+        <exclude name="template-crawler/schemas/*.xsd" />
+        <exclude name="org.eclipse.smila.management.jmx.client/schemas/*.xsd" />
+      </fileset>
+    </copy>
+  </target>
+
+  <target name="all" depends="copy-schemas" />
+
+</project>

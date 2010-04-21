@@ -1,0 +1,4 @@
+This product includes software developed by Hewlett-Packard Development Company, LP (http://www.hp.com/).
+Relevant code is (c) Copyright 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008 Hewlett-Packard Development Company, LP
+
+Source code for included Open Source software is available from the respective websites of the copyright holders of the included software.

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/***********************************************************************************************************************
+ * Copyright (c) 2008 empolis GmbH and brox IT Solutions GmbH. All rights reserved. This program and the accompanying
+ * materials are made available under the terms of the Eclipse Public License v1.0 which accompanies this distribution,
+ * and is available at http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors: brox IT-Solutions GmbH - initial creator
+ **********************************************************************************************************************/
+-->
+<AnyFinderDataDictionary xmlns="http://www.anyfinder.de/DataDictionary" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.anyfinder.de/DataDictionary ../xml/AnyFinderDataDictionary.xsd">
+  <Index Name="test_index">
+    <Connection xmlns="http://www.anyfinder.de/DataDictionary/Connection" MaxConnections="5"/>
+    <IndexStructure xmlns="http://www.anyfinder.de/IndexStructure" Name="test_index">
+      <Analyzer ClassName="org.apache.lucene.analysis.standard.StandardAnalyzer"/>
+      <IndexField FieldNo="6" IndexValue="false" Name="XMLID" StoreText="true" Tokenize="false" Type="Text"/>
+      <IndexField FieldNo="5" IndexValue="true" Name="Title" StoreText="true" Tokenize="true" Type="Text"/>
+      <IndexField FieldNo="4" IndexValue="true" Name="Url" StoreText="true" Tokenize="false" Type="Text">
+        <Analyzer ClassName="org.apache.lucene.analysis.WhitespaceAnalyzer"/>
+      </IndexField>
+      <IndexField FieldNo="3" IndexValue="true" Name="Date" StoreText="true" Tokenize="false" Type="Text"/>
+      <IndexField FieldNo="2" IndexValue="true" Name="Path" StoreText="true" Tokenize="true" Type="Text"/>
+      <IndexField FieldNo="1" IndexValue="true" Name="Filename" StoreText="true" Tokenize="true" Type="Text"/>
+      <IndexField FieldNo="0" IndexValue="true" Name="Content" StoreText="true" Tokenize="true" Type="Text"/>
+    </IndexStructure>
+    <Configuration xmlns="http://www.anyfinder.de/DataDictionary/Configuration" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.anyfinder.de/DataDictionary/Configuration ../xml/DataDictionaryConfiguration.xsd">
+      <DefaultConfig>
+        <Field FieldNo="6">
+          <FieldConfig Constraint="optional" Weight="1" xsi:type="FTText">
+            <Parameter xmlns="http://www.anyfinder.de/Search/TextField" Operator="OR" Tolerance="exact"/>
+          </FieldConfig>
+        </Field>      
+        <Field FieldNo="5">
+          <FieldConfig Constraint="optional" Weight="1" xsi:type="FTText">
+            <Parameter xmlns="http://www.anyfinder.de/Search/TextField" Operator="OR" Tolerance="exact"/>
+          </FieldConfig>
+        </Field>
+        <Field FieldNo="4">
+          <FieldConfig Constraint="optional" Weight="1" xsi:type="FTText">
+            <Parameter xmlns="http://www.anyfinder.de/Search/TextField" Operator="OR" Tolerance="exact"/>
+          </FieldConfig>
+        </Field>
+        <Field FieldNo="3">
+          <FieldConfig Constraint="optional" Weight="1" xsi:type="FTText">
+            <Parameter xmlns="http://www.anyfinder.de/Search/TextField" Operator="OR" Tolerance="exact"/>
+          </FieldConfig>
+        </Field>
+        <Field FieldNo="2">
+          <FieldConfig Constraint="optional" Weight="1" xsi:type="FTText">
+            <Parameter xmlns="http://www.anyfinder.de/Search/TextField" Operator="OR" Tolerance="exact"/>
+          </FieldConfig>
+        </Field>
+        <Field FieldNo="1">
+          <FieldConfig Constraint="optional" Weight="1" xsi:type="FTText">
+            <Parameter xmlns="http://www.anyfinder.de/Search/TextField" Operator="OR" Tolerance="exact"/>
+          </FieldConfig>
+        </Field>
+        <Field FieldNo="0">
+          <FieldConfig Constraint="required" Weight="1" xsi:type="FTText">
+            <NodeTransformer xmlns="http://www.anyfinder.de/Search/ParameterObjects" Name="urn:ExtendedNodeTransformer">
+              <ParameterSet xmlns="http://www.brox.de/ParameterSet"/>
+            </NodeTransformer>
+            <Parameter xmlns="http://www.anyfinder.de/Search/TextField" Operator="AND" Tolerance="exact"/>
+          </FieldConfig>
+        </Field>
+      </DefaultConfig>      
+    </Configuration>
+  </Index>
+</AnyFinderDataDictionary>

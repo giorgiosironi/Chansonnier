@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v5 rel. 4 U (http://www.xmlspy.com) by Georg Schmidt (BROX IT-Solutions GmbH) -->
+<xs:schema targetNamespace="http://www.anyfinder.de/SimpleTypeDefs" xmlns:af="http://www.anyfinder.de/SimpleTypeDefs" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:simpleType name="IndexName">
+		<xs:restriction base="xs:normalizedString">
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

@@ -1,0 +1,137 @@
+﻿#header {
+	background:transparent url('../../images/Smila/header.png') top left no-repeat;
+	height:47px;
+	width:100%;
+	margin:0px;
+	padding:0px;
+}
+
+#logo {
+	float:left;
+	z-index:9999; /*Something Insanely High*/
+	overflow:hidden;
+	margin:0;
+	padding:0;
+	border:0;
+}
+
+#menu ul {
+	height:47px;
+	margin-left:20px;
+	margin-top:10px;
+	margin-bottom:-5px;
+	float:left;
+}
+
+#menu ul li {
+	height:100%;
+	font-size:13px;
+	display:block;
+	float:left;
+	cursor:pointer;
+	text-transform:capitalize;
+	color:#0D3656;
+	padding-top:10px;
+}
+
+#menu ul li a{
+	font-weight:400;
+	color:#0D3656;
+	text-align:center;
+	padding:0px 10px;
+}
+
+#search {
+	float:right;
+	position:relative;
+	padding-top:14px;
+	padding-right:7px;
+}
+
+#searchBox {
+	width:230px;
+	font-size:12px;		
+	border:none !important;
+	position:relative;
+	right:7px;
+}
+
+#searchButton {
+	font-size:15px;
+	padding-left:0px;
+}
+
+#otherSites{
+	background: transparent url('../../images/Smila/siteSelector.png') no-repeat;
+	display: block;
+	clear: none;
+	height: 78px;
+	width: 240px;
+	float: right;
+	margin-top: 10px;
+	margin-bottom: 0px;
+	margin-right: 4px;
+	text-align: right;
+}
+
+#otherSitesButton a {
+	color:#FFF;	
+}
+
+#sites {
+	text-align:center;
+}
+
+#sites ul {
+	padding-left: 25px;
+	padding-top: 5px;
+	margin: 30px 0 0 0;
+}
+
+#sites ul li{
+	text-align:center;
+	width:52px;
+	float:left;
+	display:block;
+}
+
+#sites ul li a {
+	border: thin;
+	position: relative;
+	display: block;
+	width: 32px;
+	height: 32px;
+	font-size: 12px;
+	text-decoration: none;
+	color: #FFF;
+}
+
+#promos {
+	text-align:center;
+	padding:20px;	
+}
+
+#promotion {
+	padding:11px 0 0 15px;
+	width:604px;
+	height:79px;
+}
+
+#sites ul li a div {
+	display:none;	
+	white-space: nowrap;
+}
+
+#sites ul li a:hover div {
+	display:block;
+	position:absolute;
+	z-index:10;
+	padding:5px;
+	top:40px;
+	right:0px;
+ 	color:#EFEFEF;
+ 	background:#333;
+ 	border:1px solid #666;
+ 	-moz-border-radius:5px;
+ 		
+}

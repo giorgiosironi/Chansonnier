@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.anyfinder.de/ErrorMessage" xmlns="http://www.anyfinder.de/ErrorMessage">
+	<xs:element name="ErrorMessage">
+		<xs:annotation>
+			<xs:documentation>Error message</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Code" type="xs:string" nillable="false">
+					<xs:annotation>
+						<xs:documentation>Error code</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Message" type="xs:string" nillable="false">
+					<xs:annotation>
+						<xs:documentation>Human readable error description</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Detail" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Detail error description</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Source" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Error source</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

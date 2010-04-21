@@ -1,0 +1,280 @@
+<?xml version="1.0"?>
+<!--
+/***********************************************************************************************************************
+ * Copyright (c) 2008 empolis GmbH and brox IT Solutions GmbH. All rights reserved. This program and the accompanying
+ * materials are made available under the terms of the Eclipse Public License v1.0 which accompanies this distribution,
+ * and is available at http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors: Ivan Churkin (brox IT Solutions GmbH) - initial creator
+ **********************************************************************************************************************/
+-->
+<jmxclient xmlns="http://www.eclipse.org/smila/management/jmx/client" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="schemas/jmxclient.xsd"
+>
+  <connection id="local" host="localhost" port="9004"/>
+  <connection id="test" host="10.0.0.1" port="23123"/>
+  <!-- crawler controller related operations -->
+  <cmd id="crawl" echo="Starting crawler by datasource id">
+    <operation
+      key="CrawlerController"
+      name="startCrawlerTask"
+      echo="Starting crawl [%1]"
+    >
+      <parameter echo="data source id"/>
+    </operation>
+  </cmd>
+  <cmd id="crawlStop" echo="Stop crawler by datasource id">
+    <operation
+      key="CrawlerController"
+      name="stopCrawlerTask"
+      echo="Stopping crawl [%1]"
+    >
+      <parameter echo="data source id"/>
+    </operation>
+  </cmd>
+  <cmd id="crawlW" echo="Starting crawler by datasource id and wait for finished">
+    <operation
+      key="CrawlerController"
+      name="startCrawling"
+      echo="Starting crawl [%1]"
+    >
+      <parameter echo="data source id"/>
+    </operation>
+    <!-- result will be similar to "Crawl with the dataSourceId = file and hashcode [595826] successfully started!"
+         we have to extract hashcode from string -->
+    <regexp pattern="^.*\[(\d+)\].*$" group="1" echo="Extracting crawler hash code"/>
+    <wait echo="Waiting while crawl ends" pause="1000">
+      <in>
+        <cmd id="-" echo="Getting crawler status by datasource id">
+          <operation
+            key="CrawlerController"
+            name="getStatus"
+            echo="Crawl [%1] status"
+          >
+            <!--  value="%1" -->
+            <parameter echo="data source id"/>
+          </operation>
+        </cmd>
+        <const value="Finished" echo="Crawling finished status"/>
+        <const value="Stopped" echo="Crawling stopped status"/>
+      </in>
+      <cmd id="-" echo="Reading crawler performance counters">
+        <attribute
+          key="Crawlers/%2/Total"
+          name="Records"
+          echo="Total records"
+        />
+        <attribute
+          key="Crawlers/%2/Launches/%1/%0"
+          name="Records"
+          echo="Instance records"
+        />
+        <attribute
+          key="Crawlers/%2/Launches/%1/%0"
+          name="ErrorBuffer"
+          echo="Errors"
+        />
+      </cmd>
+    </wait>
+  </cmd>
+  <cmd id="crawlerTasksState" echo="Print crawler tasks state">
+    <attribute
+      key="CrawlerController"
+      name="CrawlerTasksState"
+      echo="Crawl States"
+    />
+  </cmd>
+  <cmd id="crawlTasks" echo="Print available crawler data source configurations">
+    <attribute
+      key="CrawlerController"
+      name="AvailableCrawlerTasks"
+      echo="Crawler Configurations"
+    />   
+  </cmd>
+  <!-- agent controller related operations -->
+  <cmd id="agent" echo="Starting agent by datasource id">
+    <operation
+      key="AgentController"
+      name="startAgentTask"
+      echo="Starting agent [%1]"
+    >
+      <parameter echo="data source id"/>
+    </operation>
+  </cmd>
+  <cmd id="agentStop" echo="Stop agent by datasource id">
+    <operation
+      key="AgentController"
+      name="stopAgentTask"
+      echo="Stopping agent [%1]"
+    >
+      <parameter echo="data source id"/>
+    </operation>
+  </cmd>
+  <cmd id="agentTasksState" echo="Print agent tasks state">
+    <attribute
+      key="AgentController"
+      name="AgentTasksState"
+      echo="Agent Tasks"
+    />
+  </cmd>
+  <cmd id="agentTasks" echo="Print available agent data source configurations">
+    <attribute
+      key="AgentController"
+      name="AvailableAgentTasks"
+      echo="Agent Configurations"
+    />    
+  </cmd>  
+  <!-- record recycler related operations -->
+  <cmd id="recycle" echo="Starting recycler by configuration name and datasource id">
+    <operation
+      key="Queue/Recycler"
+      name="startRecycle"
+      echo="Starting recycle by configuration [%1] and data source [%2]"
+    >
+      <parameter echo="configuration file name"/>
+      <parameter echo="data source id"/>
+    </operation>
+  </cmd>
+  <cmd id="recycleStatus" echo="Get recycler status by datasource id">
+    <operation
+      key="Queue/Recycler"
+      name="getStatus"
+      echo="Getting recycling status for data source [%1]"
+    >
+      <parameter echo="data source id"/>
+    </operation>
+  </cmd>
+  <cmd id="recycleStop" echo="Stopping recycler by datasource id">
+    <operation
+      key="Queue/Recycler"
+      name="stopRecycle"
+      echo="Stopping recycle by data source [%1]"
+    >
+      <parameter echo="data source id"/>
+    </operation>
+  </cmd>
+  <cmd id="recycleConfigs" echo="Getting recycler configurations list">
+    <attribute
+      key="Queue/Recycler"
+      name="Configurations"
+      echo="Getting recycler configurations list"
+    />
+  </cmd>
+  <cmd id="recycleW" echo="Starting recycler by configuration name and datasource id and wait for finished">
+    <operation
+      key="Queue/Recycler"
+      name="startRecycle"
+      echo="Starting recycle by configuration [%1] and data source [%2]"
+    >
+      <parameter echo="configuration file name"/>
+      <parameter echo="data source id"/>
+    </operation>
+    <wait echo="Waiting while recycing ends" pause="1000">
+      <in>
+        <cmd id="-" echo="Getting crawler status by datasource id">
+          <operation
+            key="Queue/Recycler"
+            name="getStatus"
+            echo="Recycling status"
+          >
+            <parameter echo="data source id" argument="2"/>
+          </operation>
+        </cmd>
+        <const value="FINISHED" echo="Recycling finished status"/>
+        <const value="STOPPED" echo="Recycling stopped status"/>
+        <const value="EXCEPTION" echo="Recycling exception status"/>
+      </in>
+      <cmd id="-" echo="Reading recycler counters">
+        <operation
+          key="Queue/Recycler"
+          name="getRecordsRecycled"
+          echo="Records recycled"
+        >
+          <parameter echo="data source id" argument="2"/>
+        </operation>
+      </cmd>
+    </wait>
+  </cmd>
+  <!-- Lucene index related operations -->  
+  <cmd id="createIndex" echo="Create index by name">
+    <operation
+      key="LuceneService"
+      name="createIndex"
+      echo="Creating index [%1]"
+    >
+      <parameter echo="index name"/>
+    </operation>
+  </cmd>
+  <cmd id="reorganizeIndex" echo="Optimize index by name">
+    <operation
+      key="LuceneService"
+      name="reorganizeIndex"
+      echo="Optimizing index [%1]"
+      voidType="true"
+    >
+      <parameter echo="index name"/>
+    </operation>
+  </cmd>
+  <cmd id="deleteIndex" echo="Delete index by name">
+    <operation
+      key="LuceneService"
+      name="deleteIndex"
+      echo="Deleting index [%1]"
+      voidType="true"
+    >
+      <parameter echo="index name"/>
+    </operation>
+  </cmd>
+  <cmd id="isIndexExists" echo="Check is index exists by name">
+    <operation
+      key="LuceneService"
+      name="isIndexExists"
+      echo="Checking index [%1]"
+    >
+      <parameter echo="index name"/>
+    </operation>
+  </cmd>
+  <cmd id="renameIndex" echo="Rename index">
+    <operation
+      key="LuceneService"
+      name="renameIndex"
+      echo="Renaming index [%1] to [%2]"
+      voidType="true"
+    >
+      <parameter echo="index name"/>
+      <parameter echo="new index name"/>
+    </operation>
+  </cmd>
+  <cmd id="importRDF" echo="Upload RDF file to Ontology service">
+    <operation
+      key="Ontology/Sesame"
+      name="importRDF"
+      echo="Importing RDF [%2] into ontology [%1]"
+    >
+      <parameter echo="repository name"/>
+      <parameter echo="path to RDF file"/>
+      <parameter echo="base URI"/>
+    </operation>
+  </cmd>
+  <cmd id="exportRDF" echo="Upload RDF file to Ontology service">
+    <operation
+      key="Ontology/Sesame"
+      name="exportRDF"
+      echo="Exporting ontology [%1] to RDF file [%2]"
+    >
+      <parameter echo="repository name"/>
+      <parameter echo="path to RDF file"/>
+    </operation>
+  </cmd>
+  <cmd id="clearOntology" echo="Clear an ontology">
+    <operation
+      key="Ontology/Sesame"
+      name="clear"
+      echo="Clear ontology [%1]"
+    >
+      <parameter echo="repository name"/>
+    </operation>
+  </cmd>
+  <sample value="crawl file" echo="starts filesystem crawler"/>
+  <sample value="crawlW file FilesystemCrawler" echo="starts filesystem crawler and waits crawling end"/>
+</jmxclient>

@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Test Plug-in (Incubation)
+Bundle-SymbolicName: org.eclipse.smila.connectivity.queue.worker.test
+Bundle-Version: 0.7.0
+Bundle-Vendor: empolis GmbH and brox IT Solutions GmbH
+Import-Package: javax.jms;version="1.1.0",
+ junit.framework;version="[3.8.0,4.0.0)",
+ org.apache.commons.logging;version="1.1.1",
+ org.eclipse.smila.blackboard;version="0.7.0",
+ org.eclipse.smila.connectivity.queue;version="0.7.0",
+ org.eclipse.smila.connectivity.queue.worker;version="0.7.0",
+ org.eclipse.smila.connectivity.queue.worker.config;version="0.7.0",
+ org.eclipse.smila.connectivity.queue.worker.jms;version="0.7.0",
+ org.eclipse.smila.datamodel.id;version="0.7.0",
+ org.eclipse.smila.datamodel.record;version="0.7.0",
+ org.eclipse.smila.datamodel.record.test;version="0.7.0",
+ org.eclipse.smila.datamodel.tools;version="0.7.0",
+ org.eclipse.smila.jms;version="0.7.0",
+ org.eclipse.smila.test;version="0.7.0",
+ org.eclipse.smila.utils.jaxb;version="0.7.0",
+ org.eclipse.smila.utils.service;version="0.7.0",
+ org.osgi.framework;version="1.4.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+

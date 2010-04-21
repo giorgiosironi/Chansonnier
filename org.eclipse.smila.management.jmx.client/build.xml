@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<!--
+/***********************************************************************************************************************
+ * Copyright (c) 2008 empolis GmbH and brox IT Solutions GmbH. All rights reserved. This program and the accompanying
+ * materials are made available under the terms of the Eclipse Public License v1.0 which accompanies this distribution,
+ * and is available at http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors: Ivan Churkin (brox IT Solutions GmbH) - initial creator
+ **********************************************************************************************************************/
+-->
+<project name="jmxclient" basedir="." default="all">
+
+  <property name="jmxclient_folder" location="../org.eclipse.smila.management.jmx.client"/>
+    <echo>${jmxclient_folder}</echo>
+  <property name="jmxclient_target" location="${buildDirectory}/jmxclient"/>
+  <path id="${jmxclient_classpath}">
+    <pathelement location="${jmxclient_folder}/../org.apache.commons.logging/lib/commons-logging-1.1.1.jar"/>
+    <pathelement location="${jmxclient_folder}/../SMILA.extension/eclipse/plugins/org.apache.commons.beanutils_1.7.0.v200803061811.jar"/>
+    <pathelement location="${jmxclient_folder}/../SMILA.extension/eclipse/plugins/org.apache.log4j_1.2.13.v200903072027.jar"/>
+  </path>
+
+  <target name="prepare">
+    <delete dir="${jmxclient_target}" failonerror="false" />
+    <mkdir dir="${jmxclient_target}"/>
+    <mkdir dir="${jmxclient_target}/lib" />
+    <mkdir dir="${jmxclient_target}/schemas" />
+    <mkdir dir="${jmxclient_target}/code/bin" />
+  </target>
+
+  <target name="compile" depends="prepare">
+    <javac srcdir="${jmxclient_folder}/code/src:${jmxclient_folder}/code/gen" destdir="${jmxclient_target}/code/bin" debug="true"
+      classpathref="${jmxclient_classpath}">
+    </javac>
+    <copy todir="${jmxclient_target}">
+      <fileset dir="${jmxclient_folder}">
+        <include name="config.xml"/>
+        <include name="log4j.properties"/>
+      </fileset>      
+    </copy>
+  </target>
+
+  <target name="copy">    
+    <copy
+      file="${jmxclient_folder}/../org.apache.commons.logging/lib/commons-logging-1.1.1.jar"
+      tofile="${jmxclient_target}/lib/logging.jar"
+     />
+    <copy
+      file="${jmxclient_folder}/../SMILA.extension/eclipse/plugins/org.apache.commons.beanutils_1.7.0.v200803061811.jar"
+      tofile="${jmxclient_target}/lib/beanutils.jar"
+    />
+    <copy
+      file="${jmxclient_folder}/../SMILA.extension/eclipse/plugins/org.apache.log4j_1.2.13.v200903072027.jar"
+      tofile="${jmxclient_target}/lib/log4j.jar"
+    />
+    <copy
+      file="${jmxclient_folder}/schemas/jmxclient.xsd"
+      tofile="${jmxclient_target}/schemas/jmxclient.xsd"
+    />
+  </target>
+
+  <target name="pack-jar" depends="compile, copy">
+    <jar destfile="${jmxclient_target}/lib/jmxclient.jar" manifest="${jmxclient_folder}/META-INF/MANIFEST.MF">
+      <fileset dir="${jmxclient_target}/code/bin" />
+    </jar>
+    <delete dir="${jmxclient_target}/code" failonerror="false" />
+  </target>
+
+  <target name="copy-scripts">
+    <copy todir="${jmxclient_target}">
+      <fileset dir="${jmxclient_folder}/code/scripts">
+        <include name="run.sh"/>
+        <include name="run.bat"/>
+        <include name="*.sh"/>
+        <include name="*.bat"/>
+      </fileset>
+    </copy>
+    <chmod perm="ugo+x">
+      <fileset dir="${jmxclient_target}">
+        <include name="run.sh"/>
+        <include name="sample.sh"/>
+      </fileset>
+    </chmod>
+  </target>
+
+  <target name="all" depends="pack-jar, copy-scripts">
+    <echo>Building JMX client</echo>
+  </target>
+</project>

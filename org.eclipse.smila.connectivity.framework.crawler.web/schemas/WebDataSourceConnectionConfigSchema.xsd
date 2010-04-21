@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/***********************************************************************************************************************
+ * Copyright (c) 2008 empolis GmbH and brox IT Solutions GmbH. All rights reserved. This program and the accompanying
+ * materials are made available under the terms of the Eclipse Public License v1.0 which accompanies this distribution,
+ * and is available at http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors: Ivan Churkin (brox IT Solutions GmbH) - initial creator
+ **********************************************************************************************************************/
+-->
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:redefine schemaLocation="../../org.eclipse.smila.connectivity.framework.schema/schemas/RootDataSourceConnectionConfigSchema.xsd">
+    <xs:complexType name="Attribute">
+      <xs:annotation>
+        <xs:documentation>Attribute Specification</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent mixed="false">
+        <xs:extension base="Attribute">
+          <xs:choice>
+            <xs:element name="FieldAttribute" type="FieldAttributeType" />
+            <xs:element name="MetaAttribute" type="MetaAttributeType" />
+          </xs:choice>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="Process">
+      <xs:annotation>
+        <xs:documentation>Process Specification</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent mixed="false">
+        <xs:extension base="Process">
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="WebSite" type="WebSite" />
+          </xs:sequence>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:redefine>
+  <xs:simpleType name="CrawlScope">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Broad" />
+      <xs:enumeration value="Domain" />
+      <xs:enumeration value="Host" />
+      <xs:enumeration value="Path" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="FollowLinksType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Follow" />
+      <xs:enumeration value="NoFollow" />
+      <xs:enumeration value="FollowLinksWithCorrespondingSelectFilter" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="FilterType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="BeginningPath" />
+      <xs:enumeration value="RegExp" />
+      <xs:enumeration value="ContentType" />
+      <xs:enumeration value="CrawlScope" />
+      <xs:enumeration value="HtmlMetaTag" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="FilterWorkType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Select" />
+      <xs:enumeration value="Unselect" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ModelType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="MaxIterations" />
+      <xs:enumeration value="MaxDepth" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="FieldAttributeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Url" />
+      <xs:enumeration value="Title" />
+      <xs:enumeration value="Content" />
+      <xs:enumeration value="MimeType" />
+    </xs:restriction>
+  </xs:simpleType>
+  <!-- xs:simpleType name="MetaAttributeType" -->
+  <xs:simpleType name="MetaType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="MetaData" />
+      <xs:enumeration value="ResponseHeader" />
+      <xs:enumeration value="MetaDataWithResponseHeaderFallBack" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="MetaReturnType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="MetaDataString" />
+      <xs:enumeration value="MetaDataValue" />
+      <xs:enumeration value="MetaDataMObject" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="MetaAttributeType">
+    <xs:sequence>
+      <xs:element name="MetaName" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="Type" type="MetaType" use="required" />
+    <xs:attribute name="ReturnType" type="MetaReturnType" use="optional" default="MetaDataString" />
+    <!-- xs:attribute name="MetaName" type="xs:string" use="optional" / -->
+  </xs:complexType>
+  <xs:simpleType name="Robotstxt">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Classic" />
+      <xs:enumeration value="Ignore" />
+      <xs:enumeration value="Custom" />
+      <xs:enumeration value="Set" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="HttpMethod">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="GET" />
+      <xs:enumeration value="POST" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="HtmlMetaTagType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Name" />
+      <xs:enumeration value="HttpEquiv" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="WebSite">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="UserAgent">
+        <xs:complexType>
+          <xs:attribute name="Name" type="xs:string" use="required" />
+          <xs:attribute name="Version" type="xs:string" use="optional" />
+          <xs:attribute name="Description" type="xs:string" use="optional" />
+          <xs:attribute name="Url" type="xs:string" use="optional" />
+          <xs:attribute name="Email" type="xs:string" use="optional" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="Robotstxt">
+        <xs:complexType>
+          <xs:attribute default="Classic" name="Policy" type="Robotstxt" use="optional" />
+          <xs:attribute default="" name="Value" type="xs:string" use="optional" />
+          <xs:attribute default="" name="AgentNames" type="xs:string" use="optional" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="CrawlingModel">
+        <xs:complexType>
+          <xs:attribute name="Type" type="ModelType" use="required" />
+          <xs:attribute name="Value" type="xs:positiveInteger" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="CrawlScope">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="Filters">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element maxOccurs="unbounded" name="Filter">
+                    <xs:complexType>
+                      <xs:complexContent mixed="false">
+                        <xs:extension base="Filter" />
+                      </xs:complexContent>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+          <xs:attribute default="Host" name="Type" type="CrawlScope" use="optional" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="CrawlLimits">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="SizeLimits">
+              <xs:complexType>
+                <xs:attribute default="0" name="MaxBytesDownload" type="xs:integer" use="optional" />
+                <xs:attribute default="0" name="MaxDocumentDownload" type="xs:integer" use="optional" />
+                <xs:attribute default="0" name="MaxTimeSec" type="xs:integer" use="optional" />
+                <xs:attribute default="0" name="MaxLengthBytes" type="xs:integer" use="optional" />
+                <xs:attribute default="0" name="LimitRate" type="xs:integer" use="optional" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="TimeoutLimits">
+              <xs:complexType>
+                <xs:attribute default="0" name="Timeout" type="xs:integer" use="optional" />
+                <xs:attribute default="0" name="DnsTimeout" type="xs:integer" use="optional" />
+                <xs:attribute default="0" name="ConnectTimeout" type="xs:integer" use="optional" />
+                <xs:attribute default="900" name="ReadTimeout" type="xs:integer" use="optional" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="WaitLimits">
+              <xs:complexType>
+                <xs:attribute default="0" name="Wait" type="xs:integer" use="optional" />
+                <xs:attribute default="0" name="RandomWait" type="xs:boolean" use="optional" />
+                <xs:attribute default="0" name="WaitRetry" type="xs:integer" use="optional" />
+                <xs:attribute default="0" name="MaxRetries" type="xs:integer" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="Proxy">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element name="ProxyServer">
+              <xs:complexType>
+                <xs:attribute name="Host" type="xs:string" use="required" />
+                <xs:attribute name="Port" type="xs:string" use="required" />
+                <xs:attribute default="" name="Login" type="xs:string" use="optional" />
+                <xs:attribute default="" name="Password" type="xs:string" use="optional" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="AutomaticConfiguration">
+              <xs:complexType>
+                <xs:attribute name="Address" type="xs:string" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="Authentication">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="Rfc2617">
+              <xs:complexType>
+                <xs:attribute name="Host" type="xs:string" use="required" />
+                <xs:attribute name="Port" type="xs:string" use="required" />
+                <xs:attribute name="Realm" type="xs:string" use="required" />
+                <xs:attribute name="Login" type="xs:string" use="required" />
+                <xs:attribute name="Password" type="xs:string" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="HtmlForm">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="FormElements">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element maxOccurs="unbounded" name="FormElement">
+                          <xs:complexType>
+                            <xs:attribute name="Key" type="xs:string" use="required" />
+                            <xs:attribute name="Value" type="xs:string" use="required" />
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+                <xs:attribute name="CredentialDomain" type="xs:string" use="required" />
+                <xs:attribute name="LoginUri" type="xs:string" use="required" />
+                <xs:attribute name="HttpMethod" type="HttpMethod" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="SslCertificate">
+              <xs:complexType>
+                <xs:attribute name="ProtocolName" type="xs:string" use="required" />
+                <xs:attribute name="Port" type="xs:string" use="required" />
+                <xs:attribute name="TruststoreUrl" type="xs:string" use="required" />
+                <xs:attribute default="" name="TruststorePassword" type="xs:string" use="optional" />
+                <xs:attribute name="KeystoreUrl" type="xs:string" use="required" />
+                <xs:attribute default="" name="KeystorePassword" type="xs:string" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="Ssl">
+        <xs:complexType>
+          <xs:attribute name="TruststoreUrl" type="xs:string" use="required" />
+          <xs:attribute default="" name="TruststorePassword" type="xs:string" use="optional" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Seeds">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" name="Seed" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute default="Follow" name="FollowLinks" type="FollowLinksType" use="optional" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="Filters">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" name="Filter">
+              <xs:complexType>
+                <xs:complexContent mixed="false">
+                  <xs:extension base="Filter">
+                    <xs:sequence>
+                      <xs:element minOccurs="0" name="Refinements">
+                        <xs:complexType>
+                          <xs:sequence>
+                            <xs:element minOccurs="0" name="TimeOfDay">
+                              <xs:complexType>
+                                <xs:attribute name="From" type="xs:time" use="required" />
+                                <xs:attribute name="To" type="xs:time" use="required" />
+                              </xs:complexType>
+                            </xs:element>
+                            <xs:element minOccurs="0" name="Port">
+                              <xs:complexType>
+                                <xs:attribute name="Number" type="xs:integer" use="required" />
+                              </xs:complexType>
+                            </xs:element>
+                          </xs:sequence>
+                        </xs:complexType>
+                      </xs:element>
+                    </xs:sequence>
+                  </xs:extension>
+                </xs:complexContent>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="MetaTagFilters">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" name="MetaTagFilter">
+              <xs:complexType>
+                <xs:attribute name="Type" type="HtmlMetaTagType" use="required" />
+                <xs:attribute name="Name" type="xs:string" use="required" />
+                <xs:attribute name="Content" type="xs:string" use="required" />
+                <xs:attribute name="WorkType" type="FilterWorkType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="ProjectName" type="xs:string" use="required" />
+    <xs:attribute default="false" name="Sitemaps" type="xs:boolean" use="optional" />
+    <xs:attribute default="" name="Header" type="xs:string" use="optional" />
+    <xs:attribute default="" name="Referer" type="xs:string" use="optional" />
+    <xs:attribute default="true" name="EnableCookies" type="xs:boolean" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="Filter">
+    <xs:attribute name="WorkType" type="FilterWorkType" use="required" />
+    <xs:attribute name="Value" type="xs:string" use="required" />
+    <xs:attribute name="Type" type="FilterType" use="required" />
+  </xs:complexType>
+</xs:schema>

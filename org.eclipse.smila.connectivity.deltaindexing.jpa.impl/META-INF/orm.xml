@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd" version="1.0">
+  <description>Default JPA entity mapping for Delta Indexing</description>
+  <package>org.eclipse.smila.connectivity.deltaindexing.jpa.impl</package>
+  <access>FIELD</access>
+  <entity class="DeltaIndexingDao" metadata-complete="false">
+    <table name="DELTA_INDEXING" />
+
+    <named-query name="DeltaIndexingDao.findSubCompounds">
+      <query>SELECT d FROM DeltaIndexingDao d WHERE d._parentIdHash = :parentIdHash AND d._isCompound = 1</query>
+    </named-query>
+    <named-query name="DeltaIndexingDao.findObsoleteIdsBySource">
+      <query>SELECT d FROM DeltaIndexingDao d WHERE d._dataSourceId = :source AND d._visited = 0 AND (d._parentIdHash IS NULL OR d._parentIdHash IN (SELECT dd._idHash FROM DeltaIndexingDao dd WHERE dd._isCompound = 1 AND (dd._visited = 0 OR dd._modified = 1)))</query>
+    </named-query>
+    <named-query name="DeltaIndexingDao.deleteBySource">
+      <query>DELETE FROM DeltaIndexingDao d WHERE d._dataSourceId = :source</query>
+    </named-query>
+    <named-query name="DeltaIndexingDao.deleteAll">
+      <query>DELETE FROM DeltaIndexingDao</query>
+    </named-query>
+    <named-query name="DeltaIndexingDao.resetFlags">
+      <query>UPDATE DeltaIndexingDao d SET d._visited = 0, d._modified = 0 WHERE d._dataSourceId = :source</query>
+    </named-query>
+    <named-query name="DeltaIndexingDao.countEntries">
+      <query>SELECT d._dataSourceId, COUNT(d._dataSourceId) FROM DeltaIndexingDao d GROUP BY d._dataSourceId</query>
+    </named-query>
+    <named-query name="DeltaIndexingDao.countEntriesBySource">
+      <query>SELECT COUNT(d) FROM DeltaIndexingDao d WHERE d._dataSourceId = :source</query>
+    </named-query>
+
+    <attributes>
+      <id name="_idHash">
+        <column name="ID_HASH" length="1024" />
+      </id>
+      <basic name="_hash">
+        <column name="HASH" length="1024" />
+      </basic>
+      <basic name="_dataSourceId">
+        <column name="SOURCE_ID" length="1024" />
+      </basic>
+      <basic name="_isCompound">
+        <column name="IS_COMPOUND" />
+      </basic>
+      <basic name="_parentIdHash">
+        <column name="PARENT_ID_HASH" length="1024" />
+      </basic>
+
+      <basic name="_visited">
+        <column name="VISITED" />
+      </basic>
+      <basic name="_modified">
+        <column name="MODIFIED" />
+      </basic>
+      <basic name="_serializedId">
+        <column name="ID" column-definition="BLOB" />
+      </basic>
+    </attributes>
+
+  </entity>
+
+<!---->
+<!---->
+<!---->
+  <entity class="DataSourceDao" metadata-complete="false">
+
+    <named-query name="DataSourceDao.killAllSessions">
+      <query>UPDATE DataSourceDao d SET d._sessionId = NULL</query>
+    </named-query>
+    <named-query name="DataSourceDao.killSession">
+      <query>UPDATE DataSourceDao d SET d._sessionId = NULL WHERE d._dataSourceId = :source</query>
+    </named-query>
+    <named-query name="DataSourceDao.selectAll">
+      <query>SELECT d FROM DataSourceDao d</query>
+    </named-query>
+    <named-query name="DataSourceDao.deleteSources">
+      <query>DELETE FROM DataSourceDao</query>
+    </named-query>
+    <named-query name="DataSourceDao.findBySessionId">
+      <query>SELECT DISTINCT d FROM DataSourceDao d WHERE d._sessionId = :sessionId</query>
+    </named-query>
+
+    <attributes>
+      <id name="_dataSourceId">
+        <column name="SOURCE_ID" length="1024" />
+      </id>
+
+      <basic name="_sessionId">
+        <column name="SESSION_ID" length="1024" unique="true" />
+      </basic>
+    </attributes>
+  </entity>
+
+</entity-mappings>

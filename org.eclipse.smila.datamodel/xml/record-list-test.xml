@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+	* Copyright (c) 2008 empolis GmbH and brox IT Solutions GmbH. 
+  * All rights reserved. This program and the accompanying materials
+	* are made available under the terms of the Eclipse Public License v1.0
+	* which accompanies this distribution, and is available at
+	* http://www.eclipse.org/legal/epl-v10.html
+	*
+	* Contributors:
+	*    Juergen Schumacher (empolis GmbH) - initial example
+-->
+<RecordList xmlns="http://www.eclipse.org/smila/record" xmlns:id="http://www.eclipse.org/smila/id"
+	xmlns:rec="http://www.eclipse.org/smila/record" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.eclipse.org/smila/record record.xsd ">
+
+	<Record version="1.0">
+		<id:Id version="1.0">
+			<id:Source>share</id:Source>
+			<id:Key>some.pdf</id:Key>
+		</id:Id>
+		<A n="mimetype">
+			<!-- IAS retrieval filter: annotation attached to attribute, valid for complete attribute value -->
+			<An n="filter">
+				<V n="type">exclude</V>
+				<An n="values">
+					<V>text/plain</V>
+					<V>text/html</V>
+				</An>
+			</An>
+			<L>
+				<V>text/html</V>
+				<V st="appl:Mimetype">text/html</V>
+			</L>
+		</A>
+		<A n="filesize"><!-- single numeric value attribute -->
+			<L>
+				<V t="int">1234</V>
+			</L>
+		</A>
+		<A n="trustee"><!-- multivalued attribute without annotation for each value -->
+			<L>
+				<V>group1</V>
+				<V>group2</V>
+			</L>
+		</A>
+		<A n="topic"><!-- multivalued attribute with simple values with annotations -->
+			<An n="importance"><!-- IAS query boost factor, refers to complete attribute -->
+				<V>4.0</V>
+			</An>
+			<L>
+				<V>Eclipse</V><!-- first value -->
+				<An n="sourceRef"><!-- part of IAS textminer info for first value-->
+					<V n="attribute">fulltext</V>
+					<V n="startPos">37</V>
+					<V n="endPos">42</V>
+				</An>
+				<An n="sourceRef">
+					<V n="attribute">fulltext</V>
+					<V n="startPos">137</V>
+					<V n="endPos">142</V>
+				</An>
+				<An n="importance"><!-- extra IAS query boost factor for first value -->
+					<V>2.0</V>
+				</An>
+			</L>
+			<L>
+				<V>SMILA</V><!-- second attribute value -->
+				<An n="sourceRef"><!-- following annotations refer to second value -->
+					<!-- similar to above -->
+				</An>
+			</L>
+		</A>
+		<A n="author"><!-- "set of aggregates" -->
+			<O>
+				<A n="firstName">
+					<L>
+						<V>Igor</V>
+					</L>
+				</A>
+				<A n="lastName">
+					<L>
+						<V>Novakovic</V>
+					</L>
+				</A>
+			</O>
+		</A>
+		<A n="author" >
+			<O st="appl:Author">
+				<A n="firstName">
+					<L>
+						<V>Georg</V>
+					</L>
+				</A>
+				<A n="lastName">
+					<L>
+						<V>Schmidt</V>
+					</L>
+				</A>
+			</O>
+		</A>
+
+		<An n="action">
+			<V>update</V>
+		</An>
+
+		<Attachment>content</Attachment><!-- just a marker that an attachment exists in attachment store? -->
+		<Attachment>fulltext</Attachment>
+	</Record>
+</RecordList>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XML Spy v4.4 U (http://www.xmlspy.com) by August Georg Schmidt (BROX IT-Solutions GmbH) -->
+<xs:schema xmlns="http://www.anyfinder.de/SearchTemplates" xmlns:as="http://www.anyfinder.de/AdvancedSearch" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.anyfinder.de/SearchTemplates" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.anyfinder.de/AdvancedSearch" schemaLocation="configuration/org.eclipse.smila.lucene/xml/AnyFinderAdvancedSearch.xsd"/>
+	<xs:element name="SearchTemplates">
+		<xs:annotation>
+			<xs:documentation>Comment describing your root element</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Template" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Description" type="xs:string"/>
+							<xs:element name="Selector">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="IndexField" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:attribute name="FieldNo" type="xs:nonNegativeInteger" use="required"/>
+												<xs:attribute name="Name" type="xs:normalizedString" use="required"/>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="Name" type="xs:normalizedString" use="optional"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element ref="as:AnyFinderAdvancedSearch"/>
+						</xs:sequence>
+						<xs:attribute name="Name" type="xs:normalizedString" use="required"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="IndexName" type="xs:normalizedString" use="required"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

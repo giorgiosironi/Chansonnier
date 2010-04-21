@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema targetNamespace="http://www.anyfinder.de/EngineData" xmlns="http://www.anyfinder.de/EngineData" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="AnyFinderEngineData">
+		<xs:annotation>
+			<xs:documentation>AnyFinder Engine version informations</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Version">
+					<xs:annotation>
+						<xs:documentation>Version of AnyFinder Engine</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:pattern value="\d+\.\d+\.\d+\.\d+" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="Name" type="xs:normalizedString" minOccurs="0" maxOccurs="1"></xs:element>
+				<xs:element name="RapidDeployer">
+					<xs:annotation>
+						<xs:documentation>Rapid Deployer specific configuration options.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Plugin" type="xs:base64Binary">
+								<xs:annotation>
+									<xs:documentation>UI Plugin</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="SDK">
+					<xs:annotation>
+						<xs:documentation>AnyFinder SDK information.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Version">
+								<xs:annotation>
+									<xs:documentation>Version of SDK</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:pattern value="\d+\.\d+\.\d+\.\d+" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

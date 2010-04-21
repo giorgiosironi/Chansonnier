@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Web Crawler Test Plug-in (Incubation)
+Bundle-SymbolicName: org.eclipse.smila.connectivity.framework.crawler.web.test
+Bundle-Version: 0.7.0
+Bundle-Vendor: empolis GmbH and brox IT Solutions GmbH
+Import-Package: junit.framework;version="[3.8.0,4.0.0)",
+ org.apache.commons.logging;version="1.1.1",
+ org.eclipse.smila.connectivity.framework;version="0.7.0",
+ org.eclipse.smila.connectivity.framework.crawler.web;version="0.7.0",
+ org.eclipse.smila.connectivity.framework.crawler.web.configuration,
+ org.eclipse.smila.connectivity.framework.crawler.web.messages;version="0.7.0",
+ org.eclipse.smila.connectivity.framework.crawler.web.metadata;version="0.7.0",
+ org.eclipse.smila.connectivity.framework.crawler.web.parse;version="0.7.0",
+ org.eclipse.smila.connectivity.framework.crawler.web.parse.html;version="0.7.0",
+ org.eclipse.smila.connectivity.framework.crawler.web.parse.js;version="0.7.0",
+ org.eclipse.smila.connectivity.framework.performancecounters;version="0.7.0",
+ org.eclipse.smila.connectivity.framework.schema;version="0.7.0",
+ org.eclipse.smila.connectivity.framework.schema.config;version="0.7.0",
+ org.eclipse.smila.connectivity.framework.schema.config.interfaces;version="0.7.0",
+ org.eclipse.smila.datamodel.record;version="0.7.0",
+ org.eclipse.smila.test;version="0.7.0"
+Export-Package: org.eclipse.smila.connectivity.framework.crawler.web.test
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+

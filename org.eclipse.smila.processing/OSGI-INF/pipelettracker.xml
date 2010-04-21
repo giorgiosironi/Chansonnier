@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+ * Copyright (c) 2008 empolis GmbH and brox IT Solutions GmbH. 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Juergen Schumacher (empolis GmbH) - initial design
+-->
+<component name="SimplePipeletTracker" immediate="true">
+    <implementation class="org.eclipse.smila.processing.PipeletTrackerImpl" />
+    <service>
+         <provide interface="org.eclipse.smila.processing.PipeletTracker"/>
+    </service>
+    <reference 
+        name="listener"
+        interface="org.eclipse.smila.processing.PipeletTrackerListener"
+        cardinality="0..n" 
+        bind="addListener"
+        unbind="removeListener"
+        policy="dynamic" />
+</component>

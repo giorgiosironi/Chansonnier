@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- 
+  * Copyright (c) 2008 empolis GmbH and brox IT Solutions GmbH. 
+  * All rights reserved. This program and the accompanying materials
+  * are made available under the terms of the Eclipse Public License v1.0
+  * which accompanies this distribution, and is available at
+  * http://www.eclipse.org/legal/epl-v10.html
+  *
+  * Contributors:
+  *    Daniel Stucky (empolis GmbH) - initial design
+-->
+<Mappings xmlns="http://www.eclipse.org/smila/lucene"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="schemas/Mappings.xsd"
+>
+  <Mapping indexName="test_index">
+    <Attributes>
+	    <Attribute name="Content" fieldNo="0" />
+	    <Attribute name="Filename" fieldNo="1" />
+	    <Attribute name="Path" fieldNo="2" />    
+	    <Attribute name="LastModifiedDate" fieldNo="3" />
+	    <Attribute name="Url" fieldNo="4" />
+	    <Attribute name="Title" fieldNo="5" />    
+	    <Attribute name="Extension" fieldNo="6" />
+	    <Attribute name="Size" fieldNo="7" />
+	    <Attribute name="MimeType" fieldNo="8" />
+	    <Attribute name="Author" fieldNo="9" />	    
+    </Attributes>
+    <Attachments>            
+    </Attachments>
+  </Mapping>
+  
+</Mappings>

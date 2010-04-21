@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Tidy Plug-in (Incubation)
+Bundle-SymbolicName: org.w3c.tidy
+Bundle-Version: 2000.8.4
+Bundle-ClassPath: Tidy.jar
+Bundle-Vendor: Empolis GmbH and brox IT-Solutions GmbH
+Export-Package: org.w3c.tidy;version="2000.8.4",
+ org.xml.sax;version="2000.8.4"
+Import-Package: org.w3c.dom;version="1.0.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

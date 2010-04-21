@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/***********************************************************************************************************************
+ * Copyright (c) 2008 empolis GmbH and brox IT Solutions GmbH. All rights reserved. This program and the accompanying
+ * materials are made available under the terms of the Eclipse Public License v1.0 which accompanies this distribution,
+ * and is available at http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors: Ivan Churkin (brox IT Solutions GmbH) - initial creator
+ **********************************************************************************************************************/
+-->
+<QueueWorkerListenerConfig xmlns="http://www.eclipse.org/smila/queue"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="schemas/QueueWorkerConfig.xsd"
+>
+
+  <Rule Name="ADD Rule" WaitMessageTimeout="10" Threads="4" MaxMessageBlockSize="20">
+    <Source BrokerId="broker1" Queue="SMILA.connectivity"/>
+    <Condition>Operation='ADD' and NOT(DataSourceID LIKE '%feeds%') and NOT(DataSourceID LIKE '%xmldump%')</Condition>
+    <Task>
+      <Process Workflow="AddPipeline"/>
+    </Task>
+  </Rule>
+
+  <Rule Name="Delete Rule" WaitMessageTimeout="10" Threads="2" MaxMessageBlockSize="20">
+    <Source BrokerId="broker1" Queue="SMILA.connectivity"/>
+    <Condition>Operation='DELETE'</Condition>
+    <Task>
+      <Process Workflow="DeletePipeline"/>
+    </Task>
+  </Rule>
+
+  <Rule Name="ADD Feed Rule" WaitMessageTimeout="10" Threads="2" MaxMessageBlockSize="20">
+    <Source BrokerId="broker1" Queue="SMILA.connectivity"/>
+    <Condition>Operation='ADD' and DataSourceID LIKE '%feeds%'</Condition>
+    <Task>
+      <Process Workflow="AddFeedPipeline"/>
+    </Task>
+  </Rule>
+    
+ <Rule Name="XML Dump Splitter Rule" WaitMessageTimeout="10" Threads="2" MaxMessageBlockSize="1">
+    <Source BrokerId="broker1" Queue="SMILA.connectivity"/>
+    <Condition>Operation='ADD' and DataSourceID LIKE '%xmldump%' and NOT(isXmlSnippet='true')</Condition>
+    <Task>
+      <Process Workflow="XmlDumpSplitterPipeline"/>
+    </Task>
+  </Rule>    
+
+ <Rule Name="XML Dump Add Rule" WaitMessageTimeout="10" Threads="4" MaxMessageBlockSize="20">
+    <Source BrokerId="broker1" Queue="SMILA.connectivity"/>
+    <Condition>Operation='ADD' and DataSourceID LIKE '%xmldump%' and isXmlSnippet='true'</Condition>
+    <Task>
+      <Process Workflow="XmlDumpAddPipeline"/>
+    </Task>
+  </Rule>    
+
+    
+</QueueWorkerListenerConfig>

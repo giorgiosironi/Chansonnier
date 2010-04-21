@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Eclipse SMILA ID and Record Data Model (Incubation)
+Bundle-SymbolicName: org.eclipse.smila.datamodel
+Bundle-Version: 0.7.0
+Import-Package: org.apache.commons.collections.iterators;version="3.2.0",
+ org.apache.commons.lang;version="2.4.0",
+ org.eclipse.smila.utils.collections,
+ org.eclipse.smila.utils.digest;version="0.7.0",
+ org.eclipse.smila.utils.xml;version="0.7.0"
+Export-Package: org.eclipse.smila.datamodel.id;version="0.7.0",
+ org.eclipse.smila.datamodel.id.dom;version="0.7.0",
+ org.eclipse.smila.datamodel.id.impl;version="0.7.0",
+ org.eclipse.smila.datamodel.id.stax;version="0.7.0",
+ org.eclipse.smila.datamodel.record;version="0.7.0",
+ org.eclipse.smila.datamodel.record.dom;version="0.7.0",
+ org.eclipse.smila.datamodel.record.impl;version="0.7.0",
+ org.eclipse.smila.datamodel.record.stax;version="0.7.0"
+Bundle-Vendor: empolis GmbH and brox IT Solutions GmbH
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

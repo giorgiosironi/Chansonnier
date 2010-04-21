@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v2004 rel. 4 U (http://www.xmlspy.com) by Georg Schmidt (BROX IT-Solutions GmbH) -->
+<xs:schema xmlns:q="http://www.anyfinder.de/Queue" xmlns:rtd="http://www.anyfinder.de/RecordTransformation/Definition" xmlns="http://www.anyfinder.de/RecordTransformation/Process" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.anyfinder.de/RecordTransformation/Process" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.anyfinder.de/Queue" schemaLocation="configuration/org.eclipse.smila.lucene/xmlQueue.xsd"/>
+	<xs:import namespace="http://www.anyfinder.de/RecordTransformation/Definition" schemaLocation="../xml/RecordTransformationDefinition.xsd"/>
+	<xs:element name="RecordTransformationProcess">
+		<xs:complexType>
+			<xs:choice>
+				<xs:element name="AddProcessDefinition">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="rtd:RecordTransformationDefinition"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="RemoveProcessDefinition">
+					<xs:complexType>
+						<xs:attribute name="Name" type="xs:normalizedString" use="required"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="AddProcessListener">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Name" type="xs:normalizedString"/>
+							<xs:element name="Workers" type="xs:positiveInteger" default="5"/>
+							<xs:element name="SourceQueue" type="q:Queue"/>
+							<xs:element name="TargetQueue" type="q:Queue" minOccurs="0"/>
+							<xs:element name="SelectQuery" type="xs:string" minOccurs="0"/>
+							<xs:element name="ProcessState" minOccurs="0">
+								<xs:simpleType>
+									<xs:restriction base="xs:normalizedString">
+										<xs:enumeration value="resolved from irm"/>
+										<xs:enumeration value="strategies applied"/>
+										<xs:enumeration value="content filtered"/>
+										<xs:enumeration value="ready for indexing"/>
+										<xs:enumeration value="data indexed"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="NewProcessName" type="xs:normalizedString" minOccurs="0"/>
+							<xs:element name="IndexDefinition" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="IndexOrder" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>performs the desired operation with following items for the given index</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:attribute name="IndexName" type="xs:normalizedString" use="required">
+													<xs:annotation>
+														<xs:documentation>the name of the index. A check will be perfromed whether the operation can be performed on the index; i.e.  if the datatypes fit to the index structure, etc.</xs:documentation>
+													</xs:annotation>
+												</xs:attribute>
+												<xs:attribute name="Operation" use="required">
+													<xs:simpleType>
+														<xs:restriction base="xs:normalizedString">
+															<xs:enumeration value="new"/>
+															<xs:enumeration value="update"/>
+															<xs:enumeration value="delete"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="Mode" use="optional" default="normal">
+													<xs:annotation>
+														<xs:documentation>Description of index job processing</xs:documentation>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction base="xs:normalizedString">
+															<xs:enumeration value="normal"/>
+															<xs:enumeration value="burst"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="SaveIndex" type="xs:boolean" use="optional" default="true"/>
+												<xs:attribute name="ReorganizeIndex" type="xs:boolean" use="optional" default="false"/>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="RemoveProcessListener">
+					<xs:complexType>
+						<xs:attribute name="Name" type="xs:normalizedString" use="required"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="StartProcessListener">
+					<xs:complexType>
+						<xs:attribute name="Name" type="xs:normalizedString" use="required"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="StopProcessListener">
+					<xs:complexType>
+						<xs:attribute name="Name" type="xs:normalizedString" use="required"/>
+						<xs:attribute name="ForceShutdown" type="xs:boolean" use="optional" default="false"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,1 @@
+run.bat crawlStop file

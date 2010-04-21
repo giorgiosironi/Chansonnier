@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/***********************************************************************************************************************
+ * Copyright (c) 2008 empolis GmbH and brox IT Solutions GmbH. All rights reserved. This program and the accompanying
+ * materials are made available under the terms of the Eclipse Public License v1.0 which accompanies this distribution,
+ * and is available at http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors: Georg Schmidt (brox IT Solutions GmbH) - initial creator
+ **********************************************************************************************************************/
+-->
+<xs:schema xmlns:ddconf="http://www.anyfinder.de/DataDictionary/Configuration" xmlns:is="http://www.anyfinder.de/IndexStructure" xmlns:ddc="http://www.anyfinder.de/DataDictionary/Connection" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.anyfinder.de/DataDictionary" targetNamespace="http://www.anyfinder.de/DataDictionary" elementFormDefault="qualified">
+  <xs:import namespace="http://www.anyfinder.de/IndexStructure" schemaLocation="configuration/org.eclipse.smila.lucene/xml/IndexStructure.xsd"/>
+  <xs:import namespace="http://www.anyfinder.de/DataDictionary/Connection" schemaLocation="configuration/org.eclipse.smila.lucene/xml/DataDictionaryConnection.xsd"/>
+  <xs:import namespace="http://www.anyfinder.de/DataDictionary/Configuration" schemaLocation="configuration/org.eclipse.smila.lucene/xml/DataDictionaryConfiguration.xsd"/>
+  <xs:element name="AnyFinderDataDictionary">
+    <xs:annotation>
+      <xs:documentation>Root element of AnyFinder datadictionary</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Index" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+    <xs:key name="indexName">
+      <xs:selector xpath="Index"/>
+      <xs:field xpath="@Name"/>
+    </xs:key>
+    <xs:keyref name="indexNameRef" refer="indexName">
+      <xs:selector xpath="Index/is:IndexStructure"/>
+      <xs:field xpath="@Name"/>
+    </xs:keyref>
+  </xs:element>
+  <xs:group name="IndexParts">
+    <xs:sequence>
+      <xs:element ref="ddc:Connection"/>
+      <xs:element ref="is:IndexStructure"/>
+      <xs:element ref="ddconf:Configuration"/>
+    </xs:sequence>
+  </xs:group>
+  <xs:element name="Index">
+    <xs:annotation>
+      <xs:documentation>An Index element describes the structure of an AnyFinder index</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:group ref="IndexParts"/>
+      <xs:attribute name="Name" type="xs:string" use="required"/>
+      <xs:attribute name="ForceFlush" type="xs:boolean" use="optional" default="true"/>
+      <xs:attribute name="RAMBufferSize" type="xs:nonNegativeInteger" use="optional"/>
+      <xs:attribute name="MaxBufferedDocs" type="xs:nonNegativeInteger" use="optional"/>
+      <xs:attribute name="MaxBufferedDeleteTerms" type="xs:nonNegativeInteger" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,43 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SMILA BPEL Workflow Engine Integration (Incubation)
+Bundle-SymbolicName: org.eclipse.smila.processing.bpel
+Bundle-Version: 0.7.0
+Import-Package: javax.wsdl,
+ org.apache.commons.io;version="1.4.0",
+ org.apache.commons.io.filefilter;version="1.4.0",
+ org.apache.commons.lang;version="2.4.0",
+ org.apache.commons.logging;version="1.1.1",
+ org.apache.ode.bpel.common;version="2.0.0",
+ org.apache.ode.bpel.compiler.api;version="2.0.0",
+ org.apache.ode.bpel.compiler.v2;version="2.0.0",
+ org.apache.ode.bpel.evar;version="2.0.0",
+ org.apache.ode.bpel.extension;version="2.0.0",
+ org.apache.ode.bpel.iapi;version="2.0.0",
+ org.apache.ode.bpel.rtrep.common.extension;version="2.0.0",
+ org.apache.ode.bpel.rtrep.v2;version="2.0.0",
+ org.apache.ode.utils;version="2.0.0",
+ org.eclipse.smila.blackboard;version="0.7.0",
+ org.eclipse.smila.blackboard.path;version="0.7.0",
+ org.eclipse.smila.datamodel.id;version="0.7.0",
+ org.eclipse.smila.datamodel.id.dom;version="0.7.0",
+ org.eclipse.smila.datamodel.record;version="0.7.0",
+ org.eclipse.smila.datamodel.record.dom;version="0.7.0",
+ org.eclipse.smila.datamodel.record.impl;version="0.7.0",
+ org.eclipse.smila.datamodel.tools.record.filter;version="0.7.0",
+ org.eclipse.smila.management;version="0.7.0",
+ org.eclipse.smila.management.error;version="0.7.0",
+ org.eclipse.smila.management.performance;version="0.7.0",
+ org.eclipse.smila.ode;version="0.7.0",
+ org.eclipse.smila.processing;version="0.7.0",
+ org.eclipse.smila.processing.configuration;version="0.7.0",
+ org.eclipse.smila.utils.config;version="0.7.0",
+ org.eclipse.smila.utils.workspace;version="0.7.0",
+ org.osgi.framework;version="1.4.0",
+ org.osgi.service.component;version="1.0.0"
+Export-Package: org.eclipse.smila.processing.bpel;version="0.7.0"
+Service-Component: OSGI-INF/processor.xml
+Bundle-Activator: org.eclipse.smila.processing.bpel.BPELBundleActivator
+Bundle-Vendor: empolis GmbH and brox IT Solutions GmbH
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+

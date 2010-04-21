@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/***********************************************************************************************************************
+ * Copyright (c) 2008 empolis GmbH and brox IT Solutions GmbH. All rights reserved. This program and the accompanying
+ * materials are made available under the terms of the Eclipse Public License v1.0 which accompanies this distribution,
+ * and is available at http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors: Ivan Churkin (brox IT Solutions GmbH) - initial creator
+ **********************************************************************************************************************/
+-->
+<component name="BlackboardFactory">
+  <implementation class="org.eclipse.smila.blackboard.impl.BlackboardFactoryImpl" />
+  <service>
+    <provide interface="org.eclipse.smila.blackboard.BlackboardFactory"/>
+  </service>
+  <reference 
+    name="recordStorage" 
+    interface="org.eclipse.smila.recordstorage.RecordStorage"
+    bind="setRecordStorage"
+    unbind="unsetRecordStorage" 
+    cardinality="0..1"
+    policy="dynamic"
+  />
+  <reference 
+    name="binaryStorage" 
+    interface="org.eclipse.smila.binarystorage.BinaryStorageService"
+    bind="setBinaryStorage"
+    unbind="unsetBinaryStorage" 
+    cardinality="0..1"
+    policy="dynamic"
+  />
+</component>

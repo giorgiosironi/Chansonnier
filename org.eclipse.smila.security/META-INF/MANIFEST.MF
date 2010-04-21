@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Smila Security Plug-in (Incubation)
+Bundle-SymbolicName: org.eclipse.smila.security
+Bundle-Version: 0.7.0
+Bundle-Vendor: empolis GmbH
+Export-Package: org.eclipse.smila.security;version="0.7.0"
+Import-Package: org.eclipse.smila.datamodel.record;version="0.7.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

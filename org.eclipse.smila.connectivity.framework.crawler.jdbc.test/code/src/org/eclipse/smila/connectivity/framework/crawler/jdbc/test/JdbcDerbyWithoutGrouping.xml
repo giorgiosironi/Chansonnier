@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/***********************************************************************************************************************
+ * Copyright (c) 2008 empolis GmbH and brox IT Solutions GmbH. All rights reserved. This program and the accompanying
+ * materials are made available under the terms of the Eclipse Public License v1.0 which accompanies this distribution,
+ * and is available at http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors: Michael Breidenband (brox IT Solutions GmbH) - initial creator
+ **********************************************************************************************************************/
+-->
+<DataSourceConnectionConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <DataSourceID>jdbc</DataSourceID>
+  <SchemaID>org.eclipse.smila.connectivity.framework.crawler.jdbc</SchemaID>
+  <DataConnectionID>
+    <Crawler>JdbcCrawler</Crawler>
+  </DataConnectionID>
+  <DeltaIndexing>full</DeltaIndexing>
+  <Attributes>
+    <Attribute Name="Person_ID" HashAttribute="true"
+      KeyAttribute="true" Type="Long">
+      <ColumnName>id</ColumnName>
+      <SqlType>long</SqlType>
+    </Attribute>
+    <Attribute Name="BMI" HashAttribute="true" KeyAttribute="false"
+      Type="double">
+      <ColumnName>body_mass_index</ColumnName>
+      <SqlType>double</SqlType>
+    </Attribute>
+    <Attribute Name="VacationDays" HashAttribute="false"
+      KeyAttribute="false" Type="Long">
+      <ColumnName>vacationdays</ColumnName>
+      <SqlType>long</SqlType>
+    </Attribute>
+    <Attribute Name="BirthDay" HashAttribute="true"
+      KeyAttribute="true" Type="date">
+      <ColumnName>birthday</ColumnName>
+      <SqlType>date</SqlType>
+    </Attribute>
+    <Attribute Name="DownSizeCandidate" HashAttribute="false"
+      KeyAttribute="false" Type="Boolean">
+      <ColumnName>scheduled_for_downsizing</ColumnName>
+      <SqlType>boolean</SqlType>
+    </Attribute>
+    <Attribute Name="DownSizedOn" HashAttribute="false"
+      KeyAttribute="false" Type="Timestamp">
+      <ColumnName>downsized</ColumnName>
+      <SqlType>timestamp</SqlType>
+    </Attribute>
+    <Attribute Name="Photo" HashAttribute="false" Attachment="true"
+      KeyAttribute="false" Type="Blob">
+      <ColumnName>photo</ColumnName>
+      <SqlType>blob</SqlType>
+    </Attribute>
+    <Attribute Name="Resume" HashAttribute="false"
+      KeyAttribute="false" Attachment="true" Type="Clob">
+      <ColumnName>cv</ColumnName>
+      <SqlType>clob</SqlType>
+    </Attribute>
+  </Attributes>
+  <Process>
+    <Selections>
+      <SQL>
+        SELECT id, vorname, name, body_mass_index, vacationdays,
+        birthday, scheduled_for_downsizing, downsized, photo, cv
+        FROM person
+      </SQL>
+    </Selections>
+    <Database Connection="jdbc:derby:crawlerTestDerbyDB" User=""
+      Password="" FetchSize="100000"
+      JdbcDriver="org.apache.derby.jdbc.EmbeddedDriver" />
+  </Process>
+</DataSourceConnectionConfig>

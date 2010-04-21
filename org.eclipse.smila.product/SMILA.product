@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pde version="3.5"?>
+
+<product name="SMILA" id="org.eclipse.smila.product.SMILA" application="SMILA.application" useFeatures="true" includeLaunchers="true">
+
+   <configIni use="default">
+   </configIni>
+
+   <launcherArgs>
+      <programArgs>-console -noexit</programArgs>
+      <vmArgs>-Xms40m
+-Xmx512m 
+-Declipse.ignoreApp=true 
+-Dosgi.noShutdown=true 
+-Dorg.apache.commons.logging.Log=org.apache.commons.logging.impl.Log4JLogger 
+-Dlog4j.configuration=file:log4j.properties 
+-Dosgi.requiredJavaVersion=1.6
+-Dcom.sun.management.jmxremote 
+-Dcom.sun.management.jmxremote.ssl=false 
+-Dcom.sun.management.jmxremote.authenticate=false 
+-Dcom.sun.management.jmxremote.port=9004</vmArgs>
+      <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts</vmArgsMac>
+   </launcherArgs>
+
+   <windowImages/>
+
+   <launcher name="SMILA">
+      <solaris/>
+      <win useIco="false">
+         <bmp/>
+      </win>
+   </launcher>
+
+   <vm>
+   </vm>
+
+   <plugins>
+   </plugins>
+
+   <features>
+      <feature id="org.eclipse.smila.extension.feature" version="0.7.0"/>
+      <feature id="org.eclipse.smila.feature" version="0.7.0"/>
+      <feature id="org.eclipse.smila.search.feature" version="0.7.0"/>
+      <feature id="org.eclipse.smila.product.core.feature" version="0.7.0"/>
+      <feature id="org.eclipse.rcp" version="3.5.0.v20090519-9SA0FwxFv6x089WEf-TWh11"/>
+   </features>
+
+
+</product>

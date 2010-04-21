@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v2004 rel. 4 U (http://www.xmlspy.com) by Georg Schmidt (BROX IT-Solutions GmbH) -->
+<xs:schema targetNamespace="http://www.anyfinder.de/Queue" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.anyfinder.de/Queue">
+	<xs:complexType name="Queue">
+		<xs:sequence>
+			<xs:element name="Name" type="xs:normalizedString"/>
+			<xs:element name="ContextFactory" type="xs:normalizedString"/>
+			<xs:element name="Parameter" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:attribute name="Name" type="xs:normalizedString" use="required"/>
+					<xs:attribute name="Value" type="xs:string" use="required"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

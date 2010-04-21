@@ -1,0 +1,23 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: XML Processing Test Plug-in (Incubation)
+Bundle-SymbolicName: org.eclipse.smila.processing.pipelets.xmlprocessing.test
+Bundle-Version: 0.7.0
+Bundle-Vendor: empolis GmbH and brox IT Solutions GmbH
+Import-Package: junit.framework;version="[3.8.0,4.0.0)",
+ org.apache.commons.io;version="1.4.0",
+ org.apache.commons.logging;version="1.1.1",
+ org.custommonkey.xmlunit;version="1.2.0",
+ org.eclipse.smila.blackboard;version="0.7.0",
+ org.eclipse.smila.blackboard.path;version="0.7.0",
+ org.eclipse.smila.datamodel.id;version="0.7.0",
+ org.eclipse.smila.datamodel.record;version="0.7.0",
+ org.eclipse.smila.processing;version="0.7.0",
+ org.eclipse.smila.processing.configuration;version="0.7.0",
+ org.eclipse.smila.processing.pipelets;version="0.7.0",
+ org.eclipse.smila.processing.pipelets.test;version="0.7.0",
+ org.eclipse.smila.processing.pipelets.xmlprocessing;version="0.7.0",
+ org.eclipse.smila.processing.pipelets.xmlprocessing.util;version="0.7.0",
+ org.eclipse.smila.test;version="0.7.0",
+ org.eclipse.smila.utils.config;version="0.7.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

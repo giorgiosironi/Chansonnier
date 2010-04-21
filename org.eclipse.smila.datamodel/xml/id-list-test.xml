@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+ * Copyright (c) 2008 empolis GmbH and brox IT Solutions GmbH. 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Juergen Schumacher (empolis GmbH) - initial example
+-->
+<IdList xmlns="http://www.eclipse.org/smila/id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.eclipse.org/smila/id id.xsd ">
+	<Id version="1.0">
+		<Source>share</Source>
+		<Key>PDF/big.pdf</Key>
+	</Id>
+
+	<Id version="1.0">
+		<Source>share</Source>
+		<Key>PDF/big.pdf</Key>
+		<Fragment>0</Fragment><!-- or start counting at 1? -->
+	</Id>
+
+	<Id version="1.0">
+		<Source>share</Source>
+		<Key>Archive/oldstuff.zip</Key>
+	</Id>
+
+	<Id version="1.0">
+		<Source>share</Source>
+		<Key>Archive/oldstuff.zip</Key>
+		<Element>
+			<Key>PDF/old.pdf</Key>
+		</Element>
+	</Id>
+
+	<Id version="1.0">
+		<Source>share</Source>
+		<Key>Archive/oldstuff.zip</Key>
+		<Element>
+			<Key>PDF/old.pdf</Key>
+		</Element>
+		<Fragment>0</Fragment>
+	</Id>
+
+	<Id version="1.0">
+		<Source>share</Source>
+		<Key>Archive/oldstuff.zip</Key>
+		<Element>
+			<Key>another.zip</Key>
+			<Element>
+				<Key>another.pdf</Key>
+			</Element>
+		</Element>
+		<Fragment>0</Fragment>
+	</Id>
+
+	<Id version="1.0">
+		<Source>mail</Source>
+		<Key>INBOX/42</Key>
+		<Element>
+			<Key>2</Key>
+		</Element>
+	</Id>
+
+	<Id version="1.0">
+		<Source>db</Source>
+		<Key name="x">0815</Key>
+		<Key name="y">4711</Key>
+	</Id>
+</IdList>

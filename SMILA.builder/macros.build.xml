@@ -1,0 +1,282 @@
+<?xml version="1.0"?>
+<!--
+/***********************************************************************************************************************
+ * Copyright (c) 2008 empolis GmbH and brox IT Solutions GmbH. All rights reserved. This program and the accompanying
+ * materials are made available under the terms of the Eclipse Public License v1.0 which accompanies this distribution,
+ * and is available at http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors: Ralf Rausch (brox IT Solutions GmbH) - initial creator
+ **********************************************************************************************************************/
+-->
+<project name="macros">
+  
+  <!-- = = = = = = = = = = = = = = = = =
+        References to libaries
+       = = = = = = = = = = = = = = = = = -->
+      <available property="EMMA.REPORT" file="${lib.dir}/emma/" />
+      <available property="CHECKSTYLE.REPORT" file="${lib.dir}/checkstyle/" />
+      <available property="PMD.REPORT" file="${lib.dir}/pmd/" /> 
+
+      <property name="EMMA.CLASSPATH" value="emma.lib" /> 
+    <property name="CHECKSTYLE.CLASSPATH" value="checkstyle.lib" /> 
+    <property name="PMD.CLASSPATH" value="pmd.lib" /> 
+    
+  
+    
+  <!-- = = = = = = = = = = = = = = = = =
+        macrodef: Mtest.bundle.smila
+       = = = = = = = = = = = = = = = = = -->
+  <macrodef name="M_test.bundle.smila">
+    <attribute name="bundle.name" />
+    <sequential>
+
+
+      <!-- always set default config but overwrite if specific (TODO could be made faster with an IF)-->
+      <antcall target="test.clean2default" />
+      <copy todir="${eclipse.test.dir}/configuration" file="${workspace}/@{bundle.name}/config.ini" overwrite="true" failonerror="no" />
+
+      <!-- copy config if present -->
+      <copy todir="${eclipse.test.dir}/configuration" overwrite="true" failonerror="no">
+        <fileset dir="${workspace}/@{bundle.name}/configuration/" defaultexcludes="yes">
+          <include name="**/*" />
+        </fileset>
+      </copy>
+
+
+      <fileset dir="${eclipse.test.dir}/plugins" id="_bundle.test.xml">
+        <include name='@{bundle.name}*/test.xml' />
+      </fileset>
+      <M_dirset2list dirset.id="_bundle.test.xml" targetproperty="_bundle.test.xml" strip.path-part=" " />
+
+      <java classname="org.eclipse.equinox.launcher.Main" fork="true" failonerror="true">
+        <arg line="-application org.eclipse.ant.core.antRunner " />
+        <arg line="-buildfile ${_bundle.test.xml}" />
+        <arg line="-Dtest.java.home=${test.java.home}" />
+        <arg line="-Dos=${os}" />
+        <arg line="-Dws=${ws}" />
+        <arg line="-Darch=${arch}" />
+        <arg line='-DextraVMargs="-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.port=9004 -Xbootclasspath/a:/${lib.dir}/emma/emma.jar"' />
+        <arg line="-Dorg.eclipse.eilf.utils.config.root=${org.eclipse.eilf.utils.config.root}" />
+        <classpath>
+          <pathelement location="${eclipse.home}/plugins/org.eclipse.equinox.launcher_${equinoxLauncherPluginVersion}.jar" />
+        </classpath>
+      </java>
+      
+    </sequential>
+  </macrodef>
+
+
+  <!-- = = = = = = = = = = = = = = = = =
+          macrodef: M_dirset2list
+         = = = = = = = = = = = = = = = = = -->
+  <macrodef name="M_dirset2list" description="converts a dirset of plugins to a name list">
+    <attribute name="dirset.id" />
+    <attribute name="targetproperty" />
+    <attribute name="delim" default=" " />
+    <attribute name="strip.path-part" default="${workspace}${file.separator}" />
+    <sequential>
+      <var name='@{targetproperty}' unset='yes' />
+      <pathconvert property="@{targetproperty}" refid="@{dirset.id}" pathsep="@{delim}" />
+      <concat destfile=".M_dirset2list.names~">
+        <propertyresource name="@{targetproperty}" />
+        <filterchain>
+          <tokenfilter>
+            <stringtokenizer suppressdelims='no' />
+            <replacestring from="@{strip.path-part}" to="" />
+          </tokenfilter>
+        </filterchain>
+      </concat>
+      <var name='@{targetproperty}' unset='yes' />
+      <loadfile property="@{targetproperty}" srcfile=".M_dirset2list.names~" quiet='no' />
+      <delete file=".M_dirset2list.names~" failonerror="no" />
+    </sequential>
+  </macrodef>
+
+
+  <!-- = = = = = = = = = = = = = = = = =
+          macrodef: M_echo.path
+         = = = = = = = = = = = = = = = = = -->
+  <macrodef name="M_echo.path">
+    <attribute name="pathref" />
+    <attribute name="level" default="error" />
+    <attribute name="delim" default="${line.separator} |-" />
+    <sequential>
+      <var unset='yes' name='_echo.path' />
+      <pathconvert pathsep="@{delim}" property="_echo.path" refid="@{pathref}" />
+      <echo level="@{level}" message="@{pathref}:" />
+      <echo level="@{level}" message="@{delim}${_echo.path}" />
+    </sequential>
+  </macrodef>
+
+
+  <!-- = = = = = = = = = = = = = = = = =
+          macrodef: M_copy.resource.type
+         = = = = = = = = = = = = = = = = = -->
+  <macrodef name="M_copy.resource.type">
+    <attribute name="list" />
+    <!-- either 'features' or 'plugins' -->
+    <attribute name="type" />
+    <sequential>
+      <echo level="verbose">${list}</echo>
+      <echo level="verbose">${workspace}</echo>
+      <for param='bundle-name' list='@{list}' delimiter=' ' trim='yes'>
+        <sequential>
+          <if>
+            <available file="${workspace}/@{bundle-name}" />
+            <then>
+              <M_copy.standard-bundle bundle-name='@{bundle-name}' type='@{type}' />
+            </then>
+            <else>
+              <echo level="warning"> bundle @{bundle-name} does not exist!! </echo>
+            </else>
+          </if>
+        </sequential>
+      </for>
+
+    </sequential>
+  </macrodef>
+
+  <!-- = = = = = = = = = = = = = = = = =
+        macrodef: M_copy.standard-bundle
+       = = = = = = = = = = = = = = = = = -->
+  <macrodef name="M_copy.standard-bundle">
+    <attribute name="bundle-name" />
+    <!-- either 'features' or 'plugins' -->
+    <attribute name="type" />
+    <sequential>
+      <echo level="error">@{type} :  @{bundle-name}</echo>
+
+      <copy todir="${buildDirectory}/@{type}/@{bundle-name}">
+        <fileset dir="${workspace}/@{bundle-name}">
+          <exclude name="**/*.class" />
+        </fileset>
+      </copy>
+      <!--
+      -->
+    </sequential>
+  </macrodef>
+
+
+  <!-- =================================================================== -->
+  <!-- TASK DEFS              -->
+  <!-- =================================================================== -->
+
+  <path id="ant-contrib.lib">
+    <fileset dir="${lib.dir}/ant-contrib">
+      <include name="*.jar" />
+    </fileset>
+  </path>
+  
+  <taskdef resource="net/sf/antcontrib/antlib.xml" classpathref="ant-contrib.lib" />
+
+  <if><equals arg1="${PMD.REPORT}" arg2="true" />
+     <then>
+      <path id="pmd.lib">
+        <fileset dir="${lib.dir}/pmd">
+          <include name="*.jar" />
+        </fileset>
+      </path>
+      <taskdef name="pmd" classname="net.sourceforge.pmd.ant.PMDTask" classpathref="${PMD.CLASSPATH}" />
+      </then>
+  </if> 
+
+  <if><equals arg1="${EMMA.REPORT}" arg2="true" />
+     <then>
+      <path id="emma.lib">
+        <fileset dir="${lib.dir}/emma">
+          <include name="*.jar" />
+        </fileset>
+      </path>
+      <taskdef resource="emma_ant.properties" classpathref="${EMMA.CLASSPATH}" />
+      </then>
+  </if> 
+
+  <if><equals arg1="${CHECKSTYLE.REPORT}" arg2="true" />
+     <then>
+      <path id="checkstyle.lib">
+          <fileset dir="${lib.dir}/checkstyle">
+            <include name="*.jar" />
+          </fileset>
+        </path>
+     <taskdef resource="checkstyletask.properties" classpathref="${CHECKSTYLE.CLASSPATH}" />
+      </then>
+  </if>
+  
+  
+  <macrodef name="M_final-application" description="final application">
+    <attribute name="file" />
+    <sequential>
+      <echo>Finalizing @{file}</echo>
+      <delete dir="${eclipse.tmp.dir}" />
+      <mkdir dir="${eclipse.tmp.dir}" />
+      <if>
+	  <or>
+	    <matches pattern=".*linux.*" string="@{file}"/>
+        <matches pattern=".*solaris.*" string="@{file}"/>
+	  </or>
+        <then>
+          <unzip src="${buildDirectory}/CI.SMILA-incubation/@{file}" dest="${eclipse.tmp.dir}">
+            <patternset>
+              <exclude name="configuration/config.ini" />
+              <exclude name="plugins/*.test*/**" />
+              <exclude name="features/*.test*/**" />
+            </patternset>
+            <!-- Workaround for wrong paths in zip generated on linux -->
+            <mapper>
+              <globmapper from="/libcairo-swt.so" to="libcairo-swt.so" casesensitive="no" />
+              <globmapper from="/SMILA" to="SMILA" casesensitive="no" />
+            </mapper>
+          </unzip>
+        </then>
+        <else>
+          <unzip src="${buildDirectory}/CI.SMILA-incubation/@{file}" dest="${eclipse.tmp.dir}">
+            <patternset>
+              <exclude name="configuration/config.ini" />
+              <exclude name="plugins/*.test*/**" />
+              <exclude name="features/*.test*/**" />
+            </patternset>
+          </unzip>
+        </else>
+      </if>
+
+      <!-- copy application configurations -->
+      <copy todir="${eclipse.tmp.dir}" overwrite="true">
+        <fileset dir="${application.configuration}" casesensitive="false">
+          <exclude name="**/.svn" />
+          <exclude name="build.xml" />
+          <exclude name=".project" />
+          <exclude name="workspace/.metadata/**" />
+          <exclude name="*.log" />
+        </fileset>
+      </copy>
+      <!-- override schemas to last versions -->
+      <copy todir="${eclipse.tmp.dir}/configuration" overwrite="true">
+        <fileset dir="${buildDirectory}/plugins" casesensitive="false">
+          <include name="*/schemas/*.xsd" />
+          <exclude name="*.test/schemas/*.xsd" />
+        </fileset>
+      </copy>
+      <!-- Copy jmxclient -->
+      <copy todir="${eclipse.tmp.dir}/jmxclient" overwrite="true">
+        <fileset dir="${buildDirectory}/jmxclient" casesensitive="false">
+          <exclude name="**/.svn" />
+        </fileset>
+      </copy>
+      <!-- >Make files executable on linux -->
+      <if>
+        <matches pattern=".*linux.*" string="@{file}"/>
+        <then>
+          <echo>Make files executable on linux</echo>
+          <chmod file="${eclipse.tmp.dir}/SMILA" perm="+x" />
+          <chmod file="${eclipse.tmp.dir}/libcairo-swt.so" perm="+x" />
+        </then>
+      </if>
+      <zip destfile="${eclipse.application.dir}/@{file}">
+        <fileset dir="${eclipse.tmp.dir}" casesensitive="false">
+          <exclude name="**/.svn" />
+        </fileset>
+      </zip>
+    </sequential>
+  </macrodef>
+
+</project>

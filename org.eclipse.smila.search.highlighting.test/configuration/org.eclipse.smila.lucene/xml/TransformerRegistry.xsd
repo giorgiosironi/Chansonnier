@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XML Spy v4.4 U (http://www.xmlspy.com) by August Georg Schmidt (BROX IT-Solutions GmbH) -->
+<xs:schema targetNamespace="http://www.anyfinder.de/TransformerRegistry" xmlns:pd="http://www.brox.de/ParameterDefinition" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.anyfinder.de/TransformerRegistry" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.brox.de/ParameterDefinition" schemaLocation="../xml/ParameterDefinition.xsd"/>
+	<xs:element name="TransformerRegistry">
+		<xs:annotation>
+			<xs:documentation>Comment describing your root element</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Transformer" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ClassName">
+								<xs:simpleType>
+									<xs:restriction base="xs:normalizedString">
+										<xs:minLength value="1"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="Description" type="xs:string"/>
+							<xs:element ref="pd:ParameterDefinition"/>
+						</xs:sequence>
+						<xs:attribute name="Name" use="required">
+							<xs:simpleType>
+								<xs:restriction base="xs:normalizedString">
+									<xs:minLength value="1"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

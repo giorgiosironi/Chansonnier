@@ -1,0 +1,23 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Lucene PipeletTest Plug-in (Incubation)
+Bundle-SymbolicName: org.eclipse.smila.lucene.test
+Bundle-Version: 0.7.0
+Bundle-Vendor: empolis GmbH and brox IT Solutions GmbH
+Import-Package: junit.framework;version="[3.8.0,4.0.0)",
+ org.apache.commons.io;version="1.4.0",
+ org.apache.commons.logging;version="1.1.1",
+ org.apache.lucene.document;version="2.3.2",
+ org.apache.lucene.index;version="2.3.2",
+ org.eclipse.smila.blackboard;version="0.7.0",
+ org.eclipse.smila.blackboard.path;version="0.7.0",
+  org.eclipse.smila.datamodel.id;version="0.7.0",
+ org.eclipse.smila.datamodel.record;version="0.7.0",
+ org.eclipse.smila.datamodel.tools;version="0.7.0",
+ org.eclipse.smila.processing;version="0.7.0",
+ org.eclipse.smila.processing.parameters;version="0.7.0",
+ org.eclipse.smila.search.index;version="0.7.0",
+ org.eclipse.smila.test;version="0.7.0",
+ org.eclipse.smila.utils.workspace;version="0.7.0"
+Require-Bundle: org.eclipse.smila.lucene
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

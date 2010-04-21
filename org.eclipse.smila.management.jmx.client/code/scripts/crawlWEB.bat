@@ -1,0 +1,1 @@
+run.bat crawl web

@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/***********************************************************************************************************************
+ * Copyright (c) 2008 empolis GmbH and brox IT Solutions GmbH. All rights reserved. This program and the accompanying
+ * materials are made available under the terms of the Eclipse Public License v1.0 which accompanies this distribution,
+ * and is available at http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors: Ralf Rausch (brox IT Solutions GmbH) - initial creator
+ **********************************************************************************************************************/
+-->
+<!-- Brox Code Convention Checks -->
+<!DOCTYPE module PUBLIC "-//Puppy Crawl//DTD Check Configuration 1.2//EN" "http://www.puppycrawl.com/dtds/configuration_1_2.dtd">
+
+<module name="Checker">
+  <property name="severity" value="warning"/>
+  <property name="localeCountry" value="EN"/>
+  <property name="localeLanguage" value="en"/>   
+	<!-- <module name="StrictDuplicateCode" /> -->
+
+	<module name="SuppressionCommentFilter" />
+
+	<!-- Checks whether files end with a new line.                        -->
+	<!-- See http://checkstyle.sf.net/config_misc.html#NewlineAtEndOfFile -->
+
+	<!-- Files, 1. Any source files and text files in general should end with a newline character. -->
+	<module name="NewlineAtEndOfFile" />
+
+	<module name="TreeWalker">
+
+		<module name="FileContentsHolder" />
+
+		<!-- Naming Conventions -->
+
+		<!-- 9. All names should be written in English. (check patterns assume this rule) -->
+
+
+		<!-- 4. Names representing constants (final variables) must be all uppercase using underscore to separate words -->
+		<module name="ConstantName" />
+		<!-- 3. Variable names must be in mixed case starting with lower case. -->
+		<module name="LocalFinalVariableName" />
+		<module name="LocalVariableName" />
+		<!-- 5. Names representing methods must be verbs and written in mixed case starting with lower case. -->
+		<module name="MethodName" />
+		<module name="ParameterName" />
+		<!-- 7. (last part) Static private variables should have prefix s_. -->
+		<module name="StaticVariableName">
+		    <property name="format" value="^s_[a-z][a-zA-Z0-9]*$" />
+		</module>
+		<!-- 2. Names representing types must be nouns and written in mixed case starting with upper case. -->
+		<module name="TypeName" />
+		<!-- 1. Names representing packages should be in all lower case, using a reverse domain name. -->
+		<module name="PackageName">
+			<property name="format" value="^[a-z]+(\.[a-z][a-z0-9]*)*$" />
+		</module>
+		<!-- 7. (first part) Member/class variables should have underscore prefix. -->
+		<module name="MemberName">
+			<property name="applyToPublic" value="true" />
+			<property name="applyToProtected" value="true" />
+			<property name="applyToPackage" value="true" />
+			<property name="applyToPrivate" value="true" />
+			<property name="format" value="^_[a-z][a-zA-Z0-9]*$" />
+		</module>
+
+
+		<!-- Files -->
+		<!-- 2. Special characters like TAB and page break must be avoided. -->
+		<module name="TabCharacter" />
+
+		<!-- 3. The incompleteness of split lines must be made obvious. (partially) -->
+		<module name="OperatorWrap">
+			<property name="option" value="nl" />
+		</module>
+
+		<!-- Methods and Statements -->
+
+		<!-- Checks for imports -->
+		<!-- Package and Import Statements, 1. The package statement must be the first statement of the file. All files should belong to a specific package. -->
+		<module name="PackageDeclaration" />
+
+		<!-- Package and Import Statements, 3. Imported classes should always be listed explicitly -->
+		<module name="AvoidStarImport" />
+		<module name="IllegalImport" /><!-- defaults to sun.* packages -->
+		<module name="RedundantImport" />
+		<module name="UnusedImports" />
+
+		<!-- Modifier Checks                                    -->
+		<!-- See http://checkstyle.sf.net/config_modifier.html -->
+		<!-- Methods, 1. Method modifiers should be given in the following order:
+				 <access> static abstract synchronized <unusual> final native
+				 The <access> modifier (if present) must be the first modifier. -->
+		<module name="ModifierOrder" />
+		<module name="RedundantModifier" />
+
+		<!-- Types, 2. Array specifiers must be attached to the type not the variable -->
+		<module name="ArrayTypeStyle" />
+
+		<!-- Miscellaneous, 1. The use of magic numbers in the code should be avoided; this includes English text. Numbers other than -1, 0 and 1 can be considered declared as named constants instead -->
+		<module name="MagicNumber" />
+
+		<!-- Classes and Interfaces, 1. Class and Interface declarations should be organized in the following manner: [skip] -->
+		<module name="DeclarationOrder" />
+
+		<!-- Miscellaneous, 2. Floating point constants should always be written with decimal point and at least one decimal. -->
+		<module name="IllegalTokenText">
+			<property name="tokens" value="NUM_FLOAT,NUM_DOUBLE" />
+			<property name="format" value="^\." />
+			<property name="ignoreCase" value="true" />
+			<property name="message" value="Floating point constants should always be written with a digit before the decimal point." />
+		</module>
+
+		<!-- Conditionals, 2. The conditional should be put on a separate line. -->
+		<module name="AvoidInlineConditionals" />
+
+		<!-- Layout And Comments -->
+		<!-- Layout, 1. Basic indentation should be 2. -->
+		<module name="Indentation">
+			<property name="basicOffset" value="2" />
+			<property name="braceAdjustment" value="0" />
+			<property name="caseIndent" value="2" />
+		</module>
+
+		<!-- Layout, 2. Block layout; 3-10 -->
+		<module name="AvoidNestedBlocks" />
+		<module name="EmptyBlock">
+			<property name="tokens"
+				value="LITERAL_CATCH, LITERAL_DO, LITERAL_ELSE, LITERAL_FINALLY, LITERAL_IF, LITERAL_TRY, LITERAL_WHILE" />
+		</module>
+		<module name="LeftCurly" />
+		<module name="RightCurly" />
+		<module name="NeedBraces" />
+
+		<!-- Layout, 8. The switch statement rules -->
+		<module name="FallThrough">
+			<property name="reliefPattern" value="Fallthrough" />
+		</module>
+		<module name="MissingSwitchDefault" />
+		<module name="DefaultComesLast" />
+
+		<!-- white space -->
+		<!-- White Space, 1. -->
+		<module name="MethodParamPad" />
+		<module name="ParenPad" />
+		<module name="TypecastParenPad" />
+		<module name="NoWhitespaceAfter">
+			<!-- Default tokens and additional GENERIC_START -->
+			<property name="tokens"
+				value="BNOT, DEC, DOT, INC, LNOT, UNARY_MINUS, UNARY_PLUS, GENERIC_START" />
+		</module>
+
+		<module name="NoWhitespaceBefore">
+			<!-- Default tokens and additional GENERIC_START
+				and GENERIC_END -->
+			<property name="tokens"
+				value="SEMI, POST_DEC, POST_INC, GENERIC_START, GENERIC_END" />
+		</module>
+
+		<module name="WhitespaceAfter">
+			<!-- Default tokens and additional GENERIC_END -->
+			<property name="tokens"
+				value="COMMA, SEMI, TYPECAST, GENERIC_END" />
+		</module>
+
+		<module name="WhitespaceAround">
+			<!-- Default tokens without GENERIC_START and
+				GENERIC_END -->
+			<property name="tokens"
+				value="ASSIGN, BAND, BAND_ASSIGN, BOR, BOR_ASSIGN, BSR, BSR_ASSIGN, BXOR, BXOR_ASSIGN,
+						COLON, DIV, DIV_ASSIGN, EQUAL, GE, GT, LAND, LCURLY, LE, LITERAL_ASSERT,
+            LITERAL_CATCH, LITERAL_DO, LITERAL_ELSE, LITERAL_FINALLY,
+            LITERAL_FOR, LITERAL_IF, LITERAL_RETURN, LITERAL_SYNCHRONIZED,
+            LITERAL_TRY, LITERAL_WHILE, LOR, LT, MINUS, MINUS_ASSIGN, MOD,
+            MOD_ASSIGN, NOT_EQUAL, PLUS, PLUS_ASSIGN, QUESTION, RCURLY, SL,
+            SLIST, SL_ASSIGN, SR, SR_ASSIGN, STAR, STAR_ASSIGN, TYPE_EXTENSION_AND" />
+		</module>
+
+		<!-- Checks for Javadoc comments -->
+		<!-- Comments -->
+		<module name="JavadocMethod">
+      <property name="logLoadErrors" value="true"/>
+      <property name="suppressLoadErrors" value="true"/>
+    </module>
+		<module name="JavadocType"/>
+		<module name="JavadocVariable"/>
+		<module name="JavadocStyle"/>
+
+		<!-- Checks for Size Violations. -->
+		<!-- Metrics, 5. Classes over 1500 lines will be marked for review. -->
+		<module name="FileLength">
+			<property name="max" value="1500" />
+		</module>
+		<!-- Metrics, 2. All methods must be less than 60 lines. -->
+		<!-- Empty lines and single line comments not counted -->
+		<module name="MethodLength">
+			<property name="max" value="60" />
+			<property name="countEmpty" value="false"/>
+		</module>
+		<!-- Metrics, 3. Methods and constructors should not exceed 7 parameters, including variable arguments. (Reduce with accessors). -->
+		<module name="ParameterNumber" />
+		<!-- Maximum line length is 120 -->
+		<module name="LineLength">
+    		<property name="max" value="120"/>
+		</module>
+
+		<!-- Checks for common coding problems               -->
+		<!-- See http://checkstyle.sf.net/config_coding.html -->
+		<module name="CovariantEquals" />
+		<module name="EqualsHashCode" />
+		<module name="FinalLocalVariable" />
+		<module name="HiddenField" />
+		<module name="IllegalInstantiation">
+			<property name="classes" value="java.lang.Boolean" />
+		</module>
+		<module name="InnerAssignment" />
+		<module name="RedundantThrows">
+      <property name="logLoadErrors" value="true"/>
+      <property name="suppressLoadErrors" value="true"/>
+    </module>
+		<module name="SimplifyBooleanExpression" />
+		<module name="SimplifyBooleanReturn" />
+		<module name="StringLiteralEquality" />
+		<module name="SuperClone" />
+		<module name="SuperFinalize" />
+		<module name="IllegalThrows" />
+		<module name="ExplicitInitialization" />
+		<module name="MultipleVariableDeclarations" />
+
+		<!-- Checks for class design                         -->
+		<!-- See http://checkstyle.sf.net/config_design.html -->
+		<module name="FinalClass" />
+		<module name="HideUtilityClassConstructor" />
+		<module name="VisibilityModifier">
+			<property name="protectedAllowed" value="true"/>
+		</module>
+
+	</module>
+
+</module>

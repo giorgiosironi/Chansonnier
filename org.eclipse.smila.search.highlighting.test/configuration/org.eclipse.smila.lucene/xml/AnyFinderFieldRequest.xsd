@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.anyfinder.de/FieldRequest" xmlns:ss="http://www.anyfinder.de/Search" targetNamespace="http://www.anyfinder.de/FieldRequest" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.anyfinder.de/Search" schemaLocation="configuration/org.eclipse.smila.lucene/xml/AnyFinderSearch.xsd"/>
+	<xs:element name="AnyFinderFieldRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Field" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Field" type="ss:FieldType"/>
+						</xs:sequence>
+						<xs:attribute name="ReferenceID" type="xs:normalizedString"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="IndexName" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

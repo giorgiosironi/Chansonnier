@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Deltaindexing Impl Plug-in (Incubation)
+Bundle-SymbolicName: org.eclipse.smila.connectivity.deltaindexing.impl
+Bundle-Version: 0.7.0
+Import-Package: org.apache.commons.io;version="1.4.0",
+ org.apache.commons.logging;version="1.1.1",
+ org.eclipse.core.runtime,
+ org.eclipse.smila.connectivity.deltaindexing;version="0.7.0",
+ org.eclipse.smila.datamodel.id;version="0.7.0",
+ org.eclipse.smila.datamodel.id.impl;version="0.7.0",
+ org.eclipse.smila.management;version="0.7.0",
+ org.eclipse.smila.utils.workspace;version="0.7.0",
+ org.osgi.framework;version="1.4.0",
+ org.osgi.service.component;version="1.0.0"
+Bundle-Vendor: empolis GmbH and brox IT Solutions GmbH
+Service-Component: OSGI-INF/delta_indexing_manager.xml, OSGI-INF/delta_indexing_manager_agent.xml
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+

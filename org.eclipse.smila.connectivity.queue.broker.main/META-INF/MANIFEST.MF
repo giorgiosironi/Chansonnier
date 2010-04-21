@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Default Broker Plug-in (Incubation)
+Bundle-SymbolicName: org.eclipse.smila.connectivity.queue.broker.main
+Bundle-Version: 0.7.0
+Bundle-Activator: org.eclipse.smila.connectivity.queue.broker.main.internal.Activator
+Bundle-Vendor: empolis GmbH and brox IT Solutions GmbH
+Bundle-ActivationPolicy: lazy
+Import-Package: javax.jms;version="1.1.0",
+ org.apache.activemq.broker;version="5.2.0",
+ org.apache.activemq.broker.jmx;version="5.2.0",
+ org.apache.activemq.jndi;version="5.2.0",
+ org.apache.commons.io;version="1.4.0",
+ org.apache.commons.logging;version="1.1.0",
+ org.eclipse.smila.connectivity.queue;version="0.7.0",
+ org.eclipse.smila.utils.config;version="0.7.0",
+ org.eclipse.smila.utils.workspace;version="0.7.0",
+ org.osgi.framework;version="1.4.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

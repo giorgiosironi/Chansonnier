@@ -1,0 +1,25 @@
+<!-- 
+  * Copyright (c) 2008 empolis GmbH and brox IT Solutions GmbH. 
+  * All rights reserved. This program and the accompanying materials
+  * are made available under the terms of the Eclipse Public License v1.0
+  * which accompanies this distribution, and is available at
+  * http://www.eclipse.org/legal/epl-v10.html
+  *
+  * Contributors:
+  *    Juergen Schumacher (empolis GmbH) - generated
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://server.hw.demo/" attributeFormDefault="unqualified"
+	elementFormDefault="unqualified" targetNamespace="http://server.hw.demo/">
+	<xs:element name="sayHi" type="tns:sayHi" />
+	<xs:element name="sayHiResponse" type="tns:sayHiResponse" />
+	<xs:complexType name="sayHi">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="arg0" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="sayHiResponse">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="return" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

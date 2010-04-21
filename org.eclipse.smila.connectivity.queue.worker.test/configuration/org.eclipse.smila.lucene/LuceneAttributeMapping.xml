@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- 
+	* Copyright (c) 2008 empolis GmbH and brox IT Solutions GmbH. 
+	* All rights reserved. This program and the accompanying materials
+	* are made available under the terms of the Eclipse Public License v1.0
+	* which accompanies this distribution, and is available at
+	* http://www.eclipse.org/legal/epl-v10.html
+	*
+	* Contributors:
+	*    Daniel Stucky (empolis GmbH) - initial design
+-->
+<PipeletConfiguration xmlns="http://www.eclipse.org/smila/processor">
+	<Property name="Filename" type="java.lang.Integer">
+		<Value>1</Value>				
+	</Property>
+	<Property name="Path" type="java.lang.Integer">
+		<Value>2</Value>				
+	</Property>	
+	<Property name="LastModifiedDate" type="java.lang.Integer">
+		<Value>3</Value>				
+	</Property>	
+	<Property name="Url" type="java.lang.Integer">
+		<Value>4</Value>				
+	</Property>
+	<Property name="Title" type="java.lang.Integer">
+		<Value>5</Value>				
+	</Property>
+	<Property name="Extension" type="java.lang.Integer">
+		<Value>6</Value>				
+	</Property>
+	<Property name="Size" type="java.lang.Integer">
+		<Value>7</Value>				
+	</Property>			
+	<Property name="MimeType" type="java.lang.Integer">
+		<Value>8</Value>				
+	</Property>							
+</PipeletConfiguration>

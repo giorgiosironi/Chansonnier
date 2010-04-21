@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:as="http://www.anyfinder.de/AdvancedSearch" xmlns="http://www.anyfinder.de/FieldTemplates" targetNamespace="http://www.anyfinder.de/FieldTemplates" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.anyfinder.de/AdvancedSearch" schemaLocation="configuration/org.eclipse.smila.lucene/xml/AnyFinderAdvancedSearch.xsd"/>
+	<xs:element name="FieldTemplates">
+		<xs:annotation>
+			<xs:documentation>Comment describing your root element</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="FieldTemplate" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Description" type="xs:string"/>
+							<xs:element name="Selector">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="FilterExpression" type="xs:string" minOccurs="0"/>
+									</xs:sequence>
+									<xs:attribute name="FieldNo" type="xs:nonNegativeInteger" use="required"/>
+									<xs:attribute name="Name" type="xs:normalizedString" use="optional"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element ref="as:Term"/>
+						</xs:sequence>
+						<xs:attribute name="Name" type="xs:normalizedString" use="required"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="IndexName" type="xs:normalizedString" use="required"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd" version="1.0">
+  <description>Default binarystorage JPA entity mapping</description>
+  <package>org.eclipse.smila.recordstorage.util</package>
+  <access>FIELD</access>
+
+  <entity class="RecordDao" metadata-complete="true">
+    <table name="RECORDS" />
+
+    <named-query name="RecordDao.findBySource">
+      <query>SELECT r FROM RecordDao r WHERE r._source = :source</query>
+    </named-query>
+
+    <attributes>
+      <id name="_idHash">
+        <column name="ID_HASH" length="1024" />
+      </id>
+
+      <basic name="_source">
+        <column name="DATA_SOURCE" length="1024" />
+        <!--        <column name="BIN_OBJECT" />-->
+      </basic>
+      <basic name="_serializedRecord">
+        <column name="RECORD" column-definition="BLOB" />
+      </basic>
+    </attributes>
+  </entity>
+
+</entity-mappings>

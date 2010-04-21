@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v2004 rel. 4 U (http://www.xmlspy.com) by Georg Schmidt (BROX IT-Solutions GmbH) -->
+<xs:schema xmlns="http://www.anyfinder.de/RecordTransformation/Set" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:err="http://www.anyfinder.de/ErrorMessage" targetNamespace="http://www.anyfinder.de/RecordTransformation/Set" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.anyfinder.de/ErrorMessage" schemaLocation="configuration/org.eclipse.smila.lucene/xml/ErrorMessage.xsd"/>
+	<xs:element name="RecordTransformationSet">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="IndexOrder" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>performs the desired operation with following items for the given index</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="err:ErrorMessage" minOccurs="0"/>
+						</xs:sequence>
+						<xs:attribute name="IndexName" type="xs:normalizedString" use="required">
+							<xs:annotation>
+								<xs:documentation>the name of the index. A check will be perfromed whether the operation can be performed on the index; i.e.  if the datatypes fit to the index structure, etc.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="Operation" use="required">
+							<xs:simpleType>
+								<xs:restriction base="xs:normalizedString">
+									<xs:enumeration value="new"/>
+									<xs:enumeration value="update"/>
+									<xs:enumeration value="delete"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="Mode" use="optional" default="normal">
+							<xs:annotation>
+								<xs:documentation>Description of index job processing</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:normalizedString">
+									<xs:enumeration value="normal"/>
+									<xs:enumeration value="burst"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="SaveIndex" type="xs:boolean" use="optional" default="true"/>
+						<xs:attribute name="ReorganizeIndex" type="xs:boolean" use="optional" default="false"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Item" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:choice minOccurs="0">
+							<xs:sequence>
+								<xs:element name="IndexField" type="FieldValuesTYPE" maxOccurs="unbounded"/>
+								<xs:element name="KeyField" type="FieldValuesTYPE" maxOccurs="unbounded"/>
+							</xs:sequence>
+							<xs:element ref="err:ErrorMessage"/>
+						</xs:choice>
+						<xs:attribute name="ID" type="xs:normalizedString" use="required"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="Name" type="xs:normalizedString" use="required"/>
+			<xs:attribute name="IsProcessed" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:normalizedString">
+						<xs:enumeration value="With Errors"/>
+						<xs:enumeration value="All Ok"/>
+						<xs:enumeration value="Not Yet"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="TimeStamp" type="xs:dateTime" use="required">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">inconjuction with IsProcessed:
+false: creation time or the request
+true: time of request being answered</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="StringValue">
+		<xs:complexContent>
+			<xs:restriction base="FieldValueTYPE">
+				<xs:sequence>
+					<xs:element name="Value" type="xs:string" nillable="true"/>
+					<xs:element name="Separator" minOccurs="0">
+						<xs:simpleType>
+							<xs:restriction base="xs:normalizedString">
+								<xs:enumeration value="none"/>
+								<xs:enumeration value="default"/>
+								<xs:enumeration value="space"/>
+								<xs:enumeration value="tabulator"/>
+								<xs:enumeration value="paragraph"/>
+								<xs:enumeration value="sentence"/>
+								<xs:enumeration value="phrase"/>
+								<xs:enumeration value="period"/>
+								<xs:enumeration value="dot"/>
+								<xs:enumeration value="dash"/>
+								<xs:enumeration value="underscore"/>
+								<xs:enumeration value="comma"/>
+								<xs:enumeration value="semicolon"/>
+								<xs:enumeration value="questionmark"/>
+								<xs:enumeration value="exclamationmark"/>
+								<xs:enumeration value="colon"/>
+								<xs:enumeration value="pipe"/>
+								<xs:enumeration value="slash"/>
+								<xs:enumeration value="hash"/>
+								<xs:enumeration value="plus"/>
+								<xs:enumeration value="ampersand"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="TextValue">
+		<xs:complexContent>
+			<xs:restriction base="FieldValueTYPE">
+				<xs:sequence>
+					<xs:element name="Value" type="xs:string" nillable="true"/>
+					<xs:element name="Separator" minOccurs="0">
+						<xs:simpleType>
+							<xs:restriction base="xs:normalizedString">
+								<xs:enumeration value="none"/>
+								<xs:enumeration value="default"/>
+								<xs:enumeration value="space"/>
+								<xs:enumeration value="tabulator"/>
+								<xs:enumeration value="paragraph"/>
+								<xs:enumeration value="sentence"/>
+								<xs:enumeration value="phrase"/>
+								<xs:enumeration value="period"/>
+								<xs:enumeration value="dot"/>
+								<xs:enumeration value="dash"/>
+								<xs:enumeration value="underscore"/>
+								<xs:enumeration value="comma"/>
+								<xs:enumeration value="semicolon"/>
+								<xs:enumeration value="questionmark"/>
+								<xs:enumeration value="exclamationmark"/>
+								<xs:enumeration value="colon"/>
+								<xs:enumeration value="pipe"/>
+								<xs:enumeration value="slash"/>
+								<xs:enumeration value="hash"/>
+								<xs:enumeration value="plus"/>
+								<xs:enumeration value="ampersand"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="IntegerValue">
+		<xs:complexContent>
+			<xs:restriction base="FieldValueTYPE">
+				<xs:sequence>
+					<xs:element name="Value" type="xs:int" nillable="true"/>
+					<xs:element name="Separator" minOccurs="0">
+						<xs:simpleType>
+							<xs:restriction base="xs:normalizedString">
+								<xs:enumeration value="none"/>
+								<xs:enumeration value="default"/>
+								<xs:enumeration value="space"/>
+								<xs:enumeration value="tabulator"/>
+								<xs:enumeration value="paragraph"/>
+								<xs:enumeration value="sentence"/>
+								<xs:enumeration value="phrase"/>
+								<xs:enumeration value="period"/>
+								<xs:enumeration value="dot"/>
+								<xs:enumeration value="dash"/>
+								<xs:enumeration value="underscore"/>
+								<xs:enumeration value="comma"/>
+								<xs:enumeration value="semicolon"/>
+								<xs:enumeration value="questionmark"/>
+								<xs:enumeration value="exclamationmark"/>
+								<xs:enumeration value="colon"/>
+								<xs:enumeration value="pipe"/>
+								<xs:enumeration value="slash"/>
+								<xs:enumeration value="hash"/>
+								<xs:enumeration value="plus"/>
+								<xs:enumeration value="ampersand"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="LongValue">
+		<xs:complexContent>
+			<xs:restriction base="FieldValueTYPE">
+				<xs:sequence>
+					<xs:element name="Value" type="xs:long" nillable="true"/>
+					<xs:element name="Separator" minOccurs="0">
+						<xs:simpleType>
+							<xs:restriction base="xs:normalizedString">
+								<xs:enumeration value="none"/>
+								<xs:enumeration value="default"/>
+								<xs:enumeration value="space"/>
+								<xs:enumeration value="tabulator"/>
+								<xs:enumeration value="paragraph"/>
+								<xs:enumeration value="sentence"/>
+								<xs:enumeration value="phrase"/>
+								<xs:enumeration value="period"/>
+								<xs:enumeration value="dot"/>
+								<xs:enumeration value="dash"/>
+								<xs:enumeration value="underscore"/>
+								<xs:enumeration value="comma"/>
+								<xs:enumeration value="semicolon"/>
+								<xs:enumeration value="questionmark"/>
+								<xs:enumeration value="exclamationmark"/>
+								<xs:enumeration value="colon"/>
+								<xs:enumeration value="pipe"/>
+								<xs:enumeration value="slash"/>
+								<xs:enumeration value="hash"/>
+								<xs:enumeration value="plus"/>
+								<xs:enumeration value="ampersand"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="DoubleValue">
+		<xs:complexContent>
+			<xs:restriction base="FieldValueTYPE">
+				<xs:sequence>
+					<xs:element name="Value" type="xs:double" nillable="true"/>
+					<xs:element name="Separator" minOccurs="0">
+						<xs:simpleType>
+							<xs:restriction base="xs:normalizedString">
+								<xs:enumeration value="none"/>
+								<xs:enumeration value="default"/>
+								<xs:enumeration value="space"/>
+								<xs:enumeration value="tabulator"/>
+								<xs:enumeration value="paragraph"/>
+								<xs:enumeration value="sentence"/>
+								<xs:enumeration value="phrase"/>
+								<xs:enumeration value="period"/>
+								<xs:enumeration value="dot"/>
+								<xs:enumeration value="dash"/>
+								<xs:enumeration value="underscore"/>
+								<xs:enumeration value="comma"/>
+								<xs:enumeration value="semicolon"/>
+								<xs:enumeration value="questionmark"/>
+								<xs:enumeration value="exclamationmark"/>
+								<xs:enumeration value="colon"/>
+								<xs:enumeration value="pipe"/>
+								<xs:enumeration value="slash"/>
+								<xs:enumeration value="hash"/>
+								<xs:enumeration value="plus"/>
+								<xs:enumeration value="ampersand"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="FloatValue">
+		<xs:complexContent>
+			<xs:restriction base="FieldValueTYPE">
+				<xs:sequence>
+					<xs:element name="Value" type="xs:float" nillable="true"/>
+					<xs:element name="Separator" minOccurs="0">
+						<xs:simpleType>
+							<xs:restriction base="xs:normalizedString">
+								<xs:enumeration value="none"/>
+								<xs:enumeration value="default"/>
+								<xs:enumeration value="space"/>
+								<xs:enumeration value="tabulator"/>
+								<xs:enumeration value="paragraph"/>
+								<xs:enumeration value="sentence"/>
+								<xs:enumeration value="phrase"/>
+								<xs:enumeration value="period"/>
+								<xs:enumeration value="dot"/>
+								<xs:enumeration value="dash"/>
+								<xs:enumeration value="underscore"/>
+								<xs:enumeration value="comma"/>
+								<xs:enumeration value="semicolon"/>
+								<xs:enumeration value="questionmark"/>
+								<xs:enumeration value="exclamationmark"/>
+								<xs:enumeration value="colon"/>
+								<xs:enumeration value="pipe"/>
+								<xs:enumeration value="slash"/>
+								<xs:enumeration value="hash"/>
+								<xs:enumeration value="plus"/>
+								<xs:enumeration value="ampersand"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="DateValue">
+		<xs:complexContent>
+			<xs:restriction base="FieldValueTYPE">
+				<xs:sequence>
+					<xs:element name="Value" type="xs:date" nillable="true"/>
+					<xs:element name="Separator" minOccurs="0">
+						<xs:simpleType>
+							<xs:restriction base="xs:normalizedString">
+								<xs:enumeration value="none"/>
+								<xs:enumeration value="default"/>
+								<xs:enumeration value="space"/>
+								<xs:enumeration value="tabulator"/>
+								<xs:enumeration value="paragraph"/>
+								<xs:enumeration value="sentence"/>
+								<xs:enumeration value="phrase"/>
+								<xs:enumeration value="period"/>
+								<xs:enumeration value="dot"/>
+								<xs:enumeration value="dash"/>
+								<xs:enumeration value="underscore"/>
+								<xs:enumeration value="comma"/>
+								<xs:enumeration value="semicolon"/>
+								<xs:enumeration value="questionmark"/>
+								<xs:enumeration value="exclamationmark"/>
+								<xs:enumeration value="colon"/>
+								<xs:enumeration value="pipe"/>
+								<xs:enumeration value="slash"/>
+								<xs:enumeration value="hash"/>
+								<xs:enumeration value="plus"/>
+								<xs:enumeration value="ampersand"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="DateTimeValue">
+		<xs:complexContent>
+			<xs:restriction base="FieldValueTYPE">
+				<xs:sequence>
+					<xs:element name="Value" type="xs:dateTime" nillable="true"/>
+					<xs:element name="Separator" minOccurs="0">
+						<xs:simpleType>
+							<xs:restriction base="xs:normalizedString">
+								<xs:enumeration value="none"/>
+								<xs:enumeration value="default"/>
+								<xs:enumeration value="space"/>
+								<xs:enumeration value="tabulator"/>
+								<xs:enumeration value="paragraph"/>
+								<xs:enumeration value="sentence"/>
+								<xs:enumeration value="phrase"/>
+								<xs:enumeration value="period"/>
+								<xs:enumeration value="dot"/>
+								<xs:enumeration value="dash"/>
+								<xs:enumeration value="underscore"/>
+								<xs:enumeration value="comma"/>
+								<xs:enumeration value="semicolon"/>
+								<xs:enumeration value="questionmark"/>
+								<xs:enumeration value="exclamationmark"/>
+								<xs:enumeration value="colon"/>
+								<xs:enumeration value="pipe"/>
+								<xs:enumeration value="slash"/>
+								<xs:enumeration value="hash"/>
+								<xs:enumeration value="plus"/>
+								<xs:enumeration value="ampersand"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="BinaryValue">
+		<xs:complexContent>
+			<xs:restriction base="FieldValueTYPE">
+				<xs:sequence>
+					<xs:element name="Value" type="xs:base64Binary" nillable="true"/>
+					<xs:element name="Separator" minOccurs="0">
+						<xs:simpleType>
+							<xs:restriction base="xs:normalizedString">
+								<xs:enumeration value="none"/>
+								<xs:enumeration value="default"/>
+								<xs:enumeration value="space"/>
+								<xs:enumeration value="tabulator"/>
+								<xs:enumeration value="paragraph"/>
+								<xs:enumeration value="sentence"/>
+								<xs:enumeration value="phrase"/>
+								<xs:enumeration value="period"/>
+								<xs:enumeration value="dot"/>
+								<xs:enumeration value="dash"/>
+								<xs:enumeration value="underscore"/>
+								<xs:enumeration value="comma"/>
+								<xs:enumeration value="semicolon"/>
+								<xs:enumeration value="questionmark"/>
+								<xs:enumeration value="exclamationmark"/>
+								<xs:enumeration value="colon"/>
+								<xs:enumeration value="pipe"/>
+								<xs:enumeration value="slash"/>
+								<xs:enumeration value="hash"/>
+								<xs:enumeration value="plus"/>
+								<xs:enumeration value="ampersand"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="FieldValuesTYPE">
+		<xs:sequence>
+			<xs:element name="ValueItem" type="FieldValueTYPE" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="FieldNo" type="xs:nonNegativeInteger" use="required"/>
+		<xs:attribute name="Name" type="xs:normalizedString" use="optional"/>
+	</xs:complexType>
+	<xs:complexType name="FieldValueTYPE" abstract="true">
+		<xs:sequence>
+			<xs:element name="Value" type="xs:anySimpleType" nillable="true"/>
+			<xs:element name="Separator" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:normalizedString">
+						<xs:enumeration value="none"/>
+						<xs:enumeration value="default"/>
+						<xs:enumeration value="space"/>
+						<xs:enumeration value="tabulator"/>
+						<xs:enumeration value="paragraph"/>
+						<xs:enumeration value="sentence"/>
+						<xs:enumeration value="phrase"/>
+						<xs:enumeration value="period"/>
+						<xs:enumeration value="dot"/>
+						<xs:enumeration value="dash"/>
+						<xs:enumeration value="underscore"/>
+						<xs:enumeration value="comma"/>
+						<xs:enumeration value="semicolon"/>
+						<xs:enumeration value="questionmark"/>
+						<xs:enumeration value="exclamationmark"/>
+						<xs:enumeration value="colon"/>
+						<xs:enumeration value="pipe"/>
+						<xs:enumeration value="slash"/>
+						<xs:enumeration value="hash"/>
+						<xs:enumeration value="plus"/>
+						<xs:enumeration value="ampersand"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

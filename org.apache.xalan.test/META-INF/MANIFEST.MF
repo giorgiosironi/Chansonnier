@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Test Plug-in (Incubation)
+Bundle-SymbolicName: org.apache.xalan.test
+Bundle-Version: 1.0.0
+Require-Bundle: org.junit,
+ org.apache.xalan;bundle-version="2.7.1"
+Eclipse-RegisterBuddy: org.apache.xalan
+Import-Package: org.apache.commons.logging;version="1.1.1"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-Vendor: Empolis GmbH and brox IT-Solutions GmbH

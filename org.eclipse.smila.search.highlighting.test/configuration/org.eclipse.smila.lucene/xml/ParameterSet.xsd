@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://www.brox.de/ParameterSet" xmlns="http://www.brox.de/ParameterSet" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="ParameterSet">
+		<xs:annotation>
+			<xs:documentation>Parameter set definition</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Parameter" type="Parameter" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>All of these elements should be viewed as abstract parameter. It must be implemented in that manner.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+		<xs:unique name="ParameterName">
+			<xs:selector xpath="./*"/>
+			<xs:field xpath="@Name"/>
+		</xs:unique>
+	</xs:element>
+	<xs:complexType name="Parameter" abstract="true">
+		<xs:sequence>
+			<xs:element name="Value" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="Name" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="1"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="Float">
+		<xs:annotation>
+			<xs:documentation>Float Parameter</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:restriction base="Parameter">
+				<xs:sequence>
+					<xs:element name="Value" type="xs:float"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="FloatList">
+		<xs:annotation>
+			<xs:documentation>Float List Parameter</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:restriction base="Parameter">
+				<xs:sequence>
+					<xs:element name="Value" type="xs:float" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Date">
+		<xs:annotation>
+			<xs:documentation>Date Parameter</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:restriction base="Parameter">
+				<xs:sequence>
+					<xs:element name="Value" type="xs:date"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="DateList">
+		<xs:annotation>
+			<xs:documentation>Date List Parameter</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:restriction base="Parameter">
+				<xs:sequence>
+					<xs:element name="Value" type="xs:date" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Boolean">
+		<xs:annotation>
+			<xs:documentation>Boolean Parameter</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:restriction base="Parameter">
+				<xs:sequence>
+					<xs:element name="Value" type="xs:boolean"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="String">
+		<xs:annotation>
+			<xs:documentation>String Parameter</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:restriction base="Parameter">
+				<xs:sequence>
+					<xs:element name="Value">
+						<xs:simpleType>
+							<xs:restriction base="xs:string"/>
+						</xs:simpleType>
+					</xs:element>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="StringList">
+		<xs:annotation>
+			<xs:documentation>String List Parameter</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:restriction base="Parameter">
+				<xs:sequence>
+					<xs:element name="Value" type="xs:string" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Integer">
+		<xs:annotation>
+			<xs:documentation>Integer Parameter</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:restriction base="Parameter">
+				<xs:sequence>
+					<xs:element name="Value" type="xs:int"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="IntegerList">
+		<xs:annotation>
+			<xs:documentation>Integer List Parameter</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:restriction base="Parameter">
+				<xs:sequence>
+					<xs:element name="Value" type="xs:int" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Commons-Logging Test Plug-in (Incubation)
+Bundle-SymbolicName: org.apache.commons.logging.test
+Bundle-Version: 1.0.0
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.apache.commons.logging;bundle-version="1.1.1",
+ org.junit
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-Vendor: Empolis GmbH and brox IT-Solutions GmbH
+

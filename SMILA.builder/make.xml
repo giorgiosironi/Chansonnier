@@ -1,0 +1,631 @@
+<?xml version="1.0"?>
+<!--
+/***********************************************************************************************************************
+ * Copyright (c) 2008 empolis GmbH and brox IT Solutions GmbH. All rights reserved. This program and the accompanying
+ * materials are made available under the terms of the Eclipse Public License v1.0 which accompanies this distribution,
+ * and is available at http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors: Ralf Rausch (brox IT Solutions GmbH) - initial creator
+ **********************************************************************************************************************/
+-->
+<project name="pdebuid"
+         default="all"
+         basedir="."
+         xmlns:rsel="antlib:org.apache.tools.ant.types.resources.selectors">
+  <description>simple pde driver ant script.  Identical to the build.sh file. </description>
+
+  <property name="reports" location="${buildDirectory}/reports" />
+  <property name="reports_errors_txt"
+            location="${buildDirectory}/reports_errors_txt" />
+  <property name="junit.dir" location="${reports}/junit" />
+  <property name="emma.dir" location="${reports}/emma" />
+  <property name="pmd.dir" location="${reports}/pmd" />
+  <property name="checkstyle.dir" location="${reports}/checkstyle" />
+  <property name="eclipse.test.dir" location="${buildDirectory}/eclipse-test" />
+  <property name="eclipse.test.zip" location="${basedir}/eclipse-test.zip" />
+  <property name="lib.dir" location="${basedir}/../lib" />
+
+  <property name="eclipse.tmp.dir" location="${buildDirectory}/tmp" />
+  <property name="eclipse.application.dir"
+            location="${buildDirectory}/Application" />
+
+  <property name="javadoc.dir" location="${buildDirectory}/javadoc" />
+
+  <import file="properties.xml" />
+  <import file="macros.build.xml" />
+
+
+  <!-- REPORTS -->
+
+  <!-- EMMA - set EMMA.REPORT-property in macros.build.xml to true, if you use the EMMA plugin. 
+         Please set also the property "EMMA.CLASSPATH" in macros.build.xml -->
+
+  <if>
+    <equals arg1="${EMMA.REPORT}" arg2="true" />
+    <then>
+      <property name="emma.dir" location="${reports}/emma" />
+    </then>
+    <else>
+      <echo>EMMA-property is off, so no EMMA-report will be created</echo>
+    </else>
+  </if>
+
+  <!-- CHECKSTYLE set CHECKSTYLE.REPORT-property in macros.build.xml to true, if you use the CHECKSTYLE plugin. 
+         Please set also the property "CHECKSTYLE.CLASSPATH" in macros.build.xml -->
+
+  <if>
+    <equals arg1="${CHECKSTYLE.REPORT}" arg2="true" />
+    <then>
+      <property name="checkstyle.config.file.prefix" value="brox_checks" />
+      <property name="checkstyle.fail.on.violation" value="false" />
+      <property name="checkstyle.data.file"
+                location="${checkstyle.dir}/checkstyle_report.xml" />
+      <property name="checkstyle.report.file"
+                location="${checkstyle.dir}/checkstyle_report.html" />
+      <property name="checkstyle.duplicates.data.file"
+                location="${checkstyle.dir}/checkstyle_duplicates_report.xml" />
+      <property name="checkstyle.duplicates.report.file"
+                location="${checkstyle.dir}/checkstyle_duplicates_report.html" />
+      <property name="checkstyle.config.path"
+                location="${basedir}/checkstyle" />
+      <property name="checkstyle.xsl.file"
+                location="${checkstyle.config.path}/checkstyle-noframes-brox.xsl" />
+
+    </then>
+    <else>
+      <echo>Checkstyle-property is off, so no checkstyle-report will be created</echo>
+    </else>
+  </if>
+
+  <!-- PMD - set PMD.REPORT-property in macros.build.xml to true, if you use the PMD plugin. 
+         Please set also the property "PMD.CLASSPATH" in macros.build.xml -->
+  <if>
+    <equals arg1="${PMD.REPORT}" arg2="true" />
+    <then>
+      <property name="pmd.config.path" location="${basedir}/pmd" />
+      <property name="cpd.xsl.file"
+                location="${pmd.config.path}/cpdhtml.xslt" />
+      <property name="cpd.data.file" location="${pmd.dir}/cpd_report.xml" />
+      <property name="cpd.report.file" location="${pmd.dir}/cpd_report.html" />
+    </then>
+    <else>
+      <echo>PMD-property is off, so no pmd-report will be created</echo>
+    </else>
+  </if>
+
+  <!-- selects all java files wich is used for PMD and checkstyle -->
+  <fileset dir="${buildDirectory}/plugins" id="plugin-java-files">
+    <include name="*/code/**/*.java" />
+    <exclude name="**/code/gen/**" />
+    <exclude name="**/AllTests.java" />
+  </fileset>
+
+  <path id="emma.coverage.classes">
+    <dirset dir="${eclipse.test.dir}/plugins">
+      <!-- all dirs ending with .test_{version}-->
+      <include name="*.test_*" />
+    </dirset>
+    <fileset dir="${eclipse.test.dir}/plugins">
+      <!-- all SMILA jars-->
+      <include name="org.eclipse.smila.*.jar" />
+      <!-- special jars-->
+      <include name="org.apache.activemq*.jar" />
+      <include name="org.apache.ode*.jar" />
+      <include name="org.eclipse.smila.management.performancecounters*.jar" />
+    </fileset>
+  </path>
+
+
+  <property name="feature-names"
+            value='
+    org.eclipse.smila.extension.feature
+    org.eclipse.smila.feature
+    org.eclipse.smila.product.core.feature
+    org.eclipse.smila.test.feature
+    org.eclipse.smila.search.feature
+  '>
+  </property>
+
+
+  <patternset id='patterns.bundle.all'>
+    <include name="com.*" />
+    <include name="javax.*" />
+    <include name="net.*" />
+    <include name="oracle.*" />
+    <include name="org.*" />
+  	<include name="rome.*" />
+  	<exclude name="com.empolis.*" />
+  </patternset>
+
+  <!-- the follwoing projects are excluded from build -->
+  <patternset id='patterns.bundle.excludes'>
+    <exclude name="*.feature" />
+    <!-- now a bundle, too: exclude name="org.eclipse.smila.management.jmx.client" / -->
+  </patternset>
+
+  <patternset id='patterns.bundle.smila'>
+    <include name="org.eccenca.smila.*" />
+    <include name="org.eclipse.smila.*" />
+  </patternset>
+
+  <!-- dirsets for bundle.dirs.(all|smila|3rd)[.test] -->
+  <dirset id='bundle.dirs.all' dir='${workspace}'>
+    <patternset refid="patterns.bundle.all" />
+    <patternset refid="patterns.bundle.excludes" />
+  </dirset>
+  <dirset id="bundle.dirs.smila" dir='${workspace}'>
+    <patternset refid="patterns.bundle.smila" />
+    <patternset refid="patterns.bundle.excludes" />
+  </dirset>
+  <dirset id="bundle.dirs.3rd" dir='${workspace}'>
+    <patternset refid="patterns.bundle.all" />
+    <patternset refid="patterns.bundle.excludes" />
+    <exclude name="org.eccenca.smila.*" />
+    <exclude name="org.eclipse.smila.*" />
+  </dirset>
+
+  <restrict id="bundle.dirs.all.test">
+    <dirset refid="bundle.dirs.all" />
+
+    <rsel:name name="*.test" />
+    <rsel:not>
+      <rsel:or>
+        <rsel:name name="org.eclipse.smila.test" />
+        <rsel:name name="net.sf.saxon.test" />
+        <rsel:name name="com.empolis.*" />
+      </rsel:or>
+    </rsel:not>
+
+  </restrict>
+  <restrict id="bundle.dirs.smila.test">
+    <dirset refid="bundle.dirs.smila" />
+    <rsel:name name="*.test" />
+  </restrict>
+  <restrict id="bundle.dirs.3rd.test">
+    <dirset refid="bundle.dirs.3rd" />
+    <rsel:name name="*.test" />
+  </restrict>
+
+
+
+  <!-- here go all tests that should not be executed normally, ie in bammbo, but complied non the less -->
+  <property name='bundle.names.test.exclude' value='' />
+
+
+  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+  <!-- target: bundle.names.init -->
+  <!-- white space delimited list of bundle names (i.e. their dir name)-->
+  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+  <target name="bundle.names.init">
+
+    <M_dirset2list dirset.id="bundle.dirs.all"
+                   targetproperty="bundle.names.all" />
+    <M_dirset2list dirset.id="bundle.dirs.smila"
+                   targetproperty="bundle.names.smila" />
+    <M_dirset2list dirset.id="bundle.dirs.3rd"
+                   targetproperty="bundle.names.3rd" />
+
+    <M_dirset2list dirset.id="bundle.dirs.all.test"
+                   targetproperty="bundle.names.all.test" />
+    <M_dirset2list dirset.id="bundle.dirs.smila.test"
+                   targetproperty="bundle.names.smila.test" />
+    <M_dirset2list dirset.id="bundle.dirs.3rd.test"
+                   targetproperty="bundle.names.3rd.test" />
+
+
+    <property name="bundles-for-test" value="${bundle.names.all.test} " />
+  </target>
+
+  <!-- =================================================================== -->
+  <!-- target: fetch              -->
+  <!-- =================================================================== -->
+  <target name="fetch" depends="bundle.names.init">
+    <mkdir dir="${buildDirectory}" />
+    <mkdir dir="${buildDirectory}/features" />
+    <mkdir dir="${buildDirectory}/plugins" />
+    <mkdir dir="${eclipse.application.dir}" />
+
+    <echo>### copying all features ###</echo>
+    <M_copy.resource.type list='${feature-names}' type='features' />
+    <echo>### copying all plugins ###</echo>
+    <M_copy.resource.type list='${bundle.names.all}' type='plugins' />
+
+    <!-- remove it when download will be -->
+    <copy todir="${buildDirectory}/plugins">
+      <fileset Dir="${workspace}/SMILA.extension/eclipse/plugins" />
+    </copy>
+  </target>
+
+
+
+  <!-- =================================================================== -->
+  <!-- target: init-emma                                                   -->
+  <!-- =================================================================== -->
+  <target name="emma.init">
+    <if>
+      <equals arg1="${EMMA.REPORT}" arg2="true" />
+      <then>
+        <mkdir dir="${emma.dir}" />
+        <emma enabled="true">
+          <instr instrpathref="emma.coverage.classes"
+                 verbosity="info"
+                 metadatafile="${emma.dir}/metadata.emma"
+                 merge="true"
+                 mode="overwrite" />
+        </emma>
+      </then>
+    </if>
+  </target>
+
+  <!-- =================================================================== -->
+  <!-- target: report-emma                                                   -->
+  <!-- =================================================================== -->
+  <target name="report.emma">
+    <if>
+      <equals arg1="${EMMA.REPORT}" arg2="true" />
+      <then>
+        <copy file="${eclipse.test.dir}/coverage.ec"
+              todir="${emma.dir}"
+              failonerror="false" />
+        <emma enabled="true">
+          <report sort="+block,+name,+method,+class"
+                  metrics="method:70,block:80,line:80,class:100">
+
+            <fileset dir="${emma.dir}">
+              <include name="*.emma" />
+              <include name="*.ec" />
+            </fileset>
+            <sourcepath>
+              <dirset dir="${basedir}/..">
+                <include name="**/code/src" />
+              </dirset>
+            </sourcepath>
+            <html outfile="${emma.dir}/coverage.html"
+                  depth="method"
+                  columns="name,class,method,block,line"
+                  sort="+line, +name"
+                  metrics="line:80" />
+            <xml outfile="${emma.dir}/coverage.xml" depth="class" />
+          </report>
+        </emma>
+      </then>
+    </if>
+  </target>
+
+
+  <!-- =================================================================== -->
+  <!-- target: pmd                                                  -->
+  <!-- =================================================================== -->
+  <target name="pmd">
+    <if>
+      <equals arg1="${PMD.REPORT}" arg2="true" />
+      <then>
+        <mkdir dir="${pmd.dir}" />
+        <pmd shortFilenames="true" targetjdk="1.6">
+          <ruleset>unusedcode</ruleset>
+          <ruleset>basic</ruleset>
+          <ruleset>codesize</ruleset>
+          <ruleset>design</ruleset>
+          <formatter type="xml"
+                     toFile="${pmd.dir}/pmd_reports.xml"
+                     linkPrefix="http://pmd.sourceforge.net/xref/" />
+          <formatter type="html"
+                     toFile="${pmd.dir}/pmd_report.html"
+                     linePrefix=".line" />
+
+          <!-- Core bundles -->
+          <fileset refid="plugin-java-files" />
+        </pmd>
+      </then>
+    </if>
+  </target>
+
+
+  <!-- =================================================================== -->
+  <!-- target: checkstyle              -->
+  <!-- =================================================================== -->
+
+  <target name="checkstyle" description="Runs all checkstyle checks">
+    <if>
+      <equals arg1="${CHECKSTYLE.REPORT}" arg2="true" />
+      <then>
+        <echo>Checkstyle Config Path:${checkstyle.config.path}</echo>
+        <fail unless="checkstyle.config.path">${checkstyle.config.path} is not set</fail>
+        <mkdir dir="${checkstyle.dir}" />
+        <checkstyle config="${checkstyle.config.path}/${checkstyle.config.file.prefix}.xml"
+                    failOnViolation="${checkstyle.fail.on.violation}">
+          <!-- Source file list for Checkstyle report-->
+          <!-- Core bundles -->
+          <fileset refid="plugin-java-files" />
+          <formatter type="xml" toFile="${checkstyle.data.file}" />
+        </checkstyle>
+        <xslt in="${checkstyle.data.file}"
+              out="${checkstyle.report.file}"
+              style="${checkstyle.xsl.file}" />
+
+      </then>
+    </if>
+  </target>
+
+
+  <!-- Checkstyle duplicates -->
+  <target name="checkstyle-duplicates"
+          description="Runs duplicates checkstyle check">
+    <if>
+      <equals arg1="${CHECKSTYLE.REPORT}" arg2="true" />
+      <then>
+        <echo>Checkstyle Config Path: ${checkstyle.config.path}</echo>
+        <fail unless="checkstyle.config.path">${checkstyle.config.path} is not set</fail>
+        <mkdir dir="${checkstyle.dir}" />
+        <checkstyle config="${checkstyle.config.path}/${checkstyle.config.file.prefix}_duplicates.xml"
+                    failOnViolation="${checkstyle.fail.on.violation}">
+          <!-- Source file list for Checkstyle report-->
+          <!-- Core bundles -->
+          <fileset refid="plugin-java-files" />
+          <formatter type="xml" toFile="${checkstyle.duplicates.data.file}" />
+        </checkstyle>
+        <xslt in="${checkstyle.duplicates.data.file}"
+              out="${checkstyle.duplicates.report.file}"
+              style="${checkstyle.xsl.file}" />
+      </then>
+    </if>
+  </target>
+
+  <!-- PMD-CPD -->
+  <target name="pmd-cpd" description="Runs pmd-cpd check">
+    <if>
+      <equals arg1="${PMD.REPORT}" arg2="true" />
+      <then>
+        <mkdir dir="${pmd.dir}" />
+        <echo>PMD Config Path: ${pmd.config.path}</echo>
+        <fail unless="pmd.config.path">${pmd.config.path} is not set</fail>
+        <taskdef name="cpd"
+                 classname="net.sourceforge.pmd.cpd.CPDTask"
+                 classpathref="pmd.lib" />
+        <cpd minimumTokenCount="12"
+             format="xml"
+             outputFile="${cpd.data.file}"
+             encoding="UTF-8">
+          <!-- Core bundles -->
+          <fileset refid="plugin-java-files" />
+        </cpd>
+        <xslt in="${cpd.data.file}"
+              style="${cpd.xsl.file}"
+              out="${cpd.report.file}" />
+      </then>
+    </if>
+  </target>
+
+
+  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+  <!-- target: unit tests -->
+  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+  <target name="test.clean" depends="build.test.feature">
+    <delete dir="${eclipse.test.dir}" />
+    <mkdir dir="${eclipse.test.dir}" />
+    <mkdir dir="${eclipse.test.dir}/configuration" />
+    <unzip src="${buildDirectory}/CI.SMILA-incubation/${buildResult}"
+           dest="${eclipse.test.dir}">
+      <!-- Workaround for wrong paths in zip generated on linux -->
+      <mapper>
+        <globmapper from="/libcairo-swt.so"
+                    to="libcairo-swt.so"
+                    casesensitive="no" />
+        <globmapper from="/SMILA" to="SMILA" casesensitive="no" />
+      </mapper>
+    </unzip>
+    <!-- Make files executable on linux -->
+    <chmod file="${eclipse.test.dir}/SMILA" perm="+x" />
+    <chmod file="${eclipse.test.dir}/libcairo-swt.so" perm="+x" />
+    <unzip src="${eclipse.test.zip}" dest="${eclipse.test.dir}" />
+    <unzip src="${buildDirectory}/CI.SMILA-incubation/org.eclipse.smila.test.feature-${buildResult}"
+           dest="${eclipse.test.dir}" />
+    <copy todir="${eclipse.test.dir}/configuration"
+          file="${workspace}/org.eclipse.smila.test/configuration/config.ini"
+          overwrite="true" />
+  </target>
+
+
+  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+  <!-- target: clear configuration -->
+  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+  <target name="test.clean2default">
+
+    <delete dir="${eclipse.test.dir}/configuration" />
+    <mkdir dir="${eclipse.test.dir}/configuration" />
+    <delete dir="${eclipse.test.dir}/workspace" />
+    <mkdir dir="${eclipse.test.dir}/workspace" />
+
+    <copy todir="${eclipse.test.dir}/configuration"
+          file="${workspace}/org.eclipse.smila.test/configuration/config.ini"
+          overwrite="true" />
+  </target>
+
+
+  <!-- =================================================================== -->
+  <!-- target: test -->
+  <!-- =================================================================== -->
+  <target name="test"
+          depends="build, test.clean, emma.init, test.core, report" />
+  <target name="test.core" depends="bundle.names.init">
+    <for param='bundle-under-test' list="${bundles-for-test}" delimiter=" ">
+      <sequential>
+        <echo>
+######################################################################
+#  testing @{bundle-under-test}
+######################################################################
+        </echo>
+        <M_test.bundle.smila bundle.name="@{bundle-under-test}" />
+        <!--
+        -->
+      </sequential>
+    </for>
+
+  </target>
+
+
+  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+  <!-- target: test.report              -->
+  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+  <target name="test.report">
+    <!-- Collect unit test results -->
+    <copy todir="${junit.dir}" failonerror="false">
+      <fileset dir="${eclipse.test.dir}">
+        <include name="*.test.xml" />
+      </fileset>
+    </copy>
+
+    <!-- Create junit report -->
+    <echo>Create JUnit report HTML files</echo>
+    <xslt basedir="${junit.dir}"
+          destdir="${junit.dir}"
+          extension=".html"
+          style="${basedir}/junit.xsl" />
+
+    <echo>Collecting JUnit errors/failures</echo>
+    <delete dir="${reports_errors_txt}" />
+    <xslt basedir="${junit.dir}"
+          includes="*.xml"
+          destdir="${reports_errors_txt}"
+          extension=".txt"
+          style="${basedir}/junit-out.xslt" />
+
+    <!-- output all failed tests to console-->
+    <concat>
+      <fileset dir="${reports_errors_txt}" includes="*.txt" />
+    </concat>
+  </target>
+
+  <!-- =================================================================== -->
+  <!-- target: test.list-->
+  <!-- =================================================================== -->
+  <target name="test.list"
+          depends="bundle.names.init"
+          description="lists all tests to be executed currently, ie the non exluded test bundles in ${eclipse.test.dir}/plugins">
+    <concat>
+      <propertyset>
+        <propertyref name="bundles-for-test" />
+      </propertyset>
+      <filterchain>
+        <replacestring from=" " to="${line.separator}" />
+      </filterchain>
+    </concat>
+  </target>
+  <!-- =================================================================== -->
+  <!-- target: report -->
+  <!-- =================================================================== -->
+  <target name="report"
+          depends="test.report, checkstyle, checkstyle-duplicates, report.emma, pmd, pmd-cpd">
+  </target>
+
+  <!-- =================================================================== -->
+  <!-- target: build-->
+  <!-- =================================================================== -->
+  <target name="build" depends="fetch,build.core">
+  </target>
+
+  <!-- =================================================================== -->
+  <!-- target: "build.core"  -->
+  <!-- =================================================================== -->
+  <target name="build.core" description="Build Eclipse Product">
+    <property name="pde.buildfile"
+              location="${eclipse.home}/plugins/org.eclipse.pde.build_${pdeBuildPluginVersion}/scripts/productBuild/productBuild.xml" />
+    <echo>-buildfile ${pde.buildfile} </echo>
+    <java classname="org.eclipse.equinox.launcher.Main"
+          fork="true"
+          failonerror="true">
+      <arg line="-application org.eclipse.ant.core.antRunner " />
+      <arg line="-buildfile ${pde.buildfile} " />
+      <arg line="-DbuildDirectory=${buildDirectory} " />
+      <arg line="-Declipse.home=${eclipse.home} " />
+      <arg line="-Declipse.running=true " />
+      <classpath>
+        <pathelement location="${eclipse.home}/plugins/org.eclipse.equinox.launcher_${equinoxLauncherPluginVersion}.jar" />
+      </classpath>
+    </java>
+  </target>
+
+  <!-- =================================================================== -->
+  <!-- target: build.test.feature -->
+  <!-- =================================================================== -->
+  <target name="build.test.feature">
+    <property name="pde.test.buildfile"
+              location="${eclipse.home}/plugins/org.eclipse.pde.build_${pdeBuildPluginVersion}/scripts/build.xml" />
+    <echo>-buildfile ${pde.buildfile} </echo>
+    <java classname="org.eclipse.equinox.launcher.Main"
+          fork="true"
+          failonerror="true">
+      <arg line="-application org.eclipse.ant.core.antRunner " />
+      <arg line="-buildfile ${pde.test.buildfile} " />
+      <arg line="-DbuildDirectory=${buildDirectory} " />
+      <arg line="-Declipse.home=${eclipse.home} " />
+      <arg line="-Declipse.running=true " />
+      <arg line="-Dbuilder=${builder}" />
+      <classpath>
+        <pathelement location="${eclipse.home}/plugins/org.eclipse.equinox.launcher_${equinoxLauncherPluginVersion}.jar" />
+      </classpath>
+    </java>
+  </target>
+
+  <!-- =================================================================== -->
+  <!-- target: build.jmxclient-->
+  <!-- =================================================================== -->
+
+  <target name="build-jmxclient">
+    <ant antfile="../org.eclipse.smila.management.jmx.client\build.xml"
+         target="all" />
+  </target>
+
+  <!-- =================================================================== -->
+  <!-- target: final-application-->
+  <!-- =================================================================== -->
+
+  <target name="final-application" depends="build, build-jmxclient">
+    <for param="path">
+      <path>
+        <fileset dir="${buildDirectory}/CI.SMILA-incubation"
+                 includes="${buildId}-*" />
+      </path>
+      <sequential>
+        <basename property="build.filename" file="@{path}" />
+        <M_final-application file="${build.filename}" />
+        <var name="build.filename" unset="true" />
+      </sequential>
+    </for>
+  </target>
+
+  <target name="all"
+          depends="clean,fetch,build,test,build-jmxclient,final-application">
+    <delete dir="${buildDirectory}/${buildLabel}" />
+  </target>
+  <target name="all-without-tests"
+          depends="clean,fetch,build,build-jmxclient,final-application">
+    <delete dir="${buildDirectory}/${buildLabel}" />
+  </target>
+  <target name="clean" description="clean PDE working directory">
+    <delete dir="${buildDirectory}" failonerror="false" />
+    <delete dir="${basedir}/workspace" failonerror="false" />
+  </target>
+
+  <!-- Generates the Javadocs for all SMILA classes. -->
+  <target name="javadoc">
+    <property name="javadoc.title" value="SMILA (incubation) API documentation" />
+    <delete dir="${javadoc.dir}"/>
+    <javadoc destdir="${javadoc.dir}"
+             useexternalfile="yes"
+             windowtitle="${javadoc.title}">
+      <doctitle><![CDATA[${javadoc.title}]]></doctitle>
+      <header><![CDATA[${javadoc.title}]]></header>
+
+      <classpath>
+        <pathelement location="${workspace}/SMILA.extension/eclipse/plugins/javax.persistence_1.99.0.jar" />
+        <pathelement location="${workspace}/javax.xml.bind/jaxb-api.jar" />
+      </classpath>
+
+      <fileset dir="${workspace}" defaultexcludes="yes">
+        <include name="org.eclipse.smila.*/code/src/org/eclipse/smila/**/*.java" />
+        <exclude name="org.eclipse.smila.*.test/**/*" />
+      </fileset>
+    </javadoc>
+  </target>
+</project>

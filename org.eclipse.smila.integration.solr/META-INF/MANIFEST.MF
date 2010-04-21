@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Solr
+Bundle-SymbolicName: org.eclipse.smila.integration.solr
+Bundle-Version: 0.7.0
+Bundle-Vendor: Empolis GmbH
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: org.apache.commons.logging;version="1.1.1",
+ org.apache.xerces.dom,
+ org.apache.xml.serialize,
+ org.eclipse.smila.blackboard;version="0.7.0",
+ org.eclipse.smila.blackboard.path;version="0.7.0",
+ org.eclipse.smila.datamodel.id;version="0.7.0",
+ org.eclipse.smila.datamodel.id.dom;version="0.7.0",
+ org.eclipse.smila.datamodel.id.impl;version="0.7.0",
+ org.eclipse.smila.datamodel.record;version="0.7.0",
+ org.eclipse.smila.datamodel.tools.record.filter;version="0.7.0",
+ org.eclipse.smila.management;version="0.7.0",
+ org.eclipse.smila.processing;version="0.7.0",
+ org.eclipse.smila.processing.configuration;version="0.7.0",
+ org.eclipse.smila.processing.parameters;version="0.7.0"
+SMILA-Pipelets: org.eclipse.smila.integration.solr.SolrPipelet

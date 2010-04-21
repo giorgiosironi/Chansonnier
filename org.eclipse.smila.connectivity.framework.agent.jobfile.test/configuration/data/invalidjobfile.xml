@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<InvalidJobFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../org.eclipse.smila.connectivity.framework.agent.jobfile/schemas/jobfile.xsd">
+</InvalidJobFile>

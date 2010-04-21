@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/***********************************************************************************************************************
+ * Copyright (c) 2008 empolis GmbH and brox IT Solutions GmbH. All rights reserved. This program and the accompanying
+ * materials are made available under the terms of the Eclipse Public License v1.0 which accompanies this distribution,
+ * and is available at http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors: Daniel Stucky (empolis GmbH) - initial creator
+ **********************************************************************************************************************/
+-->
+<component name="SampleSecurityConverter" immediate="true">
+    <implementation class="org.eclipse.smila.security.processing.SampleSecurityConverter" />
+    <service>
+         <provide interface="org.eclipse.smila.processing.ProcessingService"/>
+    </service>
+    <property name="smila.processing.service.name" value="SampleSecurityConverter"/>
+   
+    <reference 
+        name="securityResolver"
+        interface="org.eclipse.smila.security.SecurityResolver" 
+        bind="setSecurityResolver"
+        unbind="unsetSecurityResolver"
+		cardinality="0..1"
+		policy="dynamic" 
+    />
+</component>

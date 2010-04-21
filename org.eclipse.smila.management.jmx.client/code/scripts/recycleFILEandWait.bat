@@ -1,0 +1,1 @@
+run.bat recycleW Recycler1 file

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd" version="1.0">
+  <description>Default binarystorage JPA entity mapping</description>
+  <package>org.eclipse.smila.binarystorage.persistence.jpa</package>
+  <access>FIELD</access>
+  <entity class="BinaryStorageDao" metadata-complete="false">
+    <table name="SMILA_BINARY_STORAGE" />
+
+    <attributes>
+      <id name="_id">
+        <column name="ID" length="1024" />
+      </id>
+      <basic name="_binObject">
+        <column name="BIN_OBJECT" column-definition="BLOB" />
+        <!--        <column name="BIN_OBJECT" />-->
+      </basic>
+    </attributes>
+  </entity>
+
+</entity-mappings>

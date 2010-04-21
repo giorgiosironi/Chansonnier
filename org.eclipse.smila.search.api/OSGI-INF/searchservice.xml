@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+ * Copyright (c) 2008 empolis GmbH and brox IT Solutions GmbH. 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Juergen Schumacher (empolis GmbH) - initial design
+-->
+<component name="SearchService" immediate="true">
+    <implementation class="org.eclipse.smila.search.api.internal.SearchServiceImpl" />
+    <service>
+         <provide interface="org.eclipse.smila.search.api.SearchService"/>
+    </service>
+    <reference 
+        name="processor"
+        interface="org.eclipse.smila.processing.WorkflowProcessor"
+        bind="setProcessor"
+        unbind="unsetProcessor"
+        policy="static" />
+    <reference 
+        name="blackboardFactory"
+        interface="org.eclipse.smila.blackboard.BlackboardFactory"
+        bind="setBlackboardFactory"
+        unbind="unsetBlackboardFactory"
+        policy="static" />
+</component>

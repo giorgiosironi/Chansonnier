@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: ceki
+Build-Jdk: 1.5.0_06
+Bundle-Description: The slf4j API
+Bundle-Version: 1.5.6
+Implementation-Version: 1.5.0
+Implementation-Title: slf4j-api
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: org.slf4j.api
+Bundle-Name: slf4j-api bundle (Incubation)
+Bundle-Vendor: Empolis GmbH and brox IT-Solutions GmbH
+Export-Package: org.slf4j;version="1.5.6",
+ org.slf4j.helpers;version="1.5.6",
+ org.slf4j.spi;version="1.5.6"
+Import-Package: org.slf4j.impl;version="[1.5.6,1.5.6]"
+Bundle-ClassPath: slf4j-api-1.5.6.jar
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

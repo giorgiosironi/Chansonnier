@@ -1,0 +1,32 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: RecordStorage Impl Plug-in (Incubation)
+Bundle-SymbolicName: org.eclipse.smila.recordstorage.impl
+Bundle-Version: 0.7.0
+Bundle-Vendor: empolis GmbH
+Import-Package: javax.persistence;version="1.99.0",
+ javax.persistence.spi;version="1.99.0",
+ org.apache.commons.io,
+ org.apache.commons.logging,
+ org.apache.derby.jdbc;version="10.4.1.3",
+ org.eclipse.persistence.annotations,
+ org.eclipse.persistence.config,
+ org.eclipse.persistence.expressions,
+ org.eclipse.persistence.internal.expressions,
+ org.eclipse.persistence.jpa,
+ org.eclipse.persistence.queries,
+ org.eclipse.persistence.sessions,
+ org.eclipse.smila.datamodel.id;version="0.7.0",
+ org.eclipse.smila.datamodel.id.impl;version="0.7.0",
+ org.eclipse.smila.datamodel.record;version="0.7.0",
+ org.eclipse.smila.datamodel.record.impl;version="0.7.0",
+ org.eclipse.smila.recordstorage;version="0.7.0",
+ org.eclipse.smila.utils.collections,
+ org.eclipse.smila.utils.config;version="0.7.0",
+ org.eclipse.smila.utils.workspace;version="0.7.0",
+ org.osgi.framework;version="1.4.0",
+ org.osgi.service.component;version="1.0.0"
+Service-Component: OSGI-INF/recordstorage.xml
+JPA-PersistenceUnits: SmilaRecord
+Export-Package: org.eclipse.smila.recordstorage.util;version="0.7.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

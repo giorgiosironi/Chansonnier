@@ -1,0 +1,33 @@
+﻿#footer {
+ 	background:transparent url('../../images/Smila/footer.png') no-repeat;
+ 	padding-top:20px;
+	clear: left;
+	width: 100%;
+	margin-bottom:10px;
+}
+
+#footer *{
+	color:#FFF;
+	text-decoration:none;
+}
+
+#footer ul {	
+	font-size:11px;
+	padding-left:20px;
+	float:left;	
+}
+
+#footer ul li {
+	display:inline;	
+	padding-right:15px;
+	
+}
+
+#copyright {
+	padding-right:20px;
+	clear:none;
+	float:right;
+	color:#222;
+	font-size:12px;
+	font-weight:bold;
+}

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- 
+    * Copyright (c) 2008, 2010 Empolis GmbH and brox IT Solutions GmbH. 
+	* All rights reserved. This program and the accompanying materials
+	* are made available under the terms of the Eclipse Public License v1.0
+	* which accompanies this distribution, and is available at
+	* http://www.eclipse.org/legal/epl-v10.html
+	*
+	* Contributors:
+	*    Juergen Schumacher (empolis GmbH) - initial design
+	*    Igor Novakovic (Empolis GmbH) - added the invocation of SolrPipelet
+-->
+<process name="SearchPipeline" targetNamespace="http://www.eclipse.org/smila/processor"
+	xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:proc="http://www.eclipse.org/smila/processor" xmlns:rec="http://www.eclipse.org/smila/record">
+
+	<import location="processor.wsdl" namespace="http://www.eclipse.org/smila/processor"
+		importType="http://schemas.xmlsoap.org/wsdl/" />
+
+	<partnerLinks>
+		<partnerLink name="Pipeline" partnerLinkType="proc:SearchProcessorPartnerLinkType" myRole="service" />
+	</partnerLinks>
+
+	<extensions>
+		<extension namespace="http://www.eclipse.org/smila/processor" mustUnderstand="no" />
+	</extensions>
+
+	<variables>
+		<variable name="request" messageType="proc:SearchProcessorMessage" />
+	</variables>
+
+	<sequence>
+		<receive name="start" partnerLink="Pipeline" portType="proc:SearchProcessorPortType" operation="process"
+			variable="request" createInstance="yes" />
+
+				<extensionActivity name="invokeSolrPipelet">
+					<proc:invokePipelet>
+						<proc:pipelet class="org.eclipse.smila.integration.solr.SolrPipelet" />
+						<proc:variables input="request" output="request" />
+						<proc:PipeletConfiguration>
+							<proc:Property name="shards">
+								<proc:Value>localhost:8983/solr</proc:Value>
+							    <!-- List here all other nodes that are part of the index cluster -->
+								<!-- proc:Value>the_name_of_the_node</proc:Value -->
+							</proc:Property>
+							<proc:Property name="highlight" type="java.lang.Boolean">
+								<proc:Value>true</proc:Value>
+							</proc:Property>
+							<proc:Property name="highlight.params">
+								<proc:Value>hl.fl=Content</proc:Value>
+								<proc:Value>hl.snippets=3</proc:Value>
+								<proc:Value>hl.simple.pre=&lt;b&gt;</proc:Value>
+								<proc:Value>hl.simple.post=&lt;/b&gt;</proc:Value>
+								<proc:Value>hl.fragsize=300</proc:Value>
+								<proc:Value>hl.mergeContiguous=false</proc:Value>
+							</proc:Property>
+						</proc:PipeletConfiguration>       								
+					</proc:invokePipelet>
+				</extensionActivity>
+
+			<reply name="end" partnerLink="Pipeline" portType="proc:SearchProcessorPortType" operation="process" variable="request" />
+		<exit />
+	</sequence>
+</process>

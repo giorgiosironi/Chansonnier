@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XML Spy v4.4 U (http://www.xmlspy.com) by August Georg Schmidt (BROX IT-Solutions GmbH) -->
+<!-- edited with XMLSPY v5 rel. 3 U (http://www.xmlspy.com) by Georg Schmidt (BROX IT-Solutions GmbH) -->
+<xs:schema xmlns:nfp="http://www.anyfinder.de/Search/NumberField" xmlns:dfp="http://www.anyfinder.de/Search/DateField" xmlns:tfp="http://www.anyfinder.de/Search/TextField" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.anyfinder.de/Search" xmlns:ps="http://www.brox.de/ParameterSet" xmlns:po="http://www.anyfinder.de/Search/ParameterObjects" targetNamespace="http://www.anyfinder.de/Search" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.anyfinder.de/Search/TextField" schemaLocation="configuration/org.eclipse.smila.lucene/xml/AnyFinderSearchTextFieldParameter.xsd"/>
+	<xs:import namespace="http://www.anyfinder.de/Search/DateField" schemaLocation="configuration/org.eclipse.smila.lucene/xml/AnyFinderSearchDateFieldParameter.xsd"/>
+	<xs:import namespace="http://www.anyfinder.de/Search/NumberField" schemaLocation="configuration/org.eclipse.smila.lucene/xml/AnyFinderSearchNumberFieldParameter.xsd"/>
+	<xs:import namespace="http://www.brox.de/ParameterSet" schemaLocation="configuration/org.eclipse.smila.lucene/xml/ParameterSet.xsd"/>
+	<xs:import namespace="http://www.anyfinder.de/Search/ParameterObjects" schemaLocation="configuration/org.eclipse.smila.lucene/xml/SearchParameterObjects.xsd"/>
+	<xs:element name="AnyFinderSearch">
+		<xs:annotation>
+			<xs:documentation>Comment describing your root element</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Query" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Field" type="FieldType" maxOccurs="unbounded"/>
+						</xs:sequence>
+						<xs:attribute name="MaxHits" type="xs:nonNegativeInteger" use="required"/>
+						<xs:attribute name="IndexName" type="xs:string" use="required"/>
+						<xs:attribute name="MinSimilarity" use="optional" default="0">
+							<xs:simpleType>
+								<xs:restriction base="xs:nonNegativeInteger">
+									<xs:minInclusive value="0"/>
+									<xs:maxInclusive value="250"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="ShowHitDistribution" type="xs:boolean" use="optional" default="true"/>
+						<xs:attribute name="TemplateSelectorName" type="xs:string" use="optional"/>
+						<xs:attribute name="StartHits" type="xs:nonNegativeInteger" use="optional"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="FTText">
+		<xs:complexContent>
+			<xs:extension base="FieldType">
+				<xs:sequence>
+					<xs:element ref="tfp:Parameter" minOccurs="0"/>
+				</xs:sequence>
+				<xs:attribute name="Text" type="xs:string" use="required"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="FieldType" abstract="true">
+		<xs:sequence>
+			<xs:element ref="po:NodeTransformer" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="FieldNo" type="xs:nonNegativeInteger" use="required"/>
+		<xs:attribute name="Weight" type="xs:nonNegativeInteger" use="optional"/>
+		<xs:attribute name="FieldTemplate" type="xs:string" use="optional"/>
+		<xs:attribute name="ParameterDescriptor" type="xs:string" use="optional"/>
+		<xs:attribute name="Constraint" use="optional">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="optional"/>
+					<xs:enumeration value="required"/>
+					<xs:enumeration value=""/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="FTNumber">
+		<xs:complexContent>
+			<xs:extension base="FieldType">
+				<xs:sequence>
+					<xs:element ref="nfp:Parameter" minOccurs="0"/>
+				</xs:sequence>
+				<xs:attribute name="Minimum" type="xs:nonNegativeInteger" use="required"/>
+				<xs:attribute name="Maximum" type="xs:nonNegativeInteger" use="required"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="FTDate">
+		<xs:complexContent>
+			<xs:extension base="FieldType">
+				<xs:sequence>
+					<xs:element ref="dfp:Parameter" minOccurs="0"/>
+				</xs:sequence>
+				<xs:attribute name="Minimum" type="xs:date" use="required"/>
+				<xs:attribute name="Maximum" type="xs:date" use="required"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

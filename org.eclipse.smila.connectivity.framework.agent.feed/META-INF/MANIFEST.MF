@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Feed Agent Plug-in
+Bundle-SymbolicName: org.eclipse.smila.connectivity.framework.agent.feed;singleton:=true
+Bundle-Version: 0.7.0
+Bundle-Vendor: empolis GmbH
+Import-Package: com.sun.syndication.feed.synd;version="1.0.0",
+ com.sun.syndication.fetcher,
+ com.sun.syndication.fetcher.impl,
+ com.sun.syndication.io;version="1.0.0",
+ org.apache.commons.logging;version="1.0.4",
+ org.eclipse.smila.connectivity;version="0.7.0",
+ org.eclipse.smila.connectivity.framework;version="0.7.0",
+ org.eclipse.smila.connectivity.framework.schema;version="0.7.0",
+ org.eclipse.smila.connectivity.framework.schema.config;version="0.7.0",
+ org.eclipse.smila.connectivity.framework.schema.config.interfaces;version="0.7.0",
+ org.eclipse.smila.connectivity.framework.schema.tools;version="0.7.0",
+ org.eclipse.smila.connectivity.framework.util;version="0.7.0",
+ org.eclipse.smila.datamodel.id;version="0.7.0",
+ org.eclipse.smila.datamodel.record;version="0.7.0",
+ org.eclipse.smila.datamodel.tools;version="0.7.0"
+Service-Component: OSGI-INF/feedagent.xml
+Export-Package: org.eclipse.smila.connectivity.framework.agent.feed;version="0.7.0",
+ org.eclipse.smila.connectivity.framework.agent.feed.messages;version="0.7.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

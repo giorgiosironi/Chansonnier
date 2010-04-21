@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JobFile>
+    <Add>
+    </Add>
+
+    <Delete>
+      <Id version="1.0" xmlns="http://www.eclipse.org/smila/id">
+        <Source>testjobfile</Source>
+        <Key name="Path">c:\data\XML\0815.xml</Key>
+      </Id>
+      <Id version="1.0" xmlns="http://www.eclipse.org/smila/id">
+        <Source>testjobfile</Source>
+        <Key name="Path">c:\data\XML\4711.xml</Key>
+      </Id>
+    </Delete>
+</JobFile>

@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: DeltaIndexing JPA Impl Plug-in (Incubation)
+Bundle-SymbolicName: org.eclipse.smila.connectivity.deltaindexing.jpa.impl
+Bundle-Version: 0.7.0
+Bundle-Vendor: empolis GmbH
+Service-Component: OSGI-INF/delta_indexing_manager.xml, OSGI-INF/delta_indexing_manager_agent.xml
+Import-Package: javax.persistence;version="1.99.0",
+ org.apache.commons.io;version="1.4.0",
+ org.apache.commons.logging;version="1.1.0",
+ org.apache.derby.jdbc;version="10.4.1.3",
+ org.eclipse.persistence.annotations,
+ org.eclipse.persistence.config,
+ org.eclipse.persistence.jpa,
+ org.eclipse.smila.connectivity.deltaindexing;version="0.7.0",
+ org.eclipse.smila.datamodel.id;version="0.7.0",
+ org.eclipse.smila.datamodel.id.impl;version="0.7.0",
+ org.eclipse.smila.management;version="0.7.0",
+ org.eclipse.smila.utils.config;version="0.7.0",
+ org.eclipse.smila.utils.workspace;version="0.7.0",
+ org.osgi.framework;version="1.4.0",
+ org.osgi.service.component;version="1.0.0"
+JPA-PersistenceUnits: DeltaIndexing
+Export-Package: org.eclipse.smila.connectivity.deltaindexing.jpa.impl;version="0.7.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

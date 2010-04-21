@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SesameConfiguration default="native" xmlns="http://www.eclipse.org/smila/ontology">
+	<RepositoryConfig name="memory">
+		<MemoryStore persist="true" syncDelay="1000" />
+		<Stackable classname="org.openrdf.sail.inferencer.fc.ForwardChainingRDFSInferencer" />
+	</RepositoryConfig>
+	<RepositoryConfig name="native">
+		<NativeStore forceSync="true" indexes="spoc,posc" />
+	</RepositoryConfig>
+	<RepositoryConfig name="remote">
+		<HttpStore repositoryId="repository">
+			<Url>http://localhost:8080/sesame</Url>
+		</HttpStore>
+	</RepositoryConfig>
+	<RepositoryConfig name="database">
+		<RdbmsStore driver="org.postgresql.Driver" maxTripleTables="1" indexed="true" sequenced="true">
+			<Url>jdbc:postgresql://localhost/sesame</Url>
+			<User>sesame</User>
+			<Password>sesame</Password>
+		</RdbmsStore>
+	</RepositoryConfig>
+</SesameConfiguration>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://www.anyfinder.de/RapidDeployer/AdvancedSearchTemplateFields" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:po="http://www.anyfinder.de/Search/ParameterObjects" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.anyfinder.de/RapidDeployer/AdvancedSearchTemplateFields">
+	<xs:element name="AdvancedSearchTemplateFields">
+		<xs:annotation>
+			<xs:documentation>Normalize advanced search for rapid deployer</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="TemplateField" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:attribute name="FieldNo" type="xs:nonNegativeInteger" use="required"/>
+						<xs:attribute name="SourceFieldNo" type="xs:nonNegativeInteger" use="required"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="IndexName" type="xs:normalizedString" use="required"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

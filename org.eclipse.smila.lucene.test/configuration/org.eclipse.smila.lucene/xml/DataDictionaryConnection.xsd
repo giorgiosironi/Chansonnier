@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema targetNamespace="http://www.anyfinder.de/DataDictionary/Connection" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.anyfinder.de/DataDictionary/Connection" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="Connection">
+		<xs:annotation>
+			<xs:documentation>An connection object describes th connection of an  AnyFinder index to the associated retrieval system</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="MaxConnections" use="optional" default="1">
+				<xs:simpleType>
+					<xs:restriction base="xs:positiveInteger">
+						<xs:minInclusive value="1" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

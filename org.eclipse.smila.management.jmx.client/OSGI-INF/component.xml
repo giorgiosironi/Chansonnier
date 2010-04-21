@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="org.eclipse.smila.management.jmx.commandprovider">
+   <implementation class="org.eclipse.smila.management.jmx.client.osgi.SMILACommandProvider"/>
+   <service>
+      <provide interface="org.eclipse.osgi.framework.console.CommandProvider"/>
+   </service>
+</component>

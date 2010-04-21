@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Commons Logging (Incubation)
+Bundle-SymbolicName: org.apache.commons.logging
+Bundle-Version: 1.1.1
+Bundle-Vendor: Empolis GmbH and brox IT-Solutions GmbH
+Export-Package: org.apache.commons.logging;version="1.1.1"
+Bundle-ClassPath: lib/commons-logging-1.1.1.jar
+Import-Package: org.apache.log4j;version="1.2.0";resolution:=optional
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+

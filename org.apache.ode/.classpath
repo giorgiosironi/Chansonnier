@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
+	<classpathentry kind="src" path="code/src"/>
+	<classpathentry exported="true" kind="lib" path="lib/geronimo-connector-2.0.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/geronimo-transaction-2.0.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/tranql-connector-1.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ode-axis2-2.0-beta2.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ode-bpel-api-2.0-beta2.jar" sourcepath="D:/Works/Java/ODE/apache-ode-sources-2.0-beta2/bpel-api/src/main/java"/>
+	<classpathentry exported="true" kind="lib" path="lib/ode-bpel-compiler-2.0-beta2.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ode-bpel-dao-2.0-beta2.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ode-bpel-ql-2.0-beta2.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ode-bpel-schemas-2.0-beta2.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ode-bpel-store-2.0-beta2.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ode-dao-jpa-2.0-beta2.jar" sourcepath="D:/Works/Java/ODE/apache-ode-sources-2.0-beta2/dao-jpa/src/main/java"/>
+	<classpathentry exported="true" kind="lib" path="lib/ode-engine-2.0-beta2.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ode-il-common-2.0-beta2.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ode-jacob-2.0-beta2.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ode-runtimes-2.0-beta2.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ode-scheduler-simple-2.0-beta2.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ode-utils-2.0-beta2.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/javax.persistence_1.0.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/openjpa-1.1.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/serp-1.13.1.jar"/>
+	<classpathentry kind="output" path="code/bin"/>
+</classpath>

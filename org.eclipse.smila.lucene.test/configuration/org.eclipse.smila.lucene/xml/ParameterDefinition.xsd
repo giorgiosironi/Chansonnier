@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://www.brox.de/ParameterDefinition" xmlns="http://www.brox.de/ParameterDefinition" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="ParameterDefinition">
+		<xs:annotation>
+			<xs:documentation>Definition which parameters are used by a class</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Parameter" type="Parameter" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+		<xs:unique name="ParameterDef-Name-Unique">
+			<xs:selector xpath="Parameter"/>
+			<xs:field xpath="@Name"/>
+		</xs:unique>
+	</xs:element>
+	<xs:complexType name="Parameter" abstract="true">
+		<xs:sequence>
+			<xs:element name="Description" type="xs:string"/>
+			<xs:element name="Default" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="Name" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="1"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="Constraint" use="optional" default="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="optional"/>
+					<xs:enumeration value="required"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="Float">
+		<xs:annotation>
+			<xs:documentation>Float Parameter</xs:documentation>
+			<xs:documentation>Float Parameter</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:restriction base="Parameter">
+				<xs:sequence>
+					<xs:element name="Description" type="xs:string"/>
+					<xs:element name="Default" type="xs:float" minOccurs="0"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="FloatList">
+		<xs:annotation>
+			<xs:documentation>Float List Parameter</xs:documentation>
+			<xs:documentation>Float List Parameter</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:restriction base="Parameter">
+				<xs:sequence>
+					<xs:element name="Description" type="xs:string"/>
+					<xs:element name="Default" type="xs:float" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Date">
+		<xs:annotation>
+			<xs:documentation>Date Parameter</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:restriction base="Parameter">
+				<xs:sequence>
+					<xs:element name="Description" type="xs:string"/>
+					<xs:element name="Default" type="xs:date" minOccurs="0"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="DateList">
+		<xs:annotation>
+			<xs:documentation>Date List Parameter</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:restriction base="Parameter">
+				<xs:sequence>
+					<xs:element name="Description" type="xs:string"/>
+					<xs:element name="Default" type="xs:date" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Boolean">
+		<xs:annotation>
+			<xs:documentation>Boolean Parameter</xs:documentation>
+			<xs:documentation>Boolean Parameter</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:restriction base="Parameter">
+				<xs:sequence>
+					<xs:element name="Description" type="xs:string"/>
+					<xs:element name="Default" type="xs:boolean" minOccurs="0"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="String">
+		<xs:annotation>
+			<xs:documentation>String Parameter</xs:documentation>
+			<xs:documentation>String Parameter</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:restriction base="Parameter">
+				<xs:sequence>
+					<xs:element name="Description" type="xs:string"/>
+					<xs:element name="Default" type="xs:string" minOccurs="0"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="StringList">
+		<xs:annotation>
+			<xs:documentation>String List Parameter</xs:documentation>
+			<xs:documentation>String List Parameter</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:restriction base="Parameter">
+				<xs:sequence>
+					<xs:element name="Description" type="xs:string"/>
+					<xs:element name="Default" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Integer">
+		<xs:annotation>
+			<xs:documentation>Integer Parameter</xs:documentation>
+			<xs:documentation>Integer Parameter</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:restriction base="Parameter">
+				<xs:sequence>
+					<xs:element name="Description" type="xs:string"/>
+					<xs:element name="Default" type="xs:int" minOccurs="0"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="IntegerList">
+		<xs:annotation>
+			<xs:documentation>Integer List Parameter</xs:documentation>
+			<xs:documentation>Integer List Parameter</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:restriction base="Parameter">
+				<xs:sequence>
+					<xs:element name="Description" type="xs:string"/>
+					<xs:element name="Default" type="xs:int" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="EnumerationHelper" abstract="true">
+		<xs:complexContent>
+			<xs:restriction base="Parameter">
+				<xs:sequence>
+					<xs:element name="Description" type="xs:string"/>
+					<xs:element name="Default" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Enumeration">
+		<xs:annotation>
+			<xs:documentation>Enumeration Parameter</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="EnumerationHelper">
+				<xs:sequence>
+					<xs:element name="Value" type="xs:string" maxOccurs="unbounded"/>
+					<xs:element name="AllowMultiple" type="xs:boolean" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

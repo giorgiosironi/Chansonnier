@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/***********************************************************************************************************************
+ * Copyright (c) 2008 empolis GmbH and brox IT Solutions GmbH. All rights reserved. This program and the accompanying
+ * materials are made available under the terms of the Eclipse Public License v1.0 which accompanies this distribution,
+ * and is available at http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors: Ivan Churkin (brox IT Solutions GmbH) - initial creator
+ **********************************************************************************************************************/
+-->
+<xs:schema
+  targetNamespace="http://www.eclipse.org/smila/management/jmx/client"
+  elementFormDefault="qualified"
+  attributeFormDefault="unqualified"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns="http://www.eclipse.org/smila/management/jmx/client"
+>
+
+  <xs:complexType name="ConnectionConfigType">
+    <xs:attribute name="id" type="xs:string" use="required"/>
+    <xs:attribute name="host" type="xs:string" use="optional" default="localhost"/>
+    <xs:attribute name="port" type="xs:int" use="optional" default="9004"/>
+  </xs:complexType>
+  
+  <xs:complexType name="ItemType">
+    <xs:attribute name="echo" type="xs:string" use="required"/>
+  </xs:complexType>
+  
+  <xs:complexType name="PropertyType">
+    <xs:complexContent>
+      <xs:extension base="ItemType">
+        <xs:attribute name="domain" type="xs:string" use="optional" default="SMILA"/>
+        <xs:attribute name="key" type="xs:string" use="required"/>
+        <xs:attribute name="name" type="xs:string" use="required"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <xs:complexType name="AttributeType">
+    <xs:complexContent>
+      <xs:extension base="PropertyType"/>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <xs:complexType name="ParameterType">
+    <xs:complexContent>
+      <xs:extension base="ItemType">
+        <xs:attribute name="class" type="xs:string" use="optional" default="java.lang.String"/>
+        <xs:attribute name="argument" type="xs:int" use="optional"/>
+        <xs:attribute name="value" type="xs:string" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <xs:complexType name="ConstantType">
+    <xs:complexContent>
+      <xs:extension base="ParameterType"/>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <xs:complexType name="OperationType">
+    <xs:complexContent>
+      <xs:extension base="PropertyType">
+        <xs:sequence>
+          <xs:element name="parameter" type="ParameterType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="voidType" type="xs:boolean" use="optional" default="false"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <xs:complexType name="RegexpType">
+    <xs:complexContent>
+      <xs:extension base="ItemType">
+        <xs:attribute name="pattern" type="xs:string" use="required"/>
+        <xs:attribute name="group" type="xs:int" use="required"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="BooleanOpType" abstract="true">
+  </xs:complexType>
+  
+  <xs:complexType name="UnaryOpType" abstract="true">
+    <xs:complexContent>
+      <xs:extension base="BooleanOpType">
+        <xs:sequence>
+          <xs:element name="cmd" type="CmdConfigType"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <xs:complexType name="BinaryOpType" abstract="true">
+    <xs:complexContent>
+      <xs:extension base="BooleanOpType">
+        <xs:sequence minOccurs="2" maxOccurs="2">
+          <xs:choice>
+            <xs:element name="cmd" type="CmdConfigType"/>
+            <xs:element name="const" type="ConstantType"/>
+          </xs:choice>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <xs:complexType name="MultiOpType" abstract="true">
+    <xs:complexContent>
+      <xs:extension base="BooleanOpType">
+        <xs:sequence minOccurs="2" maxOccurs="unbounded">
+          <xs:choice>
+            <xs:element name="cmd" type="CmdConfigType"/>
+            <xs:element name="const" type="ConstantType"/>
+          </xs:choice>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <xs:complexType name="EqualsOpType">
+    <xs:complexContent>
+      <xs:extension base="BinaryOpType"/>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <xs:complexType name="InOpType">
+    <xs:complexContent>
+      <xs:extension base="MultiOpType"/>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  
+  <xs:complexType name="WaitType">
+    <xs:complexContent>
+      <xs:extension base="ItemType">
+        <xs:sequence>
+          <xs:choice>
+          <!-- TODO: extend with other opeartions required-->
+            <xs:element name="equals" type="EqualsOpType"/>
+            <xs:element name="in" type="InOpType"/>
+          </xs:choice>
+          <xs:element name="cmd" type="CmdConfigType" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+        <xs:attribute name="pause" type="xs:int" use="optional" default="5000"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <xs:complexType name="CustomType">
+    <!-- TODO -->
+    <xs:complexContent>
+      <xs:extension base="ItemType">
+        <xs:attribute name="class" type="xs:string" use="required"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <xs:complexType name="CmdConfigType">
+    <xs:complexContent>
+      <xs:extension base="ItemType">
+        <xs:sequence>
+          <xs:choice  minOccurs="1" maxOccurs="unbounded">
+            <xs:element name="attribute"  type="AttributeType"/>
+            <xs:element name="operation"  type="OperationType"/>
+            <xs:element name="regexp"  type="RegexpType"/>
+            <xs:element name="wait"  type="WaitType"/>
+            <xs:element name="custom"  type="CustomType"/>
+          </xs:choice>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:string" use="required"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <xs:complexType name="SampleConfigType">
+    <xs:complexContent>
+      <xs:extension base="ItemType">
+        <xs:attribute name="value" type="xs:string" use="required"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <xs:complexType name="JmxClientConfigType">
+    <xs:sequence>
+      <xs:element name="connection"  type="ConnectionConfigType" minOccurs="1" maxOccurs="unbounded"/>
+      <xs:element name="cmd"  type="CmdConfigType" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="sample"  type="SampleConfigType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:element name="jmxclient" type="JmxClientConfigType"/>
+  
+</xs:schema>

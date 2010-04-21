@@ -1,0 +1,32 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: ActiveMQ Core Plug-in (Incubation)
+Bundle-SymbolicName: org.apache.activemq.core
+Bundle-Version: 5.2.0
+Bundle-Vendor: Empolis GmbH and brox IT-Solutions GmbH
+Import-Package: javax.jms;version="1.1.0",
+ org.apache.commons.logging;version="1.1.1",
+ org.apache.naming.java;version="6.0.18";resolution:=optional
+Require-Bundle: org.apache.commons.beanutils;bundle-version="1.7.0",
+ org.apache.commons.collections;bundle-version="3.2.0",
+ org.apache.commons.httpclient;bundle-version="2.0.1"
+Bundle-ClassPath: lib/activemq-camel-5.2.0.jar,
+ lib/activemq-core-5.2.0.jar,
+ lib/activemq-jaas-5.2.0.jar,
+ lib/camel-core-1.4.0.jar,
+ lib/camel-jetty-1.4.0.jar,
+ lib/camel-jms-1.4.0.jar,
+ lib/camel-spring-1.4.0.jar,
+ lib/geronimo-j2ee-management_1.0_spec-1.0.jar,
+ lib/geronimo-jta_1.0.1B_spec-1.0.1.jar
+Export-Package: org.apache.activemq;version="5.2.0",
+ org.apache.activemq.broker;version="5.2.0",
+ org.apache.activemq.broker.jmx;version="5.2.0",
+ org.apache.activemq.broker.region;version="5.2.0",
+ org.apache.activemq.command;version="5.2.0",
+ org.apache.activemq.filter;version="5.2.0",
+ org.apache.activemq.jndi;version="5.2.0",
+ org.apache.activemq.management;version="5.2.0",
+ org.apache.activemq.selector;version="5.2.0"
+Eclipse-BuddyPolicy: registered
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

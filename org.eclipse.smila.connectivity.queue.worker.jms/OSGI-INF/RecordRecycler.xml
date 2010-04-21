@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/***********************************************************************************************************************
+ * Copyright (c) 2008 empolis GmbH and brox IT Solutions GmbH. All rights reserved. This program and the accompanying
+ * materials are made available under the terms of the Eclipse Public License v1.0 which accompanies this distribution,
+ * and is available at http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors: Ivan Churkin (brox IT Solutions GmbH) - initial creator
+ **********************************************************************************************************************/
+-->
+<component name="RecordRecycler" immediate="true">
+  <implementation class="org.eclipse.smila.connectivity.queue.worker.internal.recycler.RecordRecyclerImpl" />
+  <service>
+    <provide interface="org.eclipse.smila.connectivity.queue.worker.RecordRecycler"/>
+  </service>
+ <reference
+      name="blackboardFactory"
+      interface="org.eclipse.smila.blackboard.BlackboardFactory"
+      bind="setBlackboardFactory"
+      unbind="unsetBlackboardFactory"
+      policy="static" />
+  <reference
+      name="recordstorage"
+      interface="org.eclipse.smila.recordstorage.RecordStorage"
+      bind="setRecordStorage"
+      unbind="unsetRecordStorage"
+      cardinality="1..1"
+      policy="static" />
+  <reference
+      name="workflow"
+      interface="org.eclipse.smila.processing.WorkflowProcessor"
+      bind="setWorkflowProcessor"
+      unbind="unsetWorkflowProcessor"
+      cardinality="1..1"
+      policy="static" />
+  <reference
+      name="brokerconnection"
+      interface="org.eclipse.smila.connectivity.queue.worker.jms.BrokerConnectionService"
+      bind="setBrokerConnections"
+      unbind="unsetBrokerConnections"
+      cardinality="1..1"
+      policy="static" />
+</component>

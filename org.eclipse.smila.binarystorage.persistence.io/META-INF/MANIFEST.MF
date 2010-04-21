@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Java-IO based implementation for BinaryStorage persistence (Incubation)
+Bundle-SymbolicName: org.eclipse.smila.binarystorage.persistence.io
+Bundle-Version: 0.7.0
+Bundle-Vendor: Empolis GmbH and brox IT-Solutions GmbH
+Service-Component: OSGI-INF/BinaryStorageService.xml
+Import-Package: org.apache.commons.io;version="1.4.0",
+ org.apache.commons.lang;version="2.4.0",
+ org.apache.commons.logging;version="1.1.1",
+ org.eclipse.smila.binarystorage;version="0.7.0",
+ org.eclipse.smila.binarystorage.config;version="0.7.0",
+ org.eclipse.smila.binarystorage.persistence;version="0.7.0"
+Eclipse-RegisterBuddy: org.eclipse.smila.binarystorage.impl
+Export-Package: org.eclipse.smila.binarystorage.persistence.io;version="0.7.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

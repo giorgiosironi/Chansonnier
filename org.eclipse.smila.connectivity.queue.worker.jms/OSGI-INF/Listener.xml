@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/***********************************************************************************************************************
+ * Copyright (c) 2008 empolis GmbH and brox IT Solutions GmbH. All rights reserved. This program and the accompanying
+ * materials are made available under the terms of the Eclipse Public License v1.0 which accompanies this distribution,
+ * and is available at http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors: Ivan Churkin (brox IT Solutions GmbH) - initial creator
+ **********************************************************************************************************************/
+-->
+<component name="Listener" immediate="true">
+  <implementation class="org.eclipse.smila.connectivity.queue.worker.internal.listener.ListenerImpl" />
+  <service>
+    <provide interface="org.eclipse.smila.connectivity.queue.worker.Listener"/>
+  </service>
+  <reference
+      name="blackboardFactory"
+      interface="org.eclipse.smila.blackboard.BlackboardFactory"
+      bind="setBlackboardFactory"
+      unbind="unsetBlackboardFactory"
+      policy="static" />
+  <reference
+      name="workflow"
+      interface="org.eclipse.smila.processing.WorkflowProcessor"
+      bind="setWorkflowProcessor"
+      unbind="unsetWorkflowProcessor"
+      policy="static" />
+  <reference
+      name="brokerconnection"
+      interface="org.eclipse.smila.connectivity.queue.worker.jms.BrokerConnectionService"
+      bind="setBrokerConnections"
+      unbind="unsetBrokerConnections"
+      policy="static" />
+</component>

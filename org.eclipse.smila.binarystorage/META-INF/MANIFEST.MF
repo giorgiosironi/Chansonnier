@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Binary Storage Api (Incubation)
+Bundle-SymbolicName: org.eclipse.smila.binarystorage
+Bundle-Version: 0.7.0
+Bundle-Vendor: Empolis GmbH and brox IT-Solutions GmbH
+Service-Component: OSGI-INF/BinaryStorageService.xml
+Export-Package: org.eclipse.smila.binarystorage;version="0.7.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

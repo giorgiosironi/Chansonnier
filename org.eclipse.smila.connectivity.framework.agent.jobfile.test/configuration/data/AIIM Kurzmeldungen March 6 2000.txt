@@ -1,0 +1,308 @@
+Von: Schuh, Manfred
+Gesendet: Montag, 6. März 2000 17:20
+An: DMS Marketwatch
+Betreff: WG: DOC.1 Vol. 6, Issue 3, March 6, 2000
+
+
+
+-----Ursprüngliche Nachricht-----
+Von: AIIM International [mailto:doc1dist@aiim.org]
+Gesendet: Montag, 6. März 2000 16:56
+An: AIIMMembers@aiim.org
+Betreff: DOC.1 Vol. 6, Issue 3, March 6, 2000
+
+
+DOC.1
+Vol. 6, Issue 3, March 6, 2000
+Your Eye on the
+Document Management Industry(r)
+
+AIIM 2000 will be held from April 9-12 at the Javits Convention Center in 
+New York. For more information or to register, go to http://www.aiim2000.com
+
+________________________________
+Forms Processing
+________________________________
+
+BancTec (Dallas, TX) launched its PayCourier Wholesale, a wholesale lockbox 
+processing product and its latest addition to the PayCourier line of 
+payment processing applications. The product is designed to address 
+business-to-business invoice data volume by capturing and reading data from 
+invoices and other unstructured payment documents. After transactions are 
+initiated, PayCourier using the Plexus FloWare workflow engine to 
+distribute work automatically. The product is designed to let lockbox 
+clients download receivables files directly to the bank for automated 
+invoice matching. http://www.banctec.com
+
+________________________________
+Internet/intranet
+________________________________
+
+Cypress Corp. (Rochester Hills, MI) introduced its Cypress.Web, a 
+customizable Web interface and e-business portal. Cypress.Web is a portal 
+into Cypress, the company's Information Retrieval Architecture designed to 
+allow enterprises to use existing applications and environments to deliver 
+information to employees, partners and customers, as needed. The product 
+captures, indexes and archives all the materials in the DocuVault document 
+repository. Additionally, while providing organizations with real-time 
+access to all their enterprise documents and reports, Cypress.Web provides 
+a secure e-business portal for 24/7 access to pertinent account or company 
+information. http://www.cypress.com
+
+NetPaper.com (Woburn, MA) released its CAMPUS, an Internet-based 
+application designed to automate the entire process of creating, publishing 
+and distributing course packs and other customized university teaching 
+materials. Using a standard Web browser, professors can select materials 
+from a Website catalog that can be combined with their own material to 
+create customized teaching materials and books. CAMPUS assembles the end 
+product, which may either be viewed or printed and delivered 
+electronically. NetPaper said it will integrate the system with Danka's 
+digital print systems for the university market. http://www.netpaper.com
+
+KnoWare (Baltimore, MD) released version 3.0 of its Internet Neighborhood 
+FTP software. Internet Neighborhood, a remote file management system, was 
+first introduced in 1997. With version 3.0, the product now extends Windows 
+Explorer functionality to include the ability to drag-and-drop files from 
+the Windows desktop directly to remote servers. New features include the 
+ability to transfer files between remote servers without first downloading 
+them to the user's machine. http://www.knoware.com
+
+________________________________
+Conferences/seminars
+________________________________
+
+Penton Media (Exton, PA) will sponsor the Enterprise Systems Expo (ESE) as 
+part of IMET 2000 Oct. 10-12 at the Rosemont Convention Center, Rosemont, 
+Ill. The expo will focus on the new technology challenges and new 
+opportunities for manufacturers around the globe, especially on providing 
+comprehensive applications from back office ERP systems to front office 
+customer service applications. http://www.enterprisesystemsexpo.com
+
+The Yankee Group and Concentus Technology Corp. will sponsor "How To Create 
+The Right Platform For B2B E-Business Success" on March 15 at 1 p.m. EDT. 
+This free one-hour interactive virtual seminar will demonstrate how a true 
+Process Platform will benchmark the most successful migrations to 
+e-commerce in the business-to-business arena. You'll have the opportunity 
+to hear from and interact with: Lisa Williams, director of the Enterprise 
+Commerce Applications Practice, The Yankee Group; and Dr. Jay Ramanathan, 
+CTO and founder, Concentus Technology Corp. To reserve your spot for this 
+free webcast: e-mail webcast@concentus-tech.com or 
+http://www.concentus-tech.com
+
+
+
+________________________________
+Financials
+________________________________
+
+Cyco Software (Atlanta, GA) announced it has received a multi-million 
+dollar guilder second-round investment from three European firms, including 
+Man and Machine Software AG.
+
+Hummingbird Communications has acquired certain assets of Diamond Head 
+Software, a developer of document imaging and storage management applications.
+
+Rimage Corp. (Minneapolis, MN) announced that it has signed a definitive 
+agreement to acquire Cedar Technologies, a manufacturer of CD-R desktop 
+publishing and duplication equipment.
+
+________________________________
+AIIM News
+________________________________
+
+IIM2000: Global Information in the 21st Century Conference and Exhibition, 
+presented by the Institute for Information Management Ltd - an affiliate of 
+AIIM International - will take a strategic look at doing business in the 
+digital economy of the 21st century, and the information management 
+infrastructure required to achieve this. Presentations and exhibitions will 
+focus on e-commerce; global call centers; virtual organizations; knowledge 
+management; global legal developments in the electronic market; and much 
+more. The event will be held in Melbourne, Australia, on 14-17 May 2000, 
+and full details are available at the IIM website, located at 
+http://www.iim.org.au. The IIM2000 event will bring together key people 
+from industry throughout the Australasian and Asia/Pacific Region to 
+explore current and future developments in the information management and 
+related technology areas. A printed brochure may be obtained from the 
+IIM2000 Conference Secretariat by advising your mailing details to 
+iim@ozemail.com.au
+
+By now you should have received the membership mailing that included the 
+Call for the Annual Business Meeting, the nomination of four new members to 
+the AIIM Board and the approval of the proposed draft Bylaws.  This 
+information along with a copy of the current Bylaws and an annotated 
+version of the proposed Bylaws can be found on AIIM's Web Site 
+http://www.aiim.org/aiimfile/bylapropsl.htm.  Your vote is 
+important.  Please take a few minutes to review the information and return 
+your ballot to be received no later than April 11, 2000. If you did not 
+receive the mailing, please contact Peggy Linaugh at 301-755-2614 or 
+plinaugh@aiim.org.
+
+At its December meeting, AIIM's Board of Directors approved an Education 
+Award and a Best Practices Award to be presented at the AIIM 2000 Expo and 
+Conference in New York on Tuesday evening, April 11. Below is the 
+description of each award. The nomination forms can be downloaded by going 
+to the following site: http://www.aiim.org/educ/bestprac/awn/dex.html. If 
+you wish a hardcopy, please contact Peggy Linaugh, Staff Liaison to the 
+Awards Committee, at 301-755-2614 or plinaugh@aiim.org. The deadline for 
+receipt of your completed nomination packet is March 17.
+
+Education Award: This award recognizes AIIM members - individuals and/or 
+companies - who have advanced the discipline of information management 
+using imaging and document technologies through educational programs 
+including, but not limited to, the AIIM Conference and Expo. This award 
+shall be made to no more than three individuals or corporations each year.
+
+Best Practices Award: The AIIM Best Practices award was established to 
+recognize personal or organizational excellence in the document and process 
+management technology field. One award is granted for each AIIM region on 
+an annual basis. The award is open to all AIIM members, both individual and 
+organizations, and is based on superior accomplishments in the use of 
+document and process-management technology. This award is specifically 
+focused on accomplishments in the e-business arena.
+
+________________________________
+Quicktakes
+________________________________
+
+Ultera Systems (Laguna Hills, CA) has signed six vendors to support its 
+DVD-R Multimaster array controller, including Daikin U.S. Comtec 
+Laboratories, Prassi Software USA, Smart Storage, Astarte GbmH, Gear 
+Software and HyCD.
+
+Drexler Technology Corp. (Mountain View, CA) announced a 12-month, $3.2 
+million capital-investment plan to expand LaserCard production capacity 
+from 7 million digital optical memory cards per year to about 11 million 
+cards per year by March 2001.
+
+Informative Graphics Corp. (Phoenix, AZ) announced an agreement with 
+Collaborative Structures, a provider of Internet-based communications 
+applications. Collaborative will incorporate the Brava! Java-based viewing 
+software system with its FirstLine product.
+
+FileNET (Costa Mesa, CA) and Interwoven (Sunnyvale, CA) announced a 
+partnership under which they'll develop an integrated application aimed at 
+the insurance and financials services sectors interested in better using 
+the Web to leverage corporate content.
+
+ACOM Solutions (Long Beach, CA) introduced its MICR kit for companies that 
+need to generate checks with standard office model Xerox DocuPrint N series 
+laser printers. http://www.acom.com.
+
+Bluestone Software (Philadelphia, PA) announced the launch of its 
+next-generation corporate Website. Located at http://www.bluestone.com, the 
+new site was designed, developed and delivered on Bluestone's 
+Total-e-Business platform by ClearLogic, an e-Media Solutions Company and 
+member of Bluestone's Code Blue Developer Program.
+
+2000SPowerize.com (San Jose, CA), an investment research firm on the 
+Internet, announced the availability of its Enterprise Portal Service.
+
+Procom Technology (Santa Ana, CA), a manufacturer of server appliances, 
+announced that it intends to distribute its implementation of the NetBEUI 
+(Network Basic Extended User Interface) stack to the Linux community.
+
+Overland Data (San Diego, CA), a provider of tape backup products, has 
+extended its support for Storage Area Network (SAN) technology with the 
+introduction of its SANPiper (a SCSI-to-Fibre Channel bridge), bringing the 
+benefits of SAN technology to users of Overland's line of tape libraries 
+and autoloaders.
+
+Open Text Corp. (Toronto, Ontario, Canada) announced that its Livelink has 
+been selected as the collaborative intranet standard for United States 
+Naval Sea Systems Command (NAVSEA). NAVSEA is responsible for the design, 
+manufacture, lifecycle management and maintenance of all U.S. Navy ships 
+and submarines and their respective weapons systems.
+
+Spatial (Boulder, CO) announced the availability of CAD file translation 
+and repair services for users of Pro/ENGINEER and CATIA CAD/CAM/CAE 
+software systems.
+
+Hummingbird Communications (Toronto, Canada) announced the State 
+Corporation Commission of the Commonwealth of Virginia has selected 
+Hummingbird CompInfo to provide software for a new case and document 
+management system.
+
+Oce-USA (New York, NY) has formed the Network Printing Solutions (NPS) 
+business group as an offshoot of its traditional Document Printing Systems 
+division.
+
+American Management Systems (Fairfax, VA) announced that Carilion Health 
+System has implemented AMS' healthcare document management and workflow 
+application, RecordLink for Health Information Management (HIM).
+
+AMS also signed a partnership agreement with Interface Systems (Ann Arbor, 
+MI). Interface will provide its L2i Internet data mining technology to AMS 
+users.
+
+Peerless Systems Corp. (El Segundo, CA) announced the company's 
+collaboration on the design, development and delivery of Canon's LBP-1000 
+1200 dpi networkable printer for corporate workgroups and small businesses. 
+The LBP 1000 is the first product to ship with Peerless' SyntheSys controller.
+
+TROY XCD announced that it has extended the capabilities of its NetSend 
+print servers with support for the Internet Printing Protocol (IPP), an 
+emerging international standard endorsed by most major printer manufacturers.
+
+Bamboo Solutions (Herndon, VA) announced a strategic alliance with Sigma 
+Exallon Systems AB (Sweden). Through this alliance, the companies will 
+collaborate to bring shop/production floor information to key executives in 
+manufacturing enterprises through the means of personal palm-based devices.
+
+Moore Corp. (Bannockburn, IL) has selected Impresse's e-commerce 
+application, impresse.com, as a print e-commerce application for Moore's 
+commercial print customers.
+
+J.P. Morgan (New York, NY) has selected IBM's software applications to help 
+build and run its technology infrastructure, replacing its existing legacy 
+applications with the DB2 Universal Database and VisualAge for Java.
+
+BISYS (Little Falls, NJ) has signed an outsourcing agreement with CIGNA 
+Retirement and Investment Services.
+
+BISYS also announced that its Fund Services division has been hired by 
+Kensington Strategic Realty Fund to perform transfer agency, fund 
+accounting and fund administration services.
+
+ByteQuest announced the certification of its records management application 
+by the U.S. Department of Defense (DoD) in accordance with the DoD 5015.2 
+RMA Standard.
+
+Alysis Technologies (Emeryville, CA), a provider of electronic bill payment 
+and presentment (EBPP) and electronic statement presentment (ESP) software, 
+announced that the first of several U. S. and foreign pending patent 
+applications has been issued. This technology allows data mining directly 
+from printstreams. The patented technology, developed in-house at Alysis, 
+lets companies tap into legacy data sources and mine customer information.
+
+Mitek Systems (San Diego, CA) has installed CheckQuest, a proof of deposit 
+check imaging application, at Two River Community Bank (Middletown, NJ).
+
+
+Primary Knowledge (New York, NY) announced a new address. The company is 
+now headquartered at 100 Broadway, New York, NY 10005.
+
+Marcan (Bellevue, WA) named Patrick Mazzuca as its national sales manager 
+for the company's line of DVD and CD-ROM duplication and storage systems.
+
+Top Image Systems (TiS; Tel Aviv, Israel) announced that Dan Inbar has been 
+appointed managing director of its subsidiary, e-Mobilis.
+
+Parametric Technology Corp. (PTC; Waltham, MA) announced that C. Richard 
+Harrison has been named president and CEO.
+
+Insci-statements.com (Westborough, MA) named Dana Johnston as its new 
+senior vice president of sales and marketing.
+
+____________________________________________
+DOC.1--Your Eye on the Document Management Industry is an exclusive benefit 
+of Individual membership in AIIM International and may not be reproduced or 
+redistributed without the written consent of AIIM International. Copyright 
+2000 by AIIM International. All rights reserved. Please forward all address 
+changes to DOC1@aiim.org <mailto:DOC1@aiim.org> .
+
+AIIM International, 1100 Wayne Ave., Ste. 1100, Silver Spring, MD 20910, 
+301/587-8202
+http://www.aiim.org
+
+
+

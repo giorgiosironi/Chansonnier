@@ -1,0 +1,28 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Queue Worker JMS Implementation
+Bundle-SymbolicName: org.eclipse.smila.connectivity.queue.worker.jms
+Bundle-Version: 0.7.0
+Bundle-Vendor: empolis GmbH
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: javax.jms;version="1.1.0",
+ org.apache.commons.lang;version="2.4.0",
+ org.apache.commons.logging;version="1.1.1",
+ org.eclipse.smila.blackboard;version="0.7.0",
+ org.eclipse.smila.connectivity.queue.worker;version="0.7.0",
+ org.eclipse.smila.connectivity.queue.worker.config;version="0.7.0",
+ org.eclipse.smila.datamodel.id;version="0.7.0",
+ org.eclipse.smila.datamodel.record;version="0.7.0",
+ org.eclipse.smila.datamodel.tools;version="0.7.0",
+ org.eclipse.smila.datamodel.tools.record.filter;version="0.7.0",
+ org.eclipse.smila.jms;version="0.7.0",
+ org.eclipse.smila.management;version="0.7.0",
+ org.eclipse.smila.management.performance;version="0.7.0",
+ org.eclipse.smila.processing;version="0.7.0",
+ org.eclipse.smila.recordstorage;version="0.7.0",
+ org.eclipse.smila.utils.config;version="0.7.0",
+ org.eclipse.smila.utils.jaxb;version="0.7.0",
+ org.eclipse.smila.utils.log;version="0.7.0",
+ org.osgi.service.component;version="1.0.0"
+Service-Component: OSGI-INF/BrokerConnection.xml, OSGI-INF/Router.xml, OSGI-INF/Listener.xml, OSGI-INF/RecordRecycler.xml, OSGI-INF/RecordRecyclerAgent.xml
+Export-Package: org.eclipse.smila.connectivity.queue.worker.jms;version="0.7.0"

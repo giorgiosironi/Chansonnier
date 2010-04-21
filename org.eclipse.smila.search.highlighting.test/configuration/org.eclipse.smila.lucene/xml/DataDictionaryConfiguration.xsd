@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v5 rel. 4 U (http://www.xmlspy.com) by Georg Schmidt (BROX IT-Solutions GmbH) -->
+<xs:schema xmlns:po="http://www.anyfinder.de/Search/ParameterObjects" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.anyfinder.de/DataDictionary/Configuration" xmlns:tfp="http://www.anyfinder.de/Search/TextField" xmlns:dfp="http://www.anyfinder.de/Search/DateField" xmlns:nfp="http://www.anyfinder.de/Search/NumberField" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ps="http://www.brox.de/ParameterSet" targetNamespace="http://www.anyfinder.de/DataDictionary/Configuration" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.brox.de/ParameterSet" schemaLocation="configuration/org.eclipse.smila.lucene/xml/ParameterSet.xsd"/>
+	<xs:import namespace="http://www.anyfinder.de/Search/NumberField" schemaLocation="configuration/org.eclipse.smila.lucene/xml/AnyFinderSearchNumberFieldParameter.xsd"/>
+	<xs:import namespace="http://www.anyfinder.de/Search/TextField" schemaLocation="configuration/org.eclipse.smila.lucene/xml/AnyFinderSearchTextFieldParameter.xsd"/>
+	<xs:import namespace="http://www.anyfinder.de/Search/DateField" schemaLocation="configuration/org.eclipse.smila.lucene/xml/AnyFinderSearchDateFieldParameter.xsd"/>
+	<xs:import namespace="http://www.anyfinder.de/Search/ParameterObjects" schemaLocation="configuration/org.eclipse.smila.lucene/xml/SearchParameterObjects.xsd"/>
+	<xs:element name="Configuration">
+		<xs:annotation>
+			<xs:documentation>DataDictionaryConfiguration root element</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="DefaultConfig">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Field" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="FieldConfig" type="FieldType"/>
+									</xs:sequence>
+									<xs:attribute name="FieldNo" type="xs:nonNegativeInteger" use="required"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+					<xs:unique name="FieldConfig-FieldNo">
+						<xs:selector xpath="Field"/>
+						<xs:field xpath="@FieldNo"/>
+					</xs:unique>
+				</xs:element>
+				<xs:element name="NamedConfig" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="FieldConfig" type="FieldType" maxOccurs="3"/>
+						</xs:sequence>
+						<xs:attribute name="Name" use="required">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="1"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+					<xs:unique name="FieldConfig-FieldType">
+						<xs:selector xpath="FieldConfig"/>
+						<xs:field xpath="@xsi:type"/>
+					</xs:unique>
+				</xs:element>
+				<xs:element name="QueryConstraints" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="FieldConstraints" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="FieldTemplate" minOccurs="0" maxOccurs="unbounded">
+											<xs:simpleType>
+												<xs:restriction base="xs:string"/>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="NodeTransformer" minOccurs="0" maxOccurs="unbounded">
+											<xs:simpleType>
+												<xs:restriction base="xs:string"/>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Constraint" minOccurs="0" maxOccurs="3">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:enumeration value=""/>
+													<xs:enumeration value="optional"/>
+													<xs:enumeration value="required"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="FieldNo" type="xs:nonNegativeInteger" use="required"/>
+									<xs:attribute name="Occurrence" use="optional" default="optional">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:enumeration value="optional"/>
+												<xs:enumeration value="required"/>
+												<xs:enumeration value="prohibited"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+					<xs:unique name="FieldConstraint_FieldNo">
+						<xs:selector xpath="FieldConstraints"/>
+						<xs:field xpath="@FieldNo"/>
+					</xs:unique>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+		<xs:unique name="NamedConfig-Name">
+			<xs:selector xpath="NamedConfig"/>
+			<xs:field xpath="@Name"/>
+		</xs:unique>
+	</xs:element>
+	<xs:complexType name="FieldType" abstract="true">
+		<xs:sequence>
+			<xs:element ref="po:NodeTransformer" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="Weight" type="xs:nonNegativeInteger" use="optional"/>
+		<xs:attribute name="FieldTemplate" type="xs:string" use="optional"/>
+		<xs:attribute name="Constraint" use="optional">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="optional"/>
+					<xs:enumeration value="required"/>
+					<xs:enumeration value=""/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="FTText">
+		<xs:complexContent>
+			<xs:extension base="FieldType">
+				<xs:sequence>
+					<xs:element ref="tfp:Parameter"/>
+				</xs:sequence>
+				<xs:attribute name="CodecClass" type="xs:string" use="optional" fixed="org.eclipse.smila.search.datadictionary.messages.ddconfig.DTextFieldCodec"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="FTNumber">
+		<xs:complexContent>
+			<xs:extension base="FieldType">
+				<xs:sequence>
+					<xs:element ref="nfp:Parameter"/>
+				</xs:sequence>
+				<xs:attribute name="CodecClass" type="xs:string" use="optional" fixed="org.eclipse.smila.search.datadictionary.messages.ddconfig.DNumberFieldCodec"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="FTDate">
+		<xs:complexContent>
+			<xs:extension base="FieldType">
+				<xs:sequence>
+					<xs:element ref="dfp:Parameter"/>
+				</xs:sequence>
+				<xs:attribute name="CodecClass" type="xs:string" use="optional" fixed="org.eclipse.smila.search.datadictionary.messages.ddconfig.DDateFieldCodec"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

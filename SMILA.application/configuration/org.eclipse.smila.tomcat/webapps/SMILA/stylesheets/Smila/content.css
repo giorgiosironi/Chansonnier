@@ -1,0 +1,187 @@
+﻿
+
+/* Actual Styles start here */
+
+H1
+{
+    MARGIN-TOP: 0px;
+    FONT-SIZE: 11px;
+    FONT-WEIGHT: bold;
+    COLOR: #000000;
+}
+
+.headline
+{
+	font-family: verdana, arial, helvetica;
+	font-size: 12px;
+	font-weight: bold;
+	color: #333333;
+	padding: 15 0 15 30px;
+}
+
+.headline2
+{
+	font-family: verdana;
+	font-size: 11px;
+	font-weight: bold;
+	color: #333333;
+	margin: 4 0 15 30px;
+}
+
+
+
+/* Form ------- */
+
+.cmxform {
+	padding: 5px 0 15px 0;
+	background-color: #F5F5F5;
+	font-size: 11px;
+	width: 100%;
+}
+.cmxform p {
+	padding: 15px;
+	font-size: 11px;
+}
+
+.cmxform h2 {
+	font-weight:bold;
+	color:#333333;
+	font-size: 11px;
+	margin:0;
+	padding:0
+}
+
+.cmxform label {
+	display:inline-block;
+	line-height:1.8;
+	vertical-align:top;
+	color:#333333;
+}
+.cmxform fieldset {
+	/*	border-color: #333333 -moz-use-text-color -moz-use-text-color; */
+	border-color: #CCCCCC;
+	border-style: none none none none;
+	border-width: 1px medium medium;
+	margin-left: 30px;
+}
+
+.cmxform fieldset ol {
+	margin: 0px;
+	list-style: none;
+	padding: 0px;
+}
+.cmxform fieldset li {
+	list-style-image: none;
+	list-style-position: outside;
+	list-style-type: none;
+	margin: 0pt;
+	padding: 5px 0px 7px 0px;
+}
+
+.cmxform fieldset fieldset {
+	border: medium none;
+	margin: 3px 0pt 0pt 0;
+}
+.cmxform fieldset fieldset legend {
+	font-weight: normal;
+	padding: 0pt 0pt 5px 0;
+}
+.cmxform fieldset fieldset label {
+	display:block;
+	width:auto;
+}
+
+.cmxform em {
+	color:#333333;
+	font-style:normal;
+	font-weight:bold;
+}
+.cmxform label {
+	width:120px;
+}
+.cmxform fieldset fieldset label {
+	margin-left:130px;
+}
+
+form, fieldset {
+	margin:0pt;
+	padding:0pt;
+}
+
+legend {
+	color:#333333;
+	padding:0pt;
+}
+input, textarea, select {
+	font-family:inherit;
+	font-size:100%;
+	margin:0pt;
+	padding:1px;
+}
+select {
+	padding:0pt;
+}
+
+
+/* Buttons ------- */
+.formbutton{
+	cursor:pointer;
+	border:outset 1px #ccc;
+	background:#999;
+	color:#666;
+	padding: 1px 2px;
+	background:url(../../images/Smila/formbg.gif) repeat-x left top;
+	width:100px
+}
+
+.formbutton:hover {
+	color:#333333;
+	background:url(../../images/Smila/formbghover.gif) repeat-x left top;
+}
+
+/* ResultList------- */
+
+#statistics
+{
+	font-family: verdana;
+	font-size: 11px;
+	color: #333333;
+}
+
+
+#result {
+	padding: 0 0 15px 0;
+	margin: 3px 0 3px 0;
+	font-size: 11px;
+	width: 100%;
+}
+
+
+#result ul {
+	display: inline;
+	color: #333333;
+	display:block;
+} 
+
+#result ul li {
+	padding: 3px 0;
+	text-indent: 0px;
+	}
+	
+#result ul li .label {
+	display:inline-block;
+	max-width:150px;
+	width:150px;
+	font-weight:bold;
+	}
+
+tt {
+	font-family: arial;
+	font-weight:bold;
+	color: #5555FF;
+	}
+
+b {
+	background-color: #008800;
+	color: #FFFFFF;
+	}

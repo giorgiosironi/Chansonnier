@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://www.anyfinder.de/Search/NumberField" xmlns="http://www.anyfinder.de/Search/NumberField" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="Parameter">
+		<xs:annotation>
+			<xs:documentation>Search Technology dependant parameter settings.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="CodecClass" type="xs:string" use="optional" fixed="org.eclipse.smila.search.lucene.tools.search.lucene.DNumberFieldParameterCodec"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

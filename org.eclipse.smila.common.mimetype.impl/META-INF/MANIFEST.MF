@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Default MimeTypeIdentifier Impl Plug-in
+Bundle-SymbolicName: org.eclipse.smila.common.mimetype.impl
+Bundle-Version: 0.7.0
+Bundle-Vendor: empolis GmbH
+Import-Package: org.eclipse.smila.common.mimetype;version="0.7.0"
+Export-Package: org.eclipse.smila.common.mimetype.impl;version="0.7.0"
+Service-Component: OSGI-INF/mimetypeidentifier.xml
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
