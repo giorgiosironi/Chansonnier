@@ -1,0 +1,10 @@
+<plugin>
+   <extension
+         id="it.polimi.smilaintegration"
+         name="it.polimi.smilaintegration"
+         point="org.eclipse.smila.connectivity.framework.schema.extension">
+      <schema
+            class="it.polimi.smilaintegration.youtubegrabber.DataSourceConnectionConfigPluginImpl">
+      </schema>
+   </extension>
+</plugin>

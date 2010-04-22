@@ -1,0 +1,7 @@
+<component name="dummyService">
+  <implementation class="it.polimi.smilaintegration.DummyProcessingService" />
+  <service>
+    <provide interface="org.eclipse.smila.processing.ProcessingService"/>         
+  </service>
+  <property name="smila.processing.service.name" value="DummyProcessingService"/>
+</component>
