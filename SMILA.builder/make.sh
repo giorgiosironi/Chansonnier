@@ -44,4 +44,4 @@ PATH=$JAVA_HOME/bin:$ANT_HOME/bin:$PATH
 
 export JAVA_HOME ANT_HOME PATH
 
-exec ant -f make.xml ${buildDir} ${eclipseHome} ${builder} ${ARCH} ${testJava} ${buildOpts} ${configHome} ${libDir} $* | tee -a ${logfile}
+exec ant -f build.xml ${buildDir} ${eclipseHome} ${builder} ${ARCH} ${testJava} ${buildOpts} ${configHome} ${libDir} $* | tee -a ${logfile}
