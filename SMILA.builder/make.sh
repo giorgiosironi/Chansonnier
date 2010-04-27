@@ -14,13 +14,13 @@
 SMILA_HOME=$PWD/..
 
 # set this to the location of a Eclipse Classic 3.5 SDK + matching delta pack
-ECLIPSE_HOME=/opt/eclipse_standard
+ECLIPSE_HOME=$PWD/../../eclipse_standard
 
 # make sure that the arch setting matches the used JDK
 ARCH="-Dos=linux -Dws=gtk -Darch=x86"
 JAVA_HOME=/usr/lib/jvm/java-6-sun/
 
-ANT_HOME=/opt/ant
+ANT_HOME=$PWD/../../ant
 #BUILDLIB_DIR=/data07/SMILA/3rd_party_sw/lib
 # comment out the following line, if your lib directory is in trunk
 #libDir="-Dlib.dir=$BUILDLIB_DIR"
