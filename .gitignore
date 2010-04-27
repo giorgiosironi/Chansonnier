@@ -1,3 +1,8 @@
-SMILA.builder/log.*.txt
 eclipse.build/
-
+SMILA.builder/log.*.txt
+SMILA.application/SMILA.log
+SMILA.application/configuration/org.eclipse.smila.tomcat/work/
+SMILA.application/derby.log
+**/code/bin
+org.eclipse.smila.integration.helloworld/bin/
+.metadata
