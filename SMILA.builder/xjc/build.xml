@@ -30,7 +30,7 @@
   <path id="xjc.classpath">
     <fileset dir="${jaxb.home}" includes="*.jar" />
   </path>
-  <taskdef name="xjc" classname="com.sun.tools.xjc.XJCTask">
+  <taskdef name="xjc" classname="org.jvnet.jaxb2_commons.xjc.XJC2Task">
     <classpath refid="xjc.classpath" />
   </taskdef>
   <taskdef resource="net/sf/antcontrib/antcontrib.properties">
