@@ -137,7 +137,7 @@
   	<exclude name="com.empolis.*" />
   </patternset>
 
-  <!-- the follwoing projects are excluded from build -->
+  <!-- the following projects are excluded from build -->
   <patternset id='patterns.bundle.excludes'>
     <exclude name="*.feature" />
     <!-- now a bundle, too: exclude name="org.eclipse.smila.management.jmx.client" / -->
