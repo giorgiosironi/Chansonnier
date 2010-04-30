@@ -1,0 +1,15 @@
+<jxb:bindings version="1.0" 
+  xmlns:jxb="http://java.sun.com/xml/ns/jaxb" 
+  xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+>  
+  <jxb:bindings schemaLocation="YoutubeLinkGrabberAgentDataSourceConnectionConfigSchema.xsd" node="/xs:schema">
+    <jxb:schemaBindings>
+      <jxb:package name="it.polimi.chansonnier.youtubegrabber.messages"/>
+    </jxb:schemaBindings>    
+    <jxb:globalBindings>
+      <jxb:javaType name="java.util.Date" xmlType="xs:dateTime" printMethod="org.eclipse.smila.connectivity.framework.schema.tools.SimpleDateFormatter.print" parseMethod="org.eclipse.smila.connectivity.framework.schema.tools.SimpleDateFormatter.parse"/>
+      <jxb:javaType name="org.eclipse.smila.connectivity.framework.schema.config.MimeTypeAttributeType" xmlType="MimeTypeAttributeType" parseMethod="org.eclipse.smila.connectivity.framework.schema.config.MimeTypeAttributeType.fromValue" printMethod="org.eclipse.smila.connectivity.framework.schema.config.MimeTypeAttributeType.toValue"/>
+      <jxb:serializable uid="1"/>
+    </jxb:globalBindings>
+  </jxb:bindings>
+</jxb:bindings>

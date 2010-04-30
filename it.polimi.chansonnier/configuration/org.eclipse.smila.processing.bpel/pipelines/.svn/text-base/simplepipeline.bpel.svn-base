@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- 
+  * Copyright (c) 2008 empolis GmbH and brox IT Solutions GmbH. 
+	* All rights reserved. This program and the accompanying materials
+	* are made available under the terms of the Eclipse Public License v1.0
+	* which accompanies this distribution, and is available at
+	* http://www.eclipse.org/legal/epl-v10.html
+	*
+	* Contributors:
+	*    Juergen Schumacher (empolis GmbH) - initial design
+-->
+<process name="SimplePipeline" targetNamespace="http://www.eclipse.org/smila/processor"
+	xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:proc="http://www.eclipse.org/smila/processor" xmlns:rec="http://www.eclipse.org/smila/record">
+
+	<import location="processor.wsdl" namespace="http://www.eclipse.org/smila/processor"
+		importType="http://schemas.xmlsoap.org/wsdl/" />
+
+	<partnerLinks>
+		<partnerLink name="Pipeline" partnerLinkType="proc:ProcessorPartnerLinkType" myRole="service" />
+	</partnerLinks>
+
+	<extensions>
+		<extension namespace="http://www.eclipse.org/smila/processor" mustUnderstand="no" />
+	</extensions>
+
+	<variables>
+		<variable name="request" messageType="proc:ProcessorMessage" />
+		<variable name="result" messageType="proc:ProcessorMessage" />
+	</variables>
+
+	<sequence>
+		<receive name="start" partnerLink="Pipeline" portType="proc:ProcessorPortType" operation="process" variable="request"
+			createInstance="yes" />
+
+		<extensionActivity name="invokeSimpleTestPipelet">
+			<proc:invokePipelet>
+				<proc:pipelet class="org.eclipse.smila.processing.bpel.pipelet.SimpleTestPipelet" />
+				<proc:variables input="request" output="result" />
+				<proc:PipeletConfiguration>
+					<proc:Property name="FirstIsString">
+						<proc:Value>FirstValue</proc:Value>
+					</proc:Property>
+					<proc:Property name="SecondIsDate" type="java.util.Date">
+						<proc:Value>2008-06-11 16:08:00</proc:Value>
+					</proc:Property>
+				</proc:PipeletConfiguration>
+				<proc:setAnnotations>
+					<rec:An n="test-annotation-1">
+						<rec:V>anonvalue1</rec:V>
+						<rec:V>anonvalue2</rec:V>
+						<rec:V n="name1">value1</rec:V>
+						<rec:V n="name2">value2</rec:V>
+					</rec:An>
+					<rec:An n="test-annotation-2">
+						<rec:V>anonvalue3</rec:V>
+						<rec:V>anonvalue4</rec:V>
+						<rec:V n="name3">value3</rec:V>
+						<rec:V n="name4">value4</rec:V>
+					</rec:An>
+				</proc:setAnnotations>
+			</proc:invokePipelet>
+		</extensionActivity>
+
+		<reply name="end" partnerLink="Pipeline" portType="proc:ProcessorPortType" operation="process" variable="result" />
+		<exit />
+	</sequence>
+</process>

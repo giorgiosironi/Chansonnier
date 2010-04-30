@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <!--
+        Copyright (c) 2008 empolis GmbH and brox IT Solutions GmbH. All rights reserved. This program and the
+        accompanying materials are made available under the terms of the Eclipse Public License v1.0 which accompanies
+        this distribution, and is available at http://www.eclipse.org/legal/epl-v10.html 
+        Contributors: Juergen Schumacher (empolis GmbH) - initial design
+    -->
+<schema targetNamespace="http://www.eclipse.org/smila/record" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:id="http://www.eclipse.org/smila/id"
+    xmlns:rec="http://www.eclipse.org/smila/record" elementFormDefault="qualified">
+
+    <annotation>
+        <documentation>http://wiki.eclipse.org/SMILA/Project_Concepts/Data_Model_and_XML_representation
+        </documentation>
+    </annotation>
+
+    <import namespace="http://www.eclipse.org/smila/id" schemaLocation="id.xsd" />
+
+    <element name="Record" type="rec:RecordType" />
+
+    <element name="RecordList" type="rec:RecordListType" />
+
+    <complexType name="RecordListType">
+        <sequence maxOccurs="1" minOccurs="1">
+            <element ref="rec:Record" maxOccurs="unbounded" minOccurs="0" />
+        </sequence>
+    </complexType>
+
+    <complexType name="RecordType">
+        <sequence maxOccurs="1" minOccurs="1">
+            <element ref="id:Id" minOccurs="0" maxOccurs="1" />
+            <element name="A" type="rec:AttributeType" maxOccurs="unbounded" minOccurs="0" />
+            <element name="An" type="rec:AnnotationType" maxOccurs="unbounded" minOccurs="0" />
+            <element name="Attachment" type="string" minOccurs="0" maxOccurs="unbounded" />
+        </sequence>
+        <attribute name="version" type="string" use="required" />
+    </complexType>
+
+    <complexType name="AttributeType">
+        <sequence maxOccurs="1" minOccurs="1">
+            <element name="An" type="rec:AnnotationType" minOccurs="0" maxOccurs="unbounded">
+                <annotation>
+                    <documentation>annotations referring to the complete attribute</documentation>
+                </annotation>
+            </element>
+            <element name="L" maxOccurs="unbounded" minOccurs="0">
+                <complexType>
+                    <sequence maxOccurs="1" minOccurs="1">
+                        <element name="V" type="rec:LiteralValueType" maxOccurs="1" minOccurs="1"></element>
+                        <choice maxOccurs="1" minOccurs="1">
+                            <element name="V" type="rec:LiteralValueType" maxOccurs="unbounded" minOccurs="0"></element>
+                            <element name="An" type="rec:AnnotationType" maxOccurs="unbounded" minOccurs="0"></element>
+                        </choice>
+                    </sequence>
+                    <attribute name="st" type="string" use="optional">
+                        <annotation>
+                            <documentation>default semantic type of contained literals. can be used by ontology
+                                based services to link the values to the ontology. Single V elements can overwrite this
+                                type.</documentation>
+                        </annotation>
+                    </attribute>
+                </complexType>
+            </element>
+            <element name="O" maxOccurs="unbounded" minOccurs="0">
+                <complexType>
+                    <sequence maxOccurs="1" minOccurs="1">
+                        <element name="A" type="rec:AttributeType" maxOccurs="unbounded" minOccurs="0" />
+                        <element name="An" type="rec:AnnotationType" maxOccurs="unbounded" minOccurs="0" />
+                    </sequence>
+                    <attribute name="st" type="string" use="optional">
+                        <annotation>
+                            <documentation>
+                                semantic type of object. can be used by ontology based services to link the
+                                values to the ontology.
+							</documentation>
+                        </annotation>
+                    </attribute>
+                </complexType>
+            </element>
+        </sequence>
+        <attribute name="n" type="string" use="required">
+            <annotation>
+                <documentation>attribute name</documentation>
+            </annotation>
+        </attribute>
+    </complexType>
+
+    <complexType name="AnnotationType">
+        <sequence maxOccurs="1" minOccurs="1">
+            <element name="V" minOccurs="0" maxOccurs="unbounded">
+                <annotation>
+                    <documentation>annotation values</documentation>
+                </annotation>
+                <complexType>
+                    <simpleContent>
+                        <extension base="string">
+                            <attribute name="n" type="string" use="optional" />
+                        </extension>
+                    </simpleContent>
+                </complexType>
+            </element>
+            <element name="An" type="rec:AnnotationType" minOccurs="0" maxOccurs="unbounded">
+                <annotation>
+                    <documentation>sub annotations for structured annotations</documentation>
+                </annotation>
+            </element>
+        </sequence>
+        <attribute name="n" type="string" use="required">
+            <annotation>
+                <documentation>name of annotation. one object can have multiple annotations of the same name.
+                </documentation>
+            </annotation>
+        </attribute>
+    </complexType>
+    <complexType name="LiteralValueType">
+        <simpleContent>
+            <extension base="string">
+                <attribute use="optional" name="t">
+                    <annotation />
+                    <simpleType>
+                        <restriction base="string">
+                            <enumeration value="string" />
+                            <enumeration value="int" />
+                            <enumeration value="fp" />
+                            <enumeration value="bool" />
+                            <enumeration value="date" />
+                            <enumeration value="time" />
+                            <enumeration value="datetime" />
+                        </restriction>
+                    </simpleType>
+                </attribute>
+                <attribute use="optional" name="st" type="string">
+                    <annotation />
+                </attribute>
+            </extension>
+        </simpleContent>
+    </complexType>
+
+</schema>
