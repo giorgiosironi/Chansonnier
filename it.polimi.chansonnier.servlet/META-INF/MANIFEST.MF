@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Servlet
+Bundle-SymbolicName: it.polimi.chansonnier.servlet
+Bundle-Version: 1.0.0.alpha
+Bundle-Activator: it.polimi.chansonnier.servlet.Activator
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: javax.servlet;version="2.5.0",
+ javax.servlet.http;version="2.5.0",
+ org.osgi.framework;version="1.3.0"
+Export-Package: it.polimi.chansonnier.servlet;version="1.0.0.alpha"
+Eclipse-RegisterBuddy: org.apache.tomcat, org.eclipse.smila.tomcat
