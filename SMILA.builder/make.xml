@@ -129,6 +129,7 @@
 
   <patternset id='patterns.bundle.all'>
     <include name="com.*" />
+    <include name="it.polimi.*" />
     <include name="javax.*" />
     <include name="net.*" />
     <include name="oracle.*" />
