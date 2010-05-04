@@ -62,10 +62,19 @@ public abstract class AbstractPluginRegistryBase<T> {
   protected void initialize() {
     final IExtensionPoint extensionPoint =
       Platform.getExtensionRegistry().getExtensionPoint(getExtensionPointFullName());
+    System.out.println(extensionPoint.getUniqueIdentifier());
     final IExtension[] extensions = extensionPoint.getExtensions();
+    
     for (final IExtension extension : extensions) {
       try {
-        extensionAdded(extension.getUniqueIdentifier(), extension);
+    	  System.out.println("Messing with: " + extension.getUniqueIdentifier());
+    	  //System.out.println("   ns: " + extension.getNamespaceIdentifier());
+    	  //System.out.println("   simple: " + extension.getSimpleIdentifier());
+    	  String identifier = extension.getUniqueIdentifier();
+    	  if (identifier.startsWith("it.polimi")) {
+    		  identifier = "it.polimi.chansonnier.agent"; 
+    	  }
+        extensionAdded(identifier, extension);
       } catch (final Throwable e) {
         _log.error("Error initializing AbstractPluginRegistryBase", e);
       }
