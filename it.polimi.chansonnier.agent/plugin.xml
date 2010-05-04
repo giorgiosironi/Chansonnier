@@ -1,0 +1,10 @@
+<plugin>
+   <extension
+       id="it.polimi.chansonnier.agent"
+       name="it.polimi.chansonnier.agent"
+       point="org.eclipse.smila.connectivity.framework.schema.extension">
+       <schema
+           class="it.polimi.chansonnier.agent.DataSourceConnectionConfigPluginImpl">
+       </schema>
+   </extension>
+</plugin>

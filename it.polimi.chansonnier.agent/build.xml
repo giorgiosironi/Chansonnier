@@ -1,0 +1,4 @@
+<project name="sub-build" default="compile-schema-and-decorate" basedir=".">
+    <property name="schema.name" value="YouTubeDataSourceConnectionConfigSchema" />
+    <import file="../SMILA.builder/xjc/build.xml" />
+</project>

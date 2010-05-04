@@ -1,0 +1,7 @@
+<component name="LinkGrabberAgent" immediate="false" factory="AgentFactory">
+    <implementation class="it.polimi.chansonnier.agent.YoutubeLinkGrabberAgent" />
+    <service>
+         <provide interface="org.eclipse.smila.connectivity.framework.Agent" />
+         <provide interface="it.polimi.chansonnier.agent.LinkGrabberAgent" />
+    </service>    
+</component>

@@ -1,4 +1,4 @@
-package it.polimi.chansonnier.youtubegrabber;
+package it.polimi.chansonnier.agent;
 
 import org.eclipse.smila.connectivity.framework.schema.DataSourceConnectionConfigPlugin;
 
@@ -7,13 +7,12 @@ public class DataSourceConnectionConfigPluginImpl implements
 
 	@Override
 	public String getMessagesPackage() {
-		return "it.polimi.chansonnier.youtubegrabber.messages";
+		return "it.polimi.chansonnier.agent.messages";
 	}
 
 	@Override
 	public String getSchemaLocation() {
-		// TODO Auto-generated method stub
-		return "schemas/YoutubeLinkGrabberAgentDataSourceConnectionConfigSchema.xsd";
+		return "schemas/YouTubeDataSourceConnectionConfigSchema.xsd";
 	}
 
 }

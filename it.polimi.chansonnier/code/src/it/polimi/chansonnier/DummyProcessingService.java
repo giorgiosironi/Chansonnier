@@ -18,11 +18,13 @@ public class DummyProcessingService implements ProcessingService {
 	private String _attributeName = "Filename";
 	
 	protected void activate(ComponentContext context) {
-
+        // chiamato dal framework OSGi all'attivazione
+        // usato ad esempio per leggere la propria configurazione
 	}
 
 	@Override
 	public Id[] process(Blackboard blackboard, Id[] recordIds) throws ProcessingException {
+        // la logica è identica a quella di DummyPipelet
 		for (Id id : recordIds) {
 			try {
 				final Path path = new Path(_attributeName);

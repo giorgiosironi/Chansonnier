@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: it.polimi.chansonnier
+Bundle-Name: Chansonnier core
 Bundle-SymbolicName: it.polimi.chansonnier;singleton:=true
 Bundle-Version: 1.0.0.alpha
 Bundle-Activator: it.polimi.chansonnier.Activator
@@ -28,4 +28,5 @@ Import-Package: junit.framework;version="[3.8.0,4.0.0)",
 Export-Package: it.polimi.chansonnier;version="1.0.0.alpha"
 SMILA-Pipelets: it.polimi.chansonnier.DummyPipelet,
  it.polimi.chansonnier.SizePipelet
-Service-Component: OSGI-INF/component.xml
+Service-Component: OSGI-INF/component.xml,
+ OSGI-INF/LinkGrabberAgent.xml
