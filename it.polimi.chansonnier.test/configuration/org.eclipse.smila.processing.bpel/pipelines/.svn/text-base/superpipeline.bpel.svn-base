@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- 
+  * Copyright (c) 2008 empolis GmbH and brox IT Solutions GmbH. 
+	* All rights reserved. This program and the accompanying materials
+	* are made available under the terms of the Eclipse Public License v1.0
+	* which accompanies this distribution, and is available at
+	* http://www.eclipse.org/legal/epl-v10.html
+	*
+	* Contributors:
+	*    Juergen Schumacher (empolis GmbH) - initial design
+-->
+<process name="SuperPipeline" targetNamespace="http://www.eclipse.org/smila/processor"
+	xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:proc="http://www.eclipse.org/smila/processor" xmlns:rec="http://www.eclipse.org/smila/record">
+
+	<import location="processor.wsdl" namespace="http://www.eclipse.org/smila/processor"
+		importType="http://schemas.xmlsoap.org/wsdl/" />
+
+	<partnerLinks>
+		<partnerLink name="Pipeline" partnerLinkType="proc:ProcessorPartnerLinkType" myRole="service" />
+		<partnerLink name="SplitterPipeline" partnerLinkType="proc:ProcessorPartnerLinkType" partnerRole="service" />
+		<partnerLink name="EchoPipeline" partnerLinkType="proc:ProcessorPartnerLinkType" partnerRole="service" />
+		<partnerLink name="SimplePipeline" partnerLinkType="proc:ProcessorPartnerLinkType" partnerRole="service" />
+	</partnerLinks>
+
+	<variables>
+		<variable name="request" messageType="proc:ProcessorMessage" />
+	</variables>
+
+	<sequence>
+		<receive name="start" partnerLink="Pipeline" portType="proc:ProcessorPortType" operation="process" variable="request"
+			createInstance="yes" />
+
+		<invoke name="invokeSplitterPipeline" inputVariable="request" partnerLink="SplitterPipeline" outputVariable="request"
+			operation="process" portType="proc:ProcessorPortType" />
+
+		<invoke name="invokeEchoPipeline" inputVariable="request" partnerLink="EchoPipeline" outputVariable="request"
+			operation="process" portType="proc:ProcessorPortType" />
+
+		<invoke name="invokeSimplePipeline" inputVariable="request" partnerLink="SimplePipeline" outputVariable="request"
+			operation="process" portType="proc:ProcessorPortType" />
+
+		<reply name="end" partnerLink="Pipeline" portType="proc:ProcessorPortType" operation="process" variable="request" />
+		<exit />
+	</sequence>
+</process>
