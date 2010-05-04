@@ -28,7 +28,8 @@
 
    <includes
          id="org.eclipse.platform"
-         version="0.0.0"/>
+         version="0.0.0"
+         name=""/>
 
    <plugin
          id="org.eclipse.smila.test"
@@ -257,5 +258,11 @@
          download-size="0"
          install-size="0"
          version="0.0.0"/>
+
+   <plugin
+         id="it.polimi.chansonnier.test"
+         download-size="0"
+         install-size="0"
+         version="0.1.0"/>
 
 </feature>
