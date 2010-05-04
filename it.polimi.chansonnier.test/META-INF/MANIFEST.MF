@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Test
+Bundle-SymbolicName: it.polimi.chansonnier.test
+Bundle-Version: 0.1.0.alpha
+Bundle-Activator: it.polimi.chansonnier.test.Activator
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: org.osgi.framework;version="1.3.0",
+ junit.framework;version="[3.8.0,4.0.0)"
+Export-Package: it.polimi.chansonnier.test
