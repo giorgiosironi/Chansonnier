@@ -4,9 +4,7 @@ import it.polimi.chansonnier.spi.TranscodingService;
 
 import java.io.File;
 import java.io.IOException;
-import java.io.OutputStream;
 import java.util.Date;
-import java.util.List;
 
 public class FfmpegTranscodingService implements TranscodingService {
 	private final static String FFMPEG_BIN = "/usr/bin/ffmpeg";

@@ -1,9 +1,6 @@
 package it.polimi.chansonnier.driver.lyricwiki;
 
 import java.io.StringReader;
-import java.math.BigInteger;
-import java.util.ArrayList;
-import java.util.Collection;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import org.w3c.dom.Document;

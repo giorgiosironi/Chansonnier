@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Tests for core
+Bundle-SymbolicName: it.polimi.chansonnier.core.test
+Bundle-Version: 0.1.0
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: it.polimi.chansonnier,
+ it.polimi.chansonnier.processing,
+ it.polimi.chansonnier.spi,
+ org.apache.commons.logging,
+ org.eclipse.smila.blackboard,
+ org.eclipse.smila.blackboard.path,
+ org.eclipse.smila.datamodel.id,
+ org.eclipse.smila.datamodel.record,
+ org.eclipse.smila.processing,
+ org.eclipse.smila.test,
+ junit.framework;version="[3.8.0,4.0.0)"
+Export-Package: it.polimi.chansonnier.test.unit

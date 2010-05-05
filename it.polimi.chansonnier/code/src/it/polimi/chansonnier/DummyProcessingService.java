@@ -1,10 +1,5 @@
 package it.polimi.chansonnier;
 
-import java.io.InputStream;
-
-import javax.xml.bind.Unmarshaller;
-
-
 import org.eclipse.smila.blackboard.Blackboard;
 import org.eclipse.smila.blackboard.path.Path;
 import org.eclipse.smila.datamodel.id.Id;

@@ -4,8 +4,6 @@ import org.eclipse.smila.blackboard.Blackboard;
 import org.eclipse.smila.blackboard.path.Path;
 import org.eclipse.smila.datamodel.id.Id;
 import org.eclipse.smila.datamodel.record.Annotation;
-import org.eclipse.smila.datamodel.record.Literal;
-import org.eclipse.smila.datamodel.record.RecordFactory;
 import org.eclipse.smila.processing.ProcessingException;
 import org.eclipse.smila.processing.SimplePipelet;
 import org.eclipse.smila.processing.configuration.PipeletConfiguration;

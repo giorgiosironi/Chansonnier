@@ -6,9 +6,6 @@ import java.util.Queue;
 
 import org.eclipse.smila.connectivity.framework.AbstractAgent;
 import org.eclipse.smila.connectivity.framework.AgentException;
-import org.eclipse.smila.connectivity.framework.AgentState;
-import org.eclipse.smila.connectivity.framework.schema.config.DataSourceConnectionConfig;
-import org.eclipse.smila.connectivity.framework.util.AgentControllerCallback;
 import org.eclipse.smila.connectivity.framework.util.AgentThreadState;
 import org.eclipse.smila.datamodel.record.Record;
 import org.eclipse.smila.datamodel.record.RecordFactory;
