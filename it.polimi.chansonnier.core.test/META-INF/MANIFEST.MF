@@ -15,4 +15,4 @@ Import-Package: it.polimi.chansonnier,
  org.eclipse.smila.processing,
  org.eclipse.smila.test,
  junit.framework;version="[3.8.0,4.0.0)"
-Export-Package: it.polimi.chansonnier.test.unit
+Export-Package: it.polimi.chansonnier.core.test

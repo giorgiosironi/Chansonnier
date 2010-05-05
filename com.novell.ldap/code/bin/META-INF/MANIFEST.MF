@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Open LDAP Plug-in (Incubation)
+Bundle-SymbolicName: com.novell.ldap
+Bundle-Version: 2.3.30
+Bundle-Vendor: empolis GmbH
+Export-Package: com.novell.ldap;version="2.3.30",
+ com.novell.ldap.asn1;version="2.3.30",
+ com.novell.ldap.client;version="2.3.30",
+ com.novell.ldap.connectionpool;version="2.3.30",
+ com.novell.ldap.controls;version="2.3.30",
+ com.novell.ldap.events;version="2.3.30",
+ com.novell.ldap.events.edir;version="2.3.30",
+ com.novell.ldap.events.edir.eventdata;version="2.3.30",
+ com.novell.ldap.extensions;version="2.3.30",
+ com.novell.ldap.resources;version="2.3.30",
+ com.novell.ldap.rfc2251;version="2.3.30",
+ com.novell.ldap.spml;version="2.3.30",
+ com.novell.ldap.util;version="2.3.30",
+ com.novell.sasl.client;version="2.3.30",
+ com.novell.security.sasl;version="2.3.30",
+ org.ietf.ldap;version="2.3.30",
+ org.ietf.ldap.controls;version="2.3.30"
+Bundle-ClassPath: .,
+ ldap.jar
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

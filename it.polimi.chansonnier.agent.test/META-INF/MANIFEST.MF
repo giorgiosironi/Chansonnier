@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Chansonnier Agent tests
 Bundle-SymbolicName: it.polimi.chansonnier.agent.test
-Bundle-Version: 1.0.0.alpha
+Bundle-Version: 0.1.0
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Import-Package: it.polimi.chansonnier.agent,
  it.polimi.chansonnier.agent.messages,
@@ -15,3 +15,4 @@ Import-Package: it.polimi.chansonnier.agent,
  org.eclipse.smila.datamodel.id,
  org.eclipse.smila.datamodel.record,
  org.eclipse.smila.test
+Export-Package: it.polimi.chansonnier.agent.test

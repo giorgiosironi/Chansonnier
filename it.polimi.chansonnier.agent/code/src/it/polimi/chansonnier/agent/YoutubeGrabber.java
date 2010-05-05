@@ -17,7 +17,7 @@ public class YoutubeGrabber// extends JApplet
 {
   private String mv_decrypt(String input, int k1, int k2)
   {
-    LinkedList req1 = new LinkedList();
+    LinkedList req1= new LinkedList();
     int req3 = 0;
     while (req3 < input.length()) {
       char c = input.charAt(req3);
