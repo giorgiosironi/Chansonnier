@@ -1,0 +1,7 @@
+<ParameterDefinition xmlns="http://www.brox.de/ParameterDefinition" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.brox.de/ParameterDefinition ../xml/ParameterDefinition.xsd">
+	<Parameter Name="SupportWildcardsForExactSearch" xsi:type="Boolean"
+		Constraint="optional">
+		<Description>defines whether wildcards are interpreded in exact search terms</Description>
+		<Default>true</Default>
+	</Parameter>
+</ParameterDefinition>

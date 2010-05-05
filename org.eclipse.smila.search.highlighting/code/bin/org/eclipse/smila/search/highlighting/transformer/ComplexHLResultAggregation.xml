@@ -1,0 +1,57 @@
+<!--
+/***********************************************************************************************************************
+ * Copyright (c) 2008 empolis GmbH and brox IT Solutions GmbH. All rights reserved. This program and the accompanying
+ * materials are made available under the terms of the Eclipse Public License v1.0 which accompanies this distribution,
+ * and is available at http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors: brox IT-Solutions GmbH - initial creator
+ **********************************************************************************************************************/
+-->
+
+<ParameterDefinition xmlns="http://www.brox.de/ParameterDefinition" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.brox.de/ParameterDefinition ../xml/ParameterDefinition.xsd">
+  <Parameter xsi:type="String" Name="MarkupPrefix" Constraint="optional">
+    <Description>The markup prefix used for highlighting.</Description>
+    <Default>&lt;b&gt;</Default>
+  </Parameter>
+  <Parameter xsi:type="String" Name="MarkupSuffix" Constraint="optional">
+    <Description>The markup suffix used for highlighting.</Description>
+    <Default>&lt;/b&gt;</Default>
+  </Parameter>  
+  <Parameter xsi:type="Integer" Name="MaxLength" Constraint="optional">
+    <Description>Max length of returned text structure.</Description>
+  </Parameter>
+  <Parameter xsi:type="Integer" Name="MaxHLElements" Constraint="optional">
+    <Description>Max number of hl elements.</Description>
+  </Parameter>
+  <Parameter xsi:type="Integer" Name="MaxPrecedingCharacters" Constraint="optional">
+    <Description>Max preceding characters in front of an hl element.</Description>
+    <Default>30</Default>
+  </Parameter>
+  <Parameter xsi:type="String" Name="PrecedingCharacters" Constraint="optional">
+    <Description>Preceding characters in front of an hl element.</Description>
+  </Parameter>
+  <Parameter xsi:type="Integer" Name="MaxSucceedingCharacters" Constraint="optional">
+    <Description>Max succeeding characters in after of an hl element.</Description>
+    <Default>30</Default>
+  </Parameter>
+  <Parameter xsi:type="String" Name="SucceedingCharacters" Constraint="optional">
+    <Description>Succeeding characters in after of an hl element.</Description>
+  </Parameter>
+  <Parameter xsi:type="Boolean" Name="HLElementFilter" Constraint="optional">
+    <Description>Filter for hl elements containing identical text.</Description>
+    <Default>false</Default>
+  </Parameter>
+  <Parameter xsi:type="Enumeration" Name="SortAlgorithm" Constraint="optional">
+    <Description>Sort algorithm for output.</Description>
+    <Default>Occurrence</Default>
+    <Value>Score</Value>
+    <Value>Occurrence</Value>
+  </Parameter>
+  <Parameter xsi:type="Enumeration" Name="TextHandling" Constraint="optional">
+    <Description>Sort algorithm for output.</Description>
+    <Default>ReturnFullText</Default>
+    <Value>ReturnSnipplet</Value>
+    <Value>ReturnFullText</Value>
+    <Value>ReturnNoText</Value>
+  </Parameter>
+</ParameterDefinition>

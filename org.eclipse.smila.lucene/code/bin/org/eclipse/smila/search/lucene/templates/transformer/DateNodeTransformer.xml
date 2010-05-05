@@ -1,0 +1,12 @@
+<ParameterDefinition xmlns="http://www.brox.de/ParameterDefinition" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.brox.de/ParameterDefinition ../xml/ParameterDefinition.xsd">
+  <Parameter Name="FieldNo" xsi:type="Integer">
+    <Description>Field no for date query.</Description>
+  </Parameter>
+  <Parameter Name="LowerValue" xsi:type="Boolean">
+    <Description>Whether the compare value is the minimum value of the query.</Description>
+    <Default>false</Default>
+  </Parameter>
+  <Parameter Name="CompareValue" xsi:type="Date">
+    <Description>Compate value.</Description>
+  </Parameter>
+</ParameterDefinition>
