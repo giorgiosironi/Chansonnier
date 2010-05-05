@@ -6,7 +6,7 @@ Bundle-Version: 0.1.0.alpha
 Bundle-Activator: it.polimi.chansonnier.Activator
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Bundle-ClassPath: .
+Bundle-ClassPath: ., lib/synesketch.jar, lib/synesketch-core.jar
 Import-Package: junit.framework;version="[3.8.0,4.0.0)",
  org.eclipse.smila.blackboard;version="0.7.0",
  org.eclipse.smila.blackboard.path;version="0.7.0",
