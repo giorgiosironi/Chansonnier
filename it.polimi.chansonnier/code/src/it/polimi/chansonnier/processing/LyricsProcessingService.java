@@ -1,7 +1,6 @@
 package it.polimi.chansonnier.processing;
 
 import it.polimi.chansonnier.spi.LyricsService;
-import it.polimi.chansonnier.test.unit.LyricsProcessingServiceTest;
 
 import org.eclipse.smila.blackboard.Blackboard;
 import org.eclipse.smila.blackboard.BlackboardAccessException;
