@@ -1,7 +1,7 @@
 package it.polimi.chansonnier.test.unit;
 
 import it.polimi.chansonnier.FfmpegTranscodingService;
-import it.polimi.chansonnier.TranscodingService;
+import it.polimi.chansonnier.spi.TranscodingService;
 
 import java.io.File;
 import java.io.IOException;

@@ -1,4 +1,6 @@
-package it.polimi.chansonnier;
+package it.polimi.chansonnier.driver.lyricwiki;
+
+import it.polimi.chansonnier.spi.LyricsService;
 
 /**
  * Mediator between LyricWikiBackend and LyricWikiParser
@@ -13,6 +15,14 @@ public class LyricWikiLyricsService implements LyricsService {
 	public LyricWikiLyricsService(LyricWikiBackend backend, LyricWikiParser parser) {
 		_backend = backend;
 		_parser = parser;
+	}
+	
+	/**
+	 * default constructor called by the OSGi framework
+	 */
+	public LyricWikiLyricsService() {
+		_backend = new HttpLyricWikiBackend();
+		_parser = new XMLLyricWikiParser();
 	}
 
 	@Override

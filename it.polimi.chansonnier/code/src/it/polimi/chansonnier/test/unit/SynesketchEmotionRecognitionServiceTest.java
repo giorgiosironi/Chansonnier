@@ -1,7 +1,7 @@
 package it.polimi.chansonnier.test.unit;
 
-import it.polimi.chansonnier.EmotionRecognitionService;
 import it.polimi.chansonnier.SynesketchEmotionRecognitionService;
+import it.polimi.chansonnier.spi.EmotionRecognitionService;
 import junit.framework.TestCase;
 
 public class SynesketchEmotionRecognitionServiceTest extends TestCase {

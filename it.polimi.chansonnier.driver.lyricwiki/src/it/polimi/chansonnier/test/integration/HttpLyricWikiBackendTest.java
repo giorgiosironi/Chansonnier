@@ -1,7 +1,7 @@
 package it.polimi.chansonnier.test.integration;
 
-import it.polimi.chansonnier.HttpLyricWikiBackend;
-import it.polimi.chansonnier.LyricWikiBackend;
+import it.polimi.chansonnier.driver.lyricwiki.HttpLyricWikiBackend;
+import it.polimi.chansonnier.driver.lyricwiki.LyricWikiBackend;
 import junit.framework.TestCase;
 
 public class HttpLyricWikiBackendTest extends TestCase {

@@ -1,5 +1,7 @@
 package it.polimi.chansonnier;
 
+import it.polimi.chansonnier.spi.EmotionRecognitionService;
+
 import java.io.IOException;
 
 import synesketch.emotion.Emotion;

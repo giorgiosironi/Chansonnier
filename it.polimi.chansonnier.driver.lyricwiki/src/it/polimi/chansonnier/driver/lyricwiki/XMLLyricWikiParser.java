@@ -1,4 +1,4 @@
-package it.polimi.chansonnier;
+package it.polimi.chansonnier.driver.lyricwiki;
 
 import java.io.StringReader;
 import java.math.BigInteger;
@@ -15,7 +15,7 @@ import org.xml.sax.InputSource;
 public class XMLLyricWikiParser implements LyricWikiParser {
 
 	/* (non-Javadoc)
-	 * @see it.polimi.chansonnier.LyricWikiParser#getLyrics(java.lang.String)
+	 * @see it.polimi.chansonnier.driver.lyricwiki.LyricWikiParser#getLyrics(java.lang.String)
 	 */
 	public String getLyrics(String xmlContent) {
         try {

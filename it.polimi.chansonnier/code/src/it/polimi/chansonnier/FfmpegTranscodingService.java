@@ -1,5 +1,7 @@
 package it.polimi.chansonnier;
 
+import it.polimi.chansonnier.spi.TranscodingService;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;

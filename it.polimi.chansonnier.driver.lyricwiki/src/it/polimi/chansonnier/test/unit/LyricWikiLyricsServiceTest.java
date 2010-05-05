@@ -1,9 +1,9 @@
 package it.polimi.chansonnier.test.unit;
 
-import it.polimi.chansonnier.LyricWikiBackend;
-import it.polimi.chansonnier.LyricWikiLyricsService;
-import it.polimi.chansonnier.LyricWikiParser;
-import it.polimi.chansonnier.LyricsService;
+import it.polimi.chansonnier.driver.lyricwiki.LyricWikiBackend;
+import it.polimi.chansonnier.driver.lyricwiki.LyricWikiLyricsService;
+import it.polimi.chansonnier.driver.lyricwiki.LyricWikiParser;
+import it.polimi.chansonnier.spi.LyricsService;
 import junit.framework.TestCase;
 
 public class LyricWikiLyricsServiceTest extends TestCase implements LyricWikiBackend, LyricWikiParser {

@@ -1,4 +1,4 @@
-package it.polimi.chansonnier;
+package it.polimi.chansonnier.driver.lyricwiki;
 
 import java.io.BufferedReader;
 import java.io.IOException;

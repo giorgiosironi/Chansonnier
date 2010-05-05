@@ -1,7 +1,7 @@
 package it.polimi.chansonnier.test.unit;
 
-import it.polimi.chansonnier.LanguageRecognitionService;
 import it.polimi.chansonnier.TextCatLanguageRecognitionService;
+import it.polimi.chansonnier.spi.LanguageRecognitionService;
 import junit.framework.TestCase;
 
 public class TextcatLanguageRecognitionServiceTest extends TestCase {

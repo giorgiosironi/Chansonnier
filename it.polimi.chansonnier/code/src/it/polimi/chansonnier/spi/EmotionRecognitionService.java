@@ -1,4 +1,4 @@
-package it.polimi.chansonnier;
+package it.polimi.chansonnier.spi;
 
 public interface EmotionRecognitionService {
 

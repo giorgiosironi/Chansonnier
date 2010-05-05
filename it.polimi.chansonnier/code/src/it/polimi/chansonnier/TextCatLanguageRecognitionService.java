@@ -1,5 +1,7 @@
 package it.polimi.chansonnier;
 
+import it.polimi.chansonnier.spi.LanguageRecognitionService;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;

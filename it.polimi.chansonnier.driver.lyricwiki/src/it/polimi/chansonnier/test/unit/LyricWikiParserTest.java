@@ -1,7 +1,7 @@
 package it.polimi.chansonnier.test.unit;
 
-import it.polimi.chansonnier.LyricWikiParser;
-import it.polimi.chansonnier.XMLLyricWikiParser;
+import it.polimi.chansonnier.driver.lyricwiki.LyricWikiParser;
+import it.polimi.chansonnier.driver.lyricwiki.XMLLyricWikiParser;
 
 import java.io.File;
 import java.io.FileInputStream;

@@ -1,4 +1,4 @@
-package it.polimi.chansonnier;
+package it.polimi.chansonnier.processing;
 
 import org.eclipse.smila.blackboard.Blackboard;
 import org.eclipse.smila.blackboard.path.Path;
