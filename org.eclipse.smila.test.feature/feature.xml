@@ -264,5 +264,15 @@
          download-size="0"
          install-size="0"
          version="0.0.0"/>
+   <plugin
+         id="it.polimi.chansonnier.agent.test"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+   <plugin
+         id="it.polimi.chansonnier.core.test"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
 
 </feature>

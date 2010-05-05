@@ -2,7 +2,7 @@
 <project name="testsuite" default="run" basedir=".">
   <!-- The property ${eclipse-home} should be passed into this script -->
   <!-- Set a meaningful default value for when it is not. -->
-  <property name="eclipse-home" value="${basedir}\..\.."/>
+  <property name="eclipse-home" value="${basedir}/../.."/>
  
   <!-- sets the properties plugin-name, and library-file -->
   <!-- value of attribute value has to be changed to your test bundle name -->

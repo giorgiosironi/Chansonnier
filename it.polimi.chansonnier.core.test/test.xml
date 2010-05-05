@@ -2,7 +2,7 @@
 <project name="testsuite" default="run" basedir=".">
   <!-- The property ${eclipse-home} should be passed into this script -->
   <!-- Set a meaningful default value for when it is not. -->
-  <property name="eclipse-home" value="${basedir}\..\.."/>
+  <property name="eclipse-home" value="${basedir}/../.."/>
  
   <!-- sets the properties plugin-name, and library-file -->
   <!-- value of attribute value has to be changed to your test bundle name -->
@@ -23,6 +23,7 @@
   <target name="suite">
     <property name="eit-folder" value="${eclipse-home}/eit_folder"/>
     <delete dir="${eit-folder}" quiet="true"/>
+    <echo>ECLIPSE-HOME IS: ${eclipse-home}</echo>
     <ant target="core-test" antfile="${library-file}" dir="${eclipse-home}">
       <property name="java.home" value="${test.java.home}"/>
       <property name="data-dir" value="${eit-folder}"/>
