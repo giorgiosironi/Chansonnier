@@ -7,8 +7,15 @@ import java.util.Queue;
 import org.eclipse.smila.connectivity.framework.AbstractAgent;
 import org.eclipse.smila.connectivity.framework.AgentException;
 import org.eclipse.smila.connectivity.framework.util.AgentThreadState;
+import org.eclipse.smila.connectivity.framework.util.ConnectivityIdFactory;
+import org.eclipse.smila.datamodel.id.Id;
+import org.eclipse.smila.datamodel.record.Attribute;
+import org.eclipse.smila.datamodel.record.Literal;
+import org.eclipse.smila.datamodel.record.MObject;
 import org.eclipse.smila.datamodel.record.Record;
 import org.eclipse.smila.datamodel.record.RecordFactory;
+import org.eclipse.smila.datamodel.record.impl.AttributeImpl;
+import org.eclipse.smila.datamodel.record.impl.LiteralImpl;
 
 public class YoutubeLinkGrabberAgent extends AbstractAgent implements LinkGrabberAgent {
 	RecordFactory _factory = RecordFactory.DEFAULT_INSTANCE;
@@ -28,6 +35,23 @@ public class YoutubeLinkGrabberAgent extends AbstractAgent implements LinkGrabbe
 		    		  System.out.println("Test...");
 		    		  String newLink = _linksToProcess.poll();
 		        	Record newRecord = _factory.createRecord();
+		        	Attribute[] idAttributes = new Attribute[1];
+		        	idAttributes[0] = new AttributeImpl();
+		        	idAttributes[0].setName("key");
+		        	Literal idL = new LiteralImpl(); 
+		        	idL.setStringValue("42");
+		        	idAttributes[0].addLiteral(idL);
+		        	 final Id id =
+		        	      ConnectivityIdFactory.getInstance().createId(getConfig().getDataSourceID(), idAttributes);
+		        	newRecord.setId(id);
+		            final MObject metadata = _factory.createMetadataObject();
+		            newRecord.setMetadata(metadata);
+		            Attribute attribute = new AttributeImpl();
+		            attribute.setName("PageTitle");
+		            Literal l = new LiteralImpl();
+		            l.setStringValue("U2 - With or without you");
+		            attribute.addLiteral(l);
+		            newRecord.getMetadata().setAttribute("PageTitle", attribute);
 		        	getControllerCallback().add(null, null, newRecord, null);
 		    	  }
 		      } // while

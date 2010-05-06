@@ -82,6 +82,7 @@ public class LinkGrabberAgentTest extends DeclarativeServiceTestCase implements 
 	  public void add(final String sessionId, final DeltaIndexingType deltaIndexingType, final Record record, final String hash) {
 	    //assertNotNull(record);
 	    //assertEquals(_config.getDataSourceID(), record.getId().getSource());
+		  assertEquals("U2 - With or without you", record.getMetadata().getAttribute("PageTitle").getLiteral().toString());
 	    _addCount++;
 	  }
 
