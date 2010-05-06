@@ -1004,17 +1004,24 @@ public class TransientBlackboardImpl implements Blackboard {
       return record.getMetadata();
     }
     final Attribute attribute = getAttributeByPath(id, path, create);
+    System.out.println(attribute.getName());
+    System.out.println(attribute);
+    System.out.println(path);
     if (attribute != null) {
       final int index = getLastIndex(path);
       if (index == PathStep.ATTRIBUTE_ANNOTATION) {
+    	  System.out.println(1);
         return attribute;
       } else {
+    	  System.out.println(2);
         final List<MObject> mObjects = attribute.getObjects();
         if (mObjects.size() > index) {
+        	System.out.println(3);
           return mObjects.get(index);
         }
       }
     }
+   
     return null;
   }
 
