@@ -4,5 +4,6 @@ SMILA.application/SMILA.log
 **/derby.log
 SMILA.application/configuration/org.eclipse.smila.tomcat/work/
 SMILA.application/derby.log
+**/.svn
 **/bin
 .metadata

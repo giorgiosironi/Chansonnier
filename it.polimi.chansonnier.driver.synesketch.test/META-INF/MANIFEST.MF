@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Tests for Synesketch wrapper
+Bundle-SymbolicName: it.polimi.chansonnier.driver.synesketch.test
+Bundle-Version: 0.1.0
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: it.polimi.chansonnier.spi, 
+ it.polimi.chansonnier.driver.synesketch,
+ junit.framework;version="[3.8.0,4.0.0)"
+Export-Package: it.polimi.chansonnier.driver.synesketch.test
+

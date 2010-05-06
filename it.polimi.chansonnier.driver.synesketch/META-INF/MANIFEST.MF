@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Synesketch wrapper
+Bundle-SymbolicName: it.polimi.chansonnier.driver.synesketch
+Bundle-Version: 0.1.0
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ClassPath: ., lib/synesketch.jar, lib/synesketch-core.jar
+Import-Package: it.polimi.chansonnier.spi
+Export-Package: it.polimi.chansonnier.driver.synesketch
+Service-Component: OSGI-INF/EmotionRecognitionService.xml
+
