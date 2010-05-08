@@ -30,25 +30,4 @@
       <service name="proc:SearchPipeline" port="ProcessorPort" />
     </provide>    
   </process>
-  
-   <process name="proc:AddFeedPipeline">
-    <in-memory>true</in-memory>
-    <provide partnerLink="Pipeline">
-      <service name="proc:AddFeedPipeline" port="ProcessorPort" />
-    </provide>    
-  </process>
-  
-  <process name="proc:XmlDumpSplitterPipeline">
-    <in-memory>true</in-memory>
-    <provide partnerLink="Pipeline">
-      <service name="proc:XmlDumpSplitterPipeline" port="ProcessorPort" />
-    </provide>    
-  </process>
-  
-  <process name="proc:XmlDumpAddPipeline">
-    <in-memory>true</in-memory>
-    <provide partnerLink="Pipeline">
-      <service name="proc:XmlDumpAddPipeline" port="ProcessorPort" />
-    </provide>    
-  </process>  
 </deploy>

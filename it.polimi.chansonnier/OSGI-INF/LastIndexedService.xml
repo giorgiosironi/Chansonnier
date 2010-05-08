@@ -1,0 +1,8 @@
+<component name="lastIndexedService" immediate="true">
+  <implementation class="it.polimi.chansonnier.processing.LastIndexedService" />
+  <service>
+    <provide interface="org.eclipse.smila.processing.ProcessingService"/>  
+    <provide interface="it.polimi.chansonnier.processing.LastIndexedService"/>         
+  </service>
+  <property name="smila.processing.service.name" value="LastIndexedService"/>
+</component>

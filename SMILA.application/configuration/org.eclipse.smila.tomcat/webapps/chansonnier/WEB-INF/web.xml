@@ -7,10 +7,19 @@
     <servlet-name>add</servlet-name>
     <servlet-class>it.polimi.chansonnier.servlet.AddServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>last</servlet-name>
+    <servlet-class>it.polimi.chansonnier.servlet.LastServlet</servlet-class>
+  </servlet>
+ 
   
   <servlet-mapping>
     <servlet-name>add</servlet-name>
     <url-pattern>/add</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>last</servlet-name>
+    <url-pattern>/last</url-pattern>
   </servlet-mapping>
 
 </web-app>

@@ -67,7 +67,7 @@ public abstract class AbstractPluginRegistryBase<T> {
     
     for (final IExtension extension : extensions) {
       try {
-    	  System.out.println("Messing with: " + extension.getUniqueIdentifier());
+    	  //System.out.println("Messing with: " + extension.getUniqueIdentifier());
     	  //System.out.println("   ns: " + extension.getNamespaceIdentifier());
     	  //System.out.println("   simple: " + extension.getSimpleIdentifier());
     	  String identifier = extension.getUniqueIdentifier();

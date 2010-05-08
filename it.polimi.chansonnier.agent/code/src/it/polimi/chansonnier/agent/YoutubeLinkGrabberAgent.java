@@ -52,7 +52,7 @@ public class YoutubeLinkGrabberAgent extends AbstractAgent implements LinkGrabbe
 		            l.setStringValue("U2 - With or without you");
 		            attribute.addLiteral(l);
 		            newRecord.getMetadata().setAttribute("PageTitle", attribute);
-		        	getControllerCallback().add(null, null, newRecord, null);
+		        	getControllerCallback().add(getSessionId(), getConfig().getDeltaIndexing(), newRecord, "424242");
 		    	  }
 		      } // while
 		    } catch (Throwable t) {

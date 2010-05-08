@@ -219,7 +219,7 @@ public class ODEWorkflowProcessor implements WorkflowProcessor {
       try {
         final Element result = _bpelServer.invoke(processQName, OPERATION_NAME, message);
         if (result != null) {
-          if (_log.isTraceEnabled()) {
+          if (_log.isTraceEnabled() || true) {
             _log.trace("Final Result: " + DOMUtils.domToString(result));
           }
           final ProcessorMessage resultIds = _messageHelper.parseMessage(blackboard, result);

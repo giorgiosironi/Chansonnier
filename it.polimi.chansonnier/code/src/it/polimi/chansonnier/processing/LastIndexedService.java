@@ -1,0 +1,32 @@
+package it.polimi.chansonnier.processing;
+
+import org.eclipse.smila.blackboard.Blackboard;
+import org.eclipse.smila.blackboard.BlackboardAccessException;
+import org.eclipse.smila.blackboard.path.Path;
+import org.eclipse.smila.datamodel.id.Id;
+import org.eclipse.smila.processing.ProcessingException;
+import org.eclipse.smila.processing.ProcessingService;
+
+public class LastIndexedService implements ProcessingService {
+
+	private String _lastTitle;
+
+	@Override
+	public Id[] process(Blackboard blackboard, Id[] recordIds)
+			throws ProcessingException {
+		try {
+			for (Id id : recordIds) {
+				// TODO: it is Title not PageTitle
+				_lastTitle = blackboard.getLiteral(id, new Path("PageTitle")).toString();	
+			}
+		} catch (BlackboardAccessException e) {
+			throw new ProcessingException(e);
+		}
+		return recordIds;
+	}
+
+	public String getLastTitle() {
+		return _lastTitle;
+	}
+
+}

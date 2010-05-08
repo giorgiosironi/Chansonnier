@@ -12,7 +12,7 @@ import org.eclipse.smila.processing.ProcessingService;
 
 public class LyricsProcessingService implements ProcessingService {
 	LyricsService _lyricsService;
-
+	
 	@Override
 	public Id[] process(Blackboard blackboard, Id[] recordIds)
 			throws ProcessingException {
@@ -27,12 +27,16 @@ public class LyricsProcessingService implements ProcessingService {
 					// Led Zeppelin - Stairway to heaven
 					artist = pieces[0].trim();
 					title = pieces[1].trim();
+					if (this._lyricsService == null) {
+						lyrics = "Dummy lyrics...";
+					} else {
 					lyrics = _lyricsService.getLyrics(title, artist);
 					if (lyrics == null) {
 						// Stairway to heaven - Led Zeppelin
 						title = pieces[0].trim();
 						artist = pieces[1].trim();
 						lyrics = _lyricsService.getLyrics(title, artist);
+					}
 					}
 				}
 				
@@ -50,8 +54,11 @@ public class LyricsProcessingService implements ProcessingService {
 	}
 
 	public void setLyricsService(LyricsService lyricsService) {
-		// TODO Auto-generated method stub
 		_lyricsService = lyricsService;
+	}
+	
+	public void unsetLyricsService(LyricsService lyricsService) {
+		_lyricsService = null;
 	}
 
 }

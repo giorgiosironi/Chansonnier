@@ -25,3 +25,5 @@ Import-Package: javax.xml.bind,
  org.osgi.framework;version="1.3.0"
 Export-Package: it.polimi.chansonnier.agent,
  it.polimi.chansonnier.agent.messages
+Service-Component: OSGI-INF/LinkGrabberAgent.xml
+

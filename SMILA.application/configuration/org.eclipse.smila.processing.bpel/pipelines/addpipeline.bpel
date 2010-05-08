@@ -32,96 +32,34 @@
 		<receive name="start" partnerLink="Pipeline" portType="proc:ProcessorPortType" operation="process" variable="request"
 			createInstance="yes" />
 
-        <if name="conditionHasMimeType">
-            <condition>not($request.records/rec:Record[1]/rec:A[@n="MimeType"]/rec:L)</condition>
-			<sequence name="detectMimeType">		  
+            <extensionActivity name="invokeLyricsService">
+                <proc:invokeService>
+                    <proc:service name="LyricsProcessingService" />
+                    <proc:variables input="request" output="request" />
+                </proc:invokeService>
+            </extensionActivity>
+                    
+            <extensionActivity name="invokeLuceneService">
+                <proc:invokeService>
+                    <proc:service name="LuceneIndexService" />
+                    <proc:variables input="request" output="request" />
+                    <proc:setAnnotations>
+                        <rec:An n="org.eclipse.smila.lucene.LuceneIndexService">
+                            <rec:V n="indexName">test_index</rec:V>
+                            <rec:V n="executionMode">ADD</rec:V>
+                            <rec:V n="allowDoublets">false</rec:V>
+                        </rec:An>
+                    </proc:setAnnotations>
+                </proc:invokeService>
+            </extensionActivity>
 
-                <extensionActivity name="invokeMimeTypeIdentifyService">
-                    <proc:invokeService>
-                        <proc:service name="MimeTypeIdentifyService" />
-                        <proc:variables input="request" output="request" />
-                    </proc:invokeService>
-                </extensionActivity>
-
-            </sequence>				
-        </if>		
-
- 		<!-- only process text based content, skip everything else -->
- 		<if name="conditionIsText">
-            <condition>starts-with($request.records/rec:Record[1]/rec:A[@n="MimeType"]/rec:L/rec:V, "text/")</condition>
-			<sequence name="processTextBasedContent">		  
- 
-				<if name="conditionIsHtml">
-                    <condition>starts-with($request.records/rec:Record[1]/rec:A[@n="MimeType"]/rec:L/rec:V, "text/html") 
-                    or starts-with($request.records/rec:Record[1]/rec:A[@n="MimeType"]/rec:L/rec:V, "text/xml")</condition>
-         				<!-- extract txt from html and xml files -->
-                        <extensionActivity name="invokeHtml2Txt">
-                            <proc:invokePipelet>
-                                <proc:pipelet class="org.eclipse.smila.processing.pipelets.HtmlToTextPipelet" />
-                                <proc:variables input="request" output="request" />
-                                <proc:PipeletConfiguration>
-                                    <proc:Property name="inputType">
-                                        <proc:Value>ATTACHMENT</proc:Value>
-                                    </proc:Property>				       
-                                    <proc:Property name="outputType">
-                                        <proc:Value>ATTRIBUTE</proc:Value>
-                                    </proc:Property>
-                                    <proc:Property name="inputName">
-                                        <proc:Value>Content</proc:Value>
-                                    </proc:Property>
-                                    <proc:Property name="outputName">
-                                        <proc:Value>Content</proc:Value>
-                                    </proc:Property>
-                                    <proc:Property name="meta:title">
-                                        <proc:Value>Title</proc:Value>
-                                    </proc:Property>					
-                                </proc:PipeletConfiguration>       								
-                            </proc:invokePipelet>
-                        </extensionActivity>
-                    <else>
-           				<!-- copy txt from attachment to attribute -->
-                        <extensionActivity name="invokeCopyContent">
-                            <proc:invokePipelet>
-                                <proc:pipelet class="org.eclipse.smila.processing.pipelets.CopyPipelet" />
-                                <proc:variables input="request" output="request" />
-                                <proc:PipeletConfiguration>
-                                    <proc:Property name="inputType">
-                                        <proc:Value>ATTACHMENT</proc:Value>
-                                    </proc:Property>				       
-                                    <proc:Property name="outputType">
-                                        <proc:Value>ATTRIBUTE</proc:Value>
-                                    </proc:Property>
-                                    <proc:Property name="inputName">
-                                        <proc:Value>Content</proc:Value>
-                                    </proc:Property>
-                                    <proc:Property name="outputName">
-                                        <proc:Value>Content</proc:Value>
-                                    </proc:Property>       
-                                    <proc:Property name="mode">
-                                        <proc:Value>COPY</proc:Value>
-                                    </proc:Property>       
-                                </proc:PipeletConfiguration>       								
-                            </proc:invokePipelet>
-                        </extensionActivity>
-                    </else>
-				</if>			
-                		
-				<extensionActivity name="invokeLuceneService">
-					<proc:invokeService>
-						<proc:service name="LuceneIndexService" />
-						<proc:variables input="request" output="request" />
-						<proc:setAnnotations>
-							<rec:An n="org.eclipse.smila.lucene.LuceneIndexService">
-								<rec:V n="indexName">test_index</rec:V>
-								<rec:V n="executionMode">ADD</rec:V>
-								<rec:V n="allowDoublets">false</rec:V>
-							</rec:An>
-						</proc:setAnnotations>
-					</proc:invokeService>
-				</extensionActivity>
-				
-			</sequence>				
-		</if>		
+             <extensionActivity name="invokeLastIndexedService">
+                <proc:invokeService>
+                    <proc:service name="LastIndexedService" />
+                    <proc:variables input="request" output="request" />
+                </proc:invokeService>
+            </extensionActivity>
+            
 
 		<reply name="end" partnerLink="Pipeline" portType="proc:ProcessorPortType" operation="process" variable="request" />
 		<exit />

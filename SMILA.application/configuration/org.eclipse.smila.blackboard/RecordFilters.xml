@@ -13,7 +13,6 @@
   xsi:noNamespaceSchemaLocation="../org.eclipse.smila.datamodel.tools/schemas/RecordFilters.xsd"
 >
   <Filter name="workflow-object">    
-    <Attribute name="MimeType" keepAnnotations="false"/>              
   </Filter>
   <Filter name="only-attributes">
     <Attribute name="*"/>

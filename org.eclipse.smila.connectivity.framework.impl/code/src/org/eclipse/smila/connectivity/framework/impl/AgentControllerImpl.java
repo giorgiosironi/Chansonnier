@@ -61,7 +61,7 @@ public class AgentControllerImpl extends AbstractController implements AgentCont
    * Default Constructor.
    */
   public AgentControllerImpl() {
-    if (_log.isTraceEnabled()) {
+    if (_log.isTraceEnabled() || true) {
       _log.trace("Creating AgentControllerImpl");
     }
     _activeAgents = new HashMap<String, Agent>();
@@ -213,7 +213,6 @@ public class AgentControllerImpl extends AbstractController implements AgentCont
         if (isUpdate) {
           // TODO: add compound management
           final boolean isCompound = false;
-
           // add record to connectivity manager
           getConnectivityManager().add(new Record[] { record });
 
