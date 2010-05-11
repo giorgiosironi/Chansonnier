@@ -1,8 +1,17 @@
 package it.polimi.chansonnier.agent;
 
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.eclipse.smila.connectivity.framework.AbstractAgent;
 import org.eclipse.smila.connectivity.framework.AgentException;
@@ -20,6 +29,7 @@ import org.eclipse.smila.datamodel.record.impl.LiteralImpl;
 public class YoutubeLinkGrabberAgent extends AbstractAgent implements LinkGrabberAgent {
 	RecordFactory _factory = RecordFactory.DEFAULT_INSTANCE;
 	Queue<String> _linksToProcess = new LinkedList<String>();
+	private YoutubeGrabber _grabber;
 	
 	@Override
 	public void addLink(String link) {
@@ -32,26 +42,11 @@ public class YoutubeLinkGrabberAgent extends AbstractAgent implements LinkGrabbe
 		try {
 		      while (!isStopThread()) {
 		    	  if (!_linksToProcess.isEmpty()) {
-		    		  System.out.println("Test...");
-		    		  String newLink = _linksToProcess.poll();
-		        	Record newRecord = _factory.createRecord();
-		        	Attribute[] idAttributes = new Attribute[1];
-		        	idAttributes[0] = new AttributeImpl();
-		        	idAttributes[0].setName("key");
-		        	Literal idL = new LiteralImpl(); 
-		        	idL.setStringValue("42");
-		        	idAttributes[0].addLiteral(idL);
-		        	 final Id id =
-		        	      ConnectivityIdFactory.getInstance().createId(getConfig().getDataSourceID(), idAttributes);
-		        	newRecord.setId(id);
-		            final MObject metadata = _factory.createMetadataObject();
-		            newRecord.setMetadata(metadata);
-		            Attribute attribute = new AttributeImpl();
-		            attribute.setName("PageTitle");
-		            Literal l = new LiteralImpl();
-		            l.setStringValue("U2 - With or without you");
-		            attribute.addLiteral(l);
-		            newRecord.getMetadata().setAttribute("PageTitle", attribute);
+		    		String newLink = _linksToProcess.poll();
+		    		Record newRecord = _createRecord();
+		        	newRecord.setId(_createId(newLink));
+		        	_setPageTitle(newRecord, _getPageTitle(newLink));
+		        	_setOriginal(newRecord, _grabber.getVideo(newLink));
 		        	getControllerCallback().add(getSessionId(), getConfig().getDeltaIndexing(), newRecord, "424242");
 		    	  }
 		      } // while
@@ -69,9 +64,62 @@ public class YoutubeLinkGrabberAgent extends AbstractAgent implements LinkGrabbe
 
 	}
 
+	private Record _createRecord() {
+		Record newRecord = _factory.createRecord();
+        final MObject metadata = _factory.createMetadataObject();
+        newRecord.setMetadata(metadata);
+        return newRecord;
+	}
+	
+	private Id _createId(String link) {
+    	Attribute[] idAttributes = new Attribute[1];
+    	idAttributes[0] = new AttributeImpl();
+    	idAttributes[0].setName("key");
+    	Literal idL = new LiteralImpl(); 
+    	idL.setStringValue("42");
+    	idAttributes[0].addLiteral(idL);
+    	return ConnectivityIdFactory.getInstance().createId(getConfig().getDataSourceID(), idAttributes);
+	}
+	
+	private void _setPageTitle(Record record, String value) {
+		Attribute attribute = new AttributeImpl();
+        attribute.setName("PageTitle");
+        Literal l = new LiteralImpl();
+        l.setStringValue(value);
+        attribute.addLiteral(l);
+        record.getMetadata().setAttribute("PageTitle", attribute);
+	}
+	
+	private void _setOriginal(Record record, InputStream video) throws IOException {
+		ByteArrayOutputStream out = new ByteArrayOutputStream();
+		byte[] b = new byte[4096];
+		for (int n; (n = video.read(b)) != -1; ) {
+			out.write(b, 0, n);
+		}
+		record.setAttachment("Original", out.toByteArray());
+		
+	}
+
+	/**
+	 * I know, HTML is not a regular language, but regular expressions are quick
+	 * @param newLink
+	 * @return the content of <title>
+	 * @throws IOException
+	 */
+	private String _getPageTitle(String newLink) throws IOException {
+		String html = URLUtils.retrieve(new URL(newLink));
+		html = html.replaceAll("\\s+", " ");
+		Pattern p = Pattern.compile("<title>(.*?)</title>");
+		Matcher m = p.matcher(html);
+		m.find();
+		String fullTitle = m.group(1);
+		String title = fullTitle.replace("YouTube -", "");
+		title = title.trim();
+		return title;
+	}
+
 	@Override
 	protected void initialize() throws AgentException {
-		// TODO Auto-generated method stub
-		
+		_grabber = new YoutubeGrabber();
 	}
 }

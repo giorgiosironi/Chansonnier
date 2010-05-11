@@ -276,7 +276,13 @@ public class YoutubeGrabber// extends JApplet
   }
   
   
-  public String init(String pageUrl) throws Exception
+  /**
+   * 
+   * @param pageUrl
+   * @return url of the FLV file
+   * @throws Exception
+   */
+  private String getFlvUrl(String pageUrl) throws Exception
   {
 	  URL page = new URL(pageUrl);
 	  String query = page.getQuery();
@@ -295,12 +301,10 @@ public class YoutubeGrabber// extends JApplet
     String error = null;
       String vParam = getParameter("v");
       String uParam = getParameter("u");
-      System.out.println("param video: " + pageUrl + "\r\n");
-      System.out.println("param v: " + vParam + "\r\n");
           String video_id = vParam;
           String u_id = uParam;
           if (video_id == null) video_id = inbtwn(URLDecoder.decode(getRedirUrl(u_id), "UTF-8"), "v=", "&");
-          String pageSource = getUrlContent("http://www.youtube.com/watch?v=" + video_id, "GET");
+          String pageSource = URLUtils.retrieve(new URL("http://www.youtube.com/watch?v=" + video_id));
 
           String title = inbtwn(pageSource, "'VIDEO_TITLE': '", "',");
           if (title == null) title = inbtwn(pageSource, "name=\"title\" content=\"", "\"");
@@ -313,39 +317,38 @@ public class YoutubeGrabber// extends JApplet
           String dl_flvlow = null;
           String dl_flvmed = null;
           String dl_flvmed2 = null;
-          //String dl_flvhigh = null;
+          String dl_flvhigh = null;
 
-          //if (dl_flvlow != null) System.out.println("kv_ds('dl_flvlow', 'FLV', 'Low Quality - 320x240', '" + dl_flvlow + "', '" + title + "');");
           if (dl_flvmed == null) dl_flvmed = getRedirUrl("http://www.youtube.com/get_video?video_id=" + video_id + "&t=" + token + "&fmt=34");
           if (dl_flvmed != null) return dl_flvmed;
           if (dl_flvmed2 == null) dl_flvmed2 = getRedirUrl("http://www.youtube.com/get_video?video_id=" + video_id + "&t=" + token + "&fmt=6");
           if (dl_flvmed2 != null) return dl_flvmed2;
-          //if (dl_flvhigh == null) dl_flvhigh = getRedirUrl("http://www.youtube.com/get_video?video_id=" + video_id + "&t=" + token + "&fmt=35");
-          //if (dl_flvhigh != null) System.out.println("kv_ds('dl_flvhigh', 'FLV', 'High Quality - 640x380', '" + dl_flvhigh + "', '" + title + "');");
-      return "ERROR";
+          if (dl_flvlow == null) dl_flvlow = getRedirUrl("http://www.youtube.com/get_video?video_id=" + video_id + "&t=" + token + "&fmt=5");
+          if (dl_flvlow != null) return dl_flvlow;
+          if (dl_flvhigh == null) dl_flvhigh = getRedirUrl("http://www.youtube.com/get_video?video_id=" + video_id + "&t=" + token + "&fmt=35");
+          if (dl_flvhigh != null) return dl_flvhigh;
+          if (1 == 1) return "";
+          String dl_3gplow = null;
+          String dl_3gpmed = null;
+          String dl_3gphigh = null;
+          String dl_mp4high = null;
+          String dl_mp4hd = null;
+          String dl_mp4hd2 = null;
 
-  }
+          if (dl_3gplow == null) dl_3gplow = getRedirUrl("http://www.youtube.com/get_video?video_id=" + video_id + "&t=" + token + "&fmt=13");
+          if (dl_3gplow != null) return dl_3gplow;
+          if (dl_3gpmed == null) dl_3gpmed = getRedirUrl("http://www.youtube.com/get_video?video_id=" + video_id + "&t=" + token + "&fmt=17");
+          if (dl_3gpmed != null) return dl_3gpmed;
+          if (dl_3gphigh == null) dl_3gphigh = getRedirUrl("http://www.youtube.com/get_video?video_id=" + video_id + "&t=" + token + "&fmt=36");
+          if (dl_3gphigh != null) return dl_3gphigh;
+         if (dl_mp4high == null) dl_mp4high = getRedirUrl("http://www.youtube.com/get_video?video_id=" + video_id + "&t=" + token + "&fmt=18");
+          if (dl_mp4high != null) return dl_mp4high;
+          if (dl_mp4hd == null) dl_mp4hd = getRedirUrl("http://www.youtube.com/get_video?video_id=" + video_id + "&t=" + token + "&fmt=22");
+          if (dl_mp4hd != null) return dl_mp4hd;
+          if (dl_mp4hd2 == null) dl_mp4hd2 = getRedirUrl("http://www.youtube.com/get_video?video_id=" + video_id + "&t=" + token + "&fmt=37");
+          if (dl_mp4hd2 != null) return  dl_mp4hd2; 
+      throw new Exception("No suitable FLV found.");
 
-  private String getUrlContent(String url, String httpMethod)
-  {
-    try
-    {
-      URL u = new URL(url);
-      HttpURLConnection conn = (HttpURLConnection)u.openConnection();
-      conn.setRequestMethod(httpMethod);
-      conn.setRequestProperty("User-Agent", getParameter("ua"));
-      InputStream is = conn.getInputStream();
-      ByteArrayOutputStream output = new ByteArrayOutputStream();
-      byte[] buffer = new byte[1024];
-      for (int bytesRead = 0; (bytesRead = is.read(buffer)) != -1; ) {
-        output.write(buffer, 0, bytesRead);
-      }
-      return output.toString();
-    }
-    catch (Exception e)
-    {
-      e.printStackTrace();
-    }return null;
   }
 
   private String getRedirUrl(String url)
@@ -394,7 +397,7 @@ public class YoutubeGrabber// extends JApplet
 
   	public InputStream getVideo(String pageUrl) {
   		try {
-			URL apiEndPoint = new URL(init(pageUrl)); 
+			URL apiEndPoint = new URL(getFlvUrl(pageUrl)); 
                   
 			URLConnection connection = apiEndPoint.openConnection();
 			return connection.getInputStream();

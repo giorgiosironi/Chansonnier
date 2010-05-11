@@ -1,5 +1,12 @@
 package it.polimi.chansonnier.agent.test;
 
+import java.io.ByteArrayInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Arrays;
+
 import it.polimi.chansonnier.agent.LinkGrabberAgent;
 import it.polimi.chansonnier.agent.YoutubeLinkGrabberAgent;
 
@@ -76,13 +83,22 @@ public class LinkGrabberAgentTest extends DeclarativeServiceTestCase implements 
 
 	  /**
 	   * {@inheritDoc}
+	 * @throws IOException 
 	   * 
 	   * @see AgentControllerCallback#add(String, DeltaIndexingType, Record, String)
 	   */
 	  public void add(final String sessionId, final DeltaIndexingType deltaIndexingType, final Record record, final String hash) {
-	    //assertNotNull(record);
-	    //assertEquals(_config.getDataSourceID(), record.getId().getSource());
-		  assertEquals("U2 - With or without you", record.getMetadata().getAttribute("PageTitle").getLiteral().toString());
+	    assertNotNull(record);
+	    assertEquals(_config.getDataSourceID(), record.getId().getSource());
+		assertEquals("See Ya In Anotha Life, Brotha !", record.getMetadata().getAttribute("PageTitle").getLiteral().toString());
+		
+		try {
+			assertContentEquals(new File("test/flv/desmond.flv"), record.getAttachment("Original"));
+		} catch (IOException e) {
+			fail(e.toString());
+		}
+		
+		
 	    _addCount++;
 	  }
 
@@ -92,9 +108,8 @@ public class LinkGrabberAgentTest extends DeclarativeServiceTestCase implements 
 	   * @see AgentControllerCallback#delete(String, DeltaIndexingType, Id)
 	   */
 	  public void delete(final String sessionId, final DeltaIndexingType deltaIndexingType, final Id id) {
+		  assertTrue(false);
 	    // should never be called in this test
-	    //assertNotNull(id);
-	    //assertEquals(_config.getDataSourceID(), id.getSource());
 	  }
 
 	  /**
@@ -104,9 +119,6 @@ public class LinkGrabberAgentTest extends DeclarativeServiceTestCase implements 
 	   */
 
 	  public void unregister(final String sessionId, final DeltaIndexingType deltaIndexingType, String dataSourceId) {
-	    //assertNotNull(dataSourceId);
-	    //assertEquals(_config.getDataSourceID(), dataSourceId);
-	    //_unregistered = true;
 	  }
 
 	  /**
@@ -136,29 +148,50 @@ public class LinkGrabberAgentTest extends DeclarativeServiceTestCase implements 
 	  public boolean doDeltaDelete(final DeltaIndexingType deltaIndexingType) {
 	    return true;
 	  }
+	  
+	  private void assertContentEquals( File expected, byte[] actual )
+	    throws IOException
+	{
+	    InputStream expectedIs = new FileInputStream( expected );
+	    try {
+	    	assertNotNull(actual);
+	        InputStream actualIs = new ByteArrayInputStream( actual );
+	        try {
+	            byte[] buf0 = new byte[ 1024 ];
+	            byte[] buf1 = new byte[ 1024 ];
+	            int n0 = 0;
+	            int n1 = 0;
 
-	  /**
-	   * Test crawler.
-	   * 
-	   * @throws Exception
-	   *           the exception
-	   */
+	            while(-1 != n0) {
+	                n0 = expectedIs.read(buf0);
+	                n1 = actualIs.read(buf1);
+	                assertTrue("The files " + expected + " and " + actual +
+	                           " have differing number of bytes available (" + n0 +
+	                           " vs " + n1 + ")",
+	                           n0 == n1);
+
+	                assertTrue("The files " + expected + " and " + actual +
+	                           " have different content",
+	                           Arrays.equals(buf0, buf1));
+	            }
+	        } finally {
+	            actualIs.close();
+	        }
+	    } finally {
+	        expectedIs.close();
+	    }
+	}
+
 	  public void testAgent() throws Exception {
 	    assertEquals(0, _addCount);
-	    assertFalse(_unregistered);
 
 	    _agent.addLink("http://www.youtube.com/watch?v=e7K1A0bh9Cs");
-	    System.out.println("1");
 	    _agent.start(this, new AgentState(), _config, "dummy_session_id");
-	    System.out.println("2");
 	    Thread.sleep(PAUSE);
-	    System.out.println("3");
 	    _agent.stop();
-	    System.out.println("4");
 	    Thread.sleep(PAUSE);
 
 	    assertEquals(1, _addCount);
-	    //assertTrue(_unregistered);
 	  }
 
 }
