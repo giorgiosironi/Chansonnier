@@ -319,14 +319,26 @@ public class YoutubeGrabber// extends JApplet
           String dl_flvmed2 = null;
           String dl_flvhigh = null;
 
-          if (dl_flvmed == null) dl_flvmed = getRedirUrl("http://www.youtube.com/get_video?video_id=" + video_id + "&t=" + token + "&fmt=34");
-          if (dl_flvmed != null) return dl_flvmed;
-          if (dl_flvmed2 == null) dl_flvmed2 = getRedirUrl("http://www.youtube.com/get_video?video_id=" + video_id + "&t=" + token + "&fmt=6");
-          if (dl_flvmed2 != null) return dl_flvmed2;
-          if (dl_flvlow == null) dl_flvlow = getRedirUrl("http://www.youtube.com/get_video?video_id=" + video_id + "&t=" + token + "&fmt=5");
-          if (dl_flvlow != null) return dl_flvlow;
-          if (dl_flvhigh == null) dl_flvhigh = getRedirUrl("http://www.youtube.com/get_video?video_id=" + video_id + "&t=" + token + "&fmt=35");
-          if (dl_flvhigh != null) return dl_flvhigh;
+          dl_flvmed = getRedirUrl("http://www.youtube.com/get_video?video_id=" + video_id + "&t=" + token + "&fmt=34");
+          if (dl_flvmed != null) {
+        	  System.out.println("flvmed");
+        	  return dl_flvmed;
+          }
+          dl_flvmed2 = getRedirUrl("http://www.youtube.com/get_video?video_id=" + video_id + "&t=" + token + "&fmt=6");
+          if (dl_flvmed2 != null) {
+        	  System.out.println("flvmed2");
+        	  return dl_flvmed2;
+          }
+          dl_flvlow = getRedirUrl("http://www.youtube.com/get_video?video_id=" + video_id + "&t=" + token + "&fmt=5");
+          if (dl_flvlow != null) {
+        	  System.out.println("flvlow");
+        	  return dl_flvlow;
+          }
+          dl_flvhigh = getRedirUrl("http://www.youtube.com/get_video?video_id=" + video_id + "&t=" + token + "&fmt=35");
+          if (dl_flvhigh != null) {
+        	  System.out.println("flvhigh");
+        	  return dl_flvhigh;
+          }
           if (1 == 1) return "";
           String dl_3gplow = null;
           String dl_3gpmed = null;

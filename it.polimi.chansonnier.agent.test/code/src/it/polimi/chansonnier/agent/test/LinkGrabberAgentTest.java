@@ -8,6 +8,7 @@ import java.io.InputStream;
 import java.util.Arrays;
 
 import it.polimi.chansonnier.agent.LinkGrabberAgent;
+import it.polimi.chansonnier.agent.URLUtils;
 import it.polimi.chansonnier.agent.YoutubeLinkGrabberAgent;
 
 import org.eclipse.smila.connectivity.framework.AgentState;
@@ -93,8 +94,11 @@ public class LinkGrabberAgentTest extends DeclarativeServiceTestCase implements 
 		assertEquals("See Ya In Anotha Life, Brotha !", record.getMetadata().getAttribute("PageTitle").getLiteral().toString());
 		
 		try {
-			assertContentEquals(new File("test/flv/desmond.flv"), record.getAttachment("Original"));
-		} catch (IOException e) {
+			byte[] attachment = record.getAttachment("Original");
+			assertNotNull(attachment);
+			assertEquals(URLUtils.readStart("test/flv/desmond.flv"),
+						 URLUtils.readStart(new ByteArrayInputStream(attachment)));
+		} catch (Exception e) {
 			fail(e.toString());
 		}
 		
@@ -148,39 +152,6 @@ public class LinkGrabberAgentTest extends DeclarativeServiceTestCase implements 
 	  public boolean doDeltaDelete(final DeltaIndexingType deltaIndexingType) {
 	    return true;
 	  }
-	  
-	  private void assertContentEquals( File expected, byte[] actual )
-	    throws IOException
-	{
-	    InputStream expectedIs = new FileInputStream( expected );
-	    try {
-	    	assertNotNull(actual);
-	        InputStream actualIs = new ByteArrayInputStream( actual );
-	        try {
-	            byte[] buf0 = new byte[ 1024 ];
-	            byte[] buf1 = new byte[ 1024 ];
-	            int n0 = 0;
-	            int n1 = 0;
-
-	            while(-1 != n0) {
-	                n0 = expectedIs.read(buf0);
-	                n1 = actualIs.read(buf1);
-	                assertTrue("The files " + expected + " and " + actual +
-	                           " have differing number of bytes available (" + n0 +
-	                           " vs " + n1 + ")",
-	                           n0 == n1);
-
-	                assertTrue("The files " + expected + " and " + actual +
-	                           " have different content",
-	                           Arrays.equals(buf0, buf1));
-	            }
-	        } finally {
-	            actualIs.close();
-	        }
-	    } finally {
-	        expectedIs.close();
-	    }
-	}
 
 	  public void testAgent() throws Exception {
 	    assertEquals(0, _addCount);
