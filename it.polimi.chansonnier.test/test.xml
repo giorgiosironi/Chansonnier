@@ -13,6 +13,14 @@
   <!-- all tests that are to be run. Initialization for individual tests -->
   <!-- should be done within the body of the suite target. -->
   <target name="init">
+      <!-- these are acceptance tests so the configuration is borrowed 
+           from the real configuration/ folder -->
+      <copy todir="${eclipse.test.dir}/configuration" overwrite="true" failonerror="no">
+        <fileset dir="${workspace}/SMILA.application/configuration/" defaultexcludes="yes">
+          <include name="**/*" />
+        </fileset>
+      </copy>
+
     <tstamp/>
     <delete>
       <fileset dir="${eclipse-home}" includes="${plugin-name}*.xml"/>
