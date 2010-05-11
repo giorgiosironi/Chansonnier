@@ -8,14 +8,18 @@ import java.net.URLConnection;
 import java.net.URLDecoder;
 import java.util.HashMap;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
 public class YoutubeGrabber
 {
+	private final Log _log = LogFactory.getLog(YoutubeGrabber.class);
 	
 	public InputStream getVideo(String pageUrl) {
   		try {
-			URL apiEndPoint = new URL(getVideoUrl(pageUrl)); 
-                  
-			URLConnection connection = apiEndPoint.openConnection();
+			URL video = new URL(getVideoUrl(pageUrl)); 
+            _log.debug("it.polimi.chansonnier.agent.YoutubeGrabber: downloading " + video);
+			URLConnection connection = video.openConnection();
 			return connection.getInputStream();
 		} catch (Exception e) {
 			e.printStackTrace();

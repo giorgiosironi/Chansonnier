@@ -2,7 +2,6 @@ package it.polimi.chansonnier.test;
 
 import junit.framework.TestCase;
 import com.meterware.httpunit.GetMethodWebRequest;
-import com.meterware.httpunit.HttpInternalErrorException;
 import com.meterware.httpunit.PostMethodWebRequest;
 import com.meterware.httpunit.WebConversation;
 import com.meterware.httpunit.WebRequest;
@@ -19,14 +18,20 @@ public class AddSongTest extends TestCase {
 	public void testGivenAYouTubeLinkAddsTheRelatedSongToTheIndex() throws Exception {
 		WebConversation wc = new WebConversation();
 		PostMethodWebRequest	req = new PostMethodWebRequest( "http://localhost:8080/chansonnier/add" );
-		req.setParameter("link", "http://YoutubeDummyLink.com");
+		req.setParameter("link", "http://www.youtube.com/watch?v=e8w7f0ShtIM");
 		WebResponse resp = wc.getResponse(req);
 		// TODO insert redirect
 		assertTrue(resp.getText().contains("Success"));
-		Thread.sleep(30000);
-		WebConversation wc2 = new WebConversation();
-		WebRequest     req2 = new GetMethodWebRequest( "http://localhost:8080/chansonnier/last" );
-		WebResponse   resp2 = wc2.getResponse( req2 );
-		assertTrue(resp2.getText().contains("With or without you"));
+		for (int i = 0; i < 40; i++) {
+			Thread.sleep(30000);
+			WebConversation wc2 = new WebConversation();
+			WebRequest     req2 = new GetMethodWebRequest( "http://localhost:8080/chansonnier/last" );
+			WebResponse   resp2 = wc2.getResponse( req2 );
+			if (resp2.getText().contains("Beautiful Day")) {
+				assertTrue(true);
+				return;
+			}
+		}
+		assertTrue(false);
 	}
 }

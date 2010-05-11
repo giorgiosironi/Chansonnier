@@ -13,6 +13,8 @@ import java.util.Queue;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.eclipse.smila.connectivity.framework.AbstractAgent;
 import org.eclipse.smila.connectivity.framework.AgentException;
 import org.eclipse.smila.connectivity.framework.util.AgentThreadState;
@@ -27,9 +29,10 @@ import org.eclipse.smila.datamodel.record.impl.AttributeImpl;
 import org.eclipse.smila.datamodel.record.impl.LiteralImpl;
 
 public class YoutubeLinkGrabberAgent extends AbstractAgent implements LinkGrabberAgent {
-	RecordFactory _factory = RecordFactory.DEFAULT_INSTANCE;
-	Queue<String> _linksToProcess = new LinkedList<String>();
+	private RecordFactory _factory = RecordFactory.DEFAULT_INSTANCE;
+	private Queue<String> _linksToProcess = new LinkedList<String>();
 	private YoutubeGrabber _grabber;
+	private final Log _log = LogFactory.getLog(YoutubeLinkGrabberAgent.class);
 	
 	@Override
 	public void addLink(String link) {
@@ -46,7 +49,9 @@ public class YoutubeLinkGrabberAgent extends AbstractAgent implements LinkGrabbe
 		    		Record newRecord = _createRecord();
 		        	newRecord.setId(_createId(newLink));
 		        	_setPageTitle(newRecord, _getPageTitle(newLink));
+		        	_log.debug("it.polimi.chansonnier.agent.YoutubeLinkGrabberAgent: downloading video");
 		        	_setOriginal(newRecord, _grabber.getVideo(newLink));
+		        	_log.debug("it.polimi.chansonnier.agent.YoutubeLinkGrabberAgent: completed video");
 		        	getControllerCallback().add(getSessionId(), getConfig().getDeltaIndexing(), newRecord, "424242");
 		    	  }
 		      } // while
