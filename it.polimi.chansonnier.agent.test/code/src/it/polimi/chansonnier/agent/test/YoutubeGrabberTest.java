@@ -1,14 +1,14 @@
 package it.polimi.chansonnier.agent.test;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.InputStream;
 
-import it.polimi.chansonnier.agent.YoutubeGrabber;
 import junit.framework.TestCase;
 
+import it.polimi.chansonnier.agent.URLUtils;
+import it.polimi.chansonnier.agent.YoutubeGrabber;
+
 public class YoutubeGrabberTest extends TestCase {
-	private static final int LENGTH = 256;
+
 	
 	private YoutubeGrabber _grabber;
 	
@@ -30,18 +30,6 @@ public class YoutubeGrabberTest extends TestCase {
 	
 	public void assertFlvStartIsTheSame(String pageUrl, String datFile) throws Exception {
 		InputStream is = _grabber.getVideo(pageUrl);
-		assertEquals(readStart(datFile), readStart(is));
-	}
-	
-	private String readStart(InputStream is) throws Exception {
-		byte[] bytes = new byte[LENGTH];
-		int read = is.read(bytes, 0, LENGTH);
-		assertEquals(LENGTH, read);
-		return new String(bytes);    
-	}
-
-	private String readStart(String filename) throws Exception {
-		File fp = new File(filename);
-		return readStart(new FileInputStream(fp));
+		assertEquals(URLUtils.readStart(datFile), URLUtils.readStart(is));
 	}
 }

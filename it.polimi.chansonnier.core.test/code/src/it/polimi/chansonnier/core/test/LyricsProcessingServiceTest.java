@@ -27,6 +27,16 @@ public class LyricsProcessingServiceTest extends ProcessingServiceTest implement
 	    assertEquals(LYRICS, text);
 	}
 	
+	public void testCreatesArtistAndTitleAttributesBasingOnWhichCombinationFindsTheLyrics() throws Exception {
+	    final Id id = createBlackboardRecord("copy", "attribute-attachment");
+	    setAttribute(id, new Path("PageTitle"), ARTIST + " - " + TITLE);
+	    
+	    _service.process(getBlackboard(), new Id[] { id });
+	    
+	    assertEquals(ARTIST, getAttribute(id, new Path("Artist")).toString());
+	    assertEquals(TITLE, getAttribute(id, new Path("Title")).toString());
+	}
+	
 	public void testStoresLyricsAsAnAnnotationWhenTitleComesBeforeArtist() throws Exception {
 	    final Id id = createBlackboardRecord("copy", "attribute-attachment");
 	    setAttribute(id, new Path("PageTitle"), TITLE + " - " + ARTIST);

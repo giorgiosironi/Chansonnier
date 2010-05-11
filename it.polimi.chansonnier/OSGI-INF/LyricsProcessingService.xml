@@ -1,12 +1,12 @@
 <component name="LyricsProcessingService" immediate="true">
   <implementation class="it.polimi.chansonnier.processing.LyricsProcessingService" />
-  <!--<reference
-  	name="lyricsService"
+  <reference
+  	name="LyricsService"
   	interface="it.polimi.chansonnier.spi.LyricsService"
   	policy="static"
   	cardinality="1..1"
   	bind="setLyricsService"
-  	unbind="unsetLyricsService"/>-->
+  	unbind="unsetLyricsService"/>
   <service>
     <provide interface="org.eclipse.smila.processing.ProcessingService"/>         
   </service>

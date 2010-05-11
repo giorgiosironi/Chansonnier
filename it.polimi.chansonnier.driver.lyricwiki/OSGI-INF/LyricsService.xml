@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"? >
 <component xmlns="http://www.osgi.org/xmlns/scr/v1.1.0" name="LyricsService" immediate="true">
   <implementation class="it.polimi.chansonnier.driver.lyricwiki.LyricWikiLyricsService" />                                       
   <service>
      <provide interface="it.polimi.chansonnier.spi.LyricsService"/>                 
-  <service>
+  </service>
 </component>
