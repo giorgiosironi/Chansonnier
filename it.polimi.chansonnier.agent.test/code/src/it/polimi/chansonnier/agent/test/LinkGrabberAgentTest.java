@@ -1,12 +1,7 @@
 package it.polimi.chansonnier.agent.test;
 
 import java.io.ByteArrayInputStream;
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.util.Arrays;
-
 import it.polimi.chansonnier.agent.LinkGrabberAgent;
 import it.polimi.chansonnier.agent.URLUtils;
 import it.polimi.chansonnier.agent.YoutubeLinkGrabberAgent;
