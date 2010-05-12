@@ -30,13 +30,8 @@ public class SearchServlet extends HttpServlet {
 	    	queryRecord.setMetadata(RecordFactory.DEFAULT_INSTANCE.createMetadataObject());
 	        final Annotation annotation = RecordFactory.DEFAULT_INSTANCE.createAnnotation();
 	        queryRecord.getMetadata().addAnnotation(SearchParameters.PARAMETERS, annotation);
-	        annotation.setNamedValue(SearchParameters.QUERY, "test");
-	        annotation.setNamedValue(SearchParameters.INDEXNAME, "test_index");
+	        annotation.setNamedValue(SearchParameters.QUERY, lyrics);
 	        annotation.setNamedValue(LuceneSearchService.SEARCH_ANNOTATION_QUERY_ATTRIBUTE, "Lyrics");
-	    	Literal literal = new LiteralImpl();
-	    	literal.setStringValue(lyrics);
-	    	Attribute attribute = new AttributeImpl();
-	    	queryRecord.getMetadata().setAttribute("query", attribute);
 	    	try {
 				String result = Activator.getSearchService().searchAsXmlString(DEFAULT_PIPELINE, queryRecord);
 		        response.setContentType("text/html;charset=UTF-8");

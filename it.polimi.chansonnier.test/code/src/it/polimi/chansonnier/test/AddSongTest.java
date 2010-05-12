@@ -28,10 +28,11 @@ public class AddSongTest extends TestCase {
 	}
 	
 	public void testGivenAnAddedYouTubeLinkTheSongIsSearchable() throws Exception {
-		addVideoLink("http://www.youtube.com/watch?v=5tK7-OuYfJc");
+		String link = "http://www.youtube.com/watch?v=5tK7-OuYfJc";
+		addVideoLink(link);
 		WebRequest req = new GetMethodWebRequest( "http://localhost:8080/chansonnier/search" );
 		req.setParameter("lyrics", "I walk alone");
-		assertWebPageContains(req, "Boulevard of Broken Dreams", 300000);
+		assertWebPageContains(req, "<Source>youtube</Source><Key>" + link + "</Key>", 300000);
 	}
 	
 	private WebResponse addVideoLink(String link) throws Exception {

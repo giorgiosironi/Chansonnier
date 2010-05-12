@@ -20,6 +20,8 @@ public class LinkGrabberAgentTest extends DeclarativeServiceTestCase implements 
 	   * timeout for service detection.
 	   */
 	  private static final long WAIT_FOR_SERVICE_DELAY = 30000;
+	  
+	  private static final String LINK = "http://www.youtube.com/watch?v=e7K1A0bh9Cs";
 
 	  /**
 	   * The Constant PAUSE.
@@ -86,6 +88,8 @@ public class LinkGrabberAgentTest extends DeclarativeServiceTestCase implements 
 	  public void add(final String sessionId, final DeltaIndexingType deltaIndexingType, final Record record, final String hash) {
 	    assertNotNull(record);
 	    assertEquals(_config.getDataSourceID(), record.getId().getSource());
+	    // TODO: maybe the link saved should be the rev="canonical" value
+	    assertEquals(LINK, record.getId().getKey().getKey());
 		assertEquals("See Ya In Anotha Life, Brotha !", record.getMetadata().getAttribute("PageTitle").getLiteral().toString());
 		
 		try {
@@ -151,7 +155,7 @@ public class LinkGrabberAgentTest extends DeclarativeServiceTestCase implements 
 	  public void testAgent() throws Exception {
 	    assertEquals(0, _addCount);
 
-	    _agent.addLink("http://www.youtube.com/watch?v=e7K1A0bh9Cs");
+	    _agent.addLink(LINK);
 	    _agent.start(this, new AgentState(), _config, "dummy_session_id");
 	    Thread.sleep(PAUSE);
 	    _agent.stop();
