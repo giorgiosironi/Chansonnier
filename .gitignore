@@ -8,3 +8,4 @@ SMILA.application/derby.log
 bin
 *.class
 .metadata
+SMILA.application/configuration/org.eclipse.smila.search/xml/*.xml
