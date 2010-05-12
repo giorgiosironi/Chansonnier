@@ -1,10 +1,10 @@
 eclipse.build/
 SMILA.builder/log.*.txt
 SMILA.application/SMILA.log
-**/derby.log
+derby.log
 SMILA.application/configuration/org.eclipse.smila.tomcat/work/
 SMILA.application/derby.log
-**/.svn
-**/bin
-**/*.class
+.svn
+bin
+*.class
 .metadata
