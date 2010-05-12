@@ -14,6 +14,10 @@ Import-Package: org.apache.catalina;version="6.0.18",
  it.polimi.chansonnier.agent,
  org.eclipse.smila.connectivity,
  org.eclipse.smila.connectivity.framework,
- org.eclipse.smila.processing
+ org.eclipse.smila.datamodel.record,
+ org.eclipse.smila.datamodel.record.impl,
+ org.eclipse.smila.processing,
+ org.eclipse.smila.search.api,
+ org.eclipse.smila.search.api.helper
 Export-Package: it.polimi.chansonnier.servlet;version="0.1.0"
 Eclipse-RegisterBuddy: org.apache.tomcat, org.eclipse.smila.tomcat
