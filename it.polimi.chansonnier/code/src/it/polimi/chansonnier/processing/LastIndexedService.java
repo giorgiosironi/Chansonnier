@@ -16,8 +16,7 @@ public class LastIndexedService implements ProcessingService {
 			throws ProcessingException {
 		try {
 			for (Id id : recordIds) {
-				// TODO: it is Title not PageTitle
-				_lastTitle = blackboard.getLiteral(id, new Path("PageTitle")).toString();	
+				_lastTitle = blackboard.getLiteral(id, new Path("Title")).toString();	
 			}
 		} catch (BlackboardAccessException e) {
 			throw new ProcessingException(e);

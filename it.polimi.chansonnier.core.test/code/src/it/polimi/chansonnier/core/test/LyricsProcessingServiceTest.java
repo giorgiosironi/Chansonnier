@@ -37,6 +37,16 @@ public class LyricsProcessingServiceTest extends ProcessingServiceTest implement
 	    assertEquals(TITLE, getAttribute(id, new Path("Title")).toString());
 	}
 	
+	public void testRemovesParenthetizedNoiseFromPageTitle() throws Exception {
+	    final Id id = createBlackboardRecord("copy", "attribute-attachment");
+	    setAttribute(id, new Path("PageTitle"), ARTIST + " - " + TITLE + " (with lyrics!)");
+	    
+	    _service.process(getBlackboard(), new Id[] { id });
+	    
+	    assertEquals(ARTIST, getAttribute(id, new Path("Artist")).toString());
+	    assertEquals(TITLE, getAttribute(id, new Path("Title")).toString());
+	}
+	
 	public void testStoresLyricsAsAnAnnotationWhenTitleComesBeforeArtist() throws Exception {
 	    final Id id = createBlackboardRecord("copy", "attribute-attachment");
 	    setAttribute(id, new Path("PageTitle"), TITLE + " - " + ARTIST);
