@@ -8,7 +8,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.xml.parsers.ParserConfigurationException;
 
+import org.eclipse.smila.lucene.LuceneSearchService;
+import org.eclipse.smila.processing.parameters.SearchParameters;
 import org.eclipse.smila.search.api.helper.QueryBuilder;
+import org.eclipse.smila.datamodel.record.Annotation;
 import org.eclipse.smila.datamodel.record.Attribute;
 import org.eclipse.smila.datamodel.record.Literal;
 import org.eclipse.smila.datamodel.record.Record;
@@ -25,6 +28,11 @@ public class SearchServlet extends HttpServlet {
 	    if (lyrics != null) {
 	    	Record queryRecord = RecordFactory.DEFAULT_INSTANCE.createRecord();
 	    	queryRecord.setMetadata(RecordFactory.DEFAULT_INSTANCE.createMetadataObject());
+	        final Annotation annotation = RecordFactory.DEFAULT_INSTANCE.createAnnotation();
+	        queryRecord.getMetadata().addAnnotation(SearchParameters.PARAMETERS, annotation);
+	        annotation.setNamedValue(SearchParameters.QUERY, "test");
+	        annotation.setNamedValue(SearchParameters.INDEXNAME, "test_index");
+	        annotation.setNamedValue(LuceneSearchService.SEARCH_ANNOTATION_QUERY_ATTRIBUTE, "Lyrics");
 	    	Literal literal = new LiteralImpl();
 	    	literal.setStringValue(lyrics);
 	    	Attribute attribute = new AttributeImpl();
