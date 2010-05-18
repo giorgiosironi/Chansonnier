@@ -10,14 +10,9 @@ import javax.xml.parsers.ParserConfigurationException;
 
 import org.eclipse.smila.lucene.LuceneSearchService;
 import org.eclipse.smila.processing.parameters.SearchParameters;
-import org.eclipse.smila.search.api.helper.QueryBuilder;
 import org.eclipse.smila.datamodel.record.Annotation;
-import org.eclipse.smila.datamodel.record.Attribute;
-import org.eclipse.smila.datamodel.record.Literal;
 import org.eclipse.smila.datamodel.record.Record;
-import org.eclipse.smila.datamodel.record.RecordFactory;
-import org.eclipse.smila.datamodel.record.impl.AttributeImpl;
-import org.eclipse.smila.datamodel.record.impl.LiteralImpl;;
+import org.eclipse.smila.datamodel.record.RecordFactory;;
 
 public class SearchServlet extends HttpServlet {
 	public static final String DEFAULT_PIPELINE = "SearchPipeline";
