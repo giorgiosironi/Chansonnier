@@ -5,7 +5,7 @@ import it.polimi.chansonnier.spi.EmotionRecognitionService;
 
 import org.eclipse.smila.blackboard.path.Path;
 import org.eclipse.smila.datamodel.id.Id;
-import org.eclipse.smila.test.DeclarativeServiceTestCase;
+import org.eclipse.smila.datamodel.record.Literal;
 
 
 public class EmotionProcessingServiceTest extends ProcessingServiceTest implements EmotionRecognitionService {
@@ -19,13 +19,13 @@ public class EmotionProcessingServiceTest extends ProcessingServiceTest implemen
 	
 	public void testAnnotatesTextWithTheEmotionFound() throws Exception {
 		final Id id = createBlackboardRecord("source", "item");
-		Path p = new Path();
-		p.add("Lyrics");
+		Path p = new Path("Lyrics");
 	    setAttribute(id, p, LYRICS);
 	    
 	    _service.process(getBlackboard(), new Id[] { id });
 	    
-	    final String text = getAnnotation(id, p, "Emotion").toString();
+	    Literal lyrics = getBlackboard().getLiteral(id, new Path("Lyrics"));
+	    final String text = lyrics.getAnnotation("Emotion").getAnonValues().toArray()[0].toString();
 	    assertEquals("Happiness", text);
 	}
 

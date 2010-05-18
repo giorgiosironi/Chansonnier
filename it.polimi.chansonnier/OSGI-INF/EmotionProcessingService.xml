@@ -1,0 +1,14 @@
+<component xmlns="http://www.osgi.org/xmlns/scr/v1.1.0" name="EmotionProcessingService" immediate="true">
+  <implementation class="it.polimi.chansonnier.processing.EmotionProcessingService" />
+  <reference
+  	name="EmotionRecognitionService"
+  	interface="it.polimi.chansonnier.spi.EmotionRecognitionService"
+  	policy="static"
+  	cardinality="1..1"
+  	bind="setEmotionRecognitionService"
+  	unbind="unsetEmotionRecognitionService"/>
+  <service>
+    <provide interface="org.eclipse.smila.processing.ProcessingService"/>         
+  </service>
+  <property name="smila.processing.service.name" value="EmotionProcessingService"/>
+</component>

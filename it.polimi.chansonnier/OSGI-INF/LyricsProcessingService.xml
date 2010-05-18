@@ -1,4 +1,4 @@
-<component name="LyricsProcessingService" immediate="true">
+<component xmlns="http://www.osgi.org/xmlns/scr/v1.1.0" name="LyricsProcessingService" immediate="true">
   <implementation class="it.polimi.chansonnier.processing.LyricsProcessingService" />
   <reference
   	name="LyricsService"
