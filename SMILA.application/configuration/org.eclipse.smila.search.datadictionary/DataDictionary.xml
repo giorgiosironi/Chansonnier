@@ -22,6 +22,16 @@
     </IndexStructure>
     <Configuration xmlns="http://www.anyfinder.de/DataDictionary/Configuration" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.anyfinder.de/DataDictionary/Configuration ../xml/DataDictionaryConfiguration.xsd">
       <DefaultConfig>
+        <Field FieldNo="5">
+          <FieldConfig Constraint="optional" Weight="1" xsi:type="FTText">
+            <Parameter xmlns="http://www.anyfinder.de/Search/TextField" Operator="OR" Tolerance="exact"/>
+          </FieldConfig>
+        </Field>
+        <Field FieldNo="4">
+          <FieldConfig Constraint="optional" Weight="1" xsi:type="FTText">
+            <Parameter xmlns="http://www.anyfinder.de/Search/TextField" Operator="OR" Tolerance="exact"/>
+          </FieldConfig>
+        </Field>
         <Field FieldNo="3">
           <FieldConfig Constraint="optional" Weight="1" xsi:type="FTText">
             <Parameter xmlns="http://www.anyfinder.de/Search/TextField" Operator="OR" Tolerance="exact"/>

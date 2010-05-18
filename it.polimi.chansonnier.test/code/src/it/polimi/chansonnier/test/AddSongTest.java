@@ -30,6 +30,7 @@ public class AddSongTest extends TestCase {
 	public void testGivenAnAddedYouTubeLinkTheSongIsSearchable() throws Exception {
 		String link = "http://www.youtube.com/watch?v=5tK7-OuYfJc";
 		addVideoLink(link);
+		// TODO: avoid all errors "index does not exist in data dictionary [test_index]"
 		WebRequest req = new GetMethodWebRequest( "http://localhost:8080/chansonnier/search" );
 		req.setParameter("lyrics", "I walk alone");
 		assertWebPageContains(req, "<Source>youtube</Source><Key>" + link + "</Key>", 300000);
