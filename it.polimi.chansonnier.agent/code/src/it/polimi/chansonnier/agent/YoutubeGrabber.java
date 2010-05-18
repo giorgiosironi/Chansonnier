@@ -65,22 +65,22 @@ public class YoutubeGrabber
 
           dl_flvmed = getRedirUrl("http://www.youtube.com/get_video?video_id=" + video_id + "&t=" + token + "&fmt=34");
           if (dl_flvmed != null) {
-        	  System.out.println("flvmed");
+        	  _log.debug("flvmed for video " + video_id);
         	  return dl_flvmed;
           }
           dl_flvmed2 = getRedirUrl("http://www.youtube.com/get_video?video_id=" + video_id + "&t=" + token + "&fmt=6");
           if (dl_flvmed2 != null) {
-        	  System.out.println("flvmed2");
+        	  _log.debug("flvmed2 for video " + video_id);
         	  return dl_flvmed2;
           }
           dl_flvlow = getRedirUrl("http://www.youtube.com/get_video?video_id=" + video_id + "&t=" + token + "&fmt=5");
           if (dl_flvlow != null) {
-        	  System.out.println("flvlow");
+        	  _log.debug("flvlow for video " + video_id);
         	  return dl_flvlow;
           }
           dl_flvhigh = getRedirUrl("http://www.youtube.com/get_video?video_id=" + video_id + "&t=" + token + "&fmt=35");
           if (dl_flvhigh != null) {
-        	  System.out.println("flvhigh");
+        	  _log.debug("flvhigh for video " + video_id);
         	  return dl_flvhigh;
           }
 

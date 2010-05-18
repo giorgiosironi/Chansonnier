@@ -19,6 +19,8 @@
 	    <Attribute name="Artist" fieldNo="1" />
 	    <Attribute name="Title" fieldNo="2" />    
 	    <Attribute name="Lyrics" fieldNo="3" />
+	    <Attribute name="Description" fieldNo="4" />
+	    <Attribute name="Keywords" fieldNo="5" />
     </Attributes>
     <Attachments>            
     </Attachments>

@@ -1,14 +1,16 @@
 package it.polimi.chansonnier.agent;
 
 
-import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
-import java.net.URLConnection;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
 import java.util.Queue;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -33,6 +35,12 @@ public class YoutubeLinkGrabberAgent extends AbstractAgent implements LinkGrabbe
 	private Queue<String> _linksToProcess = new LinkedList<String>();
 	private YoutubeGrabber _grabber;
 	private final Log _log = LogFactory.getLog(YoutubeLinkGrabberAgent.class);
+	private Map<URL, String> _htmlPages = new HashMap<URL, String>();
+	
+	@Override
+	protected void initialize() throws AgentException {
+		_grabber = new YoutubeGrabber();
+	}
 	
 	@Override
 	public void addLink(String link) {
@@ -49,6 +57,8 @@ public class YoutubeLinkGrabberAgent extends AbstractAgent implements LinkGrabbe
 		    		Record newRecord = _createRecord();
 		        	newRecord.setId(_createId(newLink));
 		        	_setPageTitle(newRecord, _getPageTitle(newLink));
+		        	_setDescription(newRecord, _getDescription(newLink));
+		        	_setKeywords(newRecord, _getKeywords(newLink));
 		        	_log.debug("it.polimi.chansonnier.agent.YoutubeLinkGrabberAgent: downloading video");
 		        	_setOriginal(newRecord, _grabber.getVideo(newLink));
 		        	_log.debug("it.polimi.chansonnier.agent.YoutubeLinkGrabberAgent: completed video");
@@ -94,6 +104,24 @@ public class YoutubeLinkGrabberAgent extends AbstractAgent implements LinkGrabbe
         record.getMetadata().setAttribute("PageTitle", attribute);
 	}
 	
+	private void _setDescription(Record record, String value) {
+		Attribute attribute = new AttributeImpl();
+        attribute.setName("Description");
+        Literal l = new LiteralImpl();
+        l.setStringValue(value);
+        attribute.addLiteral(l);
+        record.getMetadata().setAttribute("Description", attribute);
+	}
+	
+	private void _setKeywords(Record record, String value) {
+		Attribute attribute = new AttributeImpl();
+        attribute.setName("Keywords");
+        Literal l = new LiteralImpl();
+        l.setStringValue(value);
+        attribute.addLiteral(l);
+        record.getMetadata().setAttribute("Keywords", attribute);
+	}
+	
 	private void _setOriginal(Record record, InputStream video) throws IOException {
 		ByteArrayOutputStream out = new ByteArrayOutputStream();
 		byte[] b = new byte[4096];
@@ -111,7 +139,7 @@ public class YoutubeLinkGrabberAgent extends AbstractAgent implements LinkGrabbe
 	 * @throws IOException
 	 */
 	private String _getPageTitle(String newLink) throws IOException {
-		String html = URLUtils.retrieve(new URL(newLink));
+		String html = _getHtml(new URL(newLink));
 		html = html.replaceAll("\\s+", " ");
 		Pattern p = Pattern.compile("<title>(.*?)</title>");
 		Matcher m = p.matcher(html);
@@ -121,9 +149,37 @@ public class YoutubeLinkGrabberAgent extends AbstractAgent implements LinkGrabbe
 		title = title.trim();
 		return title;
 	}
-
-	@Override
-	protected void initialize() throws AgentException {
-		_grabber = new YoutubeGrabber();
+	
+	private String _getDescription(String newLink) throws MalformedURLException, IOException {
+		String html = _getHtml(new URL(newLink));
+		html = html.replaceAll("\\s+", " ");
+		Pattern p = Pattern.compile("<meta name=\"description\" content=\"(.*?)\"");
+		Matcher m = p.matcher(html);
+		m.find();
+		String description = m.group(1);
+		description = description.trim();
+		return description;
 	}
+
+	private String _getKeywords(String newLink) throws MalformedURLException, IOException {
+		String html = _getHtml(new URL(newLink));
+		html = html.replaceAll("\\s+", " ");
+		Pattern p = Pattern.compile("<meta name=\"keywords\" content=\"(.*?)\"");
+		Matcher m = p.matcher(html);
+		m.find();
+		String keywords = m.group(1);
+		keywords = keywords.trim();
+		return keywords;
+	}	
+	
+	private String _getHtml(URL link) throws IOException {
+		if (!_htmlPages.containsKey(link)) {
+			_htmlPages.put(link, URLUtils.retrieve(link));
+		}
+		return _htmlPages.get(link);
+	}
+	
+	
+	
 }
+ 
