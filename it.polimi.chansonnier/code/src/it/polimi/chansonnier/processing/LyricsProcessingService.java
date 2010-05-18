@@ -31,6 +31,7 @@ public class LyricsProcessingService implements ProcessingService {
 			for (Id id : recordIds) {
 				_log.debug("it.polimi.chansonnier.processing.LyricsProcessingService: processing " + id.toString());
 				String pageTitle = blackboard.getLiteral(id, new Path("PageTitle")).toString();
+				pageTitle = removeNoise(pageTitle);
 				String[] pieces = pageTitle.split("-");
 				String title = "Unknown";
 				String artist = "Unknown";
@@ -65,6 +66,10 @@ public class LyricsProcessingService implements ProcessingService {
 			throw new ProcessingException(e);
 		}
 		return recordIds;
+	}
+
+	private String removeNoise(String pageTitle) {
+		return pageTitle.replaceAll("\\([^()]*\\)", "");
 	}
 
 	public void setLyricsService(LyricsService lyricsService) {

@@ -4,6 +4,7 @@ import it.polimi.chansonnier.agent.LinkGrabberAgent;
 import it.polimi.chansonnier.processing.LastIndexedService;
 
 import org.eclipse.smila.connectivity.framework.AgentController;
+import org.eclipse.smila.search.api.SearchService;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceReference;
@@ -13,6 +14,7 @@ public class Activator implements BundleActivator {
 	private ServiceTracker _agentControllerTracker;
 	private ServiceTracker _agentTracker;
 	private ServiceTracker _lastIndexedTracker;
+	private static ServiceTracker _searchServiceTracker;
 	public static AgentController agentController;
 	public static LastIndexedService lastIndexedService; 
 	public static LinkGrabberAgent linkGrabberAgent;
@@ -28,6 +30,8 @@ public class Activator implements BundleActivator {
 		_agentTracker.open();
 		_lastIndexedTracker = new LastIndexedTracker(context);
 		_lastIndexedTracker.open();
+	    _searchServiceTracker = new ServiceTracker(context, SearchService.class.getName(), null);
+	    _searchServiceTracker.open();   
 	}
 
 	/*
@@ -72,6 +76,10 @@ public class Activator implements BundleActivator {
 			lastIndexedService = (LastIndexedService) context.getService(reference);
 			return lastIndexedService;
 		}
+	}
+	
+	public static SearchService getSearchService() {
+		return (SearchService) _searchServiceTracker.getService();
 	}
 
 }

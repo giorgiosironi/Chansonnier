@@ -15,16 +15,10 @@
 >
   <Mapping indexName="test_index">
     <Attributes>
-	    <Attribute name="Content" fieldNo="0" />
-	    <Attribute name="Filename" fieldNo="1" />
-	    <Attribute name="Path" fieldNo="2" />    
-	    <Attribute name="LastModifiedDate" fieldNo="3" />
-	    <Attribute name="Url" fieldNo="4" />
-	    <Attribute name="Title" fieldNo="5" />    
-	    <Attribute name="Extension" fieldNo="6" />
-	    <Attribute name="Size" fieldNo="7" />
-	    <Attribute name="MimeType" fieldNo="8" />
-	    <Attribute name="Author" fieldNo="9" />	    
+	    <Attribute name="PageTitle" fieldNo="0" />
+	    <Attribute name="Artist" fieldNo="1" />
+	    <Attribute name="Title" fieldNo="2" />    
+	    <Attribute name="Lyrics" fieldNo="3" />
     </Attributes>
     <Attachments>            
     </Attachments>

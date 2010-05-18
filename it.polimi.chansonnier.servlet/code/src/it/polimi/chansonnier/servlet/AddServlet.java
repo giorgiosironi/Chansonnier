@@ -21,7 +21,7 @@ public class AddServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter writer = response.getWriter();
 		writer.println("Hello from AddServlet of it.polimi.chansonnier.servlet...");
-    }
+	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String link = request.getParameter("link");

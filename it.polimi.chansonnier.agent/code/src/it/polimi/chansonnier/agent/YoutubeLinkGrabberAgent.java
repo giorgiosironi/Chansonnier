@@ -79,9 +79,8 @@ public class YoutubeLinkGrabberAgent extends AbstractAgent implements LinkGrabbe
 	private Id _createId(String link) {
     	Attribute[] idAttributes = new Attribute[1];
     	idAttributes[0] = new AttributeImpl();
-    	idAttributes[0].setName("key");
     	Literal idL = new LiteralImpl(); 
-    	idL.setStringValue("42");
+    	idL.setStringValue(link);
     	idAttributes[0].addLiteral(idL);
     	return ConnectivityIdFactory.getInstance().createId(getConfig().getDataSourceID(), idAttributes);
 	}

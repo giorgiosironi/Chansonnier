@@ -11,6 +11,10 @@
     <servlet-name>last</servlet-name>
     <servlet-class>it.polimi.chansonnier.servlet.LastServlet</servlet-class>
   </servlet>
+    <servlet>
+    <servlet-name>search</servlet-name>
+    <servlet-class>it.polimi.chansonnier.servlet.SearchServlet</servlet-class>
+  </servlet>
  
   
   <servlet-mapping>
@@ -20,6 +24,10 @@
   <servlet-mapping>
     <servlet-name>last</servlet-name>
     <url-pattern>/last</url-pattern>
+  </servlet-mapping>
+    <servlet-mapping>
+    <servlet-name>search</servlet-name>
+    <url-pattern>/search</url-pattern>
   </servlet-mapping>
 
 </web-app>
