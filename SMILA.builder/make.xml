@@ -122,7 +122,6 @@
     org.eclipse.smila.feature
     org.eclipse.smila.product.core.feature
     org.eclipse.smila.test.feature
-    org.eclipse.smila.search.feature
   '>
   </property>
 
