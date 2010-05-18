@@ -14,12 +14,15 @@
   <!-- should be done within the body of the suite target. -->
   <target name="init">
       <!-- these are acceptance tests so the configuration is borrowed 
-           from the real configuration/ folder -->
-      <copy todir="${eclipse.test.dir}/configuration" overwrite="true" failonerror="no">
-        <fileset dir="${workspace}/SMILA.application/configuration/" defaultexcludes="yes">
+           from the real configuration/ folder
+           This is an HACK but works as long as eclipse.build is 
+           along the bundle sources. -->
+      <copy todir="${eclipse-home}/configuration" overwrite="true" failonerror="yes">
+        <fileset dir="${eclipse-home}/../../SMILA.application/configuration/" defaultexcludes="yes">
           <include name="**/*" />
         </fileset>
       </copy>
+      <copy todir="${eclipse-home}/configuration" file="${eclipse-home}/../../SMILA.application/log4j.properties" failonerror="yes" />
 
     <tstamp/>
     <delete>

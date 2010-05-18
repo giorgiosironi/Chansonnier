@@ -22,7 +22,8 @@ public class AddSongTest extends TestCase {
 		WebResponse resp = wc.getResponse(req);
 		// TODO insert redirect
 		assertTrue(resp.getText().contains("Success"));
-		for (int i = 0; i < 40; i++) {
+		for (int i = 0; i < 10; i++) {
+            System.out.println("Try: " + i);
 			Thread.sleep(30000);
 			WebConversation wc2 = new WebConversation();
 			WebRequest     req2 = new GetMethodWebRequest( "http://localhost:8080/chansonnier/last" );
