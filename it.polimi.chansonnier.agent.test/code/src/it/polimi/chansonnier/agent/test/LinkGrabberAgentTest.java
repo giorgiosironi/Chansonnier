@@ -91,6 +91,8 @@ public class LinkGrabberAgentTest extends DeclarativeServiceTestCase implements 
 	    // TODO: maybe the link saved should be the rev="canonical" value
 	    assertEquals(LINK, record.getId().getKey().getKey());
 		assertEquals("See Ya In Anotha Life, Brotha !", record.getMetadata().getAttribute("PageTitle").getLiteral().toString());
+		assertEquals("Favorite quote from the favorite quasi-nuts character of Lost", record.getMetadata().getAttribute("Description").getLiteral().toString());
+		assertEquals("desmond, lost, see, you, in, another, life, brother, ya, anotha, brotha", record.getMetadata().getAttribute("Keywords").getLiteral().toString());
 		
 		try {
 			byte[] attachment = record.getAttachment("Original");
