@@ -19,7 +19,7 @@ public class AddSongTest extends TestCase {
 		assertTrue(resp.getText().contains("Hello from AddServlet"));
 	}
 	
-	public void _testGivenAYouTubeLinkAddsTheRelatedSongToTheIndex() throws Exception {
+	public void testGivenAYouTubeLinkAddsTheRelatedSongToTheIndex() throws Exception {
 		WebResponse resp = addVideoLink("http://www.youtube.com/watch?v=e8w7f0ShtIM");
 		// TODO insert redirect
 		assertTrue(resp.getText().contains("Success"));

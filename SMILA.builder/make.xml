@@ -184,7 +184,7 @@
   </restrict>
   <restrict id="bundle.dirs.3rd.test">
     <dirset refid="bundle.dirs.3rd" />
-    <rsel:name name="*.test" />
+    <rsel:name name="it.polimi.chansonnier.test" />
   </restrict>
 
 
@@ -214,7 +214,7 @@
                    targetproperty="bundle.names.3rd.test" />
 
 
-    <property name="bundles-for-test" value="${bundle.names.all.test} " />
+    <property name="bundles-for-test" value="${bundle.names.3rd.test} " />
   </target>
 
   <!-- =================================================================== -->
