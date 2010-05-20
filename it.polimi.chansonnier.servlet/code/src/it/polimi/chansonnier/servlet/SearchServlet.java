@@ -36,6 +36,5 @@ public class SearchServlet extends HttpServlet {
 				throw new ServletException(e);
 			}
 	    }
-	    
 	}
 }

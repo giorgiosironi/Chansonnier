@@ -47,6 +47,7 @@ public class AddSongTest extends TestCase {
 	private void assertWebPageContains(WebRequest req, String text, int timeout) throws InterruptedException, IOException, SAXException {
 		int tries = timeout / 10000;
 		for (int i = 0; i < tries; i++) {
+            System.out.println("Try " + i + " for text ''" + text + "'");
 			Thread.sleep(10000);
 			WebConversation wc = new WebConversation();
 			WebResponse   resp = wc.getResponse( req );

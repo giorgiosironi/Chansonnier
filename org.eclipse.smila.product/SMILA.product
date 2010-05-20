@@ -40,7 +40,6 @@
    <features>
       <feature id="org.eclipse.smila.extension.feature" version="0.7.0"/>
       <feature id="org.eclipse.smila.feature" version="0.7.0"/>
-      <feature id="org.eclipse.smila.search.feature" version="0.7.0"/>
       <feature id="org.eclipse.smila.product.core.feature" version="0.7.0"/>
       <feature id="org.eclipse.rcp" version="3.5.2.R35x_v20100119-9SA0FxwFnoCU5XxWItFdXXb27BA6"/>
    </features>
