@@ -3,6 +3,7 @@ package it.polimi.chansonnier.servlet;
 import it.polimi.chansonnier.agent.LinkGrabberAgent;
 import it.polimi.chansonnier.processing.LastIndexedService;
 
+import org.eclipse.smila.blackboard.BlackboardFactory;
 import org.eclipse.smila.connectivity.framework.AgentController;
 import org.eclipse.smila.search.api.SearchService;
 import org.osgi.framework.BundleActivator;
@@ -14,6 +15,7 @@ public class Activator implements BundleActivator {
 	private ServiceTracker _agentControllerTracker;
 	private ServiceTracker _agentTracker;
 	private ServiceTracker _lastIndexedTracker;
+	private static ServiceTracker _blackboardFactoryTracker;
 	private static ServiceTracker _searchServiceTracker;
 	public static AgentController agentController;
 	public static LastIndexedService lastIndexedService; 
@@ -32,6 +34,8 @@ public class Activator implements BundleActivator {
 		_lastIndexedTracker.open();
 	    _searchServiceTracker = new ServiceTracker(context, SearchService.class.getName(), null);
 	    _searchServiceTracker.open();   
+	    _blackboardFactoryTracker = new ServiceTracker(context, BlackboardFactory.class.getName(), null);
+	    _blackboardFactoryTracker.open();
 	}
 
 	/*
@@ -80,6 +84,10 @@ public class Activator implements BundleActivator {
 	
 	public static SearchService getSearchService() {
 		return (SearchService) _searchServiceTracker.getService();
+	}
+	
+	public static BlackboardFactory getBlackboardFactory() {
+		return (BlackboardFactory) _blackboardFactoryTracker.getService();
 	}
 
 }

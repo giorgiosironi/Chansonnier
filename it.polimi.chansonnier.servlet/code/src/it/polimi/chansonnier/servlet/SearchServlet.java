@@ -9,7 +9,13 @@ import javax.servlet.http.HttpServletResponse;
 import javax.xml.parsers.ParserConfigurationException;
 
 import org.eclipse.smila.lucene.LuceneSearchService;
+import org.eclipse.smila.processing.ProcessingException;
 import org.eclipse.smila.processing.parameters.SearchParameters;
+import org.eclipse.smila.search.api.SearchResult;
+import org.eclipse.smila.blackboard.Blackboard;
+import org.eclipse.smila.blackboard.BlackboardAccessException;
+import org.eclipse.smila.blackboard.path.Path;
+import org.eclipse.smila.datamodel.id.Id;
 import org.eclipse.smila.datamodel.record.Annotation;
 import org.eclipse.smila.datamodel.record.Record;
 import org.eclipse.smila.datamodel.record.RecordFactory;;
@@ -28,12 +34,26 @@ public class SearchServlet extends HttpServlet {
 	        annotation.setNamedValue(SearchParameters.QUERY, lyrics);
 	        annotation.setNamedValue(LuceneSearchService.SEARCH_ANNOTATION_QUERY_ATTRIBUTE, "Lyrics");
 	    	try {
-				String result = Activator.getSearchService().searchAsXmlString(DEFAULT_PIPELINE, queryRecord);
+				SearchResult result = Activator.getSearchService().search(DEFAULT_PIPELINE, queryRecord);
+				Blackboard blackboard = Activator.getBlackboardFactory().createPersistingBlackboard();
+				System.out.println(result.getRecords());
+				if (result.getRecords().length > 0) {
+					for (Record r : result.getRecords()) {
+						Id id = r.getId();
+                        String link = id.toString();
+						String title = blackboard.getLiteral(id, new Path("Title")).toString();
+						String artist = blackboard.getLiteral(id, new Path("Artist")).toString();
+						String fullLyrics = blackboard.getLiteral(id, new Path("Lyrics")).toString();
+						response.getWriter().write("<p>Song found: " + title + " (artist: " + artist + ", lyrics: " + fullLyrics + ")<br /><a href=\"" + link + "\">" + link + "</a></p>");
+					}
+				} else {
+					response.getWriter().write("No results.");
+				}
 		        response.setContentType("text/html;charset=UTF-8");
-				response.getWriter().write(result);
-			} catch (ParserConfigurationException e) {
-				// TODO Auto-generated catch block
-				throw new ServletException(e);
+			} catch (ProcessingException e) {
+				response.getWriter().write(e.getMessage());
+			} catch (BlackboardAccessException e) {
+				response.getWriter().write(e.getMessage());
 			}
 	    }
 	}
