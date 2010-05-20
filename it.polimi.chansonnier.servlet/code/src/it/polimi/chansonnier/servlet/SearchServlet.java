@@ -37,7 +37,7 @@ public class SearchServlet extends HttpServlet {
 				SearchResult result = Activator.getSearchService().search(DEFAULT_PIPELINE, queryRecord);
 				Blackboard blackboard = Activator.getBlackboardFactory().createPersistingBlackboard();
 				System.out.println(result.getRecords());
-				if (result.getRecords().length > 0) {
+				if (result.getRecords() != null && result.getRecords().length > 0) {
 					for (Record r : result.getRecords()) {
 						Id id = r.getId();
                         String link = id.toString();

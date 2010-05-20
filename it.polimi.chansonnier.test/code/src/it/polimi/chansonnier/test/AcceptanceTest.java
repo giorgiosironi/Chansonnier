@@ -34,7 +34,7 @@ public abstract class AcceptanceTest extends TestCase {
 						return;
 					}
 				}
-				fail("After " + timeout + "milliseconds of waiting, the web page does not contain the prescribed text.");
+				fail("After " + timeout + "milliseconds of waiting, the web page does not contain the prescribed text (" + text + ").");
 			}
 
 }

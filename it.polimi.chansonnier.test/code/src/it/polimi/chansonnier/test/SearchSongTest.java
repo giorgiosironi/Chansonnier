@@ -11,7 +11,8 @@ public class SearchSongTest extends AcceptanceTest {
 		WebRequest req = new GetMethodWebRequest( "http://localhost:8080/chansonnier/search" );
 		req.setParameter("lyrics", "I walk alone");
 		assertWebPageContains(req, link, 300000);
-		assertSearchPageContainsSongTitle(req, "Boulevard Of Broken Dreams");
+        // TODO: make it case insensitive
+		assertSearchPageContainsSongTitle(req, "Boulevard of Broken Dreams");
 		assertSearchPageContainsSongArtist(req, "Green Day");
 		assertSearchPageContainsSongLyrics(req, "I walk a lonely road"); // other lyrics
 	}
