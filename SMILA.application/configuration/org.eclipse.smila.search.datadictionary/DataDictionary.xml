@@ -13,6 +13,7 @@
     <Connection xmlns="http://www.anyfinder.de/DataDictionary/Connection" MaxConnections="5"/>
     <IndexStructure xmlns="http://www.anyfinder.de/IndexStructure" Name="test_index">
       <Analyzer ClassName="org.apache.lucene.analysis.standard.StandardAnalyzer"/>
+      <IndexField FieldNo="6" IndexValue="true" Name="Emotion" StoreText="true" Tokenize="true" Type="Text"/>
       <IndexField FieldNo="5" IndexValue="true" Name="Keywords" StoreText="true" Tokenize="true" Type="Text"/>
       <IndexField FieldNo="4" IndexValue="true" Name="Description" StoreText="true" Tokenize="true" Type="Text"/>
       <IndexField FieldNo="3" IndexValue="true" Name="Lyrics" StoreText="true" Tokenize="true" Type="Text"/>
@@ -22,6 +23,11 @@
     </IndexStructure>
     <Configuration xmlns="http://www.anyfinder.de/DataDictionary/Configuration" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.anyfinder.de/DataDictionary/Configuration ../xml/DataDictionaryConfiguration.xsd">
       <DefaultConfig>
+        <Field FieldNo="6">
+          <FieldConfig Constraint="optional" Weight="1" xsi:type="FTText">
+            <Parameter xmlns="http://www.anyfinder.de/Search/TextField" Operator="OR" Tolerance="exact"/>
+          </FieldConfig>
+        </Field>
         <Field FieldNo="5">
           <FieldConfig Constraint="optional" Weight="1" xsi:type="FTText">
             <Parameter xmlns="http://www.anyfinder.de/Search/TextField" Operator="OR" Tolerance="exact"/>

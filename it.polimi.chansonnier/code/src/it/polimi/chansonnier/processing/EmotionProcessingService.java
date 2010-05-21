@@ -6,10 +6,7 @@ import org.eclipse.smila.blackboard.Blackboard;
 import org.eclipse.smila.blackboard.BlackboardAccessException;
 import org.eclipse.smila.blackboard.path.Path;
 import org.eclipse.smila.datamodel.id.Id;
-import org.eclipse.smila.datamodel.record.Annotation;
 import org.eclipse.smila.datamodel.record.Literal;
-import org.eclipse.smila.datamodel.record.RecordFactory;
-import org.eclipse.smila.datamodel.record.impl.AnnotationImpl;
 import org.eclipse.smila.processing.ProcessingException;
 import org.eclipse.smila.processing.ProcessingService;
 
@@ -25,13 +22,12 @@ public class EmotionProcessingService implements ProcessingService {
 			for (Id id : recordIds) {
 				Literal lyrics = blackboard.getLiteral(id, p);
 				String emotion = _emotionRecognitionService.getEmotion(lyrics.toString());
-				Annotation ann = blackboard.createAnnotation(id);
-				ann.addAnonValue(emotion);
-				lyrics.addAnnotation("Emotion", ann);
+				Literal value = blackboard.createLiteral(id);
+				value.setStringValue(emotion);
+				blackboard.addLiteral(id, new Path("Emotion"), value);
 			}
 		} catch (BlackboardAccessException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			throw new ProcessingException(e);
 		}
 		return recordIds;
 	}

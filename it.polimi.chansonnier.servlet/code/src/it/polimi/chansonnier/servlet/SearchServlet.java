@@ -22,11 +22,11 @@ public class SearchServlet extends HttpServlet {
 		throws ServletException, IOException {
 	    String lyrics = request.getParameter("lyrics");
 	    if (lyrics != null) {
-	    	ChansonnierSearchService searchService = new ChansonnierSearchService();
-	    	searchService.setSearchService(Activator.getSearchService());
+	    	ChansonnierSearchService customSearchService = new ChansonnierSearchService();
+	    	customSearchService.setSearchService(Activator.getSearchService());
 			
 			try {
-				List<Id> result = searchService.search("Lyrics", lyrics);
+				List<Id> result = customSearchService.search("Lyrics", lyrics);
 				Blackboard blackboard = Activator.getBlackboardFactory().createPersistingBlackboard();
 				if (result.size() > 0) {
 					response.getWriter().println("<h1>Search results</h1>");
