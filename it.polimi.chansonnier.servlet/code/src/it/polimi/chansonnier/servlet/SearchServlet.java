@@ -1,60 +1,60 @@
 package it.polimi.chansonnier.servlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.xml.parsers.ParserConfigurationException;
 
-import org.eclipse.smila.lucene.LuceneSearchService;
 import org.eclipse.smila.processing.ProcessingException;
-import org.eclipse.smila.processing.parameters.SearchParameters;
-import org.eclipse.smila.search.api.SearchResult;
 import org.eclipse.smila.blackboard.Blackboard;
 import org.eclipse.smila.blackboard.BlackboardAccessException;
 import org.eclipse.smila.blackboard.path.Path;
-import org.eclipse.smila.datamodel.id.Id;
-import org.eclipse.smila.datamodel.record.Annotation;
-import org.eclipse.smila.datamodel.record.Record;
-import org.eclipse.smila.datamodel.record.RecordFactory;;
+import org.eclipse.smila.datamodel.id.Id;;
 
 public class SearchServlet extends HttpServlet {
-	public static final String DEFAULT_PIPELINE = "SearchPipeline";
+
 	
 	public void doGet(HttpServletRequest request, HttpServletResponse response) 
 		throws ServletException, IOException {
 	    String lyrics = request.getParameter("lyrics");
 	    if (lyrics != null) {
-	    	Record queryRecord = RecordFactory.DEFAULT_INSTANCE.createRecord();
-	    	queryRecord.setMetadata(RecordFactory.DEFAULT_INSTANCE.createMetadataObject());
-	        final Annotation annotation = RecordFactory.DEFAULT_INSTANCE.createAnnotation();
-	        queryRecord.getMetadata().addAnnotation(SearchParameters.PARAMETERS, annotation);
-	        annotation.setNamedValue(SearchParameters.QUERY, lyrics);
-	        annotation.setNamedValue(LuceneSearchService.SEARCH_ANNOTATION_QUERY_ATTRIBUTE, "Lyrics");
-	    	try {
-				SearchResult result = Activator.getSearchService().search(DEFAULT_PIPELINE, queryRecord);
+	    	ChansonnierSearchService searchService = new ChansonnierSearchService();
+	    	searchService.setSearchService(Activator.getSearchService());
+			
+			try {
+				List<Id> result = searchService.search("Lyrics", lyrics);
 				Blackboard blackboard = Activator.getBlackboardFactory().createPersistingBlackboard();
-				System.out.println(result.getRecords());
-				if (result.getRecords() != null && result.getRecords().length > 0) {
-					for (Record r : result.getRecords()) {
-						Id id = r.getId();
-                        String link = id.toString();
-						String title = blackboard.getLiteral(id, new Path("Title")).toString();
-						String artist = blackboard.getLiteral(id, new Path("Artist")).toString();
-						String fullLyrics = blackboard.getLiteral(id, new Path("Lyrics")).toString();
-						response.getWriter().write("<p>Song found: " + title + " (artist: " + artist + ", lyrics: " + fullLyrics + ")<br /><a href=\"" + link + "\">" + link + "</a></p>");
+				if (result.size() > 0) {
+					response.getWriter().println("<h1>Search results</h1>");
+					response.getWriter().println("<dl>");
+			    	for (Id id : result) {
+			    		String link = id.getKey().toString();
+			    		_printField(response.getWriter(), blackboard, id, "Title", "title");
+			    		_printField(response.getWriter(), blackboard, id, "Artist", "artist");
+			    		_printField(response.getWriter(), blackboard, id, "Lyrics", "lyrics");
+			    		response.getWriter().println("<dt class=\"key\">Link</dt>");
+			    		response.getWriter().println("<dd class=\"key\">" + link + "</dd>");
 					}
+			    	response.getWriter().println("</dl>");
 				} else {
-					response.getWriter().write("No results.");
+					response.getWriter().write("<p>No results.</p>");
 				}
-		        response.setContentType("text/html;charset=UTF-8");
-			} catch (ProcessingException e) {
-				response.getWriter().write(e.getMessage());
 			} catch (BlackboardAccessException e) {
-				response.getWriter().write(e.getMessage());
+				response.getWriter().println(e);
+			} catch (ProcessingException e) {
+				response.getWriter().println(e);
 			}
+		    response.setContentType("text/html;charset=UTF-8");
 	    }
+	}
+	
+	private void _printField(PrintWriter writer, Blackboard blackboard, Id id, String attributeName, String cssClass) throws BlackboardAccessException {
+		String attributeValue = blackboard.getLiteral(id, new Path(attributeName)).toString();
+		writer.println("<dt class=\"" + cssClass + "\">" + attributeName + "</dt>");
+		writer.println("<dd class=\"" + cssClass + "\">" + attributeValue + "</dd>");
 	}
 }
