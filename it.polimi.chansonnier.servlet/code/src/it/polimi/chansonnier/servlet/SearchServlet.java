@@ -16,8 +16,6 @@ import org.eclipse.smila.blackboard.path.Path;
 import org.eclipse.smila.datamodel.id.Id;;
 
 public class SearchServlet extends HttpServlet {
-
-	
 	public void doGet(HttpServletRequest request, HttpServletResponse response) 
 		throws ServletException, IOException {
 	    String lyrics = request.getParameter("lyrics");
@@ -36,6 +34,7 @@ public class SearchServlet extends HttpServlet {
 			    		_printField(response.getWriter(), blackboard, id, "Title", "title");
 			    		_printField(response.getWriter(), blackboard, id, "Artist", "artist");
 			    		_printField(response.getWriter(), blackboard, id, "Lyrics", "lyrics");
+			    		_printField(response.getWriter(), blackboard, id, "Emotion", "emotion");
 			    		response.getWriter().println("<dt class=\"key\">Link</dt>");
 			    		response.getWriter().println("<dd class=\"key\">" + link + "</dd>");
 					}

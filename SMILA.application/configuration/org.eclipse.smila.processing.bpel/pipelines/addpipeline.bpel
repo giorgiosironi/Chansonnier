@@ -38,6 +38,13 @@
                     <proc:variables input="request" output="request" />
                 </proc:invokeService>
             </extensionActivity>
+            
+            <extensionActivity name="invokeEmotionProcessingService">
+                <proc:invokeService>
+                    <proc:service name="EmotionProcessingService" />
+                    <proc:variables input="request" output="request" />
+                </proc:invokeService>
+            </extensionActivity>
                     
             <extensionActivity name="invokeLuceneService">
                 <proc:invokeService>
