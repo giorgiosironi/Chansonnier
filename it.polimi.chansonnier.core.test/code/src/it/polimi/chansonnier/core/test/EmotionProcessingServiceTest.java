@@ -17,16 +17,15 @@ public class EmotionProcessingServiceTest extends ProcessingServiceTest implemen
 		_service.setEmotionRecognitionService(this);
 	}
 	
-	public void testAnnotatesTextWithTheEmotionFound() throws Exception {
+	public void testAddsAnEmotionAttributeUsingTheLyricsOne() throws Exception {
 		final Id id = createBlackboardRecord("source", "item");
 		Path p = new Path("Lyrics");
 	    setAttribute(id, p, LYRICS);
 	    
 	    _service.process(getBlackboard(), new Id[] { id });
 	    
-	    Literal lyrics = getBlackboard().getLiteral(id, new Path("Lyrics"));
-	    final String text = lyrics.getAnnotation("Emotion").getAnonValues().toArray()[0].toString();
-	    assertEquals("Happiness", text);
+	    Literal emotion = getBlackboard().getLiteral(id, new Path("Emotion"));
+	    assertEquals("Happiness", emotion.getStringValue());
 	}
 
 	@Override
