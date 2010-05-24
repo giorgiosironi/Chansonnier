@@ -27,6 +27,6 @@ Import-Package: junit.framework;version="[3.8.0,4.0.0)",
 Export-Package: it.polimi.chansonnier,
  it.polimi.chansonnier.spi,
  it.polimi.chansonnier.processing
-Service-Component: OSGI-INF/component.xml,
+Service-Component: OSGI-INF/EmotionProcessingService.xml,
  OSGI-INF/LyricsProcessingService.xml,
  OSGI-INF/LastIndexedService.xml
