@@ -388,13 +388,6 @@
          unpack="false"/>
 
    <plugin
-         id="org.eclipse.smila.binarystorage.persistence.efs.source"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
          id="org.eclipse.smila.binarystorage.persistence.io.source"
          download-size="0"
          install-size="0"
@@ -633,20 +626,6 @@
          unpack="false"/>
 
    <plugin
-         id="org.eclipse.smila.connectivity.framework.agent.mock"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.smila.connectivity.framework.agent.mock.source"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
          id="rome.fetcher"
          download-size="0"
          install-size="0"
@@ -657,41 +636,6 @@
          download-size="0"
          install-size="0"
          version="0.0.0"/>
-
-   <plugin
-         id="org.eclipse.smila.connectivity.framework.agent.feed"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.smila.connectivity.framework.agent.feed.source"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.smila.connectivity.framework.compound.zip"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.smila.connectivity.framework.compound.zip.source"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.smila.binarystorage.persistence.efs"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
 
    <plugin
          id="org.eclipse.smila.binarystorage.persistence.io"
@@ -723,20 +667,6 @@
 
    <plugin
          id="org.eclipse.smila.binarystorage.persistence.jpa.source"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.smila.connectivity.framework.agent.jobfile"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.smila.connectivity.framework.agent.jobfile.source"
          download-size="0"
          install-size="0"
          version="0.0.0"
