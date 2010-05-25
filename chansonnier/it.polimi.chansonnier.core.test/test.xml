@@ -4,7 +4,6 @@
  the terms of the Eclipse Public License v1.0 which accompanies this 
  distribution, and is available at http://www.eclipse.org/legal/epl-v10.html
  -->
-<?xml version="1.0"?>
 <project name="testsuite" default="run" basedir=".">
   <property name="eclipse-home" value="${basedir}/../.."/>
   <property name="plugin-name" value="it.polimi.chansonnier.core.test"/>
