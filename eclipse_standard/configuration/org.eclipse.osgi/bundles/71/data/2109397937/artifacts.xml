@@ -1,0 +1,972 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<?artifactRepository version='1.1.0'?>
+<repository name='/home/giorgio/thesis/code/eclipse_standard/.eclipseextension' type='org.eclipse.equinox.p2.artifact.repository.simpleRepository' version='1.0.0'>
+  <properties size='3'>
+    <property name='p2.timestamp' value='1274810398753'/>
+    <property name='org.eclipse.update.site.policy' value='USER-EXCLUDE'/>
+    <property name='org.eclipse.update.site.list' value=''/>
+  </properties>
+  <mappings size='3'>
+    <rule filter='(&amp; (classifier=osgi.bundle))' output='${repoUrl}/plugins/${id}_${version}.jar'/>
+    <rule filter='(&amp; (classifier=binary))' output='${repoUrl}/binary/${id}_${version}'/>
+    <rule filter='(&amp; (classifier=org.eclipse.update.feature))' output='${repoUrl}/features/${id}_${version}.jar'/>
+  </mappings>
+  <artifacts size='105'>
+    <artifact classifier='osgi.bundle' id='org.eclipse.equinox.launcher.motif.solaris.sparc' version='1.0.300.R35x_20090929'>
+      <properties size='2'>
+        <property name='artifact.size' value='4096'/>
+        <property name='download.size' value='4096'/>
+      </properties>
+      <repositoryProperties size='3'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.equinox.launcher.motif.solaris.sparc_1.0.300.R35x_20090929/'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.equinox.launcher.motif.solaris.sparc_1.0.300.R35x_20090929'/>
+        <property name='artifact.folder' value='true'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.ui.cocoa' version='1.0.0.I20090525-2000'>
+      <properties size='3'>
+        <property name='artifact.size' value='20342'/>
+        <property name='download.size' value='20342'/>
+        <property name='download.md5' value='fa3085c551590f702c9288c88732edb9'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.ui.cocoa_1.0.0.I20090525-2000.jar'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.ui.cocoa_1.0.0.I20090525-2000.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.swt.carbon.macosx' version='3.5.2.v3557f'>
+      <properties size='3'>
+        <property name='artifact.size' value='1976381'/>
+        <property name='download.size' value='1976381'/>
+        <property name='download.md5' value='787160d564bcb07493ae13bf9d2e5d48'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.carbon.macosx_3.5.2.v3557f.jar'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.carbon.macosx_3.5.2.v3557f.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.swt.motif.aix.ppc' version='3.5.2.v3557f'>
+      <properties size='3'>
+        <property name='artifact.size' value='1937955'/>
+        <property name='download.size' value='1937955'/>
+        <property name='download.md5' value='643dae5a26e922df911a55d764373fef'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.motif.aix.ppc_3.5.2.v3557f.jar'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.motif.aix.ppc_3.5.2.v3557f.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.core.resources.win32.x86' version='3.5.0.v20081020'>
+      <properties size='3'>
+        <property name='artifact.size' value='15761'/>
+        <property name='download.size' value='15761'/>
+        <property name='download.md5' value='804db529a0eb13fb84dc526286a29ea8'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.core.resources.win32.x86_3.5.0.v20081020.jar'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.core.resources.win32.x86_3.5.0.v20081020.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.swt.win32.win32.x86_64.source' version='3.5.2.v3557f'>
+      <properties size='3'>
+        <property name='artifact.size' value='2154068'/>
+        <property name='download.size' value='2154068'/>
+        <property name='download.md5' value='60f06179a70d649b498171380f83489d'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.win32.win32.x86_64.source_3.5.2.v3557f.jar'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.win32.win32.x86_64.source_3.5.2.v3557f.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.core.net.win32.x86' version='1.0.0.I20080909'>
+      <properties size='3'>
+        <property name='artifact.size' value='29675'/>
+        <property name='download.size' value='29675'/>
+        <property name='download.md5' value='6277ebd7a834e0154fc085e410be8212'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.core.net.win32.x86_1.0.0.I20080909.jar'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.core.net.win32.x86_1.0.0.I20080909.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.equinox.launcher.gtk.solaris.sparc' version='1.0.201.R35x_v20090720'>
+      <properties size='2'>
+        <property name='artifact.size' value='4096'/>
+        <property name='download.size' value='4096'/>
+      </properties>
+      <repositoryProperties size='3'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.equinox.launcher.gtk.solaris.sparc_1.0.201.R35x_v20090720/'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.equinox.launcher.gtk.solaris.sparc_1.0.201.R35x_v20090720'/>
+        <property name='artifact.folder' value='true'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.compare.win32' version='1.0.0.I20090430-0408'>
+      <properties size='3'>
+        <property name='artifact.size' value='37198'/>
+        <property name='download.size' value='37198'/>
+        <property name='download.md5' value='a8aa1dd407d5385272e7802f3b857241'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.compare.win32_1.0.0.I20090430-0408.jar'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.compare.win32_1.0.0.I20090430-0408.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.swt.cocoa.macosx.x86_64' version='3.5.2.v3557f'>
+      <properties size='3'>
+        <property name='artifact.size' value='1956945'/>
+        <property name='download.size' value='1956945'/>
+        <property name='download.md5' value='5e49b61aae40258ed2883cee659bcba4'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.cocoa.macosx.x86_64_3.5.2.v3557f.jar'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.cocoa.macosx.x86_64_3.5.2.v3557f.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='binary' id='org.eclipse.equinox.executable_root.cocoa.macosx.ppc' version='3.3.201.R35x_v20091211-7M-FngFELSU3Pqlv3JdZn'/>
+    <artifact classifier='osgi.bundle' id='org.eclipse.swt.cocoa.macosx' version='3.5.2.v3557f'>
+      <properties size='3'>
+        <property name='artifact.size' value='2062804'/>
+        <property name='download.size' value='2062804'/>
+        <property name='download.md5' value='a3251234739ab7aa887dd8a3f5b9340b'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.cocoa.macosx_3.5.2.v3557f.jar'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.cocoa.macosx_3.5.2.v3557f.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.jdt.launching.macosx' version='3.2.0.v20090527'>
+      <properties size='3'>
+        <property name='artifact.size' value='17167'/>
+        <property name='download.size' value='17167'/>
+        <property name='download.md5' value='5665510ebe0c44c188b11a4cd47cafed'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.jdt.launching.macosx_3.2.0.v20090527.jar'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.jdt.launching.macosx_3.2.0.v20090527.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.core.filesystem.aix.ppc' version='1.0.0.R35x_v20091203-1235'>
+      <properties size='3'>
+        <property name='artifact.size' value='8973'/>
+        <property name='download.size' value='8973'/>
+        <property name='download.md5' value='ee6295ed346b167407bf8eccfd8daff9'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.core.filesystem.aix.ppc_1.0.0.R35x_v20091203-1235.jar'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.core.filesystem.aix.ppc_1.0.0.R35x_v20091203-1235.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.jdt.launching.ui.macosx' version='1.0.0.v20090527'>
+      <properties size='3'>
+        <property name='artifact.size' value='54439'/>
+        <property name='download.size' value='54439'/>
+        <property name='download.md5' value='5f5d5148a549e55599c5007e2edb4182'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.jdt.launching.ui.macosx_1.0.0.v20090527.jar'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.jdt.launching.ui.macosx_1.0.0.v20090527.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.swt.cocoa.macosx.source' version='3.5.2.v3557f'>
+      <properties size='3'>
+        <property name='artifact.size' value='1645539'/>
+        <property name='download.size' value='1645539'/>
+        <property name='download.md5' value='8be2178fdd04038d161b4a5243c8ae20'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.cocoa.macosx.source_3.5.2.v3557f.jar'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.cocoa.macosx.source_3.5.2.v3557f.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.swt.wpf.win32.x86.source' version='3.5.2.v3557f'>
+      <properties size='3'>
+        <property name='artifact.size' value='1210117'/>
+        <property name='download.size' value='1210117'/>
+        <property name='download.md5' value='6eac6a3aaf032d1a6b8c0dd599c663bd'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.wpf.win32.x86.source_3.5.2.v3557f.jar'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.wpf.win32.x86.source_3.5.2.v3557f.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.swt.motif.hpux.ia64_32.source' version='3.5.2.v3557f'>
+      <properties size='3'>
+        <property name='artifact.size' value='1661711'/>
+        <property name='download.size' value='1661711'/>
+        <property name='download.md5' value='481d7fb3dcb36bcfe077d6db1e36e127'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.motif.hpux.ia64_32.source_3.5.2.v3557f.jar'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.motif.hpux.ia64_32.source_3.5.2.v3557f.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.equinox.launcher.wpf.win32.x86' version='1.0.200.v20090519'>
+      <properties size='2'>
+        <property name='artifact.size' value='4096'/>
+        <property name='download.size' value='4096'/>
+      </properties>
+      <repositoryProperties size='3'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.equinox.launcher.wpf.win32.x86_1.0.200.v20090519/'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.equinox.launcher.wpf.win32.x86_1.0.200.v20090519'/>
+        <property name='artifact.folder' value='true'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.equinox.launcher.win32.win32.x86' version='1.0.200.v20090519'>
+      <properties size='2'>
+        <property name='artifact.size' value='4096'/>
+        <property name='download.size' value='4096'/>
+      </properties>
+      <repositoryProperties size='3'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.equinox.launcher.win32.win32.x86_1.0.200.v20090519/'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.equinox.launcher.win32.win32.x86_1.0.200.v20090519'/>
+        <property name='artifact.folder' value='true'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='binary' id='org.eclipse.equinox.executable_root.photon.qnx.x86' version='3.3.201.R35x_v20091211-7M-FngFELSU3Pqlv3JdZn'/>
+    <artifact classifier='binary' id='org.eclipse.equinox.executable_root.cocoa.macosx.x86_64' version='3.3.201.R35x_v20091211-7M-FngFELSU3Pqlv3JdZn'/>
+    <artifact classifier='osgi.bundle' id='org.eclipse.jdt.launching.ui.macosx.source' version='1.0.0.v20090527'>
+      <properties size='3'>
+        <property name='artifact.size' value='23927'/>
+        <property name='download.size' value='23927'/>
+        <property name='download.md5' value='a3fcb7f09b137debd1189a249c63de33'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.jdt.launching.ui.macosx.source_1.0.0.v20090527.jar'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.jdt.launching.ui.macosx.source_1.0.0.v20090527.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.update.core.win32' version='3.2.100.v20080107'>
+      <properties size='3'>
+        <property name='artifact.size' value='86270'/>
+        <property name='download.size' value='86270'/>
+        <property name='download.md5' value='1d1d9b9f9b294e5feca15488d7db83bb'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.update.core.win32_3.2.100.v20080107.jar'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.update.core.win32_3.2.100.v20080107.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.equinox.launcher.motif.linux.x86' version='1.0.201.R35x_v20100209'>
+      <properties size='2'>
+        <property name='artifact.size' value='4096'/>
+        <property name='download.size' value='4096'/>
+      </properties>
+      <repositoryProperties size='3'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.equinox.launcher.motif.linux.x86_1.0.201.R35x_v20100209/'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.equinox.launcher.motif.linux.x86_1.0.201.R35x_v20100209'/>
+        <property name='artifact.folder' value='true'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='binary' id='org.eclipse.equinox.executable_root.gtk.linux.x86' version='3.3.201.R35x_v20091211-7M-FngFELSU3Pqlv3JdZn'/>
+    <artifact classifier='osgi.bundle' id='org.eclipse.core.filesystem.macosx' version='1.2.0.R35x_v20091203-1235'>
+      <properties size='3'>
+        <property name='artifact.size' value='12699'/>
+        <property name='download.size' value='12699'/>
+        <property name='download.md5' value='bed372c4dbe7cd8130e5d33b20e7909b'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.core.filesystem.macosx_1.2.0.R35x_v20091203-1235.jar'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.core.filesystem.macosx_1.2.0.R35x_v20091203-1235.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.ui.cocoa.source' version='1.0.0.I20090525-2000'>
+      <properties size='3'>
+        <property name='artifact.size' value='13225'/>
+        <property name='download.size' value='13225'/>
+        <property name='download.md5' value='47749e6d8e31fce310aa2c04005bafc5'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.ui.cocoa.source_1.0.0.I20090525-2000.jar'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.ui.cocoa.source_1.0.0.I20090525-2000.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.swt.motif.hpux.ia64_32' version='3.5.2.v3557f'>
+      <properties size='3'>
+        <property name='artifact.size' value='1868567'/>
+        <property name='download.size' value='1868567'/>
+        <property name='download.md5' value='8ad585548f3d07e500c774ac3886ef1f'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.motif.hpux.ia64_32_3.5.2.v3557f.jar'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.motif.hpux.ia64_32_3.5.2.v3557f.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.swt.motif.aix.ppc.source' version='3.5.2.v3557f'>
+      <properties size='3'>
+        <property name='artifact.size' value='1662651'/>
+        <property name='download.size' value='1662651'/>
+        <property name='download.md5' value='7b1d32e3e1ab62ab144502dd6fa44df2'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.motif.aix.ppc.source_3.5.2.v3557f.jar'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.motif.aix.ppc.source_3.5.2.v3557f.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.swt.gtk.linux.s390x.source' version='3.5.0.v3550b'>
+      <properties size='3'>
+        <property name='artifact.size' value='1804976'/>
+        <property name='download.size' value='1804976'/>
+        <property name='download.md5' value='d90ffda7795d904ab5fbefcf44a39ccb'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.gtk.linux.s390x.source_3.5.0.v3550b.jar'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.gtk.linux.s390x.source_3.5.0.v3550b.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.equinox.launcher.gtk.solaris.x86' version='1.0.201.R35x_v20090720'>
+      <properties size='2'>
+        <property name='artifact.size' value='4096'/>
+        <property name='download.size' value='4096'/>
+      </properties>
+      <repositoryProperties size='3'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.equinox.launcher.gtk.solaris.x86_1.0.201.R35x_v20090720/'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.equinox.launcher.gtk.solaris.x86_1.0.201.R35x_v20090720'/>
+        <property name='artifact.folder' value='true'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.update.core.win32.source' version='3.2.100.v20080107'>
+      <properties size='3'>
+        <property name='artifact.size' value='12900'/>
+        <property name='download.size' value='12900'/>
+        <property name='download.md5' value='9f2ace1e5f3deeb91b247dc41d54743e'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.update.core.win32.source_3.2.100.v20080107.jar'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.update.core.win32.source_3.2.100.v20080107.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.equinox.launcher.gtk.linux.s390x' version='1.0.100.v20090426-1530'>
+      <properties size='2'>
+        <property name='artifact.size' value='4096'/>
+        <property name='download.size' value='4096'/>
+      </properties>
+      <repositoryProperties size='3'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.equinox.launcher.gtk.linux.s390x_1.0.100.v20090426-1530/'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.equinox.launcher.gtk.linux.s390x_1.0.100.v20090426-1530'/>
+        <property name='artifact.folder' value='true'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.ui.carbon.source' version='4.0.0.I20090525-2000'>
+      <properties size='3'>
+        <property name='artifact.size' value='11005'/>
+        <property name='download.size' value='11005'/>
+        <property name='download.md5' value='647d395e040f822cf36988b1bb4dde08'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.ui.carbon.source_4.0.0.I20090525-2000.jar'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.ui.carbon.source_4.0.0.I20090525-2000.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='binary' id='org.eclipse.equinox.executable_root.motif.aix.ppc' version='3.3.201.R35x_v20091211-7M-FngFELSU3Pqlv3JdZn'/>
+    <artifact classifier='osgi.bundle' id='org.eclipse.swt.gtk.linux.ppc' version='3.5.2.v3557f'>
+      <properties size='3'>
+        <property name='artifact.size' value='2166135'/>
+        <property name='download.size' value='2166135'/>
+        <property name='download.md5' value='8f5d1b3103c4fdd3cbc30ce1d68d9b28'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.gtk.linux.ppc_3.5.2.v3557f.jar'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.gtk.linux.ppc_3.5.2.v3557f.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.core.filesystem.hpux.PA_RISC' version='1.0.0.v20080604-1400'>
+      <properties size='3'>
+        <property name='artifact.size' value='11375'/>
+        <property name='download.size' value='11375'/>
+        <property name='download.md5' value='e98e4093bbbd53c746650f9787a64a24'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.core.filesystem.hpux.PA_RISC_1.0.0.v20080604-1400.jar'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.core.filesystem.hpux.PA_RISC_1.0.0.v20080604-1400.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='binary' id='org.eclipse.equinox.executable_root.win32.win32.x86' version='3.3.201.R35x_v20091211-7M-FngFELSU3Pqlv3JdZn'/>
+    <artifact classifier='osgi.bundle' id='org.eclipse.ui.win32.source' version='3.2.100.v20090429-1800'>
+      <properties size='3'>
+        <property name='artifact.size' value='14308'/>
+        <property name='download.size' value='14308'/>
+        <property name='download.md5' value='bffcc4e4679ca26b908683b2481f9963'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.ui.win32.source_3.2.100.v20090429-1800.jar'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.ui.win32.source_3.2.100.v20090429-1800.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.swt.motif.linux.x86.source' version='3.5.2.v3557f'>
+      <properties size='3'>
+        <property name='artifact.size' value='1692562'/>
+        <property name='download.size' value='1692562'/>
+        <property name='download.md5' value='b5217cdcb84a2419247e9ca65aa73ade'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.motif.linux.x86.source_3.5.2.v3557f.jar'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.motif.linux.x86.source_3.5.2.v3557f.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='binary' id='org.eclipse.equinox.executable_root.gtk.solaris.sparc' version='3.3.201.R35x_v20091211-7M-FngFELSU3Pqlv3JdZn'/>
+    <artifact classifier='osgi.bundle' id='org.eclipse.compare.win32.source' version='1.0.0.I20090430-0408'>
+      <properties size='3'>
+        <property name='artifact.size' value='19352'/>
+        <property name='download.size' value='19352'/>
+        <property name='download.md5' value='29c74eb30091c7d6e152911db678187d'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.compare.win32.source_1.0.0.I20090430-0408.jar'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.compare.win32.source_1.0.0.I20090430-0408.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.core.filesystem.hpux.ia64_32' version='1.0.0.v20080604-1400'>
+      <properties size='3'>
+        <property name='artifact.size' value='13444'/>
+        <property name='download.size' value='13444'/>
+        <property name='download.md5' value='a92ba6cbfc08fc21d6ff3886121c0af1'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.core.filesystem.hpux.ia64_32_1.0.0.v20080604-1400.jar'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.core.filesystem.hpux.ia64_32_1.0.0.v20080604-1400.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.swt.motif.solaris.sparc.source' version='3.5.2.v3557f'>
+      <properties size='3'>
+        <property name='artifact.size' value='1662663'/>
+        <property name='download.size' value='1662663'/>
+        <property name='download.md5' value='2bebff362fa019376897a4ec3c7bbe04'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.motif.solaris.sparc.source_3.5.2.v3557f.jar'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.motif.solaris.sparc.source_3.5.2.v3557f.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.equinox.launcher.gtk.linux.s390' version='1.0.100.v20090426-1530'>
+      <properties size='2'>
+        <property name='artifact.size' value='4096'/>
+        <property name='download.size' value='4096'/>
+      </properties>
+      <repositoryProperties size='3'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.equinox.launcher.gtk.linux.s390_1.0.100.v20090426-1530/'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.equinox.launcher.gtk.linux.s390_1.0.100.v20090426-1530'/>
+        <property name='artifact.folder' value='true'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.equinox.security.macosx.source' version='1.100.0.v20090520-1800'>
+      <properties size='3'>
+        <property name='artifact.size' value='27250'/>
+        <property name='download.size' value='27250'/>
+        <property name='download.md5' value='4cce04f51f4d664da1cf1c4cc2f99c91'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.equinox.security.macosx.source_1.100.0.v20090520-1800.jar'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.equinox.security.macosx.source_1.100.0.v20090520-1800.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='binary' id='org.eclipse.equinox.executable_root.carbon.macosx.ppc' version='3.3.201.R35x_v20091211-7M-FngFELSU3Pqlv3JdZn'/>
+    <artifact classifier='osgi.bundle' id='org.eclipse.equinox.launcher.cocoa.macosx' version='1.0.1.R35x_v20090707'>
+      <properties size='2'>
+        <property name='artifact.size' value='4096'/>
+        <property name='download.size' value='4096'/>
+      </properties>
+      <repositoryProperties size='3'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.equinox.launcher.cocoa.macosx_1.0.1.R35x_v20090707/'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.equinox.launcher.cocoa.macosx_1.0.1.R35x_v20090707'/>
+        <property name='artifact.folder' value='true'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.swt.gtk.linux.s390.source' version='3.5.0.v3550b'>
+      <properties size='3'>
+        <property name='artifact.size' value='1804293'/>
+        <property name='download.size' value='1804293'/>
+        <property name='download.md5' value='07b6f16b0aa5c27c429ba6e495d4c8e3'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.gtk.linux.s390.source_3.5.0.v3550b.jar'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.gtk.linux.s390.source_3.5.0.v3550b.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='binary' id='org.eclipse.equinox.executable_root.carbon.macosx.x86' version='3.3.201.R35x_v20091211-7M-FngFELSU3Pqlv3JdZn'/>
+    <artifact classifier='osgi.bundle' id='org.eclipse.equinox.launcher.gtk.linux.x86_64' version='1.0.200.v20090519'>
+      <properties size='2'>
+        <property name='artifact.size' value='4096'/>
+        <property name='download.size' value='4096'/>
+      </properties>
+      <repositoryProperties size='3'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.equinox.launcher.gtk.linux.x86_64_1.0.200.v20090519/'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.equinox.launcher.gtk.linux.x86_64_1.0.200.v20090519'/>
+        <property name='artifact.folder' value='true'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.equinox.security.win32.x86' version='1.0.100.v20090520-1800'>
+      <properties size='3'>
+        <property name='artifact.size' value='21943'/>
+        <property name='download.size' value='21943'/>
+        <property name='download.md5' value='77b60a5a170a719ab332d0b6e5502a93'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.equinox.security.win32.x86_1.0.100.v20090520-1800.jar'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.equinox.security.win32.x86_1.0.100.v20090520-1800.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.swt.motif.solaris.sparc' version='3.5.2.v3557f'>
+      <properties size='3'>
+        <property name='artifact.size' value='1855620'/>
+        <property name='download.size' value='1855620'/>
+        <property name='download.md5' value='4973877740667fc10eeb9d9d13ef7d62'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.motif.solaris.sparc_3.5.2.v3557f.jar'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.motif.solaris.sparc_3.5.2.v3557f.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.swt.gtk.solaris.x86.source' version='3.5.2.v3557f'>
+      <properties size='3'>
+        <property name='artifact.size' value='1801773'/>
+        <property name='download.size' value='1801773'/>
+        <property name='download.md5' value='4c1eb4464a54be91527416c4f8a25ede'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.gtk.solaris.x86.source_3.5.2.v3557f.jar'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.gtk.solaris.x86.source_3.5.2.v3557f.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.swt.photon.qnx.x86' version='3.5.2.v3557f'>
+      <properties size='3'>
+        <property name='artifact.size' value='1264842'/>
+        <property name='download.size' value='1264842'/>
+        <property name='download.md5' value='0ab1c91b44a0428b165d304b03649df9'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.photon.qnx.x86_3.5.2.v3557f.jar'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.photon.qnx.x86_3.5.2.v3557f.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.equinox.launcher.motif.hpux.PA_RISC' version='1.0.100.v20090306-1900'>
+      <properties size='2'>
+        <property name='artifact.size' value='4096'/>
+        <property name='download.size' value='4096'/>
+      </properties>
+      <repositoryProperties size='3'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.equinox.launcher.motif.hpux.PA_RISC_1.0.100.v20090306-1900/'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.equinox.launcher.motif.hpux.PA_RISC_1.0.100.v20090306-1900'/>
+        <property name='artifact.folder' value='true'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.core.filesystem.win32.x86_64' version='1.1.0.v20090316-0910'>
+      <properties size='3'>
+        <property name='artifact.size' value='30361'/>
+        <property name='download.size' value='30361'/>
+        <property name='download.md5' value='5c0ffe52898bf6bc77209c55a3e56b30'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.core.filesystem.win32.x86_64_1.1.0.v20090316-0910.jar'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.core.filesystem.win32.x86_64_1.1.0.v20090316-0910.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.core.filesystem.solaris.sparc' version='1.1.0.R35x_v20091203-1235'>
+      <properties size='3'>
+        <property name='artifact.size' value='9653'/>
+        <property name='download.size' value='9653'/>
+        <property name='download.md5' value='488b0d112109776a55958eca09833272'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.core.filesystem.solaris.sparc_1.1.0.R35x_v20091203-1235.jar'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.core.filesystem.solaris.sparc_1.1.0.R35x_v20091203-1235.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='binary' id='org.eclipse.equinox.executable_root.wpf.win32.x86' version='3.3.201.R35x_v20091211-7M-FngFELSU3Pqlv3JdZn'/>
+    <artifact classifier='osgi.bundle' id='org.eclipse.core.filesystem.linux.ppc' version='1.0.100.v20080604-1400'>
+      <properties size='3'>
+        <property name='artifact.size' value='22395'/>
+        <property name='download.size' value='22395'/>
+        <property name='download.md5' value='be7a7ef05aa23247fba3754c69532851'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.core.filesystem.linux.ppc_1.0.100.v20080604-1400.jar'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.core.filesystem.linux.ppc_1.0.100.v20080604-1400.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.swt.wpf.win32.x86' version='3.5.2.v3557f'>
+      <properties size='3'>
+        <property name='artifact.size' value='1236883'/>
+        <property name='download.size' value='1236883'/>
+        <property name='download.md5' value='6da903d52fc15b42a7f9ed9cd8254028'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.wpf.win32.x86_3.5.2.v3557f.jar'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.wpf.win32.x86_3.5.2.v3557f.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.equinox.launcher.carbon.macosx' version='1.0.200.v20090520-1835'>
+      <properties size='2'>
+        <property name='artifact.size' value='4096'/>
+        <property name='download.size' value='4096'/>
+      </properties>
+      <repositoryProperties size='3'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.equinox.launcher.carbon.macosx_1.0.200.v20090520-1835/'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.equinox.launcher.carbon.macosx_1.0.200.v20090520-1835'/>
+        <property name='artifact.folder' value='true'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='binary' id='org.eclipse.equinox.executable_root.motif.hpux.PA_RISC' version='3.3.201.R35x_v20091211-7M-FngFELSU3Pqlv3JdZn'/>
+    <artifact classifier='binary' id='org.eclipse.equinox.executable_root.gtk.linux.x86_64' version='3.3.201.R35x_v20091211-7M-FngFELSU3Pqlv3JdZn'/>
+    <artifact classifier='osgi.bundle' id='org.eclipse.equinox.launcher.motif.aix.ppc' version='1.0.201.R35x_v20091211'>
+      <properties size='2'>
+        <property name='artifact.size' value='4096'/>
+        <property name='download.size' value='4096'/>
+      </properties>
+      <repositoryProperties size='3'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.equinox.launcher.motif.aix.ppc_1.0.201.R35x_v20091211/'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.equinox.launcher.motif.aix.ppc_1.0.201.R35x_v20091211'/>
+        <property name='artifact.folder' value='true'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.core.filesystem.linux.x86_64' version='1.1.0.R35x_v20091203-1235'>
+      <properties size='3'>
+        <property name='artifact.size' value='9935'/>
+        <property name='download.size' value='9935'/>
+        <property name='download.md5' value='694d4a502ac293a7d7261ae085a7aacc'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.core.filesystem.linux.x86_64_1.1.0.R35x_v20091203-1235.jar'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.core.filesystem.linux.x86_64_1.1.0.R35x_v20091203-1235.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.core.net.win32.x86_64' version='1.0.0.I20090306-1030'>
+      <properties size='3'>
+        <property name='artifact.size' value='26960'/>
+        <property name='download.size' value='26960'/>
+        <property name='download.md5' value='b1178cddb71875ea7d6de308a0818b08'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.core.net.win32.x86_64_1.0.0.I20090306-1030.jar'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.core.net.win32.x86_64_1.0.0.I20090306-1030.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.jdt.launching.macosx.source' version='3.2.0.v20090527'>
+      <properties size='3'>
+        <property name='artifact.size' value='13967'/>
+        <property name='download.size' value='13967'/>
+        <property name='download.md5' value='b86e85645285525139eb40bdc997eb33'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.jdt.launching.macosx.source_3.2.0.v20090527.jar'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.jdt.launching.macosx.source_3.2.0.v20090527.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='org.eclipse.update.feature' id='org.eclipse.equinox.executable' version='3.3.201.R35x_v20091211-7M-FngFELSU3Pqlv3JdZn'>
+      <properties size='3'>
+        <property name='artifact.size' value='4096'/>
+        <property name='download.size' value='4096'/>
+        <property name='download.contentType' value='application/zip'/>
+      </properties>
+      <repositoryProperties size='3'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/features/org.eclipse.equinox.executable_3.3.201.R35x_v20091211-7M-FngFELSU3Pqlv3JdZn/'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/features/org.eclipse.equinox.executable_3.3.201.R35x_v20091211-7M-FngFELSU3Pqlv3JdZn'/>
+        <property name='artifact.folder' value='true'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.equinox.launcher.gtk.linux.ppc' version='1.0.200.v20090519'>
+      <properties size='2'>
+        <property name='artifact.size' value='4096'/>
+        <property name='download.size' value='4096'/>
+      </properties>
+      <repositoryProperties size='3'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.equinox.launcher.gtk.linux.ppc_1.0.200.v20090519/'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.equinox.launcher.gtk.linux.ppc_1.0.200.v20090519'/>
+        <property name='artifact.folder' value='true'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.swt.carbon.macosx.source' version='3.5.2.v3557f'>
+      <properties size='3'>
+        <property name='artifact.size' value='1671899'/>
+        <property name='download.size' value='1671899'/>
+        <property name='download.md5' value='a248f301b94f2e138af85efed904486d'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.carbon.macosx.source_3.5.2.v3557f.jar'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.carbon.macosx.source_3.5.2.v3557f.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='binary' id='org.eclipse.equinox.executable_root.win32.win32.ia64' version='3.3.201.R35x_v20091211-7M-FngFELSU3Pqlv3JdZn'/>
+    <artifact classifier='binary' id='org.eclipse.equinox.executable_root.gtk.linux.ppc' version='3.3.201.R35x_v20091211-7M-FngFELSU3Pqlv3JdZn'/>
+    <artifact classifier='osgi.bundle' id='org.eclipse.swt.motif.hpux.PA_RISC' version='3.5.0.HEAD'>
+      <properties size='3'>
+        <property name='artifact.size' value='2040675'/>
+        <property name='download.size' value='2040675'/>
+        <property name='download.md5' value='5b8f66e143eb492823065fcf57c56fe5'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.motif.hpux.PA_RISC_3.5.0.HEAD.jar'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.motif.hpux.PA_RISC_3.5.0.HEAD.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.swt.motif.linux.x86' version='3.5.2.v3557f'>
+      <properties size='3'>
+        <property name='artifact.size' value='2857756'/>
+        <property name='download.size' value='2857756'/>
+        <property name='download.md5' value='a70a7695c8db267b9472af3c26cc7ce6'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.motif.linux.x86_3.5.2.v3557f.jar'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.motif.linux.x86_3.5.2.v3557f.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.equinox.security.macosx' version='1.100.0.v20090520-1800'>
+      <properties size='3'>
+        <property name='artifact.size' value='15354'/>
+        <property name='download.size' value='15354'/>
+        <property name='download.md5' value='cdb09c1e50ff97c307cb3c085dfc6276'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.equinox.security.macosx_1.100.0.v20090520-1800.jar'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.equinox.security.macosx_1.100.0.v20090520-1800.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.core.filesystem.qnx.x86' version='1.0.0.v20080604-1400'>
+      <properties size='3'>
+        <property name='artifact.size' value='5393'/>
+        <property name='download.size' value='5393'/>
+        <property name='download.md5' value='3fa8687d89acc37b12f70365ed8651ad'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.core.filesystem.qnx.x86_1.0.0.v20080604-1400.jar'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.core.filesystem.qnx.x86_1.0.0.v20080604-1400.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.swt.motif.hpux.PA_RISC.source' version='3.5.0.HEAD'>
+      <properties size='3'>
+        <property name='artifact.size' value='1662656'/>
+        <property name='download.size' value='1662656'/>
+        <property name='download.md5' value='ee93ab5ed511515d217742154e89433f'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.motif.hpux.PA_RISC.source_3.5.0.HEAD.jar'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.motif.hpux.PA_RISC.source_3.5.0.HEAD.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.equinox.launcher.win32.win32.x86_64' version='1.0.200.v20090519'>
+      <properties size='2'>
+        <property name='artifact.size' value='4096'/>
+        <property name='download.size' value='4096'/>
+      </properties>
+      <repositoryProperties size='3'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.equinox.launcher.win32.win32.x86_64_1.0.200.v20090519/'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.equinox.launcher.win32.win32.x86_64_1.0.200.v20090519'/>
+        <property name='artifact.folder' value='true'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.equinox.launcher.motif.hpux.ia64_32' version='1.0.100.v20090519'>
+      <properties size='2'>
+        <property name='artifact.size' value='4096'/>
+        <property name='download.size' value='4096'/>
+      </properties>
+      <repositoryProperties size='3'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.equinox.launcher.motif.hpux.ia64_32_1.0.100.v20090519/'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.equinox.launcher.motif.hpux.ia64_32_1.0.100.v20090519'/>
+        <property name='artifact.folder' value='true'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.swt.gtk.solaris.sparc' version='3.5.2.v3557f'>
+      <properties size='3'>
+        <property name='artifact.size' value='2036433'/>
+        <property name='download.size' value='2036433'/>
+        <property name='download.md5' value='8dc30254718ede0f52310b018d01d38b'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.gtk.solaris.sparc_3.5.2.v3557f.jar'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.gtk.solaris.sparc_3.5.2.v3557f.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.swt.gtk.solaris.x86' version='3.5.2.v3557f'>
+      <properties size='3'>
+        <property name='artifact.size' value='1986047'/>
+        <property name='download.size' value='1986047'/>
+        <property name='download.md5' value='e59533ff239b6d2af517454277042d00'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.gtk.solaris.x86_3.5.2.v3557f.jar'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.gtk.solaris.x86_3.5.2.v3557f.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.swt.gtk.linux.x86_64.source' version='3.5.2.v3557f'>
+      <properties size='3'>
+        <property name='artifact.size' value='1806204'/>
+        <property name='download.size' value='1806204'/>
+        <property name='download.md5' value='f4e263e4ec5e5fa79f6a8ea94d48bc6d'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.gtk.linux.x86_64.source_3.5.2.v3557f.jar'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.gtk.linux.x86_64.source_3.5.2.v3557f.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='binary' id='org.eclipse.equinox.executable_root.motif.linux.x86' version='3.3.201.R35x_v20091211-7M-FngFELSU3Pqlv3JdZn'/>
+    <artifact classifier='osgi.bundle' id='org.eclipse.swt.gtk.linux.x86_64' version='3.5.2.v3557f'>
+      <properties size='3'>
+        <property name='artifact.size' value='2244038'/>
+        <property name='download.size' value='2244038'/>
+        <property name='download.md5' value='1eb148aedd135754ed179782cfefd700'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.gtk.linux.x86_64_3.5.2.v3557f.jar'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.gtk.linux.x86_64_3.5.2.v3557f.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.core.filesystem.win32.x86' version='1.1.0.v20080604-1400'>
+      <properties size='3'>
+        <property name='artifact.size' value='16984'/>
+        <property name='download.size' value='16984'/>
+        <property name='download.md5' value='bed7bfc7368ebcd0bede0439fdd9ad18'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.core.filesystem.win32.x86_1.1.0.v20080604-1400.jar'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.core.filesystem.win32.x86_1.1.0.v20080604-1400.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.equinox.security.win32.x86.source' version='1.0.100.v20090520-1800'>
+      <properties size='3'>
+        <property name='artifact.size' value='14140'/>
+        <property name='download.size' value='14140'/>
+        <property name='download.md5' value='f02703509fe10d99ba9bf88f5ada851a'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.equinox.security.win32.x86.source_1.0.100.v20090520-1800.jar'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.equinox.security.win32.x86.source_1.0.100.v20090520-1800.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='binary' id='org.eclipse.equinox.executable_root.win32.win32.x86_64' version='3.3.201.R35x_v20091211-7M-FngFELSU3Pqlv3JdZn'/>
+    <artifact classifier='binary' id='org.eclipse.equinox.executable_root.gtk.solaris.x86' version='3.3.201.R35x_v20091211-7M-FngFELSU3Pqlv3JdZn'/>
+    <artifact classifier='binary' id='org.eclipse.equinox.executable_root.cocoa.macosx.x86' version='3.3.201.R35x_v20091211-7M-FngFELSU3Pqlv3JdZn'/>
+    <artifact classifier='binary' id='org.eclipse.equinox.executable_root.motif.hpux.ia64_32' version='3.3.201.R35x_v20091211-7M-FngFELSU3Pqlv3JdZn'/>
+    <artifact classifier='osgi.bundle' id='org.eclipse.ui.win32' version='3.2.100.v20090429-1800'>
+      <properties size='3'>
+        <property name='artifact.size' value='24580'/>
+        <property name='download.size' value='24580'/>
+        <property name='download.md5' value='e8af94afdac0cd0d409ba08e5933dd3b'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.ui.win32_3.2.100.v20090429-1800.jar'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.ui.win32_3.2.100.v20090429-1800.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.swt.win32.win32.x86_64' version='3.5.2.v3557f'>
+      <properties size='3'>
+        <property name='artifact.size' value='2335573'/>
+        <property name='download.size' value='2335573'/>
+        <property name='download.md5' value='17bb62dff558d55a6a012eb81931bd64'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.win32.win32.x86_64_3.5.2.v3557f.jar'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.win32.win32.x86_64_3.5.2.v3557f.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.swt.gtk.solaris.sparc.source' version='3.5.2.v3557f'>
+      <properties size='3'>
+        <property name='artifact.size' value='1802662'/>
+        <property name='download.size' value='1802662'/>
+        <property name='download.md5' value='ba7eb7453a5f0c407bbc108383104349'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.gtk.solaris.sparc.source_3.5.2.v3557f.jar'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.gtk.solaris.sparc.source_3.5.2.v3557f.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.swt.win32.win32.x86' version='3.5.2.v3557f'>
+      <properties size='3'>
+        <property name='artifact.size' value='2259881'/>
+        <property name='download.size' value='2259881'/>
+        <property name='download.md5' value='0a38b18ff43cd7eabd28ca58372d9111'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.win32.win32.x86_3.5.2.v3557f.jar'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.win32.win32.x86_3.5.2.v3557f.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.equinox.launcher.cocoa.macosx.x86_64' version='1.0.1.R35x_v20090707'>
+      <properties size='2'>
+        <property name='artifact.size' value='4096'/>
+        <property name='download.size' value='4096'/>
+      </properties>
+      <repositoryProperties size='3'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.equinox.launcher.cocoa.macosx.x86_64_1.0.1.R35x_v20090707/'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.equinox.launcher.cocoa.macosx.x86_64_1.0.1.R35x_v20090707'/>
+        <property name='artifact.folder' value='true'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.swt.gtk.linux.s390x' version='3.5.0.v3550b'>
+      <properties size='3'>
+        <property name='artifact.size' value='2044295'/>
+        <property name='download.size' value='2044295'/>
+        <property name='download.md5' value='f178c3deebc15b69f7a5faf326693098'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.gtk.linux.s390x_3.5.0.v3550b.jar'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.gtk.linux.s390x_3.5.0.v3550b.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.swt.photon.qnx.x86.source' version='3.5.2.v3557f'>
+      <properties size='3'>
+        <property name='artifact.size' value='1193021'/>
+        <property name='download.size' value='1193021'/>
+        <property name='download.md5' value='d7e4ad138cffc312b0baa561b28ed140'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.photon.qnx.x86.source_3.5.2.v3557f.jar'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.photon.qnx.x86.source_3.5.2.v3557f.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.swt.gtk.linux.ppc.source' version='3.5.2.v3557f'>
+      <properties size='3'>
+        <property name='artifact.size' value='1805508'/>
+        <property name='download.size' value='1805508'/>
+        <property name='download.md5' value='377108b579cf1b7b8887fcbf8277f721'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.gtk.linux.ppc.source_3.5.2.v3557f.jar'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.gtk.linux.ppc.source_3.5.2.v3557f.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.swt.cocoa.macosx.x86_64.source' version='3.5.2.v3557f'>
+      <properties size='3'>
+        <property name='artifact.size' value='1645640'/>
+        <property name='download.size' value='1645640'/>
+        <property name='download.md5' value='222095418dd0eeedcd9d725bb725939c'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.cocoa.macosx.x86_64.source_3.5.2.v3557f.jar'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.cocoa.macosx.x86_64.source_3.5.2.v3557f.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.swt.win32.win32.x86.source' version='3.5.2.v3557f'>
+      <properties size='3'>
+        <property name='artifact.size' value='2153704'/>
+        <property name='download.size' value='2153704'/>
+        <property name='download.md5' value='3c31189765056cd9139f2784f5a69bb2'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.win32.win32.x86.source_3.5.2.v3557f.jar'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.win32.win32.x86.source_3.5.2.v3557f.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.swt.gtk.linux.s390' version='3.5.0.v3550b'>
+      <properties size='3'>
+        <property name='artifact.size' value='2012746'/>
+        <property name='download.size' value='2012746'/>
+        <property name='download.md5' value='810f75a815a31d3885fbc005928a11f3'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.gtk.linux.s390_3.5.0.v3550b.jar'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.swt.gtk.linux.s390_3.5.0.v3550b.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.ui.carbon' version='4.0.0.I20090525-2000'>
+      <properties size='3'>
+        <property name='artifact.size' value='16439'/>
+        <property name='download.size' value='16439'/>
+        <property name='download.md5' value='defd0ff2a5f56557a454559755971ba2'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.ui.carbon_4.0.0.I20090525-2000.jar'/>
+        <property name='file.name' value='/home/giorgio/thesis/code/eclipse_standard/plugins/org.eclipse.ui.carbon_4.0.0.I20090525-2000.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='binary' id='org.eclipse.equinox.executable_root.motif.solaris.sparc' version='3.3.201.R35x_v20091211-7M-FngFELSU3Pqlv3JdZn'/>
+  </artifacts>
+</repository>
