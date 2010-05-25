@@ -1,11 +1,11 @@
-eclipse.build/
-SMILA.builder/log.*.txt
-SMILA.application/SMILA.log
+chansonnier/eclipse.build/
+chansonnier/SMILA.builder/log.*.txt
+chansonnier/SMILA.application/SMILA.log
 derby.log
-SMILA.application/configuration/org.eclipse.smila.tomcat/work/
-SMILA.application/derby.log
+chansonnier/SMILA.application/configuration/org.eclipse.smila.tomcat/work/
+chansonnier/SMILA.application/derby.log
 .svn
 bin
 *.class
 .metadata
-SMILA.application/configuration/org.eclipse.smila.search/xml/*.xml
+chansonnier/SMILA.application/configuration/org.eclipse.smila.search/xml/*.xml

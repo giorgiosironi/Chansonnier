@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: javax.el Plug-in (Incubation)
+Bundle-SymbolicName: javax.el
+Bundle-Version: 1.0.0
+Bundle-Vendor: brox IT-Solutions GmbH
+Bundle-ClassPath: .,
+ lib/el-api.jar
+Export-Package: javax.el
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
