@@ -659,20 +659,6 @@
          unpack="false"/>
 
    <plugin
-         id="org.eclipse.smila.binarystorage.persistence.jpa"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.smila.binarystorage.persistence.jpa.source"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
          id="org.eclipse.smila.webservice"
          download-size="0"
          install-size="0"
