@@ -120,20 +120,6 @@
          unpack="false"/>
 
    <plugin
-         id="org.eclipse.smila.connectivity.framework.crawler.filesystem"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.smila.connectivity.framework.crawler.web"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
          id="org.eclipse.smila.processing"
          download-size="0"
          install-size="0"
@@ -211,13 +197,6 @@
          unpack="false"/>
 
    <plugin
-         id="org.eclipse.smila.processing.pipelets.xmlprocessing"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
          id="org.w3c.tidy"
          download-size="0"
          install-size="0"
@@ -280,13 +259,6 @@
          download-size="0"
          install-size="0"
          version="0.0.0"/>
-
-   <plugin
-         id="org.eclipse.smila.connectivity.framework.crawler.jdbc"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
 
    <plugin
          id="org.eclipse.smila.binarystorage.impl"
@@ -465,27 +437,6 @@
          unpack="false"/>
 
    <plugin
-         id="org.eclipse.smila.connectivity.framework.crawler.filesystem.source"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.smila.connectivity.framework.crawler.jdbc.source"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.smila.connectivity.framework.crawler.web.source"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
          id="org.eclipse.smila.connectivity.framework.impl.source"
          download-size="0"
          install-size="0"
@@ -606,13 +557,6 @@
 
    <plugin
          id="org.eclipse.smila.common.mimetype.impl.source"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.smila.processing.pipelets.xmlprocessing.source"
          download-size="0"
          install-size="0"
          version="0.0.0"
