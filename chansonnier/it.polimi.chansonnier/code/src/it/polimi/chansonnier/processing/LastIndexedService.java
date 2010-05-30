@@ -12,17 +12,19 @@ import org.eclipse.smila.blackboard.path.Path;
 import org.eclipse.smila.datamodel.id.Id;
 import org.eclipse.smila.processing.ProcessingException;
 import org.eclipse.smila.processing.ProcessingService;
+import java.util.*;
 
 public class LastIndexedService implements ProcessingService {
 
 	private String _lastTitle;
+    private List<Id> _lastSongs = new ArrayList<Id>();
 
-	@Override
 	public Id[] process(Blackboard blackboard, Id[] recordIds)
 			throws ProcessingException {
 		try {
 			for (Id id : recordIds) {
 				_lastTitle = blackboard.getLiteral(id, new Path("Title")).toString();	
+                _lastSongs.add(id);
 			}
 		} catch (BlackboardAccessException e) {
 			throw new ProcessingException(e);
@@ -34,4 +36,7 @@ public class LastIndexedService implements ProcessingService {
 		return _lastTitle;
 	}
 
+	public List<Id> getLastSongs() {
+		return _lastSongs;
+	}
 }

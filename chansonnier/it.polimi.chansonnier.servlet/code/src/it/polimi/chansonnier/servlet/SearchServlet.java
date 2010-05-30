@@ -19,47 +19,34 @@ import org.eclipse.smila.processing.ProcessingException;
 import org.eclipse.smila.blackboard.Blackboard;
 import org.eclipse.smila.blackboard.BlackboardAccessException;
 import org.eclipse.smila.blackboard.path.Path;
-import org.eclipse.smila.datamodel.id.Id;;
+import org.eclipse.smila.datamodel.id.Id;
 
 public class SearchServlet extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response) 
 		throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
 	    String lyrics = request.getParameter("lyrics");
-	    if (lyrics != null) {
+	    String emotion = request.getParameter("emotion");
+	    if (lyrics != null || emotion != null) {
 	    	ChansonnierSearchService customSearchService = new ChansonnierSearchService();
 	    	customSearchService.setSearchService(Activator.getSearchService());
 			
 			try {
-				List<Id> result = customSearchService.search("Lyrics", lyrics);
+                List<Id> result;
+                if (lyrics != null) {
+                    result = customSearchService.search("Lyrics", lyrics);
+                } else {
+                    result = customSearchService.search("Emotion", emotion);
+                }
+                request.setAttribute("result", result);
 				Blackboard blackboard = Activator.getBlackboardFactory().createPersistingBlackboard();
-				if (result.size() > 0) {
-					response.getWriter().println("<h1>Search results</h1>");
-					response.getWriter().println("<dl>");
-			    	for (Id id : result) {
-			    		String link = id.getKey().toString();
-			    		_printField(response.getWriter(), blackboard, id, "Title", "title");
-			    		_printField(response.getWriter(), blackboard, id, "Artist", "artist");
-			    		_printField(response.getWriter(), blackboard, id, "Lyrics", "lyrics");
-			    		_printField(response.getWriter(), blackboard, id, "Emotion", "emotion");
-			    		response.getWriter().println("<dt class=\"key\">Link</dt>");
-			    		response.getWriter().println("<dd class=\"key\">" + link + "</dd>");
-					}
-			    	response.getWriter().println("</dl>");
-				} else {
-					response.getWriter().write("<p>No results.</p>");
-				}
+                request.setAttribute("blackboard", blackboard);
+                getServletContext().getRequestDispatcher("/songs").forward(request, response);
 			} catch (BlackboardAccessException e) {
 				response.getWriter().println(e);
 			} catch (ProcessingException e) {
 				response.getWriter().println(e);
 			}
-		    response.setContentType("text/html;charset=UTF-8");
 	    }
-	}
-	
-	private void _printField(PrintWriter writer, Blackboard blackboard, Id id, String attributeName, String cssClass) throws BlackboardAccessException {
-		String attributeValue = blackboard.getLiteral(id, new Path(attributeName)).toString();
-		writer.println("<dt class=\"" + cssClass + "\">" + attributeName + "</dt>");
-		writer.println("<dd class=\"" + cssClass + "\">" + attributeValue + "</dd>");
 	}
 }

@@ -27,6 +27,7 @@ public class AddSongTest extends AcceptanceTest {
 		assertTrue(resp.getText().contains("Success"));
 		WebRequest     req = new GetMethodWebRequest( "http://localhost:8080/chansonnier/last" );
 		assertWebPageContains(req, "Beautiful Day", 300000);
+		assertWebPageContains(req, "U2", 20000);
 	}
 	
 

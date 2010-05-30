@@ -11,7 +11,7 @@ import com.meterware.httpunit.WebRequest;
 
 public class SearchSongTest extends AcceptanceTest {
 	public void testGivenAnAddedYouTubeLinkTheSongIsSearchable() throws Exception {
-		String link = "http://www.youtube.com/watch?v=5tK7-OuYfJc";
+		String link = "http://www.youtube.com/watch?v=GMDd4on20Yg";
 		addVideoLink(link);
 		// TODO: avoid all errors "index does not exist in data dictionary [test_index]"
 		WebRequest req = new GetMethodWebRequest( "http://localhost:8080/chansonnier/search" );
