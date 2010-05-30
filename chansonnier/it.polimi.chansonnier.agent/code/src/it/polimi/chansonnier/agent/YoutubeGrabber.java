@@ -49,16 +49,17 @@ public class YoutubeGrabber
 		  String[] parts = tokens[i].split("=");
 		  params.put(parts[0], parts[1]);
 	  }
-	  String vParam = params.get("v");
-	  String uParam = pageUrl;
-          String video_id = vParam;
-          String u_id = uParam;
-          if (video_id == null) video_id = inbtwn(URLDecoder.decode(getRedirUrl(u_id), "UTF-8"), "v=", "&");
+          String video_id = params.get("v");
+          if (video_id == null) video_id = inbtwn(URLDecoder.decode(getRedirUrl(pageUrl), "UTF-8"), "v=", "&");
           String pageSource = URLUtils.retrieve(new URL("http://www.youtube.com/watch?v=" + video_id));
 
           String title = inbtwn(pageSource, "'VIDEO_TITLE': '", "',");
           if (title == null) title = inbtwn(pageSource, "name=\"title\" content=\"", "\"");
+          if (title == null) {
+            throw new RuntimeException("The page does not contain a video (" + pageUrl + ").");
+          }
           title = setHTMLEntity(title);
+          
 
           String token = inbtwn(pageSource, "\"t\": \"", "\"");
           if (token == null) token = inbtwn(pageSource, "&t=", "&");
@@ -164,11 +165,11 @@ public class YoutubeGrabber
     try
     {
       output = input.replace("&amp;", "_").toString();
-      output = input.replace("&lt;", "_").toString();
-      output = input.replace("&gt;", "_").toString();
-      output = input.replace("&#39;", "_").toString();
-      output = input.replace("&quot;", "_").toString();
-      output = input.replace("&", "_").toString();
+      output = output.replace("&lt;", "_").toString();
+      output = output.replace("&gt;", "_").toString();
+      output = output.replace("&#39;", "_").toString();
+      output = output.replace("&quot;", "_").toString();
+      output = output.replace("&", "_").toString();
       output = output.replace("\\\"", "_").toString();
       output = output.replace("\\'", "_").toString();
       output = output.replace("'", "_").toString();
