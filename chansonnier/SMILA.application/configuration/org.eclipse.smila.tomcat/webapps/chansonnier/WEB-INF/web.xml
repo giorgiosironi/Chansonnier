@@ -19,6 +19,10 @@
     <servlet-name>songs</servlet-name>
     <servlet-class>it.polimi.chansonnier.servlet.SongsServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>attachment</servlet-name>
+    <servlet-class>it.polimi.chansonnier.servlet.AttachmentServlet</servlet-class>
+  </servlet>
  
   
   <servlet-mapping>
@@ -36,6 +40,10 @@
   <servlet-mapping>
     <servlet-name>songs</servlet-name>
     <url-pattern>/songs</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>attachment</servlet-name>
+    <url-pattern>/attachment</url-pattern>
   </servlet-mapping>
 
 </web-app>

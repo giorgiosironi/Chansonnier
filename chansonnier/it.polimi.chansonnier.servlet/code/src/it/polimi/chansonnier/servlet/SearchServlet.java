@@ -24,7 +24,6 @@ import org.eclipse.smila.datamodel.id.Id;
 public class SearchServlet extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response) 
 		throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
 	    String lyrics = request.getParameter("lyrics");
 	    String emotion = request.getParameter("emotion");
 	    if (lyrics != null || emotion != null) {

@@ -22,6 +22,7 @@ import javax.servlet.http.HttpServletResponse;
 public class SongsServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
 		PrintWriter writer = response.getWriter();
 		writer.println("Hello from AddServlet of it.polimi.chansonnier.servlet...");
 	
@@ -46,13 +47,15 @@ public class SongsServlet extends HttpServlet {
                 writer.println("<h1>Search results</h1>");
                 writer.println("<dl>");
                 for (Id id : result) {
-                    String link = id.getKey().toString();
+                    String link = id.getKey().getKey();
                     writer.println(_printField(blackboard, id, "Title", "title"));
                     writer.println(_printField(blackboard, id, "Artist", "artist"));
                     writer.println(_printField(blackboard, id, "Lyrics", "lyrics"));
                     writer.println(_printField(blackboard, id, "Emotion", "emotion"));
                     writer.println("<dt class=\"key\">Link</dt>");
                     writer.println("<dd class=\"key\">" + link + "</dd>");
+                    writer.println("<dt class=\"image\">Image</dt>");
+                    writer.println("<dd class=\"image\"><img src=\"attachment?id=" + link + "\" /></dt>");
                 }
                 writer.println("</dl>");
             } else {

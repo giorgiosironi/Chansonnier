@@ -21,6 +21,7 @@ public class SearchSongTest extends AcceptanceTest {
 		assertSearchPageContainsSongTitle(req, "Boulevard of Broken Dreams");
 		assertSearchPageContainsSongArtist(req, "Green Day");
 		assertSearchPageContainsSongLyrics(req, "I walk a lonely road"); // other lyrics
+		assertSearchPageContainsSongImage(req, "<img src=\"attachment?id=" + link + "\" />"); // other lyrics
 	}
 
 	private void assertSearchPageContainsSongTitle(WebRequest req, String text) 
@@ -40,4 +41,9 @@ public class SearchSongTest extends AcceptanceTest {
 		assertWebPageContains(req, text, 20000);
 		
 	}
+
+	private void assertSearchPageContainsSongImage(WebRequest req,
+			String text) throws Exception {
+		assertWebPageContains(req, text, 20000);	
+    }
 }
