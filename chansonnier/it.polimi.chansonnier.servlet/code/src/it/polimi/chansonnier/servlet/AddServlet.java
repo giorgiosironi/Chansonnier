@@ -26,7 +26,10 @@ public class AddServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter writer = response.getWriter();
-		writer.println("Hello from AddServlet of it.polimi.chansonnier.servlet...");
+        writer.println("<form action=\"add\" method=\"post\">");
+        writer.println("<label>Video link: <input type=\"text\" name=\"link\" /></label>");
+        writer.println("<button type=\"submit\">Add to queue</button>");
+        writer.println("</form");
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

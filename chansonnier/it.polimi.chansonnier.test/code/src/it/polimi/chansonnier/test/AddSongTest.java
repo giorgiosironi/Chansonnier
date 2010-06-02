@@ -12,14 +12,20 @@ import com.meterware.httpunit.GetMethodWebRequest;
 import com.meterware.httpunit.WebConversation;
 import com.meterware.httpunit.WebRequest;
 import com.meterware.httpunit.WebResponse;
+import com.meterware.httpunit.WebForm;
 
 public class AddSongTest extends AcceptanceTest {
 	public void testTheAddPageIsLoaded() throws Exception {
 		WebConversation wc = new WebConversation();
 		WebRequest     req = new GetMethodWebRequest( "http://localhost:8080/chansonnier/add" );
 		WebResponse   resp = wc.getResponse( req );
-		assertTrue(resp.getText().contains("Hello from AddServlet"));
-        // TODO: check form is present
+        WebForm add = resp.getForms()[0];
+        assertEquals("add", add.getAction());
+        assertEquals("post", add.getMethod());
+        String[] parameters = add.getParameterNames();
+        assertEquals(1, parameters.length);
+        assertEquals("link", parameters[0]);
+        assertEquals(1, add.getSubmitButtons().length);
 	}
 	
 	public void testGivenAYouTubeLinkAddsTheRelatedSongToTheIndex() throws Exception {
