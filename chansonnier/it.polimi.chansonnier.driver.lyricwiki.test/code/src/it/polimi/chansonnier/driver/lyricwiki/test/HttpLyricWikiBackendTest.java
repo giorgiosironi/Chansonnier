@@ -4,7 +4,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this 
  * distribution, and is available at http://www.eclipse.org/legal/epl-v10.html
  ****************************************************************************/
-package it.polimi.chansonnier.test.integration;
+package it.polimi.chansonnier.driver.lyricwiki.test;
 
 import it.polimi.chansonnier.driver.lyricwiki.HttpLyricWikiBackend;
 import it.polimi.chansonnier.driver.lyricwiki.LyricWikiBackend;
@@ -22,7 +22,7 @@ public class HttpLyricWikiBackendTest extends TestCase {
 		assertTrue(xmlResult.indexOf("<LyricsResult>") > -1);
 	}
 	
-	public void testRetrievesLyricOfTheRequestedSong() {
+	public void testRetrievesLyricsOfTheRequestedSong() {
 		String xmlResult = backend.getSong("Pride", "U2");
 		assertTrue(xmlResult.indexOf("One man come in the name of love") > -1);
 	}
