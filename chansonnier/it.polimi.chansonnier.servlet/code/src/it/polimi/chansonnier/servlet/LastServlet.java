@@ -29,6 +29,7 @@ public class LastServlet extends HttpServlet {
         try {
             List<Id> lastSongs = Activator.lastIndexedService.getLastSongs();
             request.setAttribute("result", lastSongs);
+            request.setAttribute("title", "Last indexed songs");
             Blackboard blackboard = Activator.getBlackboardFactory().createPersistingBlackboard();
             request.setAttribute("blackboard", blackboard);
             getServletContext().getRequestDispatcher("/songs").forward(request, response);

@@ -27,10 +27,11 @@ public class AttachmentServlet extends HttpServlet {
 		throws ServletException, IOException {
         response.setContentType("image/png");
 	    String key = request.getParameter("id");
+	    String name = request.getParameter("name");
         try {
             Id id = new IdImpl("youtube", new KeyImpl(key));
             Blackboard blackboard = Activator.getBlackboardFactory().createPersistingBlackboard();
-            InputStream is = blackboard.getAttachmentAsStream(id, "Image");
+            InputStream is = blackboard.getAttachmentAsStream(id, name);
             OutputStream o = response.getOutputStream();
             byte[] buf = new byte[32 * 1024]; // 32k buffer
             int nRead = 0;

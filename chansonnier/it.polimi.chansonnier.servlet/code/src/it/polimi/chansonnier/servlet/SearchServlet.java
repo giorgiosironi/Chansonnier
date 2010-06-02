@@ -38,6 +38,7 @@ public class SearchServlet extends HttpServlet {
                     result = customSearchService.search("Emotion", emotion);
                 }
                 request.setAttribute("result", result);
+                request.setAttribute("title", "Search result");
 				Blackboard blackboard = Activator.getBlackboardFactory().createPersistingBlackboard();
                 request.setAttribute("blackboard", blackboard);
                 getServletContext().getRequestDispatcher("/songs").forward(request, response);

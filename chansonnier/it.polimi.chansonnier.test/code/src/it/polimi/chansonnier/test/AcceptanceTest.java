@@ -26,21 +26,29 @@ public abstract class AcceptanceTest extends TestCase {
 		return resp;
 	}
 
-	protected void assertWebPageContains(WebRequest req, String text,
-			int timeout) throws InterruptedException, IOException, SAXException {
-				int tries = timeout / 10000;
-				for (int i = 0; i < tries; i++) {
-			        System.out.println("Try " + i + " for text ''" + text + "'");
-					Thread.sleep(10000);
-					WebConversation wc = new WebConversation();
-					WebResponse   resp = wc.getResponse( req );
-					System.out.println(resp.getText());
-					if (resp.getText().contains(text)) {
-						assertTrue(true);
-						return;
-					}
-				}
-				fail("After " + timeout + "milliseconds of waiting, the web page does not contain the prescribed text (" + text + ").");
-			}
+	protected WebResponse assertWebPageContains(WebRequest req, String text, int timeout) throws Exception {
+        int tries = timeout / 10000;
+        for (int i = 0; i < tries; i++) {
+            System.out.println("Try " + i + " for text ''" + text + "'");
+            WebConversation wc = new WebConversation();
+            WebResponse   resp = wc.getResponse( req );
+            System.out.println(resp.getText());
+            if (resp.getText().contains(text)) {
+                assertTrue(true);
+                return resp;
+            }
+            Thread.sleep(10000);
+        }
+        fail("After " + timeout + "milliseconds of waiting, the web page does not contain the prescribed text (" + text + ").");
+        return null;
+    }
 
+	protected void assertWebPageContains(WebResponse response, String text) throws Exception {
+        assertTrue("The page does not contain the text '" + text + "'.", response.getText().contains(text));
+    }
+
+
+	protected void assertWebPageNotContains(WebResponse response, String text) throws Exception {
+        assertFalse(response.getText().contains(text));
+    }
 }

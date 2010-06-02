@@ -28,8 +28,12 @@ public class ShotDetectionProcessingService implements ProcessingService {
 		try {
 			for (Id id : recordIds) {
 				File original = blackboard.getAttachmentAsFile(id, "Original");
-				File shot = _shotDetectionService.getImage(original);
-				blackboard.setAttachmentFromFile(id, "Image", shot);
+				File shot = _shotDetectionService.getImage(original, "00:00:10");
+				blackboard.setAttachmentFromFile(id, "Image1", shot);
+				File shot2 = _shotDetectionService.getImage(original, "00:00:30");
+				blackboard.setAttachmentFromFile(id, "Image2", shot2);
+				File shot3 = _shotDetectionService.getImage(original, "00:00:50");
+				blackboard.setAttachmentFromFile(id, "Image3", shot3);
 			}
 		} catch (BlackboardAccessException e) {
 			throw new ProcessingException(e);

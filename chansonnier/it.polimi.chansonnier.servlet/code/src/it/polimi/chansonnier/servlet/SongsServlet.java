@@ -24,22 +24,11 @@ public class SongsServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 		PrintWriter writer = response.getWriter();
-		writer.println("Hello from AddServlet of it.polimi.chansonnier.servlet...");
-	
-        writer.println("<html><head></head><body>");
-        /*
-        <style type="text/css">
-        dl {
+        writer.println("<html><head>");
+        writer.println("<title>" + request.getAttribute("title") + "</title>");
+        writer.println("<link rel=\"Stylesheet\" href=\"style.css\" type=\"text/css\" media=\"screen\" />");
+        writer.println("</head><body>");
         
-        }
-        dt {
-            font-weight: bolder;
-            width: 100px;
-        }
-        dd {
-        }
-        </style>
-        */
         List<Id> result = (List<Id>) request.getAttribute("result");
         Blackboard blackboard = (Blackboard) request.getAttribute("blackboard");
         try {
@@ -55,7 +44,14 @@ public class SongsServlet extends HttpServlet {
                     writer.println("<dt class=\"key\">Link</dt>");
                     writer.println("<dd class=\"key\">" + link + "</dd>");
                     writer.println("<dt class=\"image\">Image</dt>");
-                    writer.println("<dd class=\"image\"><img src=\"attachment?id=" + link + "\" /></dt>");
+                    writer.println("<dd class=\"image\">");
+                    int i = 1;
+                    while (blackboard.hasAttachment(id, "Image" + i)) {
+                        
+                        writer.println("<img src=\"attachment?name=Image" + i + "&id=" + link + "\" />");
+                        i++;
+                    }
+                    writer.println("</dd>");
                 }
                 writer.println("</dl>");
             } else {

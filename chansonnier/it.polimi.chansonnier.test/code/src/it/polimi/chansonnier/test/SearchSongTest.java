@@ -8,6 +8,7 @@ package it.polimi.chansonnier.test;
 
 import com.meterware.httpunit.GetMethodWebRequest;
 import com.meterware.httpunit.WebRequest;
+import com.meterware.httpunit.WebResponse;
 
 public class SearchSongTest extends AcceptanceTest {
 	public void testGivenAnAddedYouTubeLinkTheSongIsSearchable() throws Exception {
@@ -16,34 +17,44 @@ public class SearchSongTest extends AcceptanceTest {
 		// TODO: avoid all errors "index does not exist in data dictionary [test_index]"
 		WebRequest req = new GetMethodWebRequest( "http://localhost:8080/chansonnier/search" );
 		req.setParameter("lyrics", "I walk alone");
-		assertWebPageContains(req, link, 300000);
+		WebResponse response = assertWebPageContains(req, link, 300000);
         // TODO: make it case insensitive
-		assertSearchPageContainsSongTitle(req, "Boulevard of Broken Dreams");
-		assertSearchPageContainsSongArtist(req, "Green Day");
-		assertSearchPageContainsSongLyrics(req, "I walk a lonely road"); // other lyrics
-		assertSearchPageContainsSongImage(req, "<img src=\"attachment?id=" + link + "\" />"); // other lyrics
-	}
+		assertSearchPageContainsSongTitle(response, "Boulevard of Broken Dreams");
+		assertSearchPageContainsSongArtist(response, "Green Day");
+		assertSearchPageContainsSongLyrics(response, "I walk a lonely road");
+		assertSearchPageContainsSongImage(response, "<img src=\"attachment?name=Image1&id=" + link + "\" />");
 
-	private void assertSearchPageContainsSongTitle(WebRequest req, String text) 
+        String hero = "http://www.youtube.com/watch?v=owTmJrtD7g8";
+		addVideoLink(hero);
+		req = new GetMethodWebRequest( "http://localhost:8080/chansonnier/search" );
+		req.setParameter("lyrics", "Would you dance");
+		response = assertWebPageContains(req, hero, 300000);
+		assertSearchPageContainsSongTitle(response, "Hero");
+		assertSearchPageContainsSongArtist(response, "Enrique Iglesias");
+		assertSearchPageContainsSongLyrics(response, "if I asked you to dance?");
+		assertSearchPageContainsSongImage(response, "<img src=\"attachment?name=Image1&id=" + hero + "\" />");
+        assertWebPageNotContains(response, "Boulevard of Broken Dreams");
+    }
+
+	private void assertSearchPageContainsSongTitle(WebResponse res, String text) 
 		throws Exception {
-		assertWebPageContains(req, text, 20000);
+		assertWebPageContains(res, text);
 	}
 	
 	
-	private void assertSearchPageContainsSongLyrics(WebRequest req,
+	private void assertSearchPageContainsSongLyrics(WebResponse res,
 			String text) throws Exception {
-		assertWebPageContains(req, text, 20000);
+		assertWebPageContains(res, text);
 		
 	}
 
-	private void assertSearchPageContainsSongArtist(WebRequest req,
+	private void assertSearchPageContainsSongArtist(WebResponse res,
 			String text) throws Exception {
-		assertWebPageContains(req, text, 20000);
-		
+		assertWebPageContains(res, text);
 	}
 
-	private void assertSearchPageContainsSongImage(WebRequest req,
+	private void assertSearchPageContainsSongImage(WebResponse res,
 			String text) throws Exception {
-		assertWebPageContains(req, text, 20000);	
+		assertWebPageContains(res, text);	
     }
 }

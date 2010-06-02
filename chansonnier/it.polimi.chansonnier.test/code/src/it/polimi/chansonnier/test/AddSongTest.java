@@ -19,6 +19,7 @@ public class AddSongTest extends AcceptanceTest {
 		WebRequest     req = new GetMethodWebRequest( "http://localhost:8080/chansonnier/add" );
 		WebResponse   resp = wc.getResponse( req );
 		assertTrue(resp.getText().contains("Hello from AddServlet"));
+        // TODO: check form is present
 	}
 	
 	public void testGivenAYouTubeLinkAddsTheRelatedSongToTheIndex() throws Exception {
@@ -26,9 +27,10 @@ public class AddSongTest extends AcceptanceTest {
 		// TODO insert redirect
 		assertTrue(resp.getText().contains("Success"));
 		WebRequest     req = new GetMethodWebRequest( "http://localhost:8080/chansonnier/last" );
-		assertWebPageContains(req, "Beautiful Day", 300000);
-		assertWebPageContains(req, "U2", 20000);
+		WebResponse res = assertWebPageContains(req, "Beautiful Day", 300000);
+		assertWebPageContains(res, "U2");
+		assertWebPageContains(res, "The heart is a bloom");
+		assertWebPageContains(res, "happiness");
+		assertWebPageContains(res, "http://www.youtube.com/watch?v=e8w7f0ShtIM");
 	}
-	
-
 }

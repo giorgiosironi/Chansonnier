@@ -10,6 +10,9 @@ import java.io.File;
 
 public interface ShotDetectionService {
 
-	File getImage(File video);
+    /**
+     * @param String time   "00:00:10"
+     */
+	File getImage(File video, String time);
 
 }
