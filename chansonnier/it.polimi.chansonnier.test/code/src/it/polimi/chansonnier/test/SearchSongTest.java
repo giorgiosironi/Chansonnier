@@ -7,11 +7,25 @@
 package it.polimi.chansonnier.test;
 
 import com.meterware.httpunit.GetMethodWebRequest;
+import com.meterware.httpunit.WebConversation;
 import com.meterware.httpunit.WebRequest;
 import com.meterware.httpunit.WebResponse;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathFactory;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathExpression;
+import org.w3c.dom.Document;
+import org.w3c.dom.NodeList;
+import org.w3c.dom.Node;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.DocumentBuilder;
+import java.io.StringReader;
+import org.xml.sax.InputSource;
+//import org.eclipse.osgi.framework.adaptor.core.DefaultClassLoader;
 
 public class SearchSongTest extends AcceptanceTest {
 	public void testGivenAnAddedYouTubeLinkTheSongIsSearchable() throws Exception {
+
 		String link = "http://www.youtube.com/watch?v=GMDd4on20Yg";
 		addVideoLink(link);
 		// TODO: avoid all errors "index does not exist in data dictionary [test_index]"
@@ -19,42 +33,78 @@ public class SearchSongTest extends AcceptanceTest {
 		req.setParameter("lyrics", "I walk alone");
 		WebResponse response = assertWebPageContains(req, link, 300000);
         // TODO: make it case insensitive
-		assertSearchPageContainsSongTitle(response, "Boulevard of Broken Dreams");
-		assertSearchPageContainsSongArtist(response, "Green Day");
-		assertSearchPageContainsSongLyrics(response, "I walk a lonely road");
-		assertSearchPageContainsSongImage(response, "<img src=\"attachment?name=Image1&id=" + link + "\" />");
+		assertSongsListContainsSongTitle(response, "Boulevard of Broken Dreams");
+		assertSongsListContainsSongArtist(response, "Green Day");
+		assertSongsListContainsSongLyrics(response, "I walk a lonely road");
+		assertSongsListContainsSongImage(response, "<img src=\"attachment?name=Image1&id=" + link + "\" />");
 
         String hero = "http://www.youtube.com/watch?v=owTmJrtD7g8";
 		addVideoLink(hero);
 		req = new GetMethodWebRequest( "http://localhost:8080/chansonnier/search" );
 		req.setParameter("lyrics", "Would you dance");
 		response = assertWebPageContains(req, hero, 300000);
-		assertSearchPageContainsSongTitle(response, "Hero");
-		assertSearchPageContainsSongArtist(response, "Enrique Iglesias");
-		assertSearchPageContainsSongLyrics(response, "if I asked you to dance?");
-		assertSearchPageContainsSongImage(response, "<img src=\"attachment?name=Image1&id=" + hero + "\" />");
+		assertSongsListContainsSongTitle(response, "Hero");
+		assertSongsListContainsSongArtist(response, "Enrique Iglesias");
+		assertSongsListContainsSongLyrics(response, "if I asked you to dance?");
+		assertSongsListContainsSongImage(response, "<img src=\"attachment?name=Image1&id=" + hero + "\" />");
         assertWebPageNotContains(response, "Boulevard of Broken Dreams");
+
+        // XML format
+		req = new GetMethodWebRequest( "http://localhost:8080/chansonnier/search" );
+		req.setParameter("lyrics", "Would you dance");
+		req.setParameter("format", "xml");
+		WebConversation wc = new WebConversation();
+		WebResponse   resp = wc.getResponse( req );
+        System.out.println(resp.getText());
+        Document dom = createDocument(resp.getText());
+
+        XPath xpath = getXPath();
+        NodeList songs = (NodeList) xpath.evaluate("//song", dom, XPathConstants.NODESET);
+        assertEquals(1, songs.getLength());
+        /*
+        String title = (String) xpath.evaluate("//song/title/text()", dom, XPathConstants.STRING);
+        assertEquals("Hero", title);
+        String artist = (String) xpath.evaluate("//song/artist/text()", dom, XPathConstants.STRING);
+        assertEquals("Enrique Iglesias", artist);
+        String emotion = (String) xpath.evaluate("//song/emotion/text()", dom, XPathConstants.STRING);
+        //assertEquals("", emotion);
+        String lyrics = (String) xpath.evaluate("//songs/song/lyrics/text()", dom, XPathConstants.STRING);
+        assertTrue(lyrics.contains("if I asked you to dance"));
+        */
     }
 
-	private void assertSearchPageContainsSongTitle(WebResponse res, String text) 
+	private void assertSongsListContainsSongTitle(WebResponse res, String text) 
 		throws Exception {
 		assertWebPageContains(res, text);
 	}
 	
-	
-	private void assertSearchPageContainsSongLyrics(WebResponse res,
+	private void assertSongsListContainsSongLyrics(WebResponse res,
 			String text) throws Exception {
 		assertWebPageContains(res, text);
 		
 	}
 
-	private void assertSearchPageContainsSongArtist(WebResponse res,
+	private void assertSongsListContainsSongArtist(WebResponse res,
 			String text) throws Exception {
 		assertWebPageContains(res, text);
 	}
 
-	private void assertSearchPageContainsSongImage(WebResponse res,
+	private void assertSongsListContainsSongImage(WebResponse res,
 			String text) throws Exception {
 		assertWebPageContains(res, text);	
+    }
+
+    private XPath getXPath() {
+        XPathFactory factory = XPathFactory.newInstance();
+        return factory.newXPath();
+    }
+
+    private Document createDocument(String text) throws Exception {
+        // do not use resp.getDOM(), it's broken
+        DocumentBuilderFactory domFactory =  DocumentBuilderFactory.newInstance();
+        domFactory.setNamespaceAware(true); 
+        DocumentBuilder builder = domFactory.newDocumentBuilder();
+        Document dom = builder.parse(new InputSource(new StringReader(text)));
+        return dom;
     }
 }
