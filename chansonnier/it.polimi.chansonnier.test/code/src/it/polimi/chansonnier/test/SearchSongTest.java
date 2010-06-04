@@ -61,16 +61,14 @@ public class SearchSongTest extends AcceptanceTest {
         XPath xpath = getXPath();
         NodeList songs = (NodeList) xpath.evaluate("//song", dom, XPathConstants.NODESET);
         assertEquals(1, songs.getLength());
-        /*
         String title = (String) xpath.evaluate("//song/title/text()", dom, XPathConstants.STRING);
         assertEquals("Hero", title);
         String artist = (String) xpath.evaluate("//song/artist/text()", dom, XPathConstants.STRING);
         assertEquals("Enrique Iglesias", artist);
         String emotion = (String) xpath.evaluate("//song/emotion/text()", dom, XPathConstants.STRING);
-        //assertEquals("", emotion);
+        assertEquals("anger", emotion);
         String lyrics = (String) xpath.evaluate("//songs/song/lyrics/text()", dom, XPathConstants.STRING);
         assertTrue(lyrics.contains("if I asked you to dance"));
-        */
     }
 
 
