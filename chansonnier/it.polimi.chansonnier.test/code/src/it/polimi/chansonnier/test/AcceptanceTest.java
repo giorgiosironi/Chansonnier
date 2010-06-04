@@ -47,8 +47,32 @@ public abstract class AcceptanceTest extends TestCase {
         assertTrue("The page does not contain the text '" + text + "'.", response.getText().contains(text));
     }
 
-
 	protected void assertWebPageNotContains(WebResponse response, String text) throws Exception {
-        assertFalse(response.getText().contains(text));
+        assertFalse("The page should not contain \"" + text + "\", but it does.", response.getText().contains(text));
+    }
+
+	protected void assertSongsListContainsSongTitle(WebResponse res, String text) 
+		throws Exception {
+		assertWebPageContains(res, text);
+	}
+	
+	protected void assertSongsListContainsSongLyrics(WebResponse res,
+			String text) throws Exception {
+		assertWebPageContains(res, text);
+		
+	}
+
+    protected void assertSongsListContainsSongEmotion(WebResponse res, String text) throws Exception {
+		assertWebPageContains(res, text);
+    }
+
+	protected void assertSongsListContainsSongArtist(WebResponse res,
+			String text) throws Exception {
+		assertWebPageContains(res, text);
+	}
+
+	protected void assertSongsListContainsSongImage(WebResponse res,
+			String text) throws Exception {
+		assertWebPageContains(res, text);	
     }
 }

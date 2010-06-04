@@ -40,7 +40,7 @@
         </Field>
         <Field FieldNo="3">
           <FieldConfig Constraint="optional" Weight="1" xsi:type="FTText">
-            <Parameter xmlns="http://www.anyfinder.de/Search/TextField" Operator="OR" Tolerance="exact"/>
+            <Parameter xmlns="http://www.anyfinder.de/Search/TextField" Operator="AND" Tolerance="exact"/>
           </FieldConfig>
         </Field>
         <Field FieldNo="2">

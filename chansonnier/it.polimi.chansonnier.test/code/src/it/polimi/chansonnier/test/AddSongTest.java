@@ -32,11 +32,14 @@ public class AddSongTest extends AcceptanceTest {
 		WebResponse resp = addVideoLink("http://www.youtube.com/watch?v=e8w7f0ShtIM");
 		// TODO insert redirect
 		assertTrue(resp.getText().contains("Success"));
-		WebRequest     req = new GetMethodWebRequest( "http://localhost:8080/chansonnier/last" );
-		WebResponse res = assertWebPageContains(req, "Beautiful Day", 300000);
-		assertWebPageContains(res, "U2");
-		assertWebPageContains(res, "The heart is a bloom");
-		assertWebPageContains(res, "happiness");
-		assertWebPageContains(res, "http://www.youtube.com/watch?v=e8w7f0ShtIM");
+
+		String link = "http://www.youtube.com/watch?v=GMDd4on20Yg";
+		addVideoLink(link);
+		WebRequest req = new GetMethodWebRequest( "http://localhost:8080/chansonnier/last" );
+		WebResponse response = assertWebPageContains(req, link, 300000);
+		assertSongsListContainsSongTitle(response, "Boulevard of Broken Dreams");
+		assertSongsListContainsSongArtist(response, "Green Day");
+		assertSongsListContainsSongLyrics(response, "I walk a lonely road");
+		assertSongsListContainsSongImage(response, "<img src=\"attachment?name=Image1&id=" + link + "\" />");
 	}
 }

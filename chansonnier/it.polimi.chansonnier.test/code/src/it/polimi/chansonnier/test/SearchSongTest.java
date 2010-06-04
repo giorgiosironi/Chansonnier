@@ -25,36 +25,36 @@ import org.xml.sax.InputSource;
 
 public class SearchSongTest extends AcceptanceTest {
 	public void testGivenAnAddedYouTubeLinkTheSongIsSearchable() throws Exception {
-
-		String link = "http://www.youtube.com/watch?v=GMDd4on20Yg";
-		addVideoLink(link);
+		WebResponse resp = addVideoLink("http://www.youtube.com/watch?v=e8w7f0ShtIM");
+		// TODO insert redirect
+		assertTrue(resp.getText().contains("Success"));
+		WebRequest     req = new GetMethodWebRequest( "http://localhost:8080/chansonnier/last" );
 		// TODO: avoid all errors "index does not exist in data dictionary [test_index]"
-		WebRequest req = new GetMethodWebRequest( "http://localhost:8080/chansonnier/search" );
-		req.setParameter("lyrics", "I walk alone");
-		WebResponse response = assertWebPageContains(req, link, 300000);
+		WebResponse res = assertWebPageContains(req, "http://www.youtube.com/watch?v=e8w7f0ShtIM", 300000);
         // TODO: make it case insensitive
-		assertSongsListContainsSongTitle(response, "Boulevard of Broken Dreams");
-		assertSongsListContainsSongArtist(response, "Green Day");
-		assertSongsListContainsSongLyrics(response, "I walk a lonely road");
-		assertSongsListContainsSongImage(response, "<img src=\"attachment?name=Image1&id=" + link + "\" />");
+        assertSongsListContainsSongTitle(res, "Beautiful Day");
+		assertSongsListContainsSongArtist(res, "U2");
+		assertSongsListContainsSongLyrics(res, "The heart is a bloom");
+		assertSongsListContainsSongEmotion(res, "happiness");
+
 
         String hero = "http://www.youtube.com/watch?v=owTmJrtD7g8";
 		addVideoLink(hero);
 		req = new GetMethodWebRequest( "http://localhost:8080/chansonnier/search" );
 		req.setParameter("lyrics", "Would you dance");
-		response = assertWebPageContains(req, hero, 300000);
+		WebResponse response = assertWebPageContains(req, hero, 300000);
 		assertSongsListContainsSongTitle(response, "Hero");
 		assertSongsListContainsSongArtist(response, "Enrique Iglesias");
 		assertSongsListContainsSongLyrics(response, "if I asked you to dance?");
 		assertSongsListContainsSongImage(response, "<img src=\"attachment?name=Image1&id=" + hero + "\" />");
-        assertWebPageNotContains(response, "Boulevard of Broken Dreams");
+        assertWebPageNotContains(response, "Beautiful Day");
 
         // XML format
 		req = new GetMethodWebRequest( "http://localhost:8080/chansonnier/search" );
 		req.setParameter("lyrics", "Would you dance");
 		req.setParameter("format", "xml");
 		WebConversation wc = new WebConversation();
-		WebResponse   resp = wc.getResponse( req );
+		resp = wc.getResponse( req );
         System.out.println(resp.getText());
         Document dom = createDocument(resp.getText());
 
@@ -73,26 +73,6 @@ public class SearchSongTest extends AcceptanceTest {
         */
     }
 
-	private void assertSongsListContainsSongTitle(WebResponse res, String text) 
-		throws Exception {
-		assertWebPageContains(res, text);
-	}
-	
-	private void assertSongsListContainsSongLyrics(WebResponse res,
-			String text) throws Exception {
-		assertWebPageContains(res, text);
-		
-	}
-
-	private void assertSongsListContainsSongArtist(WebResponse res,
-			String text) throws Exception {
-		assertWebPageContains(res, text);
-	}
-
-	private void assertSongsListContainsSongImage(WebResponse res,
-			String text) throws Exception {
-		assertWebPageContains(res, text);	
-    }
 
     private XPath getXPath() {
         XPathFactory factory = XPathFactory.newInstance();
