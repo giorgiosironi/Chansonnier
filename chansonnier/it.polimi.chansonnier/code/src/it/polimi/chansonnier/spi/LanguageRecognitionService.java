@@ -8,6 +8,6 @@ package it.polimi.chansonnier.spi;
 
 public interface LanguageRecognitionService {
 
-	String getLanguage(String textSample);
+	FuzzyResult getLanguage(String textSample);
 
 }

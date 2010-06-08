@@ -11,13 +11,14 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import it.polimi.chansonnier.spi.LanguageRecognitionService;
+import it.polimi.chansonnier.spi.FuzzyResult;
 import it.polimi.chansonnier.utils.URLUtils;
 
 public class GoogleLanguageRecognitionService implements
 		LanguageRecognitionService {
 
 	@Override
-	public String getLanguage(String textSample) {
+	public FuzzyResult getLanguage(String textSample) {
 		//-e http://www.my-ajax-site.com
 		try {
 			URL serviceEndpoint = new URL("http://ajax.googleapis.com/ajax/services/language/detect?v=1.0&q="
@@ -39,7 +40,8 @@ public class GoogleLanguageRecognitionService implements
 			
 			JSONObject response = new JSONObject(builder.toString());
 			String language = response.getJSONObject("responseData").getString("language");
-			return language;
+			Double confidence = response.getJSONObject("responseData").getDouble("confidence");
+			return new FuzzyResult(language, confidence);//language;
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
