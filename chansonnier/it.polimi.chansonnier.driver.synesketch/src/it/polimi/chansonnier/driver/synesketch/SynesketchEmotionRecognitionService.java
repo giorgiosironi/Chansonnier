@@ -7,6 +7,7 @@
 package it.polimi.chansonnier.driver.synesketch;
 
 import it.polimi.chansonnier.spi.EmotionRecognitionService;
+import it.polimi.chansonnier.spi.FuzzyResult;
 
 import java.io.IOException;
 
@@ -18,12 +19,12 @@ public class SynesketchEmotionRecognitionService implements
 		EmotionRecognitionService {
 
 	@Override
-	public String getEmotion(String textSample) {
+	public FuzzyResult getEmotion(String textSample) {
          EmotionalState state;
 		try {
 			state = Empathyscope.getInstance().feel(textSample);
 			Emotion strongest = state.getFirstStrongestEmotions(1).get(0);
-			return _toString(strongest);
+			return _toFuzzy(strongest, state);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -32,25 +33,25 @@ public class SynesketchEmotionRecognitionService implements
        return null;
 	}
 	
-	private String _toString(Emotion e) {
+	private FuzzyResult _toFuzzy(Emotion e, EmotionalState state) {
 		if (e.getType() == Emotion.HAPPINESS) {
-			return "happiness";
+			return new FuzzyResult("happiness", state.getHappinessWeight());
 		}
 		if (e.getType() == Emotion.SADNESS) {
-			return "sadness";
+			return new FuzzyResult("sadness", state.getSadnessWeight());
 		}
 		if (e.getType() == Emotion.FEAR) {
-			return "fear";
+			return new FuzzyResult("fear", state.getFearWeight());
 		}
 		if (e.getType() == Emotion.ANGER) {
-			return "anger";
+			return new FuzzyResult("anger", state.getAngerWeight());
 		}
 		if (e.getType() == Emotion.DISGUST) {
-			return "disgust";
+			return new FuzzyResult("disgust", state.getDisgustWeight());
 		}
 		if (e.getType() == Emotion.SURPRISE) {
-			return "surprise";
+			return new FuzzyResult("surprise", state.getSurpriseWeight());
 		}
-		return "";
+		return new FuzzyResult("", 0.0);
 	}
 }

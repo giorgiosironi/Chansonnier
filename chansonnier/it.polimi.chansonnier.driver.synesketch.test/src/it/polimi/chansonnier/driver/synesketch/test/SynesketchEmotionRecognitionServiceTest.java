@@ -8,44 +8,59 @@ package it.polimi.chansonnier.driver.synesketch.test;
 
 import it.polimi.chansonnier.driver.synesketch.SynesketchEmotionRecognitionService;
 import it.polimi.chansonnier.spi.EmotionRecognitionService;
+import it.polimi.chansonnier.spi.FuzzyResult;
 import junit.framework.TestCase;
 
 public class SynesketchEmotionRecognitionServiceTest extends TestCase {
 	private EmotionRecognitionService synesketch = new SynesketchEmotionRecognitionService();
 	
 	public void testRecognizesHappiness() {
-		String emotion = synesketch.getEmotion("I'm so glad it's a sunny day!");
-		assertEquals("happiness", emotion);
+		FuzzyResult emotion = synesketch.getEmotion("I'm so glad it's a sunny day!");
+		assertEquals("happiness", emotion.getValue());
+		assertGreaterThan(emotion.getConfidence(), 0.4);
 	}
 	
 	public void testRecognizesSadness() {
-		String emotion = synesketch.getEmotion("I am full of sorrow and regrets...");
-		assertEquals("sadness", emotion);
+		FuzzyResult emotion = synesketch.getEmotion("I am full of sorrow and regrets...");
+		assertEquals("sadness", emotion.getValue());
+		assertGreaterThan(emotion.getConfidence(), 0.15);
 	}
 	
 	public void testRecognizesFear() {
-		String emotion = synesketch.getEmotion("I am shaking... Horror movies scare me");
-		assertEquals("fear", emotion);
+		FuzzyResult emotion = synesketch.getEmotion("I am shaking... Horror movies scare me");
+		assertEquals("fear", emotion.getValue());
+		assertGreaterThan(emotion.getConfidence(), 0.3);
 	}
 	
 	public void testRecognizesAnger() {
-		String emotion = synesketch.getEmotion("I am mad at you!");
-		assertEquals("anger", emotion);
+		FuzzyResult emotion = synesketch.getEmotion("I am mad at you!");
+		assertEquals("anger", emotion.getValue());
+		assertGreaterThan(emotion.getConfidence(), 0.2);
 	}
 	
 	public void testRecognizesDisgust() {
-		String emotion = synesketch.getEmotion("This is so repulsive...");
-		assertEquals("disgust", emotion);
+		FuzzyResult emotion = synesketch.getEmotion("This is so repulsive...");
+		assertEquals("disgust", emotion.getValue());
+		assertGreaterThan(emotion.getConfidence(), 0.18);
 	}
 	
 	public void testRecognizesSurprise() {
-		String emotion = synesketch.getEmotion("This is really unexpected for me!");
-		assertEquals("surprise", emotion);
+		FuzzyResult emotion = synesketch.getEmotion("This is really unexpected for me!");
+		assertEquals("surprise", emotion.getValue());
+		assertGreaterThan(emotion.getConfidence(), 0.75);
 	}
 	
 	public void testDoesNotJudgeIfThereIsNoStrongestEmotion()
 	{
-		String emotion = synesketch.getEmotion("Hello.");
-		assertEquals("", emotion);
+		FuzzyResult emotion = synesketch.getEmotion("Hello.");
+		assertLessThan(emotion.getConfidence(), 0.1);
+	}
+	
+	private void assertGreaterThan(Double confidence, Double reference) {
+		assertTrue("Confidence is " + confidence, confidence > reference);
+	}
+	
+	private void assertLessThan(Double confidence, Double reference) {
+		assertTrue("Confidence is " + confidence, confidence < reference);
 	}
 }

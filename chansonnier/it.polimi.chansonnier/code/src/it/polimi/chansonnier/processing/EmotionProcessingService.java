@@ -7,6 +7,7 @@
 package it.polimi.chansonnier.processing;
 
 import it.polimi.chansonnier.spi.EmotionRecognitionService;
+import it.polimi.chansonnier.spi.FuzzyResult;
 
 import org.eclipse.smila.blackboard.Blackboard;
 import org.eclipse.smila.blackboard.BlackboardAccessException;
@@ -27,10 +28,13 @@ public class EmotionProcessingService implements ProcessingService {
 		try {
 			for (Id id : recordIds) {
 				Literal lyrics = blackboard.getLiteral(id, p);
-				String emotion = _emotionRecognitionService.getEmotion(lyrics.toString());
+				FuzzyResult emotion = _emotionRecognitionService.getEmotion(lyrics.toString());
 				Literal value = blackboard.createLiteral(id);
-				value.setStringValue(emotion);
+				value.setStringValue(emotion.getValue());
 				blackboard.addLiteral(id, new Path("Emotion"), value);
+				Literal confidence = blackboard.createLiteral(id);
+				confidence.setFpValue(emotion.getConfidence());
+				blackboard.addLiteral(id, new Path("EmotionConfidence"), confidence);
 			}
 		} catch (BlackboardAccessException e) {
 			throw new ProcessingException(e);

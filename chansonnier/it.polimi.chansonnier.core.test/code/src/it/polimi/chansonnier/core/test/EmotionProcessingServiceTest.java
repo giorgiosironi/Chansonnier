@@ -8,6 +8,7 @@ package it.polimi.chansonnier.core.test;
 
 import it.polimi.chansonnier.processing.EmotionProcessingService;
 import it.polimi.chansonnier.spi.EmotionRecognitionService;
+import it.polimi.chansonnier.spi.FuzzyResult;
 
 import org.eclipse.smila.blackboard.path.Path;
 import org.eclipse.smila.datamodel.id.Id;
@@ -28,16 +29,19 @@ public class EmotionProcessingServiceTest extends ProcessingServiceTest implemen
 		Path p = new Path("Lyrics");
 	    setAttribute(id, p, LYRICS);
 	    
-	    _service.process(getBlackboard(), new Id[] { id });
+	    Id[] result = _service.process(getBlackboard(), new Id[] { id });
+	    assertEquals(1, result.length);
 	    
 	    Literal emotion = getBlackboard().getLiteral(id, new Path("Emotion"));
 	    assertEquals("Happiness", emotion.getStringValue());
+	    Literal confidence = getBlackboard().getLiteral(id, new Path("EmotionConfidence"));
+	    assertEquals(0.9, confidence.getFpValue());
 	}
 
 	@Override
-	public String getEmotion(String textSample) {
+	public FuzzyResult getEmotion(String textSample) {
 		assertEquals(LYRICS, textSample);
-		return "Happiness";
+		return new FuzzyResult("Happiness", 0.9);
 	}
 
 }

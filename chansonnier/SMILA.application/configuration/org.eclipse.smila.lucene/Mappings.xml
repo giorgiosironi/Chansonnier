@@ -22,6 +22,7 @@
 	    <Attribute name="Description" fieldNo="4" />
 	    <Attribute name="Keywords" fieldNo="5" />
 	    <Attribute name="Emotion" fieldNo="6" />
+	    <Attribute name="EmotionConfidence" fieldNo="7" />
     </Attributes>
     <Attachments>            
     </Attachments>
