@@ -10,8 +10,8 @@ import java.io.InputStream;
 
 import junit.framework.TestCase;
 
-import it.polimi.chansonnier.agent.URLUtils;
 import it.polimi.chansonnier.agent.YoutubeGrabber;
+import it.polimi.chansonnier.utils.URLUtils;
 
 public class YoutubeGrabberTest extends TestCase {
 

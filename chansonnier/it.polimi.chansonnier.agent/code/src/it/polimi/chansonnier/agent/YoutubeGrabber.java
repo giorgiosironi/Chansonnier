@@ -7,6 +7,8 @@
 package it.polimi.chansonnier.agent;
 
 
+import it.polimi.chansonnier.utils.URLUtils;
+
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;

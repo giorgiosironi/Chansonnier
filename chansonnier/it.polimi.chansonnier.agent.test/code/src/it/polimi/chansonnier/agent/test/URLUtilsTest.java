@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import it.polimi.chansonnier.agent.URLUtils;
+import it.polimi.chansonnier.utils.URLUtils;
 import junit.framework.TestCase;
 
 public class URLUtilsTest extends TestCase {

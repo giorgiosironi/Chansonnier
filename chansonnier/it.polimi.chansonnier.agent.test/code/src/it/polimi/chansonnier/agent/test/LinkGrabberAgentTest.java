@@ -9,8 +9,8 @@ package it.polimi.chansonnier.agent.test;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import it.polimi.chansonnier.agent.LinkGrabberAgent;
-import it.polimi.chansonnier.agent.URLUtils;
 import it.polimi.chansonnier.agent.YoutubeLinkGrabberAgent;
+import it.polimi.chansonnier.utils.URLUtils;
 
 import org.eclipse.smila.connectivity.framework.AgentState;
 import org.eclipse.smila.connectivity.framework.schema.ConfigurationLoader;

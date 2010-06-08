@@ -7,6 +7,8 @@
 package it.polimi.chansonnier.agent;
 
 
+import it.polimi.chansonnier.utils.URLUtils;
+
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;

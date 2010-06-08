@@ -25,7 +25,8 @@ Import-Package: org.apache.commons.logging,
  org.osgi.service.component
 Export-Package: it.polimi.chansonnier,
  it.polimi.chansonnier.spi,
- it.polimi.chansonnier.processing
+ it.polimi.chansonnier.processing,
+ it.polimi.chansonnier.utils
 Service-Component: OSGI-INF/EmotionProcessingService.xml,
  OSGI-INF/LyricsProcessingService.xml,
  OSGI-INF/LastIndexedService.xml,

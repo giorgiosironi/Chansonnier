@@ -4,7 +4,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this 
  * distribution, and is available at http://www.eclipse.org/legal/epl-v10.html
  ****************************************************************************/
-package it.polimi.chansonnier.agent;
+package it.polimi.chansonnier.utils;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -43,6 +43,10 @@ public class URLUtils {
 	public static String readStart(String filename) throws Exception {
 		File fp = new File(filename);
 		return readStart(new FileInputStream(fp));
+	}
+
+	public static String escape(String textSample) {
+		return textSample.replaceAll(" ", "%20");
 	}
 
 }
