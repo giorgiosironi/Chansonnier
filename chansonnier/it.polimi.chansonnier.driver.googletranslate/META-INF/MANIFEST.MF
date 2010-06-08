@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Googletranslate
+Bundle-SymbolicName: it.polimi.chansonnier.driver.googletranslate
+Bundle-Version: 0.1.0
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: it.polimi.chansonnier.spi,
+ it.polimi.chansonnier.utils,
+ org.json
+Export-Package: it.polimi.chansonnier.driver.googletranslate
+Service-Component: OSGI-INF/LanguageRecognitionService.xml

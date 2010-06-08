@@ -1,0 +1,6 @@
+<component xmlns="http://www.osgi.org/xmlns/scr/v1.1.0" name="LanguageRecognitionService" immediate="true">
+  <implementation class="it.polimi.chansonnier.driver.googletranslate.GoogleLanguageRecognitionService" />                                       
+  <service>
+     <provide interface="it.polimi.chansonnier.spi.LanguageRecognitionService"/>                 
+  </service>
+</component>
