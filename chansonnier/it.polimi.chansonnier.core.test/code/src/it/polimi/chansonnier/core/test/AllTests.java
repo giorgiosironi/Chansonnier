@@ -18,7 +18,6 @@ public class AllTests {
 		suite.addTestSuite(EmotionProcessingServiceTest.class);
 		suite.addTestSuite(LyricsProcessingServiceTest.class);
 		suite.addTestSuite(FfmpegTranscodingServiceTest.class);
-		suite.addTestSuite(TextcatLanguageRecognitionServiceTest.class);
 		//$JUnit-END$
 		return suite;
 	}
