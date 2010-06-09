@@ -18,6 +18,23 @@ import com.meterware.httpunit.WebResponse;
 import junit.framework.TestCase;
 
 public abstract class AcceptanceTest extends TestCase {
+	private SolrWrapper solrWrapper;
+	
+	public void setUp() {
+		solrWrapper = new SolrWrapper();
+		try {
+			solrWrapper.start();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void tearDown() {
+		solrWrapper.stop();
+	}
+	
 	protected WebResponse addVideoLink(String link) throws Exception {
 		WebConversation wc = new WebConversation();
 		PostMethodWebRequest	req = new PostMethodWebRequest( "http://localhost:8080/chansonnier/add" );
