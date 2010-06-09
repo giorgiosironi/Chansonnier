@@ -1,9 +1,9 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Chansonnier ffmpeg driver
-Bundle-SymbolicName: it.polimi.chansonnier.driver.ffmpeg;singleton:=true
-Bundle-Version: 0.1.0.alpha
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Import-Package: it.polimi.chansonnier.spi
+Bundle-Name: Ffmpeg driver
+Bundle-SymbolicName: it.polimi.chansonnier.driver.ffmpeg
+Bundle-Version: 0.1.0
 Export-Package: it.polimi.chansonnier.driver.ffmpeg
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Service-Component: OSGI-INF/ShotDetectionService.xml
+Import-Package: it.polimi.chansonnier.spi

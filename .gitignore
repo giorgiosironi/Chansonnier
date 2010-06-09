@@ -1,6 +1,6 @@
 chansonnier/eclipse.build/
 chansonnier/SMILA.builder/log.*.txt
-chansonnier/SMILA.application/SMILA.log
+SMILA.log
 derby.log
 chansonnier/SMILA.application/configuration/org.eclipse.smila.tomcat/work/
 chansonnier/SMILA.application/derby.log
@@ -9,3 +9,4 @@ bin
 *.class
 .metadata
 chansonnier/SMILA.application/configuration/org.eclipse.smila.search/xml/*.xml
+solr/solr/data/index/*
