@@ -14,6 +14,12 @@ import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathFactory;
 import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpression;
+
+import org.apache.solr.client.solrj.SolrQuery;
+import org.apache.solr.client.solrj.impl.CommonsHttpSolrServer;
+import org.apache.solr.client.solrj.impl.XMLResponseParser;
+import org.apache.solr.client.solrj.response.QueryResponse;
+import org.apache.solr.common.SolrDocumentList;
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
 import org.w3c.dom.Node;
@@ -24,7 +30,28 @@ import org.xml.sax.InputSource;
 //import org.eclipse.osgi.framework.adaptor.core.DefaultClassLoader;
 
 public class SearchSongTest extends AcceptanceTest {
-	public void testGivenAnAddedYouTubeLinkTheSongIsSearchable() throws Exception {
+	public void testGivenAnAddedYouTubeLinkTheSongIsSearchableThrougSolr() throws Exception {
+		String hero = "http://www.youtube.com/watch?v=owTmJrtD7g8";
+		WebResponse resp = addVideoLink(hero);
+		// TODO insert redirect
+		assertTrue(resp.getText().contains("Success"));
+		WebRequest     req = new GetMethodWebRequest( "http://localhost:8080/chansonnier/last" );
+		// TODO: avoid all errors "index does not exist in data dictionary [test_index]"
+		WebResponse res = assertWebPageContains(req, hero, 250000);
+		
+		String url = "http://localhost:8983/solr";
+		CommonsHttpSolrServer server = new CommonsHttpSolrServer( url );
+		server.setParser(new XMLResponseParser());
+	    SolrQuery query = new SolrQuery();
+	    query.setQuery( "*:*" );
+	    QueryResponse rsp = server.query( query );
+	    SolrDocumentList docList = rsp.getResults();
+	    System.out.println(docList.get(0).values().toString());
+	    assertEquals(1, docList.size());
+	    assertEquals("Enrique Iglesias", docList.get(0).get("Artist"));
+	}
+	
+	public void _testGivenAnAddedYouTubeLinkTheSongIsSearchable() throws Exception {
 		WebResponse resp = addVideoLink("http://www.youtube.com/watch?v=e8w7f0ShtIM");
 		// TODO insert redirect
 		assertTrue(resp.getText().contains("Success"));

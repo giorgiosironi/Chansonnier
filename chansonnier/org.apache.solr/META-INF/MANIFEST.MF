@@ -20,4 +20,6 @@ Bundle-ClassPath: lib/apache-solr-solrj-1.4.0.jar,
 Export-Package: org.apache.solr.client.solrj,
  org.apache.solr.client.solrj.impl,
  org.apache.solr.client.solrj.response,
- org.apache.solr.common
+ org.apache.solr.common,
+ org.apache.solr.common.params
+

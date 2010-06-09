@@ -3,6 +3,9 @@ package it.polimi.chansonnier.test;
 import java.io.File;
 import java.io.IOException;
 
+import org.apache.solr.client.solrj.impl.CommonsHttpSolrServer;
+import org.apache.solr.client.solrj.impl.XMLResponseParser;
+
 public class SolrWrapper {
 	private Process solr;
 	

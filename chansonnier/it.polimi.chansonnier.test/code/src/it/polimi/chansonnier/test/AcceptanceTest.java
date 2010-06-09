@@ -8,6 +8,9 @@ package it.polimi.chansonnier.test;
 
 import java.io.IOException;
 
+import org.apache.solr.client.solrj.SolrServerException;
+import org.apache.solr.client.solrj.impl.CommonsHttpSolrServer;
+import org.apache.solr.client.solrj.impl.XMLResponseParser;
 import org.xml.sax.SAXException;
 
 import com.meterware.httpunit.PostMethodWebRequest;
@@ -19,14 +22,21 @@ import junit.framework.TestCase;
 
 public abstract class AcceptanceTest extends TestCase {
 	private SolrWrapper solrWrapper;
+	protected CommonsHttpSolrServer solrServer;
 	
 	public void setUp() {
 		solrWrapper = new SolrWrapper();
 		try {
 			solrWrapper.start();
+			String url = "http://localhost:8983/solr";
+			solrServer = new CommonsHttpSolrServer( url );
+			solrServer.setParser(new XMLResponseParser());
+			solrServer.deleteByQuery( "*:*" );
 		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (InterruptedException e) {
+			e.printStackTrace();
+		} catch (SolrServerException e) {
 			e.printStackTrace();
 		}
 	}
