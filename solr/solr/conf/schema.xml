@@ -427,6 +427,18 @@
    -->
 
    <field name="id" type="string" indexed="true" stored="true" required="true" /> 
+
+   <field name="PageTitle" type="string" indexed="true" stored="true"/>
+   <field name="Artist" type="string" indexed="true" stored="true"/>
+   <field name="Title" type="string" indexed="true" stored="true"/>
+   <field name="Lyrics" type="string" indexed="true" stored="true"/>
+   <field name="Description" type="string" indexed="true" stored="true"/>
+   <field name="Keywords" type="string" indexed="true" stored="true"/>
+   <field name="Emotion" type="string" indexed="true" stored="true"/>
+   <field name="EmotionConfidence" type="string" indexed="true" stored="true"/>
+
+
+
    <field name="sku" type="textTight" indexed="true" stored="true" omitNorms="true"/>
    <field name="name" type="textgen" indexed="true" stored="true"/>
    <field name="alphaNameSort" type="alphaOnlySort" indexed="true" stored="false"/>
@@ -439,7 +451,6 @@
    <field name="price"  type="float" indexed="true" stored="true"/>
    <field name="popularity" type="int" indexed="true" stored="true" />
    <field name="inStock" type="boolean" indexed="true" stored="true" />
-
 
    <!-- Common metadata fields, named specifically to match up with
      SolrCell metadata when parsing rich documents such as Word, PDF.
