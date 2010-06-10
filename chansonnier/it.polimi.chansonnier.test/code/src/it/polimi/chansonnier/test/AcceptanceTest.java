@@ -32,11 +32,7 @@ public abstract class AcceptanceTest extends TestCase {
 			solrServer = new CommonsHttpSolrServer( url );
 			solrServer.setParser(new XMLResponseParser());
 			solrServer.deleteByQuery( "*:*" );
-		} catch (IOException e) {
-			e.printStackTrace();
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		} catch (SolrServerException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}

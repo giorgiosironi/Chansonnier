@@ -1,23 +1,9 @@
 package it.polimi.chansonnier.test;
 
-import it.polimi.chansonnier.utils.URLUtils;
-
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
-import java.io.Reader;
-import java.io.Writer;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collection;
 
 import org.apache.solr.client.solrj.SolrQuery;
-import org.apache.solr.client.solrj.SolrServer;
 import org.apache.solr.client.solrj.impl.CommonsHttpSolrServer;
 import org.apache.solr.client.solrj.impl.XMLResponseParser;
 import org.apache.solr.client.solrj.response.QueryResponse;
@@ -30,7 +16,7 @@ import junit.framework.TestCase;
 public class SolrIntegrationTest extends TestCase {
 	private SolrWrapper solrWrapper;
 	
-	public void testSolrInstanceCanBeStartedAndStopped() throws Exception {
+	public void testSolrInstanceCanBeStartedQueriedAndStopped() throws Exception {
 		solrWrapper = new SolrWrapper();
 		solrWrapper.start();
 

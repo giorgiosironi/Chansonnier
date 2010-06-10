@@ -1,17 +1,13 @@
 package it.polimi.chansonnier.test;
 
 import java.io.File;
-import java.io.IOException;
-
-import org.apache.solr.client.solrj.impl.CommonsHttpSolrServer;
-import org.apache.solr.client.solrj.impl.XMLResponseParser;
 
 public class SolrWrapper {
 	private Process solr;
 	
-	public void start() throws IOException, InterruptedException {
+	public void start() throws Exception {
 		Runtime r = Runtime.getRuntime();
-		solr =  r.exec("/usr/bin/java -jar start.jar", null, new File("../../solr"));
+		solr =  r.exec("/usr/bin/java -jar start.jar", null, getSolrRoot());
 		Thread.sleep(5000);
 	}
 	
@@ -19,5 +15,13 @@ public class SolrWrapper {
 		if (solr != null) {
 			solr.destroy();
 		}
+	}
+	
+	private File getSolrRoot() throws Exception {
+		String root = System.getProperty("it.polimi.chansonnier.solr.root");
+		if (root == null) {
+			throw new Exception("Solr path is not specified, please add the property it.polimi.chansonnier.solr.root");
+		}
+		return new File(root);
 	}
 }
