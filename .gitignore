@@ -10,4 +10,4 @@ bin
 .metadata
 chansonnier/SMILA.application/configuration/org.eclipse.smila.search/xml/*.xml
 solr/solr/data/index/*
-solr/logs/*
+solr/logs/*.log
