@@ -8,6 +8,13 @@ package it.polimi.chansonnier.test;
 
 
 
+import org.apache.solr.client.solrj.SolrQuery;
+import org.apache.solr.client.solrj.impl.CommonsHttpSolrServer;
+import org.apache.solr.client.solrj.impl.XMLResponseParser;
+import org.apache.solr.client.solrj.response.QueryResponse;
+import org.apache.solr.common.SolrDocument;
+import org.apache.solr.common.SolrDocumentList;
+
 import com.meterware.httpunit.GetMethodWebRequest;
 import com.meterware.httpunit.WebConversation;
 import com.meterware.httpunit.WebRequest;
@@ -28,7 +35,7 @@ public class AddSongTest extends AcceptanceTest {
         assertEquals(1, add.getSubmitButtons().length);
 	}
 	
-	public void testGivenAYouTubeLinkAddsTheRelatedSongToTheIndex() throws Exception {
+	public void testGivenAYouTubeLinkAddsTheRelatedSongToTheLastIndexedList() throws Exception {
 		WebResponse resp = addVideoLink("http://www.youtube.com/watch?v=e8w7f0ShtIM");
 		// TODO insert redirect
 		assertTrue(resp.getText().contains("Success"));
@@ -41,5 +48,29 @@ public class AddSongTest extends AcceptanceTest {
 //		assertSongsListContainsSongArtist(response, "Green Day");
 //		assertSongsListContainsSongLyrics(response, "I walk a lonely road");
 //		assertSongsListContainsSongImage(response, "<img src=\"attachment?name=Image1&id=" + link + "\" />");
+	}
+	
+	public void testGivenAnAddedYouTubeLinkTheSongIsSearchableThrougSolr() throws Exception {
+		String hero = "http://www.youtube.com/watch?v=owTmJrtD7g8";
+		WebResponse resp = addVideoLink(hero);
+		// TODO insert redirect
+		assertTrue(resp.getText().contains("Success"));
+		WebRequest     req = new GetMethodWebRequest( "http://localhost:8080/chansonnier/last" );
+		// TODO: avoid all errors "index does not exist in data dictionary [test_index]"
+		assertWebPageContains(req, hero, 250000);
+		
+		String url = "http://localhost:8983/solr";
+		CommonsHttpSolrServer server = new CommonsHttpSolrServer( url );
+		server.setParser(new XMLResponseParser());
+	    SolrQuery query = new SolrQuery();
+	    query.setQuery( "*:*" );
+	    QueryResponse rsp = server.query( query );
+	    SolrDocumentList docList = rsp.getResults();
+	    assertEquals(1, docList.size());
+	    SolrDocument song = docList.get(0);
+	    assertEquals("Enrique Iglesias", song.get("Artist"));
+	    assertEquals("Hero", song.get("Title"));
+	    assertTrue(((String) song.get("Lyrics")).contains("if I asked you to dance"));
+	    assertEquals("anger", song.get("Emotion"));
 	}
 }

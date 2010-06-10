@@ -6,6 +6,7 @@
  ****************************************************************************/
 package it.polimi.chansonnier.test;
 
+
 import java.io.IOException;
 
 import org.apache.solr.client.solrj.SolrServerException;
@@ -20,25 +21,9 @@ import com.meterware.httpunit.WebResponse;
 
 import junit.framework.TestCase;
 
-public abstract class AcceptanceTest extends TestCase {
-	private SolrWrapper solrWrapper;
-	protected CommonsHttpSolrServer solrServer;
-	
-	public void setUp() {
-		solrWrapper = new SolrWrapper();
-		try {
-			solrWrapper.start();
-			String url = "http://localhost:8983/solr";
-			solrServer = new CommonsHttpSolrServer( url );
-			solrServer.setParser(new XMLResponseParser());
-			solrServer.deleteByQuery( "*:*" );
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-	
-	public void tearDown() {
-		solrWrapper.stop();
+public abstract class AcceptanceTest extends FunctionalTest {
+	protected String getPipelineName() {
+		return "AddPipeline";
 	}
 	
 	protected WebResponse addVideoLink(String link) throws Exception {
@@ -64,38 +49,5 @@ public abstract class AcceptanceTest extends TestCase {
         }
         fail("After " + timeout + "milliseconds of waiting, the web page does not contain the prescribed text (" + text + ").");
         return null;
-    }
-
-	protected void assertWebPageContains(WebResponse response, String text) throws Exception {
-        assertTrue("The page does not contain the text '" + text + "'.", response.getText().contains(text));
-    }
-
-	protected void assertWebPageNotContains(WebResponse response, String text) throws Exception {
-        assertFalse("The page should not contain \"" + text + "\", but it does.", response.getText().contains(text));
-    }
-
-	protected void assertSongsListContainsSongTitle(WebResponse res, String text) 
-		throws Exception {
-		assertWebPageContains(res, text);
-	}
-	
-	protected void assertSongsListContainsSongLyrics(WebResponse res,
-			String text) throws Exception {
-		assertWebPageContains(res, text);
-		
-	}
-
-    protected void assertSongsListContainsSongEmotion(WebResponse res, String text) throws Exception {
-		assertWebPageContains(res, text);
-    }
-
-	protected void assertSongsListContainsSongArtist(WebResponse res,
-			String text) throws Exception {
-		assertWebPageContains(res, text);
-	}
-
-	protected void assertSongsListContainsSongImage(WebResponse res,
-			String text) throws Exception {
-		assertWebPageContains(res, text);	
     }
 }
