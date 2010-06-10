@@ -1,0 +1,4 @@
++ Requirements
+The build process requires JDK 1.6.
+Chansonnier itself expects ffmpeg at /usr/bin/ffmpeg, and a running Solr instance (which is included) at http://localhost:8983/solr. Also java is expected to be at /usr/bin/java.
+To run the test suite, a Selenium RC server is needed for the acceptance tests, and should be run at the default address http://localhost:4444
