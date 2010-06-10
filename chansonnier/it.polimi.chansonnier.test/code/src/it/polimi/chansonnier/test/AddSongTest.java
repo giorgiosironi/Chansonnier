@@ -43,7 +43,7 @@ public class AddSongTest extends AcceptanceTest {
 		String link = "http://www.youtube.com/watch?v=GMDd4on20Yg";
 		addVideoLink(link);
 		WebRequest req = new GetMethodWebRequest( "http://localhost:8080/chansonnier/last" );
-		WebResponse response = assertWebPageContains(req, link, 300000);
+		assertWebPageContains(req, link, 300000);
 //		assertSongsListContainsSongTitle(response, "Boulevard of Broken Dreams");
 //		assertSongsListContainsSongArtist(response, "Green Day");
 //		assertSongsListContainsSongLyrics(response, "I walk a lonely road");

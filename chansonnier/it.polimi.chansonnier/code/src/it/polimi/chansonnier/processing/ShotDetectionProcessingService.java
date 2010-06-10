@@ -12,9 +12,7 @@ import java.io.File;
 
 import org.eclipse.smila.blackboard.Blackboard;
 import org.eclipse.smila.blackboard.BlackboardAccessException;
-import org.eclipse.smila.blackboard.path.Path;
 import org.eclipse.smila.datamodel.id.Id;
-import org.eclipse.smila.datamodel.record.Literal;
 import org.eclipse.smila.processing.ProcessingException;
 import org.eclipse.smila.processing.ProcessingService;
 

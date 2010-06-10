@@ -7,10 +7,7 @@
 package it.polimi.chansonnier.test;
 
 import com.meterware.httpunit.GetMethodWebRequest;
-import com.meterware.httpunit.HTMLElement;
-import com.meterware.httpunit.WebConversation;
 import com.meterware.httpunit.WebRequest;
-import com.meterware.httpunit.WebResponse;
 
 import java.io.File;
 
@@ -26,7 +23,7 @@ public class SearchSongTest extends AcceptanceTest {
 		
 		WebRequest     req = new GetMethodWebRequest( "http://localhost:8080/chansonnier/last" );
 		// TODO: avoid all errors "index does not exist in data dictionary [test_index]"
-		WebResponse res = assertWebPageContains(req, "http://www.youtube.com/watch?v=e8w7f0ShtIM", 20000);
+		assertWebPageContains(req, "http://www.youtube.com/watch?v=e8w7f0ShtIM", 20000);
 		
 		selenium.open("/chansonnier/index.html");
 		wrapped.verifyTrue(selenium.isTextPresent("Beautiful Day"));

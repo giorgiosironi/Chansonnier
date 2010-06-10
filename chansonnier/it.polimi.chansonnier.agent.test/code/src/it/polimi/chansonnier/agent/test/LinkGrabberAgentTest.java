@@ -45,11 +45,6 @@ public class LinkGrabberAgentTest extends DeclarativeServiceTestCase implements 
 	  private DataSourceConnectionConfig _config;
 
 	  /**
-	   * The unregistered flag.
-	   */
-	  private boolean _unregistered;
-
-	  /**
 	   * Add counter.
 	   */
 	  private int _addCount;

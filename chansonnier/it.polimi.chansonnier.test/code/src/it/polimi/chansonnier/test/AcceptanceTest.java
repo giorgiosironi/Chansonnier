@@ -7,20 +7,11 @@
 package it.polimi.chansonnier.test;
 
 
-import java.io.IOException;
-
-import org.apache.solr.client.solrj.SolrServerException;
-import org.apache.solr.client.solrj.impl.CommonsHttpSolrServer;
-import org.apache.solr.client.solrj.impl.XMLResponseParser;
-import org.xml.sax.SAXException;
-
 import com.meterware.httpunit.PostMethodWebRequest;
 import com.meterware.httpunit.WebConversation;
 import com.meterware.httpunit.WebRequest;
 import com.meterware.httpunit.WebResponse;
 import com.thoughtworks.selenium.Selenium;
-
-import junit.framework.TestCase;
 
 public abstract class AcceptanceTest extends FunctionalTest {	
 	private SeleniumWrapper seleniumWrapper;

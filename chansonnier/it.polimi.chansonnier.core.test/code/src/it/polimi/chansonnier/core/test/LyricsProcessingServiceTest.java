@@ -46,7 +46,6 @@ public class LyricsProcessingServiceTest extends ProcessingServiceTest implement
 	    
 	    _service.process(getBlackboard(), new Id[] { id });
 	    
-	    final String text = getAttribute(id, new Path("Lyrics")).toString();
 	    assertEquals(LYRICS, extractAttribute(id, "Lyrics"));
 	}
 	

@@ -8,9 +8,6 @@ package it.polimi.chansonnier.core.test;
 
 import java.io.UnsupportedEncodingException;
 
-import it.polimi.chansonnier.processing.LyricsProcessingService;
-import it.polimi.chansonnier.spi.LyricsService;
-
 import org.eclipse.smila.blackboard.Blackboard;
 import org.eclipse.smila.blackboard.BlackboardAccessException;
 import org.eclipse.smila.blackboard.BlackboardFactory;

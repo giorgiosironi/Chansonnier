@@ -6,8 +6,6 @@
  ****************************************************************************/
 package it.polimi.chansonnier.agent.test;
 
-import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URL;
 
 import it.polimi.chansonnier.utils.URLUtils;

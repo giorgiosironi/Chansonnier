@@ -1,6 +1,5 @@
 package it.polimi.chansonnier.core.test;
 
-import it.polimi.chansonnier.processing.EmotionProcessingService;
 import it.polimi.chansonnier.processing.LanguageProcessingService;
 import it.polimi.chansonnier.spi.FuzzyResult;
 import it.polimi.chansonnier.spi.LanguageRecognitionService;

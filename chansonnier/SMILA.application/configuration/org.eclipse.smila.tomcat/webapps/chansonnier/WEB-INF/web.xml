@@ -12,14 +12,6 @@
     <servlet-class>it.polimi.chansonnier.servlet.LastServlet</servlet-class>
   </servlet>
   <servlet>
-    <servlet-name>search</servlet-name>
-    <servlet-class>it.polimi.chansonnier.servlet.SearchServlet</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>songs</servlet-name>
-    <servlet-class>it.polimi.chansonnier.servlet.SongsServlet</servlet-class>
-  </servlet>
-  <servlet>
     <servlet-name>attachment</servlet-name>
     <servlet-class>it.polimi.chansonnier.servlet.AttachmentServlet</servlet-class>
   </servlet>
@@ -32,14 +24,6 @@
   <servlet-mapping>
     <servlet-name>last</servlet-name>
     <url-pattern>/last</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>search</servlet-name>
-    <url-pattern>/search</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>songs</servlet-name>
-    <url-pattern>/songs</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>attachment</servlet-name>
