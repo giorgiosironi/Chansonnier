@@ -51,7 +51,7 @@ public class YoutubeLinkGrabberAgent extends AbstractAgent implements LinkGrabbe
 	}
 	
 	@Override
-	public void addLink(String link) {
+	public synchronized void addLink(String link) {
 		_linksToProcess.add(link);		
 	}
 

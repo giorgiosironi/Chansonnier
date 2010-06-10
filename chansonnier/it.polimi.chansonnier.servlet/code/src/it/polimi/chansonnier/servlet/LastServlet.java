@@ -24,17 +24,11 @@ public class LastServlet extends HttpServlet {
 		PrintWriter writer = response.getWriter();
 		writer.println("Last songs added to the index...");
 		String lastSongTitle = Activator.lastIndexedService.getLastTitle();
-		writer.println("Last: ");
-		response.getWriter().println(lastSongTitle);
-        try {
-            List<Id> lastSongs = Activator.lastIndexedService.getLastSongs();
-            request.setAttribute("result", lastSongs);
-            request.setAttribute("title", "Last indexed songs");
-            Blackboard blackboard = Activator.getBlackboardFactory().createPersistingBlackboard();
-            request.setAttribute("blackboard", blackboard);
-            getServletContext().getRequestDispatcher("/songs").forward(request, response);
-        } catch (BlackboardAccessException e) {
-            response.getWriter().println(e);
+		response.getWriter().println("Last: " + lastSongTitle + "<br />");
+        List<Id> lastSongs = Activator.lastIndexedService.getLastSongs();
+        for (Id id : lastSongs) {
+        	String key = id.getKey().toString();
+        	response.getWriter().println("<a href=\"" + key + "\">" + key + "</a><br />");
         }
     }
 }

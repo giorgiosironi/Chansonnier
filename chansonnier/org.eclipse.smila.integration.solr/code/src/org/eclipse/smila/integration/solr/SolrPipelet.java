@@ -211,6 +211,7 @@ public class SolrPipelet implements SimplePipelet, SearchPipelet {
 			os.write(updateXMLMessage.getBytes(UTF8));
 			os.flush();
 			os.close();
+			System.out.println(updateXMLMessage);
 
 			BufferedReader rd = new BufferedReader(new InputStreamReader(conn
 					.getInputStream()));
@@ -221,7 +222,7 @@ public class SolrPipelet implements SimplePipelet, SearchPipelet {
 				response.append('\r');
 			}
 			rd.close();
-			// System.out.println("Response:\n" + response.toString());
+			System.out.println("Response:\n" + response.toString());
 		} catch (Exception e) {
 			String msg = "Error while processing record '" + _id
 					+ "' for index '" + _indexName + "': " + e.getMessage()

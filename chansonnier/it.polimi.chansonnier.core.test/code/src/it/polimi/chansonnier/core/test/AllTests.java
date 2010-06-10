@@ -16,8 +16,8 @@ public class AllTests {
 				"Test for it.polimi.chansonnier.core.test");
 		//$JUnit-BEGIN$
 		suite.addTestSuite(EmotionProcessingServiceTest.class);
+		suite.addTestSuite(LanguageProcessingServiceTest.class);
 		suite.addTestSuite(LyricsProcessingServiceTest.class);
-		suite.addTestSuite(FfmpegTranscodingServiceTest.class);
 		//$JUnit-END$
 		return suite;
 	}

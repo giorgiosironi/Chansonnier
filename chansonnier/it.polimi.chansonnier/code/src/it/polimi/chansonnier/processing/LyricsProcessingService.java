@@ -6,6 +6,9 @@
  ****************************************************************************/
 package it.polimi.chansonnier.processing;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import it.polimi.chansonnier.spi.LyricsService;
 
 import org.apache.commons.logging.Log;
@@ -75,7 +78,12 @@ public class LyricsProcessingService implements ProcessingService {
 	}
 
 	private String removeNoise(String pageTitle) {
-		return pageTitle.replaceAll("\\([^()]*\\)", "");
+		pageTitle = pageTitle.replaceAll("\\([^()]*\\)", "");
+		pageTitle = pageTitle.replaceAll("\\[[^()]*\\]", "");
+		Pattern badWord = Pattern.compile("(with){0,1} lyrics", Pattern.CASE_INSENSITIVE);
+		Matcher matcher = badWord.matcher(pageTitle);
+		pageTitle = matcher.replaceAll("");
+		return pageTitle;
 	}
 
 	public void setLyricsService(LyricsService lyricsService) {

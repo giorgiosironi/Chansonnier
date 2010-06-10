@@ -52,20 +52,27 @@
                     <proc:variables input="request" output="request" />
                 </proc:invokeService>
             </extensionActivity>
-                    
-            <extensionActivity name="invokeLuceneService">
-                <proc:invokeService>
-                    <proc:service name="LuceneIndexService" />
-                    <proc:variables input="request" output="request" />
-                    <proc:setAnnotations>
-                        <rec:An n="org.eclipse.smila.lucene.LuceneIndexService">
-                            <rec:V n="indexName">test_index</rec:V>
-                            <rec:V n="executionMode">ADD</rec:V>
-                            <rec:V n="allowDoublets">false</rec:V>
-                        </rec:An>
-                    </proc:setAnnotations>
-                </proc:invokeService>
-            </extensionActivity>
+            
+            <extensionActivity name="invokeSolrPipelet">
+				<proc:invokePipelet>
+					<proc:pipelet class="org.eclipse.smila.integration.solr.SolrPipelet" />
+					<proc:variables input="request" output="request" />
+					<proc:PipeletConfiguration>
+						<proc:Property name="executionMode">
+							<proc:Value>ADD</proc:Value>
+						</proc:Property>
+						<proc:Property name="allowDoublets" type="java.lang.Boolean">
+							<proc:Value>false</proc:Value>
+						</proc:Property>
+						<proc:Property name="commitWithin" type="java.lang.Integer">
+							<proc:Value>10000</proc:Value>
+						</proc:Property>
+						<proc:Property name="indexName">
+							<proc:Value>test_index</proc:Value>
+						</proc:Property>
+					</proc:PipeletConfiguration>       								
+				</proc:invokePipelet>
+			</extensionActivity>
 
              <extensionActivity name="invokeLastIndexedService">
                 <proc:invokeService>

@@ -6,18 +6,46 @@
  ****************************************************************************/
 package it.polimi.chansonnier.test;
 
+
 import java.io.IOException;
 
+import org.apache.solr.client.solrj.SolrServerException;
+import org.apache.solr.client.solrj.impl.CommonsHttpSolrServer;
+import org.apache.solr.client.solrj.impl.XMLResponseParser;
 import org.xml.sax.SAXException;
 
 import com.meterware.httpunit.PostMethodWebRequest;
 import com.meterware.httpunit.WebConversation;
 import com.meterware.httpunit.WebRequest;
 import com.meterware.httpunit.WebResponse;
+import com.thoughtworks.selenium.Selenium;
 
 import junit.framework.TestCase;
 
-public abstract class AcceptanceTest extends TestCase {
+public abstract class AcceptanceTest extends FunctionalTest {	
+	private SeleniumWrapper seleniumWrapper;
+	protected WrappableSeleneseTestCase wrapped;
+	protected Selenium selenium;
+	
+	public void setUp() throws Exception {
+		super.setUp();
+		seleniumWrapper = new SeleniumWrapper();
+		seleniumWrapper.start();
+		wrapped = new WrappableSeleneseTestCase();
+		wrapped.setUp("http://localhost:8080/", "*chrome");
+		selenium = wrapped.getSelenium();
+	}
+	
+	public void tearDown() throws Exception {
+		wrapped.tearDown();
+		seleniumWrapper.stop();
+		super.tearDown();
+	}
+	
+	protected String getPipelineName() {
+		return "AddPipeline";
+	}
+	
 	protected WebResponse addVideoLink(String link) throws Exception {
 		WebConversation wc = new WebConversation();
 		PostMethodWebRequest	req = new PostMethodWebRequest( "http://localhost:8080/chansonnier/add" );
@@ -41,38 +69,5 @@ public abstract class AcceptanceTest extends TestCase {
         }
         fail("After " + timeout + "milliseconds of waiting, the web page does not contain the prescribed text (" + text + ").");
         return null;
-    }
-
-	protected void assertWebPageContains(WebResponse response, String text) throws Exception {
-        assertTrue("The page does not contain the text '" + text + "'.", response.getText().contains(text));
-    }
-
-	protected void assertWebPageNotContains(WebResponse response, String text) throws Exception {
-        assertFalse("The page should not contain \"" + text + "\", but it does.", response.getText().contains(text));
-    }
-
-	protected void assertSongsListContainsSongTitle(WebResponse res, String text) 
-		throws Exception {
-		assertWebPageContains(res, text);
-	}
-	
-	protected void assertSongsListContainsSongLyrics(WebResponse res,
-			String text) throws Exception {
-		assertWebPageContains(res, text);
-		
-	}
-
-    protected void assertSongsListContainsSongEmotion(WebResponse res, String text) throws Exception {
-		assertWebPageContains(res, text);
-    }
-
-	protected void assertSongsListContainsSongArtist(WebResponse res,
-			String text) throws Exception {
-		assertWebPageContains(res, text);
-	}
-
-	protected void assertSongsListContainsSongImage(WebResponse res,
-			String text) throws Exception {
-		assertWebPageContains(res, text);	
     }
 }
