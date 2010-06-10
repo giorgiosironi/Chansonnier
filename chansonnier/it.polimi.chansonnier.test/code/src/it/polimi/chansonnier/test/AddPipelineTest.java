@@ -14,10 +14,7 @@ import org.apache.solr.client.solrj.SolrQuery;
 import org.apache.solr.client.solrj.response.QueryResponse;
 import org.apache.solr.common.SolrDocument;
 import org.apache.solr.common.SolrDocumentList;
-import org.eclipse.smila.blackboard.path.Path;
 import org.eclipse.smila.datamodel.id.Id;
-import org.eclipse.smila.datamodel.id.IdFactory;
-import org.eclipse.smila.datamodel.record.Literal;
 
 public class AddPipelineTest extends FunctionalTest {
 	public static final String PIPELINE_NAME = "AddPipeline";
