@@ -10,12 +10,12 @@
 <booleanAttribute key="clearConfig" value="true"/>
 <booleanAttribute key="clearws" value="true"/>
 <booleanAttribute key="clearwslog" value="false"/>
-<stringAttribute key="configLocation" value="${workspace_loc}/.metadata/.plugins/org.eclipse.pde.core/pde-junit"/>
+<stringAttribute key="configLocation" value="${workspace_loc}/.metadata/.plugins/org.eclipse.pde.core/SearchSongTest"/>
 <booleanAttribute key="default" value="true"/>
 <booleanAttribute key="includeOptional" value="true"/>
 <stringAttribute key="location" value="${workspace_loc}/../junit-workspace"/>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
-<listEntry value="/it.polimi.chansonnier.test/code/src/it/polimi/chansonnier/test/AddSongTest.java"/>
+<listEntry value="/it.polimi.chansonnier.test/code/src/it/polimi/chansonnier/test/SearchSongTest.java"/>
 </listAttribute>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
 <listEntry value="1"/>
@@ -24,12 +24,11 @@
 <booleanAttribute key="org.eclipse.jdt.junit.KEEPRUNNING_ATTR" value="false"/>
 <stringAttribute key="org.eclipse.jdt.junit.TESTNAME" value=""/>
 <stringAttribute key="org.eclipse.jdt.junit.TEST_KIND" value="org.eclipse.jdt.junit.loader.junit3"/>
-<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="it.polimi.chansonnier.test.AddSongTest"/>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="it.polimi.chansonnier.test.SearchSongTest"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="-os ${target.os} -ws ${target.ws} -arch ${target.arch} -nl ${target.nl}"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="it.polimi.chansonnier.test"/>
 <stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.eclipse.pde.ui.workbenchClasspathProvider"/>
-<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Xms40m -Xmx256m&#10;-Dorg.apache.commons.logging.Log=org.apache.commons.logging.impl.Log4JLogger &#13;&#10;-Dlog4j.configuration=file:log4j.properties&#13;&#10;-Dosgi.noShutdown=false&#10;-Dorg.eclipse.smila.utils.config.root=${workspace_loc:SMILA.application/configuration}&#10;-Dit.polimi.chansonnier.solr.root=${workspace_loc:../solr}"/>
-<stringAttribute key="org.eclipse.jdt.launching.WORKING_DIRECTORY" value="${workspace_loc:SMILA.application}"/>
+<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Dorg.apache.commons.logging.Log=org.apache.commons.logging.impl.Log4JLogger &#13;&#10;-Dlog4j.configuration=file:${workspace_loc:SMILA.application/log4j.properties}&#13;&#10;-Dorg.eclipse.smila.utils.config.root=${workspace_loc:SMILA.application/configuration}&#10;-Dosgi.noShutdown=false&#10;-Dit.polimi.chansonnier.solr.root=${workspace_loc}/../solr"/>
 <stringAttribute key="pde.version" value="3.3"/>
 <stringAttribute key="product" value="org.eclipse.equinox.p2.director.app.product"/>
 <booleanAttribute key="run_in_ui_thread" value="true"/>
@@ -37,6 +36,6 @@
 <stringAttribute key="templateConfig" value="${workspace_loc:SMILA.application/configuration/config.ini}"/>
 <booleanAttribute key="tracing" value="false"/>
 <booleanAttribute key="useDefaultConfig" value="false"/>
-<booleanAttribute key="useDefaultConfigArea" value="false"/>
+<booleanAttribute key="useDefaultConfigArea" value="true"/>
 <booleanAttribute key="useProduct" value="false"/>
 </launchConfiguration>
