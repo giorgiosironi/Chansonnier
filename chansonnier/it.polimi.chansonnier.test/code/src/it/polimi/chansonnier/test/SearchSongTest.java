@@ -19,6 +19,7 @@ import org.apache.solr.client.solrj.SolrQuery;
 import org.apache.solr.client.solrj.impl.CommonsHttpSolrServer;
 import org.apache.solr.client.solrj.impl.XMLResponseParser;
 import org.apache.solr.client.solrj.response.QueryResponse;
+import org.apache.solr.common.SolrDocument;
 import org.apache.solr.common.SolrDocumentList;
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
@@ -37,7 +38,7 @@ public class SearchSongTest extends AcceptanceTest {
 		assertTrue(resp.getText().contains("Success"));
 		WebRequest     req = new GetMethodWebRequest( "http://localhost:8080/chansonnier/last" );
 		// TODO: avoid all errors "index does not exist in data dictionary [test_index]"
-		WebResponse res = assertWebPageContains(req, hero, 250000);
+		assertWebPageContains(req, hero, 250000);
 		
 		String url = "http://localhost:8983/solr";
 		CommonsHttpSolrServer server = new CommonsHttpSolrServer( url );
@@ -46,9 +47,12 @@ public class SearchSongTest extends AcceptanceTest {
 	    query.setQuery( "*:*" );
 	    QueryResponse rsp = server.query( query );
 	    SolrDocumentList docList = rsp.getResults();
-	    System.out.println(docList.get(0).values().toString());
 	    assertEquals(1, docList.size());
-	    assertEquals("Enrique Iglesias", docList.get(0).get("Artist"));
+	    SolrDocument song = docList.get(0);
+	    assertEquals("Enrique Iglesias", song.get("Artist"));
+	    assertEquals("Hero", song.get("Title"));
+	    assertTrue(((String) song.get("Lyrics")).contains("if I asked you to dance"));
+	    assertEquals("anger", song.get("Emotion"));
 	}
 	
 	public void _testGivenAnAddedYouTubeLinkTheSongIsSearchable() throws Exception {
