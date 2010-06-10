@@ -6,6 +6,7 @@
  ****************************************************************************/
 package it.polimi.chansonnier.core.test;
 
+import org.eclipse.smila.blackboard.BlackboardAccessException;
 import org.eclipse.smila.blackboard.path.Path;
 import org.eclipse.smila.datamodel.id.Id;
 
@@ -24,43 +25,96 @@ public class LyricsProcessingServiceTest extends ProcessingServiceTest implement
 	}
 	
 	public void testStoresLyricsAsAnAnnotationStartingFromThePageTitle() throws Exception {
-	    final Id id = createBlackboardRecord("copy", "attribute-attachment");
-	    setAttribute(id, new Path("PageTitle"), ARTIST + " - " + TITLE);
+		final Id id = createNewRecord(ARTIST + " - " + TITLE);
 	    
 	    _service.process(getBlackboard(), new Id[] { id });
 	    
-	    final String text = getAttribute(id, new Path("Lyrics")).toString();
-	    assertEquals(LYRICS, text);
+	    assertEquals(LYRICS, extractAttribute(id, "Lyrics"));
 	}
 	
 	public void testCreatesArtistAndTitleAttributesBasingOnWhichCombinationFindsTheLyrics() throws Exception {
-	    final Id id = createBlackboardRecord("copy", "attribute-attachment");
-	    setAttribute(id, new Path("PageTitle"), ARTIST + " - " + TITLE);
+		final Id id = createNewRecord(ARTIST + " - " + TITLE);
 	    
 	    _service.process(getBlackboard(), new Id[] { id });
 	    
-	    assertEquals(ARTIST, getAttribute(id, new Path("Artist")).toString());
-	    assertEquals(TITLE, getAttribute(id, new Path("Title")).toString());
-	}
-	
-	public void testRemovesParenthetizedNoiseFromPageTitle() throws Exception {
-	    final Id id = createBlackboardRecord("copy", "attribute-attachment");
-	    setAttribute(id, new Path("PageTitle"), ARTIST + " - " + TITLE + " (with lyrics!)");
-	    
-	    _service.process(getBlackboard(), new Id[] { id });
-	    
-	    assertEquals(ARTIST, getAttribute(id, new Path("Artist")).toString());
-	    assertEquals(TITLE, getAttribute(id, new Path("Title")).toString());
+	    assertEquals(ARTIST, extractAttribute(id, "Artist"));
+	    assertEquals(TITLE, extractAttribute(id, "Title"));
 	}
 	
 	public void testStoresLyricsAsAnAnnotationWhenTitleComesBeforeArtist() throws Exception {
-	    final Id id = createBlackboardRecord("copy", "attribute-attachment");
-	    setAttribute(id, new Path("PageTitle"), TITLE + " - " + ARTIST);
+		final Id id = createNewRecord(TITLE + " - " + ARTIST);
 	    
 	    _service.process(getBlackboard(), new Id[] { id });
 	    
 	    final String text = getAttribute(id, new Path("Lyrics")).toString();
-	    assertEquals(LYRICS, text);
+	    assertEquals(LYRICS, extractAttribute(id, "Lyrics"));
+	}
+	
+	public void testRemovesParenthetizedNoiseFromPageTitle() throws Exception {
+	    final Id id = createNewRecord(ARTIST + " - " + TITLE + " (with lyrics!)");
+	    
+	    _service.process(getBlackboard(), new Id[] { id });
+	    
+	    assertEquals(ARTIST, extractAttribute(id, "Artist"));
+	    assertEquals(TITLE, extractAttribute(id, "Title"));
+	}
+	
+	public void testRemovesParenthetizedNoiseFromPageTitle2() throws Exception {
+	    final Id id = createNewRecord(ARTIST + " - " + TITLE + " (song & lyrics)"); 
+	    _service.process(getBlackboard(), new Id[] { id });
+	    
+	    assertEquals(ARTIST, extractAttribute(id, "Artist"));
+	    assertEquals(TITLE, extractAttribute(id, "Title"));
+	}
+	
+	public void testRemovesParenthetizedNoiseFromPageTitle3() throws Exception {
+	    final Id id = createNewRecord(ARTIST + " - " + TITLE + " [ with lyrics]"); 
+	    _service.process(getBlackboard(), new Id[] { id });
+	    
+	    assertEquals(ARTIST, extractAttribute(id, "Artist"));
+	    assertEquals(TITLE, extractAttribute(id, "Title"));
+	}
+	
+	public void testRemovesTheWordLyricsFromPageTitle() throws Exception {
+	    final Id id = createNewRecord(ARTIST + " - " + TITLE + " lyrics"); 
+	    _service.process(getBlackboard(), new Id[] { id });
+	    
+	    assertEquals(ARTIST, extractAttribute(id, "Artist"));
+	    assertEquals(TITLE, extractAttribute(id, "Title"));
+	}
+	
+	public void testRemovesTheWordLyricsFromPageTitleWithoutCaseSensitivity() throws Exception {
+	    final Id id = createNewRecord(ARTIST + " - " + TITLE + " Lyrics"); 
+	    _service.process(getBlackboard(), new Id[] { id });
+	    
+	    assertEquals(ARTIST, extractAttribute(id, "Artist"));
+	    assertEquals(TITLE, extractAttribute(id, "Title"));
+	}
+	
+	public void testRemovesTheWordsWithLyricsFromPageTitle() throws Exception {
+	    final Id id = createNewRecord(ARTIST + " - " + TITLE + " with lyrics"); 
+	    _service.process(getBlackboard(), new Id[] { id });
+	    
+	    assertEquals(ARTIST, extractAttribute(id, "Artist"));
+	    assertEquals(TITLE, extractAttribute(id, "Title"));
+	}
+	
+	public void testRemovesTheWordsWithLyricsFromPageTitleWithoutCaseSensitivity() throws Exception {
+	    final Id id = createNewRecord(ARTIST + " - " + TITLE + " With Lyrics"); 
+	    _service.process(getBlackboard(), new Id[] { id });
+	    
+	    assertEquals(ARTIST, extractAttribute(id, "Artist"));
+	    assertEquals(TITLE, extractAttribute(id, "Title"));
+	}
+	
+	private Id createNewRecord(String pageTitle) throws BlackboardAccessException {
+	    final Id id = createBlackboardRecord("youtube", "http://www.youtube.com/dummy");
+	    setAttribute(id, new Path("PageTitle"), pageTitle);
+	    return id;
+	}
+	
+	private String extractAttribute(Id id, String attributeName) throws BlackboardAccessException {
+		return getAttribute(id, new Path(attributeName)).toString();
 	}
 	
 	@Override
