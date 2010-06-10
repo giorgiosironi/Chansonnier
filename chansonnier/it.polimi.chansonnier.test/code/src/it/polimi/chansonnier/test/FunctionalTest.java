@@ -30,13 +30,8 @@ public abstract class FunctionalTest extends AWorkflowProcessorTest {
 		fixtureManager = new FixtureManager(getProcessor(), getBlackboard(), getPipelineName());
 	}
 
-	public void tearDown() {
+	public void tearDown() throws Exception {
 		solrWrapper.stop();
-		try {
-			super.tearDown();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		super.tearDown();
 	}
-
 }

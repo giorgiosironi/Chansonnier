@@ -18,10 +18,30 @@ import com.meterware.httpunit.PostMethodWebRequest;
 import com.meterware.httpunit.WebConversation;
 import com.meterware.httpunit.WebRequest;
 import com.meterware.httpunit.WebResponse;
+import com.thoughtworks.selenium.Selenium;
 
 import junit.framework.TestCase;
 
-public abstract class AcceptanceTest extends FunctionalTest {
+public abstract class AcceptanceTest extends FunctionalTest {	
+	private SeleniumWrapper seleniumWrapper;
+	protected WrappableSeleneseTestCase wrapped;
+	protected Selenium selenium;
+	
+	public void setUp() throws Exception {
+		super.setUp();
+		seleniumWrapper = new SeleniumWrapper();
+		seleniumWrapper.start();
+		wrapped = new WrappableSeleneseTestCase();
+		wrapped.setUp("http://localhost:8080/", "*chrome");
+		selenium = wrapped.getSelenium();
+	}
+	
+	public void tearDown() throws Exception {
+		wrapped.tearDown();
+		seleniumWrapper.stop();
+		super.tearDown();
+	}
+	
 	protected String getPipelineName() {
 		return "AddPipeline";
 	}

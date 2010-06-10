@@ -23,10 +23,13 @@ public class SearchSongTest extends AcceptanceTest {
 		//WebResponse resp = addVideoLink("http://www.youtube.com/watch?v=e8w7f0ShtIM");
 		// TODO insert redirect
 		//assertTrue(resp.getText().contains("Success"));
+		
 		WebRequest     req = new GetMethodWebRequest( "http://localhost:8080/chansonnier/last" );
 		// TODO: avoid all errors "index does not exist in data dictionary [test_index]"
 		WebResponse res = assertWebPageContains(req, "http://www.youtube.com/watch?v=e8w7f0ShtIM", 20000);
 		
+		selenium.open("/chansonnier/index.html");
+		wrapped.verifyTrue(selenium.isTextPresent("Beautiful Day"));
 		/*
 		req = new GetMethodWebRequest( "http://localhost:8080/chansonnier/index.html" );
 		WebConversation conn = new WebConversation();
