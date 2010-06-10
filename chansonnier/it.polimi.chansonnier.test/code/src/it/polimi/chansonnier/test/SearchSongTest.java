@@ -7,6 +7,7 @@
 package it.polimi.chansonnier.test;
 
 import com.meterware.httpunit.GetMethodWebRequest;
+import com.meterware.httpunit.HTMLElement;
 import com.meterware.httpunit.WebConversation;
 import com.meterware.httpunit.WebRequest;
 import com.meterware.httpunit.WebResponse;
@@ -25,6 +26,15 @@ public class SearchSongTest extends AcceptanceTest {
 		WebRequest     req = new GetMethodWebRequest( "http://localhost:8080/chansonnier/last" );
 		// TODO: avoid all errors "index does not exist in data dictionary [test_index]"
 		WebResponse res = assertWebPageContains(req, "http://www.youtube.com/watch?v=e8w7f0ShtIM", 20000);
+		
+		/*
+		req = new GetMethodWebRequest( "http://localhost:8080/chansonnier/index.html" );
+		WebConversation conn = new WebConversation();
+		WebResponse resp = conn.getResponse(req);
+		for (HTMLElement elem: resp.getElementsByTagName("h2")) {
+			System.out.println(elem.getText());
+		}
+		*/
         // TODO: make it case insensitive
 //        assertSongsListContainsSongTitle(res, "Beautiful Day");
 //		assertSongsListContainsSongArtist(res, "U2");
