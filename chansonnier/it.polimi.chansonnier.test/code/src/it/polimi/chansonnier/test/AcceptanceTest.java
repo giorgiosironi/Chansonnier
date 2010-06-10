@@ -14,14 +14,11 @@ import com.meterware.httpunit.WebResponse;
 import com.thoughtworks.selenium.Selenium;
 
 public abstract class AcceptanceTest extends FunctionalTest {	
-	private SeleniumWrapper seleniumWrapper;
 	protected WrappableSeleneseTestCase wrapped;
 	protected Selenium selenium;
 	
 	public void setUp() throws Exception {
 		super.setUp();
-		seleniumWrapper = new SeleniumWrapper();
-		seleniumWrapper.start();
 		wrapped = new WrappableSeleneseTestCase();
 		wrapped.setUp("http://localhost:8080/", "*chrome");
 		selenium = wrapped.getSelenium();
@@ -29,7 +26,6 @@ public abstract class AcceptanceTest extends FunctionalTest {
 	
 	public void tearDown() throws Exception {
 		wrapped.tearDown();
-		seleniumWrapper.stop();
 		super.tearDown();
 	}
 	
