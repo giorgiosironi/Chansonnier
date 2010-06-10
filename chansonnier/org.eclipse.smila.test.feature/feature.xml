@@ -59,6 +59,11 @@
          install-size="0"
          version="0.0.0"/>
    <plugin
+         id="it.polimi.chansonnier.driver.ffmpeg.test"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+   <plugin
          id="it.polimi.chansonnier.driver.synesketch.test"
          download-size="0"
          install-size="0"
