@@ -4,6 +4,7 @@ import java.io.File;
 
 public class SolrWrapper {
 	private Process solr;
+	private static final String FOLDER_PROPERTY = "it.polimi.chansonnier.solr.root";
 	
 	public void start() throws Exception {
 		Runtime r = Runtime.getRuntime();
@@ -18,9 +19,9 @@ public class SolrWrapper {
 	}
 	
 	private File getSolrRoot() throws Exception {
-		String root = System.getProperty("it.polimi.chansonnier.solr.root");
+		String root = System.getProperty(FOLDER_PROPERTY);
 		if (root == null) {
-			throw new Exception("Solr path is not specified, please add the property it.polimi.chansonnier.solr.root");
+			throw new Exception("Solr path is not specified, please add the property " + FOLDER_PROPERTY);
 		}
 		return new File(root);
 	}
