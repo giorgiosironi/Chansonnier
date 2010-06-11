@@ -12,5 +12,4 @@
 <stringAttribute key="org.eclipse.jdt.junit.TEST_KIND" value="org.eclipse.jdt.junit.loader.junit3"/>
 <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="it.polimi.chansonnier.test.SolrIntegrationTest"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="it.polimi.chansonnier.test"/>
-<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Dit.polimi.chansonnier.solr.root=${workspace_loc}/../solr"/>
 </launchConfiguration>
