@@ -11,7 +11,7 @@ var Manager;
   		target: '#result'
 	}));
     Manager.init();
-    Manager.store.addByValue('q', 'Title:*');
+    Manager.store.addByValue('q', '*:*');
     Manager.doRequest();
   });
 
