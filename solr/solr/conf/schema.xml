@@ -396,6 +396,8 @@
          any data added to them will be ignored outright.  --> 
     <fieldtype name="ignored" stored="false" indexed="false" multiValued="true" class="solr.StrField" /> 
 
+    <fieldType name="uuid" class="solr.UUIDField" indexed="true" />
+
  </types>
 
 
@@ -427,6 +429,7 @@
    -->
 
    <field name="id" type="string" indexed="true" stored="true" required="true" /> 
+    <field name="uuid" type="uuid" indexed="true" stored="true" default="NEW"/>
 
    <field name="PageTitle" type="string" indexed="true" stored="true"/>
    <field name="Artist" type="string" indexed="true" stored="true"/>

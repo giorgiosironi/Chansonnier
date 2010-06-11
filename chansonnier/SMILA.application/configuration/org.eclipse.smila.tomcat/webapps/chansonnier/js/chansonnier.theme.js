@@ -2,7 +2,8 @@
 
 AjaxSolr.theme.prototype.result = function (doc, snippet) {
   var output = '<div><h2>' + doc.Artist + ' - ' + doc.Title + '</h2>';
-  output += '<p id="links_' + doc.id + '" class="links"></p>';
+  output += '<p class="lyrics">' + doc.Lyrics + '</p>';
+  output += '<p id="links_' + doc.uuid + '" class="links"></p>';
   //output += '<p>' + snippet + '</p></div>';
   return output;
 };

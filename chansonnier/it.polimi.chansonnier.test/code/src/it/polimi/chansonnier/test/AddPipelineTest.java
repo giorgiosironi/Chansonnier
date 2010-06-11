@@ -28,9 +28,12 @@ public class AddPipelineTest extends FunctionalTest {
 		Id[] result = fixtureManager.addSong("http://www.youtube.com/watch?v=owTmJrtD7g8", new File("fixtures/hero.flv"), "Enrique Iglesias- Hero (with lyrics)");
 		assertEquals(1, result.length);
 		Thread.sleep(5000);
+		result = fixtureManager.addSong("http://www.youtube.com/watch?v=fSdgBse1o7Q", new File("fixtures/halo.flv"), "Beyonce-Halo Lyrics");
+		assertEquals(1, result.length);
+		Thread.sleep(5000);
 		
 		SolrQuery query = new SolrQuery();
-	    query.setQuery( "*:*" );
+	    query.setQuery( "Title:Hero" );
 	    QueryResponse rsp = solrServer.query( query );
 	    SolrDocumentList docList = rsp.getResults();
 	    assertEquals(1, docList.size());
@@ -39,5 +42,17 @@ public class AddPipelineTest extends FunctionalTest {
 	    assertEquals("Hero", song.get("Title"));
 	    assertTrue(((String) song.get("Lyrics")).contains("if I asked you to dance"));
 	    assertEquals("anger", song.get("Emotion"));
+	    
+		query = new SolrQuery();
+	    query.setQuery( "Title:Halo" );
+	    rsp = solrServer.query( query );
+	    docList = rsp.getResults();
+	    assertEquals(1, docList.size());
+	    song = docList.get(0);
+	    assertEquals("Beyonce", song.get("Artist"));
+	    assertEquals("Halo", song.get("Title"));
+	    //assertTrue(((String) song.get("Lyrics")).contains("if I asked you to dance"));
+	    //assertEquals("anger", song.get("Emotion"));
+	    
 	}
 }
