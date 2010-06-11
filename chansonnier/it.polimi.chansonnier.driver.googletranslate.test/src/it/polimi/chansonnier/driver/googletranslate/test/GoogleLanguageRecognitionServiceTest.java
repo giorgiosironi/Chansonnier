@@ -17,6 +17,12 @@ public class GoogleLanguageRecognitionServiceTest extends TestCase {
 		assertGreatherThan(language.getConfidence(), 0.9);
 	}
 	
+	public void testSanitizesASentenceWithLineBreaks() {
+		FuzzyResult language = _service.getLanguage("This is an example of an English sentence\n"
+				 								  + "that should be recognized by _service.");
+		assertEquals("en", language.getValue());
+	}
+	
 	public void testRecognizesAnItalianSentence() {
 		FuzzyResult language = _service.getLanguage("Questa è una frase italiana che dovrebbe essere riconosciuta come tale.");
 		assertEquals("it", language.getValue());

@@ -66,6 +66,8 @@
    <field name="Keywords" type="string" indexed="true" stored="true"/>
    <field name="Emotion" type="string" indexed="true" stored="true"/>
    <field name="EmotionConfidence" type="string" indexed="true" stored="true"/>
+   <field name="Language" type="string" indexed="true" stored="true"/>
+   <field name="LanguageConfidence" type="string" indexed="true" stored="true"/>
 
 
  </fields>

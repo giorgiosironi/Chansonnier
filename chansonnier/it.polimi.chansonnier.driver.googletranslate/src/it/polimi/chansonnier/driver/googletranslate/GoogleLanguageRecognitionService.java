@@ -21,7 +21,7 @@ public class GoogleLanguageRecognitionService implements
 		//-e http://www.my-ajax-site.com
 		try {
 			URL serviceEndpoint = new URL("http://ajax.googleapis.com/ajax/services/language/detect?v=1.0&q="
-					                   + URLUtils.escape(textSample));
+					                   + sanitize(textSample));					                   
 			HttpURLConnection connection = (HttpURLConnection) serviceEndpoint.openConnection();
 			connection.addRequestProperty("REFERER", "http://www.polimi.it");
 			connection.connect();
@@ -55,5 +55,10 @@ public class GoogleLanguageRecognitionService implements
 		//, "responseDetails": null, "responseStatus": 200}
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	private String sanitize(String textSample) {
+		textSample = textSample.replace("\n", " ");
+		return URLUtils.escape(textSample);
 	}
 }

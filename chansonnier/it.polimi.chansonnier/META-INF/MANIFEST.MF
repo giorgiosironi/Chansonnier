@@ -28,6 +28,7 @@ Export-Package: it.polimi.chansonnier,
  it.polimi.chansonnier.processing,
  it.polimi.chansonnier.utils
 Service-Component: OSGI-INF/EmotionProcessingService.xml,
+ OSGI-INF/LanguageProcessingService.xml,
  OSGI-INF/LyricsProcessingService.xml,
  OSGI-INF/LastIndexedService.xml,
  OSGI-INF/ShotDetectionProcessingService.xml

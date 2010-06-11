@@ -45,6 +45,13 @@
                     <proc:variables input="request" output="request" />
                 </proc:invokeService>
             </extensionActivity>
+            
+            <extensionActivity name="invokeLanguageProcessingService">
+                <proc:invokeService>
+                    <proc:service name="LanguageProcessingService" />
+                    <proc:variables input="request" output="request" />
+                </proc:invokeService>
+            </extensionActivity>
                     
             <extensionActivity name="invokeShotDetectionProcessingService">
                 <proc:invokeService>
