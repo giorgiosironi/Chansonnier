@@ -62,6 +62,7 @@ public class YoutubeLinkGrabberAgent extends AbstractAgent implements LinkGrabbe
 		    		String newLink = _linksToProcess.poll();
 		    		Record newRecord = _createRecord();
 		        	newRecord.setId(_createId(newLink));
+		        	_setLink(newRecord, newLink);
 		        	_setPageTitle(newRecord, _getPageTitle(newLink));
 		        	_setDescription(newRecord, _getDescription(newLink));
 		        	_setKeywords(newRecord, _getKeywords(newLink));
@@ -99,6 +100,15 @@ public class YoutubeLinkGrabberAgent extends AbstractAgent implements LinkGrabbe
     	idL.setStringValue(link);
     	idAttributes[0].addLiteral(idL);
     	return ConnectivityIdFactory.getInstance().createId(getConfig().getDataSourceID(), idAttributes);
+	}
+	
+	private void _setLink(Record record, String link) {
+		Attribute attribute = new AttributeImpl();
+        attribute.setName("link");
+        Literal l = new LiteralImpl();
+        l.setStringValue(link);
+        attribute.addLiteral(l);
+        record.getMetadata().setAttribute("link", attribute);
 	}
 	
 	private void _setPageTitle(Record record, String value) {
