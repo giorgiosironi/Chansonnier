@@ -20,7 +20,7 @@ public abstract class AcceptanceTest extends FunctionalTest {
 	public void setUp() throws Exception {
 		super.setUp();
 		wrapped = new WrappableSeleneseTestCase();
-		wrapped.setUp("http://localhost:8080/", "*chrome");
+		wrapped.setUp("http://localhost:8080/", "*firefox");
 		selenium = wrapped.getSelenium();
 	}
 	

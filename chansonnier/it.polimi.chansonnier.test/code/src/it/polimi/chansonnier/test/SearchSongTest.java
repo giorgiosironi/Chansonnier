@@ -10,12 +10,15 @@ import com.meterware.httpunit.GetMethodWebRequest;
 import com.meterware.httpunit.WebRequest;
 
 import java.io.File;
+import java.net.URL;
 
 //import org.eclipse.osgi.framework.adaptor.core.DefaultClassLoader;
 
 public class SearchSongTest extends AcceptanceTest {	
 	public void testGivenAnAddedYouTubeLinkTheSongIsSearchable() throws Exception {
-		fixtureManager.addSong("http://www.youtube.com/watch?v=e8w7f0ShtIM", new File("fixtures/beautifulday.flv"), "U2 - Beautiful Day (with Lyrics)");
+        URL url = SearchSongTest.class.getResource("beautifulday.flv");
+        File f = new File(url.getPath());
+		fixtureManager.addSong("http://www.youtube.com/watch?v=e8w7f0ShtIM", f, "U2 - Beautiful Day (with Lyrics)");
 		Thread.sleep(5000);
 		//WebResponse resp = addVideoLink("http://www.youtube.com/watch?v=e8w7f0ShtIM");
 		// TODO insert redirect

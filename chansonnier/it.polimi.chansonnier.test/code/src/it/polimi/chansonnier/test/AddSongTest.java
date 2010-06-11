@@ -36,18 +36,14 @@ public class AddSongTest extends AcceptanceTest {
 	}
 	
 	public void testGivenAYouTubeLinkAddsTheRelatedSongToTheLastIndexedList() throws Exception {
-		WebResponse resp = addVideoLink("http://www.youtube.com/watch?v=e8w7f0ShtIM");
+
+		String link = "http://www.youtube.com/watch?v=GMDd4on20Yg";
+		WebResponse resp = addVideoLink(link);
 		// TODO insert redirect
 		assertTrue(resp.getText().contains("Success"));
 
-		String link = "http://www.youtube.com/watch?v=GMDd4on20Yg";
-		addVideoLink(link);
 		WebRequest req = new GetMethodWebRequest( "http://localhost:8080/chansonnier/last" );
-		assertWebPageContains(req, link, 300000);
-//		assertSongsListContainsSongTitle(response, "Boulevard of Broken Dreams");
-//		assertSongsListContainsSongArtist(response, "Green Day");
-//		assertSongsListContainsSongLyrics(response, "I walk a lonely road");
-//		assertSongsListContainsSongImage(response, "<img src=\"attachment?name=Image1&id=" + link + "\" />");
+        resp = assertWebPageContains(req, link, 300000);
 	}
 	
 	public void testGivenAnAddedYouTubeLinkTheSongIsSearchableThrougSolr() throws Exception {
@@ -58,6 +54,7 @@ public class AddSongTest extends AcceptanceTest {
 		WebRequest     req = new GetMethodWebRequest( "http://localhost:8080/chansonnier/last" );
 		// TODO: avoid all errors "index does not exist in data dictionary [test_index]"
 		assertWebPageContains(req, hero, 250000);
+        Thread.sleep(10000);
 		
 		String url = "http://localhost:8983/solr";
 		CommonsHttpSolrServer server = new CommonsHttpSolrServer( url );

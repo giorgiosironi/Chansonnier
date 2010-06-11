@@ -14,8 +14,9 @@ public class AllTests {
 	public static Test suite() {
 		TestSuite suite = new TestSuite("Acceptance tests for it.polimi.chansonnier");
 		//$JUnit-BEGIN$
-		suite.addTestSuite(AddSongTest.class);
-		suite.addTestSuite(SearchSongTest.class);
+//		suite.addTestSuite(AddSongTest.class);
+//		suite.addTestSuite(SearchSongTest.class);
+		suite.addTestSuite(SeleniumIntegrationTest.class);
 		//$JUnit-END$
 		return suite;
 	}
