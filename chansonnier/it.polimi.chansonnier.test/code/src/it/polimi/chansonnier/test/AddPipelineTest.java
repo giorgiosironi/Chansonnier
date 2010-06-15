@@ -7,6 +7,8 @@
 package it.polimi.chansonnier.test;
 
 
+import it.polimi.chansonnier.fixtures.Fixtures;
+
 import java.io.File;
 import java.io.InputStream;
 
@@ -26,10 +28,10 @@ public class AddPipelineTest extends FunctionalTest {
 	}
 	
 	public void testSongIsIndexedInSolr() throws Exception {
-		InputStream heroFlv = SearchSongTest.class.getResourceAsStream("fixtures/hero.flv");
+		InputStream heroFlv = Fixtures.class.getResourceAsStream("hero.flv");
 		Id[] result = fixtureManager.addSong("http://www.youtube.com/watch?v=owTmJrtD7g8", heroFlv, "Enrique Iglesias- Hero (with lyrics)");
 		assertEquals(1, result.length);
-		InputStream haloFlv = SearchSongTest.class.getResourceAsStream("fixtures/halo.flv");
+		InputStream haloFlv = Fixtures.class.getResourceAsStream("halo.flv");
 		result = fixtureManager.addSong("http://www.youtube.com/watch?v=fSdgBse1o7Q", haloFlv, "Beyonce-Halo Lyrics");
 		assertEquals(1, result.length);
 		Thread.sleep(15000);

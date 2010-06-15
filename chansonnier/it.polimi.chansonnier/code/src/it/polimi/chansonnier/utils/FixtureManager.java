@@ -1,9 +1,9 @@
-package it.polimi.chansonnier.test;
+package it.polimi.chansonnier.utils;
 
-import java.io.File;
 import java.io.InputStream;
 
 import org.eclipse.smila.blackboard.Blackboard;
+import org.eclipse.smila.blackboard.BlackboardAccessException;
 import org.eclipse.smila.blackboard.path.Path;
 import org.eclipse.smila.datamodel.id.Id;
 import org.eclipse.smila.datamodel.id.IdFactory;
@@ -30,8 +30,14 @@ public class FixtureManager {
 		return result;
 	}
 	
+	public void commit() throws BlackboardAccessException {
+		blackboard.commit();
+	}
+	
 	private Id createRecord(String key, InputStream original, String pageTitle) throws Exception {
 		final Id song = createBlackboardRecord("youtube", key);
+		System.out.println(song.getSource());
+		System.out.println(song.getKey());
 		final Literal pageTitleL = blackboard.createLiteral(song);
 		pageTitleL.setStringValue(pageTitle);
 		blackboard.setLiteral(song, new Path("PageTitle"), pageTitleL);

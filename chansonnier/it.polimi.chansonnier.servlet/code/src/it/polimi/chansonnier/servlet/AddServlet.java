@@ -34,18 +34,11 @@ public class AddServlet extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String link = request.getParameter("link");
-			LinkGrabberAgent _agent = Activator.linkGrabberAgent;
-			if (_agent == null) {
-				try {
-					Activator.agentController.startAgent("youtube");
-				} catch (ConnectivityException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				_agent = Activator.linkGrabberAgent;
-			}
-			if (_agent == null) {	
-				throw new ServletException("LinkGrabberAgent is not initialized.");
+			LinkGrabberAgent _agent;
+			try {
+				_agent = Activator.getLinkGrabberAgent();
+			} catch (ConnectivityException e) {
+				throw new ServletException(e);
 			}
 			response.getWriter().println("Success...");
 			_agent.addLink(link);

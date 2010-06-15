@@ -1,6 +1,8 @@
 package it.polimi.chansonnier.test;
 
 
+import it.polimi.chansonnier.utils.FixtureManager;
+
 import org.apache.solr.client.solrj.impl.CommonsHttpSolrServer;
 import org.apache.solr.client.solrj.impl.XMLResponseParser;
 import org.eclipse.smila.processing.bpel.test.AWorkflowProcessorTest;

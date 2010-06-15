@@ -8,14 +8,20 @@ package it.polimi.chansonnier.test;
 
 
 
+import java.io.IOException;
+import java.net.MalformedURLException;
+
 import org.apache.solr.client.solrj.SolrQuery;
+import org.apache.solr.client.solrj.SolrServerException;
 import org.apache.solr.client.solrj.impl.CommonsHttpSolrServer;
 import org.apache.solr.client.solrj.impl.XMLResponseParser;
 import org.apache.solr.client.solrj.response.QueryResponse;
 import org.apache.solr.common.SolrDocument;
 import org.apache.solr.common.SolrDocumentList;
+import org.xml.sax.SAXException;
 
 import com.meterware.httpunit.GetMethodWebRequest;
+import com.meterware.httpunit.PostMethodWebRequest;
 import com.meterware.httpunit.WebConversation;
 import com.meterware.httpunit.WebRequest;
 import com.meterware.httpunit.WebResponse;
@@ -35,7 +41,7 @@ public class AddSongTest extends AcceptanceTest {
         assertEquals(1, add.getSubmitButtons().length);
 	}
 	
-	public void testGivenAYouTubeLinkAddsTheRelatedSongToTheLastIndexedList() throws Exception {
+	public void _testGivenAYouTubeLinkAddsIttoTheLastIndexedListAndTheRelatedSongIsSearchableThroughSolr() throws Exception {
 		WebResponse resp = addVideoLink("http://www.youtube.com/watch?v=e8w7f0ShtIM");
 		// TODO insert redirect
 		assertTrue(resp.getText().contains("Success"));
@@ -44,33 +50,40 @@ public class AddSongTest extends AcceptanceTest {
 		addVideoLink(link);
 		WebRequest req = new GetMethodWebRequest( "http://localhost:8080/chansonnier/last" );
 		assertWebPageContains(req, link, 300000);
-//		assertSongsListContainsSongTitle(response, "Boulevard of Broken Dreams");
-//		assertSongsListContainsSongArtist(response, "Green Day");
-//		assertSongsListContainsSongLyrics(response, "I walk a lonely road");
+		
+		SolrDocumentList docList = searchForSongs("*:*");
+	    assertEquals(1, docList.size());
+	    SolrDocument song = docList.get(0);
+	    assertEquals("Green Day", song.get("Artist"));
+	    assertEquals("Boulevard of Broken Dreams", song.get("Title"));
+	    assertTrue(((String) song.get("Lyrics")).contains("I walk a lonely road"));
+//	    assertEquals("anger", song.get("Emotion"));
 //		assertSongsListContainsSongImage(response, "<img src=\"attachment?name=Image1&id=" + link + "\" />");
 	}
 	
-	public void testGivenAnAddedYouTubeLinkTheSongIsSearchableThrougSolr() throws Exception {
-		String hero = "http://www.youtube.com/watch?v=owTmJrtD7g8";
-		WebResponse resp = addVideoLink(hero);
-		// TODO insert redirect
-		assertTrue(resp.getText().contains("Success"));
-		WebRequest     req = new GetMethodWebRequest( "http://localhost:8080/chansonnier/last" );
-		// TODO: avoid all errors "index does not exist in data dictionary [test_index]"
-		assertWebPageContains(req, hero, 250000);
-		
+	public void testFixturesCanBeAddedWithThePushOfAButton() throws Exception {
+		WebRequest     req = new GetMethodWebRequest("http://localhost:8080/chansonnier/fixtures");
+		WebConversation wc = new WebConversation();
+		WebResponse   resp = wc.getResponse( req );
+		assertEquals(1, resp.getForms()[0].getButtons().length);
+		req = new PostMethodWebRequest( "http://localhost:8080/chansonnier/fixtures" );
+		resp = wc.getResponse( req );
+		Thread.sleep(15000);
+		SolrDocumentList result = searchForSongs("Title:Hero");
+		assertEquals(1, result.size());
+		String id = (String) result.get(0).get("link");
+		WebRequest image = new GetMethodWebRequest("http://localhost:8080/chansonnier/attachment?id=" + id + "&name=Image1");
+		resp = wc.getResponse(image);
+		assertEquals(200, resp.getResponseCode());
+	}
+	
+	private SolrDocumentList searchForSongs(String queryString) throws Exception {
 		String url = "http://localhost:8983/solr";
 		CommonsHttpSolrServer server = new CommonsHttpSolrServer( url );
 		server.setParser(new XMLResponseParser());
 	    SolrQuery query = new SolrQuery();
-	    query.setQuery( "*:*" );
+	    query.setQuery(queryString);
 	    QueryResponse rsp = server.query( query );
-	    SolrDocumentList docList = rsp.getResults();
-	    assertEquals(1, docList.size());
-	    SolrDocument song = docList.get(0);
-	    assertEquals("Enrique Iglesias", song.get("Artist"));
-	    assertEquals("Hero", song.get("Title"));
-	    assertTrue(((String) song.get("Lyrics")).contains("if I asked you to dance"));
-	    assertEquals("anger", song.get("Emotion"));
+	    return rsp.getResults();
 	}
 }
