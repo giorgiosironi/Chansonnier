@@ -40,6 +40,7 @@ public class AddPipelineTest extends FunctionalTest {
 	    SolrDocumentList docList = rsp.getResults();
 	    assertEquals(1, docList.size());
 	    SolrDocument song = docList.get(0);
+	    assertEquals("http://www.youtube.com/watch?v=owTmJrtD7g8", song.get("link"));
 	    assertEquals("Enrique Iglesias", song.get("Artist"));
 	    assertEquals("Hero", song.get("Title"));
 	    assertTrue(((String) song.get("Lyrics")).contains("if I asked you to dance"));
@@ -52,6 +53,7 @@ public class AddPipelineTest extends FunctionalTest {
 	    docList = rsp.getResults();
 	    assertEquals(1, docList.size());
 	    song = docList.get(0);
+	    assertEquals("http://www.youtube.com/watch?v=fSdgBse1o7Q", song.get("link"));
 	    assertEquals("Beyonce", song.get("Artist"));
 	    assertEquals("Halo", song.get("Title"));
 	    assertEquals("surprise", song.get("Emotion"));

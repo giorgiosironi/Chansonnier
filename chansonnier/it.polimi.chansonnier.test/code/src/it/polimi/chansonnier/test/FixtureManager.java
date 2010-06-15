@@ -35,6 +35,9 @@ public class FixtureManager {
 		final Literal pageTitleL = blackboard.createLiteral(song);
 		pageTitleL.setStringValue(pageTitle);
 		blackboard.setLiteral(song, new Path("PageTitle"), pageTitleL);
+		final Literal linkL = blackboard.createLiteral(song);
+		linkL.setStringValue(key);
+		blackboard.setLiteral(song, new Path("link"), linkL);
 		blackboard.setAttachmentFromStream(song, "Original", original);
 		return song;
 	}
