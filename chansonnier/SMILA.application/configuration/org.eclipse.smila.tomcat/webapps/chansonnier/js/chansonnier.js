@@ -22,6 +22,11 @@ var Manager;
   		id: 'currentsearch',
   		target: '#selection',
 	}));
+	Manager.addWidget(new AjaxSolr.TextWidget({
+  		id: 'text',
+  		target: '#search',
+  		field: 'Lyrics'
+	}));
     Manager.init();
     Manager.store.addByValue('q', '*:*');
     var params = {
