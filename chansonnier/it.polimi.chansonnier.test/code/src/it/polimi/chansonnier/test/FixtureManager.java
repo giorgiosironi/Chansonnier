@@ -1,6 +1,7 @@
 package it.polimi.chansonnier.test;
 
 import java.io.File;
+import java.io.InputStream;
 
 import org.eclipse.smila.blackboard.Blackboard;
 import org.eclipse.smila.blackboard.path.Path;
@@ -20,21 +21,21 @@ public class FixtureManager {
 		this.pipelineName = pipelineName;
 	}
 	
-	public Id[] addSong(String key, File flv, String pageTitle) throws Exception {
+	public Id[] addSong(String key, InputStream beautifulDayFlv, String pageTitle) throws Exception {
 		if (!processor.getWorkflowNames().contains(pipelineName)) {
 			throw new Exception("Pipeline " + pipelineName + " is not active.");
 		}
-		Id hero = createRecord(key, flv, pageTitle);
+		Id hero = createRecord(key, beautifulDayFlv, pageTitle);
 		final Id[] result = processor.process(pipelineName, blackboard, new Id[] { hero });
 		return result;
 	}
 	
-	private Id createRecord(String key, File original, String pageTitle) throws Exception {
+	private Id createRecord(String key, InputStream original, String pageTitle) throws Exception {
 		final Id song = createBlackboardRecord("youtube", key);
 		final Literal pageTitleL = blackboard.createLiteral(song);
 		pageTitleL.setStringValue(pageTitle);
 		blackboard.setLiteral(song, new Path("PageTitle"), pageTitleL);
-		blackboard.setAttachmentFromFile(song, "Original", original);
+		blackboard.setAttachmentFromStream(song, "Original", original);
 		return song;
 	}
 	

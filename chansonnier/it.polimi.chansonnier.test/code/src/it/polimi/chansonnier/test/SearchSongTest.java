@@ -11,15 +11,15 @@ import com.meterware.httpunit.WebRequest;
 
 import java.io.File;
 import java.net.URL;
+import java.io.InputStream;
 
 //import org.eclipse.osgi.framework.adaptor.core.DefaultClassLoader;
 
 public class SearchSongTest extends AcceptanceTest {	
 	public void testGivenAnAddedYouTubeLinkTheSongIsSearchable() throws Exception {
-        URL url = SearchSongTest.class.getResource("beautifulday.flv");
-        File f = new File(url.getPath());
-		fixtureManager.addSong("http://www.youtube.com/watch?v=e8w7f0ShtIM", f, "U2 - Beautiful Day (with Lyrics)");
-		Thread.sleep(5000);
+		InputStream beautifulDayFlv = SearchSongTest.class.getResourceAsStream("fixtures/beautifulday.flv");
+		fixtureManager.addSong("http://www.youtube.com/watch?v=e8w7f0ShtIM", beautifulDayFlv, "U2 - Beautiful Day (with Lyrics)");
+		Thread.sleep(10000);
 		//WebResponse resp = addVideoLink("http://www.youtube.com/watch?v=e8w7f0ShtIM");
 		// TODO insert redirect
 		//assertTrue(resp.getText().contains("Success"));
@@ -29,6 +29,7 @@ public class SearchSongTest extends AcceptanceTest {
 		assertWebPageContains(req, "http://www.youtube.com/watch?v=e8w7f0ShtIM", 20000);
 		
 		selenium.open("/chansonnier/index.html");
+        Thread.sleep(5000);
 		wrapped.verifyTrue(selenium.isTextPresent("Beautiful Day"));
 		/*
 		req = new GetMethodWebRequest( "http://localhost:8080/chansonnier/index.html" );

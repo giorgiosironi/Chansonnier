@@ -28,7 +28,7 @@
 <stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="-os ${target.os} -ws ${target.ws} -arch ${target.arch} -nl ${target.nl}"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="it.polimi.chansonnier.test"/>
 <stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.eclipse.pde.ui.workbenchClasspathProvider"/>
-<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Xms40m -Xmx256m&#10;-Dorg.apache.commons.logging.Log=org.apache.commons.logging.impl.Log4JLogger &#13;&#10;-Dlog4j.configuration=file:log4j.properties&#13;&#10;-Dosgi.noShutdown=false&#10;-Dorg.eclipse.smila.utils.config.root=${workspace_loc:SMILA.application/configuration}&#10;-Dit.polimi.chansonnier.solr.root=${workspace_loc}/../solr&#10;-Dit.polimi.chansonnier.selenium.root=${workspace_loc}/../selenium"/>
+<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Xms40m -Xmx256m&#10;-Dorg.apache.commons.logging.Log=org.apache.commons.logging.impl.Log4JLogger &#13;&#10;-Dlog4j.configuration=file:log4j.properties&#13;&#10;-Dosgi.noShutdown=false&#10;-Dorg.eclipse.smila.utils.config.root=${workspace_loc:SMILA.application/configuration}"/>
 <stringAttribute key="org.eclipse.jdt.launching.WORKING_DIRECTORY" value="${workspace_loc:SMILA.application}"/>
 <stringAttribute key="pde.version" value="3.3"/>
 <stringAttribute key="product" value="org.eclipse.equinox.p2.director.app.product"/>
