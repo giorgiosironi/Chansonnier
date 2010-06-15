@@ -18,6 +18,10 @@ var Manager;
     		field: fields[i]
   		}));
 	}
+	Manager.addWidget(new AjaxSolr.CurrentSearchWidget({
+  		id: 'currentsearch',
+  		target: '#selection',
+	}));
     Manager.init();
     Manager.store.addByValue('q', '*:*');
     var params = {
