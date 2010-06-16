@@ -30,6 +30,7 @@ public class SearchSongTest extends AcceptanceTest {
 		assertWebPageContains(req, "http://www.youtube.com/watch?v=e8w7f0ShtIM", 20000);
 		
 		selenium.open("/chansonnier/index.html");
+		Thread.sleep(2000);
 		wrapped.verifyTrue(selenium.isTextPresent("Beautiful Day"));
 		/*
 		req = new GetMethodWebRequest( "http://localhost:8080/chansonnier/index.html" );

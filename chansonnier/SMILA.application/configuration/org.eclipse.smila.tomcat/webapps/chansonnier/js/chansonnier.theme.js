@@ -1,8 +1,8 @@
 (function ($) {
 
 AjaxSolr.theme.prototype.result = function (doc, snippet) {
-  var output = '<div><h2>' + doc.Artist + ' - ' + doc.Title + '</h2>';
-  output += '<p class="lyrics">' + doc.Lyrics + '</p>';
+  var output = '<div><h2>' + doc.artist + ' - ' + doc.title + '</h2>';
+  output += '<p class="lyrics">' + doc.lyrics + '</p>';
   output += '<p id="links_' + doc.uuid + '" class="links"></p>';
   //output += '<p>' + snippet + '</p>';
   image = function(attachmentName) {
@@ -11,7 +11,7 @@ AjaxSolr.theme.prototype.result = function (doc, snippet) {
   	//var path = 'attachment?id=' + doc.link + '&name=' + attachmentName;
   	return '<a href="' + path + '"><img src="' + path + '" height="30" width="40" /></a>';
   }
-  output += '<div class="images">' + image('Image1') + image('Image2') + image('Image3') + '</div>';
+  output += '<div class="images">' + image('image1') + image('image2') + image('image3') + '</div>';
   output += '</div>';
   return output;
 };
