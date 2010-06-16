@@ -5,10 +5,11 @@ AjaxSolr.ResultWidget = AjaxSolr.AbstractWidget.extend({
     $(this.target).empty();
     for (var i = 0, l = this.manager.response.response.docs.length; i < l; i++) {
       var doc = this.manager.response.response.docs[i];
-      $(this.target).append(AjaxSolr.theme('result', doc));
+      $(this.target).append(AjaxSolr.theme('result', doc));        
       var items = this.facetLinks('emotion', [doc.emotion]);
       AjaxSolr.theme('list_items', '#links_' + doc.uuid, items);
     }
+    $('.images a').lightBox();
   },
   facetLinks: function (facet_field, facet_values) {
   	var links = new Array();
