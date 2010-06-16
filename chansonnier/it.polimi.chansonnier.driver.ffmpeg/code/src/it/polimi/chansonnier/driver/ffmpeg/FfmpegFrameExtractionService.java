@@ -6,13 +6,13 @@
  ****************************************************************************/
 package it.polimi.chansonnier.driver.ffmpeg;
 
-import it.polimi.chansonnier.spi.ShotDetectionService;
+import it.polimi.chansonnier.spi.FrameExtractionService;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.Date;
 
-public class FfmpegShotDetectionService implements ShotDetectionService {
+public class FfmpegFrameExtractionService implements FrameExtractionService {
 	private final static String FFMPEG_BIN = "/usr/bin/ffmpeg";
 	
 	@Override

@@ -8,7 +8,7 @@ package it.polimi.chansonnier.spi;
 
 import java.io.File;
 
-public interface ShotDetectionService {
+public interface FrameExtractionService {
 
     /**
      * @param String time   "00:00:10"

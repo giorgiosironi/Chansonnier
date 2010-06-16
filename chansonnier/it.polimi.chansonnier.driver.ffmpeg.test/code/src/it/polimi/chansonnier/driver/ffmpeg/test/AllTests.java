@@ -15,7 +15,7 @@ public class AllTests {
 		TestSuite suite = new TestSuite(
 				"Test for it.polimi.chansonnier.agent.test");
 		//$JUnit-BEGIN$
-		suite.addTestSuite(FfmpegShotDetectionServiceTest.class);
+		suite.addTestSuite(FfmpegFrameExtractionServiceTest.class);
 
 		//$JUnit-END$
 		return suite;

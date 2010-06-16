@@ -6,7 +6,7 @@
  ****************************************************************************/
 package it.polimi.chansonnier.processing;
 
-import it.polimi.chansonnier.spi.ShotDetectionService;
+import it.polimi.chansonnier.spi.FrameExtractionService;
 
 import java.io.File;
 
@@ -16,9 +16,9 @@ import org.eclipse.smila.datamodel.id.Id;
 import org.eclipse.smila.processing.ProcessingException;
 import org.eclipse.smila.processing.ProcessingService;
 
-public class ShotDetectionProcessingService implements ProcessingService {
+public class FrameExtractionProcessingService implements ProcessingService {
 
-	private ShotDetectionService _shotDetectionService;
+	private FrameExtractionService frameExtractionService;
 
 	@Override
 	public Id[] process(Blackboard blackboard, Id[] recordIds)
@@ -26,11 +26,11 @@ public class ShotDetectionProcessingService implements ProcessingService {
 		try {
 			for (Id id : recordIds) {
 				File original = blackboard.getAttachmentAsFile(id, "original");
-				File shot = _shotDetectionService.getImage(original, "00:00:10");
+				File shot = frameExtractionService.getImage(original, "00:00:10");
 				blackboard.setAttachmentFromFile(id, "image1", shot);
-				File shot2 = _shotDetectionService.getImage(original, "00:00:30");
+				File shot2 = frameExtractionService.getImage(original, "00:00:30");
 				blackboard.setAttachmentFromFile(id, "image2", shot2);
-				File shot3 = _shotDetectionService.getImage(original, "00:00:50");
+				File shot3 = frameExtractionService.getImage(original, "00:00:50");
 				blackboard.setAttachmentFromFile(id, "image3", shot3);
 			}
 		} catch (BlackboardAccessException e) {
@@ -39,9 +39,9 @@ public class ShotDetectionProcessingService implements ProcessingService {
 		return recordIds;
 	}
 
-	public void setShotDetectionService(
-			ShotDetectionService shotDetectionService) {
-		_shotDetectionService = shotDetectionService;
+	public void setFrameExtractionService(
+			FrameExtractionService shotDetectionService) {
+		frameExtractionService = shotDetectionService;
 		
 	}
 

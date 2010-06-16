@@ -12,15 +12,15 @@ import java.io.InputStream;
 
 import junit.framework.TestCase;
 
-import it.polimi.chansonnier.spi.ShotDetectionService;
-import it.polimi.chansonnier.driver.ffmpeg.FfmpegShotDetectionService;
+import it.polimi.chansonnier.spi.FrameExtractionService;
+import it.polimi.chansonnier.driver.ffmpeg.FfmpegFrameExtractionService;
 import it.polimi.chansonnier.utils.URLUtils;
 
-public class FfmpegShotDetectionServiceTest extends TestCase {
-	private ShotDetectionService _service;
+public class FfmpegFrameExtractionServiceTest extends TestCase {
+	private FrameExtractionService _service;
 	
 	protected void setUp() throws Exception {
-		_service = new FfmpegShotDetectionService();
+		_service = new FfmpegFrameExtractionService();
 	}
 	
 	public void testPngImageIsExtractedFromFlvVideoAtTheGivenSeekTime() throws Exception {

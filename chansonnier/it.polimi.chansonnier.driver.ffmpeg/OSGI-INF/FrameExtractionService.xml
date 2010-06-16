@@ -4,9 +4,9 @@
  the terms of the Eclipse Public License v1.0 which accompanies this 
  distribution, and is available at http://www.eclipse.org/legal/epl-v10.html
  -->
-<component xmlns="http://www.osgi.org/xmlns/scr/v1.1.0" name="ShotDetectionService" immediate="true">
-  <implementation class="it.polimi.chansonnier.driver.ffmpeg.FfmpegShotDetectionService" />
+<component xmlns="http://www.osgi.org/xmlns/scr/v1.1.0" name="FrameExtractionService" immediate="true">
+  <implementation class="it.polimi.chansonnier.driver.ffmpeg.FfmpegFrameExtractionService" />
   <service>
-     <provide interface="it.polimi.chansonnier.spi.ShotDetectionService"/>                 
+     <provide interface="it.polimi.chansonnier.spi.FrameExtractionService"/>                 
   </service>
 </component>
