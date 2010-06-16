@@ -98,6 +98,13 @@ public class LyricsProcessingServiceTest extends ProcessingServiceTest implement
 	    assertArtistAndTitleAttributesAreExtractedCorrectly(id);
 	}
 	
+	public void testRemovesAdditionalNonAlphanumericCharactersFromTitle() throws Exception {
+	    final Id id = createNewRecord(ARTIST + " - " + TITLE + " (((With Lyrics)))"); 
+	    _service.process(getBlackboard(), new Id[] { id });
+	    
+	    assertArtistAndTitleAttributesAreExtractedCorrectly(id);
+	}
+	
 	public void assertArtistAndTitleAttributesAreExtractedCorrectly(Id id) throws BlackboardAccessException {
 	    assertEquals(ARTIST, extractAttribute(id, "artist"));
 	    assertEquals(TITLE, extractAttribute(id, "title"));
@@ -105,7 +112,7 @@ public class LyricsProcessingServiceTest extends ProcessingServiceTest implement
 	
 	private Id createNewRecord(String pageTitle) throws BlackboardAccessException {
 	    final Id id = createBlackboardRecord("youtube", "http://www.youtube.com/dummy");
-	    setAttribute(id, new Path("PageTitle"), pageTitle);
+	    setAttribute(id, new Path("pageTitle"), pageTitle);
 	    return id;
 	}
 	
