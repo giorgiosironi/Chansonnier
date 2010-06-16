@@ -78,12 +78,25 @@ public class LyricsProcessingService implements ProcessingService {
 	}
 
 	private String removeNoise(String pageTitle) {
-		pageTitle = pageTitle.replaceAll("\\([^()]*\\)", "");
-		pageTitle = pageTitle.replaceAll("\\[[^()]*\\]", "");
-		Pattern badWord = Pattern.compile("(with){0,1} lyrics", Pattern.CASE_INSENSITIVE);
-		Matcher matcher = badWord.matcher(pageTitle);
-		pageTitle = matcher.replaceAll("");
+		pageTitle = removeTextBetweenParenthesis(pageTitle);
+		pageTitle = removeBadChars(pageTitle); 
+		pageTitle = removeCommonExpressions(pageTitle);
 		return pageTitle;
+	}
+
+	public String removeTextBetweenParenthesis(String text) {
+		return text.replaceAll("\\([^()]*\\)", "");
+	}
+	
+	private String removeBadChars(String text) {
+		return text.replaceAll("[^A-Za-z0-9- ]{1}", "");
+	}
+	
+	private String removeCommonExpressions(String text) {
+		Pattern badWord = Pattern.compile("(with){0,1} lyrics", Pattern.CASE_INSENSITIVE);
+		Matcher matcher = badWord.matcher(text);
+		text = matcher.replaceAll("");
+		return text;
 	}
 
 	public void setLyricsService(LyricsService lyricsService) {
