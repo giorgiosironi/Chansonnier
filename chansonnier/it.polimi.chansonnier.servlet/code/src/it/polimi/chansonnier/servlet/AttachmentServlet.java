@@ -19,8 +19,6 @@ import org.eclipse.smila.blackboard.Blackboard;
 import org.eclipse.smila.blackboard.BlackboardAccessException;
 import org.eclipse.smila.datamodel.id.Id;
 import org.eclipse.smila.datamodel.id.IdFactory;
-import org.eclipse.smila.datamodel.id.impl.IdImpl;
-import org.eclipse.smila.datamodel.id.impl.KeyImpl;
 
 public class AttachmentServlet extends HttpServlet {
 	private IdFactory idFactory = IdFactory.DEFAULT_INSTANCE;
