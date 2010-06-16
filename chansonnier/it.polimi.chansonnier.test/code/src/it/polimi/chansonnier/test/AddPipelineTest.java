@@ -37,30 +37,30 @@ public class AddPipelineTest extends FunctionalTest {
 		Thread.sleep(15000);
 		
 		SolrQuery query = new SolrQuery();
-	    query.setQuery( "Title:Hero" );
+	    query.setQuery( "title:Hero" );
 	    QueryResponse rsp = solrServer.query( query );
 	    SolrDocumentList docList = rsp.getResults();
 	    assertEquals(1, docList.size());
 	    SolrDocument song = docList.get(0);
 	    assertEquals("http://www.youtube.com/watch?v=owTmJrtD7g8", song.get("link"));
-	    assertEquals("Enrique Iglesias", song.get("Artist"));
-	    assertEquals("Hero", song.get("Title"));
-	    assertTrue(((String) song.get("Lyrics")).contains("if I asked you to dance"));
-	    assertEquals("anger", song.get("Emotion"));
-	    assertEquals("en", song.get("Language"));
+	    assertEquals("Enrique Iglesias", song.get("artist"));
+	    assertEquals("Hero", song.get("title"));
+	    assertTrue(((String) song.get("lyrics")).contains("if I asked you to dance"));
+	    assertEquals("anger", song.get("emotion"));
+	    assertEquals("en", song.get("language"));
 	    
 		query = new SolrQuery();
-	    query.setQuery( "Title:Halo" );
+	    query.setQuery( "title:Halo" );
 	    rsp = solrServer.query( query );
 	    docList = rsp.getResults();
 	    assertEquals(1, docList.size());
 	    song = docList.get(0);
 	    assertEquals("http://www.youtube.com/watch?v=fSdgBse1o7Q", song.get("link"));
-	    assertEquals("Beyonce", song.get("Artist"));
-	    assertEquals("Halo", song.get("Title"));
-	    assertEquals("surprise", song.get("Emotion"));
-	    assertEquals("en", song.get("Language"));
-	    assertTrue(((String) song.get("Lyrics")).contains("Remember those walls I built?"));
+	    assertEquals("Beyonce", song.get("artist"));
+	    assertEquals("Halo", song.get("title"));
+	    assertEquals("surprise", song.get("emotion"));
+	    assertEquals("en", song.get("language"));
+	    assertTrue(((String) song.get("lyrics")).contains("Remember those walls I built?"));
 	    
 	    
 	}

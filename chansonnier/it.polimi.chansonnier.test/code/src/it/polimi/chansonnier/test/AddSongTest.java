@@ -54,11 +54,11 @@ public class AddSongTest extends AcceptanceTest {
 		SolrDocumentList docList = searchForSongs("*:*");
 	    assertEquals(1, docList.size());
 	    SolrDocument song = docList.get(0);
-	    assertEquals("Green Day", song.get("Artist"));
-	    assertEquals("Boulevard of Broken Dreams", song.get("Title"));
-	    assertTrue(((String) song.get("Lyrics")).contains("I walk a lonely road"));
-//	    assertEquals("anger", song.get("Emotion"));
-//		assertSongsListContainsSongImage(response, "<img src=\"attachment?name=Image1&id=" + link + "\" />");
+	    assertEquals("Green Day", song.get("artist"));
+	    assertEquals("Boulevard of Broken Dreams", song.get("title"));
+	    assertTrue(((String) song.get("lyrics")).contains("I walk a lonely road"));
+//	    assertEquals("anger", song.get("emotion"));
+//		assertSongsListContainsSongImage(response, "<img src=\"attachment?name=image1&id=" + link + "\" />");
 	}
 	
 	public void testFixturesCanBeAddedWithThePushOfAButton() throws Exception {
@@ -69,10 +69,10 @@ public class AddSongTest extends AcceptanceTest {
 		req = new PostMethodWebRequest( "http://localhost:8080/chansonnier/fixtures" );
 		resp = wc.getResponse( req );
 		Thread.sleep(15000);
-		SolrDocumentList result = searchForSongs("Title:Hero");
+		SolrDocumentList result = searchForSongs("title:Hero");
 		assertEquals(1, result.size());
 		String id = (String) result.get(0).get("link");
-		WebRequest image = new GetMethodWebRequest("http://localhost:8080/chansonnier/attachment?id=" + id + "&name=Image1");
+		WebRequest image = new GetMethodWebRequest("http://localhost:8080/chansonnier/attachment?id=" + id + "&name=image1");
 		resp = wc.getResponse(image);
 		assertEquals(200, resp.getResponseCode());
 	}

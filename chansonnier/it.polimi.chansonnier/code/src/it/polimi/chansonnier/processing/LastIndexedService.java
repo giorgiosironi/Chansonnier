@@ -23,7 +23,7 @@ public class LastIndexedService implements ProcessingService {
 			throws ProcessingException {
 		try {
 			for (Id id : recordIds) {
-				_lastTitle = blackboard.getLiteral(id, new Path("Title")).toString();	
+				_lastTitle = blackboard.getLiteral(id, new Path("title")).toString();	
                 _lastSongs.add(id);
 			}
 		} catch (BlackboardAccessException e) {

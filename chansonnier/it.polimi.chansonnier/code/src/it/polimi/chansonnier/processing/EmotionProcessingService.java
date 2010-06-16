@@ -24,17 +24,17 @@ public class EmotionProcessingService implements ProcessingService {
 	@Override
 	public Id[] process(Blackboard blackboard, Id[] recordIds)
 			throws ProcessingException {
-		Path p = new Path("Lyrics");
+		Path p = new Path("lyrics");
 		try {
 			for (Id id : recordIds) {
 				Literal lyrics = blackboard.getLiteral(id, p);
 				FuzzyResult emotion = _emotionRecognitionService.getEmotion(lyrics.toString());
 				Literal value = blackboard.createLiteral(id);
 				value.setStringValue(emotion.getValue());
-				blackboard.addLiteral(id, new Path("Emotion"), value);
+				blackboard.addLiteral(id, new Path("emotion"), value);
 				Literal confidence = blackboard.createLiteral(id);
 				confidence.setFpValue(emotion.getConfidence());
-				blackboard.addLiteral(id, new Path("EmotionConfidence"), confidence);
+				blackboard.addLiteral(id, new Path("emotionConfidence"), confidence);
 			}
 		} catch (BlackboardAccessException e) {
 			throw new ProcessingException(e);

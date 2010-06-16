@@ -26,15 +26,15 @@ public class EmotionProcessingServiceTest extends ProcessingServiceTest implemen
 	
 	public void testAddsAnEmotionAttributeUsingTheLyricsOne() throws Exception {
 		final Id id = createBlackboardRecord("source", "item");
-		Path p = new Path("Lyrics");
+		Path p = new Path("lyrics");
 	    setAttribute(id, p, LYRICS);
 	    
 	    Id[] result = _service.process(getBlackboard(), new Id[] { id });
 	    assertEquals(1, result.length);
 	    
-	    Literal emotion = getBlackboard().getLiteral(id, new Path("Emotion"));
+	    Literal emotion = getBlackboard().getLiteral(id, new Path("emotion"));
 	    assertEquals("Happiness", emotion.getStringValue());
-	    Literal confidence = getBlackboard().getLiteral(id, new Path("EmotionConfidence"));
+	    Literal confidence = getBlackboard().getLiteral(id, new Path("emotionConfidence"));
 	    assertEquals(0.9, confidence.getFpValue());
 	}
 

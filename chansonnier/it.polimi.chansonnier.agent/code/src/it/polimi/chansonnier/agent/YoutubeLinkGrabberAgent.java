@@ -117,7 +117,7 @@ public class YoutubeLinkGrabberAgent extends AbstractAgent implements LinkGrabbe
         Literal l = new LiteralImpl();
         l.setStringValue(value);
         attribute.addLiteral(l);
-        record.getMetadata().setAttribute("PageTitle", attribute);
+        record.getMetadata().setAttribute("pageTitle", attribute);
 	}
 	
 	private void _setDescription(Record record, String value) {
@@ -126,7 +126,7 @@ public class YoutubeLinkGrabberAgent extends AbstractAgent implements LinkGrabbe
         Literal l = new LiteralImpl();
         l.setStringValue(value);
         attribute.addLiteral(l);
-        record.getMetadata().setAttribute("Description", attribute);
+        record.getMetadata().setAttribute("description", attribute);
 	}
 	
 	private void _setKeywords(Record record, String value) {
@@ -135,7 +135,7 @@ public class YoutubeLinkGrabberAgent extends AbstractAgent implements LinkGrabbe
         Literal l = new LiteralImpl();
         l.setStringValue(value);
         attribute.addLiteral(l);
-        record.getMetadata().setAttribute("Keywords", attribute);
+        record.getMetadata().setAttribute("keywords", attribute);
 	}
 	
 	private void _setOriginal(Record record, InputStream video) throws IOException {
@@ -144,7 +144,7 @@ public class YoutubeLinkGrabberAgent extends AbstractAgent implements LinkGrabbe
 		for (int n; (n = video.read(b)) != -1; ) {
 			out.write(b, 0, n);
 		}
-		record.setAttachment("Original", out.toByteArray());
+		record.setAttachment("original", out.toByteArray());
 		
 	}
 

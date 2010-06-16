@@ -40,11 +40,11 @@ public class FixtureManager {
 		System.out.println(song.getKey());
 		final Literal pageTitleL = blackboard.createLiteral(song);
 		pageTitleL.setStringValue(pageTitle);
-		blackboard.setLiteral(song, new Path("PageTitle"), pageTitleL);
+		blackboard.setLiteral(song, new Path("pageTitle"), pageTitleL);
 		final Literal linkL = blackboard.createLiteral(song);
 		linkL.setStringValue(key);
 		blackboard.setLiteral(song, new Path("link"), linkL);
-		blackboard.setAttachmentFromStream(song, "Original", original);
+		blackboard.setAttachmentFromStream(song, "original", original);
 		return song;
 	}
 	
