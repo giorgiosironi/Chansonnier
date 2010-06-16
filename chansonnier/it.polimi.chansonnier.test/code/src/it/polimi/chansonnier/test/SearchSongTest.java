@@ -31,6 +31,10 @@ public class SearchSongTest extends AcceptanceTest {
 		
 		selenium.open("/chansonnier/index.html");
 		wrapped.verifyTrue(selenium.isTextPresent("Beautiful Day"));
+		selenium.click("link=happiness");
+		wrapped.verifyTrue(selenium.isTextPresent("(x) emotion:happiness"));
+		wrapped.verifyTrue(selenium.isTextPresent("The heart is a bloom"));
+
 		/*
 		req = new GetMethodWebRequest( "http://localhost:8080/chansonnier/index.html" );
 		WebConversation conn = new WebConversation();
