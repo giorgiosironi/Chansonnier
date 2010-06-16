@@ -29,7 +29,7 @@ public class LyricsProcessingServiceTest extends ProcessingServiceTest implement
 	    
 	    _service.process(getBlackboard(), new Id[] { id });
 	    
-	    assertEquals(LYRICS, extractAttribute(id, "Lyrics"));
+	    assertEquals(LYRICS, extractAttribute(id, "lyrics"));
 	}
 	
 	public void testCreatesArtistAndTitleAttributesBasingOnWhichCombinationFindsTheLyrics() throws Exception {
@@ -37,8 +37,7 @@ public class LyricsProcessingServiceTest extends ProcessingServiceTest implement
 	    
 	    _service.process(getBlackboard(), new Id[] { id });
 	    
-	    assertEquals(ARTIST, extractAttribute(id, "Artist"));
-	    assertEquals(TITLE, extractAttribute(id, "Title"));
+	    assertArtistAndTitleAttributesAreExtractedCorrectly(id);
 	}
 	
 	public void testStoresLyricsAsAnAnnotationWhenTitleComesBeforeArtist() throws Exception {
@@ -46,7 +45,7 @@ public class LyricsProcessingServiceTest extends ProcessingServiceTest implement
 	    
 	    _service.process(getBlackboard(), new Id[] { id });
 	    
-	    assertEquals(LYRICS, extractAttribute(id, "Lyrics"));
+	    assertEquals(LYRICS, extractAttribute(id, "lyrics"));
 	}
 	
 	public void testRemovesParenthetizedNoiseFromPageTitle() throws Exception {
@@ -54,56 +53,54 @@ public class LyricsProcessingServiceTest extends ProcessingServiceTest implement
 	    
 	    _service.process(getBlackboard(), new Id[] { id });
 	    
-	    assertEquals(ARTIST, extractAttribute(id, "Artist"));
-	    assertEquals(TITLE, extractAttribute(id, "Title"));
+	    assertArtistAndTitleAttributesAreExtractedCorrectly(id);
 	}
 	
 	public void testRemovesParenthetizedNoiseFromPageTitle2() throws Exception {
 	    final Id id = createNewRecord(ARTIST + " - " + TITLE + " (song & lyrics)"); 
 	    _service.process(getBlackboard(), new Id[] { id });
 	    
-	    assertEquals(ARTIST, extractAttribute(id, "Artist"));
-	    assertEquals(TITLE, extractAttribute(id, "Title"));
+	    assertArtistAndTitleAttributesAreExtractedCorrectly(id);
 	}
 	
 	public void testRemovesParenthetizedNoiseFromPageTitle3() throws Exception {
 	    final Id id = createNewRecord(ARTIST + " - " + TITLE + " [ with lyrics]"); 
 	    _service.process(getBlackboard(), new Id[] { id });
 	    
-	    assertEquals(ARTIST, extractAttribute(id, "Artist"));
-	    assertEquals(TITLE, extractAttribute(id, "Title"));
+	    assertArtistAndTitleAttributesAreExtractedCorrectly(id);
 	}
 	
 	public void testRemovesTheWordLyricsFromPageTitle() throws Exception {
 	    final Id id = createNewRecord(ARTIST + " - " + TITLE + " lyrics"); 
 	    _service.process(getBlackboard(), new Id[] { id });
 	    
-	    assertEquals(ARTIST, extractAttribute(id, "Artist"));
-	    assertEquals(TITLE, extractAttribute(id, "Title"));
+	    assertArtistAndTitleAttributesAreExtractedCorrectly(id);
 	}
 	
 	public void testRemovesTheWordLyricsFromPageTitleWithoutCaseSensitivity() throws Exception {
 	    final Id id = createNewRecord(ARTIST + " - " + TITLE + " Lyrics"); 
 	    _service.process(getBlackboard(), new Id[] { id });
 	    
-	    assertEquals(ARTIST, extractAttribute(id, "Artist"));
-	    assertEquals(TITLE, extractAttribute(id, "Title"));
+	    assertArtistAndTitleAttributesAreExtractedCorrectly(id);
 	}
 	
 	public void testRemovesTheWordsWithLyricsFromPageTitle() throws Exception {
 	    final Id id = createNewRecord(ARTIST + " - " + TITLE + " with lyrics"); 
 	    _service.process(getBlackboard(), new Id[] { id });
 	    
-	    assertEquals(ARTIST, extractAttribute(id, "Artist"));
-	    assertEquals(TITLE, extractAttribute(id, "Title"));
+	    assertArtistAndTitleAttributesAreExtractedCorrectly(id);
 	}
 	
 	public void testRemovesTheWordsWithLyricsFromPageTitleWithoutCaseSensitivity() throws Exception {
 	    final Id id = createNewRecord(ARTIST + " - " + TITLE + " With Lyrics"); 
 	    _service.process(getBlackboard(), new Id[] { id });
 	    
-	    assertEquals(ARTIST, extractAttribute(id, "Artist"));
-	    assertEquals(TITLE, extractAttribute(id, "Title"));
+	    assertArtistAndTitleAttributesAreExtractedCorrectly(id);
+	}
+	
+	public void assertArtistAndTitleAttributesAreExtractedCorrectly(Id id) throws BlackboardAccessException {
+	    assertEquals(ARTIST, extractAttribute(id, "artist"));
+	    assertEquals(TITLE, extractAttribute(id, "title"));
 	}
 	
 	private Id createNewRecord(String pageTitle) throws BlackboardAccessException {

@@ -18,18 +18,19 @@ import javax.servlet.http.HttpServletResponse;
 import org.eclipse.smila.blackboard.Blackboard;
 import org.eclipse.smila.blackboard.BlackboardAccessException;
 import org.eclipse.smila.datamodel.id.Id;
-import org.eclipse.smila.datamodel.id.impl.IdImpl;
-import org.eclipse.smila.datamodel.id.impl.KeyImpl;
+import org.eclipse.smila.datamodel.id.IdFactory;
 
 public class AttachmentServlet extends HttpServlet {
+	private IdFactory idFactory = IdFactory.DEFAULT_INSTANCE;
+	
 	public void doGet(HttpServletRequest request, HttpServletResponse response) 
 		throws ServletException, IOException {
         response.setContentType("image/png");
 	    String key = request.getParameter("id");
 	    String name = request.getParameter("name");
         try {
-            Id id = new IdImpl("youtube", new KeyImpl(key));
-            Blackboard blackboard = Activator.getBlackboardFactory().createPersistingBlackboard();
+            Id id = idFactory.createId("youtube", key);
+            Blackboard blackboard = Activator.getBlackboard();
             InputStream is = blackboard.getAttachmentAsStream(id, name);
             OutputStream o = response.getOutputStream();
             byte[] buf = new byte[32 * 1024]; // 32k buffer

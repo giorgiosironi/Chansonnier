@@ -20,15 +20,15 @@ public class LanguageProcessingServiceTest extends ProcessingServiceTest impleme
 	
 	public void testAddsALanguageAttributeUsingTheLyricsOne() throws Exception {
 		final Id id = createBlackboardRecord("source", "item");
-		Path p = new Path("Lyrics");
+		Path p = new Path("lyrics");
 	    setAttribute(id, p, LYRICS);
 	    
 	    Id[] result = _service.process(getBlackboard(), new Id[] { id });
 	    assertEquals(1, result.length);
 	    
-	    Literal language = getBlackboard().getLiteral(id, new Path("Language"));
+	    Literal language = getBlackboard().getLiteral(id, new Path("language"));
 	    assertEquals("es", language.getStringValue());
-	    Literal confidence = getBlackboard().getLiteral(id, new Path("LanguageConfidence"));
+	    Literal confidence = getBlackboard().getLiteral(id, new Path("languageConfidence"));
 	    assertEquals(0.9, confidence.getFpValue());
 	}
 

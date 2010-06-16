@@ -17,17 +17,17 @@ public class LanguageProcessingService implements ProcessingService {
 	@Override
 	public Id[] process(Blackboard blackboard, Id[] recordIds)
 			throws ProcessingException {
-		Path p = new Path("Lyrics");
+		Path p = new Path("lyrics");
 		try {
 			for (Id id : recordIds) {
 				Literal lyrics = blackboard.getLiteral(id, p);
 				FuzzyResult language = _driver.getLanguage(lyrics.toString());
 				Literal value = blackboard.createLiteral(id);
 				value.setStringValue(language.getValue());
-				blackboard.addLiteral(id, new Path("Language"), value);
+				blackboard.addLiteral(id, new Path("language"), value);
 				Literal confidence = blackboard.createLiteral(id);
 				confidence.setFpValue(language.getConfidence());
-				blackboard.addLiteral(id, new Path("LanguageConfidence"), confidence);
+				blackboard.addLiteral(id, new Path("languageConfidence"), confidence);
 			}
 		} catch (BlackboardAccessException e) {
 			throw new ProcessingException(e);

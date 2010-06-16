@@ -6,7 +6,7 @@ AjaxSolr.ResultWidget = AjaxSolr.AbstractWidget.extend({
     for (var i = 0, l = this.manager.response.response.docs.length; i < l; i++) {
       var doc = this.manager.response.response.docs[i];
       $(this.target).append(AjaxSolr.theme('result', doc));
-      var items = this.facetLinks('Emotion', [doc.Emotion]);
+      var items = this.facetLinks('emotion', [doc.emotion]);
       AjaxSolr.theme('list_items', '#links_' + doc.uuid, items);
     }
   },

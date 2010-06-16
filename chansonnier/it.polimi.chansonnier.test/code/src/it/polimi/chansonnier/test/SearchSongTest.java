@@ -9,6 +9,8 @@ package it.polimi.chansonnier.test;
 import com.meterware.httpunit.GetMethodWebRequest;
 import com.meterware.httpunit.WebRequest;
 
+import it.polimi.chansonnier.fixtures.Fixtures;
+
 import java.io.File;
 import java.net.URL;
 import java.io.InputStream;
@@ -17,7 +19,7 @@ import java.io.InputStream;
 
 public class SearchSongTest extends AcceptanceTest {	
 	public void testGivenAnAddedYouTubeLinkTheSongIsSearchable() throws Exception {
-		InputStream beautifulDayFlv = SearchSongTest.class.getResourceAsStream("fixtures/beautifulday.flv");
+		InputStream beautifulDayFlv = Fixtures.class.getResourceAsStream("beautifulday.flv");
 		fixtureManager.addSong("http://www.youtube.com/watch?v=e8w7f0ShtIM", beautifulDayFlv, "U2 - Beautiful Day (with Lyrics)");
 		Thread.sleep(10000);
 		//WebResponse resp = addVideoLink("http://www.youtube.com/watch?v=e8w7f0ShtIM");
@@ -31,6 +33,10 @@ public class SearchSongTest extends AcceptanceTest {
 		selenium.open("/chansonnier/index.html");
         Thread.sleep(5000);
 		wrapped.verifyTrue(selenium.isTextPresent("Beautiful Day"));
+		selenium.click("link=happiness");
+		wrapped.verifyTrue(selenium.isTextPresent("(x) emotion:happiness"));
+		wrapped.verifyTrue(selenium.isTextPresent("The heart is a bloom"));
+
 		/*
 		req = new GetMethodWebRequest( "http://localhost:8080/chansonnier/index.html" );
 		WebConversation conn = new WebConversation();

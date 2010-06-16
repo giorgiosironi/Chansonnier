@@ -26,5 +26,6 @@ Import-Package: junit.framework;version="[3.8.0,4.0.0)",
  org.apache.solr.client.solrj.response,
  org.apache.solr.common,
  org.apache.solr.common.params,
- it.polimi.chansonnier.utils
+ it.polimi.chansonnier.utils,
+ it.polimi.chansonnier.fixtures
 Export-Package: it.polimi.chansonnier.test

@@ -21,9 +21,9 @@ public class LastServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter writer = response.getWriter();
 		writer.println("Last songs added to the index...");
-		String lastSongTitle = Activator.lastIndexedService.getLastTitle();
+		String lastSongTitle = Activator.getLastIndexedService().getLastTitle();
 		response.getWriter().println("Last: " + lastSongTitle + "<br />");
-        List<Id> lastSongs = Activator.lastIndexedService.getLastSongs();
+        List<Id> lastSongs = Activator.getLastIndexedService().getLastSongs();
         for (Id id : lastSongs) {
         	String key = id.getKey().toString();
         	response.getWriter().println("<a href=\"" + key + "\">" + key + "</a><br />");

@@ -39,7 +39,7 @@ public class LyricsProcessingService implements ProcessingService {
 			}
 			for (Id id : recordIds) {
 				_log.debug("it.polimi.chansonnier.processing.LyricsProcessingService: processing " + id.toString());
-				String pageTitle = blackboard.getLiteral(id, new Path("PageTitle")).toString();
+				String pageTitle = blackboard.getLiteral(id, new Path("pageTitle")).toString();
 				pageTitle = removeNoise(pageTitle);
 				String[] pieces = pageTitle.split("-");
 				String title = "Unknown";
@@ -61,14 +61,14 @@ public class LyricsProcessingService implements ProcessingService {
 				if (lyrics != null) {
 					Literal lyricsAttribute = blackboard.createLiteral(id);
 					lyricsAttribute.setStringValue(lyrics);
-					blackboard.setLiteral(id, new Path("Lyrics"), lyricsAttribute);
+					blackboard.setLiteral(id, new Path("lyrics"), lyricsAttribute);
 				}
 				Literal artistAttribute = blackboard.createLiteral(id);
 				artistAttribute.setStringValue(artist);
-				blackboard.setLiteral(id, new Path("Artist"), artistAttribute);
+				blackboard.setLiteral(id, new Path("artist"), artistAttribute);
 				Literal titleAttribute = blackboard.createLiteral(id);
 				titleAttribute.setStringValue(title);
-				blackboard.setLiteral(id, new Path("Title"), titleAttribute);
+				blackboard.setLiteral(id, new Path("title"), titleAttribute);
 			}
 		} catch (BlackboardAccessException e) {
 			// TODO Auto-generated catch block

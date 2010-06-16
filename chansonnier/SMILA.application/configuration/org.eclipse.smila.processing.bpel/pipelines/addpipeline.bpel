@@ -53,9 +53,9 @@
                 </proc:invokeService>
             </extensionActivity>
                     
-            <extensionActivity name="invokeShotDetectionProcessingService">
+            <extensionActivity name="invokeFrameExtractionProcessingService">
                 <proc:invokeService>
-                    <proc:service name="ShotDetectionProcessingService" />
+                    <proc:service name="FrameExtractionProcessingService" />
                     <proc:variables input="request" output="request" />
                 </proc:invokeService>
             </extensionActivity>

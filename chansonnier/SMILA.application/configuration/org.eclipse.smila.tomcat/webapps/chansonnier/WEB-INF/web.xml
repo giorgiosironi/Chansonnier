@@ -15,6 +15,10 @@
     <servlet-name>attachment</servlet-name>
     <servlet-class>it.polimi.chansonnier.servlet.AttachmentServlet</servlet-class>
   </servlet>
+    <servlet>
+    <servlet-name>fixtures</servlet-name>
+    <servlet-class>it.polimi.chansonnier.servlet.FixturesServlet</servlet-class>
+  </servlet>
  
   
   <servlet-mapping>
@@ -28,6 +32,10 @@
   <servlet-mapping>
     <servlet-name>attachment</servlet-name>
     <url-pattern>/attachment</url-pattern>
+  </servlet-mapping>
+    <servlet-mapping>
+    <servlet-name>fixtures</servlet-name>
+    <url-pattern>/fixtures</url-pattern>
   </servlet-mapping>
 
 </web-app>

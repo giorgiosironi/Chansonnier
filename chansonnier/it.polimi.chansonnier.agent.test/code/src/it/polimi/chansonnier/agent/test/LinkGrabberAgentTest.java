@@ -92,12 +92,12 @@ public class LinkGrabberAgentTest extends DeclarativeServiceTestCase implements 
 	    // TODO: maybe the link saved should be the rev="canonical" value
 	    assertEquals(LINK, record.getId().getKey().getKey());
 	    assertEquals(LINK, record.getMetadata().getAttribute("link").getLiteral().toString());
-		assertEquals("See Ya In Anotha Life, Brotha !", record.getMetadata().getAttribute("PageTitle").getLiteral().toString());
-		assertEquals("Favorite quote from the favorite quasi-nuts character of Lost", record.getMetadata().getAttribute("Description").getLiteral().toString());
-		assertEquals("desmond, lost, see, you, in, another, life, brother, ya, anotha, brotha", record.getMetadata().getAttribute("Keywords").getLiteral().toString());
+		assertEquals("See Ya In Anotha Life, Brotha !", record.getMetadata().getAttribute("pageTitle").getLiteral().toString());
+		assertEquals("Favorite quote from the favorite quasi-nuts character of Lost", record.getMetadata().getAttribute("description").getLiteral().toString());
+		assertEquals("desmond, lost, see, you, in, another, life, brother, ya, anotha, brotha", record.getMetadata().getAttribute("keywords").getLiteral().toString());
 		
 		try {
-			byte[] attachment = record.getAttachment("Original");
+			byte[] attachment = record.getAttachment("original");
 			assertNotNull(attachment);
 			assertEquals(URLUtils.readStart("test/flv/desmond.flv"),
 						 URLUtils.readStart(new ByteArrayInputStream(attachment)));

@@ -58,16 +58,16 @@
     <field name="uuid" type="uuid" indexed="true" stored="true" default="NEW"/>
     <field name="link" type="string" indexed="true" stored="true"/>
 
-   <field name="PageTitle" type="string" indexed="true" stored="true"/>
-   <field name="Artist" type="string" indexed="true" stored="true"/>
-   <field name="Title" type="string" indexed="true" stored="true"/>
-   <field name="Lyrics" type="string" indexed="true" stored="true"/>
-   <field name="Description" type="string" indexed="true" stored="true"/>
-   <field name="Keywords" type="string" indexed="true" stored="true"/>
-   <field name="Emotion" type="string" indexed="true" stored="true"/>
-   <field name="EmotionConfidence" type="string" indexed="true" stored="true"/>
-   <field name="Language" type="string" indexed="true" stored="true"/>
-   <field name="LanguageConfidence" type="string" indexed="true" stored="true"/>
+   <field name="pageTitle" type="string" indexed="true" stored="true"/>
+   <field name="artist" type="string" indexed="true" stored="true"/>
+   <field name="title" type="string" indexed="true" stored="true"/>
+   <field name="lyrics" type="string" indexed="true" stored="true"/>
+   <field name="description" type="string" indexed="true" stored="true"/>
+   <field name="keywords" type="string" indexed="true" stored="true"/>
+   <field name="emotion" type="string" indexed="true" stored="true"/>
+   <field name="emotionConfidence" type="string" indexed="true" stored="true"/>
+   <field name="language" type="string" indexed="true" stored="true"/>
+   <field name="languageConfidence" type="string" indexed="true" stored="true"/>
 
 
  </fields>

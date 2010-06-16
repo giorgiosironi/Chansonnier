@@ -16,18 +16,4 @@
       <service name="proc:AddPipeline" port="ProcessorPort" />
     </provide>    
   </process>
-
-  <process name="proc:DeletePipeline">
-    <in-memory>true</in-memory>
-    <provide partnerLink="Pipeline">
-      <service name="proc:DeletePipeline" port="ProcessorPort" />
-    </provide>    
-  </process>
-  
-   <process name="proc:SearchPipeline">
-    <in-memory>true</in-memory>
-    <provide partnerLink="Pipeline">
-      <service name="proc:SearchPipeline" port="ProcessorPort" />
-    </provide>    
-  </process>
 </deploy>

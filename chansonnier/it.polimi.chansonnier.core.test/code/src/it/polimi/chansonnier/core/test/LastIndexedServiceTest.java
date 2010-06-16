@@ -21,9 +21,9 @@ public class LastIndexedServiceTest extends ProcessingServiceTest {
 	}
 	
 	public void testStoresLastRecordProcessedTitleAttribute() throws Exception {
-		final Id id = createBlackboardRecord("source", "id");
-		setAttribute(id, new Path("Title"), TITLE);
-		setAttribute(id, new Path("Artist"), ARTIST);
+		final Id id = createBlackboardRecord("source", "key");
+		setAttribute(id, new Path("title"), TITLE);
+		setAttribute(id, new Path("artist"), ARTIST);
     
 		Id[] result = _service.process(getBlackboard(), new Id[] { id });
 		
