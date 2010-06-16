@@ -236,7 +236,6 @@ AjaxSolr.PagerWidget = AjaxSolr.AbstractWidget.extend(
     if (this.totalPages) {
       links.unshift(this.pageLinkOrSpan(this.previousPage(), [ 'pager-disabled', 'pager-prev' ], this.prevLabel));
       links.push(this.pageLinkOrSpan(this.nextPage(), [ 'pager-disabled', 'pager-next' ], this.nextLabel));
-      console.log(links);
       AjaxSolr.theme('list_items', this.target, links, this.separator);
     }
   },
