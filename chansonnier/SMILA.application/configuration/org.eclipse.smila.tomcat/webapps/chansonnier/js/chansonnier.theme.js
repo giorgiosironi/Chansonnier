@@ -6,11 +6,13 @@ AjaxSolr.theme.prototype.result = function (doc, snippet) {
   output += '<p id="links_' + doc.uuid + '" class="links"></p>';
   //output += '<p>' + snippet + '</p>';
   image = function(attachmentName) {
-  	var path = 'http://localhost:8080/chansonnier/attachment?id=' + doc.link + '&name=' + attachmentName;
-  	//var path = 'attachment?id=' + doc.link + '&name=' + attachmentName;
+  	var path = 'attachment?id=' + doc.link + '&name=' + attachmentName;
   	return '<a href="' + path + '"><img src="' + path + '" height="30" width="40" /></a>';
   }
-  output += '<div class="images">' + image('image1') + image('image2') + image('image3') + '</div>';
+  output += '<div class="images">';
+  for (index in doc.image) {
+  	output += image(doc.image[index]);
+  }
   output += '</div>';
   return output;
 };

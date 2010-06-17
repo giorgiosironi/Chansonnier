@@ -1,6 +1,5 @@
 package it.polimi.chansonnier.servlet;
 
-import it.polimi.chansonnier.agent.LinkGrabberAgent;
 import it.polimi.chansonnier.fixtures.Fixtures;
 import it.polimi.chansonnier.utils.FixtureManager;
 
@@ -12,10 +11,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import org.eclipse.smila.blackboard.BlackboardAccessException;
-import org.eclipse.smila.connectivity.ConnectivityException;
-import org.eclipse.smila.datamodel.id.Id;
 
 public class FixturesServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

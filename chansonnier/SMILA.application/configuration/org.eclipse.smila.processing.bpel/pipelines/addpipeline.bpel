@@ -43,6 +43,14 @@
                 <proc:invokeService>
                     <proc:service name="EmotionProcessingService" />
                     <proc:variables input="request" output="request" />
+                    <proc:setAnnotations>
+      					<rec:An n="it.polimi.chansonnier.processing.Input">
+        					<rec:V>lyrics</rec:V>
+      					</rec:An>
+      					<rec:An n="it.polimi.chansonnier.processing.Output">
+        					<rec:V>emotion</rec:V>
+      					</rec:An>
+    				</proc:setAnnotations>
                 </proc:invokeService>
             </extensionActivity>
             

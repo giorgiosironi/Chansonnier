@@ -6,7 +6,9 @@
  ****************************************************************************/
 package it.polimi.chansonnier.core.test;
 
+import java.io.File;
 import java.io.UnsupportedEncodingException;
+import java.util.List;
 
 import org.eclipse.smila.blackboard.Blackboard;
 import org.eclipse.smila.blackboard.BlackboardAccessException;
@@ -84,6 +86,11 @@ public abstract class ProcessingServiceTest extends DeclarativeServiceTestCase {
 				return getBlackboard().getLiteral(id, path);
 			}
 	
+	protected List<Literal> getAttributes(final Id id, final Path path)
+	throws BlackboardAccessException {
+		return getBlackboard().getLiterals(id, path);
+	}
+	
 	protected Annotation getAnnotation(Id id, Path path, String name) throws BlackboardAccessException {
 		return getBlackboard().getAnnotation(id, path, name);
 	}
@@ -100,10 +107,9 @@ public abstract class ProcessingServiceTest extends DeclarativeServiceTestCase {
 	   * @throws UnsupportedEncodingException
 	   *           if any error occurs
 	   */
-	  private void setAttachment(final Id id, final String name) throws BlackboardAccessException,
+	  protected void setAttachment(final Id id, final String name, File file) throws BlackboardAccessException,
 	    UnsupportedEncodingException {
-		  // TODO
-	    getBlackboard().setAttachment(id, name, null);
+		  getBlackboard().setAttachmentFromFile(id, name, file);
 	  }
 
 	
@@ -114,20 +120,14 @@ public abstract class ProcessingServiceTest extends DeclarativeServiceTestCase {
 	   *          the record id
 	   * @param name
 	   *          the name of the attachment
-	   * @return a String
 	   * @throws BlackboardAccessException
 	   *           if any error occurs
 	   * @throws UnsupportedEncodingException
 	   *           if any error occurs
 	   */
-	  private String getAttachment(final Id id, final String name) throws BlackboardAccessException,
+	  protected File getAttachment(final Id id, final String name) throws BlackboardAccessException,
 	    UnsupportedEncodingException {
-		  // TODO
-	    final byte[] bytes = getBlackboard().getAttachment(id, name);
-	    if (bytes != null) {
-	      return new String(bytes, "utf-8");
-	    }
-	    return null;
+		  return getBlackboard().getAttachmentAsFile(id, name);
 	  }
 
 }

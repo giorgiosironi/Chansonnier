@@ -33,6 +33,7 @@ public class FfmpegFrameExtractionService implements FrameExtractionService {
 			int statusCode = ffmpeg.waitFor();
 
             /*
+             * It's normal that statusCode it's not 0, but the images are produced anyway
 			if (statusCode != 0) {
 				throw new RuntimeException("ffmpeg exited with status: " + statusCode);
 			}

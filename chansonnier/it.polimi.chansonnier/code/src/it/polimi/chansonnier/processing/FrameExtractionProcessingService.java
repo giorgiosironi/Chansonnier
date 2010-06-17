@@ -12,7 +12,9 @@ import java.io.File;
 
 import org.eclipse.smila.blackboard.Blackboard;
 import org.eclipse.smila.blackboard.BlackboardAccessException;
+import org.eclipse.smila.blackboard.path.Path;
 import org.eclipse.smila.datamodel.id.Id;
+import org.eclipse.smila.datamodel.record.Literal;
 import org.eclipse.smila.processing.ProcessingException;
 import org.eclipse.smila.processing.ProcessingService;
 
@@ -26,17 +28,28 @@ public class FrameExtractionProcessingService implements ProcessingService {
 		try {
 			for (Id id : recordIds) {
 				File original = blackboard.getAttachmentAsFile(id, "original");
-				File shot = frameExtractionService.getImage(original, "00:00:10");
-				blackboard.setAttachmentFromFile(id, "image1", shot);
-				File shot2 = frameExtractionService.getImage(original, "00:00:30");
-				blackboard.setAttachmentFromFile(id, "image2", shot2);
-				File shot3 = frameExtractionService.getImage(original, "00:00:50");
-				blackboard.setAttachmentFromFile(id, "image3", shot3);
+				File frame = frameExtractionService.getImage(original, "00:00:10");
+				addImageAttribute(blackboard, id, "image1");
+				blackboard.setAttachmentFromFile(id, "image1", frame);
+				
+				File frame2 = frameExtractionService.getImage(original, "00:00:30");
+				addImageAttribute(blackboard, id, "image2");
+				blackboard.setAttachmentFromFile(id, "image2", frame2);
+				
+				File frame3 = frameExtractionService.getImage(original, "00:00:50");
+				addImageAttribute(blackboard, id, "image3");
+				blackboard.setAttachmentFromFile(id, "image3", frame3);
 			}
 		} catch (BlackboardAccessException e) {
 			throw new ProcessingException(e);
 		}
 		return recordIds;
+	}
+
+	private void addImageAttribute(Blackboard blackboard, Id id, String attachmentName) throws BlackboardAccessException {
+		Literal literal = blackboard.createLiteral(id);
+		literal.setStringValue(attachmentName);
+		blackboard.addLiteral(id, new Path("image"), literal);
 	}
 
 	public void setFrameExtractionService(
