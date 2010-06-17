@@ -68,6 +68,7 @@
    <field name="emotionConfidence" type="string" indexed="true" stored="true"/>
    <field name="language" type="string" indexed="true" stored="true"/>
    <field name="languageConfidence" type="string" indexed="true" stored="true"/>
+   <field name="image" type="string" indexed="true" stored="true" multiValued="true" />
 
 
  </fields>

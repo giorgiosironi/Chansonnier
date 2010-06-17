@@ -5,14 +5,16 @@ Bundle-SymbolicName: it.polimi.chansonnier.core.test
 Bundle-Version: 0.1.0
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Import-Package: it.polimi.chansonnier,
+ it.polimi.chansonnier.fixtures,
  it.polimi.chansonnier.processing,
  it.polimi.chansonnier.spi,
+ it.polimi.chansonnier.utils,
+ junit.framework;version="[3.8.0,4.0.0)",
  org.apache.commons.logging,
  org.eclipse.smila.blackboard,
  org.eclipse.smila.blackboard.path,
  org.eclipse.smila.datamodel.id,
  org.eclipse.smila.datamodel.record,
  org.eclipse.smila.processing,
- org.eclipse.smila.test,
- junit.framework;version="[3.8.0,4.0.0)"
+ org.eclipse.smila.test
 Export-Package: it.polimi.chansonnier.core.test

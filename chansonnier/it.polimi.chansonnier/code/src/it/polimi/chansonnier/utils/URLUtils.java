@@ -9,6 +9,7 @@ package it.polimi.chansonnier.utils;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
@@ -41,11 +42,15 @@ public class URLUtils {
 
 	public static String readStart(String filename) throws Exception {
 		File fp = new File(filename);
-		return readStart(new FileInputStream(fp));
+		return readStart(fp);
 	}
 
 	public static String escape(String textSample) {
 		return textSample.replaceAll(" ", "%20");
+	}
+
+	public static String readStart(File fp) throws Exception {
+		return readStart(new FileInputStream(fp));
 	}
 
 }

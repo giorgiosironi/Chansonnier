@@ -10,6 +10,7 @@ package it.polimi.chansonnier.test;
 import it.polimi.chansonnier.fixtures.Fixtures;
 
 import java.io.InputStream;
+import java.util.Collection;
 
 import org.apache.solr.client.solrj.SolrQuery;
 import org.apache.solr.client.solrj.response.QueryResponse;
@@ -46,6 +47,8 @@ public class AddPipelineTest extends FunctionalTest {
 	    assertTrue(((String) song.get("lyrics")).contains("if I asked you to dance"));
 	    assertEquals("anger", song.get("emotion"));
 	    assertEquals("en", song.get("language"));
+	    Collection attachmentNames = song.getFieldValues("image");
+	    assertEquals(3, attachmentNames.size());
 	    
 		query = new SolrQuery();
 	    query.setQuery( "title:Halo" );
@@ -59,6 +62,8 @@ public class AddPipelineTest extends FunctionalTest {
 	    assertEquals("surprise", song.get("emotion"));
 	    assertEquals("en", song.get("language"));
 	    assertTrue(((String) song.get("lyrics")).contains("Remember those walls I built?"));
+	    attachmentNames = song.getFieldValues("image");
+	    assertEquals(3, attachmentNames.size());
 	    
 	    
 	}
