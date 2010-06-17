@@ -6,13 +6,12 @@
  ****************************************************************************/
 package it.polimi.chansonnier.test;
 
-import com.meterware.httpunit.GetMethodWebRequest;
-import com.meterware.httpunit.WebRequest;
-
 import it.polimi.chansonnier.fixtures.Fixtures;
 
-import java.io.File;
 import java.io.InputStream;
+
+import com.meterware.httpunit.GetMethodWebRequest;
+import com.meterware.httpunit.WebRequest;
 
 //import org.eclipse.osgi.framework.adaptor.core.DefaultClassLoader;
 

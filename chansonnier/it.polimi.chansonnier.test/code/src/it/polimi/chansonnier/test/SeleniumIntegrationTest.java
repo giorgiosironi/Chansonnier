@@ -1,10 +1,8 @@
 package it.polimi.chansonnier.test;
 
-import java.io.File;
-
 import junit.framework.TestCase;
 
-import com.thoughtworks.selenium.*;
+import com.thoughtworks.selenium.Selenium;
 
 public class SeleniumIntegrationTest extends TestCase {
 	WrappableSeleneseTestCase wrapped;

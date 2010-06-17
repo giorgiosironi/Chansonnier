@@ -6,9 +6,6 @@
  ****************************************************************************/
 package it.polimi.chansonnier.test;
 
-import java.net.URL;
-
-import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 

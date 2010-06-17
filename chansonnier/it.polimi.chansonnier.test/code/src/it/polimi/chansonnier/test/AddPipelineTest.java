@@ -9,9 +9,7 @@ package it.polimi.chansonnier.test;
 
 import it.polimi.chansonnier.fixtures.Fixtures;
 
-import java.io.File;
 import java.io.InputStream;
-
 
 import org.apache.solr.client.solrj.SolrQuery;
 import org.apache.solr.client.solrj.response.QueryResponse;
