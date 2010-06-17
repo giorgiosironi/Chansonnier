@@ -31,9 +31,9 @@ public class SearchSongTest extends AcceptanceTest {
 		assertWebPageContains(req, "http://www.youtube.com/watch?v=e8w7f0ShtIM", 20000);
 		
 		selenium.open("/chansonnier/index.html");
-        Thread.sleep(5000);
 		wrapped.verifyTrue(selenium.isTextPresent("Beautiful Day"));
 		selenium.click("link=happiness");
+        selenium.waitForPageToLoad("50000");
 		wrapped.verifyTrue(selenium.isTextPresent("(x) emotion:happiness"));
 		wrapped.verifyTrue(selenium.isTextPresent("The heart is a bloom"));
 
