@@ -40,6 +40,10 @@ public class URLUtils {
 		return new String(bytes);    
 	}
 
+	public static String readStart(File fp) throws Exception {
+		return readStart(new FileInputStream(fp));
+	}
+
 	public static String readStart(String filename) throws Exception {
 		File fp = new File(filename);
 		return readStart(fp);
@@ -48,9 +52,4 @@ public class URLUtils {
 	public static String escape(String textSample) {
 		return textSample.replaceAll(" ", "%20");
 	}
-
-	public static String readStart(File fp) throws Exception {
-		return readStart(new FileInputStream(fp));
-	}
-
 }

@@ -36,6 +36,7 @@ public class GoogleLanguageRecognitionService implements
 			builder.append("\n");
 			}
 			in.close();
+			System.out.println(builder.toString());
 			
 			JSONObject response = new JSONObject(builder.toString());
 			String language = response.getJSONObject("responseData").getString("language");
