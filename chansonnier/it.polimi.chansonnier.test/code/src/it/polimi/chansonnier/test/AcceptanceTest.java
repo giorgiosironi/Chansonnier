@@ -57,4 +57,8 @@ public abstract class AcceptanceTest extends FunctionalTest {
         fail("After " + timeout + "milliseconds of waiting, the web page does not contain the prescribed text (" + text + ").");
         return null;
     }
+	
+	public void waitForPageToLoad() throws InterruptedException {
+		Thread.sleep(5000);
+	}
 }

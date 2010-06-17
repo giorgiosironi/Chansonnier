@@ -27,7 +27,6 @@ public class FixturesServlet extends HttpServlet {
 			fixtureManager.addSong("http://www.youtube.com/watch?v=owTmJrtD7g8", heroFlv, "Enrique Iglesias- Hero (with lyrics)");
 			InputStream haloFlv = Fixtures.class.getResourceAsStream("halo.flv");
 			fixtureManager.addSong("http://www.youtube.com/watch?v=fSdgBse1o7Q", haloFlv, "Beyonce-Halo Lyrics");
-			fixtureManager.commit();
 	        response.getWriter().println("<p>Fixtures added. Wait some time for indexing.</p>");
 		} catch (Exception e) {
 			throw new ServletException(e);

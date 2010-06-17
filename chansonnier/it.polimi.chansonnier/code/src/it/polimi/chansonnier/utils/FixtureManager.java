@@ -27,10 +27,11 @@ public class FixtureManager {
 		}
 		Id hero = createRecord(key, beautifulDayFlv, pageTitle);
 		final Id[] result = processor.process(pipelineName, blackboard, new Id[] { hero });
+		commit();
 		return result;
 	}
 	
-	public void commit() throws BlackboardAccessException {
+	private void commit() throws BlackboardAccessException {
 		blackboard.commit();
 	}
 	
