@@ -17,16 +17,30 @@ public class SearchSongTest extends AcceptanceTest {
 	public void testGivenAnAddedYouTubeLinkTheSongIsSearchable() throws Exception {
 		InputStream beautifulDayFlv = Fixtures.class.getResourceAsStream("beautifulday.flv");
 		fixtureManager.addSong("http://www.youtube.com/watch?v=e8w7f0ShtIM", beautifulDayFlv, "U2 - Beautiful Day (with Lyrics)");
+		InputStream heroFlv = Fixtures.class.getResourceAsStream("hero.flv");
+		fixtureManager.addSong("http://www.youtube.com/watch?v=owTmJrtD7g8", heroFlv, "Enrique Iglesias- Hero (with lyrics)");
+		InputStream haloFlv = Fixtures.class.getResourceAsStream("halo.flv");
+		fixtureManager.addSong("http://www.youtube.com/watch?v=fSdgBse1o7Q", haloFlv, "Beyonce-Halo Lyrics");
 		
 		WebRequest     req = new GetMethodWebRequest( "http://localhost:8080/chansonnier/last" );
 		assertWebPageContains(req, "http://www.youtube.com/watch?v=e8w7f0ShtIM", 20000);
 		Thread.sleep(10000);
 		
 		selenium.open("/chansonnier/index.html");
-		wrapped.verifyTrue(selenium.isTextPresent("Beautiful Day"));
 		selenium.click("link=happiness");
         waitForPageToLoad();
-		wrapped.verifyTrue(selenium.isTextPresent("(x) emotion:happiness"));
+        wrapped.verifyTrue(selenium.isTextPresent("(x) emotion:happiness"));
+        wrapped.verifyTrue(selenium.isTextPresent("Beautiful Day"));
 		wrapped.verifyTrue(selenium.isTextPresent("The heart is a bloom"));
+		selenium.click("link=*emotion:happiness");
+		selenium.click("link=anger");
+        waitForPageToLoad();
+		wrapped.verifyTrue(selenium.isTextPresent("(x) emotion:anger"));
+        wrapped.verifyTrue(selenium.isTextPresent("Hero"));
+		wrapped.verifyTrue(selenium.isTextPresent("Would you dance"));
+		selenium.click("link=*emotion:anger");
+        waitForPageToLoad();
+		selenium.click("link=en");
+		wrapped.verifyTrue(selenium.isTextPresent("of 3 results"));
     }
 }

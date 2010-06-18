@@ -17,11 +17,11 @@ var Manager;
           nextLabel: '&gt;',
           innerWindow: 1,
           renderHeader: function (perPage, offset, total) {
-            $('#pager-header').html($('<span/>').text('displaying ' + Math.min(total, offset + 1) + ' to ' + Math.min(total, offset + perPage) + ' of ' + total));
+            $('#pager-header').html($('<span/>').text('displaying ' + Math.min(total, offset + 1) + ' to ' + Math.min(total, offset + perPage) + ' of ' + total + ' results'));
           }
     }));
     
-    var fields = [ 'emotion' ];
+    var fields = [ 'emotion', 'language' ];
     for (var i = 0, l = fields.length; i < l; i++) {
           Manager.addWidget(new AjaxSolr.TagcloudWidget({
             id: fields[i],
@@ -43,7 +43,7 @@ var Manager;
     Manager.store.addByValue('rows', 1);
     var params = {
           facet: true,
-          'facet.field': [ 'emotion' ],
+          'facet.field': [ 'emotion', 'language' ],
           'facet.limit': 20,
           'facet.mincount': 1,
           'f.topics.facet.limit': 50,

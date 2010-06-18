@@ -7,6 +7,7 @@ AjaxSolr.ResultWidget = AjaxSolr.AbstractWidget.extend({
       var doc = this.manager.response.response.docs[i];
       $(this.target).append(AjaxSolr.theme('result', doc));        
       var items = this.facetLinks('emotion', [doc.emotion]);
+      var items = this.facetLinks('language', [doc.language]);
       AjaxSolr.theme('list_items', '#links_' + doc.uuid, items);
     }
     $('.images a').lightBox();

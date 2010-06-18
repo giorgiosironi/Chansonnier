@@ -59,6 +59,6 @@ public abstract class AcceptanceTest extends FunctionalTest {
     }
 	
 	public void waitForPageToLoad() throws InterruptedException {
-		Thread.sleep(5000);
+		Thread.sleep(2000);
 	}
 }
