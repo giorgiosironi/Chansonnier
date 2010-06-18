@@ -21,7 +21,7 @@ var Manager;
           }
     }));
     
-    var fields = [ 'emotion', 'language' ];
+    var fields = [ 'emotion', 'language', 'artist' ];
     for (var i = 0, l = fields.length; i < l; i++) {
           Manager.addWidget(new AjaxSolr.TagcloudWidget({
             id: fields[i],
@@ -40,10 +40,10 @@ var Manager;
     }));
     Manager.init();
     Manager.store.addByValue('q', '*:*');
-    Manager.store.addByValue('rows', 1);
+    Manager.store.addByValue('rows', 3);
     var params = {
           facet: true,
-          'facet.field': [ 'emotion', 'language' ],
+          'facet.field': fields,
           'facet.limit': 20,
           'facet.mincount': 1,
           'f.topics.facet.limit': 50,

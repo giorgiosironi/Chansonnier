@@ -29,18 +29,21 @@ public class SearchSongTest extends AcceptanceTest {
 		selenium.open("/chansonnier/index.html");
 		selenium.click("link=happiness");
         waitForPageToLoad();
-        wrapped.verifyTrue(selenium.isTextPresent("(x) emotion:happiness"));
+        wrapped.verifyTrue(selenium.isTextPresent("(x) emotion:\"happiness\""));
         wrapped.verifyTrue(selenium.isTextPresent("Beautiful Day"));
 		wrapped.verifyTrue(selenium.isTextPresent("The heart is a bloom"));
-		selenium.click("link=*emotion:happiness");
+		selenium.click("link=(x) emotion*");
 		selenium.click("link=anger");
         waitForPageToLoad();
-		wrapped.verifyTrue(selenium.isTextPresent("(x) emotion:anger"));
+		wrapped.verifyTrue(selenium.isTextPresent("(x) emotion:\"anger\""));
         wrapped.verifyTrue(selenium.isTextPresent("Hero"));
 		wrapped.verifyTrue(selenium.isTextPresent("Would you dance"));
-		selenium.click("link=*emotion:anger");
+		selenium.click("link=(x) emotion*");
         waitForPageToLoad();
 		selenium.click("link=en");
 		wrapped.verifyTrue(selenium.isTextPresent("of 3 results"));
+		selenium.click("link=Enrique Iglesias");
+		wrapped.verifyTrue(selenium.isTextPresent("Hero"));
+		wrapped.verifyFalse(selenium.isTextPresent("Beautiful Day"));
     }
 }

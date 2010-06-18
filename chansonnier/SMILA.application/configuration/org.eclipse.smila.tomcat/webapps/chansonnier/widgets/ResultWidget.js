@@ -7,7 +7,8 @@ AjaxSolr.ResultWidget = AjaxSolr.AbstractWidget.extend({
       var doc = this.manager.response.response.docs[i];
       $(this.target).append(AjaxSolr.theme('result', doc));        
       var items = this.facetLinks('emotion', [doc.emotion]);
-      var items = this.facetLinks('language', [doc.language]);
+      items = items.concat(this.facetLinks('language', [doc.language]));
+      items = items.concat(this.facetLinks('artist', [doc.artist]));
       AjaxSolr.theme('list_items', '#links_' + doc.uuid, items);
     }
     $('.images a').lightBox();
@@ -24,8 +25,7 @@ AjaxSolr.ResultWidget = AjaxSolr.AbstractWidget.extend({
   facetHandler: function (facet_field, facet_value) {
   	var self = this;
   	return function () {
-  	  self.manager.store.remove('fq');
-  	  self.manager.store.addByValue('fq', facet_field + ':' + facet_value);
+  	  self.manager.store.addByValue('fq', facet_field + ':"' + facet_value + '"');
   	  self.manager.doRequest(0);
   	  return false;
   	};

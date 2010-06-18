@@ -1,7 +1,7 @@
 (function ($) {
 
 AjaxSolr.theme.prototype.result = function (doc, snippet) {
-  var output = '<div><h2>' + doc.artist + ' - ' + doc.title + '</h2>';
+  var output = '<div><h2><a href="' + doc.link + '">' + doc.artist + ' - ' + doc.title + '</a></h2>';
   output += '<p class="lyrics">' + doc.lyrics + '</p>';
   output += '<p id="links_' + doc.uuid + '" class="links"></p>';
   //output += '<p>' + snippet + '</p>';
@@ -26,7 +26,7 @@ AjaxSolr.theme.prototype.facet_link = function (value, handler) {
 };
 
 AjaxSolr.theme.prototype.no_items_found = function () {
-  return 'no items found in current selection';
+  return 'no songs found in current selection';
 };
 
 })(jQuery);

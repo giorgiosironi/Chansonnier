@@ -26,7 +26,7 @@ public class AddPipelineTest extends FunctionalTest {
 	    return PIPELINE_NAME;
 	}
 	
-	public void testSongIsIndexedInSolr() throws Exception {
+	public void testSongsAreIndexedInSolr() throws Exception {
 		InputStream heroFlv = Fixtures.class.getResourceAsStream("hero.flv");
 		Id[] result = fixtureManager.addSong("http://www.youtube.com/watch?v=owTmJrtD7g8", heroFlv, "Enrique Iglesias- Hero (with lyrics)");
 		assertEquals(1, result.length);
@@ -64,7 +64,5 @@ public class AddPipelineTest extends FunctionalTest {
 	    assertTrue(((String) song.get("lyrics")).contains("Remember those walls I built?"));
 	    attachmentNames = song.getFieldValues("image");
 	    assertEquals(3, attachmentNames.size());
-	    
-	    
 	}
 }

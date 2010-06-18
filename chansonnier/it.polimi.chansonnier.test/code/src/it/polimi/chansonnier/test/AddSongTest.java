@@ -6,8 +6,6 @@
  ****************************************************************************/
 package it.polimi.chansonnier.test;
 
-
-
 import org.apache.solr.client.solrj.SolrQuery;
 import org.apache.solr.client.solrj.impl.CommonsHttpSolrServer;
 import org.apache.solr.client.solrj.impl.XMLResponseParser;
@@ -51,8 +49,6 @@ public class AddSongTest extends AcceptanceTest {
 	    assertEquals("Green Day", song.get("artist"));
 	    assertEquals("Boulevard of Broken Dreams", song.get("title"));
 	    assertTrue(((String) song.get("lyrics")).contains("I walk a lonely road"));
-//	    assertEquals("anger", song.get("emotion"));
-//		assertSongsListContainsSongImage(response, "<img src=\"attachment?name=image1&id=" + link + "\" />");
 	}
 	
 	public void testFixturesCanBeAddedWithThePushOfAButton() throws Exception {
