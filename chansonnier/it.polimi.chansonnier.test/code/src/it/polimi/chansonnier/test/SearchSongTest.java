@@ -45,5 +45,28 @@ public class SearchSongTest extends AcceptanceTest {
 		selenium.click("link=Enrique Iglesias");
 		wrapped.verifyTrue(selenium.isTextPresent("Hero"));
 		wrapped.verifyFalse(selenium.isTextPresent("Beautiful Day"));
+		
+		selenium.refresh();
+		waitForPageToLoad();
+		typeAndEnter("query", "Enrique");
+		waitForPageToLoad();
+		assertOnlyOneHeroSongIsInTheResult();
+		typeAndEnter("query", "Hero");;
+		typeAndEnter("query", "Let me be your hero");
+		typeAndEnter("query", "Enrique Iglesias");
+		waitForPageToLoad();
+		assertOnlyOneHeroSongIsInTheResult(); 
     }
+	
+	private void typeAndEnter(String identifier, String value) {
+		selenium.type(identifier, value);
+		selenium.keyDown(identifier, "\\13");
+	}
+	
+	private void assertOnlyOneHeroSongIsInTheResult() {
+		wrapped.verifyTrue(selenium.isTextPresent("(x) fullText:Enrique"));
+		wrapped.verifyTrue(selenium.isTextPresent("Hero"));
+		wrapped.verifyFalse(selenium.isTextPresent("Beyonce"));
+		wrapped.verifyTrue(selenium.isTextPresent("of 1 results"));
+	}
 }

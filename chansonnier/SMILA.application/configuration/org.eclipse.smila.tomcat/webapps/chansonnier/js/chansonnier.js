@@ -36,7 +36,7 @@ var Manager;
     Manager.addWidget(new AjaxSolr.TextWidget({
           id: 'text',
           target: '#search',
-          field: 'lyrics'
+          field: 'fullText'
     }));
     Manager.init();
     Manager.store.addByValue('q', '*:*');
