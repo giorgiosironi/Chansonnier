@@ -8,6 +8,10 @@ package it.polimi.chansonnier.driver.lyricwiki;
 
 public interface LyricWikiParser {
 
-	public abstract String getLyrics(String xmlContent);
+	/**
+	 * @param xmlContent representation of a song result (XML, JSON, ...)
+	 * @return lyrics of the song
+	 */
+	public abstract String getLyrics(String content);
 
 }

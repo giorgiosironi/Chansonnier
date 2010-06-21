@@ -8,6 +8,11 @@ package it.polimi.chansonnier.driver.lyricwiki;
 
 public interface LyricWikiBackend {
 
+	/**
+	 * @param title
+	 * @param artist
+	 * @return representation of song result in some format (XML, JSON, ...)
+	 */
 	String getSong(String title, String artist);
 
 }
