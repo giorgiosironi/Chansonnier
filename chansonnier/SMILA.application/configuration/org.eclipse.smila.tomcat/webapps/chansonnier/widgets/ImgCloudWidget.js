@@ -1,5 +1,5 @@
 (function ($) {
-AjaxSolr.TagCloudWidget = AjaxSolr.AbstractFacetWidget.extend({
+AjaxSolr.ImgCloudWidget = AjaxSolr.AbstractFacetWidget.extend({
 	afterRequest: function () {
 	  	if (this.manager.response.facet_counts.facet_fields[this.field] === undefined) {
     		$(this.target).html(AjaxSolr.theme('no_items_found'));
@@ -23,7 +23,7 @@ AjaxSolr.TagCloudWidget = AjaxSolr.AbstractFacetWidget.extend({
   		$(this.target).empty();
   		for (var i = 0, l = objectedItems.length; i < l; i++) {
     		var facet = objectedItems[i].facet;
-    		$(this.target).append(AjaxSolr.theme('tag', facet, parseInt(objectedItems[i].count / maxCount * 10), self.clickHandler(facet)));
+    		$(this.target).append(AjaxSolr.theme('img', facet, parseInt(objectedItems[i].count / maxCount * 10), self.clickHandler(facet)));
   		}
 	}
 });

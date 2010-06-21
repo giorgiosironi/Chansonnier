@@ -21,14 +21,19 @@ var Manager;
           }
     }));
     
-    var fields = [ 'emotion', 'language', 'artist' ];
+    var fields = [ 'emotion', 'artist' ];
     for (var i = 0, l = fields.length; i < l; i++) {
-          Manager.addWidget(new AjaxSolr.TagcloudWidget({
+          Manager.addWidget(new AjaxSolr.TagCloudWidget({
             id: fields[i],
             target: '#' + fields[i],
             field: fields[i]
           }));
     }
+    Manager.addWidget(new AjaxSolr.ImgCloudWidget({
+        id: 'language',
+        target: '#' + 'language',
+        field: 'language'
+    }));
     Manager.addWidget(new AjaxSolr.CurrentSearchWidget({
           id: 'currentsearch',
           target: '#selection',
@@ -43,7 +48,7 @@ var Manager;
     Manager.store.addByValue('rows', 3);
     var params = {
           facet: true,
-          'facet.field': fields,
+          'facet.field': ['emotion', 'language', 'artist'],
           'facet.limit': 20,
           'facet.mincount': 1,
           'f.topics.facet.limit': 50,

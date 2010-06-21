@@ -159,3 +159,47 @@ a.tagcloud_size_10 {
 font-size: 180%;
 }
 
+a.tagcloud_size_1 img {
+	width: 10px;
+	height: 7px;
+}
+a.tagcloud_size_2 img {
+	width: 20px;
+	height: 15px;
+}
+a.tagcloud_size_3 img {
+	width: 30px;
+	height: 23px;
+}
+a.tagcloud_size_4 img {
+	width: 40px;
+	height: 30px;
+}
+a.tagcloud_size_5 img {
+	width: 50px;
+	height: 38px;
+}
+a.tagcloud_size_6 img {
+	width: 60px;
+	height: 45px;
+}
+a.tagcloud_size_7 img {
+	width: 70px;
+	height: 53px;
+}
+a.tagcloud_size_8 img {
+	width: 80px;
+	height: 60px;
+}
+a.tagcloud_size_9 img {
+	width: 90px;
+	height: 68px;
+}
+a.tagcloud_size_10 img {
+	width: 100px;
+	height: 75px;
+}
+a.tagcloud_item span {
+    display: none;
+}
+

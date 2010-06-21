@@ -21,6 +21,10 @@ AjaxSolr.theme.prototype.tag = function (value, weight, handler) {
   return $('<a href="#" class="tagcloud_item"/>').text(value).addClass('tagcloud_size_' + weight).click(handler);
 };
 
+AjaxSolr.theme.prototype.img = function (value, weight, handler) {
+  return $('<a href="#" class="tagcloud_item"/>').html('<img src="images/flags/' + value + '.gif" alt="' + value + '" /><span>' + value + '</span>').addClass('tagcloud_size_' + weight).click(handler);
+};
+
 AjaxSolr.theme.prototype.facet_link = function (value, handler) {
   return $('<a href="#"/>').text(value).click(handler);
 };
