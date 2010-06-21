@@ -18,7 +18,7 @@ import org.eclipse.smila.datamodel.record.Literal;
 import org.eclipse.smila.processing.ProcessingException;
 import org.eclipse.smila.processing.ProcessingService;
 
-public class FrameExtractionProcessingService implements ProcessingService {
+public class FrameExtractionProcessingService extends AbstractProcessingService implements ProcessingService {
 
 	private FrameExtractionService frameExtractionService;
 
@@ -27,18 +27,21 @@ public class FrameExtractionProcessingService implements ProcessingService {
 			throws ProcessingException {
 		try {
 			for (Id id : recordIds) {
-				File original = blackboard.getAttachmentAsFile(id, "original");
+				String outputPath = getOutputPath(blackboard, id);
+				System.out.println(outputPath);
+				
+				File original = blackboard.getAttachmentAsFile(id, getInputPath(blackboard, id));
 				File frame = frameExtractionService.getImage(original, "00:00:10");
-				addImageAttribute(blackboard, id, "image1");
-				blackboard.setAttachmentFromFile(id, "image1", frame);
+				addImageAttribute(blackboard, id, outputPath + "1");
+				blackboard.setAttachmentFromFile(id, outputPath + "1", frame);
 				
 				File frame2 = frameExtractionService.getImage(original, "00:00:30");
-				addImageAttribute(blackboard, id, "image2");
-				blackboard.setAttachmentFromFile(id, "image2", frame2);
+				addImageAttribute(blackboard, id, outputPath + "2");
+				blackboard.setAttachmentFromFile(id, outputPath + "2", frame2);
 				
 				File frame3 = frameExtractionService.getImage(original, "00:00:50");
-				addImageAttribute(blackboard, id, "image3");
-				blackboard.setAttachmentFromFile(id, "image3", frame3);
+				addImageAttribute(blackboard, id, outputPath + "3");
+				blackboard.setAttachmentFromFile(id, outputPath + "3", frame3);
 			}
 		} catch (BlackboardAccessException e) {
 			throw new ProcessingException(e);
@@ -49,7 +52,7 @@ public class FrameExtractionProcessingService implements ProcessingService {
 	private void addImageAttribute(Blackboard blackboard, Id id, String attachmentName) throws BlackboardAccessException {
 		Literal literal = blackboard.createLiteral(id);
 		literal.setStringValue(attachmentName);
-		blackboard.addLiteral(id, new Path("image"), literal);
+		blackboard.addLiteral(id, new Path(getOutputPath(blackboard, id)), literal);
 	}
 
 	public void setFrameExtractionService(

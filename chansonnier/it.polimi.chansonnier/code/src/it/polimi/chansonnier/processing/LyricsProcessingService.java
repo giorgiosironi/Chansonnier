@@ -11,8 +11,6 @@ import java.util.regex.Pattern;
 
 import it.polimi.chansonnier.spi.LyricsService;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.eclipse.smila.blackboard.Blackboard;
 import org.eclipse.smila.blackboard.BlackboardAccessException;
 import org.eclipse.smila.blackboard.path.Path;
@@ -21,14 +19,8 @@ import org.eclipse.smila.datamodel.record.Literal;
 import org.eclipse.smila.processing.ProcessingException;
 import org.eclipse.smila.processing.ProcessingService;
 
-public class LyricsProcessingService implements ProcessingService {
+public class LyricsProcessingService extends AbstractProcessingService implements ProcessingService {
 	private LyricsService _lyricsService;
-	
-	private final Log _log = LogFactory.getLog(LyricsProcessingService.class);
-	
-	public LyricsProcessingService() {
-		_log.debug("it.polimi.chansonnier.processing.LyricsProcessingService: created");
-	}
 	
 	@Override
 	public Id[] process(Blackboard blackboard, Id[] recordIds)
@@ -38,8 +30,7 @@ public class LyricsProcessingService implements ProcessingService {
 				throw new ProcessingException("Unable to search lyrics: LyricsService is not initialized.");
 			}
 			for (Id id : recordIds) {
-				_log.debug("it.polimi.chansonnier.processing.LyricsProcessingService: processing " + id.toString());
-				String pageTitle = blackboard.getLiteral(id, new Path("pageTitle")).toString();
+				String pageTitle = blackboard.getLiteral(id, new Path(getInputPath(blackboard, id))).toString();
 				pageTitle = removeNoise(pageTitle);
 				String[] pieces = pageTitle.split("-");
 				String title = "Unknown";
@@ -61,7 +52,7 @@ public class LyricsProcessingService implements ProcessingService {
 				if (lyrics != null) {
 					Literal lyricsAttribute = blackboard.createLiteral(id);
 					lyricsAttribute.setStringValue(lyrics);
-					blackboard.setLiteral(id, new Path("lyrics"), lyricsAttribute);
+					blackboard.setLiteral(id, new Path(getOutputPath(blackboard, id)), lyricsAttribute);
 				}
 				Literal artistAttribute = blackboard.createLiteral(id);
 				artistAttribute.setStringValue(artist);

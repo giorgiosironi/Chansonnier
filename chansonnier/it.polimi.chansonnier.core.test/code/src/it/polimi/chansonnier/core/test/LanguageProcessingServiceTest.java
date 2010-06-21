@@ -9,26 +9,27 @@ import org.eclipse.smila.datamodel.id.Id;
 import org.eclipse.smila.datamodel.record.Literal;
 
 public class LanguageProcessingServiceTest extends ProcessingServiceTest implements LanguageRecognitionService {
-
-	LanguageProcessingService _service;
+	LanguageProcessingService _languageProcessingService;
 	public static final String LYRICS = "Vamos a la playa...";
 	
 	protected void init() throws Exception {
-		_service = new LanguageProcessingService();
-		_service.setLanguageRecognitionService(this);
+		_languageProcessingService = new LanguageProcessingService();
+		_languageProcessingService.setLanguageRecognitionService(this);
+		_service = _languageProcessingService;
+		inputAnnotationValue = "myLyrics";
+		outputAnnotationValue = "myLanguage";
 	}
 	
 	public void testAddsALanguageAttributeUsingTheLyricsOne() throws Exception {
 		final Id id = createBlackboardRecord("source", "item");
-		Path p = new Path("lyrics");
+		Path p = new Path(inputAnnotationValue);
 	    setAttribute(id, p, LYRICS);
 	    
-	    Id[] result = _service.process(getBlackboard(), new Id[] { id });
-	    assertEquals(1, result.length);
+	    process(id);
 	    
-	    Literal language = getBlackboard().getLiteral(id, new Path("language"));
+	    Literal language = getBlackboard().getLiteral(id, new Path(outputAnnotationValue));
 	    assertEquals("es", language.getStringValue());
-	    Literal confidence = getBlackboard().getLiteral(id, new Path("languageConfidence"));
+	    Literal confidence = getBlackboard().getLiteral(id, new Path(outputAnnotationValue + "Confidence"));
 	    assertEquals(0.9, confidence.getFpValue());
 	}
 

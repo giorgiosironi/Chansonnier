@@ -18,11 +18,16 @@ import org.eclipse.smila.datamodel.id.Id;
 import org.eclipse.smila.datamodel.id.IdFactory;
 import org.eclipse.smila.datamodel.record.Annotation;
 import org.eclipse.smila.datamodel.record.Literal;
+import org.eclipse.smila.processing.ProcessingException;
+import org.eclipse.smila.processing.ProcessingService;
 import org.eclipse.smila.test.DeclarativeServiceTestCase;
 
 public abstract class ProcessingServiceTest extends DeclarativeServiceTestCase {
 
 	private Blackboard _blackboard;
+	protected ProcessingService _service;
+	protected String inputAnnotationValue;
+	protected String outputAnnotationValue;
 
 	protected void setUp() throws Exception {
 		super.setUp();
@@ -129,5 +134,17 @@ public abstract class ProcessingServiceTest extends DeclarativeServiceTestCase {
 	    UnsupportedEncodingException {
 		  return getBlackboard().getAttachmentAsFile(id, name);
 	  }
+	  
+		public void process(Id id) throws ProcessingException, BlackboardAccessException {
+			Annotation inputAnnotation = getBlackboard().createAnnotation(id);
+			inputAnnotation.addAnonValue(inputAnnotationValue);
+			getBlackboard().setAnnotation(id, null, "it.polimi.chansonnier.processing.Input", inputAnnotation);
+			Annotation outputAnnotation = getBlackboard().createAnnotation(id);
+			outputAnnotation.addAnonValue(outputAnnotationValue);
+			getBlackboard().setAnnotation(id, null, "it.polimi.chansonnier.processing.Output", outputAnnotation);
+			
+		    Id[] result = _service.process(getBlackboard(), new Id[] { id });
+		    assertEquals(1, result.length);
+		}
 
 }

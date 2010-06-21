@@ -13,12 +13,11 @@ import org.eclipse.smila.blackboard.Blackboard;
 import org.eclipse.smila.blackboard.BlackboardAccessException;
 import org.eclipse.smila.blackboard.path.Path;
 import org.eclipse.smila.datamodel.id.Id;
-import org.eclipse.smila.datamodel.record.Annotation;
 import org.eclipse.smila.datamodel.record.Literal;
 import org.eclipse.smila.processing.ProcessingException;
 import org.eclipse.smila.processing.ProcessingService;
 
-public class EmotionProcessingService implements ProcessingService {
+public class EmotionProcessingService extends AbstractProcessingService implements ProcessingService {
 
 	private EmotionRecognitionService _emotionRecognitionService;
 
@@ -41,19 +40,6 @@ public class EmotionProcessingService implements ProcessingService {
 			throw new ProcessingException(e);
 		}
 		return recordIds;
-	}
-
-	protected String getInputPath(Blackboard blackboard, Id id) throws BlackboardAccessException {
-		return annotationToString(blackboard, id, "it.polimi.chansonnier.processing.Input");
-	}
-	
-	protected String getOutputPath(Blackboard blackboard, Id id) throws BlackboardAccessException {
-		return annotationToString(blackboard, id, "it.polimi.chansonnier.processing.Output");
-	}
-	
-	private String annotationToString(Blackboard blackboard, Id id, String name) throws BlackboardAccessException {
-		Annotation inputAttribute = blackboard.getAnnotation(id, null, name);
-		return inputAttribute.getAnonValues().iterator().next();
 	}
 
 	public void setEmotionRecognitionService(

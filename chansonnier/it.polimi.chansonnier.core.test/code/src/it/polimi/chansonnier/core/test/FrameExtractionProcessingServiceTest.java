@@ -2,10 +2,8 @@ package it.polimi.chansonnier.core.test;
 
 import java.io.File;
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.util.List;
 
-import org.eclipse.smila.blackboard.BlackboardAccessException;
 import org.eclipse.smila.blackboard.path.Path;
 import org.eclipse.smila.datamodel.id.Id;
 import org.eclipse.smila.datamodel.record.Literal;
@@ -16,21 +14,24 @@ import it.polimi.chansonnier.spi.FrameExtractionService;
 import it.polimi.chansonnier.utils.URLUtils;
 
 public class FrameExtractionProcessingServiceTest extends ProcessingServiceTest implements FrameExtractionService {
-	private FrameExtractionProcessingService _service;
+	private FrameExtractionProcessingService _frameExtractionProcessingService;
 
 	@Override
 	protected void init() throws Exception {
-		_service = new FrameExtractionProcessingService();
-		_service.setFrameExtractionService(this);
+		_frameExtractionProcessingService = new FrameExtractionProcessingService();
+		_frameExtractionProcessingService.setFrameExtractionService(this);
+		_service = _frameExtractionProcessingService;
+		inputAnnotationValue = "myOriginal";
+		outputAnnotationValue = "myImage";
 	}
 	
 	public void testExtractsThreeFrameAtRegularIntervals() throws Exception {
 		Id id = createBlackboardRecord("youtube", "http://www.youtube.com/dummy");
-		setAttachment(id, "original", Fixtures.getAsFile("hero.flv"));
+		setAttachment(id, inputAnnotationValue, Fixtures.getAsFile("hero.flv"));
 		
-		_service.process(getBlackboard(), new Id[] { id });
+		process(id);
 		
-		List<Literal> attachmentNames = getAttributes(id, new Path("image"));
+		List<Literal> attachmentNames = getAttributes(id, new Path(outputAnnotationValue));
 		assertEquals(3, attachmentNames.size());
 		for (Literal name : attachmentNames) {
 			File png = getAttachment(id, name.getStringValue());

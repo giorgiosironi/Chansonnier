@@ -14,28 +14,31 @@ import it.polimi.chansonnier.processing.LyricsProcessingService;
 import it.polimi.chansonnier.spi.LyricsService;
 
 public class LyricsProcessingServiceTest extends ProcessingServiceTest implements LyricsService {
-	LyricsProcessingService _service;
+	LyricsProcessingService _lyricsProcessingService;
 	private static final String LYRICS = "The warden threw a party in the county jail...";
 	private static final String TITLE = "Jailhouse Rock";
 	private static final String ARTIST = "Elvis Presley";
 	
 	protected void init() throws Exception {
-		_service = new LyricsProcessingService();
-		_service.setLyricsService(this);
+		_lyricsProcessingService = new LyricsProcessingService();
+		_lyricsProcessingService.setLyricsService(this);
+		_service = _lyricsProcessingService;
+		inputAnnotationValue = "myPageTitle";
+		outputAnnotationValue = "myLyrics";
 	}
 	
 	public void testStoresLyricsAsAnAnnotationStartingFromThePageTitle() throws Exception {
 		final Id id = createNewRecord(ARTIST + " - " + TITLE);
 	    
-	    _service.process(getBlackboard(), new Id[] { id });
+	    process(id);
 	    
-	    assertEquals(LYRICS, extractAttribute(id, "lyrics"));
+	    assertEquals(LYRICS, extractAttribute(id, outputAnnotationValue));
 	}
 	
 	public void testCreatesArtistAndTitleAttributesBasingOnWhichCombinationFindsTheLyrics() throws Exception {
 		final Id id = createNewRecord(ARTIST + " - " + TITLE);
 	    
-	    _service.process(getBlackboard(), new Id[] { id });
+		process(id);
 	    
 	    assertArtistAndTitleAttributesAreExtractedCorrectly(id);
 	}
@@ -43,64 +46,71 @@ public class LyricsProcessingServiceTest extends ProcessingServiceTest implement
 	public void testStoresLyricsAsAnAnnotationWhenTitleComesBeforeArtist() throws Exception {
 		final Id id = createNewRecord(TITLE + " - " + ARTIST);
 	    
-	    _service.process(getBlackboard(), new Id[] { id });
+		process(id);
 	    
-	    assertEquals(LYRICS, extractAttribute(id, "lyrics"));
+	    assertEquals(LYRICS, extractAttribute(id, outputAnnotationValue));
 	}
 	
 	public void testRemovesParenthetizedNoiseFromPageTitle() throws Exception {
 	    final Id id = createNewRecord(ARTIST + " - " + TITLE + " (with lyrics!)");
 	    
-	    _service.process(getBlackboard(), new Id[] { id });
+	    process(id);
 	    
 	    assertArtistAndTitleAttributesAreExtractedCorrectly(id);
 	}
 	
 	public void testRemovesParenthetizedNoiseFromPageTitle2() throws Exception {
-	    final Id id = createNewRecord(ARTIST + " - " + TITLE + " (song & lyrics)"); 
-	    _service.process(getBlackboard(), new Id[] { id });
+	    final Id id = createNewRecord(ARTIST + " - " + TITLE + " (song & lyrics)");
+	    
+	    process(id);
 	    
 	    assertArtistAndTitleAttributesAreExtractedCorrectly(id);
 	}
 	
 	public void testRemovesParenthetizedNoiseFromPageTitle3() throws Exception {
-	    final Id id = createNewRecord(ARTIST + " - " + TITLE + " [ with lyrics]"); 
-	    _service.process(getBlackboard(), new Id[] { id });
+	    final Id id = createNewRecord(ARTIST + " - " + TITLE + " [ with lyrics]");
+	    
+	    process(id);
 	    
 	    assertArtistAndTitleAttributesAreExtractedCorrectly(id);
 	}
 	
 	public void testRemovesTheWordLyricsFromPageTitle() throws Exception {
 	    final Id id = createNewRecord(ARTIST + " - " + TITLE + " lyrics"); 
-	    _service.process(getBlackboard(), new Id[] { id });
+	    
+	    process(id);
 	    
 	    assertArtistAndTitleAttributesAreExtractedCorrectly(id);
 	}
 	
 	public void testRemovesTheWordLyricsFromPageTitleWithoutCaseSensitivity() throws Exception {
-	    final Id id = createNewRecord(ARTIST + " - " + TITLE + " Lyrics"); 
-	    _service.process(getBlackboard(), new Id[] { id });
+	    final Id id = createNewRecord(ARTIST + " - " + TITLE + " Lyrics");
+	    
+	    process(id);
 	    
 	    assertArtistAndTitleAttributesAreExtractedCorrectly(id);
 	}
 	
 	public void testRemovesTheWordsWithLyricsFromPageTitle() throws Exception {
 	    final Id id = createNewRecord(ARTIST + " - " + TITLE + " with lyrics"); 
-	    _service.process(getBlackboard(), new Id[] { id });
+	    
+	    process(id);
 	    
 	    assertArtistAndTitleAttributesAreExtractedCorrectly(id);
 	}
 	
 	public void testRemovesTheWordsWithLyricsFromPageTitleWithoutCaseSensitivity() throws Exception {
 	    final Id id = createNewRecord(ARTIST + " - " + TITLE + " With Lyrics"); 
-	    _service.process(getBlackboard(), new Id[] { id });
+	    
+	    process(id);
 	    
 	    assertArtistAndTitleAttributesAreExtractedCorrectly(id);
 	}
 	
 	public void testRemovesAdditionalNonAlphanumericCharactersFromTitle() throws Exception {
 	    final Id id = createNewRecord(ARTIST + " - " + TITLE + " (((With Lyrics)))"); 
-	    _service.process(getBlackboard(), new Id[] { id });
+	    
+	    process(id);
 	    
 	    assertArtistAndTitleAttributesAreExtractedCorrectly(id);
 	}
@@ -112,7 +122,7 @@ public class LyricsProcessingServiceTest extends ProcessingServiceTest implement
 	
 	private Id createNewRecord(String pageTitle) throws BlackboardAccessException {
 	    final Id id = createBlackboardRecord("youtube", "http://www.youtube.com/dummy");
-	    setAttribute(id, new Path("pageTitle"), pageTitle);
+	    setAttribute(id, new Path(inputAnnotationValue), pageTitle);
 	    return id;
 	}
 	

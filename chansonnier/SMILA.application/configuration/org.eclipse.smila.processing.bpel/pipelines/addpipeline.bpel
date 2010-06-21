@@ -36,6 +36,14 @@
                 <proc:invokeService>
                     <proc:service name="LyricsProcessingService" />
                     <proc:variables input="request" output="request" />
+                    <proc:setAnnotations>
+                        <rec:An n="it.polimi.chansonnier.processing.Input">
+        					<rec:V>pageTitle</rec:V>
+      					</rec:An>
+      					<rec:An n="it.polimi.chansonnier.processing.Output">
+        					<rec:V>lyrics</rec:V>
+      					</rec:An>
+    				</proc:setAnnotations>
                 </proc:invokeService>
             </extensionActivity>
             
@@ -58,6 +66,14 @@
                 <proc:invokeService>
                     <proc:service name="LanguageProcessingService" />
                     <proc:variables input="request" output="request" />
+                    <proc:setAnnotations>
+      					<rec:An n="it.polimi.chansonnier.processing.Input">
+        					<rec:V>lyrics</rec:V>
+      					</rec:An>
+      					<rec:An n="it.polimi.chansonnier.processing.Output">
+        					<rec:V>language</rec:V>
+      					</rec:An>
+    				</proc:setAnnotations>
                 </proc:invokeService>
             </extensionActivity>
                     
@@ -65,6 +81,14 @@
                 <proc:invokeService>
                     <proc:service name="FrameExtractionProcessingService" />
                     <proc:variables input="request" output="request" />
+                    <proc:setAnnotations>
+      					<rec:An n="it.polimi.chansonnier.processing.Input">
+        					<rec:V>original</rec:V>
+      					</rec:An>
+      					<rec:An n="it.polimi.chansonnier.processing.Output">
+        					<rec:V>image</rec:V>
+      					</rec:An>
+    				</proc:setAnnotations>
                 </proc:invokeService>
             </extensionActivity>
             

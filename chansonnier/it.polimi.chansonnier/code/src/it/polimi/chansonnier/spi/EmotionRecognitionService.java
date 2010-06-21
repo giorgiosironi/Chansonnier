@@ -6,6 +6,11 @@
  ****************************************************************************/
 package it.polimi.chansonnier.spi;
 
+import org.eclipse.smila.blackboard.BlackboardAccessException;
+import org.eclipse.smila.datamodel.id.Id;
+import org.eclipse.smila.datamodel.record.Annotation;
+import org.eclipse.smila.processing.ProcessingException;
+
 public interface EmotionRecognitionService {
 
 	FuzzyResult getEmotion(String textSample);
