@@ -46,7 +46,9 @@ public class AddPipelineTest extends FunctionalTest {
 	    assertEquals("Hero", song.get("title"));
 	    assertTrue(((String) song.get("lyrics")).contains("if I asked you to dance"));
 	    assertEquals("anger", song.get("emotion"));
+	    assertTrue(((Float) song.get("emotionConfidence")) > 0.01);
 	    assertEquals("en", song.get("language"));
+	    assertTrue(((Float) song.get("languageConfidence")) > 0.2);
 	    Collection attachmentNames = song.getFieldValues("image");
 	    assertEquals(3, attachmentNames.size());
 	    

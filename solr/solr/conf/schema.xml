@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <schema name="example" version="1.2">
   <types>
-    <!-- The StrField type is not analyzed, but indexed/stored verbatim.  
-       - StrField and TextField support an optional compressThreshold which
-       limits compression (if enabled in the derived fields) to values which
-       exceed a certain size (in characters).
-    -->
     <fieldType name="string" class="solr.StrField" sortMissingLast="true" omitNorms="true"/>
+    <fieldType name="float" class="solr.TrieFloatField" precisionStep="0" omitNorms="true" positionIncrementGap="0"/>
 
     <!-- A text field that uses WordDelimiterFilter to enable splitting and matching of
         words on case-change, alpha numeric boundaries, and non-alphanumeric chars,
@@ -55,8 +51,8 @@
  <fields>
 
    <field name="id" type="string" indexed="true" stored="true" required="true" /> 
-    <field name="uuid" type="uuid" indexed="true" stored="true" default="NEW"/>
-    <field name="link" type="string" indexed="true" stored="true"/>
+   <field name="uuid" type="uuid" indexed="true" stored="true" default="NEW"/>
+   <field name="link" type="string" indexed="true" stored="true"/>
 
    <field name="pageTitle" type="string" indexed="true" stored="true"/>
    <field name="artist" type="string" indexed="true" stored="true"/>
@@ -64,21 +60,23 @@
    <field name="lyrics" type="string" indexed="true" stored="true"/>
    <field name="description" type="string" indexed="true" stored="true"/>
    <field name="keywords" type="string" indexed="true" stored="true"/>
-   <field name="emotion" type="string" indexed="true" stored="true"/>
-   <field name="emotionConfidence" type="string" indexed="true" stored="true"/>
-   <field name="language" type="string" indexed="true" stored="true"/>
-   <field name="languageConfidence" type="string" indexed="true" stored="true"/>
-   <field name="image" type="string" indexed="true" stored="true" multiValued="true" />
 
+   <field name="emotion" type="string" indexed="true" stored="true"/>
+   <field name="emotionConfidence" type="float" indexed="true" stored="true"/>
+   <field name="language" type="string" indexed="true" stored="true"/>
+   <field name="languageConfidence" type="float" indexed="true" stored="true"/>
+   <field name="image" type="string" indexed="false" stored="true" multiValued="true" />
+
+   <field name="fullText" type="text" indexed="true" stored="false" multiValued="true" />
 
  </fields>
 
- <!-- Field to use to determine and enforce document uniqueness. 
-      Unless this field is marked with required="false", it will be a required field
-   -->
- <uniqueKey>id</uniqueKey>
+ <uniqueKey>link</uniqueKey>
 
- <!-- SolrQueryParser configuration: defaultOperator="AND|OR" -->
+ <copyField source="artist" dest="fullText"/>
+ <copyField source="title" dest="fullText"/>
+ <copyField source="lyrics" dest="fullText"/>
+
  <solrQueryParser defaultOperator="OR"/>
 
 </schema>
