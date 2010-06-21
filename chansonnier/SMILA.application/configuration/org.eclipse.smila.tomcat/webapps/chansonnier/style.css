@@ -159,6 +159,10 @@ a.tagcloud_size_10 {
 font-size: 180%;
 }
 
+a.tagcloud_item img {
+	margin: 5px;
+}
+
 a.tagcloud_size_1 img {
 	width: 10px;
 	height: 7px;
