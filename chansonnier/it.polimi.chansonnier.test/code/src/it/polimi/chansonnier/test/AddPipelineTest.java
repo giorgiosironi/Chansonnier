@@ -13,6 +13,7 @@ import java.io.InputStream;
 import java.util.Collection;
 
 import org.apache.solr.client.solrj.SolrQuery;
+import org.apache.solr.client.solrj.SolrServerException;
 import org.apache.solr.client.solrj.response.QueryResponse;
 import org.apache.solr.common.SolrDocument;
 import org.apache.solr.common.SolrDocumentList;
@@ -52,6 +53,14 @@ public class AddPipelineTest extends FunctionalTest {
 	    Collection attachmentNames = song.getFieldValues("image");
 	    assertEquals(3, attachmentNames.size());
 	    
+	    String heroLink = "http://www.youtube.com/watch?v=owTmJrtD7g8";
+	    assertQueryGivesOnlyThisResult("fullText:Hero", heroLink);
+	    assertQueryGivesOnlyThisResult("fullText:Enrique", heroLink);
+	    assertQueryGivesOnlyThisResult("fullText:Iglesias", heroLink);
+	    assertQueryGivesOnlyThisResult("fullText:\"Enrique Iglesias\"", heroLink);
+	    assertQueryGivesOnlyThisResult("fullText:\"Would you dance\"", heroLink);	    
+	    assertQueryGivesOnlyThisResult("fullText:\"IF I ASKED YOU\"", heroLink);
+
 		query = new SolrQuery();
 	    query.setQuery( "title:Halo" );
 	    rsp = solrServer.query( query );
@@ -66,5 +75,16 @@ public class AddPipelineTest extends FunctionalTest {
 	    assertTrue(((String) song.get("lyrics")).contains("Remember those walls I built?"));
 	    attachmentNames = song.getFieldValues("image");
 	    assertEquals(3, attachmentNames.size());
+	}
+
+	private void assertQueryGivesOnlyThisResult(String queryText, String expectedLinkField) throws SolrServerException {
+		SolrQuery query = new SolrQuery();
+	    query.setQuery(queryText);
+	    QueryResponse rsp = solrServer.query( query );
+	    SolrDocumentList docList = rsp.getResults();
+	    assertEquals(1, docList.size());
+	    SolrDocument song = docList.get(0);
+	    assertEquals(expectedLinkField, song.get("link"));
+		
 	}
 }
