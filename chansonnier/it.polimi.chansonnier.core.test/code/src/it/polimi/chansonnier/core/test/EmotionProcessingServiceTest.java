@@ -10,12 +10,9 @@ import it.polimi.chansonnier.processing.EmotionProcessingService;
 import it.polimi.chansonnier.spi.EmotionRecognitionService;
 import it.polimi.chansonnier.spi.FuzzyResult;
 
-import org.eclipse.smila.blackboard.BlackboardAccessException;
 import org.eclipse.smila.blackboard.path.Path;
 import org.eclipse.smila.datamodel.id.Id;
-import org.eclipse.smila.datamodel.record.Annotation;
 import org.eclipse.smila.datamodel.record.Literal;
-import org.eclipse.smila.processing.ProcessingException;
 
 
 public class EmotionProcessingServiceTest extends ProcessingServiceTest implements EmotionRecognitionService {
