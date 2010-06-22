@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:BpmnDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:bpmn="http://stp.eclipse.org/bpmn" xmi:id="_dJP_UH3QEd-vvprDQjbl7w" iD="_dJM8AX3QEd-vvprDQjbl7w">
+  <pools xmi:type="bpmn:Pool" xmi:id="_dMij4X3QEd-vvprDQjbl7w" iD="_dMij4H3QEd-vvprDQjbl7w" name="Pool">
+    <vertices xmi:type="bpmn:Activity" xmi:id="_dM1e0X3QEd-vvprDQjbl7w" iD="_dM1e0H3QEd-vvprDQjbl7w" outgoingEdges="_9HTQUX3QEd-vvprDQjbl7w" incomingEdges="_qXosMX3QEd-vvprDQjbl7w" name="LyricsProcessingService" activityType="Task"/>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_oAufMX3QEd-vvprDQjbl7w" iD="_oAufMH3QEd-vvprDQjbl7w" outgoingEdges="_qXosMX3QEd-vvprDQjbl7w" name="   LinkGrabberAgent " activityType="EventStartMessage"/>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_tDenYX3QEd-vvprDQjbl7w" iD="_tDenYH3QEd-vvprDQjbl7w" outgoingEdges="_9ZnIUX3QEd-vvprDQjbl7w" incomingEdges="_9HTQUX3QEd-vvprDQjbl7w" name="EmotionProcessingService"/>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_tvMd4X3QEd-vvprDQjbl7w" iD="_tvMd4H3QEd-vvprDQjbl7w" outgoingEdges="_95zrUX3QEd-vvprDQjbl7w" incomingEdges="_9ZnIUX3QEd-vvprDQjbl7w" name="LanguageProcessingService"/>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_3R140X3QEd-vvprDQjbl7w" iD="_3R140H3QEd-vvprDQjbl7w" outgoingEdges="_-anSUX3QEd-vvprDQjbl7w" incomingEdges="_95zrUX3QEd-vvprDQjbl7w" name="FrameExtractionProcessingService"/>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_5IGP0H3QEd-vvprDQjbl7w" iD="_5IFowH3QEd-vvprDQjbl7w" outgoingEdges="_V_OMIX3REd-vvprDQjbl7w" incomingEdges="_-anSUX3QEd-vvprDQjbl7w" name="SolrPipelet"/>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_7hIjwX3QEd-vvprDQjbl7w" iD="_7hIjwH3QEd-vvprDQjbl7w" outgoingEdges="_E5QwwX3REd-vvprDQjbl7w" incomingEdges="_V_OMIX3REd-vvprDQjbl7w" name="LastIndexedService"/>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_Bec2wX3REd-vvprDQjbl7w" iD="_Bec2wH3REd-vvprDQjbl7w" incomingEdges="_E5QwwX3REd-vvprDQjbl7w" activityType="EventEndMessage"/>
+    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_qXosMX3QEd-vvprDQjbl7w" iD="_qXosMH3QEd-vvprDQjbl7w"/>
+    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_9HTQUX3QEd-vvprDQjbl7w" iD="_9HTQUH3QEd-vvprDQjbl7w"/>
+    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_9ZnIUX3QEd-vvprDQjbl7w" iD="_9ZnIUH3QEd-vvprDQjbl7w"/>
+    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_95zrUX3QEd-vvprDQjbl7w" iD="_95zrUH3QEd-vvprDQjbl7w"/>
+    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_-anSUX3QEd-vvprDQjbl7w" iD="_-anSUH3QEd-vvprDQjbl7w"/>
+    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_E5QwwX3REd-vvprDQjbl7w" iD="_E5QwwH3REd-vvprDQjbl7w"/>
+    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_V_OMIX3REd-vvprDQjbl7w" iD="_V_OMIH3REd-vvprDQjbl7w"/>
+  </pools>
+</bpmn:BpmnDiagram>
