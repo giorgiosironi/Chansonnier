@@ -107,7 +107,7 @@
 							<proc:Value>10000</proc:Value>
 						</proc:Property>
 						<proc:Property name="indexName">
-							<proc:Value>test_index</proc:Value>
+							<proc:Value>chansonnier</proc:Value>
 						</proc:Property>
 					</proc:PipeletConfiguration>       								
 				</proc:invokePipelet>
