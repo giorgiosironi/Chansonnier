@@ -5,7 +5,7 @@ AjaxSolr.theme.prototype.result = function (doc, snippets) {
   output += '<p class="lyrics">' + doc.lyrics + '</p>';
   output += '<p id="links_' + doc.uuid + '" class="links"></p>';
   for (var index in snippets) {
-  	output += '<p>' + snippets[index] + '</p>';
+  	output += '<p class="match">Match: ...' + snippets[index] + '...</p>';
   }
   image = function(attachmentName) {
   	var path = 'attachment?id=' + doc.link + '&name=' + attachmentName;

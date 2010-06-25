@@ -15,6 +15,11 @@ AjaxSolr.ResultWidget = AjaxSolr.AbstractWidget.extend({
       AjaxSolr.theme('list_items', '#links_' + doc.uuid, items);
     }
     $('.images a').lightBox();
+    $('.lyrics').expander({
+    	slicePoint: 25,
+    	expandText: 'read more...',
+    	userCollapseText: '[^]'
+    });
   },
   facetLinks: function (facet_field, facet_values) {
   	var links = new Array();

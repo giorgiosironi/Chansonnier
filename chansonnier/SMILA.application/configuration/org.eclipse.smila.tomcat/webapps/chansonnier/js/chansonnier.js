@@ -55,8 +55,10 @@ var Manager;
           'json.nl': 'map',
           'hl' : true,
           'hl.fl' : '*',
-          'hl.fragsize': 10,
-          'hl.highlightMultiTerm' : true 
+          'hl.fragsize': 30,
+          'hl.highlightMultiTerm' : true,
+          'hl.simple.pre' : '<strong>',
+          'hl.simple.post' : '</strong>'
     };
     for (var name in params) {
           Manager.store.addByValue(name, params[name]);
