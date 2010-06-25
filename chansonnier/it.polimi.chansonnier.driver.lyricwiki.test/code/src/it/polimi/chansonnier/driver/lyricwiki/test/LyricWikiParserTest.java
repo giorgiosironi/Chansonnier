@@ -26,6 +26,12 @@ public class LyricWikiParserTest extends TestCase {
 		String lyrics = parser.getLyrics(xmlContent);
 		assertTrue(lyrics.indexOf("all that glitters is gold") > -1);
 	}
+	
+	public void testAcceptsXmlToTrim() throws Exception {
+		String xmlContent = "   " + fileToString("./test/lyricwiki_song_fixture.xml");
+		String lyrics = parser.getLyrics(xmlContent);
+		assertTrue(lyrics.indexOf("all that glitters is gold") > -1);
+	}
 
 	private static String fileToString(String path) throws java.io.IOException {
 	    byte[] buffer = new byte[(int) new File(path).length()];

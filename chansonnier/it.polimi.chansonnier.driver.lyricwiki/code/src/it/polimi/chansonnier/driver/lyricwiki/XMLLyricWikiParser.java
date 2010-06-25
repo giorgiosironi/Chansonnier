@@ -25,7 +25,7 @@ public class XMLLyricWikiParser implements LyricWikiParser {
             DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
             DocumentBuilder db = dbf.newDocumentBuilder();
             InputSource is = new InputSource();
-            is.setCharacterStream(new StringReader(xmlContent));
+            is.setCharacterStream(new StringReader(xmlContent.trim()));
             Document doc = db.parse(is);
             doc.getDocumentElement().normalize();
             NodeList lyricsNodes = doc.getElementsByTagName("lyrics");
