@@ -12,24 +12,28 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.eclipse.smila.connectivity.ConnectivityException;
 
-public class AddServlet extends HttpServlet {
+public class AddServlet extends AbstractServlet {
 	/**
 	 * 0.1.0 version.
 	 */
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		printHeader(response);
 		PrintWriter writer = response.getWriter();
+		writer.println("<p>From this page you can add a link to a page containing a video to the processing queue.</p>");
         writer.println("<form action=\"add\" method=\"post\">");
+        writer.println("<fieldset>");
         writer.println("<label>Video link: <input type=\"text\" name=\"link\" /></label>");
+        writer.println("</fieldset>");
         writer.println("<button type=\"submit\">Add to queue</button>");
         writer.println("</form");
+        printFooter(response);
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -40,7 +44,10 @@ public class AddServlet extends HttpServlet {
 			} catch (ConnectivityException e) {
 				throw new ServletException(e);
 			}
-			response.getWriter().println("Success...");
+			printHeader(response);
+			response.getWriter().println("<p>The link <a href=\"" + link + "\">" +link + "</a> was added to the queue.</p>");
+			response.getWriter().println("<p>You may want to monitor the <a href=\"last\">last indexed songs page</a> to discover when its processing phase has been completed.</p>");
+			printFooter(response);
 			_agent.addLink(link);
 	}
 }

@@ -207,3 +207,30 @@ a.tagcloud_item span {
     display: none;
 }
 
+fieldset {
+	margin: 5px 0px;
+	width: 500px;
+	height: 35px;
+}
+label {
+	display: block;
+	padding: 5px;
+	height: 25px;
+	line-height: 2;
+}
+label input {
+	display: block;
+	float: right;
+	width: 400px;
+}
+button {
+	margin: 5px;
+}
+p {
+	margin: 5px;
+}
+
+ul li {
+	list-style-type: none;
+	margin-left: 20px;
+}
