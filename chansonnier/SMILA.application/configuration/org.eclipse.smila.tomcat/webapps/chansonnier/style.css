@@ -77,6 +77,7 @@ a:hover {
 .links li {
   list-style-type: none;
   display: inline;
+  	margin-left: 0px;
 }
 #selection {
   padding: 10px 15px 0;
