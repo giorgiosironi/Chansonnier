@@ -51,8 +51,15 @@ public class SearchSongTest extends AcceptanceTest {
 		typeAndEnter("query", "Enrique");
 		waitForPageToLoad();
 		assertOnlyOneHeroSongIsInTheResult();
-		typeAndEnter("query", "Hero");;
+		
+		typeAndEnter("query", "Hero");
+		waitForPageToLoad();
+		assertOnlyOneHeroSongIsInTheResult();
+		
 		typeAndEnter("query", "Let me be your hero");
+		waitForPageToLoad();
+		assertOnlyOneHeroSongIsInTheResult(); 
+		
 		typeAndEnter("query", "Enrique Iglesias");
 		waitForPageToLoad();
 		assertOnlyOneHeroSongIsInTheResult(); 
@@ -64,7 +71,7 @@ public class SearchSongTest extends AcceptanceTest {
 	}
 	
 	private void assertOnlyOneHeroSongIsInTheResult() {
-		wrapped.verifyTrue(selenium.isTextPresent("(x) fullText:Enrique"));
+		wrapped.verifyTrue(selenium.isTextPresent("(x) fullText:*"));
 		wrapped.verifyTrue(selenium.isTextPresent("Hero"));
 		wrapped.verifyFalse(selenium.isTextPresent("Beyonce"));
 		wrapped.verifyTrue(selenium.isTextPresent("of 1 results"));

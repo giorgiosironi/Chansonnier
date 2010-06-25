@@ -11,9 +11,9 @@ public abstract class AbstractServlet extends HttpServlet {
 		super();
 	}
 
-	protected void printHeader(HttpServletResponse response) throws IOException {
+	protected void printHeader(HttpServletResponse response, String title) throws IOException {
 		response.getWriter().println("<html><head>");
-		response.getWriter().println("<title>Add a song</title>");
+		response.getWriter().println("<title>" + title + "</title>");
 		response.getWriter().println("<link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\" media=\"screen\" />");
 		response.getWriter().println("</head><body>");
 		response.getWriter().println("<div id=\"wrap\">"); 

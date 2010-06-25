@@ -24,7 +24,7 @@ public class AddServlet extends AbstractServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		printHeader(response);
+		printHeader(response, "Add a song");
 		PrintWriter writer = response.getWriter();
 		writer.println("<p>From this page you can add a link to a page containing a video to the processing queue.</p>");
         writer.println("<form action=\"add\" method=\"post\">");
@@ -44,7 +44,7 @@ public class AddServlet extends AbstractServlet {
 			} catch (ConnectivityException e) {
 				throw new ServletException(e);
 			}
-			printHeader(response);
+			printHeader(response, "Add a song");
 			response.getWriter().println("<p>The link <a href=\"" + link + "\">" +link + "</a> was added to the queue.</p>");
 			response.getWriter().println("<p>You may want to monitor the <a href=\"last\">last indexed songs page</a> to discover when its processing phase has been completed.</p>");
 			printFooter(response);

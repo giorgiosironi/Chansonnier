@@ -2,10 +2,13 @@
 
 AjaxSolr.ResultWidget = AjaxSolr.AbstractWidget.extend({
   afterRequest: function () {
+    var highlighting = this.manager.response.highlighting;
+
     $(this.target).empty();
     for (var i = 0, l = this.manager.response.response.docs.length; i < l; i++) {
       var doc = this.manager.response.response.docs[i];
-      $(this.target).append(AjaxSolr.theme('result', doc));        
+      $(this.target).append(AjaxSolr.theme('result', doc, highlighting[doc.link])); 
+             
       var items = this.facetLinks('emotion', [doc.emotion]);
       items = items.concat(this.facetLinks('language', [doc.language]));
       items = items.concat(this.facetLinks('artist', [doc.artist]));

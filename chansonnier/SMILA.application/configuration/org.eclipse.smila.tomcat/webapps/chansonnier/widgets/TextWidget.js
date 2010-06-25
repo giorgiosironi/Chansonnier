@@ -1,5 +1,5 @@
 (function ($) {
-AjaxSolr.TextWidget = AjaxSolr.AbstractFacetWidget.extend({
+AjaxSolr.TextWidget = AjaxSolr.AbstractTextWidget.extend({
 	afterRequest: function () {
   		$(this.target).find('input').val('');
 
@@ -7,7 +7,7 @@ AjaxSolr.TextWidget = AjaxSolr.AbstractFacetWidget.extend({
   		$(this.target).find('input').bind('keydown', function(e) {
     		if (e.which == 13) {
       			var value = $(this).val();
-      			if (value && self.add(value)) {
+      			if (value && self.set(self.field + ':"' + value + '"')) {
 	        		self.manager.doRequest(0);
       			}
     		}

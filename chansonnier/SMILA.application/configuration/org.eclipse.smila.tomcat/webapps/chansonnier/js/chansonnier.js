@@ -52,7 +52,11 @@ var Manager;
           'facet.limit': 20,
           'facet.mincount': 1,
           'f.topics.facet.limit': 50,
-          'json.nl': 'map'
+          'json.nl': 'map',
+          'hl' : true,
+          'hl.fl' : '*',
+          'hl.fragsize': 10,
+          'hl.highlightMultiTerm' : true 
     };
     for (var name in params) {
           Manager.store.addByValue(name, params[name]);
