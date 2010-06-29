@@ -37,7 +37,7 @@ public class AddSongTest extends AcceptanceTest {
         String link = "http://www.youtube.com/watch?v=GMDd4on20Yg";
         WebResponse resp = addVideoLink(link);
 		// TODO insert redirect
-		assertTrue(resp.getText().contains("Success"));
+		assertTrue(resp.getText().contains("added to the queue"));
 
 		WebRequest req = new GetMethodWebRequest( "http://localhost:8080/chansonnier/last" );
 		assertWebPageContains(req, link, 300000);
