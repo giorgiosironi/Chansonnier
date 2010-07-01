@@ -164,13 +164,17 @@ a.tagcloud_item img {
 	margin: 5px;
 }
 
+a.tagcloud_size_0 img {
+        width: 20px;
+        height: 15px;
+}
 a.tagcloud_size_1 img {
-	width: 10px;
-	height: 7px;
+        width: 20px;
+        height: 15px;
 }
 a.tagcloud_size_2 img {
-	width: 20px;
-	height: 15px;
+        width: 20px;
+        height: 15px;
 }
 a.tagcloud_size_3 img {
 	width: 30px;
