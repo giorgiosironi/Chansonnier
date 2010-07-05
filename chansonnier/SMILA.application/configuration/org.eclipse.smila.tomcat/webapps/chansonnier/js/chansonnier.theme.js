@@ -1,12 +1,11 @@
 (function ($) {
 
 AjaxSolr.theme.prototype.result = function (doc, snippets) {
-  console.log(doc.score);
   var output = '<div class="song"><h2><a href="' + doc.link + '">' + doc.artist + ' - ' + doc.title + '</a></h2>';
   output += '<p class="lyrics">' + doc.lyrics + '</p>';
   output += '<p id="links_' + doc.uuid + '" class="links"></p>';
   for (var index in snippets) {
-  	output += '<p class="match">Match: ...' + snippets[index] + '...</p>';
+  	output += '<p class="match">Match: ...' + snippets[index] + '... Score: ' + doc.score + '</p>';
   }
   image = function(attachmentName) {
   	var path = 'attachment?id=' + doc.link + '&name=' + attachmentName;
