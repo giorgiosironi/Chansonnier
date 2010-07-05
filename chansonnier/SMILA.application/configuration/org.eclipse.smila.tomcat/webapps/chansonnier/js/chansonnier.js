@@ -47,6 +47,7 @@ var Manager;
     Manager.store.addByValue('q', '*:*');
     Manager.store.addByValue('rows', 3);
     var params = {
+    	  fl : '*,score', 
           facet: true,
           'facet.field': ['emotion', 'language', 'artist'],
           'facet.limit': 20,

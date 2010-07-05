@@ -15,9 +15,7 @@ AjaxSolr.ResultWidget = AjaxSolr.AbstractWidget.extend({
       AjaxSolr.theme('list_items', '#links_' + doc.uuid, items);
     }
     $('.song').each(function(i, song) {
-    	$(song).find('.images a').lightBox();
-    	console.log($(song).find('.images a'));
-    	
+    	$(song).find('.images a').lightBox();    	
     });
     $('.lyrics').expander({
     	slicePoint: 25,
