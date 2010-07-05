@@ -44,6 +44,7 @@
 
 
     <fieldType name="uuid" class="solr.UUIDField" indexed="true" />
+    <fieldType name="date" class="solr.TrieDateField" omitNorms="true" precisionStep="0" positionIncrementGap="0"/>
 
  </types>
 
@@ -68,6 +69,8 @@
    <field name="image" type="string" indexed="false" stored="true" multiValued="true" />
 
    <field name="fullText" type="text" indexed="true" stored="true" multiValued="true" />
+
+   <field name="timestamp" type="date" indexed="true" stored="true" default="NOW" multiValued="false"/>
 
  </fields>
 

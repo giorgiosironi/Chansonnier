@@ -48,6 +48,7 @@ var Manager;
     Manager.store.addByValue('rows', 3);
     var params = {
     	  fl : '*,score', 
+    	  sort: 'score desc, timestamp desc',
           facet: true,
           'facet.field': ['emotion', 'language', 'artist'],
           'facet.limit': 20,
