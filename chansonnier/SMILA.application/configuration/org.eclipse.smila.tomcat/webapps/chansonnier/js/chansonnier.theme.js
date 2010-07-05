@@ -1,7 +1,7 @@
 (function ($) {
 
 AjaxSolr.theme.prototype.result = function (doc, snippets) {
-  var output = '<div><h2><a href="' + doc.link + '">' + doc.artist + ' - ' + doc.title + '</a></h2>';
+  var output = '<div class="song"><h2><a href="' + doc.link + '">' + doc.artist + ' - ' + doc.title + '</a></h2>';
   output += '<p class="lyrics">' + doc.lyrics + '</p>';
   output += '<p id="links_' + doc.uuid + '" class="links"></p>';
   for (var index in snippets) {

@@ -14,7 +14,11 @@ AjaxSolr.ResultWidget = AjaxSolr.AbstractWidget.extend({
       items = items.concat(this.facetLinks('artist', [doc.artist]));
       AjaxSolr.theme('list_items', '#links_' + doc.uuid, items);
     }
-    $('.images a').lightBox();
+    $('.song').each(function(i, song) {
+    	$(song).find('.images a').lightBox();
+    	console.log($(song).find('.images a'));
+    	
+    });
     $('.lyrics').expander({
     	slicePoint: 25,
     	expandText: 'read more...',
