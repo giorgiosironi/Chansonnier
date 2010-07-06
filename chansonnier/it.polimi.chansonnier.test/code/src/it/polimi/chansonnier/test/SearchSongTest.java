@@ -33,6 +33,7 @@ public class SearchSongTest extends AcceptanceTest {
         wrapped.verifyTrue(selenium.isTextPresent("Beautiful Day"));
 		wrapped.verifyTrue(selenium.isTextPresent("The heart is a bloom"));
 		selenium.click("link=(x) emotion*");
+        waitForPageToLoad();
 		selenium.click("link=anger");
         waitForPageToLoad();
 		wrapped.verifyTrue(selenium.isTextPresent("(x) emotion:\"anger\""));
