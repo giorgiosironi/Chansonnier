@@ -6,7 +6,6 @@ chansonnier/SMILA.application/configuration/org.eclipse.smila.tomcat/work/
 chansonnier/SMILA.application/derby.log
 .svn
 chansonnier/**/bin
-*.class
 .metadata
 chansonnier/SMILA.application/configuration/org.eclipse.smila.search/xml/*.xml
 solr/solr/data/index/*

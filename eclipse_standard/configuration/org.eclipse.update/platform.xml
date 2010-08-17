@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<config date="1271917329001" transient="false" version="3.0">
+<config date="1281987762992" transient="false" version="3.0">
 <site enabled="true" policy="USER-EXCLUDE" updateable="true" url="platform:/base/">
 <feature id="org.eclipse.jdt.source" url="features/org.eclipse.jdt.source_3.5.2.r352_v20100108-7r88FEwFI0WTuoBl0iaG0tyhfZH6/" version="3.5.2.r352_v20100108-7r88FEwFI0WTuoBl0iaG0tyhfZH6">
 </feature>
@@ -27,9 +27,9 @@
 </feature>
 <feature id="org.eclipse.platform.source" url="features/org.eclipse.platform.source_3.5.2.R35x_v20100210-0800-9hEiFzmFst-TiEn9hNYgDWg1XN8ulH_JvCNGB/" version="3.5.2.R35x_v20100210-0800-9hEiFzmFst-TiEn9hNYgDWg1XN8ulH_JvCNGB">
 </feature>
-<feature id="org.eclipse.equinox.p2.user.ui" url="features/org.eclipse.equinox.p2.user.ui_1.1.2.R35x_v20091106-7u6FbQFUAtsCKD5Fxz0qz0fb2932/" version="1.1.2.R35x_v20091106-7u6FbQFUAtsCKD5Fxz0qz0fb2932">
-</feature>
 <feature id="org.eclipse.pde" url="features/org.eclipse.pde_3.5.2.R35x_v20100119-7Z7_FA2FDX-aXQYWqYDBz-z0qufo/" version="3.5.2.R35x_v20100119-7Z7_FA2FDX-aXQYWqYDBz-z0qufo">
+</feature>
+<feature id="org.eclipse.equinox.p2.user.ui" url="features/org.eclipse.equinox.p2.user.ui_1.1.2.R35x_v20091106-7u6FbQFUAtsCKD5Fxz0qz0fb2932/" version="1.1.2.R35x_v20091106-7u6FbQFUAtsCKD5Fxz0qz0fb2932">
 </feature>
 <feature id="org.eclipse.cvs" url="features/org.eclipse.cvs_1.1.101.R35x_v20100125-7E79FGD9kKF67BPDZ7PKCE1911/" version="1.1.101.R35x_v20100125-7E79FGD9kKF67BPDZ7PKCE1911">
 </feature>
